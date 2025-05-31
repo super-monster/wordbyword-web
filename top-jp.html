@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word by Word - 英語学習翻訳アシスタント</title>
+  <meta name="description" content="Word by Word：ブラウザで単語をなぞるだけで即翻訳、文ごとの対訳、文脈解釈とAI音声、一括で英語の読解力とリスニング力を向上。" />
+<style>
+    /* ========== 全局样式 Reset ========== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== 顶部导航 ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .app-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #222;
+      margin-left: 0.75rem;
+      letter-spacing: 1px;
+      font-family: 'Segoe UI', 'Arial', 'Helvetica Neue', sans-serif;
+    }
+
+.nav-links-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .logo {
+    margin-bottom: 0.3rem;
+  }
+  .nav-links-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* 让两端分开 */
+    gap: 0.5rem;
+    white-space: nowrap;
+    overflow-x: auto;
+  }
+  .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem;
+    width: auto !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .nav-links a {
+    display: inline-block !important;
+    font-size: 0.97rem;
+    padding: 0.4rem 0.7rem;
+    white-space: nowrap;
+    width: auto !important;
+    text-align: center;
+  }
+  .btn-download {
+    display: inline-block !important;
+    font-size: 0.97rem;
+    padding: 0.4rem 0.7rem;
+    white-space: nowrap;
+    width: auto !important;
+    margin-left: auto;
+    flex-shrink: 0; /* 避免按钮被压缩 */
+  }
+}
+
+
+
+
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #007aff;
+    }
+    .btn-download {
+      background-color: #007aff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .btn-download:hover {
+      background-color: #005bb5;
+    }
+
+    /* 占位：用于让主体内容避开固定导航栏 */
+    .nav-spacer {
+      height: 64px;
+    }
+
+    /* ========== Hero 横幅 ========== */
+    .hero {
+      background-color: #007aff;
+      color: #ffffff;
+      padding: 4rem 1rem 6rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.2;
+    }
+    .hero p.subtitle {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .hero .btn-group {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero .btn-primary {
+      background-color: #cc3355;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+      border-radius: 24px;
+    }
+    .hero .btn-primary:hover {
+      background-color: #e0b900;
+    }
+    .hero .btn-secondary {
+      background-color: #fff;
+      color: #1d77e9;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+      border-radius: 24px;
+    }
+    .hero .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .hero .hero-image {
+      margin-top: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero .hero-image img {
+      max-width: 420px;
+      width: 100%;
+      margin: 0 auto;
+      display: block;
+      border-radius: 28px;
+      /* box-shadow: 0 6px 30px rgba(0,0,0,0.20); */
+    }
+    @media (max-width: 600px) {
+      .hero .hero-image img {
+        max-width: 70vw;
+      }
+    }
+
+    /* ========== 功能亮点 Section ========== */
+    .features {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+    }
+    .features .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background-color: #f0f8ff;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .feature-card img {
+      height: 60px;
+      /* margin-bottom: 1rem; */
+      border-radius: 16px;
+      border: 1px solid #03a9f41f;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #007aff;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    .feature-header-horizontal {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-header-horizontal img {
+      height: 72px;
+      width: 72px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 16px;
+    }
+
+    .feature-header-horizontal h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #007aff;
+      margin: 0;
+      flex: 1 1 auto;
+      text-align: left;
+      /* text-align: center; */
+      /* margin-left: -60px; */
+      /* 居中效果如需强制：text-align:center; width:100%; */
+    }
+
+    /* ========== 屏幕截图 Section ========== */
+    .screenshots {
+      background-color: #f9f9f9;
+      padding: 4rem 1rem;
+    }
+    .screenshots .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .screenshots h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .screenshot-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    .screenshot-carousel img {
+      flex: 0 0 auto;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      scroll-snap-align: center;
+    }
+
+    /* ========== 订阅与下载 Section ========== */
+    .cta {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+    }
+    .cta .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    .cta p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    .cta .btn-download-store {
+      display: inline-block;
+      background-color: #ff2d55;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    .cta .btn-download-store:hover {
+      background-color: #e0264c;
+    }
+    .cta .subscription-info {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ========== 常见问题（FAQ） Section ========== */
+    .faq {
+      background-color: #f9f9f9;
+      padding: 4rem 1rem;
+    }
+    .faq .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #007aff;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* ========== 底部 Footer ========== */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      padding: 2rem 1rem;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-logo img {
+      height: 36px;
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-links ul {
+      min-width: 120px;
+    }
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a {
+      font-size: 0.9rem;
+      color: #555;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #007aff;
+    }
+    .footer-copy {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ========== 响应式调整 ========== */
+    @media (max-width: 700px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .logo {
+        margin-bottom: 0.3rem;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+      }
+      .nav-links a {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0.3rem 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero .btn-group {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .screenshot-carousel img {
+        width: 80%;
+      }
+    }
+
+  .features .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .feature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    gap: 3rem;
+  }
+  .feature-row.reverse {
+    flex-direction: row-reverse;
+  }
+  .feature-text {
+    flex: 1 1 300px;
+    min-width: 220px;
+  }
+  .feature-text h3 {
+    color: #007aff;
+    font-size: 1.45rem;
+    font-weight: 700;
+    margin-bottom: 1.1rem;
+    letter-spacing: 1px;
+  }
+  .feature-text p {
+    font-size: 1.06rem;
+    color: #222;
+    line-height: 1.9;
+  }
+  .feature-image {
+    flex: 1 1 320px;
+    min-width: 220px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .feature-image img {
+    max-width: 330px;
+    width: 95%;
+    margin: 0 auto;
+    border-radius: 26px;
+    /* box-shadow: 0 6px 24px rgba(0,0,0,0.10); */
+    /* background: #fff; */
+  }
+  @media (max-width: 900px) {
+    .feature-row,
+    .feature-row.reverse {
+      flex-direction: column !important;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      align-items: stretch;
+    }
+    .feature-image img {
+      max-width: 94vw;
+    }
+    .feature-text,
+    .feature-image {
+      min-width: 0;
+      text-align: center;
+    }
+    .feature-text h3, .feature-text p {
+      text-align: center;
+    }
+  }
+
+  </style>
+</head>
+<body>
+
+  <!-- ヘッダーナビゲーション -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#"><img src="wbw_logo.png" alt="Word by Word ロゴ" /></a>
+        <span class="app-title">WordByWord</span>
+      </div>
+      <nav class="nav-links-group">
+        <div class="nav-links">
+          <a href="#features">主な機能</a>
+          <a href="#screenshots">画面イメージ</a>
+          <a href="#faq">よくある質問</a>
+        </div>
+        <a href="#cta" class="btn-download">アプリをダウンロード</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-spacer"></div>
+
+  <!-- ヒーローバナー -->
+  <section class="hero" id="hero">
+    <h1>Word by Word<br>なぞるだけで即翻訳 英語学習をもっとスマートに</h1>
+    <p class="subtitle">
+      どんなウェブページでも単語や文をなぞるだけで即翻訳、文ごとの対訳挿入、AIによる文脈解釈と音声再生。<br>
+      アプリを切り替えることなく、読解力と語彙力を効率的にアップ。
+    </p>
+    <div class="btn-group">
+      <a href="#" class="btn-primary">App Store でダウンロード</a>
+      <a href="#features" class="btn-secondary">詳細を見る</a>
+    </div>
+    <div class="hero-image">
+      <img src="img/Screenshot-1.png" alt="アプリ画面例" />
+    </div>
+  </section>
+
+  <!-- 主な機能 Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>主な機能</h2>
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/ChatGPT-feature_swipe.png" alt="スワイプ翻訳アイコン" />
+            <h3>スワイプ翻訳・文ごとの対訳</h3>
+          </div>
+          <p>
+            ウェブページ上で任意のテキストを右にスワイプするだけで、システムが自動的に文を認識し、翻訳を原文の下に挿入します。文ごとに分割され、原文と訳文が一目で比較でき、シームレスな対訳読書が可能です。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_swipe_demo.png" alt="スワイプ翻訳" />
+        </div>
+      </div>
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_doubletap.png" alt="ダブルタップ辞書アイコン" />
+            <h3>ダブルタップ辞書・AI解釈</h3>
+          </div>
+          <p>
+            単語をダブルタップすると、AIが文脈を考慮して意味を解析し、よく使われるフレーズも優先的に認識します。直訳に頼らず、用法・品詞・例文・コロケーションまでしっかり理解できます。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_doubletap_demo.png" alt="ダブルタップ辞書" />
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_tts.png" alt="AI音声アイコン" />
+            <h3>AI音声・リスニング強化</h3>
+          </div>
+          <p>
+            AI合成音声と端末TTSの切り替えに対応。単語も文も自然に読み上げ、リスニングとスピーキング力を同時に伸ばせます。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_tts_demo.png" alt="AI音声" />
+        </div>
+      </div>
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_context.png" alt="文脈解析アイコン" />
+            <h3>文脈解析・フレーズ優先</h3>
+          </div>
+          <p>
+            AIが文中の単語やフレーズ、コロケーションを自動判別。文脈に最も合った意味を提示し、内容を深く理解できます。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_context_demo.png" alt="文脈解析" />
+        </div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_history.png" alt="履歴アイコン" />
+            <h3>履歴管理・自動グループ化</h3>
+          </div>
+          <p>
+            すべてのスワイプ翻訳や辞書検索履歴を自動保存。日付ごとにグループ化され、ワンタップで確認・削除も簡単。学習の軌跡が一目瞭然です。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_history_demo.png" alt="履歴管理" />
+        </div>
+      </div>
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_customize.png" alt="カスタマイズアイコン" />
+            <h3>カスタマイズ・自由設定</h3>
+          </div>
+          <p>
+            翻訳や辞書のショートカットキー、TTSの速度や音量、テーマカラーなどを自由にカスタマイズ。自分に合った学習スタイルを実現します。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_customize_demo.png" alt="カスタマイズ" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 画面イメージ Section -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <h2>画面イメージ</h2>
+      <div class="screenshot-carousel">
+        <img src="img/Screenshot-1.png" alt="スワイプ翻訳デモ" />
+        <img src="img/Screenshot-2.png" alt="ダブルタップ辞書デモ" />
+        <img src="img/Screenshot-3.png" alt="AI音声デモ" />
+        <img src="img/Screenshot-4.png" alt="履歴画面" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ダウンロード・サブスクリプション Section -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <h2>無料で始める・アップグレードでさらに便利に</h2>
+      <p>
+        WordByWordの基本機能はずっと無料でご利用いただけます（スワイプ翻訳、端末TTS音声、毎日のAI機能お試しなど）。<br>
+        「Plus版」サブスクリプションで以下の機能が解放されます：
+      </p>
+      <ul style="text-align: left; margin: 1rem auto; max-width: 400px; font-size: 0.95rem; color: #444; line-height: 1.5;">
+        <li>• 毎日より多くのAI翻訳・文脈解析</li>
+        <li>• AI音声の利用回数無制限＆高品質音声</li>
+        <li>• 文型解析や例文推薦</li>
+        <li>• テーマやダークモードのカスタマイズ</li>
+        <li>• 新機能の先行体験</li>
+      </ul>
+      <a href="#" class="btn-download-store">App Storeで今すぐダウンロード</a>
+      <p class="subscription-info">
+        Plus版サブスクリプション：<br />
+        • 月額プラン（iOSアプリ内課金対応）<br />
+        • いつでもアプリ内で管理・解約可能です。
+      </p>
+    </div>
+  </section>
+
+  <!-- よくある質問 Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>よくある質問</h2>
+      <div class="faq-item">
+        <h3>Q1：スワイプ翻訳はどう使いますか？</h3>
+        <p>
+          ウェブページ上で指やマウスで右にスワイプしてテキストを選択すると、自動的にその文の翻訳が原文下に挿入されます。翻訳を消したい場合は、訳文を左にスワイプしてください。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q2：ダブルタップ辞書の精度は？</h3>
+        <p>
+          単語とその前後の文脈をAIが解析し、複数語のフレーズも優先的に認識。文脈に最適な意味や例文を提示するので、直訳に惑わされません。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q3：無料版の利用制限は？</h3>
+        <p>
+          無料版では毎日<strong>回数制限付き</strong>のAI翻訳と<strong>20回</strong>のAI音声が利用できます。詳細はアプリ内でご確認ください。上限を超えた場合はPlus版へのアップグレード、または端末TTS音声をご利用ください。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q4：対応言語は？</h3>
+        <p>
+          初期バージョンでは英語→日本語・中国語・韓国語など20言語以上に対応。今後さらに多言語対応予定です。アプリが自動でターゲット言語を判別し、最適なプロンプトで高品質な翻訳を提供します。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q5：履歴はどこで見られますか？</h3>
+        <p>
+          メイン画面下部の「履歴」アイコンをタップすると、日付ごとにグループ化された翻訳・辞書履歴を一覧できます。左右スワイプで個別削除や詳細表示も可能です。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="img/wbw_logo.png" alt="WordByWord ロゴ" />
+        <p style="font-size: 0.9rem; color: #555;">
+          © 2025 WordByWord. All rights reserved.<br />
+          独立開発者による運営。個人情報は一切収集しません。
+        </p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+        <ul>
+          <li><a href="support.html">お問い合わせ</a></li>
+        </ul>
+        <ul>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 100%;"></div>
+    </div>
+  </footer>
+
+</body>
+</html>

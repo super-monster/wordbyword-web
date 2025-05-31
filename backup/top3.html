@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Word by Word - 网页智能翻译与AI英语助手</title>
+  <meta name="description" content="Word by Word：划词即译，AI释义、原文对照、发音与历史记录，一切只为你的网页阅读体验而生。"/>
+  <style>
+    :root {
+      --blue: #1d77e9;
+      --blue-dark: #1955b6;
+      --gray: #f7f9fb;
+      --feature-bg: #fff;
+      --text-main: #223;
+      --text-gray: #666;
+      --border-light: #e4e8ee;
+    }
+    body {
+      font-family: 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
+      color: var(--text-main);
+      margin: 0;
+      background: var(--gray);
+      line-height: 1.7;
+    }
+    a { color: var(--blue); text-decoration: none; }
+
+    header {
+      background: var(--feature-bg);
+      border-bottom: 1px solid var(--border-light);
+      padding: 36px 0 36px;
+      text-align: center;
+    }
+    .header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .header-logo {
+      height: 48px;
+    }
+    .header-appname {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #1955b6;
+      white-space: nowrap;
+    }
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+    .hero-desc {
+      font-size: 1.13rem;
+      color: var(--text-gray);
+      margin-bottom: 24px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons {
+      margin-bottom: 36px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn-main {
+      background: var(--blue);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 1.08rem;
+      box-shadow: 0 2px 16px rgba(29,119,233,0.12);
+      border: none;
+      outline: none;
+      transition: background .2s;
+      cursor: pointer;
+    }
+    .btn-main:hover {
+      background: var(--blue-dark);
+    }
+    .btn-main.secondary {
+      background: #fff;
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+    }
+.hero-mockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 移除背景色、边框、圆角、阴影、padding */
+  max-width: 380px;
+  margin: 28px auto 0;
+  /* padding: 0; 不需要内边距 */
+  /* border-radius: 0; 不需要圆角 */
+  /* box-shadow: none; 取消阴影 */
+  overflow: visible; /* 允许图片完整显示 */
+  height: auto;
+  background: none;
+}
+.hero-mockup img {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  max-height: 640px;
+  object-fit: contain;
+  border-radius: 0; /* 图片本身如已含圆角则不需要再加 */
+  box-shadow: none;
+  background: none;
+  display: block;
+}
+@media (max-width: 600px) {
+  .hero-mockup {
+    max-width: 98vw;
+    margin: 16px auto 0;
+  }
+  .hero-mockup img {
+    max-width: 86vw;
+    max-height: 70vw;
+  }
+}
+
+
+    /* Value quick list */
+    .section.alt {
+      background: var(--gray);
+    }
+    .values-quick {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 0 auto 38px;
+      max-width: 900px;
+      flex-wrap: wrap;
+    }
+    .value-card {
+      flex: 1 1 170px;
+      max-width: 220px;
+      min-width: 130px;
+      text-align: center;
+      background: #f4f9ff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #e8f2fc;
+      padding: 22px 8px 18px;
+    }
+    .value-card img {
+      height: 36px;
+      margin-bottom: 10px;
+    }
+    .value-card h3 {
+      font-size: 1.04rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--blue-dark);
+    }
+    .value-card p {
+      color: #456;
+      font-size: .97rem;
+      margin: 0;
+    }
+
+    /* Features */
+    .section {
+      background: var(--feature-bg);
+      padding: 50px 0;
+    }
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 900;
+      text-align: center;
+      margin-bottom: 26px;
+      letter-spacing: -1px;
+      color: var(--blue-dark);
+    }
+    .features-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 38px;
+    }
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .feature-row.reverse {
+      flex-direction: row-reverse;
+    }
+    .feature-text {
+      flex: 1 1 270px;
+      min-width: 200px;
+      max-width: 420px;
+      padding: 5px 0;
+    }
+    .feature-text h2 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: var(--blue);
+    }
+    .feature-text p {
+      color: var(--text-main);
+      font-size: 0.97rem;
+      margin: 0;
+    }
+    .feature-image {
+      flex: 1 1 220px;
+      min-width: 130px;
+      text-align: center;
+    }
+    .feature-image img {
+      width: 180px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 3px 16px rgba(33,64,128,0.07);
+      background: #f3f7fb;
+    }
+    @media (max-width: 900px) {
+      .feature-row, .feature-row.reverse { flex-direction: column; gap: 16px;}
+      .feature-image, .feature-text { max-width: 100%; }
+      .features-list { gap: 26px;}
+      .values-quick { gap: 10px;}
+      .section { padding: 32px 0;}
+      .section-title { font-size: 1.15rem;}
+    }
+    @media (max-width:600px) {
+      header { padding: 16px 0 18px; }
+      .hero-title { font-size: 1.12rem; margin-bottom: 9px;}
+      .hero-desc { font-size: .97rem; margin-bottom: 14px;}
+      .hero-mockup { max-width: 98vw;}
+      .section-title { font-size: .99rem;}
+      .values-quick { margin-bottom: 12px;}
+      .features-list { gap: 12px;}
+      .feature-text h2 { font-size: .99rem; }
+      .feature-text p { font-size: .93rem;}
+      .feature-image img { width: 92vw; min-width: 0;}
+      .btn-main, .btn-main.secondary { font-size: .95rem; padding: 10px 14vw;}
+      .footer-links { flex-wrap: wrap;}
+      .header-bar { gap: 8px; }
+      .header-logo { height: 34px; }
+      .header-appname { font-size: 1rem;}
+    }
+    /* Footer */
+    footer {
+      text-align: center;
+      background: var(--feature-bg);
+      color: #999;
+      font-size: 0.93rem;
+      padding: 28px 0 12px;
+      margin-top: 24px;
+      border-top: 1px solid #e4e8ee;
+    }
+    .footer-links {
+      margin: 12px 0 6px;
+    }
+    .footer-links a {
+      color: #337be1;
+      margin: 0 7px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+<!-- 头部/hero -->
+<header>
+  <div class="header-bar">
+    <img src="wbw_logo.png" class="header-logo" alt="Word by Word Logo">
+    <span class="header-appname">WordByWord</span>
+  </div>
+  <div class="hero-title">划词即译，原文对照<br>AI让英语阅读更轻松</div>
+  <div class="hero-desc">
+    在任何网页中轻松划词翻译，逐句插入对照，AI 上下文释义与发音，<br>
+    无需切换 App，边读边学、助力理解与记忆，专为网页而生的英语助手。
+  </div>
+  <div class="hero-buttons">
+    <a href="#" class="btn-main">App Store 免费下载</a>
+    <a href="#features" class="btn-main secondary">主要功能</a>
+  </div>
+  <div class="hero-mockup">
+    <!-- 替换为你的iPhone主界面mockup图，建议带外壳 -->
+    <img src="img/Screenshot-1.png" alt="应用主界面截图">
+  </div>
+</header>
+
+<!-- 快速价值主张区 -->
+<section class="section alt">
+  <div class="values-quick">
+    <div class="value-card">
+      <img src="img/icon-bolt.png" alt="">
+      <h3>网页原文对照</h3>
+      <p>右滑任意段落，智能插入译文，阅读原文无障碍。</p>
+    </div>
+    <div class="value-card">
+      <img src="img/icon-ai.png" alt="">
+      <h3>AI语境释义</h3>
+      <p>AI结合上下文查词，精准识别短语、句型，地道不生硬。</p>
+    </div>
+    <div class="value-card">
+      <img src="img/icon-sound.png" alt="">
+      <h3>高质量发音</h3>
+      <p>支持AI与本地TTS，随时听单词与整句，听力口语一起练。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 核心功能 -->
+<section class="section" id="features">
+  <div class="section-title">核心功能</div>
+  <div class="features-list">
+    <!-- 1 -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <h2>滑动翻译，逐句对照</h2>
+        <p>
+          在网页浏览时右滑任意一段文字，系统自动识别完整句子并将翻译插入原文下方。支持智能分段，译文与原文逐句对齐，<b>真正实现无缝对照阅读</b>。
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="img/Screenshot-1.png" alt="划词即译界面示例">
+      </div>
+    </div>
+    <!-- 2 -->
+    <div class="feature-row reverse">
+      <div class="feature-text">
+        <h2>双击查词，AI释义</h2>
+        <p>
+          双击单词，AI根据上下文智能分析释义，优先识别常用短语。<br>
+          告别生硬翻译，全面理解用法、词性、例句和搭配。
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="img/Screenshot-1.png" alt="AI查词示例">
+      </div>
+    </div>
+    <!-- 3 -->
+    <div class="feature-row">
+      <div class="feature-text">
+        <h2>AI发音与句型解析</h2>
+        <p>
+          单词与整句均支持AI发音/本地TTS自由切换，声音自然流畅。复杂句可一键结构分析，难句不再卡壳。
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="img/Screenshot-1.png" alt="发音和句型分析示例">
+      </div>
+    </div>
+    <!-- 4 -->
+    <div class="feature-row reverse">
+      <div class="feature-text">
+        <h2>历史自动保存，学习更有迹可循</h2>
+        <p>
+          所有划词、查词记录均按日期分组保存，一键回看和删除，方便复习和管理，学习进步一目了然。
+        </p>
+      </div>
+      <div class="feature-image">
+        <img src="img/Screenshot-1.png" alt="历史记录界面">
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <img src="wbw_logo.png" style="height:32px;margin-bottom:10px;">
+    <div class="footer-links">
+      <a href="#">隐私政策</a>
+      <a href="#">联系我们</a>
+      <a href="#">常见问题</a>
+    </div>
+    <div>© 2025 Word by Word. All rights reserved.</div>
+  </div>
+</footer>
+</body>
+</html>

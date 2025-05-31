@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Word by Word - 英语学习翻译助手</title>
+  <meta name="description" content="Word by Word：在浏览器中划词即译、逐句翻译、上下文释义与 AI 发音，一站式提升英语阅读与听力。" />
+  <style>
+    /* ========== 全局样式 Reset ========== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ========== 顶部导航 ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #007aff;
+    }
+    .btn-download {
+      background-color: #007aff;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .btn-download:hover {
+      background-color: #005bb5;
+    }
+
+    /* 占位：用于让主体内容避开固定导航栏 */
+    .nav-spacer {
+      height: 64px;
+    }
+
+    /* ========== Hero 横幅 ========== */
+    .hero {
+      background-color: #007aff;
+      color: #ffffff;
+      padding: 4rem 1rem 6rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.2;
+    }
+    .hero p.subtitle {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .hero .btn-group {
+      display: inline-flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero .btn-primary {
+      background-color: #ffd600;
+      color: #007aff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    .hero .btn-primary:hover {
+      background-color: #e0b900;
+    }
+    .hero .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background-color 0.2s;
+    }
+    .hero .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+    .hero .hero-image {
+      margin-top: 3rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    .hero .hero-image img {
+  /* 优先使用max-width保证不会超出容器，也不会太大 */
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 28px;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.20);
+}
+@media (max-width: 600px) {
+  .hero .hero-image img {
+    max-width: 70vw;
+  }
+}
+
+    /* ========== 功能亮点 Section ========== */
+    .features {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+    }
+    .features .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .feature-card {
+      background-color: #f0f8ff;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .feature-card img {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+    .feature-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #007aff;
+    }
+    .feature-card p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #444;
+    }
+
+    /* ========== 屏幕截图 Section ========== */
+    .screenshots {
+      background-color: #f9f9f9;
+      padding: 4rem 1rem;
+    }
+    .screenshots .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .screenshots h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .screenshot-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding-bottom: 1rem;
+    }
+    .screenshot-carousel img {
+      flex: 0 0 auto;
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      scroll-snap-align: center;
+    }
+
+    /* ========== 订阅与下载 Section ========== */
+    .cta {
+      background-color: #ffffff;
+      padding: 4rem 1rem;
+    }
+    .cta .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cta h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    .cta p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+    .cta .btn-download-store {
+      display: inline-block;
+      background-color: #ff2d55;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background-color 0.2s;
+    }
+    .cta .btn-download-store:hover {
+      background-color: #e0264c;
+    }
+    .cta .subscription-info {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    /* ========== 常见问题（FAQ） Section ========== */
+    .faq {
+      background-color: #f9f9f9;
+      padding: 4rem 1rem;
+    }
+    .faq .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: #222;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-item h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #007aff;
+    }
+    .faq-item p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* ========== 底部 Footer ========== */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      padding: 2rem 1rem;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .footer-logo img {
+      height: 36px;
+      margin-bottom: 1rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-links ul {
+      min-width: 120px;
+    }
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+    .footer-links a {
+      font-size: 0.9rem;
+      color: #555;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #007aff;
+    }
+    .footer-copy {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #999;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* ========== 响应式调整 ========== */
+    @media (max-width: 768px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .screenshot-carousel img {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <!-- 替换为你的 Logo 图片 -->
+        <a href="#"><img src="wbw_logo.png" alt="Word by Word Logo" /></a>
+      </div>
+      <nav class="nav-links">
+        <a href="#features">功能亮点</a>
+        <a href="#screenshots">截图展示</a>
+        <a href="#faq">常见问题</a>
+        <a href="#cta" class="btn-download">下载应用</a>
+      </nav>
+    </div>
+  </header>
+  <div class="nav-spacer"></div>
+
+  <!-- Hero 横幅区 -->
+  <section class="hero" id="hero">
+    <h1>Word by Word<br>随划随译 智能学英语</h1>
+    <p class="subtitle">
+      在任何网页中轻松划词翻译，逐句插入对照，AI 上下文释义与发音，告别传统查词。<br>
+      无需切换 App，就能在浏览中提升词汇与阅读理解。
+    </p>
+    <div class="btn-group">
+      <!-- 替换链接为 App Store 或相应下载地址 -->
+      <a href="#" class="btn-primary">App Store 下载</a>
+      <a href="#features" class="btn-secondary">了解更多</a>
+    </div>
+    <!-- 替换为真实应用截图或演示动图 -->
+    <div class="hero-image">
+      <img src="img/Screenshot-1.png" alt="应用界面示例" />
+    </div>
+  </section>
+
+  <!-- 功能亮点 Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>核心功能</h2>
+      <div class="feature-grid">
+        <!-- 功能卡片 1 -->
+        <div class="feature-card">
+          <img src="img/feature_swipe.png" alt="划词即译" />
+          <h3>划词即译</h3>
+          <p>
+            只需在浏览器页面中右滑任意一段文字，系统会自动识别完整句子并将翻译文本插入其下，方便用户随时查看。
+          </p>
+        </div>
+        <!-- 功能卡片 2 -->
+        <div class="feature-card">
+          <img src="img/feature_doubletap.png" alt="双击查词" />
+          <h3>双击查词</h3>
+          <p>
+            双击单个单词，获取 AI 驱动的上下文相关释义，避免脱离语境的错误理解，还能查看词性、例句与常用搭配。
+          </p>
+        </div>
+        <!-- 功能卡片 3 -->
+        <div class="feature-card">
+          <img src="img/feature_tts.png" alt="AI 发音" />
+          <h3>AI 发音</h3>
+          <p>
+            支持 AI 合成发音与本地 TTS 发音切换，为单词或整句提供自然流畅的语音播放，让听力练习更精准。
+          </p>
+        </div>
+        <!-- 功能卡片 4 -->
+        <div class="feature-card">
+          <img src="img/feature_context.png" alt="上下文解析" />
+          <h3>上下文解析</h3>
+          <p>
+            后端 AI 接口会分析单词在句子中的角色，优先识别常用短语，给出最贴合语境的释义，减少误解与歧义。
+          </p>
+        </div>
+        <!-- 功能卡片 5 -->
+        <div class="feature-card">
+          <img src="img/feature_history.png" alt="历史记录" />
+          <h3>历史记忆</h3>
+          <p>
+            自动保存划词与查词记录，按日期分组，支持一键查看详情与删除，让学习轨迹一目了然、方便复习。
+          </p>
+        </div>
+        <!-- 功能卡片 6 -->
+        <div class="feature-card">
+          <img src="img/feature_customize.png" alt="个性化设置" />
+          <h3>个性化设置</h3>
+          <p>
+            可自定义划词翻译与词语解析快捷键，调整 TTS 语速与音量，开启/关闭自动插入翻译，符合个人习惯。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 屏幕截图 Section -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <h2>界面预览</h2>
+      <div class="screenshot-carousel">
+        <!-- 替换为实际截图路径 -->
+        <img src="img/Screenshot-1.png" alt="划词翻译演示" />
+        <img src="img/Screenshot-1.png" alt="双击查词演示" />
+        <img src="img/Screenshot-1.png" alt="AI 发音演示" />
+        <img src="img/Screenshot-1.png" alt="历史记录界面" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 订阅与下载 Section -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <h2>免费下载，升级解锁更多</h2>
+      <p>
+        Word by Word 基本功能永久免费，包括划词翻译、双击查词与历史记录。  
+        订阅 “Pro 版” 即可获得：
+      </p>
+      <ul style="text-align: left; margin: 1rem auto; max-width: 400px; font-size: 0.95rem; color: #444; line-height: 1.5;">
+        <li>• 每日无限次 AI 翻译与上下文解析</li>
+        <li>• AI 发音次数不受限制，获取更流畅音质</li>
+        <li>• 句型结构分析与例句推荐</li>
+        <li>• 自定义主题与夜间模式</li>
+        <li>• 优先体验最新功能预览</li>
+      </ul>
+      <!-- 替换为 App Store 真正下载链接 -->
+      <a href="#" class="btn-download-store">App Store 立即下载</a>
+      <p class="subscription-info">
+        Pro 版订阅：<br />
+        • 月度订阅 48 元（支持 iOS 平台内购买） <br />
+        • 年度订阅 198 元 （约 2 个月 免费体验） <br />
+        • 所有订阅均可在应用内随时管理与取消。
+      </p>
+    </div>
+  </section>
+
+  <!-- 常见问题（FAQ） Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>常见问题</h2>
+      <div class="faq-item">
+        <h3>Q1：如何使用划词翻译功能？</h3>
+        <p>
+          只需在网页中用手指或鼠标右滑选中一段文字，应用会自动将该句翻译结果插入原文下方。若想取消翻译，只需向左滑动译文即可。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q2：双击查词时如何保证释义准确？</h3>
+        <p>
+          应用会将单词连同其周边上下文一并发送至后端 AI 服务，优先识别多词短语，并给出最贴合语境的释义与示例，让你不再被脱离语境的字面意思误导。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q3：免费版的使用限制有哪些？</h3>
+        <p>
+          免费版每日可使用 <strong>50 次</strong> AI 翻译与 <strong>20 次</strong> AI 发音，请合理安排学习计划。超过限制后可选择升级 Pro 版，或使用本地 TTS 发音模式。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q4：支持哪些语言之间的互译？</h3>
+        <p>
+          初始版本支持从 英语 到 中文、日语、韩语三种语言的翻译与释义；后续版本将陆续添加更多语言对。应用会自动检测 target_language 并调用对应 Prompt 模板，保证翻译质量。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q5：如何查看历史记录？</h3>
+        <p>
+          在主界面底部点击 “历史” 图标，即可进入 Word History 页面，按日期分组浏览曾经划词与查词的记录。可左右滑动删除单条记录，也可查看详细的上下文与释义。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <!-- 替换为你的 Logo 或图标 -->
+        <img src="img/logo_footer.png" alt="Word by Word Logo" />
+        <p style="font-size: 0.9rem; color: #555;">
+          © 2025 Word by Word。保留所有权利。<br />
+          由独立开发者维护，不收集个人隐私数据。
+        </p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">隐私政策</a></li>
+          <li><a href="#">使用条款</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">反馈与建议</a></li>
+          <li><a href="#">联系我们</a></li>
+          <li><a href="#">常见问题</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">微信公众号</a></li>
+          <li><a href="#">微博</a></li>
+          <li><a href="#">Bilibili</a></li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 100%;"></div>
+      <!-- <div class="footer-copy">
+        京ICP备20250000号  |  粤公网安备440300000000号
+      </div> -->
+    </div>
+  </footer>
+
+</body>
+</html>
