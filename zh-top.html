@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WordByWord - 外语学习翻译助手</title>
+  <meta name="description" content="WordByWord：在浏览器中划词即译、逐句翻译、上下文释义与 AI 发音，一站式提升外语阅读与听力。" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="#"><img src="wbw_logo.png" alt="Word by Word Logo" /></a>
+        <span class="app-title">WordByWord</span>
+      </div>
+      <nav class="nav-links-group">
+        <div class="nav-links">
+          <a href="#features">功能亮点</a>
+          <a href="#screenshots">截图展示</a>
+          <a href="#faq">常见问题</a>
+        </div>
+        <!-- <a href="#cta" class="btn-download">下载应用</a> -->
+      </nav>
+    </div>
+  </header>
+  <div class="nav-spacer"></div>
+
+  <!-- Hero 横幅区 -->
+  <section class="hero" id="hero">
+    <h1>Word by Word<br>随划随译 智能学外语</h1>
+    <p class="subtitle">
+      在任何网页中轻松划词翻译，逐句插入对照，AI 上下文释义与发音，告别传统查词。<br>
+      无需切换 App，就能在浏览中提升词汇与阅读理解。对应超过20 种语言对，支持中文、日语、韩语等多种语言互译。<br>
+      <strong>WordByWord</strong> 是你外语学习的智能助手，助你轻松掌握新语言。
+    </p>
+    <div class="btn-group">
+      <!-- 替换链接为 App Store 或相应下载地址 -->
+      <a href="#cta" class="btn-primary">App Store 下载</a>
+      <a href="#features" class="btn-secondary">了解更多</a>
+    </div>
+    <!-- Hero图片自适应 -->
+    <div class="hero-image">
+      <img src="img/Screenshot-1.png" alt="应用界面示例" />
+    </div>
+  </section>
+
+  <!-- 功能亮点 Section -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2>核心功能</h2>
+      
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/ChatGPT-feature_swipe.png" alt="滑动翻译图标" />
+            <h3>滑动翻译，逐句对照</h3>
+          </div>
+          <p>
+            在网页浏览时右滑任意一段文字，系统会自动识别完整句子并将翻译插入原文下方，支持智能分段，译文与原文逐句对齐，真正实现无缝对照阅读。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_swipe_demo.png" alt="滑动翻译" />
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_doubletap.png" alt="双击查词图标" />
+            <h3>双击查词，AI释义</h3>
+          </div>
+          <p>
+            双击单词，AI根据上下文智能分析释义，优先识别常用短语。告别生硬翻译，全面理解用法、词性、例句和搭配。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_doubletap_demo.png" alt="双击查词" />
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_tts.png" alt="AI发音图标" />
+            <h3>AI 发音，听说同步</h3>
+          </div>
+          <p>
+            支持AI合成与本地TTS发音切换，单词、整句均可流畅朗读，听力口语同步提升。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_tts_demo.png" alt="AI发音" />
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_context.png" alt="上下文解析图标" />
+            <h3>上下文解析，短语优先</h3>
+          </div>
+          <p>
+            后端AI智能识别句中词义、短语和搭配，用语境最相关的释义帮助你真正理解内容。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_context_demo.png" alt="上下文解析" />
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_history.png" alt="历史记录图标" />
+            <h3>历史记录，自动分组</h3>
+          </div>
+          <p>
+            自动保存所有划词与查词记录，按日期分组，支持一键查看、删除，学习轨迹一目了然。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_history_demo.png" alt="历史记录" />
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-header-horizontal">
+            <img src="img/feature_customize.png" alt="个性化设置图标" />
+            <h3>个性化设置，自由掌控</h3>
+          </div>
+          <p>
+            可自定义翻译/查词快捷键，调节TTS语速音量，主题配色自由切换，满足不同学习习惯。
+          </p>
+        </div>
+        <div class="feature-image">
+          <img src="img/feature_customize_demo.png" alt="个性化设置" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 屏幕截图 Section -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <h2>界面预览</h2>
+      <div class="screenshot-carousel">
+        <!-- 替换为实际截图路径 -->
+        <img src="img/Screenshot-1.png" alt="划词翻译演示" />
+        <img src="img/Screenshot-2.png" alt="双击查词演示" />
+        <img src="img/Screenshot-3.png" alt="AI 发音演示" />
+        <img src="img/Screenshot-4.png" alt="历史记录界面" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 订阅与下载 Section -->
+  <section class="cta" id="cta">
+    <div class="container">
+      <h2>免费下载，升级解锁更多</h2>
+      <p>
+        WordByWord 基本功能永久免费，包括划词翻译、本地TTS发音与每日AI功能的试用。  
+        订阅 “Plus 版” 即可获得：
+      </p>
+      <ul style="text-align: left; margin: 1rem auto; max-width: 400px; font-size: 0.95rem; color: #444; line-height: 1.5;">
+        <li>• 每日更多次数的 AI 翻译与上下文解析</li>
+        <li>• 更多次数的AI 发音，获取更逼真流畅的音质</li>
+        <li>• AI句型结构分析与例句推荐</li>
+        <li>• 自定义主题与夜间模式</li>
+        <li>• 优先体验最新功能预览</li>
+      </ul>
+      <!-- 替换为 App Store 真正下载链接 -->
+      <a href="#" class="btn-download-store">App Store 立即下载</a>
+      <p class="subscription-info">
+        Plus 版订阅：<br />
+        • 月度订阅 （支持 iOS 平台内购买） <br />
+        • 所有订阅均可在应用内随时管理与取消。
+      </p>
+    </div>
+  </section>
+
+  <!-- 常见问题（FAQ） Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>常见问题</h2>
+      <div class="faq-item">
+        <h3>Q1：如何使用划词翻译功能？</h3>
+        <p>
+          只需在网页中用手指右滑一段文字，应用会自动将该句翻译结果插入原文下方。若想取消翻译，只需向左滑动译文即可。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q2：双击查词时如何保证释义准确？</h3>
+        <p>
+          应用会将单词连同其周边上下文一并发送至后端 AI 服务，优先识别多词短语，并给出最贴合语境的释义与示例，让你不再被脱离语境的字面意思误导。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q3：免费版的使用限制有哪些？</h3>
+        <p>
+          免费版每日可使用 <strong>有限次数的</strong> AI 翻译与 <strong>20 次</strong> AI 发音，具体请查看应用内介绍。超过限制后可选择升级 Plus 版，或使用本地 TTS 发音模式。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q4：支持哪些语言之间的互译？</h3>
+        <p>
+          初始版本支持包括从 英语 到 中文、日语、韩语等超过20种语言对的翻译与释义；后续版本将陆续添加更多语言对。应用会自动检测 target language 并调用对应 Prompt 模板，保证翻译质量。
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Q5：如何查看历史记录？</h3>
+        <p>
+          在主界面底部点击 “历史” 图标，即可进入 Word History 页面，按日期分组浏览曾经划词与查词的记录。可左右滑动删除单条记录，也可查看详细的上下文与释义。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-logo">
+        <!-- 替换为你的 Logo 或图标 -->
+        <img src="img/wbw_logo.png" alt="WordByWord Logo" />
+        <p style="font-size: 0.9rem; color: #555;">
+          © 2025 WordByWord。保留所有权利。<br />
+          由独立开发者维护，不收集个人隐私数据。
+        </p>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="privacy.html">隐私政策</a></li>
+          <!-- <li><a href="#">关于我们</a></li> -->
+          <!-- <li><a href="#">使用条款</a></li> -->
+        </ul>
+        <ul>
+          <li><a href="support.html">联系我们</a></li>
+          <!-- <li><a href="#">反馈与建议</a></li> -->
+          <!-- <li><a href="#faq">常见问题</a></li> -->
+        </ul>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <!-- <li><a href="#">微信公众号</a></li> -->
+          <!-- <li><a href="#">微博</a></li> -->
+          <!-- <li><a href="#">Bilibili</a></li> -->
+        </ul>
+      </div>
+      <div style="flex: 1 1 100%;"></div>
+    </div>
+  </footer>
+
+</body>
+</html>
