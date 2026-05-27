@@ -1,6 +1,6 @@
 (function () {
   const config = {
-    enabled: true,
+    enabled: false,
     translations: {
       en: {
         eyebrow: 'Service Status Update',
