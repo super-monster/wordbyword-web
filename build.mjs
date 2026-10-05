@@ -87,8 +87,8 @@ function imageResolver(assets) {
   };
 }
 
-// Official Apple badge (doc 06 §3.5 / §7.4): assets/badges/<badge>.svg → fingerprinted URL, height 40, width from the
-// viewBox. null until the badge files exist (the template draws a placeholder; D-11 warns once).
+// Official Apple badge (doc 06 §3.5 / §7.4): assets/badges/<badge>.svg → fingerprinted URL, displayed 48 px high in
+// all three places (doc 05 §7.x), width from the viewBox. null while a file is missing (the template draws a badge).
 function badgeResolver(assets) {
   const cache = new Map();
   return (badge) => {
@@ -97,7 +97,7 @@ function badgeResolver(assets) {
     let res = null;
     if (existsSync(join(ROOT, rel))) {
       const vb = readFileSync(join(ROOT, rel), 'utf8').match(/viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)\s*"/);
-      res = { url: assets.publish(rel), w: vb ? Math.round((40 * Number(vb[1])) / Number(vb[2])) : 120, h: 40 };
+      res = { url: assets.publish(rel), w: vb ? Math.round((48 * Number(vb[1])) / Number(vb[2])) : 144, h: 48 };
     }
     cache.set(badge, res);
     return res;

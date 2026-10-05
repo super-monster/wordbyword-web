@@ -84,6 +84,9 @@ html[dir="rtl"] .link-arrow::after { transform: scaleX(-1); }
 .asb-text { display: flex; flex-direction: column; gap: 3px; }
 .asb-text small { font-size: 11px; letter-spacing: .01em; }
 .asb-text b { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+/* Apple's official SVG: shown as is (black in both themes, no recolouring, no hover change), 48 px high (doc 05) */
+.asb--official, .asb--official:hover { padding: 0; border: 0; border-radius: 8px; background: none; block-size: auto; }
+.asb--official img { display: block; block-size: 48px; inline-size: auto; }
 
 .media-cap { margin-block-start: var(--s-2); color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.4; }
 

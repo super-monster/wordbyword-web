@@ -534,7 +534,7 @@ test('D-11 SurfEnglish placements and App Store attribution (R3, R35, R40, R42, 
         .replace('<a class="sibling__store"', '<a class="asb"')
         .replace('href="https://surfenglish.app/"', 'href="https://surfenglish.app/?utm_source=wbw"');
       return h.replace(card, '').replace('<section id="pricing"', `${moved}\n<section id="pricing"`)
-        .replace('<div class="pricing-cta"><a class="asb"', '<div class="pricing-cta"><a class="btn"')
+        .replace(/<div class="pricing-cta"><a class="asb[^"]*"/, '<div class="pricing-cta"><a class="btn"') // drawn or official badge
         .replace('<main id="main">', '<main id="main"><p data-ga-label="langhint_anchor" data-ga-view="x"><a href="https://apps.apple.com/app/apple-store/id6741724502?pt=1&ct=wbw-hero-en&mt=8">x</a></p>');
     });
     edit(d, 'zh-hans/index.html', inMain('<a href="https://apps.apple.com/app/id6787367021">SurfEnglish</a>'));

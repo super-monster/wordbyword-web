@@ -23,8 +23,8 @@ export const SVG = {
 
 const APPLE = 'M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z';
 
-// WordByWord App Store badge. Apple's official localized SVG replaces the drawn placeholder once
-// assets/badges/<badge>.svg is present (doc 06 §7.4; fetching the badges needs the owner's OK).
+// WordByWord App Store badge: Apple's official localized SVG from assets/badges/<badge>.svg (scripts/badges.sh,
+// doc 06 §7.4), lazy like every image but the first (D-6). The drawn badge is the fallback while a file is missing.
 const BADGE_LINES = {
   'en-us': ['Download on the', 'App Store'], 'ja-jp': ['App Storeから', 'ダウンロード'], 'zh-cn': ['从 App Store', '下载'],
   'zh-tw': ['在 App Store', '下載'], 'ko-kr': ['App Store에서', '다운로드'],
@@ -34,7 +34,7 @@ export function badge(ctx, { href, gaLabel }) {
   const label = ctx.t.common.appStoreBadgeAlt;
   const official = ctx.badgeUrl?.(l.badge);
   if (official) {
-    return `<a class="asb asb--official" href="${esc(href)}" data-ga-label="${gaLabel}"><img src="${official.url}" width="${official.w}" height="${official.h}" alt="${esc(label)}"></a>`;
+    return `<a class="asb asb--official" href="${esc(href)}" data-ga-label="${gaLabel}"><img src="${official.url}" width="${official.w}" height="${official.h}" alt="${esc(label)}" loading="lazy" decoding="async"></a>`;
   }
   const [small, big] = BADGE_LINES[l.badge] ?? BADGE_LINES['en-us'];
   return `<a class="asb" href="${esc(href)}" aria-label="${esc(label)}" data-ga-label="${gaLabel}"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="${APPLE}"/></svg><span class="asb-text" aria-hidden="true"><small>${esc(small)}</small><b>${esc(big)}</b></span></a>`;
