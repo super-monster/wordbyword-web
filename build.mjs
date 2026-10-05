@@ -4,6 +4,7 @@
 import { mkdirSync, rmSync, writeFileSync, readdirSync, statSync, copyFileSync, existsSync, readFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { performance } from 'node:perf_hooks';
+import { execFileSync } from 'node:child_process';
 
 import { SITE, LOCALES, PAGES, CONTRACTS, ALIASES, contractModeOf } from './src/site.mjs';
 import { buildRedirects, readRedirectFixture, buildHeaders, buildSitemap, buildRobots, alternatesFor, gitInfo } from './src/lib/seo.mjs';
@@ -102,6 +103,20 @@ function expandRoutes() {
 
 // ———————————————————————————— build ————————————————————————————
 
+// SPIKE BRANCH ONLY (spike/unshallow): can the Cloudflare build image deepen its depth-1 clone? Never merge.
+const __unshallow = (() => {
+  if (!process.env.CF_PAGES) return { skipped: 'not a Cloudflare build' };
+  const red = (s) => String(s ?? '').replace(/\/\/[^@/\s]+@/g, '//***@').slice(0, 600);
+  const g = (a) => { try { return { ok: true, out: red(execFileSync('git', a, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'], timeout: 90000 }).trim()) }; } catch (e) { return { ok: false, out: red(e.stderr || e.message) }; } };
+  const d = { remoteHost: g(['remote', 'get-url', 'origin']), before: g(['rev-parse', '--is-shallow-repository']), countBefore: g(['rev-list', '--count', 'HEAD']) };
+  const t = performance.now();
+  d.fetch = g(['fetch', '--unshallow', '--quiet', 'origin']);
+  d.fetchMs = Math.round(performance.now() - t);
+  d.after = g(['rev-parse', '--is-shallow-repository']);
+  d.countAfter = g(['rev-list', '--count', 'HEAD']);
+  d.aboutDate = g(['log', '-1', '--format=%cs', '--', 'src/locales/en.json', 'src/templates/about.mjs']);
+  return d;
+})();
 const git = gitInfo();
 
 // Locale copy: a locale without src/locales/<code>.json is not published yet (doc 06 §4.4: no per-key fallback
@@ -225,4 +240,5 @@ for (const w of issues.warn) console.warn(`warn   ${w}`);
 for (const e of issues.error) console.error(`error  ${e}`);
 const files = walk(DIST).length;
 console.log(`${issues.error.length ? '✗' : '✓'} ${routes.length} pages, ${files} files, _redirects ${redirects.static}/${redirects.dynamic} → ${relative(ROOT, DIST)}/ in ${Math.round(performance.now() - t0)} ms (node ${process.version})`);
+writeFileSync(join(DIST, '__unshallow.json'), JSON.stringify(__unshallow, null, 2) + '\n'); // SPIKE
 process.exit(issues.error.length ? 1 : 0);
