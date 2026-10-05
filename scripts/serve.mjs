@@ -2,12 +2,12 @@
 // Local stand-in for Cloudflare Pages serving dist/ (doc 06 §11.1). Zero dependencies, Node ≥ 22.
 // It only approximates CF: acceptance is always the CF preview (research 09 §5.10).
 //
-// Usage: node scripts/serve.mjs [--port 4580] [--dir dist] [--emulate-host <hostname>] [--nested-404] [--quiet]
+// Usage: node scripts/serve.mjs [--port 4580] [--dir dist] [--emulate-host <hostname>] [--flat-404] [--quiet]
 //   --dir           output directory (default: <repo>/dist)
 //   --emulate-host  treat every request as sent to <hostname> instead of the Host header, so that host rules in
 //                   _headers apply: e.g. main.wordbyword-web.pages.dev (preview: X-Robots-Tag: noindex)
-//   --nested-404    serve the nearest <dir>/404.html before /404.html. CF's source does this (doc 02 §6.9 quotes the
-//                   docs) but it is NOT verified on our project yet (M1-03), so it is off by default.
+//   --flat-404      serve only /404.html. Default: the nearest <dir>/404.html first, as CF does (doc 02 §6.9; verified
+//                   on this project's previews in M1-03, 2026-10-06: /ja/missing served /ja/404.html).
 //
 // Modelled on CF's asset server (workers-sdk packages/pages-shared/asset-server/handler.ts) and checked against a
 // live Pages site. Order per request:
@@ -20,9 +20,9 @@
 //  4. Not found → /404.html with status 404. Without any 404.html CF assumes an SPA: /index.html with 200 (D-14).
 //  5. Headers: CF defaults (access-control-allow-origin, referrer-policy, nosniff, etag,
 //     cache-control: public, max-age=0, must-revalidate; x-robots-tag: noindex on *.<project>.pages.dev previews),
-//     then every matching _headers rule in file order: the first rule that sets a name replaces it, later rules append
-//     (CF joins with ", "); "! Name" removes it. Applied to every response, redirects and 404s included (verified on
-//     a live Pages site); a 404 always ends with cache-control: no-store.
+//     then every matching _headers rule in file order: the first rule that sets a name replaces it, later rules add one
+//     more field line each (CF sends separate lines, M1-03); "! Name" removes it. Applied to every response, redirects
+//     and 404s included (verified on a live Pages site); a 404 always ends with cache-control: no-store.
 // Not emulated: compression, early hints, http→https, Pages Functions, _routes.json, zone features.
 
 import { createServer } from 'node:http';
@@ -39,13 +39,13 @@ const opt = (name, fallback) => {
   return args[i + 1];
 };
 if (args.includes('--help') || args.includes('-h')) {
-  console.log('node scripts/serve.mjs [--port 4580] [--dir dist] [--emulate-host <hostname>] [--nested-404] [--quiet]');
+  console.log('node scripts/serve.mjs [--port 4580] [--dir dist] [--emulate-host <hostname>] [--flat-404] [--quiet]');
   process.exit(0);
 }
 const PORT = Number(opt('--port', 4580));
 const DIR = resolve(opt('--dir', join(dirname(fileURLToPath(import.meta.url)), '..', 'dist')));
 const AS_HOST = opt('--emulate-host', null);
-const NESTED_404 = args.includes('--nested-404');
+const NESTED_404 = !args.includes('--flat-404');
 const QUIET = args.includes('--quiet');
 if (!Number.isInteger(PORT) || PORT <= 0) { console.error('serve.mjs: --port needs a number'); process.exit(2); }
 if (!existsSync(DIR)) { console.error(`serve.mjs: ${DIR} does not exist — run node build.mjs first`); process.exit(1); }
@@ -175,7 +175,7 @@ function route({ files, redirects }, method, url) {
 }
 
 function notFound(files, path) {
-  for (let dir = path; dir;) { // CF walks up from the request path; only /404.html unless --nested-404
+  for (let dir = path; dir;) { // CF walks up from the request path; only /404.html with --flat-404
     dir = dir.slice(0, dir.lastIndexOf('/'));
     if ((NESTED_404 || !dir) && files.has(`${dir}/404.html`)) return { status: 404, file: `${dir}/404.html` };
   }
@@ -196,38 +196,39 @@ function handle(req, res) {
     res.writeHead(400); return res.end();
   }
   const r = route(s, req.method, url);
-  const h = new Headers();
+  const h = new Map(); // lower-case name → field values, one line each (CF does not join across rules, M1-03)
+  const set = (k, v) => h.set(k, [v]);
   let body = null;
-  if (r.location) h.set('location', r.location);
+  if (r.location) set('location', r.location);
   if (r.file) {
     body = readFileSync(join(DIR, r.file));
-    h.set('content-type', TYPES[extname(r.file).slice(1).toLowerCase()] ?? 'application/octet-stream');
+    set('content-type', TYPES[extname(r.file).slice(1).toLowerCase()] ?? 'application/octet-stream');
     if (r.status === 200) {
       const etag = `"${createHash('md5').update(body).digest('hex')}"`;
       if (req.headers['if-none-match'] === etag) { r.status = 304; body = null; }
-      h.set('etag', etag);
-      h.set('cache-control', 'public, max-age=0, must-revalidate');
-      if (isPreview(url.hostname)) h.set('x-robots-tag', 'noindex');
+      set('etag', etag);
+      set('cache-control', 'public, max-age=0, must-revalidate');
+      if (isPreview(url.hostname)) set('x-robots-tag', 'noindex');
     }
   } else if (r.status >= 400) {
     body = Buffer.from(r.status === 404 ? 'Not Found\n' : 'Method Not Allowed\n');
-    h.set('content-type', 'text/plain; charset=utf-8');
+    set('content-type', 'text/plain; charset=utf-8');
   }
-  h.set('access-control-allow-origin', '*');
-  h.set('referrer-policy', 'strict-origin-when-cross-origin');
-  if (h.has('content-type')) h.set('x-content-type-options', 'nosniff');
+  set('access-control-allow-origin', '*');
+  set('referrer-policy', 'strict-origin-when-cross-origin');
+  if (h.has('content-type')) set('x-content-type-options', 'nosniff');
   const done = new Set();
   for (const rule of s.headers) {
     const groups = test(rule, url); // matched against the requested URL, not the rewrite target
     if (!groups) continue;
     rule.unset.forEach((k) => h.delete(k));
     for (const [k, v] of Object.entries(rule.set)) {
-      if (done.has(k)) h.append(k, fill(v, groups)); else { h.set(k, fill(v, groups)); done.add(k); }
+      if (done.has(k)) h.get(k).push(fill(v, groups)); else { set(k, fill(v, groups)); done.add(k); }
     }
   }
-  if (r.status === 404) h.set('cache-control', 'no-store');
-  if (body) h.set('content-length', String(body.length));
-  res.writeHead(r.status, Object.fromEntries(h));
+  if (r.status === 404) set('cache-control', 'no-store');
+  if (body) set('content-length', String(body.length));
+  res.writeHead(r.status, Object.fromEntries([...h].map(([k, v]) => [k, v.length > 1 ? v : v[0]])));
   res.end(req.method === 'HEAD' || !body ? undefined : body);
   if (!QUIET) {
     const note = r.location ? ` → ${r.location}` : r.rewrite ? ` (200 rewrite → ${r.rewrite})` : r.spa ? ' (SPA fallback: no 404.html)' : '';
@@ -238,6 +239,6 @@ function handle(req, res) {
 createServer(handle)
   .on('error', (e) => { console.error(`serve.mjs: ${e.message}`); process.exit(1); })
   .listen(PORT, '127.0.0.1', () => {
-    const extras = [AS_HOST && `as host ${AS_HOST}`, NESTED_404 && 'nested 404'].filter(Boolean).join(', ');
+    const extras = [AS_HOST && `as host ${AS_HOST}`, !NESTED_404 && 'flat 404'].filter(Boolean).join(', ');
     console.log(`serve.mjs: ${DIR} on http://127.0.0.1:${PORT}/${extras ? ` (${extras})` : ''} — approximates Cloudflare Pages; acceptance is the CF preview`);
   });

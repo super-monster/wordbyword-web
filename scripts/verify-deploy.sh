@@ -12,7 +12,8 @@
 # The only constants are Cloudflare's own: 308 for its automatic redirects and 404 for unknown paths.
 #
 # Usage: bash scripts/verify-deploy.sh <BASE> [--preview|--prod]   (run `node build.mjs` on the deployed commit first)
-#   QUERY_PRESERVED=0 (default): a redirect that drops the query string is a WARN; 1 makes it a FAIL (doc 02 §5.3-6).
+#   QUERY_PRESERVED=1 (default since M1-03 measured query preservation on CF, 2026-10-06): a redirect that drops the
+#   query string is a FAIL; 0 downgrades it to a WARN (doc 02 §5.3-6).
 #   A BASE on 127.0.0.1/localhost (scripts/serve.mjs) reports as SKIP what only the real edge can answer: the
 #   deployed-commit stamp, the preview X-Robots-Tag (unless serve.mjs runs with --emulate-host <x>.<project>.pages.dev),
 #   and the --prod server header and http → https.
@@ -24,7 +25,7 @@ B=${1:-}; [ -n "$B" ] || usage
 B=${B%/}; shift
 MODE=preview
 for a in "$@"; do case "$a" in --preview) MODE=preview ;; --prod) MODE=prod ;; *) usage ;; esac; done
-QP=${QUERY_PRESERVED:-0}; case "$QP" in 0 | 1) ;; *) usage ;; esac
+QP=${QUERY_PRESERVED:-1}; case "$QP" in 0 | 1) ;; *) usage ;; esac
 case "$B" in
   http://127.* | http://localhost | http://localhost:* | http://\[::1\]* | http://0.0.0.0* | http://*.localhost | http://*.localhost:*) LOCAL=1 ;;
   *) LOCAL=0 ;;
