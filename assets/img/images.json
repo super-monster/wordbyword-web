@@ -1,0 +1,403 @@
+{
+  "shot/en/swipe": {
+    "src": "git:img/en/feature_swipe_demo.png",
+    "srcHash": "a0de9703b7e2ba10",
+    "preset": "demo",
+    "crop": {"x":122,"y":293,"w":1286,"h":2622},
+    "alpha": false,
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":28017,"path":"assets/img/shot/en/swipe-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":46800,"path":"assets/img/shot/en/swipe-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":65239,"path":"assets/img/shot/en/swipe-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":116250,"path":"assets/img/shot/en/swipe-540.jpg"}
+    ]
+  },
+  "shot/en/lookup": {
+    "src": "git:img/en/feature_doubletap_demo.png",
+    "srcHash": "ca8745007d3ec77d",
+    "preset": "demo",
+    "crop": {"x":122,"y":293,"w":1286,"h":2622},
+    "alpha": false,
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "pins": [
+      {"n":1,"side":"start","y":0.403},
+      {"n":2,"side":"start","y":0.747},
+      {"n":3,"side":"end","y":0.83}
+    ],
+    "ring": {"x":0.385,"y":0.388,"w":0.29,"h":0.032},
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":23779,"path":"assets/img/shot/en/lookup-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":42345,"path":"assets/img/shot/en/lookup-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":58937,"path":"assets/img/shot/en/lookup-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":105875,"path":"assets/img/shot/en/lookup-540.jpg"}
+    ]
+  },
+  "shot/en/tts-ex": {
+    "src": "git:img/en/feature_tts_demo.png",
+    "srcHash": "7f6fd0372f52d393",
+    "preset": "demo",
+    "region": {"y":0.652,"h":0.259},
+    "crop": {"x":122,"y":1942,"w":1286,"h":724},
+    "alpha": false,
+    "edge": {"inkTop":0,"inkBottom":0,"stdTop":6.09,"stdBottom":0.35},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":11687,"path":"assets/img/shot/en/tts-ex-720.avif"},
+      {"format":"avif","w":1080,"h":608,"bytes":18173,"path":"assets/img/shot/en/tts-ex-1080.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":31823,"path":"assets/img/shot/en/tts-ex-720.jpg"}
+    ]
+  },
+  "shot/en/syntax-ex": {
+    "src": "git:img/en/feature_history_demo.png",
+    "srcHash": "5ff992b43c59056f",
+    "preset": "demo",
+    "region": {"y":0.4,"h":0.259},
+    "crop": {"x":122,"y":1238,"w":1286,"h":724},
+    "alpha": false,
+    "edge": {"inkTop":0,"inkBottom":0,"stdTop":0,"stdBottom":3.61},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":13715,"path":"assets/img/shot/en/syntax-ex-720.avif"},
+      {"format":"avif","w":1080,"h":608,"bytes":19485,"path":"assets/img/shot/en/syntax-ex-1080.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":34427,"path":"assets/img/shot/en/syntax-ex-720.jpg"}
+    ]
+  },
+  "shot/en/settings": {
+    "src": "git:img/en/feature_customize_demo.png",
+    "srcHash": "2ac44c4bbabfff3b",
+    "preset": "demo",
+    "crop": {"x":122,"y":293,"w":1286,"h":2622},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":9668,"path":"assets/img/shot/en/settings-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":17764,"path":"assets/img/shot/en/settings-540.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":55035,"path":"assets/img/shot/en/settings-540.jpg"}
+    ]
+  },
+  "shot/en/dictionary": {
+    "src": "git:img/en/more_definitions.png",
+    "srcHash": "edbb84cb2929f18e",
+    "preset": "demo",
+    "crop": {"x":122,"y":293,"w":1286,"h":2622},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":12062,"path":"assets/img/shot/en/dictionary-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":21358,"path":"assets/img/shot/en/dictionary-540.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":59132,"path":"assets/img/shot/en/dictionary-540.jpg"}
+    ]
+  },
+  "shot/en/languages": {
+    "src": "git:img/en/language_setting_en.PNG",
+    "srcHash": "6da6b0127b23dcc5",
+    "preset": "raw",
+    "crop": {"x":0,"y":162,"w":1206,"h":2460},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":4824,"path":"assets/img/shot/en/languages-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":8706,"path":"assets/img/shot/en/languages-540.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":29990,"path":"assets/img/shot/en/languages-540.jpg"}
+    ]
+  },
+  "shot/en/language-list": {
+    "src": "git:img/en/select_language_en.PNG",
+    "srcHash": "7bbb08cec242233d",
+    "preset": "raw",
+    "crop": {"x":0,"y":162,"w":1206,"h":2460},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":11710,"path":"assets/img/shot/en/language-list-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":21021,"path":"assets/img/shot/en/language-list-540.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":64757,"path":"assets/img/shot/en/language-list-540.jpg"}
+    ]
+  },
+  "shot/ja/swipe": {
+    "src": "res:wbw_jp/wbw_jp.001.png",
+    "srcHash": "8220bae440b458dc",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":29066,"path":"assets/img/shot/ja/swipe-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":49327,"path":"assets/img/shot/ja/swipe-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":64416,"path":"assets/img/shot/ja/swipe-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":117482,"path":"assets/img/shot/ja/swipe-540.jpg"}
+    ]
+  },
+  "shot/ja/lookup": {
+    "src": "res:wbw_jp/wbw_jp.002.png",
+    "srcHash": "a849cd0f4778a3f3",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "pins": [
+      {"n":1,"side":"start","y":0.372},
+      {"n":2,"side":"start","y":0.733},
+      {"n":3,"side":"end","y":0.83}
+    ],
+    "ring": {"x":0.025,"y":0.355,"w":0.19,"h":0.035},
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":23542,"path":"assets/img/shot/ja/lookup-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":39764,"path":"assets/img/shot/ja/lookup-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":53794,"path":"assets/img/shot/ja/lookup-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":96014,"path":"assets/img/shot/ja/lookup-540.jpg"}
+    ]
+  },
+  "shot/ja/tts-ex": {
+    "src": "res:wbw_jp/wbw_jp.003.png",
+    "srcHash": "271b65416517ee1f",
+    "preset": "marketing",
+    "region": {"y":0.661,"h":0.259},
+    "crop": {"x":221,"y":2029,"w":842,"h":474},
+    "alpha": false,
+    "edge": {"inkTop":0,"inkBottom":0,"stdTop":1.04,"stdBottom":0.93},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":10612,"path":"assets/img/shot/ja/tts-ex-720.avif"},
+      {"format":"avif","w":842,"h":474,"bytes":13072,"path":"assets/img/shot/ja/tts-ex-842.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":31632,"path":"assets/img/shot/ja/tts-ex-720.jpg"}
+    ]
+  },
+  "shot/ja/syntax-ex": {
+    "src": "res:wbw_jp/wbw_jp.004.png",
+    "srcHash": "914e11ff2c58c3aa",
+    "preset": "marketing",
+    "region": {"y":0.54,"h":0.259},
+    "crop": {"x":221,"y":1807,"w":842,"h":474},
+    "alpha": false,
+    "edge": {"inkTop":0,"inkBottom":0,"stdTop":0.97,"stdBottom":4.41},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":15601,"path":"assets/img/shot/ja/syntax-ex-720.avif"},
+      {"format":"avif","w":842,"h":474,"bytes":18996,"path":"assets/img/shot/ja/syntax-ex-842.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":41325,"path":"assets/img/shot/ja/syntax-ex-720.jpg"}
+    ]
+  },
+  "shot/ja/settings": {
+    "src": "res:wbw_jp/wbw_jp.006.png",
+    "srcHash": "7f43c922e055f021",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":8757,"path":"assets/img/shot/ja/settings-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":15574,"path":"assets/img/shot/ja/settings-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":19818,"path":"assets/img/shot/ja/settings-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":50781,"path":"assets/img/shot/ja/settings-540.jpg"}
+    ]
+  },
+  "shot/ja/dictionary": {
+    "src": "res:wbw_jp/wbw_jp.007.png",
+    "srcHash": "5edd8b3a68485c98",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":12210,"path":"assets/img/shot/ja/dictionary-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":21121,"path":"assets/img/shot/ja/dictionary-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":27950,"path":"assets/img/shot/ja/dictionary-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":58920,"path":"assets/img/shot/ja/dictionary-540.jpg"}
+    ]
+  },
+  "shot/zh-hans/swipe": {
+    "src": "res:wbw_zh/zh-右滑翻译.png",
+    "srcHash": "032bb662e10ac474",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":24624,"path":"assets/img/shot/zh-hans/swipe-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":45144,"path":"assets/img/shot/zh-hans/swipe-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":56830,"path":"assets/img/shot/zh-hans/swipe-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":109708,"path":"assets/img/shot/zh-hans/swipe-540.jpg"}
+    ]
+  },
+  "shot/zh-hans/lookup": {
+    "src": "res:wbw_zh/zh-双击.001.png",
+    "srcHash": "f9f65a286bf74f2e",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#0E0E0E",
+    "statusTone": "light",
+    "pins": [
+      {"n":1,"side":"start","y":0.303},
+      {"n":2,"side":"start","y":0.747},
+      {"n":3,"side":"end","y":0.83}
+    ],
+    "ring": {"x":0.025,"y":0.286,"w":0.288,"h":0.033},
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":28627,"path":"assets/img/shot/zh-hans/lookup-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":46777,"path":"assets/img/shot/zh-hans/lookup-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":62808,"path":"assets/img/shot/zh-hans/lookup-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":115308,"path":"assets/img/shot/zh-hans/lookup-540.jpg"}
+    ]
+  },
+  "shot/zh-hans/tts-ex": {
+    "src": "res:wbw_zh/zh-TTS.001.png",
+    "srcHash": "4b9b220fdc44eae3",
+    "preset": "marketing",
+    "region": {"y":0.6667,"h":0.259},
+    "crop": {"x":221,"y":2039,"w":842,"h":474},
+    "alpha": false,
+    "edge": {"inkTop":0.0009,"inkBottom":0,"stdTop":2.99,"stdBottom":1.28},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":9833,"path":"assets/img/shot/zh-hans/tts-ex-720.avif"},
+      {"format":"avif","w":842,"h":474,"bytes":11414,"path":"assets/img/shot/zh-hans/tts-ex-842.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":29839,"path":"assets/img/shot/zh-hans/tts-ex-720.jpg"}
+    ]
+  },
+  "shot/zh-hans/syntax-ex": {
+    "src": "res:wbw_zh/AI句型解析.001.png",
+    "srcHash": "df6ee101cbea6c90",
+    "preset": "marketing",
+    "region": {"y":0.2,"h":0.259},
+    "crop": {"x":221,"y":1185,"w":842,"h":474},
+    "alpha": false,
+    "edge": {"inkTop":0,"inkBottom":0,"stdTop":3.34,"stdBottom":3.93},
+    "variants": [
+      {"format":"avif","w":720,"h":404,"bytes":10646,"path":"assets/img/shot/zh-hans/syntax-ex-720.avif"},
+      {"format":"avif","w":842,"h":474,"bytes":12342,"path":"assets/img/shot/zh-hans/syntax-ex-842.avif"},
+      {"format":"jpg","w":720,"h":404,"bytes":29401,"path":"assets/img/shot/zh-hans/syntax-ex-720.jpg"}
+    ]
+  },
+  "shot/zh-hans/settings": {
+    "src": "res:wbw_zh/zh-设置.001.png",
+    "srcHash": "a470dff94c14fa29",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":7138,"path":"assets/img/shot/zh-hans/settings-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":13058,"path":"assets/img/shot/zh-hans/settings-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":16886,"path":"assets/img/shot/zh-hans/settings-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":46806,"path":"assets/img/shot/zh-hans/settings-540.jpg"}
+    ]
+  },
+  "shot/zh-hans/dictionary": {
+    "src": "res:wbw_zh/zh-更多.001.png",
+    "srcHash": "e899b2165fae29f1",
+    "preset": "marketing",
+    "crop": {"x":221,"y":932,"w":842,"h":1717},
+    "alpha": false,
+    "statusBg": "#000000",
+    "statusTone": "light",
+    "variants": [
+      {"format":"avif","w":360,"h":734,"bytes":10485,"path":"assets/img/shot/zh-hans/dictionary-360.avif"},
+      {"format":"avif","w":540,"h":1100,"bytes":18150,"path":"assets/img/shot/zh-hans/dictionary-540.avif"},
+      {"format":"avif","w":720,"h":1468,"bytes":23939,"path":"assets/img/shot/zh-hans/dictionary-720.avif"},
+      {"format":"jpg","w":540,"h":1100,"bytes":53355,"path":"assets/img/shot/zh-hans/dictionary-540.jpg"}
+    ]
+  },
+  "ext/common/hero": {
+    "src": "git:chrome-extension/img/hero-screenshot.png",
+    "srcHash": "5a30ee86caa8ec89",
+    "crop": {"x":0,"y":0,"w":1280,"h":800},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":640,"h":400,"bytes":16815,"path":"assets/img/ext/common/hero-640.avif"},
+      {"format":"avif","w":960,"h":600,"bytes":32525,"path":"assets/img/ext/common/hero-960.avif"},
+      {"format":"avif","w":1280,"h":800,"bytes":49145,"path":"assets/img/ext/common/hero-1280.avif"},
+      {"format":"jpg","w":1280,"h":800,"bytes":147761,"path":"assets/img/ext/common/hero-1280.jpg"}
+    ]
+  },
+  "ext/common/popup": {
+    "src": "git:chrome-extension/img/screenshot-1.png",
+    "srcHash": "992d4db1be46f63c",
+    "crop": {"x":0,"y":0,"w":1280,"h":800},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":640,"h":400,"bytes":18413,"path":"assets/img/ext/common/popup-640.avif"},
+      {"format":"avif","w":960,"h":600,"bytes":35295,"path":"assets/img/ext/common/popup-960.avif"},
+      {"format":"jpg","w":960,"h":600,"bytes":98828,"path":"assets/img/ext/common/popup-960.jpg"}
+    ]
+  },
+  "ext/common/selection": {
+    "src": "git:chrome-extension/img/screenshot-2.png",
+    "srcHash": "4d23c4c976be9538",
+    "crop": {"x":0,"y":0,"w":1280,"h":800},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":640,"h":400,"bytes":18498,"path":"assets/img/ext/common/selection-640.avif"},
+      {"format":"avif","w":960,"h":600,"bytes":35703,"path":"assets/img/ext/common/selection-960.avif"},
+      {"format":"jpg","w":960,"h":600,"bytes":96176,"path":"assets/img/ext/common/selection-960.jpg"}
+    ]
+  },
+  "ext/common/strip-inline": {
+    "src": "git:chrome-extension/img/feature-inline.png",
+    "srcHash": "6bb8933f6e1aa001",
+    "crop": {"x":0,"y":0,"w":786,"h":500},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":786,"h":500,"bytes":22703,"path":"assets/img/ext/common/strip-inline-786.avif"},
+      {"format":"jpg","w":786,"h":500,"bytes":84865,"path":"assets/img/ext/common/strip-inline-786.jpg"}
+    ]
+  },
+  "ext/common/strip-definition": {
+    "src": "git:chrome-extension/img/feature-definition.png",
+    "srcHash": "889b277b61c5561c",
+    "crop": {"x":0,"y":0,"w":708,"h":252},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":708,"h":252,"bytes":12547,"path":"assets/img/ext/common/strip-definition-708.avif"},
+      {"format":"jpg","w":708,"h":252,"bytes":45362,"path":"assets/img/ext/common/strip-definition-708.jpg"}
+    ]
+  },
+  "ext/common/strip-structure": {
+    "src": "git:chrome-extension/img/feature-structure.png",
+    "srcHash": "32a86b068ab2e7c9",
+    "crop": {"x":0,"y":0,"w":734,"h":234},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":734,"h":234,"bytes":13016,"path":"assets/img/ext/common/strip-structure-734.avif"},
+      {"format":"jpg","w":734,"h":234,"bytes":42859,"path":"assets/img/ext/common/strip-structure-734.jpg"}
+    ]
+  },
+  "se/common/games": {
+    "src": "se:public/images/screenshots/games-home.jpg",
+    "srcHash": "ba9154bc75d3dd6b",
+    "crop": {"x":0,"y":112,"w":720,"h":792},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":400,"h":440,"bytes":7264,"path":"assets/img/se/common/games-400.avif"},
+      {"format":"jpg","w":400,"h":440,"bytes":20653,"path":"assets/img/se/common/games-400.jpg"}
+    ]
+  },
+  "se/common/icon": {
+    "src": "se:public/icons/appicon-1024.png",
+    "srcHash": "daf289ae04813a02",
+    "crop": {"x":0,"y":0,"w":1024,"h":1024},
+    "alpha": false,
+    "variants": [
+      {"format":"png","w":64,"h":64,"bytes":3078,"path":"assets/img/se/common/icon-64.png"}
+    ]
+  },
+  "brand/common/icon": {
+    "src": "ios:WordByWordPrototype/Assets.xcassets/AppIcon.appiconset/AppIcon~ios-marketing.png",
+    "srcHash": "ba80e22bf2feaf8c",
+    "crop": {"x":0,"y":0,"w":1024,"h":1024},
+    "alpha": false,
+    "variants": [
+      {"format":"png","w":64,"h":64,"bytes":2185,"path":"assets/img/brand/common/icon-64.png"},
+      {"format":"png","w":160,"h":160,"bytes":4730,"path":"assets/img/brand/common/icon-160.png"}
+    ]
+  }
+}

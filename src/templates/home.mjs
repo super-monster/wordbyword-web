@@ -245,7 +245,7 @@ export function home(ctx) {
   const cta = `
 <section id="cta" class="section section--band final-cta" aria-labelledby="cta-h">
   <div class="container cta-layout">
-    <div class="cta-mark" aria-hidden="true">${icon(ctx, 'brand/wbw-icon-160', 80, { cls: 'cta-icon' })}${mosaicSquare('mosaic mosaic--cta')}</div>
+    <div class="cta-mark" aria-hidden="true">${icon(ctx, 'brand/common/icon', 80, { cls: 'cta-icon' })}${mosaicSquare('mosaic mosaic--cta')}</div>
     <div class="cta-copy">
       <h2 id="cta-h">${head(t.cta.title)}</h2>
       <p class="lede cta-recap">${esc(f(t.cta.recap ?? t.cta.text))}</p>

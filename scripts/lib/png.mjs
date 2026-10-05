@@ -3,11 +3,16 @@
 // because `sips -c … --cropOffset` silently ignores an offset of "0 0" and returns the uncropped image when the
 // rectangle touches the bottom edge (prototype README G6).
 //
-// Changes from the prototype: encodePNG() can write RGB (colour type 2) so opaque images reach sips without an alpha
-// channel (sips otherwise encodes a redundant alpha plane into the AVIF — measured +40–50% tiles on the prototype's
-// demo-sourced screens); pngSize() reads IHDR only; crop() / flatten() / opaqueShare() are the pixel operations used
-// by scripts/images.mjs.
-import { inflateSync, deflateSync, crc32 } from 'node:zlib';
+// Changes from the prototype: encodePNG() can write RGB (colour type 2) for opaque outputs (the prototype's demo-sourced
+// screens kept their transparent rounded corners, so sips added an alpha plane — a second set of grid tiles — to every
+// AVIF); pngSize() reads IHDR only; jpegSize() reads the SOF header; crop() / flatten() / opaqueShare() are the pixel
+// operations used by scripts/images.mjs.
+import * as zlib from 'node:zlib';
+
+const { inflateSync, deflateSync } = zlib;
+// zlib.crc32 exists from Node 22.2; the engines floor is 22.0, so fall back to a table CRC (only used by encodePNG)
+const CRC_TABLE = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
+const crc32 = zlib.crc32 ?? ((buf) => { let c = 0xffffffff; for (const b of buf) c = CRC_TABLE[(c ^ b) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; });
 
 const SIG = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
 
@@ -23,6 +28,32 @@ export function pngSize(buf) {
     off += 12 + len;
   }
   return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20), depth: buf[24], colorType, hasAlpha: colorType === 4 || colorType === 6 || trns };
+}
+
+// JPEG size from the first SOF marker: { width, height, components } (kept here so the scripts share one header reader).
+export function jpegSize(buf) {
+  if (buf[0] !== 0xff || buf[1] !== 0xd8) throw new Error('not a JPEG');
+  for (let off = 2; off + 4 <= buf.length;) {
+    if (buf[off] !== 0xff) { off++; continue; }
+    const marker = buf[off + 1];
+    if (marker === 0xff) { off++; continue; }
+    if (marker === 0xd8 || marker === 0x01 || (marker >= 0xd0 && marker <= 0xd7)) { off += 2; continue; }
+    const len = buf.readUInt16BE(off + 2);
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      return { height: buf.readUInt16BE(off + 5), width: buf.readUInt16BE(off + 7), components: buf[off + 9] };
+    }
+    off += 2 + len;
+  }
+  throw new Error('JPEG without SOF marker');
+}
+
+// ICO directory: [{ w, h, bits, bytes, offset, png }] (favicon.ico = sips-encoded 16 + 32 entries, doc 06 §7.4)
+export function icoEntries(buf) {
+  if (buf.length < 6 || buf.readUInt16LE(0) !== 0 || buf.readUInt16LE(2) !== 1) throw new Error('not an ICO');
+  return Array.from({ length: buf.readUInt16LE(4) }, (_, i) => {
+    const e = 6 + i * 16, offset = buf.readUInt32LE(e + 12);
+    return { w: buf[e] || 256, h: buf[e + 1] || 256, bits: buf.readUInt16LE(e + 6), bytes: buf.readUInt32LE(e + 8), offset, png: buf.subarray(offset, offset + 8).equals(SIG) };
+  });
 }
 
 // Decode any non-interlaced PNG (1/2/4/8/16-bit; gray, RGB, palette, gray+alpha, RGBA) to RGBA8.

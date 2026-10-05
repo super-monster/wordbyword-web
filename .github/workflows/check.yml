@@ -44,6 +44,9 @@ jobs:
       - name: build (exits non-zero on any build-gate error)
         run: node build.mjs
 
+      - name: image registry & AVIF structure (layer 1; Chrome decode runs on the maintainer's Mac)
+        run: node scripts/check-images.mjs
+
       - name: check
         if: hashFiles('scripts/check.mjs') != ''
         run: node scripts/check.mjs

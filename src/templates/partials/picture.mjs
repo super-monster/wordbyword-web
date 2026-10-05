@@ -15,7 +15,10 @@ export function picture(ctx, key, { alt, sizes, eager = false, cls = '' }) {
 
 export function icon(ctx, key, size, { alt = '', cls = '', lazy = true } = {}) {
   const im = ctx.img(key);
-  const src = im ? im.fallback.url : '/icons/icon-192.png';
+  // Smallest PNG variant that covers 2× the display size (registry widths: 64, 160).
+  const pngs = (im?.meta?.variants ?? []).filter((v) => v.format === 'png').map((v) => v.w).sort((a, b) => a - b);
+  const w = pngs.find((x) => x >= size * 2) ?? pngs[pngs.length - 1];
+  const src = (w && im.variant(w, 'png')) || '/icons/icon-192.png';
   return `<img src="${src}" width="${size}" height="${size}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''}${lazy ? ' loading="lazy"' : ''} decoding="async">`;
 }
 

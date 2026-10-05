@@ -14,6 +14,9 @@
     "indexnow:dry": "node build.mjs && node scripts/indexnow.mjs --dry-run --sitemap-file dist/sitemap.xml",
     "contract": "node build.mjs && bash scripts/contract-test.sh",
     "verify": "node build.mjs && bash scripts/verify-deploy.sh",
-    "serve:cf": "node build.mjs && npx --yes wrangler pages dev dist --port 8788"
+    "serve:cf": "node build.mjs && npx --yes wrangler pages dev dist --port 8788",
+    "images": "node scripts/images.mjs && node scripts/check-images.mjs --render",
+    "images:check": "node scripts/check-images.mjs",
+    "images:prune": "node scripts/images.mjs --prune"
   }
 }

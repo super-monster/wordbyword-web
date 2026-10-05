@@ -27,7 +27,7 @@ export function chromeExtension(ctx) {
       ${x.key ? `<p class="spec-label"><kbd>${esc(x.key)}</kbd></p>` : ''}
       <h3 class="h-4">${head(x.title)}</h3>
       <p>${esc(f(x.text))}</p>
-      ${x.image ? picture(ctx, x.image, { alt: x.alt ?? '', sizes: '(min-width: 900px) 520px, calc(100vw - 32px)', cls: 'ext-shot' }) : ''}
+      ${x.image ? picture(ctx, x.image.replace(/^chrome\//, 'ext/common/'), { alt: x.alt ?? '', sizes: '(min-width: 900px) 520px, calc(100vw - 32px)', cls: 'ext-shot' }) : ''}
     </li>`).join('');
 
   const main = `
@@ -49,7 +49,7 @@ export function chromeExtension(ctx) {
 <section id="screenshots" class="section" aria-labelledby="ext-shots">
   <div class="container">
     <h2 id="ext-shots" class="h-sub">${head(c.shotsTitle)}</h2>
-    <div class="ext-gallery">${c.shots.map((s) => picture(ctx, `shot/ext/${s.id}`, { alt: s.alt, sizes: '(min-width: 900px) 560px, calc(100vw - 32px)' })).join('')}</div>
+    <div class="ext-gallery">${c.shots.map((s) => picture(ctx, `ext/common/${s.id}`, { alt: s.alt, sizes: '(min-width: 900px) 560px, calc(100vw - 32px)' })).join('')}</div>
     <p class="media-cap">${esc(c.shotsNote)}</p>
   </div>
 </section>

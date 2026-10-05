@@ -24,7 +24,7 @@ export function siblingCard(ctx) {
   <div class="container">
     <div class="sibling__inner">
       <div class="sibling__text">
-        <p class="sibling__eyebrow">${icon(ctx, 'se/common/se-icon', 32, { cls: 'sibling__icon' })}<span>${esc(sb.eyebrow)}</span></p>
+        <p class="sibling__eyebrow">${icon(ctx, 'se/common/icon', 32, { cls: 'sibling__icon' })}<span>${esc(sb.eyebrow)}</span></p>
         <h2 id="se-h" class="h-3">${head(sb.title)}</h2>
         <p class="sibling__body">${esc(ctx.f(sb.body))}</p>
         <ul class="sibling__points">${sb.points.map((p) => `<li>${esc(ctx.f(p)).replace(levels, `<bdi>${levels}</bdi>`)}</li>`).join('')}</ul>

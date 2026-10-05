@@ -110,7 +110,7 @@ function header(ctx) {
 }
 
 function brandLink(ctx, lazy) {
-  return `<a class="brand" href="${localePath(ctx.route.locale)}">${icon(ctx, 'brand/wbw-icon-64', 28, { alt: 'WordByWord', cls: 'brand-icon', lazy })}<span class="brand-name" aria-hidden="true">WordByWord</span></a>`;
+  return `<a class="brand" href="${localePath(ctx.route.locale)}">${icon(ctx, 'brand/common/icon', 28, { alt: 'WordByWord', cls: 'brand-icon', lazy })}<span class="brand-name" aria-hidden="true">WordByWord</span></a>`;
 }
 
 // ———————————————————————————— notice (doc 06 §8.5) ————————————————————————————
@@ -140,7 +140,7 @@ function footer(ctx) {
       <div class="family">
         <h2 class="footer-heading">${esc(t.sibling.footer.heading)}</h2>
         <a class="family-link" href="${esc(se.href)}" hreflang="${se.hreflang}" data-ga-event="surfenglish_promo" data-ga-label="footer_site">
-          <span class="family-mark" aria-hidden="true">${icon(ctx, 'brand/wbw-icon-64', 32)}<i class="family-line"></i>${icon(ctx, 'se/common/se-icon', 32)}</span>
+          <span class="family-mark" aria-hidden="true">${icon(ctx, 'brand/common/icon', 32)}<i class="family-line"></i>${icon(ctx, 'se/common/icon', 32)}</span>
           <span>${esc(t.sibling.footer.linkText)}</span></a>
       </div>` : '';
   return `<footer class="site-footer">
