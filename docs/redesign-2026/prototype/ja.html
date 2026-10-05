@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja" dir="ltr" data-script="cjk" data-page="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- @prototype-only: the next tag keeps this local design prototype out of search engines. It must NOT be copied
+       into production templates: indexable pages output an index robots meta (06 §5.1.1, R49, SEO-06). -->
+  <meta name="robots" content="noindex, nofollow" data-prototype-only>
+  <title>WordByWord｜iPhoneでWebページを翻訳・対訳表示するアプリ</title>
+  <meta name="description" content="WordByWordは外国語のWebページを読んで学べるiPhone・iPadアプリ。アプリ内ブラウザで段落を右にスワイプすると訳文が原文のすぐ下に。単語をダブルタップでAIが文脈に合う意味を表示。無料。">
+  <meta http-equiv="content-language" content="ja">
+  <link rel="canonical" href="https://www.word-by-word.app/ja/">
+  <link rel="alternate" hreflang="en" href="https://www.word-by-word.app/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.word-by-word.app/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.word-by-word.app/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://www.word-by-word.app/ja/">
+  <link rel="alternate" hreflang="ko" href="https://www.word-by-word.app/ko/">
+  <link rel="alternate" hreflang="es" href="https://www.word-by-word.app/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://www.word-by-word.app/pt-br/">
+  <link rel="alternate" hreflang="fr" href="https://www.word-by-word.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://www.word-by-word.app/de/">
+  <link rel="alternate" hreflang="it" href="https://www.word-by-word.app/it/">
+  <link rel="alternate" hreflang="nl" href="https://www.word-by-word.app/nl/">
+  <link rel="alternate" hreflang="pl" href="https://www.word-by-word.app/pl/">
+  <link rel="alternate" hreflang="ru" href="https://www.word-by-word.app/ru/">
+  <link rel="alternate" hreflang="tr" href="https://www.word-by-word.app/tr/">
+  <link rel="alternate" hreflang="uk" href="https://www.word-by-word.app/uk/">
+  <link rel="alternate" hreflang="vi" href="https://www.word-by-word.app/vi/">
+  <link rel="alternate" hreflang="th" href="https://www.word-by-word.app/th/">
+  <link rel="alternate" hreflang="id" href="https://www.word-by-word.app/id/">
+  <link rel="alternate" hreflang="ar" href="https://www.word-by-word.app/ar/">
+  <link rel="alternate" hreflang="hi" href="https://www.word-by-word.app/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://www.word-by-word.app/">
+  <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121010" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6741724502">
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/brand/favicon-32-dark.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="style.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">本文へスキップ</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="ja.html" data-prod-href="/ja/"><img src="assets/brand/wbw-icon-64.png" width="28" height="28" class="brand-icon" alt="WordByWord"><span class="brand-name" aria-hidden="true">WordByWord</span></a>
+      <nav class="main-nav" aria-label="メイン"><ul><li><a href="#features">機能</a></li><li><a href="#languages">対応言語</a></li><li><a href="#pricing">料金</a></li><li><a href="#faq">よくある質問</a></li></ul></nav>
+      <div class="header-tools">
+        <details class="lang-switch">
+          <summary aria-label="言語: 日本語"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg><span class="lang-current" lang="ja">日本語</span><svg class="i i-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary>
+          <nav class="lang-menu" aria-label="言語を選択"><ul><li><a href="index.html" data-prod-href="/" hreflang="en" lang="en" data-ga-event="language_switch" data-ga-label="header:en">English</a></li><li><a href="#" data-prod-href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-ga-event="language_switch" data-ga-label="header:zh-Hans">简体中文</a></li><li><a href="#" data-prod-href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-ga-event="language_switch" data-ga-label="header:zh-Hant">繁體中文</a></li><li><a href="ja.html" data-prod-href="/ja/" hreflang="ja" lang="ja" aria-current="page" data-ga-event="language_switch" data-ga-label="header:ja">日本語</a></li><li><a href="#" data-prod-href="/ko/" hreflang="ko" lang="ko" data-ga-event="language_switch" data-ga-label="header:ko">한국어</a></li><li><a href="#" data-prod-href="/es/" hreflang="es" lang="es" data-ga-event="language_switch" data-ga-label="header:es">Español</a></li><li><a href="#" data-prod-href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-ga-event="language_switch" data-ga-label="header:pt-BR">Português (Brasil)</a></li><li><a href="#" data-prod-href="/fr/" hreflang="fr" lang="fr" data-ga-event="language_switch" data-ga-label="header:fr">Français</a></li><li><a href="#" data-prod-href="/de/" hreflang="de" lang="de" data-ga-event="language_switch" data-ga-label="header:de">Deutsch</a></li><li><a href="#" data-prod-href="/it/" hreflang="it" lang="it" data-ga-event="language_switch" data-ga-label="header:it">Italiano</a></li><li><a href="#" data-prod-href="/nl/" hreflang="nl" lang="nl" data-ga-event="language_switch" data-ga-label="header:nl">Nederlands</a></li><li><a href="#" data-prod-href="/pl/" hreflang="pl" lang="pl" data-ga-event="language_switch" data-ga-label="header:pl">Polski</a></li><li><a href="#" data-prod-href="/ru/" hreflang="ru" lang="ru" data-ga-event="language_switch" data-ga-label="header:ru">Русский</a></li><li><a href="#" data-prod-href="/tr/" hreflang="tr" lang="tr" data-ga-event="language_switch" data-ga-label="header:tr">Türkçe</a></li><li><a href="#" data-prod-href="/uk/" hreflang="uk" lang="uk" data-ga-event="language_switch" data-ga-label="header:uk">Українська</a></li><li><a href="#" data-prod-href="/vi/" hreflang="vi" lang="vi" data-ga-event="language_switch" data-ga-label="header:vi">Tiếng Việt</a></li><li><a href="#" data-prod-href="/th/" hreflang="th" lang="th" data-ga-event="language_switch" data-ga-label="header:th">ไทย</a></li><li><a href="#" data-prod-href="/id/" hreflang="id" lang="id" data-ga-event="language_switch" data-ga-label="header:id">Bahasa Indonesia</a></li><li><a href="#" data-prod-href="/ar/" hreflang="ar" lang="ar" dir="rtl" data-ga-event="language_switch" data-ga-label="header:ar">العربية</a></li><li><a href="#" data-prod-href="/hi/" hreflang="hi" lang="hi" data-ga-event="language_switch" data-ga-label="header:hi">हिन्दी</a></li></ul></nav>
+        </details>
+        <a class="btn btn-small" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-header&amp;mt=8" data-ga-label="header_app_store"><span class="dl-long">ダウンロード</span><span class="dl-short">入手</span></a>
+        <details class="nav-menu">
+          <summary aria-label="メニュー"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h14M3 12h17M8 17h12"/></svg></summary>
+          <nav class="nav-menu-panel" aria-label="メイン"><ul><li><a href="#features">機能</a></li><li><a href="#languages">対応言語</a></li><li><a href="#pricing">料金</a></li><li><a href="#faq">よくある質問</a></li></ul></nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero" aria-labelledby="hero-h">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">WordByWord・外国語学習者のためのWeb対訳リーダー</p>
+            <h1 id="hero-h" class="h-display"><span class="kw">Webページ</span>の<wbr>段落を<wbr>右スワイプで<wbr>翻訳。<wbr>原文は<wbr>そのまま、<wbr>訳文は<wbr>下に</h1>
+            <p class="hero-lede lede">WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。</p>
+            <div class="cta-row">
+              <a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-hero&amp;mt=8" aria-label="App StoreでWordByWordをダウンロード" data-ga-label="hero"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>App Storeから</small><b>ダウンロード</b></span></a>
+              <a class="link-arrow" href="#features">使い方を見る</a>
+            </div>
+            <p class="hero-cta-note">無料ダウンロード・iPhone／iPad</p>
+          </div>
+          <div class="hero-demo">
+      <figure class="sample is-static" id="sample" aria-labelledby="sample-cap" data-loops="2">
+        <div class="device device--hero" role="group" aria-label="アプリのデモ">
+          <div class="device-screen sample-screen" dir="ltr" data-nosnippet>
+            <div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div>
+            <div class="wb-addr" aria-hidden="true"><svg viewBox="0 0 20 20" class="wb-star"><path d="m10 2.5 2.3 4.8 5.2.7-3.8 3.6.9 5.2L10 14.3l-4.6 2.5.9-5.2L2.5 8l5.2-.7z"/></svg><span>library.example</span><svg viewBox="0 0 20 20" class="wb-reload"><path d="M15.5 10a5.5 5.5 0 1 1-1.8-4.1M14 2.5v3.6h-3.6"/></svg></div>
+            <article class="wb-page" lang="en">
+              <p class="wb-title">Saturday Mornings at the Neighborhood Library</p>
+              <p class="wb-byline" aria-hidden="true">Neighborhood Notes · 3 min read</p>
+              <p class="wb-src"><span class="s s1">Our neighborhood library opens early on Saturdays.</span> <span class="s s2">People arrive with coffee and <span class="w">end</span> up reading until noon.</span></p>
+              <div class="wb-tr-wrap"><p class="wb-tr" lang="ja">近所の図書館は、土曜日は朝早くから開いています。みんなコーヒーを手にやって来て、気づけばお昼まで読みふけっています。</p></div>
+              <p class="wb-more" aria-hidden="true">There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.</p><p class="wb-more" aria-hidden="true">On the first Saturday of each month, volunteers run a small book swap at the front desk.</p>
+            </article>
+            <aside class="wb-card" lang="ja">
+              <p class="wb-card-head"><b class="wb-word" lang="en">end</b> <span class="wb-pos">動詞</span><svg class="wb-speaker" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8h3l4-3v10l-4-3H3z"/><path d="M13 7.5a3.5 3.5 0 0 1 0 5M15.2 5.5a6.4 6.4 0 0 1 0 9" fill="none"/></svg></p>
+              <p class="wb-def">（end up＋-ingで）結局〜することになる。ここでは「気づけばお昼まで読んでいた」</p>
+              <p class="wb-note">この文では句動詞「end up」の一部です。</p>
+              <p class="wb-more-link">他の意味</p>
+            </aside>
+            <div class="wb-bottom" aria-hidden="true"><div class="wb-tools"><svg viewBox="0 0 26 26"><path d="M5 5h16v11H12l-5 4v-4H5z"/><circle cx="12" cy="10" r="2.6"/><path d="m14 12 2 2"/></svg><svg viewBox="0 0 26 26"><path d="M6 4h12a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2z"/><path d="M6 19a2 2 0 0 1 2-2h12"/><path d="m10.5 14 2.5-7 2.5 7m-4.2-2h3.4"/></svg><svg viewBox="0 0 26 26"><path d="M4 10h4l5-4v14l-5-4H4z"/><path d="M17 9.5a5 5 0 0 1 0 7M19.5 7a8.5 8.5 0 0 1 0 12"/></svg><svg viewBox="0 0 26 26"><rect x="3" y="8" width="14" height="12" rx="2"/><path d="M7 5h12a2 2 0 0 1 2 2v8"/><circle cx="20" cy="19" r="3.2"/></svg></div><div class="wb-nav"><svg viewBox="0 0 22 22"><path d="m14 4-7 7 7 7"/></svg><svg viewBox="0 0 22 22" class="dim"><path d="m8 4 7 7-7 7"/></svg><svg viewBox="0 0 22 22"><rect x="3" y="5" width="13" height="13" rx="2"/><path d="M7 2h10a3 3 0 0 1 3 3v10M9.5 8.5v6m-3-3h6"/></svg><svg viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="3"/><text x="11" y="15" text-anchor="middle" font-size="9" stroke="none">23</text></svg><svg viewBox="0 0 22 22"><circle cx="4" cy="11" r="1.6"/><circle cx="11" cy="11" r="1.6"/><circle cx="18" cy="11" r="1.6"/></svg></div><span class="wb-home"></span></div>
+            <span class="cue cue-swipe" aria-hidden="true"><span class="cue-label">右にスワイプ</span><span class="cue-dot"></span></span>
+            <span class="cue cue-tap" aria-hidden="true"></span>
+          </div>
+        </div>
+        <figcaption class="sample-cap"><span id="sample-cap">アプリ画面をHTMLで再現したデモです（スクリーンショットではありません）。英語の段落の下に日本語訳が入ります。</span> <button class="sample-toggle" type="button" hidden data-pause="一時停止" data-replay="もう一度再生">一時停止</button></figcaption>
+      </figure>
+          </div>
+          <div class="hero-after">
+            <p class="hero-how">アプリ内ブラウザで段落を右にスワイプすると、訳文が原文のすぐ下に挿入されます。単語をダブルタップすると、その文での意味をAIが説明します。</p>
+            <p class="platform-note">無料（1日の利用上限あり）・Plusは月額サブスクリプション・iOS 18以降。AppleシリコンのMacとVision Proでも動作</p>
+          </div>
+        </div>
+        <svg class="edge-mosaic" width="100%" height="16" aria-hidden="true" shape-rendering="crispEdges"><defs><pattern id="mosaic-edge" width="64" height="16" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="8" height="8" class="mk"/><rect x="8" y="0" width="8" height="8" class="mk"/><rect x="16" y="0" width="8" height="8" fill="#882239"/><rect x="24" y="0" width="8" height="8" fill="#44111C"/><rect x="32" y="0" width="8" height="8" fill="#44111C"/><rect x="40" y="0" width="8" height="8" fill="#44111C"/><rect x="48" y="0" width="8" height="8" fill="#44111C"/><rect x="56" y="0" width="8" height="8" class="mk"/><rect x="0" y="8" width="8" height="8" fill="#882239"/><rect x="8" y="8" width="8" height="8" fill="#882239"/><rect x="16" y="8" width="8" height="8" fill="#44111C"/><rect x="24" y="8" width="8" height="8" fill="#CC3355"/><rect x="32" y="8" width="8" height="8" class="mk"/><rect x="40" y="8" width="8" height="8" fill="#882239"/><rect x="48" y="8" width="8" height="8" class="mk"/><rect x="56" y="8" width="8" height="8" fill="#CC3355"/></pattern></defs><rect width="100%" height="16" fill="url(#mosaic-edge)"/></svg>
+      </div>
+    </section>
+
+    <section id="features" class="section section--features" aria-labelledby="features-h">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="features-h">右スワイプで<wbr>対訳、<wbr>ダブルタップで<wbr>AI辞書。<wbr>読みたい<wbr>Webページで</h2>
+          <p class="lede">外国語を学びながらWebを読む人のために作りました。ほとんどのことは、この2つの操作で済みます。文をもっと詳しく知りたいときのための機能もそろっています。</p>
+        </header>
+        <div class="feature feat-l1">
+          <div class="l1-copy">
+            <p class="eyebrow"><span class="eyebrow-n">01</span> 右スワイプ翻訳</p>
+            <h3 class="h-sub" id="f-swipe">右スワイプ翻訳：<wbr>訳文は<wbr>原文の<wbr>すぐ下に<wbr>表示</h3>
+            <p class="feat-text">アプリ内ブラウザでページを開き（URLを入力しても、検索してもOK）、段落を右にスワイプ。訳文がその下に挿入されるので、画面を切り替えずに原文と見比べながら読めます。</p>
+            <ol class="points"><li><span class="points-n" aria-hidden="true">01</span><span>表示は「自動」「段落」「文ごと」から選択</span></li><li><span class="points-n" aria-hidden="true">02</span><span>訳文はすぐ表示するか、タップして表示するかを選べます</span></li><li><span class="points-n" aria-hidden="true">03</span><span>ニュース、ブログ、技術ドキュメント、Xなど、アプリで開いたページで使えます</span></li></ol>
+          </div>
+          <figure class="l1-media">
+            <div class="device device--l" style="--status-bg:#F3F3F4"><div class="device-screen"><div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/ja/swipe-360.avif 360w, assets/app/ja/swipe-540.avif 540w, assets/app/ja/swipe-720.avif 720w" sizes="(min-width: 900px) 340px, min(320px, 80vw)"><img src="assets/app/ja/swipe-540.jpg" width="540" height="1100" alt="iPhoneのWordByWord：英語ニュース記事の各文の下に、日本語訳が赤い線とともに表示された画面" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption class="media-cap">iPhoneの画面</figcaption>
+          </figure>
+        </div>
+        <div class="feature feat-l2">
+          <div class="l2-head">
+            <p class="eyebrow"><span class="eyebrow-n">02</span> ダブルタップ辞書</p>
+            <h3 class="h-sub" id="f-lookup">ダブルタップ<wbr>するだけの、<wbr>文脈が<wbr>わかるAI辞書</h3>
+            <p class="lede">WordByWordは単語を説明する前に文全体を読み、まず熟語やフレーズかどうかを確かめます。辞書の訳語を並べるのではなく、その文での意味がわかります。</p>
+            <p class="limit"><span class="tag tag--note">注</span> 中国語・日本語・韓国語の原文では使えません。</p>
+          </div>
+          <div class="spread">
+            <figure class="spread-device">
+              <div class="device device--l" style="--status-bg:#F3F3F4"><div class="device-screen"><div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/ja/lookup-360.avif 360w, assets/app/ja/lookup-540.avif 540w, assets/app/ja/lookup-720.avif 720w" sizes="(min-width: 900px) 340px, min(320px, 80vw)"><img src="assets/app/ja/lookup-540.jpg" width="540" height="1100" alt="iPhoneのWordByWord：英文中の「designed」をダブルタップし、フレーズとしての意味をAIが日本語で解説する画面" loading="lazy" decoding="async"></picture><span class="ring" style="--rx:0.025;--ry:0.355;--rw:0.19;--rh:0.035" aria-hidden="true"></span></div><span class="pin pin--start" style="--y:0.372" aria-hidden="true">1</span><span class="pin pin--start" style="--y:0.733" aria-hidden="true">2</span><span class="pin pin--end" style="--y:0.83" aria-hidden="true">3</span></div>
+              <figcaption class="media-cap">iPhoneの画面</figcaption>
+            </figure>
+            <ol class="spread-col spread-col--start"><li class="anno anno--start" style="--y:0.372"><span class="anno-n" aria-hidden="true">1</span><span class="anno-t">ページ上の単語をダブルタップ</span><span class="anno-line" aria-hidden="true"></span></li><li class="anno anno--start" style="--y:0.733"><span class="anno-n" aria-hidden="true">2</span><span class="anno-t">熟語・決まった言い回しを優先して認識</span><span class="anno-line" aria-hidden="true"></span></li></ol>
+            <ol class="spread-col spread-col--end" start="3"><li class="anno anno--end" style="--y:0.83"><span class="anno-n" aria-hidden="true">3</span><span class="anno-t">「他の意味」で、意味・例文・語形変化・発音をまとめて確認</span><span class="anno-line" aria-hidden="true"></span></li></ol>
+          </div>
+        </div>
+        <div class="feature m-grid">
+          <article class="m-card" aria-labelledby="f-x">
+            <figure class="m-media">
+              <div class="canvas post-sample" dir="ltr">
+                <div class="post" role="img" aria-label="X（旧Twitter）のポストも原文と訳文で読める: Just finished my first 10K run. Slow, but I didn’t stop once. — 初めての10キロラン、完走しました。遅かったけど、一度も止まりませんでした。">
+                  <p class="post-head" aria-hidden="true"><span class="post-avatar">サ</span><b>サンプルアカウント</b> <span class="post-handle">@runner.example · 3時間</span></p>
+                  <p class="post-src" lang="en">Just finished my first 10K run. Slow, but I didn’t stop once.</p>
+                  <p class="post-tr" lang="ja">初めての10キロラン、完走しました。遅かったけど、一度も止まりませんでした。</p>
+                  <p class="post-actions" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.5 9.5a6.5 6 0 1 1 3 5.1L3 16l1.2-3.2a6 6 0 0 1-.7-3.3z"/></svg><svg viewBox="0 0 20 20"><path d="M5 7.5 7.5 5 10 7.5M7.5 5.5V13a2 2 0 0 0 2 2H12M15 12.5 12.5 15 10 12.5M12.5 14.5V7a2 2 0 0 0-2-2H8"/></svg><svg viewBox="0 0 20 20"><path d="M10 16s-6-3.6-6-8a3.2 3.2 0 0 1 6-1.6A3.2 3.2 0 0 1 16 8c0 4.4-6 8-6 8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 3v10M6.5 6.5 10 3l3.5 3.5M4 12v4h12v-4"/></svg></p>
+                </div>
+              </div>
+              <figcaption class="media-cap">イメージ図（スクリーンショットではありません）</figcaption>
+            </figure>
+            <p class="eyebrow eyebrow--plain">X（旧Twitter）</p>
+            <h3 id="f-x">X（旧Twitter）の<wbr>ポストも<wbr>原文と<wbr>訳文で<wbr>読める</h3>
+            <p>WordByWordのアプリ内ブラウザでx.comにログインし、ポストを右にスワイプすると、その下に訳文が入ります。外国語で発信しているアカウントを追うときに便利です。</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-chunks">
+            <figure class="m-media">
+              <div class="canvas ck-canvas" role="img" aria-label="When the rain finally stopped, we set off for the hills and made it to the top before sunset. — set off for：〜に向けて出発する — Action Flow: stopped → set off → made it">
+                <div class="ck-sample" aria-hidden="true" lang="en">
+                  <p class="ck-sentence">When the rain finally stopped, we <span class="ck ck-1">set off for</span> the hills and <span class="ck ck-2">made it to</span> the top before sunset.</p>
+                  <p class="ck-gloss" lang="ja">set off for：〜に向けて出発する</p>
+                  <p class="ck-flow"><span class="ck-flow-label">Action Flow</span> <span>stopped → set off → made it</span></p>
+                </div>
+              </div>
+              <figcaption class="media-cap">イメージ図（スクリーンショットではありません）</figcaption>
+            </figure>
+            <p class="eyebrow eyebrow--plain">英語ページ <span class="tag tag--en-only">英語のみ</span></p>
+            <h3 id="f-chunks">英語の文の<wbr>チャンク抽出と<wbr>Action Flow（文の動きの流れ）</h3>
+            <p>英語の文を右スワイプで翻訳したあと、「チャンク抽出」はひとまとまりで働くフレーズに下線を引き、「Action Flow」は文の中心となる動作とそれにつながる動作を示します。自動・手動・オフを選べます。</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-speech">
+            <figure class="m-media"><div class="shot"><picture><source type="image/avif" srcset="assets/app/ja/tts-ex-720.avif 720w, assets/app/ja/tts-ex-842.avif 842w" sizes="(min-width: 900px) 512px, calc(100vw - 32px)"><img src="assets/app/ja/tts-ex-720.jpg" width="720" height="404" alt="iPhoneのWordByWord：対訳表示した段落と、画面下部の読み上げプレーヤー" loading="lazy" decoding="async"></picture></div>
+              <figcaption class="media-cap">iPhoneの画面（一部）</figcaption></figure>
+            <p class="eyebrow eyebrow--plain">読み上げ</p>
+            <h3 id="f-speech">AI読み上げと、<wbr>すぐに再生できる<wbr>iOSの音声</h3>
+            <p>単語も文も読み上げられます。「AI読み上げ」はクラウドの自然な音声。「ローカル読み上げ」はiOS内蔵の音声ですばやく再生でき、速度の調整や、ダウンロード済みのプレミアム・拡張音声も使えます。</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-syntax">
+            <figure class="m-media"><div class="shot"><picture><source type="image/avif" srcset="assets/app/ja/syntax-ex-720.avif 720w, assets/app/ja/syntax-ex-842.avif 842w" sizes="(min-width: 900px) 512px, calc(100vw - 32px)"><img src="assets/app/ja/syntax-ex-720.jpg" width="720" height="404" alt="iPhoneのWordByWord：スワイプ翻訳詳細の画面に表示された、1文のAI文型解説" loading="lazy" decoding="async"></picture></div>
+              <figcaption class="media-cap">iPhoneの画面（一部）</figcaption></figure>
+            <p class="eyebrow eyebrow--plain">文の構造</p>
+            <h3 id="f-syntax">長い文も、<wbr>AIが<wbr>文の構造を<wbr>解説</h3>
+            <p>スワイプ翻訳の履歴から文を開き、「AI による文型の解説を取得」をタップ。文を要素に分け、それぞれがどうつながっているかを説明します。</p>
+          </article></div>
+        <ul class="spec">
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">翻訳エンジン</p><h3 class="h-4">クラウド翻訳か、iOSの端末内翻訳か</h3><p class="spec-fact">クラウド（Azure・Google）かiOS内蔵の翻訳を選択。回数切れならローカルで再試行</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">表示</p><h3 class="h-4">訳文の表示方法とスタイル <span class="swatches" aria-hidden="true"><i class="sw sw--quote">Aa</i><i class="sw sw--bg">Aa</i><i class="sw sw--border">Aa</i><i class="sw sw--under">Aa</i></span></h3><p class="spec-fact">「自動」「段落」「文ごと」、すぐ表示かタップで表示か、スタイルも選べます</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">履歴</p><h3 class="h-4">スワイプ翻訳と単語の履歴でふり返り</h3><p class="spec-fact">スワイプ翻訳と調べた単語を元の文ごと保存。見返すことも消去もできます</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">対応機種</p><h3 class="h-4">iPhone・iPad・Mac・Vision Pro</h3><p class="spec-fact">iPhone・iPad（iOS 18以降）。AppleシリコンのMacとVision Proでも動作します</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section section--end" aria-labelledby="gallery-h">
+      <div class="container">
+        <h2 id="gallery-h" class="h-sub">表示の<wbr>設定と<wbr>「他の意味」の<wbr>画面</h2>
+        <div class="gallery" data-count="2" role="region" aria-labelledby="gallery-h" tabindex="0">
+          <figure class="gallery-item"><div class="device device--md" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/ja/settings-360.avif 360w, assets/app/ja/settings-540.avif 540w, assets/app/ja/settings-720.avif 720w" sizes="(min-width: 900px) 302px, 58vw"><img src="assets/app/ja/settings-540.jpg" width="540" height="1100" alt="iPhoneのWordByWordの設定画面：翻訳モード「自動」、引用スタイル、ローカル読み上げ" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">図 1</span> 設定：翻訳モード「自動」・引用スタイル・ローカル読み上げ</figcaption></figure>
+          <figure class="gallery-item"><div class="device device--md" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/ja/dictionary-360.avif 360w, assets/app/ja/dictionary-540.avif 540w, assets/app/ja/dictionary-720.avif 720w" sizes="(min-width: 900px) 302px, 58vw"><img src="assets/app/ja/dictionary-540.jpg" width="540" height="1100" alt="iPhoneのWordByWord「他の意味」画面：英単語「continued」の意味、例文、語形変化" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">図 2</span> 他の意味：単語の意味・例文・語形変化</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="languages" class="section section--band" aria-labelledby="languages-h">
+      <div class="container langs-layout">
+        <div class="langs-main">
+          <h2 id="languages-h">21言語に<wbr>翻訳。<wbr>英語以外の<wbr>ページも<wbr>読める</h2>
+          <p class="lede">訳文の言語を選ぶだけ。原文の言語は最初は英語で、読んでいるページの言語を検出して切り替わります。自分で設定することもできます。</p>
+          <ul class="facts">
+            <li>アプリ表示20言語</li>
+            <li>翻訳先21言語</li>
+            <li>原文の言語：初期設定は英語・自動検出・手動で変更可</li>
+          </ul>
+          <h3 class="chips-label" id="targets-h">翻訳先の言語</h3>
+          <ul class="chips" aria-labelledby="targets-h"><li class="chip" lang="en-US">English (US)</li><li class="chip" lang="en-GB">English (UK)</li><li class="chip" lang="zh-Hans">简体中文</li><li class="chip" lang="zh-Hant">繁體中文</li><li class="chip" lang="ja">日本語</li><li class="chip" lang="ko">한국어</li><li class="chip" lang="es">Español</li><li class="chip" lang="pt-BR">Português (Brasil)</li><li class="chip" lang="fr">Français</li><li class="chip" lang="de">Deutsch</li><li class="chip" lang="it">Italiano</li><li class="chip" lang="nl">Nederlands</li><li class="chip" lang="pl">Polski</li><li class="chip" lang="ru">Русский</li><li class="chip" lang="tr">Türkçe</li><li class="chip" lang="uk">Українська</li><li class="chip" lang="vi">Tiếng Việt</li><li class="chip" lang="th">ไทย</li><li class="chip" lang="id">Bahasa Indonesia</li><li class="chip" lang="ar" dir="rtl">العربية</li><li class="chip" lang="hi">हिन्दी</li></ul>
+        </div>
+        <aside class="side-notes">
+          <ol><li class="side-note">中国語・日本語・韓国語のページでは、右スワイプ翻訳と読み上げは使えますが、ダブルタップ辞書は使えません。</li><li class="side-note">チャンク抽出とAction Flowは英語の原文のみ対応です。</li></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pricing" class="section" aria-labelledby="pricing-h">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="pricing-h">毎日<wbr>無料で<wbr>使える。<wbr>たくさん<wbr>読むならPlus</h2>
+          <p class="lede">WordByWordは無料でダウンロードでき、ほとんどの機能に毎日リセットされる無料枠があります。WordByWord Plusにすると上限が上がります。</p>
+        </header>
+        <div class="pricing-body">
+          <div class="table-wrap">
+            <table class="quota">
+              <caption>1日の利用上限（無料版とPlus）</caption>
+              <thead><tr><th scope="col">機能</th><th scope="col">無料</th><th scope="col" class="col-plus"><svg class="plus-mosaic" viewBox="0 0 16 1" preserveAspectRatio="none" aria-hidden="true" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" class="mk"/><rect x="1" y="0" width="1" height="1" class="mk"/><rect x="2" y="0" width="1" height="1" fill="#882239"/><rect x="3" y="0" width="1" height="1" fill="#44111C"/><rect x="4" y="0" width="1" height="1" fill="#44111C"/><rect x="5" y="0" width="1" height="1" fill="#44111C"/><rect x="6" y="0" width="1" height="1" fill="#44111C"/><rect x="7" y="0" width="1" height="1" class="mk"/><rect x="8" y="0" width="1" height="1" fill="#882239"/><rect x="9" y="0" width="1" height="1" fill="#882239"/><rect x="10" y="0" width="1" height="1" fill="#44111C"/><rect x="11" y="0" width="1" height="1" fill="#CC3355"/><rect x="12" y="0" width="1" height="1" class="mk"/><rect x="13" y="0" width="1" height="1" fill="#882239"/><rect x="14" y="0" width="1" height="1" class="mk"/><rect x="15" y="0" width="1" height="1" fill="#CC3355"/></svg><span class="plus-name">Plus</span><span class="plus-price">月額$3.99（米国の価格）</span></th></tr></thead>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">翻訳</th></tr>
+                <tr><th scope="row">右スワイプ翻訳（クラウド）</th><td>1日50回</td><td>1日500回</td></tr>
+                <tr><th scope="row">右スワイプ翻訳（ローカル）</th><td>1日100回</td><td><span class="nolimit">上限なし</span></td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">辞書</th></tr>
+                <tr><th scope="row">ダブルタップ辞書（AI解釈）</th><td>1日20回</td><td>1日500回</td></tr>
+                <tr><th scope="row">他の意味</th><td>1日10回</td><td>1日500回</td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">読み上げ</th></tr>
+                <tr><th scope="row">AI発音（単語）</th><td>1日10回</td><td>1日200回</td></tr>
+                <tr><th scope="row">AI発音（文）</th><td>1日10回</td><td>1日100回</td></tr>
+                <tr><th scope="row">iOSの音声（ローカル読み上げ）</th><td><span class="nolimit">上限なし</span></td><td><span class="nolimit">上限なし</span></td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">文の理解</th></tr>
+                <tr><th scope="row">チャンク抽出 <span class="tag tag--en-only">英語のみ</span></th><td>1日30回</td><td>1日500回</td></tr>
+                <tr><th scope="row">Action Flow <span class="tag tag--en-only">英語のみ</span></th><td>1日20回</td><td>1日500回</td></tr>
+                <tr><th scope="row">AI文型解説</th><td>1日5回</td><td>1日500回</td></tr></tbody>
+            </table>
+          </div>
+          <p class="pricing-summary">上限内なら、すべての機能を無料で使えます。Plusは米国で月額$3.99、上限が上がります。</p>
+          <p class="pricing-note">価格は国・地域によって異なり、App Storeに表示されます。サブスクリプションはAppleアカウントの設定からいつでも解約できます。</p>
+          <div class="pricing-cta"><a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-pricing&amp;mt=8" aria-label="App StoreでWordByWordをダウンロード" data-ga-label="pricing"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>App Storeから</small><b>ダウンロード</b></span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sibling" id="surfenglish" aria-labelledby="se-h" data-ga-view="surfenglish_promo_view" data-ga-label="card">
+      <div class="container">
+        <div class="sibling__inner">
+          <div class="sibling__text">
+            <p class="sibling__eyebrow"><img src="assets/se/se-icon-64.png" width="32" height="32" class="sibling__icon" alt="" loading="lazy" decoding="async"><span>WordByWordの開発者より</span></p>
+            <h2 id="se-h" class="h-3">SurfEnglish：<wbr>レベル別の<wbr>英語ニュースアプリ</h2>
+            <p class="sibling__body">主に英語を学んでいますか？WordByWordで好きなWebページを読みながら、同じ開発者のSurfEnglishで、レベル別の英語ニュースと復習ゲームという別の練習も加えられます。右スワイプとダブルタップはそのまま使えます。</p>
+            <ul class="sibling__points"><li><bdi>A1–C1</bdi>のレベル付き、本物の英語ニュース</li><li>読んだ内容から作られる復習ゲーム</li><li>Safariから英語記事を共有してアプリで読める</li></ul>
+            <p class="sibling__note">無料で始められます · iPhone／iPad · アプリ表示は日本語を含む12言語 · 21言語に翻訳</p>
+            <p class="sibling__actions">
+              <a class="sibling__store" href="https://apps.apple.com/app/apple-store/id6787367021?ct=wbw-card&amp;mt=8" data-ga-event="surfenglish_promo" data-ga-label="card_appstore">App StoreでSurfEnglishを入手<span aria-hidden="true">&#160;→</span></a>
+              <a class="sibling__link" href="https://surfenglish.app/ja/" hreflang="ja" data-ga-event="surfenglish_promo" data-ga-label="card_site">SurfEnglishでレベル別の英語ニュースを対訳で読む</a>
+            </p>
+          </div>
+          <figure class="sibling__window">
+            <picture><source type="image/avif" srcset="assets/se/se-games-400.avif"><img src="assets/se/se-games-400.jpg" width="400" height="440" alt="SurfEnglishのゲーム画面：保存した文と単語で遊べるSentence BuilderとWord Raid" loading="lazy" decoding="async"></picture>
+            <figcaption>SurfEnglishの画面（英語UI）</figcaption>
+          </figure>
+        </div>
+      </div>
+    </aside>
+
+    <section id="faq" class="section section--end" aria-labelledby="faq-h">
+      <div class="container faq-layout">
+        <div class="faq-head"><h2 id="faq-h" class="h-sub">WordByWordについて<wbr>よくある質問</h2></div>
+        <div class="faq-list">
+            <details class="faq-item" id="faq-what-is" open><summary><span class="faq-q">WordByWordとは？</span></summary><div class="faq-a"><p>WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。アプリ内ブラウザでページを開き、段落を右にスワイプすると原文の下に訳文が入り、単語をダブルタップするとその文での意味がわかります。個人開発者のJinlongが開発しています。<a href="#" data-prod-href="/about/" hreflang="en">WordByWordについて詳しく</a></p></div></details>
+            <details class="faq-item" id="faq-whole-page"><summary><span class="faq-q">ページ全体を一度に翻訳できますか？</span></summary><div class="faq-a"><p>いいえ。WordByWordが翻訳するのはスワイプした段落で、訳文はそのすぐ下に入ります。ページのほかの部分は原文のままです。訳文は段落ごと・文ごと（または自動）で表示でき、すぐ表示するかタップで表示するかも選べます。</p></div></details>
+            <details class="faq-item" id="faq-safari"><summary><span class="faq-q">Safariやほかのアプリで使えますか？</span></summary><div class="faq-a"><p>いいえ。WordByWordはSafari拡張機能ではなく、ほかのアプリに翻訳ボタンを追加することもありません。タブとブックマークを備えた専用ブラウザがあり、URLを入力するか検索してページを開き、そこでスワイプして翻訳します。</p></div></details>
+            <details class="faq-item" id="faq-word-by-word"><summary><span class="faq-q">逐語訳（ワード・バイ・ワード）のアプリですか？</span></summary><div class="faq-a"><p>直訳という意味ではありません。単語を1つずつ訳すと意味を取り違えやすいため、WordByWordは文や段落の単位で翻訳し、単語はダブルタップしたときに、その文の文脈で説明します。</p></div></details>
+            <details class="faq-item" id="faq-x"><summary><span class="faq-q">X（旧Twitter）も読めますか？</span></summary><div class="faq-a"><p>はい。アプリ内ブラウザでx.comを開いてログインし、ポストを右にスワイプすると下に訳文が出ます。単語のダブルタップ辞書も使えます（中国語・日本語・韓国語のポストを除く）。Xアプリではなく、WordByWordの中で開いたXのWeb版で使う機能です。</p></div></details>
+            <details class="faq-item" id="faq-languages"><summary><span class="faq-q">対応言語は？</span></summary><div class="faq-a"><p>アプリの表示は20言語、翻訳先は21言語（中国語の簡体字・繁体字、米国英語・英国英語を含む）です。原文の言語は最初は英語で、読んでいるページの言語を検出して切り替わり、手動でも変更できます。原文の言語によって使えない機能があります。中国語・日本語・韓国語の原文ではダブルタップ辞書が使えず、チャンク抽出とAction Flowは英語の原文のみ対応です。</p></div></details>
+            <details class="faq-item" id="faq-free"><summary><span class="faq-q">無料ですか？1日の上限は？</span></summary><div class="faq-a"><p>はい、無料でダウンロードして使えます。無料版の1日の上限は、クラウドでの右スワイプ翻訳50回、ローカルエンジンでの翻訳100回、ダブルタップ辞書20回、チャンク抽出30回、Action Flow 20回、AI文型解説5回などで、iOSの音声に上限はありません。<strong>WordByWord Plus</strong>（月額サブスクリプション。米国では$3.99、各国の価格はApp Storeに表示）にすると上限が上がります。</p></div></details>
+            <details class="faq-item" id="faq-engines"><summary><span class="faq-q">翻訳エンジンは何を使っていますか？</span></summary><div class="faq-a"><p>選べます。クラウド翻訳エンジンは現在、AzureとGoogleの翻訳サービスを使っています。ローカルエンジンはiOS内蔵の翻訳機能で、初回は言語データのダウンロードが必要な場合があります。その日のクラウド翻訳の回数を使い切ったら、ローカルエンジンに切り替えて再試行できます。単語の解説、文型解説、AI読み上げはクラウドのAIサービスを使います。</p></div></details>
+            <details class="faq-item" id="faq-account"><summary><span class="faq-q">アカウント登録は必要ですか？</span></summary><div class="faq-a"><p>いいえ。WordByWordはアカウント登録なしで使えます。ログインが必要なのは、アプリ内ブラウザでx.comなどのサイトを使うときだけで、ふつうのブラウザと同じです。WordByWord Plusのサブスクリプションは、WordByWordのアカウントではなくAppleアカウントにひも付いています。</p></div></details>
+            <details class="faq-item" id="faq-restore"><summary><span class="faq-q">新しいiPhoneやiPadでPlusを使い続けるには？</span></summary><div class="faq-a"><p>新しい端末でも同じAppleアカウントを使い、WordByWordの設定で「今すぐアップグレード」をタップしてから「購入を復元」を選びます。サブスクリプションの変更や解約は、Appleアカウントのサブスクリプション設定から行えます。</p></div></details>
+            <details class="faq-item" id="faq-android"><summary><span class="faq-q">Android版はありますか？</span></summary><div class="faq-a"><p>ありません。WordByWordはApp Storeでのみ提供しており、iPhone・iPad、AppleシリコンのMac、Apple Vision Proで使えます。</p></div></details>
+            <details class="faq-item" id="faq-english-learner"><summary><span class="faq-q">英語を勉強しています。SurfEnglishも試す価値はありますか？</span></summary><div class="faq-a"><p>自分で選んだWebページやXのポストは、英語でもほかの言語でも、これまでどおりWordByWordで読めます。そのうえで、レベル別（A1–C1）の英語ニュースを毎日読みたい、保存した文や単語をゲームで復習したいなら、同じ開発者のSurfEnglishも試してみてください。右スワイプとダブルタップはそのまま使えます。2つのアプリは併用できます。<a href="https://surfenglish.app/ja/" hreflang="ja" data-ga-event="surfenglish_promo" data-ga-label="faq_site">SurfEnglish公式サイト</a></p></div></details>
+            <details class="faq-item" id="faq-devices"><summary><span class="faq-q">iPadやMac、パソコンのブラウザでも使えますか？</span></summary><div class="faq-a"><p>WordByWordはiPhoneとiPad（iOS 18以降）で使え、App StoreからAppleシリコンのMac（macOS 15以降）やApple Vision Proにも入れられます。パソコンのブラウザで使える版はまだありません。同じ開発者によるChrome拡張機能を準備中です。詳しくは<a href="#" data-prod-href="/chrome-extension/" hreflang="en">Chrome拡張機能のページ</a>をご覧ください。</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section section--band final-cta" aria-labelledby="cta-h">
+      <div class="container cta-layout">
+        <div class="cta-mark" aria-hidden="true"><img src="assets/brand/wbw-icon-160.png" width="80" height="80" class="cta-icon" alt="" loading="lazy" decoding="async"><svg class="mosaic mosaic--cta" viewBox="0 0 4 4" aria-hidden="true" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" class="mk"/><rect x="1" y="0" width="1" height="1" class="mk"/><rect x="2" y="0" width="1" height="1" fill="#882239"/><rect x="3" y="0" width="1" height="1" fill="#44111C"/><rect x="0" y="1" width="1" height="1" fill="#44111C"/><rect x="1" y="1" width="1" height="1" fill="#44111C"/><rect x="2" y="1" width="1" height="1" fill="#44111C"/><rect x="3" y="1" width="1" height="1" class="mk"/><rect x="0" y="2" width="1" height="1" fill="#882239"/><rect x="1" y="2" width="1" height="1" fill="#882239"/><rect x="2" y="2" width="1" height="1" fill="#44111C"/><rect x="3" y="2" width="1" height="1" fill="#CC3355"/><rect x="0" y="3" width="1" height="1" class="mk"/><rect x="1" y="3" width="1" height="1" fill="#882239"/><rect x="2" y="3" width="1" height="1" class="mk"/><rect x="3" y="3" width="1" height="1" fill="#CC3355"/></svg></div>
+        <div class="cta-copy">
+          <h2 id="cta-h">iPhoneで、<wbr>外国語の<wbr>Webページを<wbr>対訳で読む</h2>
+          <p class="lede cta-recap">右スワイプで翻訳・ダブルタップでAI辞書・読み上げ・21言語に翻訳</p>
+          <a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-cta&amp;mt=8" aria-label="App StoreでWordByWordをダウンロード" data-ga-label="cta"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>App Storeから</small><b>ダウンロード</b></span></a>
+          <p class="cta-note">App Storeから無料、iPhone・iPad対応。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="ja.html" data-prod-href="/ja/"><img src="assets/brand/wbw-icon-64.png" width="28" height="28" class="brand-icon" alt="WordByWord" loading="lazy"><span class="brand-name" aria-hidden="true">WordByWord</span></a>
+        <p class="footer-tagline">外国語を学びながらWebを読む人のための、iPhone・iPadアプリ。</p>
+        <div class="family">
+          <h2 class="footer-heading">同じ開発者のアプリ</h2>
+          <a class="family-link" href="https://surfenglish.app/ja/" hreflang="ja" data-ga-event="surfenglish_promo" data-ga-label="footer_site">
+            <span class="family-mark" aria-hidden="true"><img src="assets/brand/wbw-icon-64.png" width="32" height="32" alt="" loading="lazy"><i class="family-line"></i><img src="assets/se/se-icon-64.png" width="32" height="32" alt="" loading="lazy"></span>
+            <span>SurfEnglish：英語ニュース・対訳で学習</span></a>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="サイト">
+        <div>
+          <h2 class="footer-heading">製品</h2>
+          <ul>
+            <li><a href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-footer&amp;mt=8">iPhone・iPadアプリ</a></li>
+            <li><a href="#" data-prod-href="/chrome-extension/" hreflang="en">Chrome拡張機能</a></li>
+            <li><a href="#" data-prod-href="/about/" hreflang="en">WordByWordについて</a></li>
+            <li><a href="#faq">よくある質問</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">ヘルプ</h2>
+          <ul>
+            <li><a href="#" data-prod-href="/support.html" hreflang="en">サポート</a></li>
+            <li><a href="#" data-prod-href="/privacy.html" hreflang="en">プライバシーポリシー</a></li>
+            <li><a href="mailto:app.wordbyword@gmail.com">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="footer-langs" aria-labelledby="footer-langs-h">
+        <h2 class="footer-heading" id="footer-langs-h">言語</h2>
+        <ul class="lang-list"><li><a href="index.html" data-prod-href="/" hreflang="en" lang="en" data-ga-event="language_switch" data-ga-label="footer:en">English</a></li><li><a href="#" data-prod-href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-ga-event="language_switch" data-ga-label="footer:zh-Hans">简体中文</a></li><li><a href="#" data-prod-href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-ga-event="language_switch" data-ga-label="footer:zh-Hant">繁體中文</a></li><li><a href="ja.html" data-prod-href="/ja/" hreflang="ja" lang="ja" aria-current="page" data-ga-event="language_switch" data-ga-label="footer:ja">日本語</a></li><li><a href="#" data-prod-href="/ko/" hreflang="ko" lang="ko" data-ga-event="language_switch" data-ga-label="footer:ko">한국어</a></li><li><a href="#" data-prod-href="/es/" hreflang="es" lang="es" data-ga-event="language_switch" data-ga-label="footer:es">Español</a></li><li><a href="#" data-prod-href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-ga-event="language_switch" data-ga-label="footer:pt-BR">Português (Brasil)</a></li><li><a href="#" data-prod-href="/fr/" hreflang="fr" lang="fr" data-ga-event="language_switch" data-ga-label="footer:fr">Français</a></li><li><a href="#" data-prod-href="/de/" hreflang="de" lang="de" data-ga-event="language_switch" data-ga-label="footer:de">Deutsch</a></li><li><a href="#" data-prod-href="/it/" hreflang="it" lang="it" data-ga-event="language_switch" data-ga-label="footer:it">Italiano</a></li><li><a href="#" data-prod-href="/nl/" hreflang="nl" lang="nl" data-ga-event="language_switch" data-ga-label="footer:nl">Nederlands</a></li><li><a href="#" data-prod-href="/pl/" hreflang="pl" lang="pl" data-ga-event="language_switch" data-ga-label="footer:pl">Polski</a></li><li><a href="#" data-prod-href="/ru/" hreflang="ru" lang="ru" data-ga-event="language_switch" data-ga-label="footer:ru">Русский</a></li><li><a href="#" data-prod-href="/tr/" hreflang="tr" lang="tr" data-ga-event="language_switch" data-ga-label="footer:tr">Türkçe</a></li><li><a href="#" data-prod-href="/uk/" hreflang="uk" lang="uk" data-ga-event="language_switch" data-ga-label="footer:uk">Українська</a></li><li><a href="#" data-prod-href="/vi/" hreflang="vi" lang="vi" data-ga-event="language_switch" data-ga-label="footer:vi">Tiếng Việt</a></li><li><a href="#" data-prod-href="/th/" hreflang="th" lang="th" data-ga-event="language_switch" data-ga-label="footer:th">ไทย</a></li><li><a href="#" data-prod-href="/id/" hreflang="id" lang="id" data-ga-event="language_switch" data-ga-label="footer:id">Bahasa Indonesia</a></li><li><a href="#" data-prod-href="/ar/" hreflang="ar" lang="ar" dir="rtl" data-ga-event="language_switch" data-ga-label="footer:ar">العربية</a></li><li><a href="#" data-prod-href="/hi/" hreflang="hi" lang="hi" data-ga-event="language_switch" data-ga-label="footer:hi">हिन्दी</a></li></ul>
+      </nav>
+    </div>
+    <div class="container"><div class="footer-bottom">
+      <p>© 2025–2026 Jinlong · <a href="#" data-prod-href="/about/" hreflang="en">開発：Jinlong</a></p>
+      <p class="footer-legal">Apple、Appleのロゴ、iPhone、iPad、Mac、Apple Vision Proは、米国およびその他の国や地域で登録されたApple Inc.の商標です。App StoreはApple Inc.のサービスマークです。</p>
+    </div></div>
+  </footer>
+</body>
+</html>

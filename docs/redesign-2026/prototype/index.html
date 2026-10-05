@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-script="latn" data-page="home">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- @prototype-only: the next tag keeps this local design prototype out of search engines. It must NOT be copied
+       into production templates: indexable pages output an index robots meta (06 §5.1.1, R49, SEO-06). -->
+  <meta name="robots" content="noindex, nofollow" data-prototype-only>
+  <title>WordByWord: Bilingual Web Page Translator App for iPhone</title>
+  <meta name="description" content="For language learners: swipe a paragraph in the built-in browser and its translation appears below. Double-tap a word for its meaning. Free on iPhone &amp; iPad.">
+  <meta http-equiv="content-language" content="en">
+  <link rel="canonical" href="https://www.word-by-word.app/">
+  <link rel="alternate" hreflang="en" href="https://www.word-by-word.app/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.word-by-word.app/zh-hans/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://www.word-by-word.app/zh-hant/">
+  <link rel="alternate" hreflang="ja" href="https://www.word-by-word.app/ja/">
+  <link rel="alternate" hreflang="ko" href="https://www.word-by-word.app/ko/">
+  <link rel="alternate" hreflang="es" href="https://www.word-by-word.app/es/">
+  <link rel="alternate" hreflang="pt-BR" href="https://www.word-by-word.app/pt-br/">
+  <link rel="alternate" hreflang="fr" href="https://www.word-by-word.app/fr/">
+  <link rel="alternate" hreflang="de" href="https://www.word-by-word.app/de/">
+  <link rel="alternate" hreflang="it" href="https://www.word-by-word.app/it/">
+  <link rel="alternate" hreflang="nl" href="https://www.word-by-word.app/nl/">
+  <link rel="alternate" hreflang="pl" href="https://www.word-by-word.app/pl/">
+  <link rel="alternate" hreflang="ru" href="https://www.word-by-word.app/ru/">
+  <link rel="alternate" hreflang="tr" href="https://www.word-by-word.app/tr/">
+  <link rel="alternate" hreflang="uk" href="https://www.word-by-word.app/uk/">
+  <link rel="alternate" hreflang="vi" href="https://www.word-by-word.app/vi/">
+  <link rel="alternate" hreflang="th" href="https://www.word-by-word.app/th/">
+  <link rel="alternate" hreflang="id" href="https://www.word-by-word.app/id/">
+  <link rel="alternate" hreflang="ar" href="https://www.word-by-word.app/ar/">
+  <link rel="alternate" hreflang="hi" href="https://www.word-by-word.app/hi/">
+  <link rel="alternate" hreflang="x-default" href="https://www.word-by-word.app/">
+  <meta name="theme-color" content="#FBF8F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121010" media="(prefers-color-scheme: dark)">
+  <meta name="apple-itunes-app" content="app-id=6741724502">
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/brand/favicon-32-dark.png" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="style.css">
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="header-sentinel" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" data-prod-href="/"><img src="assets/brand/wbw-icon-64.png" width="28" height="28" class="brand-icon" alt="WordByWord"><span class="brand-name" aria-hidden="true">WordByWord</span></a>
+      <nav class="main-nav" aria-label="Main"><ul><li><a href="#features">Features</a></li><li><a href="#languages">Languages</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+      <div class="header-tools">
+        <details class="lang-switch">
+          <summary aria-label="Language: English"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9M12 3C9.5 5.6 8.2 8.6 8.2 12s1.3 6.4 3.8 9"/></svg><span class="lang-current" lang="en">English</span><svg class="i i-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary>
+          <nav class="lang-menu" aria-label="Choose a language"><ul><li><a href="index.html" data-prod-href="/" hreflang="en" lang="en" aria-current="page" data-ga-event="language_switch" data-ga-label="header:en">English</a></li><li><a href="#" data-prod-href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-ga-event="language_switch" data-ga-label="header:zh-Hans">简体中文</a></li><li><a href="#" data-prod-href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-ga-event="language_switch" data-ga-label="header:zh-Hant">繁體中文</a></li><li><a href="ja.html" data-prod-href="/ja/" hreflang="ja" lang="ja" data-ga-event="language_switch" data-ga-label="header:ja">日本語</a></li><li><a href="#" data-prod-href="/ko/" hreflang="ko" lang="ko" data-ga-event="language_switch" data-ga-label="header:ko">한국어</a></li><li><a href="#" data-prod-href="/es/" hreflang="es" lang="es" data-ga-event="language_switch" data-ga-label="header:es">Español</a></li><li><a href="#" data-prod-href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-ga-event="language_switch" data-ga-label="header:pt-BR">Português (Brasil)</a></li><li><a href="#" data-prod-href="/fr/" hreflang="fr" lang="fr" data-ga-event="language_switch" data-ga-label="header:fr">Français</a></li><li><a href="#" data-prod-href="/de/" hreflang="de" lang="de" data-ga-event="language_switch" data-ga-label="header:de">Deutsch</a></li><li><a href="#" data-prod-href="/it/" hreflang="it" lang="it" data-ga-event="language_switch" data-ga-label="header:it">Italiano</a></li><li><a href="#" data-prod-href="/nl/" hreflang="nl" lang="nl" data-ga-event="language_switch" data-ga-label="header:nl">Nederlands</a></li><li><a href="#" data-prod-href="/pl/" hreflang="pl" lang="pl" data-ga-event="language_switch" data-ga-label="header:pl">Polski</a></li><li><a href="#" data-prod-href="/ru/" hreflang="ru" lang="ru" data-ga-event="language_switch" data-ga-label="header:ru">Русский</a></li><li><a href="#" data-prod-href="/tr/" hreflang="tr" lang="tr" data-ga-event="language_switch" data-ga-label="header:tr">Türkçe</a></li><li><a href="#" data-prod-href="/uk/" hreflang="uk" lang="uk" data-ga-event="language_switch" data-ga-label="header:uk">Українська</a></li><li><a href="#" data-prod-href="/vi/" hreflang="vi" lang="vi" data-ga-event="language_switch" data-ga-label="header:vi">Tiếng Việt</a></li><li><a href="#" data-prod-href="/th/" hreflang="th" lang="th" data-ga-event="language_switch" data-ga-label="header:th">ไทย</a></li><li><a href="#" data-prod-href="/id/" hreflang="id" lang="id" data-ga-event="language_switch" data-ga-label="header:id">Bahasa Indonesia</a></li><li><a href="#" data-prod-href="/ar/" hreflang="ar" lang="ar" dir="rtl" data-ga-event="language_switch" data-ga-label="header:ar">العربية</a></li><li><a href="#" data-prod-href="/hi/" hreflang="hi" lang="hi" data-ga-event="language_switch" data-ga-label="header:hi">हिन्दी</a></li></ul></nav>
+        </details>
+        <a class="btn btn-small" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-header&amp;mt=8" data-ga-label="header_app_store"><span class="dl-long">Download</span><span class="dl-short">Get</span></a>
+        <details class="nav-menu">
+          <summary aria-label="Menu"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h14M3 12h17M8 17h12"/></svg></summary>
+          <nav class="nav-menu-panel" aria-label="Main"><ul><li><a href="#features">Features</a></li><li><a href="#languages">Languages</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero" aria-labelledby="hero-h">
+      <div class="container">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">WordByWord · Bilingual web reader for language learners</p>
+            <h1 id="hero-h" class="h-display">Swipe a paragraph on <span class="kw">any web page</span>. Its translation appears right below.</h1>
+            <p class="hero-lede lede">WordByWord is a reading assistant for language learners on iPhone and iPad.</p>
+            <div class="cta-row">
+              <a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-hero&amp;mt=8" aria-label="Download WordByWord on the App Store" data-ga-label="hero"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>Download on the</small><b>App Store</b></span></a>
+              <a class="link-arrow" href="#features">See how it works</a>
+            </div>
+            <p class="hero-cta-note">Free download · iPhone &amp; iPad</p>
+          </div>
+          <div class="hero-demo">
+      <figure class="sample is-static" id="sample" aria-labelledby="sample-cap" data-loops="2">
+        <div class="device device--hero" role="group" aria-label="App demo">
+          <div class="device-screen sample-screen" dir="ltr" data-nosnippet>
+            <div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div>
+            <div class="wb-addr" aria-hidden="true"><svg viewBox="0 0 20 20" class="wb-star"><path d="m10 2.5 2.3 4.8 5.2.7-3.8 3.6.9 5.2L10 14.3l-4.6 2.5.9-5.2L2.5 8l5.2-.7z"/></svg><span>library.example</span><svg viewBox="0 0 20 20" class="wb-reload"><path d="M15.5 10a5.5 5.5 0 1 1-1.8-4.1M14 2.5v3.6h-3.6"/></svg></div>
+            <article class="wb-page" lang="es">
+              <p class="wb-title">Los sábados en la biblioteca del barrio</p>
+              <p class="wb-byline" aria-hidden="true">Notas del barrio · 3 min de lectura</p>
+              <p class="wb-src"><span class="s s1">La biblioteca del barrio abre temprano los sábados.</span> <span class="s s2">Los vecinos llegan con café y se <span class="w">quedan</span> leyendo hasta el mediodía.</span></p>
+              <div class="wb-tr-wrap"><p class="wb-tr" lang="en">The neighborhood library opens early on Saturdays. Neighbors arrive with coffee and stay reading until noon.</p></div>
+              <p class="wb-more" aria-hidden="true">Hay mesas junto a las ventanas, los periódicos del día y un rincón infantil con cuentos en varios idiomas.</p><p class="wb-more" aria-hidden="true">El primer sábado de cada mes, un grupo de voluntarios organiza un intercambio de libros en la entrada.</p>
+            </article>
+            <aside class="wb-card" lang="en">
+              <p class="wb-card-head"><b class="wb-word" lang="es">quedan</b> <span class="wb-pos">verb</span><svg class="wb-speaker" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8h3l4-3v10l-4-3H3z"/><path d="M13 7.5a3.5 3.5 0 0 1 0 5M15.2 5.5a6.4 6.4 0 0 1 0 9" fill="none"/></svg></p>
+              <p class="wb-def">stay — here: people stay on and keep reading</p>
+              <p class="wb-note">Part of the phrase “se quedan leyendo” (stay reading). Base form: quedarse.</p>
+              <p class="wb-more-link">More Definitions</p>
+            </aside>
+            <div class="wb-bottom" aria-hidden="true"><div class="wb-tools"><svg viewBox="0 0 26 26"><path d="M5 5h16v11H12l-5 4v-4H5z"/><circle cx="12" cy="10" r="2.6"/><path d="m14 12 2 2"/></svg><svg viewBox="0 0 26 26"><path d="M6 4h12a2 2 0 0 1 2 2v16H8a2 2 0 0 1-2-2z"/><path d="M6 19a2 2 0 0 1 2-2h12"/><path d="m10.5 14 2.5-7 2.5 7m-4.2-2h3.4"/></svg><svg viewBox="0 0 26 26"><path d="M4 10h4l5-4v14l-5-4H4z"/><path d="M17 9.5a5 5 0 0 1 0 7M19.5 7a8.5 8.5 0 0 1 0 12"/></svg><svg viewBox="0 0 26 26"><rect x="3" y="8" width="14" height="12" rx="2"/><path d="M7 5h12a2 2 0 0 1 2 2v8"/><circle cx="20" cy="19" r="3.2"/></svg></div><div class="wb-nav"><svg viewBox="0 0 22 22"><path d="m14 4-7 7 7 7"/></svg><svg viewBox="0 0 22 22" class="dim"><path d="m8 4 7 7-7 7"/></svg><svg viewBox="0 0 22 22"><rect x="3" y="5" width="13" height="13" rx="2"/><path d="M7 2h10a3 3 0 0 1 3 3v10M9.5 8.5v6m-3-3h6"/></svg><svg viewBox="0 0 22 22"><rect x="3" y="3" width="16" height="16" rx="3"/><text x="11" y="15" text-anchor="middle" font-size="9" stroke="none">23</text></svg><svg viewBox="0 0 22 22"><circle cx="4" cy="11" r="1.6"/><circle cx="11" cy="11" r="1.6"/><circle cx="18" cy="11" r="1.6"/></svg></div><span class="wb-home"></span></div>
+            <span class="cue cue-swipe" aria-hidden="true"><span class="cue-label">Swipe right</span><span class="cue-dot"></span></span>
+            <span class="cue cue-tap" aria-hidden="true"></span>
+          </div>
+        </div>
+        <figcaption class="sample-cap"><span id="sample-cap">HTML demo of the app, not a screenshot: a Spanish paragraph with its English translation inserted below.</span> <button class="sample-toggle" type="button" hidden data-pause="Pause" data-replay="Replay">Pause</button></figcaption>
+      </figure>
+          </div>
+          <div class="hero-after">
+            <p class="hero-how">Open a site in its built-in browser and swipe right on a paragraph: the translation appears below it. Double-tap a word for an AI explanation of what it means there.</p>
+            <p class="platform-note">Free to start, with daily limits · Plus $3.99/month in the US · iOS 18 or later; also on Apple silicon Macs and Apple Vision Pro</p>
+          </div>
+        </div>
+        <svg class="edge-mosaic" width="100%" height="16" aria-hidden="true" shape-rendering="crispEdges"><defs><pattern id="mosaic-edge" width="64" height="16" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="8" height="8" class="mk"/><rect x="8" y="0" width="8" height="8" class="mk"/><rect x="16" y="0" width="8" height="8" fill="#882239"/><rect x="24" y="0" width="8" height="8" fill="#44111C"/><rect x="32" y="0" width="8" height="8" fill="#44111C"/><rect x="40" y="0" width="8" height="8" fill="#44111C"/><rect x="48" y="0" width="8" height="8" fill="#44111C"/><rect x="56" y="0" width="8" height="8" class="mk"/><rect x="0" y="8" width="8" height="8" fill="#882239"/><rect x="8" y="8" width="8" height="8" fill="#882239"/><rect x="16" y="8" width="8" height="8" fill="#44111C"/><rect x="24" y="8" width="8" height="8" fill="#CC3355"/><rect x="32" y="8" width="8" height="8" class="mk"/><rect x="40" y="8" width="8" height="8" fill="#882239"/><rect x="48" y="8" width="8" height="8" class="mk"/><rect x="56" y="8" width="8" height="8" fill="#CC3355"/></pattern></defs><rect width="100%" height="16" fill="url(#mosaic-edge)"/></svg>
+      </div>
+    </section>
+
+    <section id="features" class="section section--features" aria-labelledby="features-h">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="features-h">Swipe to translate, double-tap to look up — on the websites you read</h2>
+          <p class="lede">Made for language learners who read real websites. Two gestures do most of the work; the rest is there when a sentence needs a closer look.</p>
+        </header>
+        <div class="feature feat-l1">
+          <div class="l1-copy">
+            <p class="eyebrow"><span class="eyebrow-n">01</span> Swipe to Translate</p>
+            <h3 class="h-sub" id="f-swipe">Swipe to Translate: the translation appears right below the original</h3>
+            <p class="feat-text">Open a page in the built-in browser — type an address or search — and swipe right on a paragraph. The translation is inserted under it, so you read both without switching screens or losing your place.</p>
+            <ol class="points"><li><span class="points-n" aria-hidden="true">01</span><span>Auto, Paragraph or Sentence by Sentence display</span></li><li><span class="points-n" aria-hidden="true">02</span><span>Show translations automatically, or tap to reveal them</span></li><li><span class="points-n" aria-hidden="true">03</span><span>News, blogs, documentation, X — pages you open in the app</span></li></ol>
+          </div>
+          <figure class="l1-media">
+            <div class="device device--l" style="--status-bg:#F3F3F4"><div class="device-screen"><div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/swipe-360.avif 360w, assets/app/en/swipe-540.avif 540w, assets/app/en/swipe-720.avif 720w" sizes="(min-width: 900px) 340px, min(320px, 80vw)"><img src="assets/app/en/swipe-540.jpg" width="540" height="1100" alt="WordByWord on iPhone: a Spanish Wikipedia page with English translations inserted below the original text" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption class="media-cap">iPhone screenshot</figcaption>
+          </figure>
+        </div>
+        <div class="feature feat-l2">
+          <div class="l2-head">
+            <p class="eyebrow"><span class="eyebrow-n">02</span> Double-tap to Look Up</p>
+            <h3 class="h-sub" id="f-lookup">Double-tap a word for its AI meaning in context</h3>
+            <p class="lede">WordByWord reads the whole sentence before it explains a word, and checks for phrases first — so you get the sense that fits here, not a list of dictionary entries.</p>
+            <p class="limit"><span class="tag tag--note">Note</span> Not available for Chinese, Japanese or Korean source text.</p>
+          </div>
+          <div class="spread">
+            <figure class="spread-device">
+              <div class="device device--l" style="--status-bg:#F3F3F4"><div class="device-screen"><div class="ios-status" data-tone="dark" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/lookup-360.avif 360w, assets/app/en/lookup-540.avif 540w, assets/app/en/lookup-720.avif 720w" sizes="(min-width: 900px) 340px, min(320px, 80vw)"><img src="assets/app/en/lookup-540.jpg" width="540" height="1100" alt="WordByWord on iPhone: the Spanish word “convirtiéndose” highlighted, with a card explaining its meaning in that sentence" loading="lazy" decoding="async"></picture><span class="ring" style="--rx:0.385;--ry:0.388;--rw:0.29;--rh:0.032" aria-hidden="true"></span></div><span class="pin pin--start" style="--y:0.403" aria-hidden="true">1</span><span class="pin pin--start" style="--y:0.747" aria-hidden="true">2</span><span class="pin pin--end" style="--y:0.83" aria-hidden="true">3</span></div>
+              <figcaption class="media-cap">iPhone screenshot</figcaption>
+            </figure>
+            <ol class="spread-col spread-col--start"><li class="anno anno--start" style="--y:0.403"><span class="anno-n" aria-hidden="true">1</span><span class="anno-t">Double-tap any word on the page</span><span class="anno-line" aria-hidden="true"></span></li><li class="anno anno--start" style="--y:0.747"><span class="anno-n" aria-hidden="true">2</span><span class="anno-t">Phrases and set expressions are recognized first</span><span class="anno-line" aria-hidden="true"></span></li></ol>
+            <ol class="spread-col spread-col--end" start="3"><li class="anno anno--end" style="--y:0.83"><span class="anno-n" aria-hidden="true">3</span><span class="anno-t">More Definitions: full entry with examples, word forms and pronunciation</span><span class="anno-line" aria-hidden="true"></span></li></ol>
+          </div>
+        </div>
+        <div class="feature m-grid">
+          <article class="m-card" aria-labelledby="f-x">
+            <figure class="m-media">
+              <div class="canvas post-sample" dir="ltr">
+                <div class="post" role="img" aria-label="Read X (Twitter) posts bilingually in the built-in browser: Acabo de terminar mi primera carrera de 10 km. Lenta, pero sin parar ni una vez. — Just finished my first 10K run. Slow, but I didn’t stop once.">
+                  <p class="post-head" aria-hidden="true"><span class="post-avatar">S</span><b>Sample Account</b> <span class="post-handle">@runner.example · 3h</span></p>
+                  <p class="post-src" lang="es">Acabo de terminar mi primera carrera de 10 km. Lenta, pero sin parar ni una vez.</p>
+                  <p class="post-tr" lang="en">Just finished my first 10K run. Slow, but I didn’t stop once.</p>
+                  <p class="post-actions" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.5 9.5a6.5 6 0 1 1 3 5.1L3 16l1.2-3.2a6 6 0 0 1-.7-3.3z"/></svg><svg viewBox="0 0 20 20"><path d="M5 7.5 7.5 5 10 7.5M7.5 5.5V13a2 2 0 0 0 2 2H12M15 12.5 12.5 15 10 12.5M12.5 14.5V7a2 2 0 0 0-2-2H8"/></svg><svg viewBox="0 0 20 20"><path d="M10 16s-6-3.6-6-8a3.2 3.2 0 0 1 6-1.6A3.2 3.2 0 0 1 16 8c0 4.4-6 8-6 8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 3v10M6.5 6.5 10 3l3.5 3.5M4 12v4h12v-4"/></svg></p>
+                </div>
+              </div>
+              <figcaption class="media-cap">Illustration, not a screenshot</figcaption>
+            </figure>
+            <p class="eyebrow eyebrow--plain">X (Twitter)</p>
+            <h3 id="f-x">Read X (Twitter) posts bilingually in the built-in browser</h3>
+            <p>Sign in to x.com inside WordByWord and swipe right on a post to see its translation underneath — handy for following accounts that post in another language.</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-chunks">
+            <figure class="m-media">
+              <div class="canvas ck-canvas" role="img" aria-label="When the rain finally stopped, we set off for the hills and made it to the top before sunset. — set off for — start a journey toward a place — Action Flow: stopped → set off → made it">
+                <div class="ck-sample" aria-hidden="true" lang="en">
+                  <p class="ck-sentence">When the rain finally stopped, we <span class="ck ck-1">set off for</span> the hills and <span class="ck ck-2">made it to</span> the top before sunset.</p>
+                  <p class="ck-gloss" lang="en">set off for — start a journey toward a place</p>
+                  <p class="ck-flow"><span class="ck-flow-label">Action Flow</span> <span>stopped → set off → made it</span></p>
+                </div>
+              </div>
+              <figcaption class="media-cap">Illustration, not a screenshot</figcaption>
+            </figure>
+            <p class="eyebrow eyebrow--plain">English pages <span class="tag tag--en-only">English only</span></p>
+            <h3 id="f-chunks">Chunk Extraction and Action Flow, for English sentences</h3>
+            <p>After you swipe-translate an English sentence, Chunk Extraction underlines the phrases that work as a unit, and Action Flow shows the sentence’s core action and the actions linked to it. Run them automatically, on tap, or switch them off.</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-speech">
+            <figure class="m-media"><div class="shot"><picture><source type="image/avif" srcset="assets/app/en/tts-ex-720.avif 720w, assets/app/en/tts-ex-1080.avif 1080w" sizes="(min-width: 900px) 512px, calc(100vw - 32px)"><img src="assets/app/en/tts-ex-720.jpg" width="720" height="404" alt="WordByWord on iPhone: a translated paragraph with the read-aloud player at the bottom of the screen" loading="lazy" decoding="async"></picture></div>
+              <figcaption class="media-cap">iPhone screenshot · excerpt</figcaption></figure>
+            <p class="eyebrow eyebrow--plain">Read aloud</p>
+            <h3 id="f-speech">AI read-aloud, or fast on-device iOS voices</h3>
+            <p>Hear a word or a whole sentence. AI Read uses a natural-sounding cloud voice; Local Read uses the voices built into iOS — faster, with adjustable speed, and it can use Premium or Enhanced voices you have downloaded.</p>
+          </article>
+          <article class="m-card" aria-labelledby="f-syntax">
+            <figure class="m-media"><div class="shot"><picture><source type="image/avif" srcset="assets/app/en/syntax-ex-720.avif 720w, assets/app/en/syntax-ex-1080.avif 1080w" sizes="(min-width: 900px) 512px, calc(100vw - 32px)"><img src="assets/app/en/syntax-ex-720.jpg" width="720" height="404" alt="WordByWord on iPhone: the Swipe Translation Detail screen with AI syntax explanations for one sentence" loading="lazy" decoding="async"></picture></div>
+              <figcaption class="media-cap">iPhone screenshot · excerpt</figcaption></figure>
+            <p class="eyebrow eyebrow--plain">Syntax</p>
+            <h3 id="f-syntax">AI sentence structure analysis for long sentences</h3>
+            <p>Open a translated sentence from your swipe history and tap Get AI Syntax Explanation. It breaks the sentence into parts and explains how they fit together.</p>
+          </article></div>
+        <ul class="spec">
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">Engines</p><h3 class="h-4">Cloud or on-device translation</h3><p class="spec-fact">Cloud (Azure and Google) or iOS on-device; out of cloud swipes? Switch to local.</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">Display</p><h3 class="h-4">Translation layout and style <span class="swatches" aria-hidden="true"><i class="sw sw--quote">Aa</i><i class="sw sw--bg">Aa</i><i class="sw sw--border">Aa</i><i class="sw sw--under">Aa</i></span></h3><p class="spec-fact">Auto, Paragraph or Sentence by Sentence; at once or on tap; several styles.</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">History</p><h3 class="h-4">Translation and lookup history</h3><p class="spec-fact">Translations and looked-up words are saved with their sentence; clear anytime.</p></li>
+          <li class="spec-row"><p class="spec-label" aria-hidden="true">Devices</p><h3 class="h-4">iPhone, iPad, Mac and Vision Pro</h3><p class="spec-fact">iPhone and iPad (iOS 18+), Apple silicon Macs (macOS 15+) and Apple Vision Pro.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section section--end" aria-labelledby="gallery-h">
+      <div class="container">
+        <h2 id="gallery-h" class="h-sub">Settings, full definitions and language choices in the app</h2>
+        <div class="gallery" data-count="4" role="region" aria-labelledby="gallery-h" tabindex="0">
+          <figure class="gallery-item"><div class="device device--sm" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/settings-360.avif 360w, assets/app/en/settings-540.avif 540w" sizes="(min-width: 900px) 226px, 58vw"><img src="assets/app/en/settings-540.jpg" width="540" height="1100" alt="WordByWord settings on iPhone: translation mode Auto, Quote Style and Local Read" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">Fig. 1</span> Settings: translation mode, translation style and speech mode</figcaption></figure>
+          <figure class="gallery-item"><div class="device device--sm" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/dictionary-360.avif 360w, assets/app/en/dictionary-540.avif 540w" sizes="(min-width: 900px) 226px, 58vw"><img src="assets/app/en/dictionary-540.jpg" width="540" height="1100" alt="WordByWord More Definitions screen: the Spanish word “matrimonio” with definitions and example sentences" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">Fig. 2</span> More Definitions: the full entry, with example sentences</figcaption></figure>
+          <figure class="gallery-item"><div class="device device--sm" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/languages-360.avif 360w, assets/app/en/languages-540.avif 540w" sizes="(min-width: 900px) 226px, 58vw"><img src="assets/app/en/languages-540.jpg" width="540" height="1100" alt="WordByWord language settings: source language Spanish, target language English (US)" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">Fig. 3</span> Source and target language: Spanish to English (US)</figcaption></figure>
+          <figure class="gallery-item"><div class="device device--sm" style="--status-bg:#000000"><div class="device-screen"><div class="ios-status" data-tone="light" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div><picture><source type="image/avif" srcset="assets/app/en/language-list-360.avif 360w, assets/app/en/language-list-540.avif 540w" sizes="(min-width: 900px) 226px, 58vw"><img src="assets/app/en/language-list-540.jpg" width="540" height="1100" alt="WordByWord language list on iPhone: Vietnamese, Portuguese, Ukrainian, Italian, Chinese and more" loading="lazy" decoding="async"></picture></div></div>
+            <figcaption><span class="fig-no">Fig. 4</span> Pick one of 21 translation languages</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="languages" class="section section--band" aria-labelledby="languages-h">
+      <div class="container langs-layout">
+        <div class="langs-main">
+          <h2 id="languages-h">Translate into 21 languages — from more than English</h2>
+          <p class="lede">Choose the language you want translations in. WordByWord assumes English at first, detects the language of the page you’re reading and updates it — or you can set it yourself.</p>
+          <ul class="facts">
+            <li>App in 20 languages</li>
+            <li>Translations into 21 languages</li>
+            <li>Page language: English by default, detected automatically, changeable</li>
+          </ul>
+          <h3 class="chips-label" id="targets-h">Translation languages</h3>
+          <ul class="chips" aria-labelledby="targets-h"><li class="chip" lang="en-US">English (US)</li><li class="chip" lang="en-GB">English (UK)</li><li class="chip" lang="zh-Hans">简体中文</li><li class="chip" lang="zh-Hant">繁體中文</li><li class="chip" lang="ja">日本語</li><li class="chip" lang="ko">한국어</li><li class="chip" lang="es">Español</li><li class="chip" lang="pt-BR">Português (Brasil)</li><li class="chip" lang="fr">Français</li><li class="chip" lang="de">Deutsch</li><li class="chip" lang="it">Italiano</li><li class="chip" lang="nl">Nederlands</li><li class="chip" lang="pl">Polski</li><li class="chip" lang="ru">Русский</li><li class="chip" lang="tr">Türkçe</li><li class="chip" lang="uk">Українська</li><li class="chip" lang="vi">Tiếng Việt</li><li class="chip" lang="th">ไทย</li><li class="chip" lang="id">Bahasa Indonesia</li><li class="chip" lang="ar" dir="rtl">العربية</li><li class="chip" lang="hi">हिन्दी</li></ul>
+        </div>
+        <aside class="side-notes">
+          <ol><li class="side-note">Chinese, Japanese and Korean pages: swipe translation and read-aloud work; double-tap lookup doesn’t.</li><li class="side-note">Chunk Extraction and Action Flow work on English text only.</li></ol>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pricing" class="section" aria-labelledby="pricing-h">
+      <div class="container">
+        <header class="section-head">
+          <h2 id="pricing-h">Free every day — upgrade to Plus when you read more</h2>
+          <p class="lede">WordByWord is free to download. Most features have a free daily allowance that resets every day; WordByWord Plus raises it.</p>
+        </header>
+        <div class="pricing-body">
+          <div class="table-wrap">
+            <table class="quota">
+              <caption>Daily limits, Free and Plus</caption>
+              <thead><tr><th scope="col">Feature</th><th scope="col">Free</th><th scope="col" class="col-plus"><svg class="plus-mosaic" viewBox="0 0 16 1" preserveAspectRatio="none" aria-hidden="true" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" class="mk"/><rect x="1" y="0" width="1" height="1" class="mk"/><rect x="2" y="0" width="1" height="1" fill="#882239"/><rect x="3" y="0" width="1" height="1" fill="#44111C"/><rect x="4" y="0" width="1" height="1" fill="#44111C"/><rect x="5" y="0" width="1" height="1" fill="#44111C"/><rect x="6" y="0" width="1" height="1" fill="#44111C"/><rect x="7" y="0" width="1" height="1" class="mk"/><rect x="8" y="0" width="1" height="1" fill="#882239"/><rect x="9" y="0" width="1" height="1" fill="#882239"/><rect x="10" y="0" width="1" height="1" fill="#44111C"/><rect x="11" y="0" width="1" height="1" fill="#CC3355"/><rect x="12" y="0" width="1" height="1" class="mk"/><rect x="13" y="0" width="1" height="1" fill="#882239"/><rect x="14" y="0" width="1" height="1" class="mk"/><rect x="15" y="0" width="1" height="1" fill="#CC3355"/></svg><span class="plus-name">Plus</span><span class="plus-price">$3.99 / month (US)</span></th></tr></thead>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">Translate</th></tr>
+                <tr><th scope="row">Swipe translation · cloud engine</th><td>50 / day</td><td>500 / day</td></tr>
+                <tr><th scope="row">Swipe translation · local engine</th><td>100 / day</td><td><span class="nolimit">No daily limit</span></td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">Look up</th></tr>
+                <tr><th scope="row">Double-tap lookup (AI meaning)</th><td>20 / day</td><td>500 / day</td></tr>
+                <tr><th scope="row">More Definitions</th><td>10 / day</td><td>500 / day</td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">Listen</th></tr>
+                <tr><th scope="row">AI pronunciation · word</th><td>10 / day</td><td>200 / day</td></tr>
+                <tr><th scope="row">AI pronunciation · sentence</th><td>10 / day</td><td>100 / day</td></tr>
+                <tr><th scope="row">iOS voice (Local Read)</th><td><span class="nolimit">No daily limit</span></td><td><span class="nolimit">No daily limit</span></td></tr></tbody>
+              <tbody><tr class="grp"><th colspan="3" scope="colgroup">Sentence tools</th></tr>
+                <tr><th scope="row">Chunk Extraction <span class="tag tag--en-only">English only</span></th><td>30 / day</td><td>500 / day</td></tr>
+                <tr><th scope="row">Action Flow <span class="tag tag--en-only">English only</span></th><td>20 / day</td><td>500 / day</td></tr>
+                <tr><th scope="row">AI syntax explanation</th><td>5 / day</td><td>500 / day</td></tr></tbody>
+            </table>
+          </div>
+          <p class="pricing-summary">Every feature is free within these limits; Plus raises them for $3.99/month (US).</p>
+          <p class="pricing-note">Prices vary by region and are shown in the App Store. You can cancel the subscription at any time in your Apple Account settings.</p>
+          <div class="pricing-cta"><a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-pricing&amp;mt=8" aria-label="Download WordByWord on the App Store" data-ga-label="pricing"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>Download on the</small><b>App Store</b></span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="sibling" id="surfenglish" aria-labelledby="se-h" data-ga-view="surfenglish_promo_view" data-ga-label="card">
+      <div class="container">
+        <div class="sibling__inner">
+          <div class="sibling__text">
+            <p class="sibling__eyebrow"><img src="assets/se/se-icon-64.png" width="32" height="32" class="sibling__icon" alt="" loading="lazy" decoding="async"><span>From the developer of WordByWord</span></p>
+            <h2 id="se-h" class="h-3">SurfEnglish: daily English news at your level</h2>
+            <p class="sibling__body">Learning English? Keep reading any page you like in WordByWord, and try SurfEnglish too: daily English news by level and review games, with the same swipe and double-tap.</p>
+            <ul class="sibling__points"><li>Real English news at levels <bdi>A1–C1</bdi></li><li>Review games built from what you’ve read</li><li>Share English articles from Safari to the app</li></ul>
+            <p class="sibling__note">Free to start · iPhone and iPad · App in 12 languages · Translations into 21</p>
+            <p class="sibling__actions">
+              <a class="sibling__store" href="https://apps.apple.com/app/apple-store/id6787367021?ct=wbw-card&amp;mt=8" data-ga-event="surfenglish_promo" data-ga-label="card_appstore">Get SurfEnglish on the App Store<span aria-hidden="true">&#160;→</span></a>
+              <a class="sibling__link" href="https://surfenglish.app/" hreflang="en" data-ga-event="surfenglish_promo" data-ga-label="card_site">Read English news at your level with SurfEnglish</a>
+            </p>
+          </div>
+          <figure class="sibling__window">
+            <picture><source type="image/avif" srcset="assets/se/se-games-400.avif"><img src="assets/se/se-games-400.jpg" width="400" height="440" alt="SurfEnglish Games screen: Sentence Builder and Word Raid, ready to play with saved sentences and words" loading="lazy" decoding="async"></picture>
+            <figcaption>SurfEnglish screenshot (English interface)</figcaption>
+          </figure>
+        </div>
+      </div>
+    </aside>
+
+    <section id="faq" class="section section--end" aria-labelledby="faq-h">
+      <div class="container faq-layout">
+        <div class="faq-head"><h2 id="faq-h" class="h-sub">Questions about WordByWord</h2></div>
+        <div class="faq-list">
+            <details class="faq-item" id="faq-what-is" open><summary><span class="faq-q">What is WordByWord?</span></summary><div class="faq-a"><p>WordByWord is a reading assistant for language learners and anyone reading websites in another language, on iPhone and iPad. Open a page in its built-in browser, swipe right on a paragraph to insert the translation below it, and double-tap a word to see what it means in that sentence. It is made by an independent developer, Jinlong. <a href="#" data-prod-href="/about/">More about WordByWord</a></p></div></details>
+            <details class="faq-item" id="faq-whole-page"><summary><span class="faq-q">Can WordByWord translate a whole web page at once?</span></summary><div class="faq-a"><p>No. WordByWord translates the paragraph you swipe and inserts the translation right below it; the rest of the page stays in the original language. You can show translations paragraph by paragraph or sentence by sentence (or let Auto decide), and choose whether they appear straight away or only when you tap.</p></div></details>
+            <details class="faq-item" id="faq-safari"><summary><span class="faq-q">Does it work in Safari or inside other apps?</span></summary><div class="faq-a"><p>No. WordByWord is not a Safari extension and does not add a translate button to other apps. It has its own browser with tabs and bookmarks: type a web address or search, then swipe to translate there.</p></div></details>
+            <details class="faq-item" id="faq-word-by-word"><summary><span class="faq-q">Is WordByWord a word-by-word translator?</span></summary><div class="faq-a"><p>Not in the literal sense. Translating one word at a time often misses the meaning, so WordByWord translates whole sentences or paragraphs and explains single words only when you double-tap them — in the context of the sentence they are in.</p></div></details>
+            <details class="faq-item" id="faq-x"><summary><span class="faq-q">Can I read X (Twitter) with WordByWord?</span></summary><div class="faq-a"><p>Yes. Open x.com in the built-in browser and sign in, then swipe right on a post to see its translation underneath, and double-tap a word to look it up (not available in Chinese, Japanese or Korean posts). This works with the X website inside WordByWord, not with the X app.</p></div></details>
+            <details class="faq-item" id="faq-languages"><summary><span class="faq-q">Which languages does WordByWord support?</span></summary><div class="faq-a"><p>The app is available in 20 languages and translates into 21, including Simplified and Traditional Chinese and both US and UK English. The page language is English by default; WordByWord detects the language you are reading and updates it, and you can also change it by hand. Some features depend on that language: double-tap lookup does not work on Chinese, Japanese or Korean text, and Chunk Extraction and Action Flow work on English only.</p></div></details>
+            <details class="faq-item" id="faq-free"><summary><span class="faq-q">Is WordByWord free? What are the daily limits?</span></summary><div class="faq-a"><p>Yes. WordByWord is free to download and use, with daily limits. The free plan includes, per day, 50 swipe translations with the cloud engine, 100 with the local engine, 20 double-tap lookups, 30 Chunk Extractions, 20 Action Flows and 5 AI syntax explanations; iOS voices have no daily limit. <strong>WordByWord Plus</strong> is a monthly subscription ($3.99 in the US; local prices are shown in the App Store) that raises these limits.</p></div></details>
+            <details class="faq-item" id="faq-engines"><summary><span class="faq-q">Which translation engine does it use?</span></summary><div class="faq-a"><p>You choose. The cloud translation engine is currently backed by Azure and Google translation services. The local engine uses the translation built into iOS; the first time, iOS may need to download language resources. If you run out of cloud translations for the day, switch to the local engine and retry. Word explanations, syntax analysis and AI Read use AI services in the cloud.</p></div></details>
+            <details class="faq-item" id="faq-account"><summary><span class="faq-q">Do I need an account to use WordByWord?</span></summary><div class="faq-a"><p>No. WordByWord works without signing up. You only sign in to websites such as x.com inside its built-in browser, as you would in any browser. A WordByWord Plus subscription belongs to your Apple Account, not to a WordByWord account.</p></div></details>
+            <details class="faq-item" id="faq-restore"><summary><span class="faq-q">How do I get WordByWord Plus back on a new iPhone or iPad?</span></summary><div class="faq-a"><p>Use the same Apple Account on the new device. In WordByWord’s settings, tap Upgrade Now, then Restore Purchase. To change or cancel the subscription, use the subscription settings of your Apple Account.</p></div></details>
+            <details class="faq-item" id="faq-android"><summary><span class="faq-q">Is there an Android version?</span></summary><div class="faq-a"><p>No. WordByWord is available only on the App Store, for iPhone and iPad, Macs with Apple silicon and Apple Vision Pro.</p></div></details>
+            <details class="faq-item" id="faq-english-learner"><summary><span class="faq-q">I’m learning English. Is SurfEnglish worth trying too?</span></summary><div class="faq-a"><p>Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you would also like daily English news sorted by level (A1–C1) and games that review the sentences and words you have saved, SurfEnglish, from the same developer, adds that with the same swipe and double-tap. The two apps work side by side. <a href="https://surfenglish.app/" hreflang="en" data-ga-event="surfenglish_promo" data-ga-label="faq_site">SurfEnglish website</a></p></div></details>
+            <details class="faq-item" id="faq-devices"><summary><span class="faq-q">Does WordByWord work on iPad, Mac or a desktop browser?</span></summary><div class="faq-a"><p>WordByWord runs on iPhone and iPad with iOS 18 or later, and from the App Store also on Macs with Apple silicon (macOS 15 or later) and on Apple Vision Pro. There is no version for desktop browsers yet; a Chrome extension from the same developer is in preparation — see the <a href="#" data-prod-href="/chrome-extension/">Chrome extension page</a>.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section section--band final-cta" aria-labelledby="cta-h">
+      <div class="container cta-layout">
+        <div class="cta-mark" aria-hidden="true"><img src="assets/brand/wbw-icon-160.png" width="80" height="80" class="cta-icon" alt="" loading="lazy" decoding="async"><svg class="mosaic mosaic--cta" viewBox="0 0 4 4" aria-hidden="true" shape-rendering="crispEdges"><rect x="0" y="0" width="1" height="1" class="mk"/><rect x="1" y="0" width="1" height="1" class="mk"/><rect x="2" y="0" width="1" height="1" fill="#882239"/><rect x="3" y="0" width="1" height="1" fill="#44111C"/><rect x="0" y="1" width="1" height="1" fill="#44111C"/><rect x="1" y="1" width="1" height="1" fill="#44111C"/><rect x="2" y="1" width="1" height="1" fill="#44111C"/><rect x="3" y="1" width="1" height="1" class="mk"/><rect x="0" y="2" width="1" height="1" fill="#882239"/><rect x="1" y="2" width="1" height="1" fill="#882239"/><rect x="2" y="2" width="1" height="1" fill="#44111C"/><rect x="3" y="2" width="1" height="1" fill="#CC3355"/><rect x="0" y="3" width="1" height="1" class="mk"/><rect x="1" y="3" width="1" height="1" fill="#882239"/><rect x="2" y="3" width="1" height="1" class="mk"/><rect x="3" y="3" width="1" height="1" fill="#CC3355"/></svg></div>
+        <div class="cta-copy">
+          <h2 id="cta-h">Start reading websites bilingually on iPhone</h2>
+          <p class="lede cta-recap">Swipe to translate · Double-tap to look up · Read aloud · 21 languages</p>
+          <a class="asb" href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-cta&amp;mt=8" aria-label="Download WordByWord on the App Store" data-ga-label="cta"><svg class="asb-logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.05 12.54c-.03-2.89 2.36-4.27 2.47-4.34-1.35-1.97-3.44-2.24-4.18-2.27-1.78-.18-3.47 1.05-4.37 1.05-.9 0-2.29-1.02-3.77-.99-1.94.03-3.73 1.13-4.73 2.86-2.02 3.5-.52 8.68 1.45 11.52.96 1.39 2.11 2.95 3.61 2.9 1.45-.06 2-.94 3.75-.94s2.25.94 3.78.91c1.56-.03 2.55-1.42 3.5-2.81 1.1-1.61 1.56-3.17 1.58-3.25-.03-.02-3.04-1.17-3.09-4.64zM14.16 4.05c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.85-1.39 2.22-1.22 3.53 1.29.1 2.6-.65 3.41-1.61z"/></svg><span class="asb-text" aria-hidden="true"><small>Download on the</small><b>App Store</b></span></a>
+          <p class="cta-note">Free on the App Store, for iPhone and iPad.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html" data-prod-href="/"><img src="assets/brand/wbw-icon-64.png" width="28" height="28" class="brand-icon" alt="WordByWord" loading="lazy"><span class="brand-name" aria-hidden="true">WordByWord</span></a>
+        <p class="footer-tagline">A reading assistant for language learners on iPhone and iPad.</p>
+        <div class="family">
+          <h2 class="footer-heading">More from the maker</h2>
+          <a class="family-link" href="https://surfenglish.app/" hreflang="en" data-ga-event="surfenglish_promo" data-ga-label="footer_site">
+            <span class="family-mark" aria-hidden="true"><img src="assets/brand/wbw-icon-64.png" width="32" height="32" alt="" loading="lazy"><i class="family-line"></i><img src="assets/se/se-icon-64.png" width="32" height="32" alt="" loading="lazy"></span>
+            <span>SurfEnglish: Bilingual News</span></a>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Site">
+        <div>
+          <h2 class="footer-heading">Product</h2>
+          <ul>
+            <li><a href="https://apps.apple.com/app/apple-store/id6741724502?ct=wbw-footer&amp;mt=8">iPhone &amp; iPad app</a></li>
+            <li><a href="#" data-prod-href="/chrome-extension/">Chrome extension</a></li>
+            <li><a href="#" data-prod-href="/about/">About WordByWord</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-heading">Help</h2>
+          <ul>
+            <li><a href="#" data-prod-href="/support.html">Support</a></li>
+            <li><a href="#" data-prod-href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="mailto:app.wordbyword@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <nav class="footer-langs" aria-labelledby="footer-langs-h">
+        <h2 class="footer-heading" id="footer-langs-h">Languages</h2>
+        <ul class="lang-list"><li><a href="index.html" data-prod-href="/" hreflang="en" lang="en" aria-current="page" data-ga-event="language_switch" data-ga-label="footer:en">English</a></li><li><a href="#" data-prod-href="/zh-hans/" hreflang="zh-Hans" lang="zh-Hans" data-ga-event="language_switch" data-ga-label="footer:zh-Hans">简体中文</a></li><li><a href="#" data-prod-href="/zh-hant/" hreflang="zh-Hant" lang="zh-Hant" data-ga-event="language_switch" data-ga-label="footer:zh-Hant">繁體中文</a></li><li><a href="ja.html" data-prod-href="/ja/" hreflang="ja" lang="ja" data-ga-event="language_switch" data-ga-label="footer:ja">日本語</a></li><li><a href="#" data-prod-href="/ko/" hreflang="ko" lang="ko" data-ga-event="language_switch" data-ga-label="footer:ko">한국어</a></li><li><a href="#" data-prod-href="/es/" hreflang="es" lang="es" data-ga-event="language_switch" data-ga-label="footer:es">Español</a></li><li><a href="#" data-prod-href="/pt-br/" hreflang="pt-BR" lang="pt-BR" data-ga-event="language_switch" data-ga-label="footer:pt-BR">Português (Brasil)</a></li><li><a href="#" data-prod-href="/fr/" hreflang="fr" lang="fr" data-ga-event="language_switch" data-ga-label="footer:fr">Français</a></li><li><a href="#" data-prod-href="/de/" hreflang="de" lang="de" data-ga-event="language_switch" data-ga-label="footer:de">Deutsch</a></li><li><a href="#" data-prod-href="/it/" hreflang="it" lang="it" data-ga-event="language_switch" data-ga-label="footer:it">Italiano</a></li><li><a href="#" data-prod-href="/nl/" hreflang="nl" lang="nl" data-ga-event="language_switch" data-ga-label="footer:nl">Nederlands</a></li><li><a href="#" data-prod-href="/pl/" hreflang="pl" lang="pl" data-ga-event="language_switch" data-ga-label="footer:pl">Polski</a></li><li><a href="#" data-prod-href="/ru/" hreflang="ru" lang="ru" data-ga-event="language_switch" data-ga-label="footer:ru">Русский</a></li><li><a href="#" data-prod-href="/tr/" hreflang="tr" lang="tr" data-ga-event="language_switch" data-ga-label="footer:tr">Türkçe</a></li><li><a href="#" data-prod-href="/uk/" hreflang="uk" lang="uk" data-ga-event="language_switch" data-ga-label="footer:uk">Українська</a></li><li><a href="#" data-prod-href="/vi/" hreflang="vi" lang="vi" data-ga-event="language_switch" data-ga-label="footer:vi">Tiếng Việt</a></li><li><a href="#" data-prod-href="/th/" hreflang="th" lang="th" data-ga-event="language_switch" data-ga-label="footer:th">ไทย</a></li><li><a href="#" data-prod-href="/id/" hreflang="id" lang="id" data-ga-event="language_switch" data-ga-label="footer:id">Bahasa Indonesia</a></li><li><a href="#" data-prod-href="/ar/" hreflang="ar" lang="ar" dir="rtl" data-ga-event="language_switch" data-ga-label="footer:ar">العربية</a></li><li><a href="#" data-prod-href="/hi/" hreflang="hi" lang="hi" data-ga-event="language_switch" data-ga-label="footer:hi">हिन्दी</a></li></ul>
+      </nav>
+    </div>
+    <div class="container"><div class="footer-bottom">
+      <p>© 2025–2026 Jinlong · <a href="#" data-prod-href="/about/">Made by Jinlong</a></p>
+      <p class="footer-legal">Apple, the Apple logo, iPhone, iPad, Mac and Apple Vision Pro are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</p>
+    </div></div>
+  </footer>
+</body>
+</html>

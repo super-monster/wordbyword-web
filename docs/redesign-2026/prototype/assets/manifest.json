@@ -1,0 +1,611 @@
+{
+  "app/en/swipe": {
+    "src": "../wordbyword-web/img/en/feature_swipe_demo.png",
+    "kind": "screen",
+    "crop": {
+      "x": 122,
+      "y": 293,
+      "w": 1286,
+      "h": 2622
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/swipe-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 28730
+      },
+      {
+        "file": "assets/app/en/swipe-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 48380
+      },
+      {
+        "file": "assets/app/en/swipe-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 67226
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/swipe-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 116244
+    },
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark"
+  },
+  "app/en/lookup": {
+    "src": "../wordbyword-web/img/en/feature_doubletap_demo.png",
+    "kind": "screen",
+    "crop": {
+      "x": 122,
+      "y": 293,
+      "w": 1286,
+      "h": 2622
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/lookup-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 24481
+      },
+      {
+        "file": "assets/app/en/lookup-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 43915
+      },
+      {
+        "file": "assets/app/en/lookup-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 60897
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/lookup-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 105867
+    },
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "pins": [
+      {
+        "n": 1,
+        "side": "start",
+        "y": 0.403
+      },
+      {
+        "n": 2,
+        "side": "start",
+        "y": 0.747
+      },
+      {
+        "n": 3,
+        "side": "end",
+        "y": 0.83
+      }
+    ],
+    "ring": {
+      "x": 0.385,
+      "y": 0.388,
+      "w": 0.29,
+      "h": 0.032
+    }
+  },
+  "app/en/tts-ex": {
+    "src": "../wordbyword-web/img/en/feature_tts_demo.png",
+    "kind": "ex",
+    "crop": {
+      "x": 122,
+      "y": 1942,
+      "w": 1286,
+      "h": 724
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/tts-ex-720.avif",
+        "w": 720,
+        "h": 404,
+        "bytes": 11687
+      },
+      {
+        "file": "assets/app/en/tts-ex-1080.avif",
+        "w": 1080,
+        "h": 608,
+        "bytes": 18302
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/tts-ex-720.jpg",
+      "w": 720,
+      "h": 404,
+      "bytes": 31823
+    },
+    "edge": {
+      "stdTop": 6.1,
+      "stdBottom": 0.34,
+      "inkTop": 0,
+      "inkBottom": 0
+    }
+  },
+  "app/en/syntax-ex": {
+    "src": "../wordbyword-web/img/en/feature_history_demo.png",
+    "kind": "ex",
+    "crop": {
+      "x": 122,
+      "y": 1238,
+      "w": 1286,
+      "h": 724
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/syntax-ex-720.avif",
+        "w": 720,
+        "h": 404,
+        "bytes": 13715
+      },
+      {
+        "file": "assets/app/en/syntax-ex-1080.avif",
+        "w": 1080,
+        "h": 608,
+        "bytes": 19614
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/syntax-ex-720.jpg",
+      "w": 720,
+      "h": 404,
+      "bytes": 34427
+    },
+    "edge": {
+      "stdTop": 0,
+      "stdBottom": 3.65,
+      "inkTop": 0,
+      "inkBottom": 0
+    }
+  },
+  "app/en/settings": {
+    "src": "../wordbyword-web/img/en/feature_customize_demo.png",
+    "kind": "sm",
+    "crop": {
+      "x": 122,
+      "y": 293,
+      "w": 1286,
+      "h": 2622
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/settings-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 10395
+      },
+      {
+        "file": "assets/app/en/settings-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 19406
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/settings-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 55054
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "app/en/dictionary": {
+    "src": "../wordbyword-web/img/en/more_definitions.png",
+    "kind": "sm",
+    "crop": {
+      "x": 122,
+      "y": 293,
+      "w": 1286,
+      "h": 2622
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/dictionary-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 12774
+      },
+      {
+        "file": "assets/app/en/dictionary-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 23000
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/dictionary-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 59151
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "app/en/languages": {
+    "src": "../wordbyword-web/img/en/language_setting_en.PNG",
+    "kind": "sm",
+    "crop": {
+      "x": 0,
+      "y": 162,
+      "w": 1206,
+      "h": 2460
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/languages-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 4963
+      },
+      {
+        "file": "assets/app/en/languages-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 8706
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/languages-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 29990
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "app/en/language-list": {
+    "src": "../wordbyword-web/img/en/select_language_en.PNG",
+    "kind": "sm",
+    "crop": {
+      "x": 0,
+      "y": 162,
+      "w": 1206,
+      "h": 2460
+    },
+    "avif": [
+      {
+        "file": "assets/app/en/language-list-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 11849
+      },
+      {
+        "file": "assets/app/en/language-list-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 21021
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/en/language-list-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 64757
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "app/ja/swipe": {
+    "src": "../Resources/wbw_jp/wbw_jp.001.png",
+    "kind": "screen",
+    "crop": {
+      "x": 221,
+      "y": 932,
+      "w": 842,
+      "h": 1717
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/swipe-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 29205
+      },
+      {
+        "file": "assets/app/ja/swipe-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 49327
+      },
+      {
+        "file": "assets/app/ja/swipe-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 64545
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/swipe-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 117482
+    },
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark"
+  },
+  "app/ja/lookup": {
+    "src": "../Resources/wbw_jp/wbw_jp.002.png",
+    "kind": "screen",
+    "crop": {
+      "x": 221,
+      "y": 932,
+      "w": 842,
+      "h": 1717
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/lookup-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 23681
+      },
+      {
+        "file": "assets/app/ja/lookup-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 39764
+      },
+      {
+        "file": "assets/app/ja/lookup-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 53923
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/lookup-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 96014
+    },
+    "statusBg": "#F3F3F4",
+    "statusTone": "dark",
+    "pins": [
+      {
+        "n": 1,
+        "side": "start",
+        "y": 0.372
+      },
+      {
+        "n": 2,
+        "side": "start",
+        "y": 0.733
+      },
+      {
+        "n": 3,
+        "side": "end",
+        "y": 0.83
+      }
+    ],
+    "ring": {
+      "x": 0.025,
+      "y": 0.355,
+      "w": 0.19,
+      "h": 0.035
+    }
+  },
+  "app/ja/tts-ex": {
+    "src": "../Resources/wbw_jp/wbw_jp.003.png",
+    "kind": "ex",
+    "crop": {
+      "x": 221,
+      "y": 2029,
+      "w": 842,
+      "h": 474
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/tts-ex-720.avif",
+        "w": 720,
+        "h": 404,
+        "bytes": 10612
+      },
+      {
+        "file": "assets/app/ja/tts-ex-842.avif",
+        "w": 842,
+        "h": 474,
+        "bytes": 13211
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/tts-ex-720.jpg",
+      "w": 720,
+      "h": 404,
+      "bytes": 31632
+    },
+    "edge": {
+      "stdTop": 0.97,
+      "stdBottom": 0.93,
+      "inkTop": 0,
+      "inkBottom": 0
+    }
+  },
+  "app/ja/syntax-ex": {
+    "src": "../Resources/wbw_jp/wbw_jp.004.png",
+    "kind": "ex",
+    "crop": {
+      "x": 221,
+      "y": 1807,
+      "w": 842,
+      "h": 474
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/syntax-ex-720.avif",
+        "w": 720,
+        "h": 404,
+        "bytes": 15601
+      },
+      {
+        "file": "assets/app/ja/syntax-ex-842.avif",
+        "w": 842,
+        "h": 474,
+        "bytes": 19135
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/syntax-ex-720.jpg",
+      "w": 720,
+      "h": 404,
+      "bytes": 41325
+    },
+    "edge": {
+      "stdTop": 0.97,
+      "stdBottom": 4.41,
+      "inkTop": 0,
+      "inkBottom": 0
+    }
+  },
+  "app/ja/settings": {
+    "src": "../Resources/wbw_jp/wbw_jp.006.png",
+    "kind": "md",
+    "crop": {
+      "x": 221,
+      "y": 932,
+      "w": 842,
+      "h": 1717
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/settings-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 8896
+      },
+      {
+        "file": "assets/app/ja/settings-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 15574
+      },
+      {
+        "file": "assets/app/ja/settings-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 19947
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/settings-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 50781
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "app/ja/dictionary": {
+    "src": "../Resources/wbw_jp/wbw_jp.007.png",
+    "kind": "md",
+    "crop": {
+      "x": 221,
+      "y": 932,
+      "w": 842,
+      "h": 1717
+    },
+    "avif": [
+      {
+        "file": "assets/app/ja/dictionary-360.avif",
+        "w": 360,
+        "h": 734,
+        "bytes": 12349
+      },
+      {
+        "file": "assets/app/ja/dictionary-540.avif",
+        "w": 540,
+        "h": 1100,
+        "bytes": 21121
+      },
+      {
+        "file": "assets/app/ja/dictionary-720.avif",
+        "w": 720,
+        "h": 1468,
+        "bytes": 28079
+      }
+    ],
+    "jpeg": {
+      "file": "assets/app/ja/dictionary-540.jpg",
+      "w": 540,
+      "h": 1100,
+      "bytes": 58920
+    },
+    "statusBg": "#000000",
+    "statusTone": "light"
+  },
+  "se/games": {
+    "src": "../../SurfEnglish/SurfEnglishWebsite/public/images/screenshots/games-home.jpg",
+    "crop": {
+      "x": 0,
+      "y": 112,
+      "w": 720,
+      "h": 792
+    },
+    "avif": [
+      {
+        "file": "assets/se/se-games-400.avif",
+        "w": 400,
+        "h": 440,
+        "bytes": 7403
+      }
+    ],
+    "jpeg": {
+      "file": "assets/se/se-games-400.jpg",
+      "w": 400,
+      "h": 440,
+      "bytes": 20595
+    }
+  },
+  "brand/wbw-icon-64": {
+    "png": {
+      "file": "assets/brand/wbw-icon-64.png",
+      "w": 64,
+      "h": 64,
+      "bytes": 2409
+    }
+  },
+  "brand/wbw-icon-160": {
+    "png": {
+      "file": "assets/brand/wbw-icon-160.png",
+      "w": 160,
+      "h": 160,
+      "bytes": 5049
+    }
+  },
+  "se/se-icon-64": {
+    "png": {
+      "file": "assets/se/se-icon-64.png",
+      "w": 64,
+      "h": 64,
+      "bytes": 3078
+    }
+  },
+  "brand/favicon-32": {
+    "png": {
+      "file": "assets/brand/favicon-32.png",
+      "w": 32,
+      "h": 32,
+      "bytes": 1271
+    }
+  },
+  "brand/favicon-32-dark": {
+    "png": {
+      "file": "assets/brand/favicon-32-dark.png",
+      "w": 32,
+      "h": 32,
+      "bytes": 1300
+    }
+  }
+}

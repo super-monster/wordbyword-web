@@ -1,0 +1,892 @@
+[
+ {
+  "doc": "03",
+  "section": "§1.3 / §3.1 / §3.9 / §7.2 G1（并涉及 08 cta.title）",
+  "severity": "major",
+  "issue": "20 个首页的 title、H1、收尾 CTA 的 H2 与 Phase 2 的 G1 指南瞄准同一个信息型查询（translate web pages on iPhone / iPhone 网页翻译 / webページ 翻訳 iphone）。这类 SERP 被 Apple 支持页和 how-to 博客占据（文档自己也承认），产品落地页与查询意图不匹配，上线后还会和 G1 互相蚕食。en 与 zh-Hans 的 title 里没有 App / アプリ 这类产品意图词，首页实际上拿不到可赢的功能词展示。",
+  "evidence": "03 §3.9 en title \"WordByWord: Swipe to Translate Web Pages on iPhone & iPad\"，H1 \"Swipe to translate web pages on iPhone…\"；08:519 cta.title \"Translate web pages on iPhone — and keep the original\"；03:849 G1 标题 \"How to Translate Web Pages on iPhone and Keep the Original\"。ja：首页 title「iPhoneでWebページを翻訳・対訳表示するアプリ」，G1「iPhoneでWebページを翻訳して原文も残す方法」。03:847 自述\"SERP 被 Apple / Google 帮助页与科技博客占据，几乎都只讲 Safari 整页替换\"；research/07 §0 #9 把这类查询定为\"信息意图 how-to → 指南页\"。",
+  "fix": "在 03 §1.3 增加\"关键词 → URL 唯一映射表\"，并接入 seoLint（同一主词只能出现在一个 URL 的 title/H1）。首页 K1 主词改为产品/品类意图：en \"bilingual web page translator app for iPhone\"，zh-Hans \"网页双语对照翻译 App\"；ja、ko 保留现在含アプリ/앱的写法。en title 例：\"WordByWord – Bilingual Web Page Translator App for iPhone\"（57 字符），titleMust 改为 [\"Web Page\",\"iPhone\",\"App\"]。\"translate web pages on iPhone / how to … keep the original\" 只归 G1。08 §2/§3/§4 的 cta.title 改成不与 G1 标题重复的动作句（如 \"Start reading websites bilingually on iPhone\"）。H1 可以把 \"translate web pages\" 保留为次词。",
+  "id": "SEO-01",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§6.5 站外配套（并涉及 01 O1/R4、07 §9、rulings H14/H16）",
+  "severity": "major",
+  "issue": "文档把\"ASC 本地化 Marketing URL 改为语言页\"当作 19 个语言页的\"权威入链\"，但 apps.apple.com 指向开发者网站的链接一律是 rel=nofollow，只有发现和引荐价值，不传递排名信号。真正 follow、按 locale 指向语言页的外链只有 SE 页脚 PR-SE-2（覆盖 11 个 locale），而它的默认安排是\"WBW 先上线，SE PR 随后\"，没有日期。fr/de/it/nl/pl/ru/tr/uk 这 8 个 locale 则没有任何 follow 外链。",
+  "evidence": "2026-10-05 curl apps.apple.com/jp/app/id6741724502：`<a data-test-id=\"external-link\" href=\"https://www.word-by-word.app/\" … rel=\"nofollow noopener noreferrer\">`，隐私政策链接同样是 nofollow。03:821\"为每个语言页带来一个来自 apps.apple.com 的入链\"；01:447 与 07:420 写\"权威入链\"；04 §8.4 PR-SE-2 定在\"WBW 新站上线后\"；12-rulings H14 默认\"WBW 先上线，SE PR 随后\"。",
+  "fix": "03 §6.5、01 O1、07 §9 改写为\"发现与引荐入口（nofollow），不计入排名预期\"。把 PR-SE-2（SE 页脚按 locale 链到 /<path>/，follow）写成固定动作：T0 后 verify-deploy 通过即合并，最迟 T+7d。在 rulings 中把 H14 的默认值改为\"PR-SE-1 在 T0 前合并，PR-SE-2 在 T+7d 内合并\"。07 §7.1 对 fr/de/it/nl/pl/ru/tr/uk 的展示目标按\"以品牌词为主\"重新标定，避免误判。",
+  "id": "SEO-02",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§1.4 关键词归属 / §5.5 SE 侧修改（并涉及 04 §8）",
+  "severity": "major",
+  "issue": "防蚕食规则只在 WBW 侧执行（WBW 构建 lint）。SE 现网的 H2 和 featureList 直接使用没有\"英语\"限定的\"任何网站都能双语对照读\"，正是 WBW 的 K1 领地，违反基线 §B4\"SE 写英语新闻限定\"。03 §5.5 的 S1–S6 和 04 §8 都没有处理它，上线后两站会在\"任意网页双语阅读\"上互相竞争。",
+  "evidence": "SurfEnglishWebsite/src/locales/en.json explore.title \"Any website, [[read bilingually]].\"；zh-Hans \"任何网站，都能[[双语对照着读]]。\"；ja「どんなサイトも、[[対訳で読める]]。」；ko \"어떤 웹사이트든, [[대역으로 읽기]].\"。src/templates/home.mjs:255 把它渲染为 `<h2>`，:124 写入 JSON-LD featureList。SE en meta.keywords 含 \"parallel text reading app, translation below the original, sentence by sentence translation\"，ja 含\"段落翻訳\"，zh-Hans 含\"段落翻译\"。",
+  "fix": "在 03 §5.5 和 04 §8 增加 S7，并入 PR-SE-1：12 个 locale 的 explore.title 加\"英文\"限定，例 en \"Beyond the news: any English website, read bilingually\"，zh-Hans \"英文网站，也能双语对照着读\"，ja「英語のサイトも、対訳で読める」，ko「영어 웹사이트도 대역으로 읽기」。同时从 SE meta.keywords 删除 WBW 归属的词（parallel text reading app、translation below the original、段落翻译/段落翻訳/문단 번역）。在 SE build 里加一条镜像 lint：title/H1/H2 中出现\"any website/任何网站/どんなサイト/어떤 웹사이트\"时，必须同时带 English/英语/英語/영어。",
+  "id": "SEO-03",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§6.2 Content-Language 行（并涉及 06 §3.6.4、07 M1-06）",
+  "severity": "major",
+  "issue": "03 要求在 _headers 里按路径输出 20 条 Content-Language，07 M1-06 也列了这项，但 06 的 _headers 规格里没有。CF 对命中多条规则的同名头会用逗号拼接（06 自己引用了 CF 文档）。en 页面分散在 /、/about/、/privacy.html 等多个路径，最自然的写法\"/* Content-Language: en\"加\"/ja/* Content-Language: ja\"会让 19 个 locale 页返回 `content-language: en, ja`，给 Bing 一个混合语言信号。03 的验收\"`curl -sI /ja/` 含 content-language: ja\"在这种错误下仍然通过。",
+  "evidence": "03:777\"`_headers` 按路径输出 Content-Language … 构建生成 `_headers` 20 条 … `curl -sI /ja/` 含 `content-language: ja`\"；07:87 M1-06 列出\"Content-Language\"；06 §3.6.4 的 _headers 全文没有该头，正文写明\"同一个头命中多条规则时值会用逗号拼接\"。",
+  "fix": "推荐方案 A：不输出 Content-Language HTTP 头，只保留 `<meta http-equiv=\"content-language\">` 和 `<html lang>`（Bing 都会读），同时从 03 §6.2 和 07 M1-06 删除该项。如果坚持输出（方案 B）：只为 19 个 locale 前缀和逐条列出的 en 精确路径生成规则，禁止 `/*` 携带 Content-Language；D-13 增加\"任一路径命中的 Content-Language 规则不超过 1 条\"；verify-deploy 改为精确断言 `[ \"$(hv $B/ja/ content-language)\" = ja ]`。",
+  "id": "SEO-04",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§6.2 noindex 行",
+  "severity": "major",
+  "issue": "03 规定 C-1 方案下 `/legal/*` 内部路径输出 noindex。但 `/legal/privacy/` 与 `/privacy.html` 是同一个文件（200 代理），照 03 实施会让 3 个契约 URL 也带上 noindex，而它们同时在 sitemap 里，GSC 会报\"已提交的网址被标记为 noindex\"。这与 02 §5.4、06 §9.1 直接矛盾，而 07 M1-06 的依据栏引用的正是 03 §6.2。",
+  "evidence": "03:769\"`/legal/*` 内部路径（若采用 09 C-1）noindex\"；06:1009\"不能在 HTML 里加 noindex，否则契约 URL 也会被 noindex\"；02 §5.4 写法相同；06 §3.6.1 的 sitemap 含 /privacy.html、/support.html。",
+  "fix": "删除 03 §6.2 noindex 行里的 `/legal/*`，改成\"`/legal/*` 靠 canonical 指回契约 URL，不加 noindex\"。如果确实要去重，只能用 _headers 的 `/legal/*  X-Robots-Tag: noindex`，并且要先在 preview 上证明 /privacy.html（代理请求）的响应不带这个头才能启用。contract-test.sh 已经打印 x-robots-tag，把它改成断言即可。",
+  "id": "SEO-05",
+  "lens": "seo"
+ },
+ {
+  "doc": "06",
+  "section": "§3.7 构建期校验 / §11.4 verify-deploy",
+  "severity": "major",
+  "issue": "D-1…D-19 和 verify-deploy 都不检查可索引页的 robots meta，也不检查\"sitemap ⇔ index ⇔ canonical\"是否一致，只在生产环境对 / 和契约 URL 检查 X-Robots-Tag。原型的 head 带着 `noindex, nofollow`，模板从原型移植时如果一并带过去，20 个首页会带 noindex 上线，而现有检查全部显示通过。noindex 与 sitemap 冲突、S0/S1 切换出错都没有自动拦截。",
+  "evidence": "prototype/index.html:9、ja.html:9：`<meta name=\"robots\" content=\"noindex, nofollow\">`；06 §3.7 D-1 只查 canonical；06 §11.4 组 1 只查 200、canonical、hreflang 数量；06 §5.1.1 的 robots 是\"index… 或 noindex,follow\"二选一，由路由决定。",
+  "fix": "06 §3.7 新增 D-20（级别 E）：对每个产出的 HTML，要求 indexable ⇔ robots meta 不含 noindex ⇔ 有 canonical ⇔ 出现在 sitemap；noindex 页不得出现在 sitemap 或任何 hreflang 簇中；_headers 中除 pages.dev 主机规则外不得出现 X-Robots-Tag。verify-deploy 组 1 对 20 个首页增加 `grep -q '<meta name=\"robots\" content=\"index'` 和 `! grep -qi noindex`，--prod 模式下逐页断言 X-Robots-Tag 为空。",
+  "id": "SEO-06",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§8.1 非品牌口径 / §8.2 KPI（并涉及 01 §6.3、07 §7.1）",
+  "severity": "major",
+  "issue": "非品牌基线\"≤263\"是\"全站总量 − 前 13 条已知查询\"的残差，其中包含匿名查询；T+4w 和 T+12w 的目标却用\"查询正则不匹配\"来测。GSC 一旦按查询筛选就会排除匿名查询，而小站的长尾和非英语查询大量是匿名的，前后口径不一致，结果系统性偏低，可能把成功判成失败。01 §6.3 的非品牌定义\"不含 word、by\"还会把 K2 主词 \"word meaning in context\" 和 G3 的目标查询一起排除。",
+  "evidence": "03:931 的口径与 §8.2 基线\"≤ 263\"；00 基线 263 = 1,286 − 1,023；01:540\"非品牌查询（不含 word、by、wordbyword 及其变体）\"；GSC 效果报告帮助说明：按查询过滤时总计不含匿名查询。",
+  "fix": "03 §8.1 改定义：非品牌展示/点击 = 同一 28 天窗口的未筛选总量 − 品牌正则\"匹配\"的总量，同时记录\"查询表合计 ÷ 总量\"作为匿名占比。非英语 KPI 只用\"网页\"维度（`/<locale>/` 前缀，含匿名查询）。P5 的 \"word by word translation/meaning\" 长尾单独列一行目标。删除 01 §6.3 的\"不含 word、by\"口径，改为引用 03 §8.1。",
+  "id": "SEO-07",
+  "lens": "seo"
+ },
+ {
+  "doc": "07",
+  "section": "§7.1 KPI\"全站点击\"（并涉及 01 §6.3、03 §8.2）",
+  "severity": "major",
+  "issue": "文档接受 H1 去掉 \"Word by Word\" 后 \"word by word\" 查询下降（13 次点击，占全站点击 18%），却把\"全站点击 T+4w ≥ 57（基线 80%）\"设为警戒线。71 − 13 = 58，只剩 1 次点击的余量；28 天 71 次点击的自然波动约 ±8（√71），告警几乎必然误触发，预期内的下降会被当成迁移事故去排查，干扰 R18 的回退判断。",
+  "evidence": "07:344、01:538\"全站点击 ≥ 57\"；03:942\"'word by word' head：允许下降，不设目标\"；00 基线 \"word by word\" 13 次点击 / 758 次展示 / 排名 6.5。",
+  "fix": "删除全站点击阈值，改成两条：品牌桶点击（wordbyword + word-by-word + wordby）≥ 基线 80%（已有），加上按新口径计算的非品牌点击。\"word by word\" 单列为观察指标，并写明预期区间（例：T+4w 展示 300–758、点击 0–13 都算预期）。点击类告警要求连续两个 28 天窗口不达标才触发，品牌排名告警仍按 R18。",
+  "id": "SEO-08",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§5.2 en 首页 @graph（并涉及 01 §6.2 S8）",
+  "severity": "minor",
+  "issue": "MobileApplication 节点用了 availableLanguage，但 schema.org 规定该属性只用于 ContactPoint、Course、LodgingBusiness、ServiceChannel、TouristAttraction。Schema Markup Validator 会报\"属性不被该类型识别\"，与 03 A5\"Validator 0 error\"冲突。另外 01 S8 要求 Rich Results Test 中\"@graph 无报错\"，而没有评分的 SoftwareApplication 在 RRT 中必然是\"缺少 aggregateRating 或 review\"的无效项（03 A5 已承认），两处验收互相矛盾。",
+  "evidence": "schema.org/availableLanguage 页面\"Used on these types: ContactPoint, Course, LodgingBusiness, ServiceChannel, TouristAttraction\"（2026-10-05 curl）；03:625；03:984 A5；01:528 S8。",
+  "fix": "03 §5.2 把 availableLanguage 改成 inLanguage（CreativeWork 属性，值仍是 20 个 BCP-47 码），或者直接删除。06 D-9 增加\"属性必须在该类型定义域内\"的白名单校验。01 S8 改为\"Schema Markup Validator 0 error；RRT 只允许 SoftwareApplication 缺 aggregateRating/review 这一项\"。",
+  "id": "SEO-09",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§6.3 搜索引擎接入（IndexNow / Naver / sitemap-legacy）",
+  "severity": "minor",
+  "issue": "(a) indexnow.mjs 靠 sitemap 的 lastmod 与\"上次推送时间\"做差分，但 06 规定浅克隆时整体省略 lastmod，GitHub Actions 默认 checkout 也是浅克隆，而且\"上次推送\"这个状态没有地方存，脚本实际上无法执行。(b) T0 首推不含 44 个旧 URL，Bing、Yandex 看到 301 会更慢。(c) IndexNow 的参与引擎包括 Naver，文中却把 Naver 写成只能手工\"수집 요청\"。(d) sitemap-legacy 固定 2–4 周删除，小站 Googlebot 重抓旧 URL 可能更慢。",
+  "evidence": "03:787 的 IndexNow 做法；06 §3.6.1\"浅克隆时整体省略 lastmod\"；03 §6.2 sitemap-legacy 行与 02 P1-12\"2–4 周后删除\"。",
+  "fix": "indexnow.mjs 改为：生产部署后直接抓取 https://www.word-by-word.app/sitemap.xml 中的全部 URL（不超过 30 条）推送；T0 首推另外加上 sitemap-legacy 里的全部旧 URL。如果仍要做差分，Action 必须用 `fetch-depth: 0`，并用 `git diff --name-only <prev> <cur>` 映射到 PAGES.sources。03 §6.3 的 Naver 行注明\"IndexNow 已覆盖 Naver，手工请求只是补充\"（先核实 indexnow.org 的名单再写）。sitemap-legacy 的删除条件改为\"GSC 中该 sitemap 的 URL 全部显示为重定向，或已满 6 周，以先到者为准\"。",
+  "id": "SEO-10",
+  "lens": "seo"
+ },
+ {
+  "doc": "03",
+  "section": "§3.2 description 句式 / §3.9 草案（并涉及 08 meta）",
+  "severity": "minor",
+  "issue": "03 §3.2 规定 description 以\"<平台 / 免费>\"收尾，但 en 和 14 个 T2/T3 的 description 都没有 \"iPhone\"（只有 th 有），移动端摘要无法加粗平台词。ru、uk、ar、th、zh-Hans 的用户常用本地写法（айфон、آيفون/ايفون、ไอโฟน、苹果手机），title、description、FAQ 都没有覆盖；ko 已经在 title 里用了\"아이폰\"，其它语种没有同等处理。",
+  "evidence": "03 §3.9 en description \"Swipe right on a paragraph in WordByWord’s built-in browser … Free.\"；es、pt-BR、fr、de、it、nl、pl、ru、tr、uk、vi、id、ar、hi 各行 description 都没有 iPhone；ko title \"WordByWord: 아이폰 웹페이지 번역 앱\"。",
+  "fix": "en description 末句改为 \"Free on iPhone & iPad.\"（仍不超过 160 字符）。15 个 T2/T3 description 的末尾加本地化的\"iPhone/iPad，免费\"。ru、uk 在 description 或 FAQ 问句里各加一次\"на айфоне / на айфоні\"，ar 加\"الآيفون\"，th 加\"ไอโฟน\"；zh-Hans 在 FAQ 问句里加一次\"苹果手机\"（如\"苹果手机怎么翻译网页并保留原文？\"）。这一条写进 03 §3.9 的母语复核要点。",
+  "id": "SEO-11",
+  "lens": "seo"
+ },
+ {
+  "doc": "02",
+  "section": "§4.1 Locale 表 / §6.1 hreflang 规则",
+  "severity": "minor",
+  "issue": "葡语只有 pt-BR 一个 hreflang。葡萄牙、安哥拉、莫桑比克等地的葡语用户匹配不到区域码，会落到 x-default 英文页。Google 建议在区域码之外，给同一语言提供一个通用的回落。",
+  "evidence": "02 §4.1 第 7 行 hreflang 只有 pt-BR；02 §6.3 示例与 06 §3.2 LOCALES 都没有通用 pt。",
+  "fix": "LOCALES 的 pt-BR 项增加 `hreflangExtra:['pt']`，所有首页的 hreflang 与 sitemap 再多输出一条 `hreflang=\"pt\" → https://www.word-by-word.app/pt-br/`（共 22 条）。02 A6、03 A2、06 verify-deploy 组 1 里写死的\"21 条\"改为由 LOCALES 计算。",
+  "id": "SEO-12",
+  "lens": "seo"
+ },
+ {
+  "doc": "08",
+  "section": "§2/§3/§4 sibling.title（对照 03 §4.4）",
+  "severity": "minor",
+  "issue": "03 §4.4 #1 规定兄弟区块的 H2\"以 SurfEnglish 品牌开头，不以'学英语'开头\"，但 08 和原型的 H2 都以\"学英语\"开头。seoLint 只扫 title、H1、description、OG，H2 不受检查，这条规则实际无法执行，开工时也不清楚该听哪份文档。",
+  "evidence": "03:545；08:498 \"Learning English in particular? Meet SurfEnglish.\"；08:874「主に英語を学んでいるなら、SurfEnglish も」；08:1248\"主要在学英语？也可以看看 SurfEnglish\"；prototype/index.html:266。",
+  "fix": "主控二选一，并写进 03 §4.4 和 lint。(a) 08 改为品牌开头：\"SurfEnglish: if you’re mainly learning English\"／「SurfEnglish：英語学習が目的なら」／\"SurfEnglish：如果你主要在学英语\"。(b) 或者 03 放宽为\"允许条件式问句开头，但 H2 内必须出现 SurfEnglish\"。无论选哪个，seoLint 都要增加对 `#surfenglish h2` 的检查。",
+  "id": "SEO-13",
+  "lens": "seo"
+ },
+ {
+  "doc": "06",
+  "section": "§3.6.3 _redirects 生成 / §11.4 verify-deploy 组 3（对照 02 §5.2、07 M1-06）",
+  "severity": "minor",
+  "issue": "06 的 buildRedirects 只生成 49 条（契约 3+3、旧页 42、/index），缺少 02 §5.2 的 /privacy/、/support/、/chrome-extension/privacy/ 尾斜杠变体和 D 组 14 条别名，而 07 M1-06 按\"静态 62 条、动态 7 条\"验收，按 06 写出来就过不了验收。另外 02 A3 规定 query 丢失\"不阻塞上线\"，06 verify-deploy 组 3 却把 query 不一致判为 FAIL，06 §10.2 第 10 步又要求\"全部通过\"，T0 可能被一个非问题卡住。",
+  "evidence": "06 §3.6.3\"一共 6 + 42 + 1 = 49 条静态规则\"；02 §5.2 预算\"62 static / 7 dynamic\"；07:87 M1-06\"静态规则 62 条、动态 7 条\"；02:840 A3；06 §11.4 组 3 期望 `301 …?utm_source=t`。",
+  "fix": "以 02 §5.2 为准，在 06 buildRedirects 中增加 ALIASES 和契约尾斜杠变体的生成，D-12 断言规则数与 02 一致。verify-deploy 组 3 改为：状态码或目标路径不符判 FAIL；只有 query 丢失时判 WARN，并把实测结果记入 02 §5.3 #6。",
+  "id": "SEO-14",
+  "lens": "seo"
+ },
+ {
+  "doc": "04",
+  "section": "§2.2 话术骨架；§5.2 卡片 body；§5.3 FAQ；§5.6 about closing；§1.2 Phase 2 指南；§8.3 SE about（08 sibling.section / faq english-learner / about.family 同步）",
+  "severity": "blocker",
+  "issue": "推荐的分工轴写成了\"WBW 管多语言，SE 管英语\"，再加上\"可能更适合你\"和\"操作完全相同\"，实际是在劝英语学习者换用 SE。可英语正是 WBW 最核心的场景：默认源语言是英语，Chunks 和 Action Flow 只支持英语，新手引导全用英文例句，首推场景是 X。ja、zh-Hans 页的 hero 样张本身也是\"英文原文→母语译文\"。结果是：一个典型的 ja/zh/ko 访客先被 WBW 首页说服，到卡片和 FAQ 又被告知 SE 更适合他。这违背了\"WBW 身份/定位不变\"，也不是\"对用户有益\"的推荐。",
+  "evidence": "04:471 body \"WordByWord is made for reading websites in many languages. If English is the language you're working on, SurfEnglish … may suit you better. Swipe-to-translate and double-tap lookup work the same way\"；08:484 FAQ \"WordByWord … is the better fit if you read in more than one language … If English is your main goal, SurfEnglish may suit you better\"；08 about.family.closing \"If English is your focus, SurfEnglish adds levelled news and review on top of the same gestures\"；research/05 §2.2：默认 en-US、引导例句全英语、X 为首推（OnboardingGuideView.swift:2210）；05 TL;DR#4：对学英语者 SE 是 WBW 的超集；prototype/ja.html 样张为英文原文 + \"end up\" 查词；04 §1.2 还允许 Phase 2 的 X 指南（WBW 主战场 K9）在文末推 SE",
+  "fix": "把分工轴改为\"你自己打开的网页和 X（WBW）\"对\"每日分级英语新闻 + 复习游戏（SE）\"，推荐语气从\"替换\"改成\"加一款\"。全部删除\"may suit you better / 可能更适合你 / のほうが合うかもしれません\"，以及卡片里的桥接句\"操作相同\"。en body 改为：\"WordByWord helps you read any page or post you open — in English or another language. If you'd also like a daily feed of English news sorted by level, and games that review what you've read, SurfEnglish from the same developer adds that. The two apps work side by side.\" zh-Hans 改为：\"WordByWord 帮你读自己打开的任何网页和推文，英文或其他语言都行。如果你还想每天读按难度分级的英语新闻，并用复习游戏巩固读过的内容，可以搭配同一位开发者的 SurfEnglish，两款可以一起用。\" FAQ 答案改为：\"Keep using WordByWord for the pages and X posts you choose; add SurfEnglish if you want levelled English news and review games. Many people use both.\" about closing 和 SE PR 文案同步改；04 §1.2 删去\"X 指南文末加 SE 条件说明\"。这一条必须在 08 §7 翻译简报开译前定稿，否则 17 种语言要返工。",
+  "id": "PRO-01",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 hero / featuresIntro / faq what-is；§7.4；03 §1.3",
+  "severity": "major",
+  "issue": "新首页没有说明 WBW 适合谁。WBW 自己的文案里\"learn/learner\"出现 0 次；全页唯一一句关于受众的话是 SE 卡片的 \"Learning English in particular?\"，而它指向的是 SE。旧站和 App Store 都把 WBW 定位为语言学习助手（类别 Education），新站悄悄改成了\"翻译工具\"，与用户\"定位不变\"的要求冲突，也让第 1 条的分流更严重。",
+  "evidence": "旧 index.html:6 \"Your Smart Language Learning Assistant\"，:47 \"Smarter Language Learning\"；research/05 §2.1-2.2：App Store 类别 Education+Reference，US 描述 \"AI-powered language learning assistant\"；grep 08 §2 en：learn 只出现在 sibling/faq english-learner 中；08 §7.4 本身允许\"学习可以出现在正文里\"；03 §1.4 禁用词只禁 learn(ing) English",
+  "fix": "列为待用户确认项（建议并入 H 清单）。默认做法：关键词规则不变，在正文加一句受众说明。en featuresIntro.lede 改为 \"Made for language learners who read real websites. Two gestures do most of the work…\"；FAQ what-is 首句改为 \"…an iPhone and iPad app for language learners and anyone reading websites in another language…\"；about facts Product 改为 \"a bilingual web reader for language learners on iPhone and iPad\"。zh-Hans 写\"为边读外语网页边学语言的人设计\"，ja 写\"外国語を学びながら Web を読む人のための\"。确认 03 §3.8 的 lint 不会拦截 \"language learners\"。",
+  "id": "PRO-02",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 faq english-learner（en）；§5.2 about.family.table Read aloud 行；04 §5.3 en、§5.6",
+  "severity": "major",
+  "issue": "文案把\"可离线的端侧语音\"列为\"WordByWord 没有的功能\"，这与事实不符，而且是在贬低 WBW。WBW 的 Local Read 用的就是 iOS 设备内置语音（也是端侧），免费无限次。08 D7 又规定 WBW 任何地方都不写\"离线\"，结果形成单方面的不实对比。ja、zh、ko 的 FAQ 写的是\"AI 语音\"，这一点没问题；en FAQ 和 about 对照表漏掉了 AI 这个限定。",
+  "evidence": "08:484 \"SurfEnglish … adds things WordByWord doesn't have: … on-device voices that work offline\"；08:1431 / 04:590 WBW \"AI voice or the iOS system voice\" vs SE \"On-device voices that work offline\"；xcstrings audio_playback_description_local \"Uses device's built-in voice engine\"；F16/05 §2.5 本地语音 Free/Plus 均不限",
+  "fix": "en FAQ 改为 \"…natural-sounding AI voices for English that run on your device, even offline…\"。about 表格 WBW 列改为 \"AI voice in the cloud, or iOS voices on your device\"，SE 列改为 \"Natural AI English voices on your device, also offline\"。在 04 §5.1\"能力边界\"中加一条规则：凡与 WBW 对比时，SE 语音必须带\"AI/神经\"限定。",
+  "id": "PRO-03",
+  "lens": "product"
+ },
+ {
+  "doc": "04",
+  "section": "§4 矩阵 zh-Hans 行；§2.1 C/C′；§3.7 perLocale；08 §4 sibling",
+  "severity": "major",
+  "issue": "zh-Hans 页仍有 4 处推荐：③ 提示、① 纯文字卡（标题、正文、3 条要点、链接）、② FAQ、④ 页脚，其中 ① 和 ② 都说 SE\"可能更适合你\"。但 zh-Hans 的主体访客在中国大陆，WBW 在大陆可下载，SE 不可下载；点进 SE 的 zh-hans 官网后，徽章也会提示\"该地区不可用\"。这不符合 04 自定的 G2 门槛（\"可获得\"，且要求每个落点全部门槛都通过），在一个用户拿不到的 App 上过度推荐。",
+  "evidence": "04 §1.1 G2 门槛及\"每个落点都要全部通过\"；04 §4 zh-Hans 行仍是 ① text + ②③④；08:1256 mainlandNote；F18 SE 中国大陆 lookup 为空、/cn/ 404；research/05 §5.1 C 类\"只能软性提及\"",
+  "fix": "zh-Hans 默认 `perLocale['zh-Hans'] = { card:false, langHint:false }`，只保留 ②（带大陆未上架说明，按第 1 条改写）和 ④ 页脚。同步修改 04 §4 矩阵、A5、08 §7.8 的 no-badge 模式说明，以及 R35/A19 的开关描述。",
+  "id": "PRO-04",
+  "lens": "product"
+ },
+ {
+  "doc": "04",
+  "section": "§3.3 ③ 语言段提示（08 §1.6 第 4 行、S11；R4）",
+  "severity": "major",
+  "issue": "③ 不满足 04 自定的 G3（信息增量）：它只说\"还有一个 App，见下文\"，而 ① 卡片就在下面，中间只隔着价格区。它又紧跟在 \"Chunk Extraction and Action Flow work on English text only\" 之后，读起来像是用 SE 来弥补 WBW 的不足。实际上 SE 同样只支持英语，而在英文页面上 WBW 的 Chunks 是能用的。这句话放在这里既多余，又暗中贬低 WBW。",
+  "evidence": "04 §1.1 G3：\"只剩'下载另一个 App'时，删掉这个落点\"；prototype/index.html:213 两条限制之后紧接 \"Learning English in particular? There's also SurfEnglish … — see below.\"；同页 :218 pricing、:261 #surfenglish",
+  "fix": "删除 ③：`placements.langHint` 默认 false，删掉 `sibling.languagesTip` 键和 GA label `langhint_anchor`，同步修改 04 §3.0 表、基线 §F 落点③、R4、08 S11/§1.6，以及 A15/A19。如果一定要保留，就挪到 languages.lede 之后（不要接在限制条目后面），并去掉 \"in particular\"。",
+  "id": "PRO-05",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2/§3/§4 faq.items[devices]；§10.1 H4 行",
+  "severity": "major",
+  "issue": "在默认的 S0 状态（没有 CWS listing，扩展最后提交于 2026-02）下，20 个首页的 FAQ 仍写着\"电脑上有一个 WordByWord Translate Chrome 扩展\"，链接却指向 noindex 的 Coming soon 页。更糟的是，用户如果按这个名字去 Chrome 商店搜，找到的是无关的 WordByWord.io。这既误导用户，也会把用户送到同名的另一家产品那里。",
+  "evidence": "08:490 \"For Chrome on a computer there is a separate, smaller tool … the [WordByWord Translate extension for Chrome](@chrome)\"；08:2111 \"FAQ devices 的链接文字不受影响\"；F20；research/05 §2.8：搜 \"WordByWord Translate\" Chrome 的结果全部是 wordbyword.io",
+  "fix": "把 faq devices 拆成 aS0 和 aS1 两个键，由 `SITE.chromeStoreUrl` 选择。S0 的 en 版：\"There is no desktop version yet. A Chrome extension from the same developer is in preparation — see the [Chrome extension page](@chrome).\" S0 不写扩展名称。S1 保留原文，并补一句：\"Install it only from the link on that page; WordByWord.io's extensions are a different product.\" 同步修改 08 §10.1 和 R2 的 S0 描述。",
+  "id": "PRO-06",
+  "lens": "product"
+ },
+ {
+  "doc": "04",
+  "section": "§3.0 约束 2；§3.1 动作行；prototype README D6；03 §4.1 #pricing 行",
+  "severity": "major",
+  "issue": "价格区是用户决定\"要不要下\"的地方，但为了避免\"两个黑徽章相邻\"，原型删掉的是 WBW 自己的下载徽章。结果读完价格后，页面上出现的第一个 App Store 黑色徽章是 SE 的，外观与 WBW 的完全相同。徽章混淆的问题没有解决，还把 WBW 的转化点让给了 SE。这也与 03 规定的\"#pricing 带 App Store（ct=web-pricing-<loc>）\"冲突。",
+  "evidence": "prototype/README.md:78 D6 \"价格区不放 App Store 徽章…SE 卡片紧跟在价格区后面\"；prototype/index.html:218-258 pricing 区内没有任何 apps.apple.com 链接，:271 紧接着是 SE 的 asb 徽章；03 §4.1 表格 #pricing 行\"App Store（ct=web-pricing-<loc>）\"",
+  "fix": "在价格区恢复 WBW 的下载徽章（`ct=web-pricing-<l>`，label `pricing`）。① 不再用黑色官方徽章，改为带 SE 图标的文字链或描边次级按钮，例如 \"SurfEnglish on the App Store\"（GA label 仍为 card_appstore），这样 A3 的\"不相邻\"约束自然满足。同步修改 04 §3.1 HTML 草案、A3/A13 和 05 的卡片组件。",
+  "id": "PRO-07",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "sibling.section.title（en/ja/zh-Hans）；04 §2.2、§5.2、§5.7 T3；03 §3.4、§4.4 #1",
+  "severity": "major",
+  "issue": "03 规定 SE 区块的 H2 必须\"以 SurfEnglish 品牌开头，不以'学英语'开头\"，但 04 和 08 的 H2 都以\"Learning English…/主要在学英语…/主に英語を学んで…\"开头。08 §1.6 还写着\"符合 03 §4.4\"，其实不符合。这个冲突不在 R1–R38 裁定之内，实施者无法同时满足两边。WBW 首页因此会多出一个\"学英语\"意图的 H2，而 03 §3.8 的 lint 并不覆盖这个区块。",
+  "evidence": "03:338 \"H2 兄弟应用：品牌开头（'同一开发者：SurfEnglish'）\"；03:545 \"以 'SurfEnglish' 品牌开头，不以'学英语'开头\"；08 sibling.section.title \"Learning English in particular? Meet SurfEnglish.\"；zh-Hans \"主要在学英语？也可以看看 SurfEnglish\"",
+  "fix": "采用 03 的规则：en H2 改为 \"SurfEnglish: levelled English news, from the same developer\"，zh-Hans 改为\"SurfEnglish：同一开发者的分级英语新闻 App\"，ja 改为\"SurfEnglish：同じ開発者の、レベル別英語ニュースアプリ\"。条件句 \"Learning English in particular?\" 挪到 body 第一句。修改 04 §2.2 骨架和 §5.7 T3，并在 03 §3.8 的 lint 中加入\"sibling.section.title 必须以 SurfEnglish 开头\"。",
+  "id": "PRO-08",
+  "lens": "product"
+ },
+ {
+  "doc": "rulings",
+  "section": "R20（hero 的 platformNote 移到样张之后）",
+  "severity": "minor",
+  "issue": "按 08 D1，eyebrow 已经去掉了 \"Free to start\"。R20 又把整个 platformNote 移到样张之后，手机首屏就完全没有\"免费\"的信号了，而 iPhone 用户正是目标人群，\"要不要钱\"在首屏变得不清楚。",
+  "evidence": "08 D1：免费信息只放在 hero.platformNote；R20：手机端把 platformNote 移到样张之后；prototype README K3",
+  "fix": "拆出新键 `hero.priceShort`（en \"Free to start · iPhone & iPad\"；zh-Hans \"免费使用 · iPhone / iPad\"；ja \"無料で使える・iPhone / iPad\"），在所有宽度下都放在 CTA 下方；只把其余内容（Plus 价格、系统要求、Mac/Vision Pro）移到样张之后。",
+  "id": "PRO-09",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 sibling.section.points[0]（en）",
+  "severity": "minor",
+  "issue": "占位符代入后英文不通：原型实际渲染出 \"Real English news, levelled from A1–C1\"。04 原文是 \"from A1 to C1\"，08 改用占位符后语法就坏了。",
+  "evidence": "08:501 \"Real English news, levelled from {se.levels}\"；product.json se.levels = \"A1–C1\"；prototype/index.html SE 卡片要点",
+  "fix": "改为 \"Real English news at levels {se.levels}\"。en-site 模式下的 8 种语言译稿也要检查是否有同样的 from/von/de 结构。",
+  "id": "PRO-10",
+  "lens": "product"
+ },
+ {
+  "doc": "04",
+  "section": "§5.7 de uiNote；验收 A6",
+  "severity": "minor",
+  "issue": "定稿的 de uiNote 含有 \"12 Sprachen\"，而 A6 规定这 8 个语种的页面不得出现 \"12 Sprachen\"，所以按定稿文案实施，验收必然失败。",
+  "evidence": "04:626 \"…(u. a. Englisch, insgesamt 12 Sprachen)…\"；04:949 A6 \"没有 '12 Sprachen / 12 langues …'\"",
+  "fix": "de uiNote 改为 \"Kostenlos starten · Die App-Oberfläche gibt es nicht auf Deutsch (Englisch und 11 weitere Sprachen) · Übersetzungen ins Deutsche sind möglich\"，与 fr/it/ru 的\"英语和另外 11 种\"写法一致；或者把 A6 的检查改为匹配 \"App in 12\"。",
+  "id": "PRO-11",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§5.2 about.maker / about.family.links / about.meta.description",
+  "severity": "minor",
+  "issue": "about 页一共有 5 个指向 surfenglish.app 的链接：maker 段的 @se-site 和 @se-maker，family 段的 @se-site 和 @se-maker，加上页脚 ④，另有 1 个 App Store 链接，超过了 04 §0.3 \"每页 ≤3 个、锚文本不重复\"的上限。meta description 里还写了 \"its sister app SurfEnglish\"，违反 04 §10 反模式 #5（WBW 的 meta description 不出现 SurfEnglish）。",
+  "evidence": "08:1416 maker \"Jinlong also makes [SurfEnglish](@se-site); … [SurfEnglish about page](@se-maker)\"；family.links 中的 @se-site/@se-appstore/@se-maker；08:1354 description；04 §0.3、§10 #5",
+  "fix": "maker 段去掉两个链接，改为纯文本 \"Jinlong also makes SurfEnglish (see below).\"。description 改为 \"Official facts about the WordByWord app: features, languages, free limits and price, who makes it, and why it is not WordByWord.io.\"",
+  "id": "PRO-12",
+  "lens": "product"
+ },
+ {
+  "doc": "04",
+  "section": "§8.3 SE about 文案；08 §5.2 about.timeline",
+  "severity": "minor",
+  "issue": "有几处措辞让人觉得 WBW 是\"旧版\"、SE 是继任者：SE 官网写 WBW 是 \"the developer's earlier app\"；WBW 自己的 about 时间线以\"同一开发者发布 SurfEnglish\"收尾，WBW 最后一次更新停在 2026-05。读者会以为开发重心已经转向 SE，这正是 04 U5 想避免的。",
+  "evidence": "04:874 \"WordByWord is the developer's earlier app, and SurfEnglish shares its reading engine\"；08:1411 \"August 2026 — The same developer releases SurfEnglish…\"",
+  "fix": "SE PR 文案改为 \"WordByWord is the developer's web reader for many languages, and SurfEnglish shares its reading engine.\"。WBW about 时间线删去 SE 那一条（family 一节已经讲过关系），以 {version} 收尾。",
+  "id": "PRO-13",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§3 ja features[history].title；03 §2.2 K6 ja、§4.2",
+  "severity": "minor",
+  "issue": "ja 用\"翻訳・検索履歴\"，在日语里\"検索履歴\"通常指浏览器的搜索记录，与功能不符。App 里的叫法是\"スワイプ翻訳履歴\"\"単語履歴一覧\"。",
+  "evidence": "08:737 \"翻訳・検索履歴でふり返り\"；03:191、03:520；xcstrings view_title_swipe_history ja \"スワイプ翻訳履歴\"、view_title_translation_history ja \"単語履歴一覧\"",
+  "fix": "H3 改为\"スワイプ翻訳と単語の履歴でふり返り\"；K6 的 ja 主词改为\"翻訳履歴・単語履歴\"，03 同步修改。",
+  "id": "PRO-14",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§4 zh-Hans features[lookup].alt",
+  "severity": "minor",
+  "issue": "alt 文本写了\"（深色模式）\"，违反 08 §1.1 红线（不得写暗色模式；F11、F16 已确认 App 没有主题和暗色模式设置），会被读屏软件朗读，也会被搜索引擎索引。",
+  "evidence": "08:1049 \"iPhone 上的 WordByWord（深色模式）：双击英文单词 experimented 后…\"；08 §1.1 译文样式行\"不得写：主题、主题色、暗色模式\"",
+  "fix": "删掉\"（深色模式）\"，只描述画面内容；同时在 05 中确认 zh-Hans 是否改用浅色截图。",
+  "id": "PRO-15",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 featuresIntro.title（en）；§3 ja featuresIntro.title",
+  "severity": "minor",
+  "issue": "功能区的 H2 写着\"双击查词，任何网站都行\"，但中日韩网页不支持双击查词（F15），这是醒目的 H2 上的不实表述。ja 页的读者很可能会读中文或韩文网页。",
+  "evidence": "08:258 \"Swipe to translate, double-tap to look up — on any website\"；08:644 \"右スワイプで対訳、ダブルタップで AI 辞書。どの Web ページでも\"；F15",
+  "fix": "en 改为 \"Swipe to translate, double-tap to look up — on the websites you read\"；ja 改为\"右スワイプで対訳、ダブルタップで AI 辞書。読みたい Web ページで\"。zh-Hans 的\"任意网页都能双语对照读\"只说右滑，可以保留。",
+  "id": "PRO-16",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 faq.items（10 问）",
+  "severity": "minor",
+  "issue": "FAQ 主要是为 SEO 写的，漏了真实用户会问的支持类问题：需不需要注册账号（WBW 没有账号体系，这本身是卖点）、怎么恢复购买（App 里有 Restore Purchase，旧 support.html 也有这一问）、有没有 Android 版（hero 只写了 iPhone，非 iOS 访客必然会问）。",
+  "evidence": "support.html dt \"How do I upgrade to premium or restore my subscription?\"；xcstrings restore_purchase_button \"Restore Purchase\"；research/05 §2.4 确认不存在\"账号与同步\"；08 faq devices 没有提 Android",
+  "fix": "devices 答案末尾加 \"There is no Android version.\"。pricing.note 或 faq free 加一句恢复购买（\"Already subscribed on another device? Tap Restore Purchase in the app.\"）。新增或合并一问 \"Do I need an account?\"：\"No. WordByWord works without signing up; you only sign in to sites such as x.com inside its browser.\"",
+  "id": "PRO-17",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§2 faq word-by-word；§5.2 about.sections[name]",
+  "severity": "minor",
+  "issue": "\"名字的意思是逐词细读\"属于品牌叙事，不在 F1–F36 里，也没有经过用户确认，却被当作事实写进 FAQ 和 about 页。",
+  "evidence": "08:454 \"The name is about reading closely, word by word…\"；08:1385 \"…is about reading closely, one word at a time when you need to\"",
+  "fix": "列入待用户确认项。确认之前，删掉解释名字含义的那半句，只保留事实陈述：\"It is not a word-for-word translator: it translates sentences and paragraphs, and explains single words in context.\"",
+  "id": "PRO-18",
+  "lens": "product"
+ },
+ {
+  "doc": "08",
+  "section": "§3 ja hero.title（H1）；§2 en hero.title",
+  "severity": "minor",
+  "issue": "ja 的 H1 \"Webページを右にスワイプして翻訳\" 字面意思是\"把网页向右滑就能翻译\"，容易让人以为能整页翻译，与 F14 和下面的 lede（\"段落を右にスワイプ\"）不一致。en 的 \"Swipe to translate web pages\" 也有同样的歧义。",
+  "evidence": "08:616 \"[[Webページを右にスワイプして翻訳]]。原文はそのまま、訳文はその下に。\"；F14；08 §1.1 交互行禁止暗示整页翻译",
+  "fix": "ja 改为\"[[Webページ]]を段落ごとに右スワイプで翻訳。原文はそのまま、訳文は下に。\"（核对 ≤32 全角）；en 可改为 \"Swipe a paragraph to [[translate web pages]] on iPhone. The original stays in place.\"（≤75 字符，K1 主词保留）。",
+  "id": "PRO-19",
+  "lens": "product"
+ },
+ {
+  "doc": "07",
+  "section": "§2 M0 退出条件②、§3.1 M0-02 验收；06 §1.2 第 2 步",
+  "severity": "blocker",
+  "issue": "冻结旧站的验收条件是\"切换发布源后 last-modified 不变，仍为 2026-08-23\"。GitHub Pages 每次部署都会把全站文件的 Last-Modified 和 ETag 改成部署时间，所以把 Source 切到 legacy-pages、触发重建后，这个值必然变化。M0 无法退出；06 §1.2 规定\"上一步确认后，main 才能推送\"，于是开工的第一道闸门永远过不去，还可能让人误以为冻结失败，进而去回滚。",
+  "evidence": "实测 curl -sI：/、/privacy.html、/favicon.ico、/img/en/feature_swipe_demo.png 的 last-modified 全部是 \"Sun, 23 Aug 2026 08:14:40 GMT\"，ETag 前缀都是 6a8aabf0（=2026-08-23T08:14:40Z，即部署时刻）。而 favicon.ico 最后一次提交是 2025-05-13（c3efffc），feature_swipe_demo.png 是 2025-06-01（3c7b29f）。原文：07:50「② `curl -sI /` 返回 200，`last-modified` 仍为 2026-08-23」；07:69「last-modified 不变」；06:73「`last-modified` 不变」。",
+  "fix": "三处统一改成按内容比对。切换前先记录基线：`for p in / /ja-top.html /privacy.html /support.html /chrome-extension/privacy.html; do curl -s https://www.word-by-word.app$p | md5; done > before.txt`，并记下各 URL 的 content-length（例如 / 为 11664）。切换后跑同一条命令，与 before.txt 用 diff 比对结果完全一致即通过。同时注明\"last-modified/ETag 会变为新部署时间，属正常现象\"。",
+  "id": "ENG-01",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.7 D-12；同时修改 02 §5.5 第 1 条",
+  "severity": "major",
+  "issue": "`_redirects` 的校验规则与 06/02 自己生成的契约规则冲突，build 一跑就会报 error。C-1 模式下，`/privacy → /privacy.html 301` 的目标 `/privacy.html` 正是另一条 200 代理规则的源，D-12 会判为链式跳转；而且 C-1 刻意不在 dist 里输出 privacy.html，\"目标存在于 dist\"这一条也会报错。另外，02 的 `/en/* /:splat` 一类动态规则，目标无法做静态存在性检查，D-12 没有说明怎么处理。",
+  "evidence": "06:520 D-12「目标不是另一条规则的源（无链式）；目标存在于 dist（或是 `/`）」；06:445-446 的生成代码同时产出 `add(c.public, c.internal, 200)` 和 `add(c.bare, c.public, 301)`；02:454「目标本身不是任何规则的源（不得形成跳转链）」；02 §5.2 A 组 `/privacy /privacy.html 301` 与 `/privacy.html /legal/privacy/ 200` 同时存在。",
+  "fix": "把 D-12 改写为：(a) 3xx 规则的目标按 CF 语义解析（`/x/`→`x/index.html`），必须是 dist 中的文件，或者是某条 200 规则的源、且那条 200 规则的目标是 dist 中的文件；(b) 3xx 规则的目标不得是另一条 3xx 规则的源；(c) 200 规则的目标必须以 `/` 结尾，并且解析得到 dist 中的文件；(d) 目标含 `:splat` 或占位符时，只校验去掉通配部分后的前缀能解析到 dist（如 `/zh-hans/`）。02 §5.5 第 1 条同步修改。为 D-12 补一个用例：用当前 CONTRACTS 生成的规则必须 0 error。",
+  "id": "ENG-02",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.6.3 buildRedirects、§9.3 contract-test.sh；02 §5.2；07 M1-06",
+  "severity": "major",
+  "issue": "`_redirects` 有两份互相矛盾的规格，裁定没有覆盖。06 的生成器产出 49 条：没有 D 组别名（/en、/zh、/cn、/zh-cn、/tw、/zh-tw、/pt 及其 /* 形式），没有 `/privacy/` 这类带尾斜杠的契约变体，没有 `/index.html` 规则。02 的全文草案是 62 条静态 + 7 条动态，并带实验组 L（`/legal/*/ → 契约 URL 301`）。07 M1-06 的验收要求\"静态 62 条、动态 7 条\"，照 06 的代码实现必然达不到。此外，06 的 contract-test 断言 `/legal/privacy/` 返回 200，启用 02 的实验组 L 后这条必然失败。",
+  "evidence": "06:459「一共 6 + 42 + 1 = 49 条静态规则」，06:454「/index.html 交给 CF 自动 308」；02:299「Budget: 62 static / 7 dynamic」，02:316-318 实验组 L，02:368-382 D 组别名；07:87 M1-06 验收「静态规则 62 条、动态 7 条」；06:1042 `check /legal/privacy/ privacy /privacy.html`（要求 200）。",
+  "fix": "确定以 02 §5.2 作为 `_redirects` 内容的唯一规格，06 §3.6.3 改为按 02 的 A–D 组生成。具体做法：在 site.mjs 增加 `ALIASES` 和 `SITE.redirectFlags{indexHtmlRule, experimentL, experimentC}`，按 M1-03 spike 的结论开关；CONTRACTS 增加 `bareSlash` 变体；06 正文的条数改为 62/7（加上两个实验组为 68/10）。contract-test 中 `/legal/*/` 的断言随 `experimentL` 切换：关闭时期望 200，开启时期望单跳 301 到契约 URL。",
+  "id": "ENG-03",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§8.5 应急发布路径；§11.3 deploy-manual.yml",
+  "severity": "major",
+  "issue": "应急公告流程是\"先把 notice.json 提交到 main，再用 deploy-manual（ref=main）构建并部署到生产\"。按 06 §1.2，main 是日常开发分支，其中可能有未审校的译文、半成品模板或 Phase 2 指南。事故期间这些内容会随公告一起上生产，第 3 步再 `git push main:cloudflare-deploy` 又会把它们正式发布。另外，改造自 SE 的 workflow 用 actions/checkout 默认的浅克隆，06 §3.6.1 检测到浅克隆会省略全部 lastmod，所以每次应急发布都会让生产 sitemap 的 lastmod 消失。",
+  "evidence": "06:994-996「编辑 src/notice.json…提交到 main」「Run workflow（ref=main）…部署到生产」「事后执行 git push origin main:cloudflare-deploy」；06:65「main | 日常开发」；SE `.github/workflows/deploy.yml` 只写了 `uses: actions/checkout@v4`（无 fetch-depth）；06:413 浅克隆时整体省略 lastmod。",
+  "fix": "deploy-manual.yml 改为：输入 `notice: on|off`，ref 固定为 `cloudflare-deploy`；checkout 设 `fetch-depth: 0`；构建前用 `node -e` 只改写 src/notice.json 的 enabled 字段，然后 `node build.mjs` 加 wrangler 部署。事后把同一处改动提交到 main，并在下一次正常发布时随行（A13/M4-06 的演练要覆盖\"公告开启期间 main 上有未发布提交\"的场景）。§8.5 第 1–3 步按此重写。",
+  "id": "ENG-04",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§7.5 校验 / §7.2；对应 R8、07 M2-09、prototype/README K1",
+  "severity": "major",
+  "issue": "R8 和 07 M2-09 要求\"解码后做 alpha 校验\"，以防 AVIF 变成白板图，但没有任何文档给出可执行的做法。(1) 原型 README K1 说 check 阶段\"逐图解码复核\"，但 tools/check.mjs 完全没有解码或 alpha 检查。(2) 这个缺陷是 Chrome/libavif 特有的，用 sips/ImageIO 解码复现不出来。(3) CF 的 Linux 构建机零依赖，无法解码 AVIF。06 §7.2 标注\"本机已验证\"的示例命令，产出的恰好就是会出问题的分块图。",
+  "evidence": "本机照 06 §7.2 原命令（crop 1402×2892 → `--resampleWidth 720 -s format avif -s formatOptions 60`）复现：输出 84,970 B，与 06 写的数字一致；解析文件发现含 `grid` 项，ispe 为 512x512（分块）和 720x1485（奇数高）。prototype/tools/check.mjs 全文只检查引用存在、宽高属性和体积；README K1「`check` 时逐图解码复核」。",
+  "fix": "06 §7.5 增加两层校验。① 结构校验（零依赖，images.mjs 和 build 的 D 系列都跑，新增 D-20）：在 AVIF 字节中解析所有 `ispe` box 和 `iinf` 中的 `grid` 项；只要存在 grid，或任一边 >1024，就要求输出宽高都是偶数，否则报 E。这样 Linux 构建机也能拦住没在 Mac 上重跑管线的坏图。② 渲染校验（仅 Mac，images.mjs 加 `--verify` 参数）：用 scripts/serve.mjs 起本地 http 服务，Chrome headless 打开一个检查页，把每张 AVIF 画到 canvas 上，抽 5 个点读 alpha，全为 0 则失败（必须走 http，file:// 下 canvas 会被污染）。同时更正原型 README K1 的描述。",
+  "id": "ENG-05",
+  "lens": "engineering"
+ },
+ {
+  "doc": "rulings",
+  "section": "R3（建议扩展到 WBW 自身 ct 与 Smart App Banner）",
+  "severity": "major",
+  "issue": "R3 以\"ASC 每个 campaign 需 ≥5 次首次下载才显示数据，按 20 个 locale 拆分永远看不到\"为理由，把 SE 的 ct 改成只按落点。但 WBW 自己的 App Store 链接仍是\"页面 × 落点 × locale\"的格式：20 locale × 约 6 落点，加上 Smart Banner 的 20 个，共约 140 个 campaign。按全站约 2.5 次点击/天的量级，同一个理由意味着这些数据全部不可见，03 的 KPI\"按 locale 有可比数据\"也无法实现。03 与 06 的 ct 格式本身也不一致。",
+  "evidence": "06:956「WBW 自身的 ct 格式为 web-<page>-<placement>-<l>，例如 web-home-hero-zh-hans」；06:696 `ct=web-sab-<l>`；03:501/504/507 `ct=web-hero-<loc>`、`web-pricing-<loc>`、`web-cta-<loc>`；03:946「按 locale 有可比数据」；04:734「首次下载至少 5 次才会显示」；GSC 28 天共 71 次点击（00 基线）。",
+  "fix": "把 R3 扩展为：WBW 自身的 ct 也只按落点，取 `web-header`、`web-hero`、`web-pricing`、`web-cta`、`web-about`、`web-ext`、`web-sab`（≤7 个），locale 维度只看 GA 的 page_locale。06 §8.3 和 03 §3 表格同步修改；D-11 增加断言：全站不同 ct 值的数量 ≤10。",
+  "id": "ENG-06",
+  "lens": "engineering"
+ },
+ {
+  "doc": "02",
+  "section": "§6.2 末段、§6.3 示例；同时修改 03 §6（Content-Language 行）和 06 §3.6.4",
+  "severity": "major",
+  "issue": "02/03 要求所有页面输出 `<meta http-equiv=\"content-language\">`，而这在 W3C Nu 校验器里是 error。07 M4-04 要求 W3C Nu 0 error，06 §11.2 也写明\"只看 error\"，所以这道闸门必然不过。另外，03 要求 `_headers` 按路径输出 Content-Language，06 的 _headers 草案里没有这一项；如果按常见写法用 `/*` 给 en 设值，CF 会把同名头用逗号拼接，`/ja/` 就会返回 \"en, ja\"。",
+  "evidence": "把含该 meta 的最小页面提交给 validator.w3.org/nu 的实测输出：\":1.60-1.108: error: Using the “meta” element to specify the document-wide default language is obsolete.\"；02:492、02:521、03:735 都要求输出该 meta；07:134 M4-04 验收「0 error」；CF headers 文档原文 \"If a header is applied twice in the _headers file, the values are joined with a comma separator.\"；06 §3.6.4 的 _headers 中没有 Content-Language。",
+  "fix": "删除 02 §6.2/§6.3 和 03 中的 content-language meta，只用 HTTP 头输出。06 的 buildHeaders 改为按 PAGES 路由生成：en 页面用精确路径规则（`/`、`/about/`、`/chrome-extension/`、`/privacy.html`、`/support.html`、`/chrome-extension/privacy.html`、`/legal/*`），其它语言用 `/<path>/*`，不得出现 `/*` 下的 Content-Language。D-13 增加\"同一个头名不得出现在两条可能同时匹配同一路径的规则里\"。verify-deploy 增加：`/ja/` 的 content-language 必须严格等于 `ja`。",
+  "id": "ENG-07",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§4.3 sibling.json、§3.7 L-1/L-11（新增）；对照 04 §3.7",
+  "severity": "major",
+  "issue": "SE 推荐有两套互不兼容的接口。04 §3.7 定义了 `SIBLING{enabled, placements, perLocale{variant, badge, uiNote, availabilityNote}, suppressWhenNotice, copyReviewedAt}` 和 `ctMode`；06 的 sibling.json 只有 sitePath、placements 列表和 assets。R22 规定字段名以 06 为准，照此实现的话，07 R12 的回退手段\"SIBLING.enabled=false 一键关掉 ①②③\"、04 A19 的开关验收、180 天复核告警都不存在。同时，L-1 只拿各 locale 与 en.json 比对，en 不含 `uiLanguageNote` 和 `mainlandNote`，所以 de/fr 等 8 个 en-site 页漏写\"界面为英文\"的说明时构建照样通过，违反 F36/基线 §F。",
+  "evidence": "04:367-389 的 SIBLING 对象（enabled、copyReviewedAt 等）；04:962 A19「分别设 SIBLING.enabled=false…」；07:245 R12 应对「SIBLING.enabled=false 一键关掉 ①②③」；06:657-659 sibling.json 只有 3 个字段；06:627-628 `uiLanguageNote`「en-site 组必填」、`mainlandNote`「仅 zh-Hans 必填」；06:499 L-1「缺键报 E，多出的键报 W」。核对 08：en 的键里没有这两个键，zh-Hans 比 en 多出 mainlandNote。",
+  "fix": "06 §4.3 的 sibling.json 吸收 04 的字段（用 06 的命名）：`enabled`、`placements{section,faq,languages,footer,about}`、`suppressWhenNotice`、`ctMode:'placement'`、`copyReviewedAt`（超过 180 天报 W）；变体由 LOCALES.se 决定。新增 L-11（E 级）：`se==='en-site'` 时 `sibling.section.uiLanguageNote` 必须存在且非空；`se==='no-badge'` 时 `mainlandNote` 必须存在。L-1 补充数组语义：对象数组按 `id` 对齐比较，标量数组只比较类型；`features[lookup].bullets` 的条数必须与 en 相同，因为它们对应 ①②③ 三条页边注。",
+  "id": "ENG-08",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§4.1 标记约定、§4.2 键树；08 §7 翻译简报",
+  "severity": "major",
+  "issue": "已核实：08 §1.5 的 S1–S16 能覆盖 08 的 en/ja/zh-Hans JSONC 与 06 §4.2 之间的全部差异（逐键比对，ja 与 en 只差 `gallery.items[].hidden`，zh-Hans 另多 `mainlandNote`）。但原型实现首页时，还需要三类东西 06 和 08 都没有：① 约 9 个界面字符串；② CJK 的 `｜` 断行提示（05 §3.5 要求）；③ L2 编号钉坐标。不补的话，生产页的 aria-label 和图注在 20 种语言里都是英文硬编码，`｜` 会作为字面字符出现在页面和 `<title>` 中，zh-hans 图片集也没有钉位数据。",
+  "evidence": "prototype/tools/render.mjs:96-97 `ui:{shot:'iPhone screenshot', shotEx, fig:'Fig.', mainNav:'Main', langNav:'Choose a language', loupeAlt:' (close-up of the card)', footerNav:'Site', sampleLabel:'App demo'}`；render.mjs:243 硬编码 `'注'/'Note'`；render.mjs:55-69 的 WBR 表（ja 的 `｜`）；render.mjs:94/100 的 `pins` 坐标；prototype/README §4 末段写明「原型自加、08 尚未提供的界面字符串」；06 §4.1 L-7 只允许 `[[ ]]` 和 rich 标记。",
+  "fix": "06 §4.2 新增键：`common.figLabel`、`common.screenshotLabel`、`common.screenshotExcerptLabel`、`common.closeUpSuffix`、`common.noteLabel`、`common.demoLabel`、`nav.ariaMain`、`nav.ariaLanguages`、`footer.ariaNav`，并写入 08 §7 的翻译简报和长度表。§4.1 增加标记约定：仅 ja/zh-Hans/zh-Hant/ko 的 text/kwtext 允许使用 `｜`，渲染为 `<wbr>`；`plain()` 以及 title、JSON-LD、alt 中一律剥除；其它 locale 出现时 L-7 报 E。images.manifest 中每个图片 key 增加 `pins:[{n,x,y}]`，并约定 dir=rtl 时 x 取 1−x。",
+  "id": "ENG-09",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.7 D-15、L-9；src/data/claims-lint.json",
+  "severity": "major",
+  "issue": "D-15 按原文无法实现：它要求扫描\"全部可见文本\"（渲染后的 HTML），却又要求\"用键路径豁免否定句\"，而渲染后的 HTML 里已经没有键路径。规则要覆盖 20 种语言的\"无限发音、暗色模式、离线、Safari 扩展、整页翻译\"等说法，但文档只给了 en/zh 的描述，加上 08 §7.5 的零星本地化变体，没有人负责编写各语言的正则。T3 的 11 种语言恰好由 LLM 出稿、上线前又没有母语审校，最需要这道 lint，实际却等于没有覆盖。07 把它和全部 29 项校验一起估为 2 人日。",
+  "evidence": "06:523「扫描全部**可见文本**（不只是 locale JSON）…用键路径豁免否定句」；08 §7.5 只列了少量本地化变体（选中即译的 it/pl/ru/tr/pt/hi/ar 写法、alineación 等）；07:88 M1-07「20 种语言的 claims-lint 词表」，2.0 人日。",
+  "fix": "D-15 拆成两部分：(a) 对 locale JSON 的叶子值做 lint，键路径已知，豁免可以生效；(b) 对 src/templates 中的字面量字符串单独 lint。删掉\"可见文本\"的说法，或者让模板给文本节点输出 `data-k`。定义 claims-lint.json 的结构：`{rules:[{id, patterns:{'*':[…], en:[…], ja:[…], …}, exempt:[keyPath]}]}`，种子取自 08 §7.5 和 03 §1.4。某个 locale 没有对应规则时报 W 级\"未覆盖\"，提示审校人工复核。M1-07 的估时改为 ≥3 人日，或按 07 §4.4 把 W 级规则移到 M6。",
+  "id": "ENG-10",
+  "lens": "engineering"
+ },
+ {
+  "doc": "07",
+  "section": "§3.4 M3-02 依赖、§4.4 并行说明",
+  "severity": "major",
+  "issue": "en 字符串冻结（strings-v1）只依赖 M2-01，也就是 JSONC 转 JSON；而 07 §4.4 允许 T1/T2 初稿在 M0-01 之后就开始。但首页、about、扩展页模板要到 M2-03/M2-05 才写完，写模板时一定会冒出新键（原型已经冒出 9 个界面字符串）。冻结之后再加键，会牵动 19 个 locale 重新翻译，T1/T2 还要再找外部审校，而外部审校在关键路径上，返工会直接推迟 T0。",
+  "evidence": "07:115「M3-02 | en.json 字符串冻结，打 tag strings-v1 | M2-01」；07:215「T1/T2 初稿在 M0-01 合并键树之后就能做」；prototype/README §4 列出 08 未提供的界面字符串；07:52 M2 退出条件要求三语全部模板在 preview 上。",
+  "fix": "M3-02 的依赖改为 M2-03、M2-05（en 全部页面在 preview 上渲染完成，0 个硬编码的界面字符串，新增一条 grep 校验：模板中不得出现长度 ≥3 的拉丁字母字面量，白名单除外）。T1/T2 可以提前，但只翻 `meta`、`hero`、`features`、`faq` 这几个已稳定的子树，其余等冻结后一次性补齐；冻结后新增的键按批次走 `check:keys`，每个 locale 最多再审一轮。",
+  "id": "ENG-11",
+  "lens": "engineering"
+ },
+ {
+  "doc": "07",
+  "section": "§3.3 M2-10；06 §7.4",
+  "severity": "major",
+  "issue": "OG 图（20 个首页）要用各 locale 的 `meta.ogHeadline/ogSubline` 在 Mac 上本地渲染后提交，但 M2-10 排在 M2，只依赖 M2-01，而 17 个 locale 的文案要到 M3-08 才定稿，审校还会改文案。WBS 里没有\"17 个 locale 的 OG 生成、以及审校后重新生成\"的任务；build 也没有 OG 与文案一致性的校验，审校改了 ogHeadline，分享卡片仍是旧文字，CF 构建也拦不住。",
+  "evidence": "07:107「M2-10 | OG 图 ×23（20 个首页 + about + 扩展页 ×2）| M2-01、M2-09」；07:115-122 的 M3-03…M3-08 才产出 17 个 locale；06:887 OG 由 og.mjs 在本机 Chrome 上生成，产物入库；06:881 只对 images.json 做字节核对，OG 没有对应机制。",
+  "fix": "M2-10 缩小为 en/ja/zh-Hans、about 和扩展页；新增 M3-11：M3-08 之后生成其余 17 个 locale 的 OG，每轮审校回改后重跑（0.25 人日），作为 M4-01 的依赖。og.mjs 写出 `assets/og/og.json`，记录每个 locale 输入字符串（ogHeadline、ogSubline、模板版本）的 sha256；build 将其与当前 locale JSON 比对，不一致报 E（提示\"文案改了，未重跑 npm run og\"），已发布但缺少 OG 文件的 locale 也报 E。",
+  "id": "ENG-12",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§11.4 verify-deploy.sh 第 1、3 组",
+  "severity": "minor",
+  "issue": "验收脚本有三处会误判。(1) 第 1 组用 `grep -o 'hreflang=\"'` 计数并要求 ≥21，但语言切换器的 40 个 `<a hreflang>` 也会被计入，即使 `<link rel=alternate>` 全部缺失也能通过。(2) 第 3 组硬性要求 301 的 Location 保留 query，而 02 §5.3 第 6 条写明 query 丢失可以接受，于是 Go/No-Go 的\"ALL PASS\"可能永远达不到。(3) 首页列表和 21 个旧 URL 的期望码（301）是写死的，与 06 §3.2 的 `publish:false`（旧 URL 302 到 /）以及 07 §4.4 压缩选项 4 冲突。",
+  "evidence": "06:1198 `[ \"$(grep -o 'hreflang=\"' <<<\"$h\" | wc -l …)\" -ge 21 ]`；原型 index.html 实测含 64 个 `hreflang=\"`，其中 `<link rel=\"alternate\"` 21 个；06:1206 期望 `301 …?utm_source=t`；02 §5.3-6「如果 query 丢失…可接受」；06:319 publish:false → 302。",
+  "fix": "第 1 组改为统计 `<link rel=\"alternate\" hreflang=`，要求等于已发布 locale 数 + 1。第 3 组的 query 断言由 spike 结论控制（`QUERY_PRESERVED=0` 时只告警）。首页清单和旧 URL 的期望目标与状态码不再写死，改为由 build 输出 `dist/../.cache/routes.json`（或解析 dist/_redirects）后读取。",
+  "id": "ENG-13",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.3 PAGES（sources、cluster）、§5.5 legal",
+  "severity": "minor",
+  "issue": "PAGES 定义不完整。(1) chrome-extension、legal ×3、404 都没有 `sources`；about 的 sources 只有模板，没有 `src/locales/en.json`（about 文案就在其中），所以 lastmod 要么取不到，要么不随文案更新。(2) legal 页的 \"Last updated\" 如果按 08 的 `{updated}=页面源文件的 git 日期` 计算，迁移提交当天就会把隐私政策的更新日期改成迁移日，正文没变却等于对外声明\"政策已更新\"。(3) §3.3 规定\"同一 cluster 内的页面互相输出 hreflang\"，没有排除 noindex；扩展页在 S0 状态下会输出 hreflang，与 02 H-7 冲突。",
+  "evidence": "06:338-348（chrome-extension、CONTRACTS、404 均无 sources；about 为 `sources:['src/templates/about.mjs']`）；06:354「同一 cluster 内的页面互相输出 hreflang」；02 §6.1 H-7「noindex 页面…不进入任何簇」；08 §1.4「{updated}…页面源文件的 git 日期」；06:765「③ 没有生效日期」。",
+  "fix": "每个 PAGES 项都补上 sources：about 加 en.json；chrome-extension 加模板和 en/zh-Hans.json；legal 用 `src/legal/<doc>.html`。legal 源文件头部必须写人工维护的 `<!-- updated: YYYY-MM-DD -->`，缺失时报 E，\"Last updated\" 只取这个值，不取 git 日期。cluster 成员定义为\"该页面键下 indexable() 为真的路由\"，S0 时不输出 hreflang，D-2 同步修改。",
+  "id": "ENG-14",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.3 home.sitemapImages、§7.1 manifest 示例、§5.1.3 MobileApplication.screenshot",
+  "severity": "minor",
+  "issue": "sitemap 的图片和 JSON-LD 的 screenshot 引用了 `shot/<set>/hero`。按 05 和原型的设计，hero 是 HTML 样张，没有位图，图片集中不会有 hero 这个 key，模板会在构建时找不到这个 key 而失败。",
+  "evidence": "06:337 `img.url(\\`shot/${img.localeSet(l)}/hero\\`, 720,'jpg')`；06:832 manifest 示例中的 `\"key\":\"shot/en/hero\"`；prototype/README §5「hero 里没有位图，首屏只有 logo 和 favicon」。",
+  "fix": "sitemapImages 和 MobileApplication.screenshot 改为引用 L1 主图 `shot/<set>/swipe`（以及 lookup）；manifest 示例删除 hero 条目；OG 合成用到的\"手机裁切图\"同样改用 swipe。",
+  "id": "ENG-15",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§3.4 渲染流程、§2.3 SE 复用表",
+  "severity": "minor",
+  "issue": "build 先写 dist/_redirects、_headers、sitemap，然后才执行 `copyDir('public', DIST)`。§2.3 又写着把 SE 的 `public/_headers` 拿来改造，照做的话，静态的 public/_headers 会覆盖生成的版本（_headers 不是点文件，skipDotfiles 过滤不掉），pages.dev 的 noindex、immutable 等规则会悄悄失效。",
+  "evidence": "06:379-384：先 `writeFile('dist/_headers', …)`，再 `copyDir('public', DIST, { skipDotfiles: true })`；06:222「`public/_headers` | **改造**」。",
+  "fix": "调整顺序，先 copyDir('public')，再写入生成的 `_redirects`、`_headers`、sitemap、robots。D-14 增加：public/ 下存在 `_headers` 或 `_redirects` 时报 E。§2.3 的这一行改为\"规则迁入 buildHeaders()，不保留 public/_headers\"。",
+  "id": "ENG-16",
+  "lens": "engineering"
+ },
+ {
+  "doc": "06",
+  "section": "§10.1 项目设置、§10.2 Runbook 第 4/6/8 步；07 §6",
+  "severity": "minor",
+  "issue": "Runbook 有几处实施细节不清。(1) DNS 编辑入口写死为\"Squarespace DNS\"，但 F6 和 H8 写的是 Google Cloud DNS，研究 09 也只是推断编辑入口在 Squarespace；SOA 为 cloud-dns-hostmaster.google.com，api. 和 backend-test. 又是 Cloud Run 域名映射，zone 有可能在某个 GCP 项目里。T0 当天去错控制台会拖延切换。(2) CF 项目的 Preview 设为\"All non-production branches\"，会给没有 build.mjs 的 legacy-pages 分支建预览，每次都失败报警。(3) 生产分支 cloudflare-deploy 要先在仓库里存在，创建项目时才能选中。",
+  "evidence": "06:1085/1087/1091 均写 Squarespace；10-fact-check F6「NS 是 Google Cloud DNS」；12-rulings H8「Google Cloud DNS 中 www 记录的编辑权限」；研究 09:66「DNS 编辑入口应在 Squarespace 控制台【推断】」；实测 SOA 为 `ns-cloud-c1.googledomains.com. cloud-dns-hostmaster.google.com.`；06:1069「Preview | All non-production branches」。",
+  "fix": "Runbook 统一写成\"DNS 控制台（以 H8 结论为准：Squarespace Domains 或 GCP Cloud DNS 的 managed zone）\"，并在 M0-04 增加判定步骤：在哪个控制台能看到 api.、backend-test.、backend. 三条记录，就以那个为准，截图存档。§10.1 的 Preview 改为\"Custom branches：排除 legacy-pages\"。M1-02 先执行 `git push origin main:cloudflare-deploy` 再创建 CF 项目。",
+  "id": "ENG-17",
+  "lens": "engineering"
+ },
+ {
+  "doc": "05",
+  "section": "§9.2 RTL 镜像清单、§1.2 母题表；关联 03 §2.3 注、08 §7.3/§7.7 ar 行",
+  "severity": "major",
+  "issue": "ar 页把右滑手势当成可以镜像的方向，这与 App 行为相反。App 按物理方向判定：distanceX>0 才翻译，distanceX<0 是移除译文；App 自己的阿语提示写的是「向右滑」。可是 05 §9.2 把「速度线方向」列为镜像项，而 §1.2 说速度线用于样张里的滑动轨迹；03 和 08 又要求 ar 文案「不写方向」。照此实施，ar 样张可能演示成向左滑；阿语用户按 RTL 直觉向左滑，结果是译文被删除或没有反应。",
+  "evidence": "WordByWordPrototype/Resources/user-script/20-features.js:418 `if (distanceX > 0)` 走翻译分支，:487-501 `if (distanceX < 0)` → removeTranslationElement；Localizable.xcstrings tip_swipe_to_translate[ar] = \"اسحب لليمين على أي نص لعرض ترجمته.\"；05-视觉设计系统.md:43（速度线用于「样张里的滑动轨迹」），:1112（镜像：「速度线方向」）；03-SEO与关键词策略.md:256（ar「不写方向」，只引用了配额标签「اسحب للترجمة」）；08-文案底稿.md:1913、1963（swipeCue 写「اسحب」）",
+  "fix": "① 03 §2.3 注、08 §7.3 和 §7.7 的 ar 行改为写方向：句中用「اسحب الفقرة لليمين」，`demo.ui.swipeCue` 用「اسحب لليمين」，H1 草案改为「اسحب الفقرة لليمين لترجمة صفحة الويب، ويبقى النص الأصلي في مكانه.」，与 App 的 tip 一致。② 05 §9.2 的镜像清单加一条例外：「`.device` 内部（包括 cue-swipe 触点和速度线拖尾）一律不镜像，滑动永远从左到右」。③ 05 A8 增加验收项「ar 样张的触点从左向右移动」。",
+  "id": "I18-01",
+  "lens": "i18n"
+ },
+ {
+  "doc": "06",
+  "section": "§4 占位符渲染 / §3.7 校验；关联 08 §1.4、§7.9 Q2、§7.10",
+  "severity": "major",
+  "issue": "文档没有复数机制，同时又禁止写死数字，于是「数字占位符＋名词」在 ru/uk/ar 会出语法错误。ru/uk 里 21 要用单数（21 язык / 21 мова）。LLM 翻译时看不到占位符的实际值，只会写「{targetLanguages} языков」，渲染出来就是「21 языков」，K8 关键词所在的 H2 也会受影响。ar 里 5 和 10 属于 few，要用 مرات；20–50 属于 many、100–500 属于 other，用 مرة。`perDay: \"{n} …\"` 一个模板不可能同时写对。",
+  "evidence": "08-文案底稿.md:120（`{n}` 只用于 pricing.table.perDay，逐行代入 50/500/…）；08 §7.9 Q2「没有写死额度、价格、语言数」；03 表 B ru K8 硬写「перевод на 21 язык」，写死才是对的；本机 node 24 实测：Intl.PluralRules('ru'/'uk').select(21)='one'，ar 的 5/10→few、20/30/50→many、100/200/500→other；06、08 中都没有 PluralRules",
+  "fix": "06 的占位符渲染支持复数对象：locale JSON 的值可以写成 {\"one\":\"{n} язык\",\"few\":\"{n} языка\",\"many\":\"{n} языков\",\"other\":\"{n} языка\"}，构建时用 new Intl.PluralRules(code).select(n) 选择。新增 lint：ru/uk/pl/ar 中，凡是含数字占位符、后面接可数名词的字符串，必须写成复数对象。08 §7.10 的提示词写明各占位符当前的值，并要求「按 CLDR 复数类别给出全部形式」。顺带把 {plus.priceUS} 改为构建时用 Intl.NumberFormat(code,{style:'currency',currency:'USD'}) 输出（de 为「3,99 $」，fr 为「3,99 $US」），不再全语言都是「$3.99」。",
+  "id": "I18-02",
+  "lens": "i18n"
+ },
+ {
+  "doc": "05",
+  "section": "§3.5 CJK 断行策略；关联 03 §3.1、08 §3/§4/§7、06",
+  "severity": "major",
+  "issue": "`｜` 断行标记方案无法照文档落地，有三个问题。(a) 03 规定 CJK title 的分隔符也是 `｜`：ja、zh-Hans、zh-Hant 的 meta.title 和 JSON-LD name 都含 `｜`。如果构建按 05 的说法把 locale JSON 里的 `｜` 转成 <wbr> 或剥离，title 会变成「WordByWordiPhoneでWebページ…」，而 seoLint 的 startsWith(brand) 和 titleMust 检查照样通过。(b) 08 的 ja、zh-Hans 定稿里一个标记都没有（原型 D16 在 render.mjs 里给 ja 手工补过）；08 §7 的翻译简报也没提标记，所以 zh-Hant 的 LLM 产出同样没有；06 没有定义哪些字段要转换。(c) 「每段 ≤10 字」的校验对 ko 不适用：ko 靠空格断行、不用 ｜，会恒报 warning。",
+  "evidence": "05-视觉设计系统.md:320、324；03-SEO与关键词策略.md:296（「CJK 全角 `：` `｜`」）、:424-425、:669（JSON-LD name 含 ｜）；08-文案底稿.md ja meta.title「WordByWord｜iPhoneで…」、zh-Hans meta.title「…翻译｜右滑即译…」；prototype/README.md §4 D16；prototype/tools/render.mjs:55-67（手工维护的 ja 标记表）；在 06 中 grep wbr 无结果",
+  "fix": "① 标记改用专用记号（如 `{/}` 或 U+00A6「¦」），只在标题类 kwtext 字段（hero.title、featuresIntro.title、features[].title、languages/pricing/sibling.section/faq/cta 的 title、按钮文字）里转成 <wbr>，在 title、og、JSON-LD、alt、aria-label 中一律剥离；L-7 校验该记号只出现在上述字段。② keep-all 加标记只用于 ja（Chromium 再用 auto-phrase 增强）；zh-Hans/zh-Hant 的标题改用 `word-break: normal; text-wrap: balance`（中文排版本来允许字间断行），省掉人工标注。另一个选项：在 tools/ 下 vendor BudouX 的 ja、zh-hans、zh-hant 模型 JSON（Apache-2.0，不引入 npm 依赖），构建时自动插入 <wbr>。③ 把原型 render.mjs:58-67 的 ja 标记回写进 08 §3。④ 段长校验只对 ja 生效。⑤ 07 M2 增加 0.5d 任务。",
+  "id": "I18-03",
+  "lens": "i18n"
+ },
+ {
+  "doc": "06",
+  "section": "§3.2 LOCALES（:294-316）、§5 head 模板（:684）；关联 02 §4.2、05 §3.3",
+  "severity": "major",
+  "issue": "05 的多文字排版规则全部挂在 `<html data-script>` 上：CJK 的 keep-all 和行高、CJK/泰/天城/阿拉伯 eyebrow 不大写、拉丁负字距和大写。可是 02 §4.2 和 06 §3.2 的 LOCALES 都没有 script 字段，06 的 html 模板也只输出 lang、dir、data-page。按 06 实施的话，这些规则会全部静默失效，A7/A12 要到视觉巡检阶段才会发现。",
+  "evidence": "05-视觉设计系统.md:299「由构建在 <html> 上写 data-script=\"latn|cyrl|cjk|thai|deva|arab\"，取自 locale 配置」；06-技术架构与工程方案.md:684 `<html lang=\"{hreflang}\" dir=\"{dir}\" data-page=\"{pageId}\">`；06:294-316 和 02-信息架构与URL.md:227 的 LOCALES 都没有 script；prototype/ja.html:2 是手写的 data-script=\"cjk\"；prototype/style.css:83、100-102、120-122 依赖这个属性",
+  "fix": "LOCALES 每一项加 script 字段：en、es、pt-BR、fr、de、it、nl、pl、tr、vi、id 为 'latn'；ru、uk 为 'cyrl'；zh-Hans、zh-Hant、ja、ko 为 'cjk'；th 为 'thai'；hi 为 'deva'；ar 为 'arab'。06:684 改为 `<html lang=\"{hreflang}\" dir=\"{dir}\" data-script=\"{script}\" data-page=\"{pageId}\">`，02:492 同步修改。06 §3.7 增加一条 D 规则：每页 <html> 必须带 data-script，且值与 locale 一致。",
+  "id": "I18-04",
+  "lens": "i18n"
+ },
+ {
+  "doc": "05",
+  "section": "§5.2.5–5.2.6 样张 RTL、§5.4 L2 批注跨页、§9.2；关联 07 M2/M3-09",
+  "severity": "major",
+  "issue": "RTL 组件缺少可以照做的规格。(a) 样张的 ar 译文：05 一边说「按 App 实际行为还原」，一边要求加 dir=\"rtl\"。实际上 App 的译文 span 只有 lang、没有 dir，阿语译文是 LTR 基向、左对齐，句末标点会跑到错误的一端；引用条用的是物理 border-left 和 padding-left。网站如果加 dir=rtl，文字会右对齐，和左侧红条脱开，而对齐方式和内边距都没有规定。(b) L2 的编号钉和引线用截图的物理坐标，原型 K7 明说不支持 RTL，05 也没有给规则。(c) 样张译文的长度上限没有覆盖 ar 和 hi。(d) 07 的 WBS 没有 RTL 变体的开发任务，只有 M3-09 的 0.5d 巡检。",
+  "evidence": "05-视觉设计系统.md:495「ar 译文加 dir=\"rtl\"」与 :503「按 App 实际行为还原…固定在左侧」互相矛盾；WordByWordPrototype/Resources/user-script/10-dom-render.js:1138 的 wbw_generateHtml 只写 lang；prototype/style.css:240-242（.wb-tr 的 padding 和 ::before left:0 都是物理属性）；prototype/README.md §6 K7；05:493 只列了拉丁、CJK、th 的长度；07-实施计划与风险.md:122 M3-09",
+  "fix": "在 05 中写定以下规则。样张：`.device-screen` 恒为 dir=\"ltr\"；`.wb-tr[lang=ar]` 设 dir=\"rtl\" 加 text-align:right，保留左侧红条和左内边距，图注注明「阿拉伯语译文按 RTL 排版」；同时登记为 App 侧问题，建议 `.wbw-t-translated` 加 dir=\"auto\"；`.wb-card` 设 dir=\"rtl\"。L2：媒体盒设 dir=\"ltr\"，钉位继续用截图坐标；两侧页边注栏随 grid 按逻辑镜像（①② 在右，③ 和放大镜在左）；引线 JS 一律用 getBoundingClientRect 的物理坐标计算，不做翻转。样张长度补充 ar ≤160 字符、hi ≤160 字符，th/hi 样张行高 ≥1.7。07 M2 增加「ar 样张与 L2 的 RTL 变体」0.5d，原型补一页 ar.html 作为 A8 的基准。",
+  "id": "I18-05",
+  "lens": "i18n"
+ },
+ {
+  "doc": "06",
+  "section": "§3.7 校验规则 L-1…L-10 / D-15；关联 07 M1-07、08 §7.2、rulings R36",
+  "severity": "major",
+  "issue": "R36 把「术语表 lint」当作安全网：ko 没有母语审校时、T2/T3 上线时都靠它。但 06 只定义了键一致、长度、品牌、禁用产品宣称这几类检查，没有任何术语一致性或文字系统检查；08 的术语表 T-A…T-D 也只是 Markdown 表格。已经存在的几类问题它都抓不到：App 的 ko 原文混入汉字「任意의」、zh-Hant 残留简体、kicker 与 App 叫法不一致。",
+  "evidence": "06-技术架构与工程方案.md:497-523（L-1…L-10、D-15）；07-实施计划与风险.md:88 M1-07；12-rulings R36「双模型互检 + 回译 + 术语表 lint」；08-文案底稿.md:1762-1866 的术语表；xcstrings ko tip_swipe_to_translate =「任意의 텍스트를 오른쪽으로 스와이프하여…」",
+  "fix": "新增 src/data/glossary.json（由 08 §7.2.1 的表和 X1–X13 的修正生成），并加一条 L-11（级别 E）：① features[].kicker、pricing.table.rows.*、demo.ui.more 这类「App 叫法」键，取值必须等于 glossary；② ko 全文禁止出现 [一-鿿]；③ zh-Hant 和 ja 禁止简体专用字，可以 vendor OpenCC 的 STCharacters.txt 简体侧字表（Apache-2.0）；zh-Hant 另外检查下一条中的大陆用语禁用表；④ seo.keywords.K1.primary 的核心词元必须出现在 meta.title 或 hero.title 中。07 M1-07 工时加 0.5d。",
+  "id": "I18-06",
+  "lens": "i18n"
+ },
+ {
+  "doc": "08",
+  "section": "§7.2.2 / §7.3 zh-Hant；关联 03 §3.9、rulings R36",
+  "severity": "major",
+  "issue": "zh-Hant 的「台湾用语」要求只列了 5 个词，没法执行。App 的 zh-TW 本身就是大陆用语，而且有一部分没转成繁体：本地 10 处、用戶 4 处、網絡 2 处、雙擊、單詞 6 处、獲取、檢測、當前，另有 15 条整句仍是简体（创建文件夹、删除书签、无法获取词典数据、下载…）。规则 ① 又要求 kicker 和价格表行名照搬 App 叫法，X1/X2 只修了 2 处。结果是同一页里「本地引擎」「雙擊查詞」和正文的「點兩下」「單字」混在一起；LLM 从 en 翻译还会写出「網絡」「用戶」「標籤頁」之类。R36 默认由用户本人审校 zh-Hant，台湾用语这一关比较弱。另外，03 的 zh-Hant title 用了日文片假名中点「・」（U+30FB）。",
+  "evidence": "Localizable.xcstrings 的 zh-TW 本机统计：本地×10、用戶×4、網絡×2，另有 create_folder_button=创建文件夹、delete_bookmark_button=删除书签、dictionary_load_failed_message=无法获取词典数据，请稍后再试。等；08-文案底稿.md:1874-1875 只有 X1/X2；08 §7.3 zh-Hant 行只列了「網頁、內建、介面、單字、紀錄」；03-SEO与关键词策略.md:424「右滑即譯・AI 語境查單字」（U+30FB）",
+  "fix": "在 08 §7.2.2 增加 zh-Hant 网站用词对照表：本地引擎→本機引擎（括注 App 名「本地引擎」），本地朗讀→本機朗讀，雙擊→點兩下（功能名可以保留「雙擊查詞」），單詞→單字，用戶→使用者，網絡→網路，獲取→取得，檢測→偵測，當前→目前，默認→預設，設置→設定，信息→資訊，視頻→影片，軟件→軟體，支持→支援，鏈接→連結，搜索→搜尋，菜單→選單，屏幕→螢幕，質量→品質，登錄→登入，標籤頁→分頁，收藏夾→書籤，博客→部落格；同一张表进入 L-11 的禁用表。03 的 title 改为「WordByWord翻譯：iPhone 網頁雙語對照｜右滑即譯，AI 語境查單字」。简报的输入加入 zh-Hans 定稿作为结构参考，但禁止直接做繁简转换。R36 补一句：zh-Hant 须由熟悉台湾用语的人审校；做不到时，至少 L-11 零违规才能上线。",
+  "id": "I18-07",
+  "lens": "i18n"
+ },
+ {
+  "doc": "05",
+  "section": "§3.1 字体栈（只写在 html:lang() 上）",
+  "severity": "minor",
+  "issue": "字体栈只通过 html:lang() 改写自定义属性，页面内带 lang 的外语片段不会切换字体。这类片段包括语言切换器和页脚的 20 个母语名、语言 chips、404 的多语言句子。ja 页的「简体中文」中，「体中文」来自 Hiragino，「简」因 Hiragino 缺字回落到 PingFang SC，同一个词里混了两种字体；zh-Hans 页的「日本語」「繁體中文」则用 PingFang SC 的简体字形显示。",
+  "evidence": "05-视觉设计系统.md:252-265；prototype/style.css:65-75；prototype/ja.html 的语言菜单（<a lang=\"zh-Hans\">简体中文</a> 等）；CoreText 本机检测：HiraginoSans-W3 不含「简」、含「体」「語」",
+  "fix": "把各语言的栈另存为变量（--font-ja、--font-sc、--font-tc、--font-kr），再加零特异度的元素级规则，例如 `:where([lang=\"zh-Hans\"]:not(html)){font-family:var(--font-sc)}`，ja、zh-Hant、ko 同理。用 :where() 是为了不覆盖 .wb-src 这类组件规则。A7 增加一项：在 ja、zh-Hans 页截图检查语言菜单。",
+  "id": "I18-08",
+  "lens": "i18n"
+ },
+ {
+  "doc": "05",
+  "section": "§3.1 --font-read（越南语）",
+  "severity": "minor",
+  "issue": "阅读用衬线栈在 macOS 的 Chrome/Firefox 下落到 Iowan Old Style：这两个浏览器不支持 ui-serif，「New York」也无法按名称调用。Iowan 不含越南语叠加变音字母，vi 页用 --fs-read 的 L2 页边注和 404 译句会在单词内部混用字体。05 只检查了 UI 栈，写的是「越南语默认栈已覆盖」。",
+  "evidence": "05-视觉设计系统.md:248、270、282（--fs-read 用于 404 和 L2 页边注）；CoreText 本机检测：IowanOldStyle-Roman 不含 ệưở，Georgia 和 Palatino 含；CTFontCreateWithName(\"New York\") 回落为 Helvetica",
+  "fix": "增加 `html:lang(vi){--font-read: ui-serif, Georgia, \"Palatino Linotype\", Palatino, \"Times New Roman\", serif;}`。05 §3.1 的注释改为「越南语：UI 栈已覆盖；阅读栈跳过 Iowan」。",
+  "id": "I18-09",
+  "lens": "i18n"
+ },
+ {
+  "doc": "08",
+  "section": "§3 ja 文案",
+  "severity": "minor",
+  "issue": "ja 文案总体自然，但有几处翻译腔或用词问题，空格规则也不统一。同一页里「Webページ」出现 7 次、「Web ページ」7 次，「iPhoneで」4 次、「iPhone で」1 次，「AI発音」和「AI 文型」写法也不一致，与 §7.7「和欧之间加半角空格」的规定矛盾。H1 实测 w32.5，超过 03 §3.3 和 08 §7.6 的 32 上限。",
+  "evidence": "08-文案底稿.md:616（H1，03:425 标注 w32.5）、:620「Plus は月額課金」、:652「訳文が原文のすぐ下に入る」、:706「すばやい iOS の音声」、:725 与 :855「その日のクラウド翻訳を使い切ったら」；本机统计 08 ja 段的空格用法如上；App 的提示原文为「本日のオンライン右スワイプ翻訳回数を使い切りました」",
+  "fix": "改写如下。H1：「Webページを右にスワイプして翻訳。原文はそのまま、訳文はその下に」（去掉句末「。」，w31.5）。platformNote：「Plus は月額サブスクリプション」。swipe.title：「右スワイプ翻訳：[[訳文は原文のすぐ下に]]表示」。speech.title：「[[AI読み上げ]]と、すぐに再生できる iOS の音声」。engines：「その日のクラウド翻訳の回数を使い切ったら」。空格规则统一为和欧之间不加空格，与 title 和 titleMust 的「Webページ」一致，可选用 CSS `text-autospace: normal` 做渐进增强；08 §7.7 的 ja 行同步修改。",
+  "id": "I18-10",
+  "lens": "i18n"
+ },
+ {
+  "doc": "08",
+  "section": "§4 zh-Hans 文案",
+  "severity": "minor",
+  "issue": "zh-Hans 用了 41 处「」，这是台湾、香港和日文的引号习惯；大陆规范（GB/T 15834）和 App 的 zh-Hans 都用 “”。另有几句不顺：功能 H3「双击查词：AI 语境查词…」把「查词」说了两遍；FAQ x 的答案「这是在…X 网页版上使用」缺主语；FAQ word-by-word 的「一词一词地细读」读起来别扭。",
+  "evidence": "本机统计：Localizable.xcstrings 的 zh-Hans 中 “ 出现 4 条、「 为 0；08 zh-Hans 段（:929-1303）「 出现 41 次；08-文案底稿.md:1040、1209、1214",
+  "fix": "zh-Hans 的 「」 全部改为 “”（zh-Hant 和 ja 保留「」），并在 08 §7.7 增加 zh-Hans 行。:1040 改为「[[AI 语境查词]]：双击单词，看懂它在这句话里的意思」（kicker 已经是「双击查词」）。:1214 末句改为「这个功能用于在 WordByWord 里打开的 X 网页版，而不是 X App。」。:1209 改为「这个名字指的是“逐字细读”，而不是逐词直译。」。",
+  "id": "I18-11",
+  "lens": "i18n"
+ },
+ {
+  "doc": "03",
+  "section": "§2.2 ko 关键词；关联 04 §5.2/§5.3 ko 草案、08 §7.3",
+  "severity": "minor",
+  "issue": "ko 有两个关键词不地道：K2「문맥에 맞는 뜻 AI 사전」是词组硬拼，不像用户会搜的说法；K6「번역·검색 기록」里的「검색 기록」在韩语里默认指浏览器搜索记录，容易误解。另外，同一段 ko 文案里합니다체和해요체混用（「…앱입니다. …맞을 수 있어요. …방식이에요.」），而 08 规定해요체，03 的 description 却是합니다체。",
+  "evidence": "03-SEO与关键词策略.md:202、206、428（description「…앱입니다…알려 줍니다」）；04-SurfEnglish兄弟推荐.md:518-519（「오프라인에서도 되는」）；08-文案底稿.md §7.3 ko「해요체」",
+  "fix": "K2 主词改为「AI 사전」，配合 H3 写「두 번 탭하면 AI 사전이 문맥에 맞는 뜻을 알려 줘요」，次词用「문맥 단어 뜻」。K6 改为「번역 기록·단어 찾기 기록」。语体规则写清：meta.description 和 FAQ 答案用합니다체，hero、卡片、按钮用해요체，同一段落不混用。04:518 统一为「…읽기 위한 앱이에요」；「오프라인에서도 되는」改为「오프라인에서도 쓸 수 있는」。",
+  "id": "I18-12",
+  "lens": "i18n"
+ },
+ {
+  "doc": "02",
+  "section": "§6.1 hreflang 规则 / §4.1 pt-BR",
+  "severity": "minor",
+  "issue": "葡萄牙语只有一个 /pt-br/，却只标了 hreflang=\"pt-BR\"。葡萄牙、安哥拉、莫桑比克等地的葡语用户可能匹配不到它，被交给 x-default（英文）。旧站的 pt-top.html 是 lang=pt，原本覆盖所有葡语用户。",
+  "evidence": "02-信息架构与URL.md:197（pt-BR 行）、H-6「其余不带地区码」；F2 记录旧文件的 lang 为 pt",
+  "fix": "在首页簇中，为 /pt-br/ 额外输出一条 `<link rel=\"alternate\" hreflang=\"pt\" href=\"https://www.word-by-word.app/pt-br/\">`，sitemap 的 xhtml:link 同步，由同一个 alternatesFor 生成。D-2 的「hreflang 码不重复」规则允许同一个 URL 对应多个码。",
+  "id": "I18-13",
+  "lens": "i18n"
+ },
+ {
+  "doc": "02",
+  "section": "§6.2 content-language meta",
+  "severity": "minor",
+  "issue": "content-language 直接取了 hreflang 的值（zh-Hans、zh-Hant、ar 等）。这个 meta 明确是给 Bing 用的，而 Bing 的说明以语言-地区形式（如 en-us）为例。03 §6.3 把 Bing 定为大陆 zh-Hans 用户的主要可行路径，script 子标签可能不被 Bing 识别。",
+  "evidence": "02-信息架构与URL.md:492（content=\"{hreflang}\"，并说明「供 Bing 和 Naver 使用」）；03-SEO与关键词策略.md:786（Bing 是 zh-Hans 大陆用户的主要路径）",
+  "fix": "LOCALES 增加 contentLanguage 字段，content-language 的值改从这里取：zh-Hans→zh-cn，zh-Hant→zh-tw，ja→ja-jp，ko→ko-kr，pt-BR→pt-br，ar→ar-sa，hi→hi-in，其余用「语言-主市场」。html lang 和 hreflang 不变。",
+  "id": "I18-14",
+  "lens": "i18n"
+ },
+ {
+  "doc": "06",
+  "section": "§7（:889）scripts/badges.sh；关联 05 §5.12、F28",
+  "severity": "minor",
+  "issue": "徽章抓取用的是 v1 路径。该路径下 uk-ua 和 ar-sa 都回落为英文图，所以 06 把 uk 映射成 en-us。但 v2 路径今天已经能返回真正的乌克兰语徽章；ar-sa 和 hi-in 在 v2 下直接 404。如果按 02 §4.1 表格里的 ar-sa、hi-in 去 v2 拉取，保存下来的是 404 的 JSON，页面上就是坏图。",
+  "evidence": "2026-10-05 curl：/api/v2/badges/download-on-the-app-store/black/uk-ua → 200，10867 B，渲染结果为「Завантажити в App Store」；/api/badges/…/uk-ua → 200，10804 B（与 en-us 相同）；/api/v2/…/ar-sa、hi-in → 404 {\"status\":\"Not Found\"}",
+  "fix": "badges.sh 中 uk 改从 v2 拉取 uk-ua，ar、hi 仍用 en-us。脚本对每个徽章断言 HTTP 200、content-type 为 image/svg+xml，且除 en-us 外 md5 不等于 en-us 的 md5。05 §5.12、02 §4.1 和 F28 的说法同步更新为「ar、hi 回落 en-us；uk 有本地化徽章（v2）」。",
+  "id": "I18-15",
+  "lens": "i18n"
+ },
+ {
+  "doc": "rulings",
+  "section": "R11（SE 卡片截图）",
+  "severity": "major",
+  "issue": "R11 给的替代素材无法执行。它建议的 browser.jpg 同时违反 R11 自己的条件和 R32；而 SE 现有 10 张截图里根本没有\"中性新闻\"可选。按 R11 修订，要么卡住，要么选错图。",
+  "evidence": "SEW/public/images/screenshots/browser.jpg 是浅色的 BBC Learning English 页面，不是 R11 要求的\"一张深色截图\"。BBC 字标约占画面 1/4，底部是两位主持人的真人照片。它展示的是 SE 内置浏览器、右滑和语块，恰好就是 WBW 的核心功能，04 §6.1 已经以\"讲相同点\"为由否决过。其余截图：feed-translation/feed-chunks 是 Adam Driver & Anne Hathaway 加人物照；home-feed/chunk-list 有 Rodri、\"Sean McCann - brother of Madeleine\"、\"Trump pokes fun at press\"；word-lookup 是 BBC Sport 加 Rodri 照片；game-sentence-builder 是伊朗战争/Trump 的句子；explore.jpg 是浏览器起始页（与 WBW 功能重叠，并带 BBC/VOA 图标）；games-home 是 07-25 的旧 UI。另外，所有截图的译文都是中文，ja 页图注只能写\"訳文の例は中国語\"（shots/ja-L-07）。SE 官网自己有一份自写的中性 HTML 样张：SEW/src/templates/demo.mjs，标题 \"Why some cities are closing streets to cars on weekends\"（src/locales/en.json:59），12 个 locale 都有本地化译文（ja.json:84）。",
+  "fix": "R11 改为：SE 窗口素材用 Chrome headless（R34 已有先例）渲染 SE 官网样张的 is-static 终态，按 SE 的 12 个 locale 各出一张 536×700（AVIF q50 + JPEG q60）。WBW 页面取同语言版本，没有就用 en；图注写\"SurfEnglish 画面（HTML 样张）\"，不再需要\"示例为中文\"的说明。在 H11 中请用户确认这类渲染图属于 U2④ 的范围。确认之前降级为 text 变体（不放窗口，同 zh-Hans），禁止使用 browser.jpg 和任何 feed/game 截图。",
+  "id": "VIS-01",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§1.2 荧光笔母题 / §1.4 R2 与\"每屏≤1处\"；连带 08 各 locale 标题的 [[ ]]",
+  "severity": "major",
+  "issue": "荧光笔从产品里\"被查的那个词\"，变成了\"每个大标题都有一块黄\"。这正是近年落地页模板最常见的\"高亮关键词标题\"套路。\"每屏≤1处\"的规则拦不住它，因为几乎每屏都有一个大标题。到了 CJK 页面，荧光笔更成了整行的色块。",
+  "evidence": "08 的 en 文案有 7 个标题带 [[ ]]（08 行 229/266/280/295/320/329/372）。ja 的 hero 标记了 16 个字\"Webページを右にスワイプして翻訳\"（08:616），跨两行，见 shots/ja-L-00。原型只能靠 style.css:342 把 M 卡里 3 处 <mark> 的样式清空（README D7），但 <mark> 元素还在，Safari/VoiceOver 仍会播报 highlight。可见的 4 处在 en-L-00、01、02、05。另外，mark.kw 的 padding:0 .12em 加 box-decoration-break:clone，使换行后第二行比左缘缩进约 6px（en-M-00 的 \"web pages\"、en-M-01）。产品中黄色高亮的语义是双击查词（40-highlight.js:20），样张里已经在这么用。",
+  "fix": "05 的规则改为\"每页最多 1 处，样张和截图内的不计\"。只允许 hero H1 使用，长度不超过 3 个拉丁词或 6 个 CJK 字，宽度 ≥560px 时不许换行，由 render/build 校验。08 删掉全部 20 个 locale 中 features.*.title 和 languages.title 的 [[ ]]；OG 保留 1 处。装饰性的高亮改用 <span class=\"kw\">，不用 <mark>。样式上加 margin-inline:-.12em，抵消 padding，保持左缘对齐。L1、L2、languages 的标题靠编号 eyebrow 和字号区分就够了。",
+  "id": "VIS-02",
+  "lens": "visual"
+ },
+ {
+  "doc": "prototype",
+  "section": "hero 样张（tools/render.mjs:196-199、style.css:230-236 .wb-ghost）；05 §5.2.2",
+  "severity": "major",
+  "issue": "样张里的网页用灰色骨架条充当标题和后续段落，屏幕约 2/3 不是骨架条就是空白。首屏主视觉因此像线框图或加载占位，与\"一页被批注过的读物\"的概念正好相反，是全站模板感最强的一处。05 只规定了两句原文，没规定版面其余部分，实施者会照抄原型。",
+  "evidence": "shots/en-L-00、ja-L-00、en-M-00：机身屏幕约 693px 高，真实文字只占 y268–392 约 124px；上面 2 条、下面 6 条灰条（#E9E9EE/#D9D9DF），y490–605 是空白。紧接着的 L1 真实截图（en-L-01）则文字满屏。",
+  "fix": "05 §5.2.2 补充版面规定：样张网页依次是衬线粗体的文章标题（1 行）、13pt 灰色署名/日期行、被翻译的段落、至少 1 段未翻译的后续原文（允许被查词卡部分遮住），禁止骨架条。新增文字只属于源文，而源文只有 es（en 页）和 en（其余 19 页）两个版本，各写一次即可，不增加 20 种语言的翻译量。长度校验沿用 §5.2.5 的规则。",
+  "id": "VIS-03",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.3 设备框 / §7.1 管线 / §7.8 OG",
+  "severity": "major",
+  "issue": "截图保留了原始状态栏：时间各不相同，带定位箭头，电量几乎耗尽。这些机身就排在 hero 样张（9:41、满电）旁边，显得粗糙，不像官方营销图。",
+  "evidence": "en-L-01 的 L1 机身是 23:52、定位箭头、低电量；en-L-02 的 L2 是 23:56、低电量；画廊依次是 23:57、23:58、0:21、0:21（en-L-04）；ja-L-01 为 2:30、ja-L-02 为 2:31；hero 样张是 9:41 满电（en-L-00）。05 §7.8 的 OG 图用的是 lookup-720 机身，状态栏同样会出现在社交分享卡上。",
+  "fix": ".device 内统一叠加 CSS 状态栏，复用 hero 的 .ios-status（9:41、满格、满电、无定位箭头），高度为 54/874 屏高。底色逐图指定：manifest 增加 statusBg 字段，例如 #FFFFFF，或底部弹层遮罩下的灰色。节选和放大镜的 y 起点不小于 0.07，避开状态栏；OG 模板用同一组件。原图像素不改，符合 U2 的边界。验收 A12 增加一项：所有机身时间一致为 9:41。",
+  "id": "VIS-04",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§3.2 字号阶梯 / §5.4（R13 的视觉落地）",
+  "severity": "major",
+  "issue": "标题层级坍缩：分区 H2 与 L 级功能 H3 同为 44px，画廊、FAQ、价格、最终 CTA 的 H2 也都是 44px。整页 9 个同号大标题，节奏单调，读者只能靠位置猜层级。",
+  "evidence": "style.css:97 写的是 `h2, .h-xl { font-size: var(--fs-h2) }`，L1/L2 的 h3 带了 .h-xl（index.html:113、126）。en-L-01 中，H2 \"Swipe to translate, double-tap…\" 与 H3 \"Swipe to Translate: the translation…\" 上下相邻、字号相同。画廊和 FAQ 的 H2 带 class=\"h-m\"，但 05 和 style.css 都没有定义 .h-m，实际渲染为 44px（en-L-04、en-L-07）。",
+  "fix": "05 §3.2 新增 token `--fs-h2-sub: clamp(1.5rem, 1.2rem + 1.2vw, 2.25rem)`（24→36px），用于 L 级 H3 和次要分区的 H2（画廊、FAQ）。--fs-h2 只留给章节级标题：features、languages、pricing 和最终 CTA。在 05 中定义 .h-sub（替换未定义的 .h-m），并把各组件的标题级别写进 §5.4–§5.8。",
+  "id": "VIS-05",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§4.2 分区间距阶梯",
+  "severity": "major",
+  "issue": "相邻分区的上下内边距直接叠加，分区之间普遍空出约 220–230px（桌面）或约 130px（手机），页面松散冗长。这也是手机端超出 R20 长度目标的主要原因之一。",
+  "evidence": ".section 的 padding-block 两端都取 --section-y-m（style.css:106）。实测：en-L-04 规格行底线 y540 到画廊 H2 y770 为 230px；en-L-08 FAQ 末行 y478 到 CTA H2 y710 为 232px；en-L-07 SE 卡到 FAQ 约 190px；en-M-05 S 行底 1028 到画廊 H2 1160；en-M-09 FAQ 到 CTA 约 137px。桌面全页 10,500px，手机 14,519px（README §5），R20 目标是 ≤13,000px。",
+  "fix": "05 §4.2 明确写\"分区间距等于一个 token，不相加\"：只用 padding-block-start，或者对同底色相邻分区写 `.section + .section { padding-block-start: 0 }`，再用 hairline 分隔。验收时测量：分区之间的空白不超过 1 个 --section-y-m（桌面 112px，手机 64px）。预计手机省约 550px、桌面省约 900px。",
+  "id": "VIS-06",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.4 S 规格行",
+  "severity": "major",
+  "issue": "4 列\"线描图标 + 粗体标题 + 3 行说明\"是最典型的 SaaS 模板功能栅格，和 05 §1.4 R3/R10 想去掉的东西是同一种结构；在手机上还占 784px。",
+  "evidence": "en-L-04 y256–540：四列依次是云、列表、时钟、设备图标。en-M-05 y244–1028 单列堆叠，共 784px。05 §5.4 的规格就是\"24px 线描图标 + 标题 + 1 行说明\"。",
+  "fix": "改成有印刷感的规格表 <dl>，与价格表用同一套语汇：每行一个 dt（13px 小标签，拉丁文字大写）加一个 dd（一行事实），行间 hairline。≥900px 时两列两行，<900px 时单列。删掉 4 个图标，只保留\"译文样式\"那一行的 4 个 Aa 小样，因为它是唯一承载信息的图形。手机高度目标 ≤320px；R20 里\"手机端收起规格行\"一条可以随之取消。",
+  "id": "VIS-07",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.7 价格区（原型额外渲染了 08 的 pricing.free / pricing.plus 两张卡）",
+  "severity": "major",
+  "issue": "价格区在表格旁边又加了 Free 和 Plus 两张卡，内容只是复述表格里的数字，组成了\"表格 + 两张价格卡\"这种通用定价页套路，在手机端还多出约 440px。05 并没有定义这两张卡，实施时归属不清。",
+  "evidence": "en-L-06/07 右侧的 Free 卡和 WordByWord Plus 卡（Plus 卡带马赛克条，style.css:432）；en-M-08 y232–656。08 第 410–425 行的 points 只是重复表格数据（\"50 cloud + 100 local\"\"Up to 500 cloud\"）。05 §5.7 只规定了表格。",
+  "fix": "删掉这两张卡。价格 `{plus.priceUS} / month (US)` 放进 Plus 列表头的第二行；3px 红线和马赛克条只放在 Plus 列表头；note 放在表格下方。08 的 free/plus.points 保留为可选键，默认不渲染。05 §5.7 写明\"价格区只有一个表格加一行说明，不用卡片\"。",
+  "id": "VIS-08",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.4 L2 批注跨页 / §5.14 放大镜 / §7.1 pins",
+  "severity": "major",
+  "issue": "05 称 L2 是\"全站最具辨识度的一屏\"，但执行上有两个缺陷：①\"放大镜\"并不放大，显示尺寸比机身里的同一张卡还小，纯属重复；② 编号钉压在原文上，挡住了正在演示的文字。",
+  "evidence": "en-L-02：机身内查词卡的词头约 14px，右侧\"放大镜\"里同一张卡约 12px；放大镜底部 \"base form is…\" 被拦腰裁断，左上角还残留一截红色引用条。ja-L-02 放大镜顶部两行英文被切掉一半。钉 1 盖住了 en 的 \"contrajo matrimonio [con] el\" 和 ja 的 \"By the [autumn]\"；钉 2 压在卡片左缘的文字上。",
+  "fix": "放大镜二选一：(a) 真正放大，只裁\"词头行 + 第一条释义\"（源图约 640×300px，约为屏宽的一半），显示为 320–360px 宽，倍率约为机身的 2 倍，裁切边落在空白行上；(b) 直接删除，③ 只保留文字注。编号钉不得压住文字：放在机身内边距或外沿、与目标同一高度的位置，用引线指向目标；被查的单词改用 2px 红色圆角描边环标出，不再盖钉。坐标写入 manifest，并在 A12 截图中目视确认。",
+  "id": "VIS-09",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.4 M 中卡 / §5.14 .shot / §7.1 节选坐标",
+  "severity": "major",
+  "issue": "2×2 中卡的截图节选从文字行中间切开，左上角叠加的\"iPhone screenshot · excerpt\"标签又压住了内容。四张卡里有三张存在这个问题，en 和 ja 都一样，显得草率。",
+  "evidence": "en-L-03：X 卡顶部 \"NHKニュース reposted\" 被切半，标签挡住了头像和\"日…\"；朗读卡顶部 \"becoming queen consort\" 被切半；句法卡的标签挡住了 \"Explanation\" 按钮。ja-L-03 的问题相同。标签实现为 style.css:346 的 `.shot-label{position:absolute}`；05 §7.1 把节选高度固定为屏高的 0.259。",
+  "fix": "(1) 标签从图上移到图下的 figcaption（--fs-xs、--ink-3），图片上不叠加任何文字。(2) 05 §7.1 规定节选上下边必须落在空白行：manifest 为每张图单独指定 y；check.mjs 增加校验，节选首末 4px 行的像素方差须低于阈值。(3) 把原型 D14 的坐标微调写回 05。",
+  "id": "VIS-10",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.2.1 <560 布局 / §6.2 手机线框（配合 R20）",
+  "severity": "major",
+  "issue": "手机首屏几乎看不到产品。样张从 y≈697 开始，首屏内只露出状态栏、地址栏和骨架条；红色译文条在 y≈910，落在 844px 高的视口之外。R20 只把 platformNote 移走，还不够。",
+  "evidence": "en-M-00（390 宽）：eyebrow 2 行、H1 4 行、lede 6 行（08 的 hero.lede 约 260 字符，超出 05 §6.2 线框\"lede 4 lines max\"的限制）、徽章与链接、事实注 3 行。README K3 实测样张只露出约 90px。",
+  "fix": "<560px 时：(1) 按 R20 把 platformNote 移到样张之后；(2) 去掉样张骨架条，原文从屏幕约 100pt 处开始；(3) lede 只显示 R27 要求的定义句，后两句手势说明与 H1 和样张重复，移到样张图注下方；(4) 验收标准改为\"390×844 首屏内可见红色译文条\"。预计译文条可上移到 y≈690。",
+  "id": "VIS-11",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.1 Header（\"<560 隐藏字标\"）；style.css:182",
+  "severity": "major",
+  "issue": "手机端品牌名从整页消失。这条规则全局生效，header 和页脚都只剩图标。而且图标 alt=\"\"，字标又被隐藏，首页链接在读屏里没有名称（WCAG 2.4.4 / 4.1.2）。",
+  "evidence": "style.css:182：`@media (max-width:559px){ .brand-name{display:none} }`。header 和页脚的标记都是 `<a class=\"brand\"><img alt=\"\"><span class=\"brand-name\">`（index.html）。en-M-00 的 header 与 en-M-10 的页脚都只有图标。R27 已允许 H1 不含品牌名，手机上品牌只剩 eyebrow 那行小字。",
+  "fix": "<560px 时保留字标（390 宽下图标加字标约 138px）。腾空间的办法：语言切换器收成只有地球图标（aria-label 写成\"Language: English\"）；de、ru、uk 等长语言的 Download 按钮用新增的 nav.downloadShort。如果仍要隐藏字标，只对 .site-header 生效，并给链接加 aria-label=\"WordByWord\"。R27 要求 logo alt=\"WordByWord\"，字标可见时会被读两遍，应在\"链接 aria-label\"和\"img alt + 字标 span aria-hidden\"中二选一。",
+  "id": "VIS-12",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§9.1 暗色 / §5.1 / §5.10 / §7.8 favicon",
+  "severity": "major",
+  "issue": "暗色模式下 WBW 的 App 图标失去轮廓：16 格中有 10 格（黑色和 #44111C）几乎融进底色，只剩几块红格和白色 T。页脚家族徽记里，SE 图标反而完整醒目。暗色浏览器标签栏上的 favicon 也是同样情况。",
+  "evidence": "见 en-D-00 的 header logo 和 en-D-09 的页脚（放大后可见方角消失）。本机按 WCAG 公式计算：#000 对 #121010 为 1.11:1，#44111C 对 #121010 为 1.21:1。05 §5.13 只对马赛克接受了\"黑格融入暗底\"，没有考虑图标本身。",
+  "fix": "暗色下加描边：`.brand-icon, .family-mark img { box-shadow: 0 0 0 1px rgb(242 236 230 / .24) }`，保留 22.4% 圆角。另出一个 favicon.svg，在 @media (prefers-color-scheme: dark) 内给图标加 1px 浅色描边；favicon.ico 保留作回退，apple-touch-icon 不变。A12 的暗色截图增加\"图标轮廓清晰\"一项检查。",
+  "id": "VIS-13",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.9 / §6.1 最终 CTA；04 §3.1 图标尺寸",
+  "severity": "major",
+  "issue": "SE 卡在视觉上比 WBW 自己的收尾更丰富：页面下半部唯一的深色图块、唯一 40px 的 App 图标都属于 SE。紧随 FAQ 的 WBW 最终 CTA 只有一个标题和一个徽章，右侧约 55% 是空的。这与基线 B.1\"主角始终是 WBW\"相悖。",
+  "evidence": "en-L-07：SE 卡有 40px 的 SE 图标、240×314 的深色截图和黑色徽章。en-L-08：最终 CTA 只有 H2、一行说明和徽章。整页 WBW 图标最大只有 28px（header）和 32px（家族徽记），而 SE 图标是 40px（04 §3.1 的规格）。",
+  "fix": "(1) 最终 CTA 改为左右两栏：左边放 WBW 图标 80px（由 1024 母图派生，属于现有素材）和从页脚移来的 4×4 马赛克（64px），右边放 H2 和徽章。(2) SE 卡图标降到 32px，与页脚家族徽记一致；窗口显示宽度从 240px 降到 200px。(3) 05 §6.1 写入一条约束：WBW 图标在页面上的最大显示尺寸不小于 SE 图标的 2 倍。",
+  "id": "VIS-14",
+  "lens": "visual"
+ },
+ {
+  "doc": "rulings",
+  "section": "R31/R32（第三方内容）对应 05 §7.3、§7.4 的 X 节选",
+  "severity": "major",
+  "issue": "按 R32 执行后，ja 和 zh-Hans 的\"X 双语阅读\"卡没有任何合规素材可用，而裁定和 05 都没有给出回落方案，实施会卡在这里。",
+  "evidence": "RES/wbw_jp 中唯一的 X 截图「スクリーンショット 2026-04-23 11.52.02.png」是 OpenAI 的 gpt-image-2 推广帖，而且 App 界面是中文（\"提取语言块\"）。RES/wbw_zh 有两张 X 截图：12.44.50 是 GitHub Copilot for Jira 的推广帖（05 §7.4 选的就是它），11.53.37 是同一条 OpenAI 帖。R32 明确要求避开 OpenAI、GitHub 的推广帖。",
+  "fix": "在 R32 后补充回落方案。首选：ja 和 zh-Hans 的 X 卡改用 HTML 示意卡，做法同 Chunks 卡（标注 Illustration, not a screenshot）：通用社交帖样式（圆形头像、@example 账号，不出现 X 标志和认证徽章），内容是自写的英文帖，下方用红条给出页面语言的译文。备选：回落到 app/en/x-ex（NHK 那张：头像做模糊处理，按 R31 图注不提语块，并注明\"英語 UI の例\"）。\"是否补拍中性内容的 X 截图\"加入 H11。",
+  "id": "VIS-15",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§4.3 首页节奏 / §5.6 / §5.7",
+  "severity": "minor",
+  "issue": "languages 与 pricing 都用 --paper-2 且相邻，连成约 1,960px 的米色长带，违反 05 §4.3 自己定的\"纸面与便签交替\"原则。",
+  "evidence": "从 shots/en-L-05 的 y500 到 en-L-07 的 y258（全页约 6,000–7,958px）都是 paper-2，中间只有 en-L-06 y235 处一条 hairline。05 §4.3 的节奏图里这两个区块本来就上下相邻、都是便签底。",
+  "fix": "价格区改为 --paper 底，表格保持 --surface 加 hairline，只保留 languages 为便签底。05 §4.3 的节奏图和 §5.7 的标题同步修改。",
+  "id": "VIS-16",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.5 截图画廊",
+  "severity": "minor",
+  "issue": "ja 和 zh-Hans 的画廊只有 2 张，却仍按 4 列、240px、左对齐排开，整行右侧一半是空的。而且 240px 机身里的 UI 字只有约 7–8px，读不出来。",
+  "evidence": "ja-L-05：图 1、图 2 占据 x155–667，x700–1211 空白。en-L-04/05 画廊里的设置项说明肉眼不可读。",
+  "fix": "n≤2 时改用左右版式：两台 320px 的 .device，右侧 4 列放图注（Fig. n 加一句说明）；n=4 时维持现状。另一种做法是每张只截一块 4:3 的有效区域（设置列表、词形变化、语言列表），用 .shot 显示，保证文字可读。",
+  "id": "VIS-17",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.8 FAQ",
+  "severity": "minor",
+  "issue": "折叠状态下的 FAQ 就是一列通用手风琴（问题加\"+\"），红条\"译文\"母题要展开后才看得到；桌面端右侧约 40% 空着。",
+  "evidence": "en-L-07/08：10 个问题排成 672px 宽的单列，右侧空白。05 §5.8 规定宽度为 --w-text。",
+  "fix": "≥900px 时：左 4 列放 H2 和一句说明（sticky），右 8 列放问答。问题用 --font-read 衬线体，相当于\"原文\"；答案用 UI 无衬线体加红条，相当于\"译文\"，这样折叠状态也能看出母题。默认展开第 1 问（What is WordByWord?）。<900px 时保持单列。",
+  "id": "VIS-18",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§1.2 / §5.2.1 / §5.10 / §5.13 马赛克",
+  "severity": "minor",
+  "issue": "马赛克的三种用法中有两处认不出是品牌元素：hero 底部的全出血 8px 横条像条形码或加载条，而且是全页唯一越出内容线的元素；页脚孤立的 24px 4×4 方块像一张坏掉的小图或二维码。暗色下横条只剩红色虚线。",
+  "evidence": "en-L-00 y945（铺满 1366 全宽）；en-L-09、en-M-10 页脚图标下方的 24px 方块；en-D-00 中暗色下的横条。",
+  "fix": "hero 横条限制在 --w-content 宽度内，从内容左缘起，改为 2 行（16px 高）以保留\"格子\"感。删掉页脚的孤立方块，挪到最终 CTA 里放大为 64px。05 §1.2 的\"5 处\"清单同步更新。",
+  "id": "VIS-19",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§1.2 红色引用条用途 / §5.3 机身阴影",
+  "severity": "minor",
+  "issue": "红色引用条在产品里只表示\"上方原文的译文\"，站点上却被用来装饰普通要点和限制说明，语义被稀释。机身用了 --shadow-3 大投影，与 05 §1.3\"平面、细线、实色印刷感\"相矛盾。",
+  "evidence": "en-L-01 的 L1 三条要点各带一道红条；en-L-05 的两条限制注也带红条。产品里的红条只用于译文（10-dom-render.js:1138）。05 §5.3 写的是 `.device{box-shadow:var(--shadow-3)}`，en-L-01 机身下方有一大片灰影。",
+  "fix": "红条只用于\"挂在一段文字下面的回答或译文\"：FAQ 答案、404 页的译句、样张和 OG 的副标题。L1 要点改为 hairline 分隔的编号行（01/02/03）；限制注改用①②加 hairline。.device 去掉阴影或改用 --shadow-1；放大镜只用 hairline。",
+  "id": "VIS-20",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§9.1 暗色模式",
+  "severity": "minor",
+  "issue": "暗色模式下有三处细节失衡：#FEE437 荧光笔大色块在近黑底上刺眼；Chunks 示意卡随主题变暗，而另外三张截图卡仍是白色，2×2 网格明暗错乱；\"English only\"标签的底色与表格底色几乎一样，标签形状消失。",
+  "evidence": "en-D-00、en-D-02 中黄块与底色对比 14.78:1；en-D-03 呈三白一黑；en-D-07 中标签底 #24201E 对表格底 #221E1C 仅 1.02:1。",
+  "fix": "暗色下 --marker 改为 #D8BE2A（墨字在其上 9.75:1，色块对底 10.2:1）。Chunks 示意卡与 hero 样张一样，固定为亮色\"屏幕\"（#fff 底、#1C1C1E 字），不随主题变化。暗色下 .tag--en-only 改为透明底加 1px --hairline-strong 边框。",
+  "id": "VIS-21",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§9.4 可访问性",
+  "severity": "minor",
+  "issue": "几处可访问性细节：放大镜的 alt 与机身图几乎相同，读屏会重复朗读；限制注的编号字号 12px，小于 05 规定的全站最小 13px；页脚语言链接每项 44px 高，使手机页脚长达约 1,300px。",
+  "evidence": "index.html 中有两条几乎相同的 alt：\"the Spanish word “convirtiéndose” highlighted…\"；style.css:402 写的是 `.side-note::before{font:700 12px…}`；README K10 及 en-M-10。",
+  "fix": "放大镜若只是同源重复信息，用 alt=\"\"。编号改为 13px。页脚语言链接行高改为 32px（满足 WCAG 2.5.8 的 ≥24px 且间距充足）；header 语言菜单和主要按钮仍保持 44px。",
+  "id": "VIS-22",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "§5.2.2 / §5.2.5 样张查词卡",
+  "severity": "minor",
+  "issue": "05 规定样张查词卡的词头写短语（\"se quedan leyendo / phrase\"、\"end up / 句動詞\"），与 App 实际行为不符：App 的词头是被双击的单词加词性，所属短语写在说明行里。原型（文案取自 08）是按 App 实际做的。按 05 实施，样张会夸大\"短语优先\"。",
+  "evidence": "en-L-02 的真实截图：\"convirtiéndose Verb (present participle)… This word in context is part of the phrase 'convirtiéndose en'\"；ja-L-02：\"designed 動詞(過去形)…「designed and built」というフレーズの一部\"；原型 hero：\"quedan verb … Part of the phrase…\"。",
+  "fix": "05 §5.2.2 和 §5.2.5 的示例改成\"词头 = 单词 + 词性，note 行写所属短语\"，与 08 和真实截图保持一致。",
+  "id": "VIS-23",
+  "lens": "visual"
+ },
+ {
+  "doc": "05",
+  "section": "全文 vs prototype/README.md §4（D1、D2、D6、D13–D16）",
+  "severity": "minor",
+  "issue": "原型为守住首屏和左缘对齐做了几处修正，但裁定 R1–R38 没有覆盖这些条目。05 如果不吸收，实施者照 05 做，会把已经修好的问题再做坏一遍。",
+  "evidence": "D1：hero 文案改占 1–7 列，否则 en 的 H1 在 64px 下折成 5 行，CTA 被挤出 1280×800 首屏。D2：hero 和画廊不用 --w-wide，保持左缘对齐。D6：价格区不放徽章。D13：钉位调整。D14：节选坐标微调。D15：样张从终态开始播放。D16：ja 标题补 ｜ 断行提示。",
+  "fix": "05 下一版逐条写回：§5.2.1 改为 1–7 列；§4.1 删掉\"hero 与画廊可用 --w-wide\"；§5.7 和 §6.1 线框删去价格区徽章；§5.2.4 时间线改为从 is-static 开始；§7.1 manifest 坐标以原型 tools/build-images.mjs 为准；08 的 ja、zh、ko 标题补上 ｜。",
+  "id": "VIS-24",
+  "lens": "visual"
+ }
+]
