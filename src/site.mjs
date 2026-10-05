@@ -44,7 +44,7 @@ export const SITE = {
   // — Hosting & redirects (doc 02 §5.2.1) —
   pagesProject: 'wordbyword-web',
   contractMode: 'proxy',                        // 'proxy' = C-1 | 'file' = C-2 | per-contract object
-  redirectFlags: { indexHtmlRule: true, experimentL: false, experimentC: false },
+  redirectFlags: { indexHtmlRule: true, experimentL: true, experimentC: true }, // SPIKE BRANCH ONLY
   legacySitemap: false,
 
   // — SEO —

@@ -97,6 +97,7 @@ for (const route of routes) {
 const redirects = buildRedirects({ SITE, LOCALES, CONTRACTS, ALIASES });
 write(join(DIST, '_redirects'), redirects.text);
 write(join(DIST, '_headers'), buildHeaders({ SITE }));
+(await import('./scripts/spike.mjs')).applySpike(DIST); // SPIKE BRANCH ONLY
 
 if (git.shallow) warn('SITEMAP', 'shallow git clone: <lastmod> omitted from sitemap.xml');
 const lastmodFor = (r) => {
