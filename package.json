@@ -1,0 +1,12 @@
+{
+  "name": "wordbyword-web",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Official website for WordByWord — www.word-by-word.app",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "node build.mjs",
+    "serve": "node build.mjs && node scripts/serve.mjs --port 4580"
+  }
+}

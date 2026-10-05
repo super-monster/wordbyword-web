@@ -1,0 +1,26 @@
+# Request-level cases (doc 02 §5.2.4, R54). Columns: id, request, first_hop, location, final, flag, other
+Q01	`GET /privacy.html`	200	无	—	proxy	body 含 `data-page="privacy"`；canonical = `https://www.word-by-word.app/privacy.html`；生产域名无 `X-Robots-Tag`（R48）
+Q02	`GET /support.html`	200	无	—	proxy	同 Q01
+Q03	`GET /chrome-extension/privacy.html`	200	无	—	proxy	S0：含 `noindex`、无 canonical；S1：canonical 为契约 URL（R2、R49）
+Q04	`GET /privacy.html?from=app`	200	无	—	proxy	—
+Q05	`HEAD /privacy.html`	200	无	—	proxy	—
+Q06–Q11	A4–A9 的源	301	对应契约 URL	200	proxy	单跳
+Q12–Q14	`/legal/privacy/`、`/legal/support/`、`/legal/extension-privacy/`	L 关：200；L 开：301	L 关：无；L 开：契约 URL	200	experimentL	L 关时 body 与契约 URL 字节一致，canonical 指回契约 URL；生产无 `X-Robots-Tag`（R48）
+Q15	`/index.html`	开：301；关：308	`/`	200	indexHtmlRule	不得循环
+Q16	`/index`	开：301；关：【需实测】	`/`	200	indexHtmlRule	—
+Q17	B3–B4、C01–C40、D01–D14 的每个源（由夹具逐条生成，共 56 个用例）	规则码	规则目标	200	publish	单跳；目标在 `.cache/routes.json` 中
+Q18	`/ja-top.html?utm_source=t`	301	`/ja/?utm_source=t`	200	—	query 丢失只判 **WARN**（`QUERY_PRESERVED=0`），不判 FAIL（§5.3 第 6 条、A3）
+Q19	`/en/about/`	301	`/about/`	200	—	D15
+Q20	`/zh/chrome-extension/`	301	`/zh-hans/chrome-extension/`	200	—	D16
+Q21	`/cn/ja-top.html`	301	`/zh-hans/ja-top.html`	404	—	splat 不做二次映射，可接受（§5.3 第 9 条）
+Q22	`/zh-hans/`	200	无	—	全部配置	返回 301 说明匹配不区分大小写，必须立即关闭实验组 C
+Q23	`/zh-Hans/`、`/pt-BR/`	C 关：404；C 开：301	C 开：`/zh-hans/`、`/pt-br/`	200	experimentC	不得循环
+Q24	`/ja`	308	`/ja/`	200	—	CF 自动（F24）
+Q25	`/ja/index.html`	308	`/ja/`	200	—	CF 自动
+Q26	`/about`	308	`/about/`	200	—	CF 自动
+Q27	`/chrome-extension`	308	`/chrome-extension/`	200	—	CF 自动
+Q28	`/zh-hans/chrome-extension`	308	`/zh-hans/chrome-extension/`	200	—	CF 自动
+Q29	`/chrome-extension/index.html`	308	`/chrome-extension/`	200	—	CF 自动
+Q30	`/backup/top.html`、`/README.md`、`/CNAME`、`/img/Screenshot-1.png`、`/wbw_logo.png`、`/css/style.css`、`/js/surfenglish-promo.js`、`/chrome-extension/style.css`、`/chrome-extension/img/hero-screenshot.png`、`/jp/`、`/definitely-missing-xyz`	404	无	—	—	body 含 `data-page="404"`（不是 SPA 返回的 200）
+Q31	全部已发布首页、`/about/`、`/chrome-extension/`、`/zh-hans/chrome-extension/`、`/robots.txt`、`/sitemap.xml`、`/favicon.ico`	200	无	—	publish	首页 canonical 自引用；首页 `<link rel="alternate" hreflang>` 数 = 已发布 locale 数 + 附加码数 + 1（§6.1）
+Q32	未发布 locale L：`/<L>-top.html`；`/<L.path>/`	302；404	`/`；无	200；—	publish=false	L 不出现在 sitemap、hreflang、切换器中

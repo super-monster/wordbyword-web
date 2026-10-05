@@ -1,0 +1,90 @@
+# _redirects — www.word-by-word.app (Cloudflare Pages) — default fixture (02 §5.2.2, R54)
+# First match wins. Order: A(200) > A(variants) > [L] > B > C > D(static) > [X static] > D(splat) > [X splat]
+# Default budget: 67 static / 7 dynamic; with experiments L+C: 76 / 10 (limits 2,000 / 100)
+
+# ---------- A. Contract URLs: 200 proxy at the legacy .html path (C-1) ----------
+A1   /privacy.html                    /legal/privacy/                  200
+A2   /support.html                    /legal/support/                  200
+A3   /chrome-extension/privacy.html   /legal/extension-privacy/        200
+# Extensionless / trailing-slash variants (were 200 on GitHub Pages)
+A4   /privacy                         /privacy.html                    301
+A5   /privacy/                        /privacy.html                    301
+A6   /support                         /support.html                    301
+A7   /support/                        /support.html                    301
+A8   /chrome-extension/privacy        /chrome-extension/privacy.html   301
+A9   /chrome-extension/privacy/       /chrome-extension/privacy.html   301
+
+# ---------- B. English home duplicates ----------
+B1   /index.html                      /                                301
+B2   /index                           /                                301
+B3   /en-top.html                     /                                301
+B4   /en-top                          /                                301
+
+# ---------- C. Legacy flat language pages -> /<locale>/ (20 non-en legacy files x 2) ----------
+C01  /cn-top.html    /zh-hans/   301
+C02  /cn-top         /zh-hans/   301
+C03  /zh-top.html    /zh-hans/   301
+C04  /zh-top         /zh-hans/   301
+C05  /tw-top.html    /zh-hant/   301
+C06  /tw-top         /zh-hant/   301
+C07  /ja-top.html    /ja/        301
+C08  /ja-top         /ja/        301
+C09  /ko-top.html    /ko/        301
+C10  /ko-top         /ko/        301
+C11  /es-top.html    /es/        301
+C12  /es-top         /es/        301
+C13  /pt-top.html    /pt-br/     301
+C14  /pt-top         /pt-br/     301
+C15  /fr-top.html    /fr/        301
+C16  /fr-top         /fr/        301
+C17  /de-top.html    /de/        301
+C18  /de-top         /de/        301
+C19  /it-top.html    /it/        301
+C20  /it-top         /it/        301
+C21  /nl-top.html    /nl/        301
+C22  /nl-top         /nl/        301
+C23  /pl-top.html    /pl/        301
+C24  /pl-top         /pl/        301
+C25  /ru-top.html    /ru/        301
+C26  /ru-top         /ru/        301
+C27  /tr-top.html    /tr/        301
+C28  /tr-top         /tr/        301
+C29  /uk-top.html    /uk/        301
+C30  /uk-top         /uk/        301
+C31  /vi-top.html    /vi/        301
+C32  /vi-top         /vi/        301
+C33  /th-top.html    /th/        301
+C34  /th-top         /th/        301
+C35  /id-top.html    /id/        301
+C36  /id-top         /id/        301
+C37  /ar-top.html    /ar/        301
+C38  /ar-top         /ar/        301
+C39  /hi-top.html    /hi/        301
+C40  /hi-top         /hi/        301
+
+# ---------- D. Locale prefix aliases: static (bare + trailing slash) ----------
+D01  /en             /           301
+D02  /en/            /           301
+D03  /zh             /zh-hans/   301
+D04  /zh/            /zh-hans/   301
+D05  /cn             /zh-hans/   301
+D06  /cn/            /zh-hans/   301
+D07  /zh-cn          /zh-hans/   301
+D08  /zh-cn/         /zh-hans/   301
+D09  /tw             /zh-hant/   301
+D10  /tw/            /zh-hant/   301
+D11  /zh-tw          /zh-hant/   301
+D12  /zh-tw/         /zh-hant/   301
+D13  /pt             /pt-br/     301
+D14  /pt/            /pt-br/     301
+
+# ---------- D. Locale prefix aliases: splat (last) ----------
+D15  /en/*           /:splat             301
+D16  /zh/*           /zh-hans/:splat     301
+D17  /cn/*           /zh-hans/:splat     301
+D18  /zh-cn/*        /zh-hans/:splat     301
+D19  /tw/*           /zh-hant/:splat     301
+D20  /zh-tw/*        /zh-hant/:splat     301
+D21  /pt/*           /pt-br/:splat       301
+
+# ---------- E. Retired (no rule = 404): /backup/*, /README.md, /CNAME, legacy /img/*, /css/*, /js/*, /chrome-extension/{img/*,style.css} ----------

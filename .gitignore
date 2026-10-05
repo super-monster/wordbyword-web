@@ -1,0 +1,13 @@
+# build output
+dist/
+.cache/
+.wrangler/
+
+# OS / editor
+.DS_Store
+
+# local tooling
+.claude/
+
+# Design docs live on the orphan branch `design-docs` (decision H10, 2026-10-05).
+docs/redesign-2026/
