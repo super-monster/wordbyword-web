@@ -44,6 +44,12 @@ jobs:
       - name: build (exits non-zero on any build-gate error)
         run: node build.mjs
 
+      - name: validator tests (a broken sample per rule L-1…L-14, D-1…D-24)
+        run: node --test scripts/tests/
+
+      - name: pseudo-locale scan for hard-coded text (D-15 b)
+        run: node build.mjs --pseudo
+
       - name: image registry & AVIF structure (layer 1; Chrome decode runs on the maintainer's Mac)
         run: node scripts/check-images.mjs
 

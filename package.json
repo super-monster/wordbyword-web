@@ -9,6 +9,10 @@
   },
   "scripts": {
     "build": "node build.mjs",
+    "check": "node build.mjs --pseudo && node scripts/check.mjs",
+    "check:keys": "node scripts/check.mjs --keys",
+    "check:external": "node scripts/check.mjs --external",
+    "test": "node --test scripts/tests/",
     "serve": "node build.mjs && node scripts/serve.mjs --port 4580",
     "indexnow": "node scripts/indexnow.mjs",
     "indexnow:dry": "node build.mjs && node scripts/indexnow.mjs --dry-run --sitemap-file dist/sitemap.xml",
