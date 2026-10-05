@@ -115,3 +115,14 @@
 - Agent D 报告的 4 个内容问题：法律页标题移入 `en.json legal.*`；about 的 `*Word by Word*` 改为“Word by Word”（已写回文档 08）；zh-Hans `chromeExtension.cta.contactSubject` 由英文改为"Chrome 扩展"（已写回文档 08，**请在 zh-Hans 审校时确认**）；JS 包 11.6 → 9.3 KB。
 - IndexNow 密钥已生成并写入 `SITE.indexNowKey`（公开值，构建输出 `/<key>.txt`）。`indexnow.yml` 在生产域名仍是 GitHub Pages 时会跳过，不会提前推送。
 - 校验器的取舍（Agent D）：L-5 允许设计上为空的两个键；D-9 的 `@id` 引用只要全站某页定义即算闭合；D-17 额外接受 `maintenance`、`info` 级别；L-8 以文档 06 §4.2 的上限优先；伪 locale 扫描跳过脚本与英文法律正文。
+
+## M2 进行中（2026-10-06）
+
+- **官方徽章**（用户同意下载）：`scripts/badges.sh` 从 Apple Marketing Tools v2 取 18 种黑色本地化徽章，全部为 v2、无回落英文；三处显示高 48px（文档 05；文档 06 "高 40" 已更正），懒加载（D-6）。885df4e。
+- **OpenCC 简体字表**（用户同意下载）：vendor `STCharacters.txt`（3ac34aa，Apache-2.0）；`_simplified-only.txt` 3,807 字；ja 子集去掉 JIS X 0208 汉字后 3,610 字（用本机 EUC-JP 解码器枚举，无需额外下载）。现有 ja 文案通过。7e87e2e。
+- **M2-11 视觉评审**（en、ja、zh-Hans × 亮/暗 × 375/900/1280，另用临时阿语文案做 RTL 检查）：机身全部 9:41；编号钉不压字；节选图无叠加标签；暗色下 header、页脚、最终 CTA 图标描边清晰；390 宽页高 en 12,791 / ja 12,698 / zh-Hans 11,470（≤ 13,000）。修正（ce29b8c）：
+  - zh-Hans 标题在词中断行（"原文不／动""网页翻／译""任／意网页"）→ 按文档 05 §3.5 给相应字段加 `{wbr}`，有标记的标题切为 keep-all（用 `:has(wbr)` 实现 `.wbr-keep`）；FAQ 标题用不换行空格避免"的"起行。**zh-Hans 文案仅改排版标记，未改措辞，请在审校时知悉**（已写回文档 08）。
+  - 价格表：额度值不断行；Plus 价格只在括号前换行（ja 原来断成"価／格"）。
+  - L2 页边注：`text-wrap: balance`，ja 用 `word-break: auto-phrase`（"言い／回し"）。
+  - RTL：所有机身屏幕与语块示意卡固定 LTR（ar 下 L2 状态栏曾被镜像）；样张译文、X 样张译文、查词卡在 ar 下 `dir="rtl"` 右对齐、红条留左。
+- **留给 M3（ar 文案）**：文档 05 §5.2.6 要求的"阿拉伯语译文按从右到左排版"直接写进 ar 的 `demo.caption`，不新增键。【建议，待确认】A8 的基准用真实的 `/ar/` 页面截图代替原型 `ar.html`（文档 05 §9.2）：生产模板已能渲染 RTL，本次已用临时阿语构建核对 §5.2.6 / §9.2 的各项规则。
