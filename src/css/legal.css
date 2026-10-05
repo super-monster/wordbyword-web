@@ -1,0 +1,12 @@
+/* ===== 17. Legal pages (privacy / support / extension privacy; doc 06 §5.5) ===== */
+.legal { padding-block: var(--section-y-m); }
+.legal .container { max-inline-size: calc(46rem + 2 * var(--gutter)); }
+.legal h1 { margin-block-end: .25em; }
+.legal-updated { color: var(--ink-3); font-size: .875rem; margin-block-end: 2rem; }
+.legal-body h2 { font-size: 1.25rem; margin-block: 2rem .5rem; }
+.legal-body p, .legal-body li, .legal-body dd { line-height: 1.7; }
+.legal-body ul, .legal-body ol { padding-inline-start: 1.25rem; }
+.legal-body dt { font-weight: 600; margin-block-start: 1rem; }
+.legal-body dd { margin-inline-start: 0; }
+.legal-body .effective-date { color: var(--ink-3); }
+.legal-body code { font-size: .9em; }

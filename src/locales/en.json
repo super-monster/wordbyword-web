@@ -1,0 +1,816 @@
+{
+  "meta": {
+    "title": "WordByWord: Bilingual Web Page Translator App for iPhone",
+    "description": "For language learners: swipe a paragraph in the built-in browser and its translation appears below. Double-tap a word for its meaning. Free on iPhone & iPad.",
+    "ogHeadline": "Read any web page bilingually. [[Keep the original.]]",
+    "ogSubline": "Swipe right on a paragraph · double-tap a word for its meaning in context",
+    "ogImageAlt": "WordByWord on iPhone: Spanish text with the English translation below it and an AI card explaining one word",
+    "appStoreName": "WordByWord Translate",
+    "appStoreSubtitle": "Swipe to translate AI explains"
+  },
+  "seo": {
+    "titleMust": [
+      "Web Page",
+      "iPhone",
+      "App"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "bilingual web page translator app for iPhone",
+        "secondary": [
+          "reading assistant for language learners",
+          "bilingual reading app for any website",
+          "translation below the original",
+          "side-by-side translation app",
+          "learn languages by reading websites"
+        ]
+      },
+      "K2": {
+        "primary": "word meaning in context",
+        "secondary": [
+          "AI dictionary",
+          "double-tap to look up a word",
+          "phrase and idiom meanings",
+          "example sentences and word forms"
+        ]
+      },
+      "K3": {
+        "primary": "AI read-aloud and pronunciation",
+        "secondary": [
+          "text to speech for web pages",
+          "iOS voices with speed control"
+        ]
+      },
+      "K4": {
+        "primary": "AI sentence structure analysis",
+        "secondary": [
+          "break down long sentences",
+          "grammar of a sentence explained"
+        ]
+      },
+      "K6": {
+        "primary": "translation and lookup history",
+        "secondary": [
+          "review looked-up words in context"
+        ]
+      },
+      "K7": {
+        "primary": "cloud or on-device translation",
+        "secondary": [
+          "translation by Azure and Google",
+          "Apple on-device translation"
+        ]
+      },
+      "K8": {
+        "primary": "translate into 21 languages",
+        "secondary": [
+          "app in 20 languages",
+          "detects the page language automatically"
+        ]
+      },
+      "K9": {
+        "primary": "translate X (Twitter) posts on iPhone",
+        "secondary": [
+          "read tweets with the original",
+          "X translation in a built-in browser"
+        ]
+      },
+      "K10": {
+        "primary": "free translation app for iPhone",
+        "secondary": [
+          "daily free limits",
+          "WordByWord Plus price"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Skip to content",
+    "languageLabel": "Language",
+    "comingSoon": "Coming soon",
+    "contactUs": "Contact us",
+    "lastUpdated": "Last updated",
+    "breadcrumbHome": "Home",
+    "appStoreBadgeAlt": "Download WordByWord on the App Store",
+    "langFallbackNote": "This page is available in English only. Other languages open their home page.",
+    "menu": "Menu",
+    "close": "Close",
+    "figLabel": "Fig.",
+    "screenshotLabel": "iPhone screenshot",
+    "screenshotExcerptLabel": "iPhone screenshot · excerpt",
+    "noteLabel": "Note",
+    "demoLabel": "App demo"
+  },
+  "nav": {
+    "features": "Features",
+    "languages": "Languages",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "chromeExtension": "Chrome extension",
+    "about": "About",
+    "download": "Download",
+    "downloadShort": "Get",
+    "iphoneApp": "iPhone app",
+    "ariaMain": "Main",
+    "ariaLanguages": "Choose a language"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Bilingual web reader for language learners",
+    "title": "Swipe a paragraph on [[any web page]]. Its translation appears right below.",
+    "lede": "WordByWord is a reading assistant for language learners on iPhone and iPad.",
+    "ledeShort": "WordByWord is a reading assistant for language learners on iPhone and iPad.",
+    "ctaNote": "Free download · iPhone & iPad",
+    "how": "Open a site in its built-in browser and swipe right on a paragraph: the translation appears below it. Double-tap a word for an AI explanation of what it means there.",
+    "platformNote": "Free to start, with daily limits · Plus {plus.priceUS}/month in the US · {minOS} or later; also on Apple silicon Macs and Apple Vision Pro",
+    "secondaryCta": "See how it works"
+  },
+  "demo": {
+    "sourceLang": "es",
+    "articleTitle": "Los sábados en la biblioteca del barrio",
+    "byline": "Notas del barrio · 3 min de lectura",
+    "source": [
+      "La biblioteca del barrio abre temprano los sábados.",
+      "Los vecinos llegan con café y se quedan leyendo hasta el mediodía."
+    ],
+    "translation": [
+      "The neighborhood library opens early on Saturdays.",
+      "Neighbors arrive with coffee and stay reading until noon."
+    ],
+    "context": [
+      "Hay mesas junto a las ventanas, los periódicos del día y un rincón infantil con cuentos en varios idiomas.",
+      "El primer sábado de cada mes, un grupo de voluntarios organiza un intercambio de libros en la entrada."
+    ],
+    "lookup": {
+      "word": "quedan",
+      "pos": "verb",
+      "meaning": "stay — here: people stay on and keep reading",
+      "note": "Part of the phrase “se quedan leyendo” (stay reading). Base form: quedarse."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Swipe right",
+      "more": "More Definitions",
+      "pause": "Pause",
+      "replay": "Replay"
+    },
+    "caption": "HTML demo of the app, not a screenshot: a Spanish paragraph with its English translation inserted below."
+  },
+  "featuresIntro": {
+    "title": "Swipe to translate, double-tap to look up — on the websites you read",
+    "lede": "Made for language learners who read real websites. Two gestures do most of the work; the rest is there when a sentence needs a closer look."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Swipe to Translate",
+      "title": "Swipe to Translate: the translation appears right below the original",
+      "text": "Open a page in the built-in browser — type an address or search — and swipe right on a paragraph. The translation is inserted under it, so you read both without switching screens or losing your place.",
+      "bullets": [
+        "Auto, Paragraph or Sentence by Sentence display",
+        "Show translations automatically, or tap to reveal them",
+        "News, blogs, documentation, X — pages you open in the app"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "WordByWord on iPhone: a Spanish Wikipedia page with English translations inserted below the original text"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Double-tap to Look Up",
+      "title": "Double-tap a word for its AI meaning in context",
+      "text": "WordByWord reads the whole sentence before it explains a word, and checks for phrases first — so you get the sense that fits here, not a list of dictionary entries.",
+      "bullets": [
+        "Double-tap any word on the page",
+        "Phrases and set expressions are recognized first",
+        "More Definitions: full entry with examples, word forms and pronunciation"
+      ],
+      "note": "Not available for Chinese, Japanese or Korean source text.",
+      "image": "shot/{set}/lookup",
+      "alt": "WordByWord on iPhone: the Spanish word “convirtiéndose” highlighted, with a card explaining its meaning in that sentence"
+    },
+    {
+      "id": "x",
+      "kicker": "X (Twitter)",
+      "title": "Read X (Twitter) posts bilingually in the built-in browser",
+      "text": "Sign in to x.com inside WordByWord and swipe right on a post to see its translation underneath — handy for following accounts that post in another language.",
+      "image": "shot/{set}/x",
+      "alt": "Illustration of a post in WordByWord: a Spanish post with its English translation below (not a screenshot)",
+      "sample": {
+        "name": "Sample Account",
+        "handle": "@runner.example",
+        "time": "3h",
+        "source": "Acabo de terminar mi primera carrera de 10 km. Lenta, pero sin parar ni una vez.",
+        "translation": "Just finished my first 10K run. Slow, but I didn’t stop once."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "English pages",
+      "title": "Chunk Extraction and Action Flow, for English sentences",
+      "text": "After you swipe-translate an English sentence, Chunk Extraction underlines the phrases that work as a unit, and Action Flow shows the sentence’s core action and the actions linked to it. Run them automatically, on tap, or switch them off.",
+      "note": "English source text only.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for — start a journey toward a place",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Illustration, not a screenshot"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Read aloud",
+      "title": "AI read-aloud, or fast on-device iOS voices",
+      "text": "Hear a word or a whole sentence. AI Read uses a natural-sounding cloud voice; Local Read uses the voices built into iOS — faster, with adjustable speed, and it can use Premium or Enhanced voices you have downloaded.",
+      "image": "shot/{set}/tts",
+      "alt": "WordByWord on iPhone: a translated paragraph with the read-aloud player at the bottom of the screen"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Syntax",
+      "title": "AI sentence structure analysis for long sentences",
+      "text": "Open a translated sentence from your swipe history and tap Get AI Syntax Explanation. It breaks the sentence into parts and explains how they fit together.",
+      "image": "shot/{set}/syntax",
+      "alt": "WordByWord on iPhone: the Swipe Translation Detail screen with AI syntax explanations for one sentence"
+    },
+    {
+      "id": "engines",
+      "kicker": "Engines",
+      "title": "Cloud or on-device translation",
+      "text": "Cloud (Azure and Google) or iOS on-device; out of cloud swipes? Switch to local."
+    },
+    {
+      "id": "display",
+      "kicker": "Display",
+      "title": "Translation layout and style",
+      "text": "Auto, Paragraph or Sentence by Sentence; at once or on tap; several styles."
+    },
+    {
+      "id": "history",
+      "kicker": "History",
+      "title": "Translation and lookup history",
+      "text": "Translations and looked-up words are saved with their sentence; clear anytime."
+    },
+    {
+      "id": "devices",
+      "kicker": "Devices",
+      "title": "iPhone, iPad, Mac and Vision Pro",
+      "text": "iPhone and iPad ({minOS}+), Apple silicon Macs ({minMacOS}+) and Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Settings, full definitions and language choices in the app",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Settings: translation mode, translation style and speech mode",
+        "alt": "WordByWord settings on iPhone: translation mode Auto, Quote Style and Local Read"
+      },
+      {
+        "id": "dictionary",
+        "caption": "More Definitions: the full entry, with example sentences",
+        "alt": "WordByWord More Definitions screen: the Spanish word “matrimonio” with definitions and example sentences"
+      },
+      {
+        "id": "languages",
+        "caption": "Source and target language: Spanish to English (US)",
+        "alt": "WordByWord language settings: source language Spanish, target language English (US)"
+      },
+      {
+        "id": "languageList",
+        "caption": "Pick one of {targetLanguages} translation languages",
+        "alt": "WordByWord language list on iPhone: Vietnamese, Portuguese, Ukrainian, Italian, Chinese and more"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Translate into {targetLanguages} languages — from more than English",
+    "lede": "Choose the language you want translations in. WordByWord assumes English at first, detects the language of the page you’re reading and updates it — or you can set it yourself.",
+    "uiCount": "App in {uiLanguages} languages",
+    "targetCount": "Translations into {targetLanguages} languages",
+    "sourceNote": "Page language: English by default, detected automatically, changeable",
+    "targetListLabel": "Translation languages",
+    "limits": [
+      "Chinese, Japanese and Korean pages: swipe translation and read-aloud work; double-tap lookup doesn’t.",
+      "Chunk Extraction and Action Flow work on English text only."
+    ]
+  },
+  "pricing": {
+    "title": "Free every day — upgrade to Plus when you read more",
+    "lede": "WordByWord is free to download. Most features have a free daily allowance that resets every day; WordByWord Plus raises it.",
+    "table": {
+      "caption": "Daily limits, Free and Plus",
+      "colFeature": "Feature",
+      "colFree": "Free",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Translate",
+        "lookup": "Look up",
+        "listen": "Listen",
+        "sentence": "Sentence tools"
+      },
+      "rows": {
+        "cloudSwipe": "Swipe translation · cloud engine",
+        "localSwipe": "Swipe translation · local engine",
+        "lookup": "Double-tap lookup (AI meaning)",
+        "more": "More Definitions",
+        "lookupSpeech": "AI pronunciation · word",
+        "swipeSpeech": "AI pronunciation · sentence",
+        "localVoice": "iOS voice (Local Read)",
+        "chunks": "Chunk Extraction",
+        "actionFlow": "Action Flow",
+        "syntax": "AI syntax explanation"
+      },
+      "perDay": "{n} / day",
+      "noLimit": "No daily limit",
+      "englishOnly": "English only"
+    },
+    "summary": "Every feature is free within these limits; Plus raises them for {plus.priceUS}/month (US).",
+    "free": {
+      "name": "Free"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "{plus.priceUS} / month (US)"
+    },
+    "note": "Prices vary by region and are shown in the App Store. You can cancel the subscription at any time in your Apple Account settings."
+  },
+  "faq": {
+    "title": "Questions about WordByWord",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "What is WordByWord?",
+        "a": "WordByWord is a reading assistant for language learners and anyone reading websites in another language, on iPhone and iPad. Open a page in its built-in browser, swipe right on a paragraph to insert the translation below it, and double-tap a word to see what it means in that sentence. It is made by an independent developer, Jinlong. [More about WordByWord](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "Can WordByWord translate a whole web page at once?",
+        "a": "No. WordByWord translates the paragraph you swipe and inserts the translation right below it; the rest of the page stays in the original language. You can show translations paragraph by paragraph or sentence by sentence (or let Auto decide), and choose whether they appear straight away or only when you tap."
+      },
+      {
+        "id": "safari",
+        "q": "Does it work in Safari or inside other apps?",
+        "a": "No. WordByWord is not a Safari extension and does not add a translate button to other apps. It has its own browser with tabs and bookmarks: type a web address or search, then swipe to translate there."
+      },
+      {
+        "id": "word-by-word",
+        "q": "Is WordByWord a word-by-word translator?",
+        "a": "Not in the literal sense. Translating one word at a time often misses the meaning, so WordByWord translates whole sentences or paragraphs and explains single words only when you double-tap them — in the context of the sentence they are in."
+      },
+      {
+        "id": "x",
+        "q": "Can I read X (Twitter) with WordByWord?",
+        "a": "Yes. Open x.com in the built-in browser and sign in, then swipe right on a post to see its translation underneath, and double-tap a word to look it up (not available in Chinese, Japanese or Korean posts). This works with the X website inside WordByWord, not with the X app."
+      },
+      {
+        "id": "languages",
+        "q": "Which languages does WordByWord support?",
+        "a": "The app is available in {uiLanguages} languages and translates into {targetLanguages}, including Simplified and Traditional Chinese and both US and UK English. The page language is English by default; WordByWord detects the language you are reading and updates it, and you can also change it by hand. Some features depend on that language: double-tap lookup does not work on Chinese, Japanese or Korean text, and Chunk Extraction and Action Flow work on English only."
+      },
+      {
+        "id": "free",
+        "q": "Is WordByWord free? What are the daily limits?",
+        "a": "Yes. WordByWord is free to download and use, with daily limits. The free plan includes, per day, {quota.cloudSwipe.free} swipe translations with the cloud engine, {quota.localSwipe.free} with the local engine, {quota.lookup.free} double-tap lookups, {quota.chunks.free} Chunk Extractions, {quota.actionFlow.free} Action Flows and {quota.syntax.free} AI syntax explanations; iOS voices have no daily limit. **WordByWord Plus** is a monthly subscription ({plus.priceUS} in the US; local prices are shown in the App Store) that raises these limits."
+      },
+      {
+        "id": "engines",
+        "q": "Which translation engine does it use?",
+        "a": "You choose. The cloud translation engine is currently backed by Azure and Google translation services. The local engine uses the translation built into iOS; the first time, iOS may need to download language resources. If you run out of cloud translations for the day, switch to the local engine and retry. Word explanations, syntax analysis and AI Read use AI services in the cloud."
+      },
+      {
+        "id": "account",
+        "q": "Do I need an account to use WordByWord?",
+        "a": "No. WordByWord works without signing up. You only sign in to websites such as x.com inside its built-in browser, as you would in any browser. A WordByWord Plus subscription belongs to your Apple Account, not to a WordByWord account."
+      },
+      {
+        "id": "restore",
+        "q": "How do I get WordByWord Plus back on a new iPhone or iPad?",
+        "a": "Use the same Apple Account on the new device. In WordByWord’s settings, tap Upgrade Now, then Restore Purchase. To change or cancel the subscription, use the subscription settings of your Apple Account."
+      },
+      {
+        "id": "android",
+        "q": "Is there an Android version?",
+        "a": "No. WordByWord is available only on the App Store, for iPhone and iPad, Macs with Apple silicon and Apple Vision Pro."
+      },
+      {
+        "id": "english-learner",
+        "q": "I’m learning English. Is SurfEnglish worth trying too?",
+        "a": "Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you would also like daily English news sorted by level ({se.levels}) and games that review the sentences and words you have saved, SurfEnglish, from the same developer, adds that with the same swipe and double-tap. The two apps work side by side. [SurfEnglish website](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "Does WordByWord work on iPad, Mac or a desktop browser?",
+        "a": "WordByWord runs on iPhone and iPad with {minOS} or later, and from the App Store also on Macs with Apple silicon ({minMacOS} or later) and on Apple Vision Pro. There is no version for desktop browsers yet; a Chrome extension from the same developer is in preparation — see the [Chrome extension page](@chrome).",
+        "aExtLive": "WordByWord runs on iPhone and iPad with {minOS} or later, and from the App Store also on Macs with Apple silicon ({minMacOS} or later) and on Apple Vision Pro. For Chrome on a computer there is a separate extension from the same developer, [WordByWord Translate for Chrome](@chrome). Install it only from the link on that page."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "From the developer of WordByWord",
+      "title": "SurfEnglish: daily English news at your level",
+      "body": "Learning English? Keep reading any page you like in WordByWord, and try SurfEnglish too: daily English news by level and review games, with the same swipe and double-tap.",
+      "points": [
+        "Real English news at levels {se.levels}",
+        "Review games built from what you’ve read",
+        "Share English articles from Safari to the app"
+      ],
+      "note": "Free to start · iPhone and iPad · App in {se.uiLanguages} languages · Translations into {se.targetLanguages}",
+      "linkText": "Read English news at your level with SurfEnglish",
+      "appStoreLinkText": "Get SurfEnglish on the App Store",
+      "shotAlt": "SurfEnglish Games screen: Sentence Builder and Word Raid, ready to play with saved sentences and words",
+      "shotCaption": "SurfEnglish screenshot (English interface)"
+    },
+    "footer": {
+      "heading": "More from the maker",
+      "linkText": "SurfEnglish: Bilingual News"
+    }
+  },
+  "cta": {
+    "title": "Start reading websites bilingually on iPhone",
+    "recap": "Swipe to translate · Double-tap to look up · Read aloud · {targetLanguages} languages",
+    "text": "Free on the App Store, for iPhone and iPad."
+  },
+  "footer": {
+    "tagline": "A reading assistant for language learners on iPhone and iPad.",
+    "product": "Product",
+    "help": "Help",
+    "iosApp": "iPhone & iPad app",
+    "chromeExtension": "Chrome extension",
+    "about": "About WordByWord",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "languagesTitle": "Languages",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Made by Jinlong",
+    "notAffiliated": "Not affiliated with WordByWord.io.",
+    "appleNotice": "Apple, the Apple logo, iPhone, iPad, Mac and Apple Vision Pro are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.",
+    "ariaNav": "Site"
+  },
+  "langSuggest": {
+    "message": "This page is also available in English.",
+    "action": "Show in English",
+    "close": "Close"
+  },
+  "notfound": {
+    "title": "Page not found",
+    "text": "The page you are looking for isn’t here. It may have moved when this site was rebuilt.",
+    "home": "Go to the WordByWord home page",
+    "languages": "Or open WordByWord in your language:"
+  },
+  "about": {
+    "meta": {
+      "title": "About WordByWord — Bilingual Web Reader for iPhone & iPad",
+      "description": "Official facts about WordByWord, the iPhone and iPad reading assistant for language learners: features, price, who makes it, and why it is not WordByWord.io."
+    },
+    "eyebrow": "Official product information",
+    "h1": "About WordByWord",
+    "lede": "**WordByWord is a reading assistant for language learners on iPhone and iPad.** Open any website in its built-in browser, swipe right on a paragraph, and the translation is inserted below the original — paragraph by paragraph or sentence by sentence. Double-tap a word to see an AI explanation of what it means in that sentence.",
+    "sections": [
+      {
+        "id": "why",
+        "title": "Why WordByWord exists",
+        "text": "Learning a language by reading real websites usually means copying text into a translator, losing your place, and forgetting what the original said. WordByWord keeps both on the same screen. You decide which paragraph to translate, the translation sits right under it, and the words you are unsure about can be explained without leaving the page."
+      },
+      {
+        "id": "how",
+        "title": "How it works",
+        "steps": [
+          "Open a page in the built-in browser: type an address or search, with tabs and bookmarks for the sites you read.",
+          "Swipe right on a paragraph. The translation is inserted below it — as one paragraph, sentence by sentence, or split automatically.",
+          "Double-tap a word. WordByWord reads the sentence, checks for phrases first, and explains what the word means there; More Definitions opens the full entry."
+        ],
+        "text": "On English pages you can also run Chunk Extraction and Action Flow on a translated sentence. On any page you can ask for an AI syntax explanation and listen with an AI voice or the iOS voices."
+      },
+      {
+        "id": "limits",
+        "title": "What WordByWord does not do",
+        "text": "It does not translate a whole page in one tap, and it is not a Safari extension or a share extension: translation happens inside its own browser. Double-tap lookup is not available for Chinese, Japanese or Korean source text, and Chunk Extraction and Action Flow work on English only."
+      },
+      {
+        "id": "name",
+        "title": "About the name",
+        "text": "WordByWord is sometimes written “Word by Word” and is listed as “WordByWord Translate” on the US App Store. It is not a literal word-for-word translator: it translates sentences and paragraphs, and explains single words in context."
+      }
+    ],
+    "factsTitle": "Product facts",
+    "facts": [
+      {
+        "label": "Product",
+        "value": "WordByWord, a reading assistant for language learners on iPhone and iPad"
+      },
+      {
+        "label": "App Store listing",
+        "value": "{appStoreName} — {appStoreSubtitle}"
+      },
+      {
+        "label": "Platforms",
+        "value": "iPhone and iPad with {minOS} or later; also runs on Macs with Apple silicon ({minMacOS} or later) and Apple Vision Pro"
+      },
+      {
+        "label": "App Store categories",
+        "value": "Education, Reference"
+      },
+      {
+        "label": "Price",
+        "value": "Free to download, with daily limits; optional WordByWord Plus monthly subscription ({plus.priceUS} in the US)"
+      },
+      {
+        "label": "Interface languages",
+        "value": "{uiLanguages}"
+      },
+      {
+        "label": "Translation languages",
+        "value": "{targetLanguages}"
+      },
+      {
+        "label": "Page language",
+        "value": "English by default; detected from the page and changeable"
+      },
+      {
+        "label": "Translation engines",
+        "value": "Cloud (currently Azure and Google) or on-device iOS translation"
+      },
+      {
+        "label": "Known limits",
+        "value": "No whole-page translation; no double-tap lookup for Chinese, Japanese or Korean text; Chunk Extraction and Action Flow on English only"
+      },
+      {
+        "label": "Developer",
+        "value": "Jinlong, an independent iOS developer"
+      },
+      {
+        "label": "First released",
+        "value": "{releaseDate}"
+      },
+      {
+        "label": "Current version",
+        "value": "{version} ({versionDate})"
+      }
+    ],
+    "timeline": {
+      "title": "Timeline",
+      "items": [
+        {
+          "date": "{releaseDate}",
+          "text": "WordByWord 1.0 is released on the App Store for iPhone and iPad, with swipe-to-translate and double-tap lookup."
+        },
+        {
+          "date": "2026",
+          "text": "Version 1.1 adds support for reading X (Twitter), a choice between cloud translation (Azure and Google) and the local iOS engine, Chunk Extraction for English, and a choice of local voices."
+        },
+        {
+          "date": "2026",
+          "text": "Version 1.2 adds Action Flow for English sentences and a getting-started guide."
+        },
+        {
+          "date": "{versionDate}",
+          "text": "Version {version}, the current release."
+        }
+      ]
+    },
+    "maker": {
+      "title": "Who makes WordByWord",
+      "text": "WordByWord is designed, built and maintained by **Jinlong**, an independent iOS developer. Jinlong also makes SurfEnglish (see below)."
+    },
+    "family": {
+      "title": "WordByWord and SurfEnglish",
+      "text": "Both apps are made by the same independent developer, Jinlong, and share the same reading engine. WordByWord is for reading the websites you choose, in many languages. SurfEnglish is built around daily English news and review games for people learning English.",
+      "table": {
+        "head": [
+          "",
+          "WordByWord",
+          "SurfEnglish"
+        ],
+        "rows": [
+          {
+            "label": "Languages you read",
+            "wbw": "Many — English by default; the source language can be detected or switched",
+            "se": "English only"
+          },
+          {
+            "label": "What you read",
+            "wbw": "Any website in the built-in browser, with X as a first-class case",
+            "se": "English news at levels {se.levels}, plus a built-in browser"
+          },
+          {
+            "label": "Translation",
+            "wbw": "Swipe right on a paragraph; the translation appears below the original",
+            "se": "The same gesture"
+          },
+          {
+            "label": "Word lookup",
+            "wbw": "Double-tap for an AI explanation in context (not for Chinese, Japanese or Korean text)",
+            "se": "Double-tap for the meaning in context"
+          },
+          {
+            "label": "English-only extras",
+            "wbw": "Language chunks, Action Flow",
+            "se": "Language chunks"
+          },
+          {
+            "label": "Review",
+            "wbw": "Translation and lookup history",
+            "se": "Review games built from your saved sentences and words"
+          },
+          {
+            "label": "Read aloud",
+            "wbw": "AI voice in the cloud, or iOS voices on your device",
+            "se": "Natural-sounding AI English voices on your device"
+          },
+          {
+            "label": "App interface",
+            "wbw": "{uiLanguages} languages",
+            "se": "{se.uiLanguages} languages"
+          },
+          {
+            "label": "Translations into",
+            "wbw": "{targetLanguages} languages",
+            "se": "{se.targetLanguages} languages"
+          },
+          {
+            "label": "Mainland China App Store",
+            "wbw": "Available",
+            "se": "Not available"
+          }
+        ]
+      },
+      "closing": "Use WordByWord for the pages and X posts you choose, in any of its languages. If you are learning English and also want news at your level and review games, add SurfEnglish. The two apps work side by side.",
+      "links": [
+        {
+          "text": "SurfEnglish on the App Store",
+          "ref": "@se-appstore"
+        },
+        {
+          "text": "About the developer (on the SurfEnglish site)",
+          "ref": "@se-maker"
+        }
+      ]
+    },
+    "disambiguation": {
+      "title": "Not to be confused with",
+      "text": "WordByWord (word-by-word.app) is not related to **WordByWord.io** or its browser extensions, to the Chrome Web Store extension “WordByWord – Vocabulary Highlighter”, to Quran or Bible word-by-word apps, or to books titled *Word by Word*. The only official WordByWord app is the one from the developer of this site: [WordByWord on the App Store](@appstore-dev)."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Questions, bug reports and feedback: [{supportEmail}](@support-mail). You can also send feedback from inside the app: tap ••• in the browser toolbar, then Feedback. Answers to common questions are on the [Support page](@support)."
+    },
+    "linksTitle": "Official links",
+    "links": [
+      {
+        "text": "Get WordByWord on the App Store",
+        "ref": "@appstore"
+      },
+      {
+        "text": "WordByWord website (home)",
+        "ref": "@home"
+      },
+      {
+        "text": "Chrome extension page",
+        "ref": "@chrome"
+      },
+      {
+        "text": "Privacy Policy",
+        "ref": "@privacy"
+      },
+      {
+        "text": "Support",
+        "ref": "@support"
+      }
+    ],
+    "updated": "Last updated: {updated}"
+  },
+  "chromeExtension": {
+    "meta": {
+      "title": "WordByWord Translate for Chrome: Bilingual Web Translation",
+      "description": "From the maker of the WordByWord iPhone app: hover over a paragraph and press Shift to see its translation below the original, or press Control on a word.",
+      "ogImageAlt": "WordByWord Translate in Chrome: an English article with a Chinese translation below each sentence"
+    },
+    "status": {
+      "unavailable": "Coming soon to the Chrome Web Store",
+      "available": "Version {ext.version} · Chrome Web Store"
+    },
+    "hero": {
+      "eyebrow": "WordByWord for Chrome",
+      "title": "[[Bilingual web translation]] in Chrome, with the original kept in place",
+      "lede": "WordByWord Translate is a browser extension from the developer of the WordByWord iPhone app. Hover over a paragraph and press Shift: the translation appears right below it. Press Control on a word for a short explanation of what it means in that sentence.",
+      "worksWith": "For Chrome and Microsoft Edge. The on-device translation model needs version {ext.minChrome} or later."
+    },
+    "cta": {
+      "available": "Add to Chrome",
+      "unavailable": "Not in the Chrome Web Store yet",
+      "contact": "Want to try it early? Email the developer",
+      "contactSubject": "Chrome extension"
+    },
+    "howTitle": "How it works",
+    "features": [
+      {
+        "id": "inline",
+        "key": "Shift",
+        "title": "Paragraph translation below the original",
+        "text": "Hover over a paragraph and press Shift (or another key you choose). Long paragraphs can be shown sentence by sentence — automatically, always, or never.",
+        "image": "chrome/strip-inline",
+        "alt": "English paragraphs in Chrome, each sentence followed by its Chinese translation marked with a red bar"
+      },
+      {
+        "id": "definition",
+        "key": "Control",
+        "title": "A word’s meaning in this sentence",
+        "text": "Hover over a word and press Control for a card with its meaning here, part of speech, base form and the phrase it belongs to. A short definition also appears as you hover, and double-click lookup can be turned on in settings.",
+        "image": "chrome/strip-definition",
+        "alt": "In Chrome, the word “experiments” highlighted with a small tooltip showing its Chinese meaning"
+      },
+      {
+        "id": "structure",
+        "key": "",
+        "title": "Language chunks, if you want them",
+        "text": "Turn on Structure Analysis to underline useful phrases in translated paragraphs, each with its own short explanation.",
+        "image": "chrome/strip-structure",
+        "alt": "In Chrome, phrases in an English sentence underlined in different colors, one showing its Chinese meaning"
+      },
+      {
+        "id": "history",
+        "key": "",
+        "title": "Translation history in the side panel",
+        "text": "Your translations are listed in Chrome’s side panel, where you can play them aloud, open a sentence analysis, or delete them."
+      },
+      {
+        "id": "engines",
+        "key": "",
+        "title": "Cloud or on-device translation",
+        "text": "Cloud translation uses Microsoft Azure and Google Translate. Or switch to Chrome’s built-in translation model, which translates on your device. Word explanations use OpenAI and Google Gemini models."
+      },
+      {
+        "id": "appearance",
+        "key": "",
+        "title": "Fits your browser",
+        "text": "Light, dark or automatic appearance, with a choice of highlight colors and underline styles."
+      }
+    ],
+    "shotsTitle": "In use",
+    "shots": [
+      {
+        "id": "hero",
+        "alt": "Chrome showing an English article with a Chinese translation under each sentence, a word tooltip and colored underlines"
+      },
+      {
+        "id": "popup",
+        "alt": "The WordByWord Translate settings popup in Chrome, with source and target language, translation service and feature switches"
+      },
+      {
+        "id": "selection",
+        "alt": "A floating card in Chrome showing the Chinese translation of a selected English sentence"
+      }
+    ],
+    "shotsNote": "Screenshots show the extension with a Chinese interface and Chinese translations.",
+    "languages": {
+      "title": "Languages",
+      "text": "Translates into {ext.targetLanguages} languages: Chinese, English, French, German, Japanese, Korean and Spanish. The language of the page is detected automatically. The extension’s menus are available in English, Japanese, Korean and Simplified Chinese."
+    },
+    "faqTitle": "Questions about the Chrome extension",
+    "faq": [
+      {
+        "id": "translate",
+        "q": "How do I translate a paragraph?",
+        "a": "Hover the mouse over the paragraph and press Shift. The translation is inserted below the original. You can change the key in the extension’s settings."
+      },
+      {
+        "id": "word",
+        "q": "How do I see what a word means?",
+        "a": "Hover over the word and press Control. A card shows the meaning that fits the sentence, with part of speech, base form and the phrase it belongs to. You can also turn on double-click lookup."
+      },
+      {
+        "id": "languages",
+        "q": "Which languages can it translate into?",
+        "a": "{ext.targetLanguages}: Chinese, English, French, German, Japanese, Korean and Spanish. The iPhone app supports more ({targetLanguages})."
+      },
+      {
+        "id": "browsers",
+        "q": "Which browsers does it work in?",
+        "a": "Chrome and Microsoft Edge. Cloud translation works without extra setup; the on-device model needs version {ext.minChrome} or later and may need to download first."
+      },
+      {
+        "id": "iphone",
+        "q": "Is it the same as the WordByWord iPhone app?",
+        "a": "They are separate products from the same developer, built on the same idea: the translation goes under the original. The extension works with a mouse and keyboard in Chrome. The iPhone app has its own browser, swipe and double-tap gestures, AI voices, Action Flow and {targetLanguages} translation languages. [WordByWord for iPhone and iPad](@home)"
+      },
+      {
+        "id": "not-io",
+        "q": "Is this related to WordByWord.io or “WordByWord – Vocabulary Highlighter”?",
+        "a": "No. Those are different products by other developers. This extension is WordByWord Translate, made by Jinlong, the developer of the WordByWord iPhone app."
+      }
+    ],
+    "iosBand": {
+      "title": "On iPhone or iPad?",
+      "text": "WordByWord for iOS: swipe right on a paragraph in its built-in browser and the translation appears below the original.",
+      "link": "See WordByWord for iPhone and iPad"
+    },
+    "privacyLink": "Extension privacy policy"
+  }
+}

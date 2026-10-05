@@ -1,0 +1,90 @@
+/* WordByWord site styles · "Paper & ink · reading annotations" (design doc 05, rulings R39–R84).
+   Concatenated in order tokens → base → layout → components → demo → legal by build.mjs. No webfonts, no external resources.
+   Logical properties only; physical left/right/top appear ONLY between the @physical-ok markers
+   (CSS device + App replica + screenshot-coordinate pins, 05 §9.2) — scripts/check.mjs enforces this. */
+
+/* ===== 1. Tokens (05 §2.1 v1.1) ===== */
+:root {
+  color-scheme: light dark;
+  --brand-crimson: #CC3355; --brand-burgundy: #882239; --brand-oxblood: #44111C; --brand-black: #000000; --brand-marker: #FEE437;
+  --paper: #FBF8F3; --paper-2: #F3EEE6; --paper-3: #EAE3D8; --surface: #FFFFFF;
+  --ink: #1A1514; --ink-2: #4A403B; --ink-3: #6B605A;
+  --hairline: rgb(26 21 20 / .12); --hairline-strong: rgb(26 21 20 / .24);
+  --accent: var(--brand-crimson); --accent-text: #B32847; --accent-hover: #B32847; --accent-press: var(--brand-burgundy);
+  --on-accent: #FFFFFF; --band-deep: var(--brand-oxblood); --on-band-deep: #FBF8F3;
+  --marker: var(--brand-marker); --on-marker: #1A1514;
+  --ok: #2F6B47; --warn: #8A5300; --warn-bg: #FFF6D6; --device-bezel: #1A1514;
+  --mosaic-k: var(--brand-black); --icon-ring: transparent; --device-line: transparent;
+  --screen-bg: #FFFFFF; --screen-ink: #1C1C1E; --screen-ink-2: #6E6E73;
+  --ck-1: #45B8D8; --ck-2: #F38EB1;
+  --quote-bar: 3px solid var(--accent);
+  --r-1: 4px; --r-2: 8px; --r-3: 14px; --r-window: 12px;
+  --shadow-2: 0 1px 2px rgb(26 21 20 / .08), 0 12px 32px -16px rgb(26 21 20 / .22);   /* popovers only */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --gutter: 16px;
+  --section-y-s: clamp(40px, 5vw, 64px); --section-y-m: clamp(56px, 7.5vw, 96px); --section-y-l: clamp(72px, 10vw, 128px);
+  --w-text: 42rem; --w-content: 1120px;
+  --z-header: 50; --z-menu: 60; --z-skip: 100;
+  --dur-1: 120ms; --dur-2: 200ms; --dur-3: 320ms; --dur-4: 480ms;
+  --ease-out: cubic-bezier(.2, .8, .2, 1); --ease-swipe: cubic-bezier(.3, .7, .3, 1);
+
+  /* type (05 §3.1–3.2 v1.1): 60 / 44 / 32 / 22 / 17 at 1280; 36 / 28 / 24 / 20 / 17 at 360 */
+  --font-ui-latn: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-read-latn: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  --font-ja: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, "Noto Sans JP", sans-serif;
+  --font-sc: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --font-tc: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  --font-kr: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-ui: var(--font-ui-latn);
+  --font-read: var(--font-read-latn);
+  --fs-display: clamp(2.25rem, 1.663rem + 2.609vw, 3.75rem);
+  --fs-h1: clamp(2rem, 1.609rem + 1.739vw, 3rem);
+  --fs-h2: clamp(1.75rem, 1.359rem + 1.739vw, 2.75rem);
+  --fs-h2-sub: clamp(1.5rem, 1.304rem + .870vw, 2rem);
+  --fs-h3: clamp(1.25rem, 1.201rem + .217vw, 1.375rem);
+  --fs-h4: 1.0625rem;
+  --fs-lede: clamp(1.0625rem, .989rem + .326vw, 1.25rem);
+  --fs-body: 1rem; --fs-read: 1.125rem; --fs-small: .875rem; --fs-xs: .8125rem;
+
+  /* speed lines (logo motif; eyebrow prefix and swipe trail never mirror, R63) */
+  --speed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3Cpath d='M5 0h11l-1.2 2H3.8zM1.6 4h12l-1.2 2H.4zM6 8h8.8l-1.2 2H4.8z'/%3E%3C/svg%3E");
+}
+@media (min-width: 560px)  { :root { --gutter: 24px; } }
+@media (min-width: 1200px) { :root { --gutter: 32px; } }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #121010; --paper-2: #1A1716; --paper-3: #24201E; --surface: #221E1C;
+    --ink: #F2ECE6; --ink-2: #C9BFB7; --ink-3: #A0958D;
+    --hairline: rgb(242 236 230 / .12); --hairline-strong: rgb(242 236 230 / .24);
+    --accent-text: #F27891; --accent-hover: #B32847;
+    --band-deep: #2A0E15; --on-band-deep: #F2ECE6;
+    --marker: #D8BE2A;                       /* VIS-21: #FEE437 is glaring on near-black */
+    --ok: #6FCF97; --warn: #E9B949; --warn-bg: #2A2410; --device-bezel: #2E2826;
+    --mosaic-k: #2E2826;                     /* VIS-19: keep the "grid" visible */
+    --icon-ring: rgb(242 236 230 / .40);     /* R70 / VIS-13: 3.44:1 against --paper */
+    --device-line: var(--hairline);
+    --shadow-2: 0 0 0 1px var(--hairline), 0 16px 40px -20px rgb(0 0 0 / .7);
+  }
+}
+
+/* per-language stacks (05 §3.1); never start CJK stacks with system-ui */
+html:lang(ja)      { --font-ui: var(--font-ja); --font-read: "Hiragino Mincho ProN", "Yu Mincho", "Noto Serif JP", serif; }
+html:lang(zh-Hans) { --font-ui: var(--font-sc); --font-read: "Songti SC", STSong, SimSun, "Noto Serif SC", serif; }
+html:lang(zh-Hant) { --font-ui: var(--font-tc); --font-read: "Songti TC", PMingLiU, "Noto Serif TC", serif; }
+html:lang(ko)      { --font-ui: var(--font-kr); --font-read: AppleMyungjo, Batang, "Noto Serif KR", serif; }
+html:lang(th)      { --font-ui: -apple-system, BlinkMacSystemFont, Thonburi, "Leelawadee UI", "Noto Sans Thai", "Noto Sans Thai UI", sans-serif; --font-read: var(--font-ui); }
+html:lang(hi)      { --font-ui: -apple-system, BlinkMacSystemFont, "Kohinoor Devanagari", "Nirmala UI", "Noto Sans Devanagari", Mangal, sans-serif; --font-read: var(--font-ui); }
+html:lang(ar)      { --font-ui: -apple-system, BlinkMacSystemFont, "SF Arabic", "Geeza Pro", "Segoe UI", "Noto Sans Arabic", Tahoma, sans-serif; --font-read: var(--font-ui); --fs-body: 1.0625rem; }
+html:lang(vi)      { --font-read: ui-serif, Georgia, "Palatino Linotype", Palatino, "Times New Roman", serif; }
+html[data-script="cjk"] {
+  --fs-display: clamp(2rem, 1.511rem + 2.174vw, 3.25rem);
+  --fs-h2: clamp(1.625rem, 1.283rem + 1.522vw, 2.5rem);
+  --fs-h2-sub: clamp(1.375rem, 1.179rem + .870vw, 1.875rem);
+}
+/* foreign-language fragments use their own stack (I18-08); :where() keeps specificity at zero */
+:where([lang|="ja"]:not(html))     { font-family: var(--font-ja); }
+:where([lang="zh-Hans"]:not(html)) { font-family: var(--font-sc); }
+:where([lang="zh-Hant"]:not(html)) { font-family: var(--font-tc); }
+:where([lang|="ko"]:not(html))     { font-family: var(--font-kr); }
+

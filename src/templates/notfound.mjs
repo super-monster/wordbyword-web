@@ -1,19 +1,23 @@
 // 404.html — en only in Phase 1 (R21): noindex, no canonical/hreflang, links to every locale home.
 
 import { esc } from '../lib/html.mjs';
+import { localePath } from '../lib/links.mjs';
 import { layout } from './layout.mjs';
 
 export function notfound(ctx) {
-  const homes = ctx.routes.filter((r) => r.page.id === 'home');
-  const list = homes.map((r) => `<li><a href="${esc(r.publicUrl)}" lang="${r.locale.hreflang}" hreflang="${r.locale.hreflang}" data-ga-label="404:${r.locale.code}">${esc(r.locale.native)}</a></li>`).join('\n');
+  const n = ctx.t.notfound;
+  const list = ctx.locales.map((L) => `<li><a href="${localePath(L)}" lang="${L.hreflang}" hreflang="${L.hreflang}"${L.dir === 'rtl' ? ' dir="rtl"' : ''} data-ga-event="language_switch" data-ga-label="404:${L.code}">${esc(L.native)}</a></li>`).join('');
   return layout(ctx, {
-    title: 'Page not found — WordByWord',
-    body: `<main>
-<h1>Page not found</h1>
-<p>The page you were looking for does not exist. <a href="/">Go to the WordByWord home page</a>.</p>
-<ul>
-${list}
-</ul>
-</main>`,
+    title: `${n.title} — WordByWord`,
+    description: n.text,
+    main: `
+<section class="section section--end notfound" aria-labelledby="nf-h">
+  <div class="container">
+    <h1 id="nf-h">${esc(n.title)}</h1>
+    <p class="lede">${esc(n.text)} <a href="/">${esc(n.home)}</a></p>
+    <h2 class="footer-heading">${esc(n.languages)}</h2>
+    <ul class="lang-list">${list}</ul>
+  </div>
+</section>`,
   });
 }

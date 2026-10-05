@@ -1,0 +1,70 @@
+/* ===== 4. Header + language switcher (05 §5.1, 02 §7.1–7.2) ===== */
+.header-sentinel { position: absolute; inset-block-start: 0; inline-size: 1px; block-size: 1px; }
+.site-header { position: sticky; inset-block-start: 0; z-index: var(--z-header); background: var(--paper); border-block-end: 1px solid var(--hairline); transition: border-color var(--dur-1); }
+.js .site-header:not(.is-stuck) { border-block-end-color: transparent; }
+.header-inner { display: flex; align-items: center; gap: var(--s-2); block-size: 56px; }
+.brand { display: inline-flex; align-items: center; gap: 8px; min-block-size: 44px; color: var(--ink); font-size: 15px; font-weight: 700; letter-spacing: -.01em; text-decoration: none; white-space: nowrap; }
+.brand-icon { inline-size: 28px; block-size: 28px; }
+.main-nav { display: none; }
+.header-tools { display: flex; align-items: center; gap: 2px; margin-inline-start: auto; }
+.i { inline-size: 20px; block-size: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.i-chev { inline-size: 16px; block-size: 16px; transition: transform var(--dur-1); }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
+.lang-switch, .nav-menu { position: relative; }
+.lang-switch > summary, .nav-menu > summary { display: inline-flex; align-items: center; gap: 6px; min-block-size: 44px; min-inline-size: 44px; justify-content: center; padding-inline: 10px; border-radius: var(--r-2); color: var(--ink-2); font-size: .9375rem; font-weight: 500; }
+.lang-switch > summary:hover, .nav-menu > summary:hover, .lang-switch[open] > summary, .nav-menu[open] > summary { background: var(--paper-2); color: var(--ink); }
+.lang-switch[open] .i-chev { transform: rotate(180deg); }
+.lang-switch .i-chev, .lang-current { display: none; }   /* < 560: globe only; the summary's aria-label names the language */
+.lang-menu { position: fixed; inset-inline: var(--gutter); inset-block-start: 60px; z-index: var(--z-menu); max-block-size: calc(100dvh - 80px); overflow: auto; padding: var(--s-3); border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--surface); box-shadow: var(--shadow-2); }
+.lang-menu ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
+.lang-menu a { display: flex; align-items: center; min-block-size: 44px; padding-inline: 12px; border-radius: var(--r-1); color: var(--ink); font-size: .9375rem; text-decoration: none; }
+.lang-menu a:hover { background: var(--paper-2); }
+.lang-menu a[aria-current] { font-weight: 600; text-decoration: underline 2px var(--accent); text-underline-offset: .35em; }
+.nav-menu-panel { position: fixed; inset-inline: 0; inset-block-start: 56px; z-index: var(--z-menu); padding: var(--s-2) var(--gutter) var(--s-4); border-block: 1px solid var(--hairline); background: var(--paper); box-shadow: var(--shadow-2); }
+.nav-menu-panel a { display: flex; align-items: center; min-block-size: 48px; border-block-end: 1px solid var(--hairline); color: var(--ink); font-size: 1.0625rem; text-decoration: none; }
+@media (max-width: 379px) { .brand { font-size: 14px; } .btn-small { padding-inline: 12px; } }
+/* < 560: the header Download button shows nav.downloadShort (R77, 05 §5.1; en "Get", ja「入手」) instead of being
+   hidden below 360 (v1.1 D6). Only the visible span is in the accessible name, so the label stays in the name. */
+.dl-short { display: none; }
+@media (max-width: 559px) { .dl-long { display: none; } .dl-short { display: inline; } }
+@media (min-width: 560px) {
+  .brand { gap: 10px; font-size: 17px; }
+  .lang-switch .i-chev, .lang-current { display: inline; }
+  .lang-switch .i-chev { display: block; }
+  .header-tools { gap: var(--s-2); }
+}
+@media (min-width: 900px) {
+  .header-inner { block-size: 64px; gap: clamp(16px, 2.4vw, 32px); }
+  .main-nav { display: block; }
+  .main-nav ul { display: flex; gap: clamp(12px, 1.6vw, 24px); }
+  .main-nav a { display: inline-flex; align-items: center; min-block-size: 44px; color: var(--ink-2); font-size: .9375rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
+  .main-nav a:hover { color: var(--ink); text-decoration: underline; }
+  .nav-menu { display: none; }
+  .lang-menu { position: absolute; inset-inline: auto 0; inset-block-start: calc(100% + 8px); inline-size: 480px; max-block-size: none; }
+  .lang-menu ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ===== 5. Hero (05 §5.2.1; R69): DOM order = phone reading order ===== */
+.hero { padding-block-start: var(--s-6); }
+.hero-inner { display: grid; }
+.hero-copy .eyebrow { margin-block-end: var(--s-3); }
+.hero-copy h1 { margin-block-end: var(--s-4); }
+.hero-lede { margin-block-end: var(--s-5); }
+.cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-2) var(--s-5); }
+.hero-cta-note { margin-block-start: var(--s-2); color: var(--ink-3); font-size: var(--fs-small); }
+.hero-demo { display: flex; justify-content: center; margin-block-start: var(--s-6); }
+.hero-after { margin-block-start: var(--s-5); max-inline-size: var(--w-text); }
+.hero-how { color: var(--ink-2); }
+.platform-note { margin-block-start: var(--s-3); max-inline-size: 56ch; color: var(--ink-3); font-size: var(--fs-small); }
+.edge-mosaic { display: block; inline-size: 100%; block-size: 16px; margin-block-start: var(--s-6); }
+.mk { fill: var(--mosaic-k); }
+@media (min-width: 900px) {
+  .hero { padding-block-start: var(--s-8); }
+  .hero-inner { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: auto 1fr; column-gap: var(--s-6); }
+  .hero-copy { grid-column: 1 / span 7; grid-row: 1; }     /* 1–7 columns: D1 / R72 */
+  .hero-demo { grid-column: 8 / -1; grid-row: 1 / span 2; margin-block-start: 0; align-self: start; }
+  .hero-after { grid-column: 1 / span 7; grid-row: 2; margin-block-start: var(--s-6); }
+  .edge-mosaic { margin-block-start: var(--s-7); }
+}
+

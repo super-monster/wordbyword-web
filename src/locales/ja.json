@@ -1,0 +1,472 @@
+{
+  "meta": {
+    "title": "WordByWord｜iPhoneでWebページを翻訳・対訳表示するアプリ",
+    "description": "WordByWordは外国語のWebページを読んで学べるiPhone・iPadアプリ。アプリ内ブラウザで段落を右にスワイプすると訳文が原文のすぐ下に。単語をダブルタップでAIが文脈に合う意味を表示。無料。",
+    "ogHeadline": "Webページを対訳で読む。[[原文はそのまま。]]",
+    "ogSubline": "段落を右にスワイプ・単語をダブルタップで文脈に合った意味",
+    "ogImageAlt": "iPhoneのWordByWord：英文中の「designed」の意味をAIが日本語で解説している画面",
+    "appStoreName": "WordByWord",
+    "appStoreSubtitle": "なぞって翻訳、AIで文脈を解釈"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "Webページ",
+      "翻訳",
+      "対訳",
+      "アプリ"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "iPhoneでWebページを対訳表示するアプリ",
+        "secondary": [
+          "webページ 翻訳 アプリ iPhone",
+          "原文と訳文を並べて表示",
+          "英語サイト 翻訳 アプリ",
+          "右スワイプ翻訳",
+          "外国語学習 Webで読む"
+        ]
+      },
+      "K2": {
+        "primary": "文脈がわかるAI辞書",
+        "secondary": [
+          "ダブルタップ 辞書",
+          "文脈 意味 辞書",
+          "熟語・イディオムの意味",
+          "例文と語形変化"
+        ]
+      },
+      "K3": {
+        "primary": "AI読み上げ",
+        "secondary": [
+          "Webページ 読み上げ アプリ",
+          "単語の発音"
+        ]
+      },
+      "K4": {
+        "primary": "AI文構造解析",
+        "secondary": [
+          "長い文の構造を解説",
+          "文法構造の解説"
+        ]
+      },
+      "K6": {
+        "primary": "翻訳履歴・単語履歴",
+        "secondary": [
+          "スワイプ翻訳履歴",
+          "調べた単語を文脈ごとに復習"
+        ]
+      },
+      "K7": {
+        "primary": "クラウド／オンデバイス翻訳エンジン",
+        "secondary": [
+          "iOSの翻訳機能",
+          "Azure・Google翻訳"
+        ]
+      },
+      "K8": {
+        "primary": "21言語に翻訳",
+        "secondary": [
+          "韓国語サイト 翻訳",
+          "アプリ表示20言語"
+        ]
+      },
+      "K9": {
+        "primary": "X（旧Twitter）翻訳 原文表示",
+        "secondary": [
+          "X 翻訳 iPhone",
+          "ポスト 翻訳 対訳"
+        ]
+      },
+      "K10": {
+        "primary": "無料 翻訳アプリ iPhone",
+        "secondary": [
+          "1日の無料枠",
+          "WordByWord Plus 料金"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "本文へスキップ",
+    "languageLabel": "言語",
+    "comingSoon": "近日公開",
+    "contactUs": "お問い合わせ",
+    "lastUpdated": "最終更新",
+    "breadcrumbHome": "ホーム",
+    "appStoreBadgeAlt": "App StoreでWordByWordをダウンロード",
+    "langFallbackNote": "このページは英語のみです。ほかの言語を選ぶと、その言語のトップページが開きます。",
+    "menu": "メニュー",
+    "close": "閉じる",
+    "figLabel": "図",
+    "screenshotLabel": "iPhoneの画面",
+    "screenshotExcerptLabel": "iPhoneの画面（一部）",
+    "noteLabel": "注",
+    "demoLabel": "アプリのデモ"
+  },
+  "nav": {
+    "features": "機能",
+    "languages": "対応言語",
+    "pricing": "料金",
+    "faq": "よくある質問",
+    "chromeExtension": "Chrome拡張機能",
+    "about": "WordByWordとは",
+    "download": "ダウンロード",
+    "downloadShort": "入手",
+    "iphoneApp": "iPhoneアプリ",
+    "ariaMain": "メイン",
+    "ariaLanguages": "言語を選択"
+  },
+  "hero": {
+    "eyebrow": "WordByWord・外国語学習者のためのWeb対訳リーダー",
+    "title": "[[Webページ]]の{wbr}段落を{wbr}右スワイプで{wbr}翻訳。{wbr}原文は{wbr}そのまま、{wbr}訳文は{wbr}下に",
+    "lede": "WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。",
+    "ledeShort": "WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。",
+    "ctaNote": "無料ダウンロード・iPhone／iPad",
+    "how": "アプリ内ブラウザで段落を右にスワイプすると、訳文が原文のすぐ下に挿入されます。単語をダブルタップすると、その文での意味をAIが説明します。",
+    "platformNote": "無料（1日の利用上限あり）・Plusは月額サブスクリプション・{minOS}以降。AppleシリコンのMacとVision Proでも動作",
+    "secondaryCta": "使い方を見る"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "近所の図書館は、土曜日は朝早くから開いています。",
+      "みんなコーヒーを手にやって来て、気づけばお昼まで読みふけっています。"
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "動詞",
+      "meaning": "（end up＋-ingで）結局〜することになる。ここでは「気づけばお昼まで読んでいた」",
+      "note": "この文では句動詞「end up」の一部です。"
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "右にスワイプ",
+      "more": "他の意味",
+      "pause": "一時停止",
+      "replay": "もう一度再生"
+    },
+    "caption": "アプリ画面をHTMLで再現したデモです（スクリーンショットではありません）。英語の段落の下に日本語訳が入ります。"
+  },
+  "featuresIntro": {
+    "title": "右スワイプで{wbr}対訳、{wbr}ダブルタップで{wbr}AI辞書。{wbr}読みたい{wbr}Webページで",
+    "lede": "外国語を学びながらWebを読む人のために作りました。ほとんどのことは、この2つの操作で済みます。文をもっと詳しく知りたいときのための機能もそろっています。"
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "右スワイプ翻訳",
+      "title": "右スワイプ翻訳：{wbr}訳文は{wbr}原文の{wbr}すぐ下に{wbr}表示",
+      "text": "アプリ内ブラウザでページを開き（URLを入力しても、検索してもOK）、段落を右にスワイプ。訳文がその下に挿入されるので、画面を切り替えずに原文と見比べながら読めます。",
+      "bullets": [
+        "表示は「自動」「段落」「文ごと」から選択",
+        "訳文はすぐ表示するか、タップして表示するかを選べます",
+        "ニュース、ブログ、技術ドキュメント、Xなど、アプリで開いたページで使えます"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "iPhoneのWordByWord：英語ニュース記事の各文の下に、日本語訳が赤い線とともに表示された画面"
+    },
+    {
+      "id": "lookup",
+      "kicker": "ダブルタップ辞書",
+      "title": "ダブルタップ{wbr}するだけの、{wbr}文脈が{wbr}わかるAI辞書",
+      "text": "WordByWordは単語を説明する前に文全体を読み、まず熟語やフレーズかどうかを確かめます。辞書の訳語を並べるのではなく、その文での意味がわかります。",
+      "bullets": [
+        "ページ上の単語をダブルタップ",
+        "熟語・決まった言い回しを優先して認識",
+        "「他の意味」で、意味・例文・語形変化・発音をまとめて確認"
+      ],
+      "note": "中国語・日本語・韓国語の原文では使えません。",
+      "image": "shot/{set}/lookup",
+      "alt": "iPhoneのWordByWord：英文中の「designed」をダブルタップし、フレーズとしての意味をAIが日本語で解説する画面"
+    },
+    {
+      "id": "x",
+      "kicker": "X（旧Twitter）",
+      "title": "X（旧Twitter）の{wbr}ポストも{wbr}原文と{wbr}訳文で{wbr}読める",
+      "text": "WordByWordのアプリ内ブラウザでx.comにログインし、ポストを右にスワイプすると、その下に訳文が入ります。外国語で発信しているアカウントを追うときに便利です。",
+      "image": "shot/{set}/x",
+      "alt": "WordByWordでポストを読むイメージ：英語のポストの下に日本語訳が入った例（スクリーンショットではありません）",
+      "sample": {
+        "name": "サンプルアカウント",
+        "handle": "@runner.example",
+        "time": "3時間",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "初めての10キロラン、完走しました。遅かったけど、一度も止まりませんでした。"
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "英語ページ",
+      "title": "英語の文の{wbr}チャンク抽出と{wbr}Action Flow（文の動きの流れ）",
+      "text": "英語の文を右スワイプで翻訳したあと、「チャンク抽出」はひとまとまりで働くフレーズに下線を引き、「Action Flow」は文の中心となる動作とそれにつながる動作を示します。自動・手動・オフを選べます。",
+      "note": "英語の原文のみ対応。",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for：〜に向けて出発する",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "イメージ図（スクリーンショットではありません）"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "読み上げ",
+      "title": "AI読み上げと、{wbr}すぐに再生できる{wbr}iOSの音声",
+      "text": "単語も文も読み上げられます。「AI読み上げ」はクラウドの自然な音声。「ローカル読み上げ」はiOS内蔵の音声ですばやく再生でき、速度の調整や、ダウンロード済みのプレミアム・拡張音声も使えます。",
+      "image": "shot/{set}/tts",
+      "alt": "iPhoneのWordByWord：対訳表示した段落と、画面下部の読み上げプレーヤー"
+    },
+    {
+      "id": "syntax",
+      "kicker": "文の構造",
+      "title": "長い文も、{wbr}AIが{wbr}文の構造を{wbr}解説",
+      "text": "スワイプ翻訳の履歴から文を開き、「AI による文型の解説を取得」をタップ。文を要素に分け、それぞれがどうつながっているかを説明します。",
+      "image": "shot/{set}/syntax",
+      "alt": "iPhoneのWordByWord：スワイプ翻訳詳細の画面に表示された、1文のAI文型解説"
+    },
+    {
+      "id": "engines",
+      "kicker": "翻訳エンジン",
+      "title": "クラウド翻訳か、iOSの端末内翻訳か",
+      "text": "クラウド（Azure・Google）かiOS内蔵の翻訳を選択。回数切れならローカルで再試行"
+    },
+    {
+      "id": "display",
+      "kicker": "表示",
+      "title": "訳文の表示方法とスタイル",
+      "text": "「自動」「段落」「文ごと」、すぐ表示かタップで表示か、スタイルも選べます"
+    },
+    {
+      "id": "history",
+      "kicker": "履歴",
+      "title": "スワイプ翻訳と単語の履歴でふり返り",
+      "text": "スワイプ翻訳と調べた単語を元の文ごと保存。見返すことも消去もできます"
+    },
+    {
+      "id": "devices",
+      "kicker": "対応機種",
+      "title": "iPhone・iPad・Mac・Vision Pro",
+      "text": "iPhone・iPad（{minOS}以降）。AppleシリコンのMacとVision Proでも動作します"
+    }
+  ],
+  "gallery": {
+    "title": "表示の{wbr}設定と{wbr}「他の意味」の{wbr}画面",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "設定：翻訳モード「自動」・引用スタイル・ローカル読み上げ",
+        "alt": "iPhoneのWordByWordの設定画面：翻訳モード「自動」、引用スタイル、ローカル読み上げ"
+      },
+      {
+        "id": "dictionary",
+        "caption": "他の意味：単語の意味・例文・語形変化",
+        "alt": "iPhoneのWordByWord「他の意味」画面：英単語「continued」の意味、例文、語形変化"
+      },
+      {
+        "id": "languages",
+        "hidden": true,
+        "caption": "原文の言語と翻訳先の言語（英語UIの例）",
+        "alt": "WordByWordの言語設定（英語UI）：原文の言語はスペイン語、翻訳先は英語（US）"
+      },
+      {
+        "id": "languageList",
+        "hidden": true,
+        "caption": "翻訳先は{targetLanguages}言語から選択（英語UIの例）",
+        "alt": "WordByWordの言語一覧（英語UI）：ベトナム語、ポルトガル語、ウクライナ語、イタリア語、中国語など"
+      }
+    ]
+  },
+  "languages": {
+    "title": "{targetLanguages}言語に{wbr}翻訳。{wbr}英語以外の{wbr}ページも{wbr}読める",
+    "lede": "訳文の言語を選ぶだけ。原文の言語は最初は英語で、読んでいるページの言語を検出して切り替わります。自分で設定することもできます。",
+    "uiCount": "アプリ表示{uiLanguages}言語",
+    "targetCount": "翻訳先{targetLanguages}言語",
+    "sourceNote": "原文の言語：初期設定は英語・自動検出・手動で変更可",
+    "targetListLabel": "翻訳先の言語",
+    "limits": [
+      "中国語・日本語・韓国語のページでは、右スワイプ翻訳と読み上げは使えますが、ダブルタップ辞書は使えません。",
+      "チャンク抽出とAction Flowは英語の原文のみ対応です。"
+    ]
+  },
+  "pricing": {
+    "title": "毎日{wbr}無料で{wbr}使える。{wbr}たくさん{wbr}読むならPlus",
+    "lede": "WordByWordは無料でダウンロードでき、ほとんどの機能に毎日リセットされる無料枠があります。WordByWord Plusにすると上限が上がります。",
+    "table": {
+      "caption": "1日の利用上限（無料版とPlus）",
+      "colFeature": "機能",
+      "colFree": "無料",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "翻訳",
+        "lookup": "辞書",
+        "listen": "読み上げ",
+        "sentence": "文の理解"
+      },
+      "rows": {
+        "cloudSwipe": "右スワイプ翻訳（クラウド）",
+        "localSwipe": "右スワイプ翻訳（ローカル）",
+        "lookup": "ダブルタップ辞書（AI解釈）",
+        "more": "他の意味",
+        "lookupSpeech": "AI発音（単語）",
+        "swipeSpeech": "AI発音（文）",
+        "localVoice": "iOSの音声（ローカル読み上げ）",
+        "chunks": "チャンク抽出",
+        "actionFlow": "Action Flow",
+        "syntax": "AI文型解説"
+      },
+      "perDay": "1日{n}回",
+      "noLimit": "上限なし",
+      "englishOnly": "英語のみ"
+    },
+    "summary": "上限内なら、すべての機能を無料で使えます。Plusは米国で月額{plus.priceUS}、上限が上がります。",
+    "free": {
+      "name": "無料"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "月額{plus.priceUS}（米国の価格）"
+    },
+    "note": "価格は国・地域によって異なり、App Storeに表示されます。サブスクリプションはAppleアカウントの設定からいつでも解約できます。"
+  },
+  "faq": {
+    "title": "WordByWordについて{wbr}よくある質問",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "WordByWordとは？",
+        "a": "WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。アプリ内ブラウザでページを開き、段落を右にスワイプすると原文の下に訳文が入り、単語をダブルタップするとその文での意味がわかります。個人開発者のJinlongが開発しています。[WordByWordについて詳しく](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "ページ全体を一度に翻訳できますか？",
+        "a": "いいえ。WordByWordが翻訳するのはスワイプした段落で、訳文はそのすぐ下に入ります。ページのほかの部分は原文のままです。訳文は段落ごと・文ごと（または自動）で表示でき、すぐ表示するかタップで表示するかも選べます。"
+      },
+      {
+        "id": "safari",
+        "q": "Safariやほかのアプリで使えますか？",
+        "a": "いいえ。WordByWordはSafari拡張機能ではなく、ほかのアプリに翻訳ボタンを追加することもありません。タブとブックマークを備えた専用ブラウザがあり、URLを入力するか検索してページを開き、そこでスワイプして翻訳します。"
+      },
+      {
+        "id": "word-by-word",
+        "q": "逐語訳（ワード・バイ・ワード）のアプリですか？",
+        "a": "直訳という意味ではありません。単語を1つずつ訳すと意味を取り違えやすいため、WordByWordは文や段落の単位で翻訳し、単語はダブルタップしたときに、その文の文脈で説明します。"
+      },
+      {
+        "id": "x",
+        "q": "X（旧Twitter）も読めますか？",
+        "a": "はい。アプリ内ブラウザでx.comを開いてログインし、ポストを右にスワイプすると下に訳文が出ます。単語のダブルタップ辞書も使えます（中国語・日本語・韓国語のポストを除く）。Xアプリではなく、WordByWordの中で開いたXのWeb版で使う機能です。"
+      },
+      {
+        "id": "languages",
+        "q": "対応言語は？",
+        "a": "アプリの表示は{uiLanguages}言語、翻訳先は{targetLanguages}言語（中国語の簡体字・繁体字、米国英語・英国英語を含む）です。原文の言語は最初は英語で、読んでいるページの言語を検出して切り替わり、手動でも変更できます。原文の言語によって使えない機能があります。中国語・日本語・韓国語の原文ではダブルタップ辞書が使えず、チャンク抽出とAction Flowは英語の原文のみ対応です。"
+      },
+      {
+        "id": "free",
+        "q": "無料ですか？1日の上限は？",
+        "a": "はい、無料でダウンロードして使えます。無料版の1日の上限は、クラウドでの右スワイプ翻訳{quota.cloudSwipe.free}回、ローカルエンジンでの翻訳{quota.localSwipe.free}回、ダブルタップ辞書{quota.lookup.free}回、チャンク抽出{quota.chunks.free}回、Action Flow {quota.actionFlow.free}回、AI文型解説{quota.syntax.free}回などで、iOSの音声に上限はありません。**WordByWord Plus**（月額サブスクリプション。米国では{plus.priceUS}、各国の価格はApp Storeに表示）にすると上限が上がります。"
+      },
+      {
+        "id": "engines",
+        "q": "翻訳エンジンは何を使っていますか？",
+        "a": "選べます。クラウド翻訳エンジンは現在、AzureとGoogleの翻訳サービスを使っています。ローカルエンジンはiOS内蔵の翻訳機能で、初回は言語データのダウンロードが必要な場合があります。その日のクラウド翻訳の回数を使い切ったら、ローカルエンジンに切り替えて再試行できます。単語の解説、文型解説、AI読み上げはクラウドのAIサービスを使います。"
+      },
+      {
+        "id": "account",
+        "q": "アカウント登録は必要ですか？",
+        "a": "いいえ。WordByWordはアカウント登録なしで使えます。ログインが必要なのは、アプリ内ブラウザでx.comなどのサイトを使うときだけで、ふつうのブラウザと同じです。WordByWord Plusのサブスクリプションは、WordByWordのアカウントではなくAppleアカウントにひも付いています。"
+      },
+      {
+        "id": "restore",
+        "q": "新しいiPhoneやiPadでPlusを使い続けるには？",
+        "a": "新しい端末でも同じAppleアカウントを使い、WordByWordの設定で「今すぐアップグレード」をタップしてから「購入を復元」を選びます。サブスクリプションの変更や解約は、Appleアカウントのサブスクリプション設定から行えます。"
+      },
+      {
+        "id": "android",
+        "q": "Android版はありますか？",
+        "a": "ありません。WordByWordはApp Storeでのみ提供しており、iPhone・iPad、AppleシリコンのMac、Apple Vision Proで使えます。"
+      },
+      {
+        "id": "english-learner",
+        "q": "英語を勉強しています。SurfEnglishも試す価値はありますか？",
+        "a": "自分で選んだWebページやXのポストは、英語でもほかの言語でも、これまでどおりWordByWordで読めます。そのうえで、レベル別（{se.levels}）の英語ニュースを毎日読みたい、保存した文や単語をゲームで復習したいなら、同じ開発者のSurfEnglishも試してみてください。右スワイプとダブルタップはそのまま使えます。2つのアプリは併用できます。[SurfEnglish公式サイト](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "iPadやMac、パソコンのブラウザでも使えますか？",
+        "a": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのブラウザで使える版はまだありません。同じ開発者によるChrome拡張機能を準備中です。詳しくは[Chrome拡張機能のページ](@chrome)をご覧ください。",
+        "aExtLive": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのChrome向けには、同じ開発者による別の拡張機能[WordByWord Translate（Chrome拡張機能）](@chrome)があります。インストールは、そのページのリンクから行ってください。"
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "WordByWordの開発者より",
+      "title": "SurfEnglish：{wbr}レベル別の{wbr}英語ニュースアプリ",
+      "body": "主に英語を学んでいますか？WordByWordで好きなWebページを読みながら、同じ開発者のSurfEnglishで、レベル別の英語ニュースと復習ゲームという別の練習も加えられます。右スワイプとダブルタップはそのまま使えます。",
+      "points": [
+        "{se.levels}のレベル付き、本物の英語ニュース",
+        "読んだ内容から作られる復習ゲーム",
+        "Safariから英語記事を共有してアプリで読める"
+      ],
+      "note": "無料で始められます · iPhone／iPad · アプリ表示は日本語を含む{se.uiLanguages}言語 · {se.targetLanguages}言語に翻訳",
+      "linkText": "SurfEnglishでレベル別の英語ニュースを対訳で読む",
+      "appStoreLinkText": "App StoreでSurfEnglishを入手",
+      "shotAlt": "SurfEnglishのゲーム画面：保存した文と単語で遊べるSentence BuilderとWord Raid",
+      "shotCaption": "SurfEnglishの画面（英語UI）"
+    },
+    "footer": {
+      "heading": "同じ開発者のアプリ",
+      "linkText": "SurfEnglish：英語ニュース・対訳で学習"
+    }
+  },
+  "cta": {
+    "title": "iPhoneで、{wbr}外国語の{wbr}Webページを{wbr}対訳で読む",
+    "recap": "右スワイプで翻訳・ダブルタップでAI辞書・読み上げ・{targetLanguages}言語に翻訳",
+    "text": "App Storeから無料、iPhone・iPad対応。"
+  },
+  "footer": {
+    "tagline": "外国語を学びながらWebを読む人のための、iPhone・iPadアプリ。",
+    "product": "製品",
+    "help": "ヘルプ",
+    "iosApp": "iPhone・iPadアプリ",
+    "chromeExtension": "Chrome拡張機能",
+    "about": "WordByWordについて",
+    "support": "サポート",
+    "privacy": "プライバシーポリシー",
+    "contact": "お問い合わせ",
+    "faq": "よくある質問",
+    "languagesTitle": "言語",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "開発：Jinlong",
+    "notAffiliated": "WordByWord.ioとは関係ありません。",
+    "appleNotice": "Apple、Appleのロゴ、iPhone、iPad、Mac、Apple Vision Proは、米国およびその他の国や地域で登録されたApple Inc.の商標です。App StoreはApple Inc.のサービスマークです。",
+    "ariaNav": "サイト"
+  },
+  "langSuggest": {
+    "message": "このページは日本語でもご覧いただけます。",
+    "action": "日本語で表示",
+    "close": "閉じる"
+  },
+  "notfound": {
+    "title": "ページが見つかりません",
+    "text": "お探しのページはここにはありません。サイトのリニューアルで移動した可能性があります。",
+    "home": "WordByWordのトップページへ",
+    "languages": "ほかの言語でWordByWordを開く："
+  }
+}

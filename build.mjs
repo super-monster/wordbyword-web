@@ -7,6 +7,8 @@ import { performance } from 'node:perf_hooks';
 
 import { SITE, LOCALES, PAGES, CONTRACTS, ALIASES, contractModeOf } from './src/site.mjs';
 import { buildRedirects, readRedirectFixture, buildHeaders, buildSitemap, buildRobots, alternatesFor, gitInfo } from './src/lib/seo.mjs';
+import { fill, placeholderVars } from './src/lib/html.mjs';
+import { emitAssets } from './src/lib/assets.mjs';
 import { home } from './src/templates/home.mjs';
 import { about } from './src/templates/about.mjs';
 import { chromeExtension } from './src/templates/chrome-extension.mjs';
@@ -48,6 +50,29 @@ function walk(dir) {
   return out;
 }
 
+// Image registry resolver: key → { avif:[{url,w,h}], fallback:{url,w,h}, meta, variant(w, fmt) } (doc 06 §3.5, §7.3).
+// Returns null when the registry or key is missing (placeholders during M1; D-21 turns this into an error in M2).
+function imageResolver(assets) {
+  const reg = assets.registry;
+  const cache = new Map();
+  return (key) => {
+    if (!reg) return null;
+    if (cache.has(key)) return cache.get(key);
+    const entry = reg.images?.[key] ?? reg[key];
+    if (!entry) { warn('IMG', `image key not in registry: ${key}`); cache.set(key, null); return null; }
+    const variants = (entry.variants ?? []).map((v) => ({ ...v, url: assets.publish(v.path) }));
+    const avif = variants.filter((v) => v.format === 'avif').sort((a, b) => a.w - b.w);
+    const fallbacks = variants.filter((v) => v.format !== 'avif').sort((a, b) => b.w - a.w);
+    const fallback = fallbacks.find((v) => v.w === entry.fallbackWidth) ?? fallbacks[0];
+    const res = {
+      avif, fallback, meta: entry,
+      variant: (w, fmt) => variants.find((v) => v.w === w && v.format === fmt)?.url ?? null,
+    };
+    cache.set(key, res);
+    return res;
+  };
+}
+
 // ———————————————————————————— routes (doc 06 §3.4) ————————————————————————————
 
 function expandRoutes() {
@@ -78,6 +103,21 @@ function expandRoutes() {
 // ———————————————————————————— build ————————————————————————————
 
 const git = gitInfo();
+
+// Locale copy: a locale without src/locales/<code>.json is not published yet (doc 06 §4.4: no per-key fallback
+// to English). Its legacy URLs temporarily 302 to / until the translation lands (doc 02 §5.2.3).
+const strings = {};
+for (const l of LOCALES) {
+  const file = join(ROOT, `src/locales/${l.code}.json`);
+  if (existsSync(file)) strings[l.code] = JSON.parse(readFileSync(file, 'utf8'));
+  else if (l.publish) { l.publish = false; }
+}
+const unpublished = LOCALES.filter((l) => !l.publish).map((l) => l.code);
+if (unpublished.length) warn('L-1', `not published yet (no copy): ${unpublished.join(' ')}`);
+const product = JSON.parse(readFileSync(join(ROOT, 'src/data/product.json'), 'utf8'));
+const notice = JSON.parse(readFileSync(join(ROOT, 'src/notice.json'), 'utf8'));
+const year = new Date().getUTCFullYear();
+
 const routes = expandRoutes();
 
 rmSync(DIST, { recursive: true, force: true });
@@ -85,9 +125,32 @@ mkdirSync(DIST, { recursive: true });
 copyDir(join(ROOT, 'public'), DIST); // public/ first; generated artifacts are written last (ENG-16)
 for (const f of ['_headers', '_redirects']) if (existsSync(join(ROOT, 'public', f))) err('D-14', `public/${f} must not exist (generated)`);
 
+if (git.shallow) warn('SITEMAP', 'shallow git clone: <lastmod> omitted from sitemap.xml');
+const lastmodFor = (r) => {
+  if (git.shallow || !git.available) return null;
+  const sources = r.page.sources(r.locale).filter((p) => existsSync(join(ROOT, p)));
+  return git.lastDate(sources);
+};
+const assets = emitAssets(ROOT, DIST, issues);
+const img = imageResolver(assets);
+const publishedLocales = LOCALES.filter((l) => l.publish);
+
 for (const route of routes) {
+  const t = strings[route.locale.code];
+  const updated = lastmodFor(route) ?? new Date().toISOString().slice(0, 10);
+  const dateLong = (iso) => new Intl.DateTimeFormat(route.locale.code, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${iso}T00:00:00Z`));
+  const vars = placeholderVars({ product, SITE, locale: route.locale, year, extra: {
+    appStoreName: t.meta?.appStoreName ?? SITE.name, appStoreSubtitle: t.meta?.appStoreSubtitle ?? '',
+    releaseDate: dateLong(product.wbw.releaseDate), versionDate: dateLong(product.wbw.versionDate), updated: dateLong(updated),
+  } });
   const ctx = {
-    SITE, route, routes, absUrl,
+    SITE, route, routes, absUrl, product, notice, assets, img,
+    imgUrl: (key, w, fmt) => img(key)?.variant?.(w, fmt) ?? null,
+    og: null, // OG images land with the localized copy (R59, M3)
+    t, enStrings: strings.en,
+    f: (s, extra = {}) => fill(s, { ...vars, ...extra }, route.locale.code),
+    dateLong, updated,
+    locales: publishedLocales,
     alternates: alternatesFor(route, routes, absUrl),
     build: { head: git.head },
   };
@@ -98,12 +161,6 @@ const redirects = buildRedirects({ SITE, LOCALES, CONTRACTS, ALIASES });
 write(join(DIST, '_redirects'), redirects.text);
 write(join(DIST, '_headers'), buildHeaders({ SITE }));
 
-if (git.shallow) warn('SITEMAP', 'shallow git clone: <lastmod> omitted from sitemap.xml');
-const lastmodFor = (r) => {
-  if (git.shallow || !git.available) return null;
-  const sources = r.page.sources(r.locale).filter((p) => existsSync(join(ROOT, p)));
-  return git.lastDate(sources);
-};
 write(join(DIST, 'sitemap.xml'), buildSitemap(routes, {
   absUrl, lastmodFor,
   alternates: (r) => alternatesFor(r, routes, absUrl),

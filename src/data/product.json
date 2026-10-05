@@ -1,0 +1,39 @@
+{
+  "wbw": {
+    "version": "1.2.2",
+    "versionDate": "2026-05-27",
+    "releaseDate": "2025-06-06",
+    "minOS": "iOS 18",
+    "minMacOS": "macOS 15",
+    "uiLanguages": 20,
+    "targetLanguages": 21,
+    "quota": {
+      "cloudSwipe": { "free": 50, "plus": 500 },
+      "localSwipe": { "free": 100, "plus": "∞" },
+      "chunks": { "free": 30, "plus": 500 },
+      "actionFlow": { "free": 20, "plus": 500 },
+      "swipeSpeech": { "free": 10, "plus": 100 },
+      "lookup": { "free": 20, "plus": 500 },
+      "lookupSpeech": { "free": 10, "plus": 200 },
+      "more": { "free": 10, "plus": 500 },
+      "syntax": { "free": 5, "plus": 500 },
+      "localVoice": { "free": "∞", "plus": "∞" }
+    },
+    "plus": { "priceUSD": 3.99, "period": "month" },
+    "targetLanguageNames": ["中文（简体）", "中文（繁體）", "日本語", "한국어", "Español", "Português", "Tiếng Việt", "Bahasa Indonesia", "ไทย", "हिन्दी", "العربية", "Français", "Deutsch", "Italiano", "Русский", "Türkçe", "Polski", "Nederlands", "Українська", "English (US)", "English (UK)"]
+  },
+  "se": {
+    "uiLanguages": 12,
+    "targetLanguages": 21,
+    "levels": "A1–C1",
+    "plus": { "monthUSD": 2.99, "yearUSD": 24.99 },
+    "availableInCN": false,
+    "releaseDate": "2026-08-18"
+  },
+  "ext": {
+    "version": "0.1.2",
+    "targetLanguages": 7,
+    "minChrome": 138,
+    "uiLocales": ["en", "ja", "ko", "zh_CN"]
+  }
+}

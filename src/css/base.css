@@ -1,0 +1,92 @@
+/* ===== 2. Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: 80px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 var(--fs-body)/1.6 var(--font-ui); -webkit-font-smoothing: antialiased; }
+html[data-script="cjk"] body { line-height: 1.75; line-break: strict; }
+html:lang(ko) body { word-break: keep-all; }
+img, svg, picture { display: block; max-inline-size: 100%; }
+img { block-size: auto; }
+h1, h2, h3 { margin: 0; font-weight: 700; text-wrap: balance; }
+p, ul, ol, figure, dl, dd { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+p, li { text-wrap: pretty; }
+a { color: var(--accent-text); text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+section[id], aside[id], details[id] { scroll-margin-top: 80px; }
+button { font: inherit; }
+
+/* type scale (05 §3.2): semantic level (R13) and visual size are separate classes */
+h1 { font-size: var(--fs-h1); line-height: 1.12; }
+h2 { font-size: var(--fs-h2); line-height: 1.15; }
+h3 { font-size: var(--fs-h3); line-height: 1.3; }
+.h-display { font-size: var(--fs-display); line-height: 1.08; }
+.h-sub { font-size: var(--fs-h2-sub); line-height: 1.2; }
+.h-3 { font-size: var(--fs-h3); line-height: 1.3; }
+.h-4 { font-size: var(--fs-h4); line-height: 1.35; font-weight: 600; }
+html:is([data-script="latn"], [data-script="cyrl"]) .h-display { letter-spacing: -.028em; }
+html:is([data-script="latn"], [data-script="cyrl"]) :is(h1, h2, .h-sub) { letter-spacing: -.02em; }
+html:is([data-script="latn"], [data-script="cyrl"]) h3:not(.h-sub):not(.h-4) { letter-spacing: -.01em; }
+html[data-script="cjk"] :is(h1, h2, h3) { line-height: 1.25; letter-spacing: 0; }
+html[data-script="cjk"] :is(h1, h2, h3) { word-break: keep-all; overflow-wrap: anywhere; }
+html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }   /* Chromium 119+; others keep keep-all + <wbr> */
+html:is(:lang(zh-Hans), :lang(zh-Hant)) :is(h1, h2, h3) { word-break: normal; }   /* 05 §3.5: balance, no markers */
+.lede { font-size: var(--fs-lede); line-height: 1.6; color: var(--ink-2); max-inline-size: var(--w-text); }
+
+.container { max-inline-size: var(--w-content); margin-inline: auto; padding-inline: var(--gutter); }
+/* sections (05 §4.2): one token between two sections, never two paddings added together */
+.section { padding-block: var(--sy, var(--section-y-m)) 0; }
+.section--end, .section--band { padding-block-end: var(--sy, var(--section-y-m)); }
+.section--band { background: var(--paper-2); }
+.section--features { --sy: var(--section-y-l); }
+.section-head { max-inline-size: var(--w-text); margin-block-end: var(--s-6); }
+.section-head .lede { margin-block-start: var(--s-4); }
+@media (min-width: 900px) { .section-head { margin-block-end: var(--s-7); } }
+
+.skip { position: absolute; inset-inline-start: var(--s-4); inset-block-start: -100px; z-index: var(--z-skip); padding: 10px 16px; border-radius: var(--r-2); background: var(--ink); color: var(--paper); }
+.skip:focus { inset-block-start: var(--s-2); }
+
+/* ===== 3. Shared bits: eyebrow, H1 marker, tags, buttons, links, badge ===== */
+.eyebrow { display: flex; align-items: flex-start; gap: 4px 10px; margin-block-end: var(--s-3); font-size: var(--fs-xs); font-weight: 700; line-height: 1.4; color: var(--accent-text); }
+.eyebrow::before { content: ""; flex: none; inline-size: 16px; block-size: 10px; margin-block-start: .4em; background: currentColor; -webkit-mask: var(--speed) no-repeat center / contain; mask: var(--speed) no-repeat center / contain; }
+html[data-script="latn"] .eyebrow { text-transform: uppercase; letter-spacing: .12em; }
+html[data-script="cyrl"] .eyebrow { letter-spacing: .02em; }
+html:is([data-script="cjk"], [data-script="thai"], [data-script="deva"], [data-script="arab"]) .eyebrow { font-size: .875rem; font-weight: 600; letter-spacing: 0; }
+.eyebrow-n { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.eyebrow--plain { flex-wrap: wrap; align-items: center; color: var(--ink-3); margin-block-end: var(--s-2); }
+.eyebrow--plain::before { display: none; }
+
+/* the ONE highlighter phrase of the page, inside the H1 (R65, 05 §5.2.7); a span, not <mark> */
+.kw { background: var(--marker); color: var(--on-marker); border-radius: var(--r-1); padding: 0 .12em; margin-inline: -.12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+@media (min-width: 560px) { .kw { white-space: nowrap; } }
+
+.tag { display: inline-block; padding: 1px 8px; border-radius: var(--r-1); font-size: var(--fs-xs); font-weight: 600; line-height: 1.5; letter-spacing: 0; text-transform: none; vertical-align: .08em; white-space: nowrap; }
+.tag--en-only, .tag--note { background: var(--paper-3); color: var(--ink-2); }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; min-block-size: 44px; padding-inline: 20px; border: 0; border-radius: var(--r-2); background: var(--accent); color: var(--on-accent); font-size: 1rem; font-weight: 600; text-decoration: none; white-space: nowrap; transition: background-color var(--dur-1); }
+.btn:hover { background: var(--accent-hover); color: var(--on-accent); }
+.btn:active { background: var(--accent-press); }
+.btn-small { position: relative; min-block-size: 36px; padding-inline: 14px; font-size: .9375rem; }
+.btn-small::after { content: ""; position: absolute; inset: -4px 0; }  /* 44px hit area */
+
+.link-arrow { display: inline-flex; align-items: center; gap: 6px; min-block-size: 44px; font-weight: 600; }
+.link-arrow::before { content: ""; order: 2; inline-size: 0; block-size: 9px; background: repeating-linear-gradient(to bottom, currentColor 0 1.5px, transparent 1.5px 3.75px); transition: inline-size var(--dur-1) var(--ease-out); }
+.link-arrow::after { content: "→"; order: 3; }
+.link-arrow:hover::before { inline-size: 12px; }
+html[dir="rtl"] .link-arrow::after { transform: scaleX(-1); }
+
+/* WBW App Store badge, 48px everywhere it appears (hero, pricing, final CTA — 05 §5.12). Placeholder drawn in
+   HTML/SVG; production = Apple's official localized SVG. SE never gets a badge (R43). */
+.asb { display: inline-flex; align-items: center; gap: 8px; block-size: 48px; padding-inline: 12px 16px; border: 1px solid #A6A6A6; border-radius: 10px; background: #000; color: #fff; text-decoration: none; line-height: 1; white-space: nowrap; }
+.asb:hover { background: #1C1C1C; color: #fff; }
+.asb-logo { inline-size: 26px; block-size: 26px; }
+.asb-text { display: flex; flex-direction: column; gap: 3px; }
+.asb-text small { font-size: 11px; letter-spacing: .01em; }
+.asb-text b { font-size: 21px; font-weight: 600; letter-spacing: -.02em; }
+
+.media-cap { margin-block-start: var(--s-2); color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.4; }
+
+/* App icons: 22.4% mask; 1px light ring in dark mode so the black/oxblood cells keep an outline (R70) */
+.brand-icon, .family-mark img, .cta-icon, .sibling__icon { border-radius: 22.4%; box-shadow: 0 0 0 1px var(--icon-ring); }
+
