@@ -1,0 +1,45 @@
+{
+  "locale": "zh-Hans",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (zh-Hans column), §7.2.2 rules and fix X13 (one name for the swipe feature: 右滑翻译), the finalized zh-Hans copy deck (doc 08 §4).",
+    "Action Flow keeps the App Store name in headings with the app's 句子动作脉络 in table rows and sentences (doc 08 D3)."
+  ],
+  "required": {
+    "features[swipe].kicker": "右滑翻译",
+    "features[lookup].kicker": "双击查词",
+    "features[x].kicker": "推特（X）",
+    "features[chunks].kicker": "英文网页",
+    "features[speech].kicker": "朗读",
+    "features[syntax].kicker": "句型解析",
+    "features[engines].kicker": "翻译引擎",
+    "features[display].kicker": "显示",
+    "features[history].kicker": "历史",
+    "features[devices].kicker": "设备",
+    "demo.ui.more": "更多释义",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "右滑翻译 · 云端引擎",
+    "pricing.table.rows.localSwipe": "右滑翻译 · 本地引擎",
+    "pricing.table.rows.lookup": "双击查词（AI 释义）",
+    "pricing.table.rows.more": "更多释义",
+    "pricing.table.rows.lookupSpeech": "AI 发音 · 单词",
+    "pricing.table.rows.swipeSpeech": "AI 发音 · 整句",
+    "pricing.table.rows.localVoice": "iOS 本地语音（本地朗读）",
+    "pricing.table.rows.chunks": "语言块提取",
+    "pricing.table.rows.actionFlow": "句子动作脉络",
+    "pricing.table.rows.syntax": "AI 句型解析"
+  },
+  "contains": {
+    "faq.items[restore].a": ["立即升级", "恢复购买"],
+    "features[syntax].text": ["获取 AI 句型解析"],
+    "features[speech].text": ["AI智能朗读", "本地朗读"],
+    "features[chunks].text": ["语言块提取", "句子动作脉络"],
+    "features[lookup].bullets[2]": ["更多释义"]
+  },
+  "banned": [
+    { "pattern": "滑动翻译", "use": "右滑翻译", "note": "one name for the feature (doc 08 §7.2.2 X13)" },
+    { "pattern": "左滑", "use": "右滑", "note": "the gesture is a right swipe (F14)" },
+    { "pattern": "(点按|点击|单击|轻点)(单词)?查词", "regex": true, "use": "双击查词", "note": "lookup is a double tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "更多定义", "use": "更多释义", "note": "app name of more_definitions_title (T-A)" }
+  ],
+  "allowInKeys": []
+}

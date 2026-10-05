@@ -1,0 +1,378 @@
+{
+  "$comment": [
+    "Product-claim lint (doc 06 §3.7 L-14 / D-15a, §4.3; ENG-10). Seeds: doc 03 §1.4 + §3.8 CLAIM_SEED, doc 08 §1.1 red lines and §7.5 banned phrases, F11/F14/F16, R26, R28, R40, R41, R45, H13.",
+    "patterns: regex sources per locale code; '*' applies to every locale. Matched case-insensitively against each leaf value with placeholders filled and markup stripped.",
+    "exempt: key paths (wildcards: [*] / .*; a path also covers its subtree) where the phrase is allowed, e.g. the negative FAQ answers. exemptPrefix: key-path prefixes. only: the rule applies only under these key paths.",
+    "A published locale with neither its own patterns nor '*' patterns for a rule gets a W 'not covered' (L-14) so reviewers check it by hand (R36).",
+    "When a translator delivers a locale, add its wording to every rule (doc 08 §7.5)."
+  ],
+  "rules": [
+    {
+      "id": "whole-page",
+      "desc": "One-tap / whole-page translation does not exist: WordByWord translates the paragraph you swipe (F14, baseline §B2, doc 08 §7.5 no-feature)",
+      "patterns": {
+        "en": ["translat\\w* (a |the )?(whole|entire|full) (web ?)?page", "one[- ]tap translat", "(whole|entire|full)[- ]page translation", "translat\\w* (an |the )?entire (web)?site"],
+        "zh-Hans": ["一键翻译整", "整页翻译", "翻译整个(网页|页面)", "自动翻译整"],
+        "zh-Hant": ["一鍵翻譯整", "整頁翻譯", "翻譯整個(網頁|頁面)", "自動翻譯整"],
+        "ja": ["ページ全体を(一括|一度に|まるごと)", "ワンタップで翻訳", "ページ全体の翻訳", "丸ごと翻訳"],
+        "ko": ["페이지 전체(를)? (한 번에 )?번역", "원탭 번역"]
+      },
+      "exempt": ["faq.items[whole-page]", "about.sections[limits].text", "about.facts[*].value"],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "swipe-left",
+      "desc": "The gesture is a right swipe; a left swipe removes the translation (F14, doc 08 §7.7)",
+      "patterns": {
+        "en": ["swipe (to the )?left", "left[- ]swipe"],
+        "zh-Hans": ["左滑", "向左滑"],
+        "zh-Hant": ["左滑", "向左滑"],
+        "ja": ["左に?スワイプ"],
+        "ko": ["왼쪽으로 (밀|스와이프)"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "safari-extension",
+      "desc": "Not a Safari extension or share extension, no translate button in other apps (F13, doc 08 §1.1)",
+      "patterns": {
+        "en": ["safari extension", "share extension", "in (any|every) (other )?app\\b", "inside (any|other) apps?", "from any app", "without switching apps"],
+        "zh-Hans": ["Safari ?扩展", "分享扩展", "在任何 ?App ?(里|中)", "任意 ?App ?(里|中)", "无需切换 ?App"],
+        "zh-Hant": ["Safari ?(延伸功能|擴充)", "分享延伸功能", "在任何 ?App ?(裡|中)", "無需切換 ?App"],
+        "ja": ["Safari ?拡張", "共有拡張", "どのアプリでも", "アプリを切り替えずに"],
+        "ko": ["(사파리|Safari) 확장", "공유 확장", "어떤 앱에서(든|나)"]
+      },
+      "exempt": ["faq.items[safari]", "about.sections[limits].text"],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "selection-translate",
+      "desc": "No select-to-translate in the iOS app (doc 08 §7.5 no-feature; the Chrome extension does have it)",
+      "patterns": {
+        "en": ["select(ing)? (any )?(text|a word|words|a sentence) to translate", "highlight (text )?to translate", "translat\\w* (on|as you) select"],
+        "zh-Hans": ["划词", "选中即译", "选中(文字|文本)?(即|就)可?翻译"],
+        "zh-Hant": ["劃詞", "選取即譯", "選取(文字)?(即|就)可?翻譯"],
+        "ja": ["選択して翻訳", "選択するだけで翻訳"],
+        "ko": ["선택(하면|해서) 번역", "드래그(하면|해서) 번역"],
+        "it": ["selezionando"],
+        "pl": ["zaznaczeni"],
+        "ru": ["при выделении"],
+        "tr": ["seçerek"],
+        "pt-BR": ["ao selecionar"],
+        "hi": ["चुनते ही"],
+        "ar": ["عند تحديد"]
+      },
+      "exempt": [],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "offline",
+      "desc": "Never claim offline use: unverified for WordByWord (H13, doc 08 D7); never an SE-only selling point either (R41)",
+      "patterns": {
+        "en": ["\\boffline\\b", "without (an )?internet", "no internet (connection )?(needed|required)"],
+        "zh-Hans": ["离线", "无网", "断网", "不联网"],
+        "zh-Hant": ["離線", "無網路", "不需網路"],
+        "ja": ["オフライン", "ネット(接続)?なしで"],
+        "ko": ["오프라인", "인터넷 없이"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "unlimited-ai-voice",
+      "desc": "No unlimited AI pronunciation; only the local engine (Plus) and iOS voices have no daily limit (F16)",
+      "patterns": {
+        "en": ["unlimited ai", "unlimited (pronunciation|read(ing)?|speech|voices?)", "ai (pronunciation|voices?|read) without (a )?limit"],
+        "zh-Hans": ["无限\\s*次?\\s*AI", "AI\\s*(发音|朗读)\\s*(无限|不限)"],
+        "zh-Hant": ["無限\\s*次?\\s*AI", "AI\\s*(發音|朗讀)\\s*(無限|不限)"],
+        "ja": ["無制限のAI", "AI(読み上げ|発音)[^。]{0,6}無制限"],
+        "ko": ["무제한 AI", "AI (발음|읽기) 무제한"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "dark-mode-theme",
+      "desc": "No dark mode, themes or theme colours in the iOS app (F11, F16, doc 08 §1.1)",
+      "patterns": {
+        "en": ["dark mode", "night mode", "custom (colou?r )?themes?", "theme colou?rs?"],
+        "zh-Hans": ["暗色模式", "深色模式", "夜间模式", "自定义主题", "主题色", "更换主题"],
+        "zh-Hant": ["暗色模式", "深色模式", "夜間模式", "自訂主題", "主題色"],
+        "ja": ["ダークモード", "テーマ(カラー|色)", "着せ替え"],
+        "ko": ["다크 ?모드", "테마 (색|변경)"]
+      },
+      "exempt": [],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "shortcuts-volume",
+      "desc": "No keyboard shortcuts or volume control in the iOS app (baseline §B2)",
+      "patterns": {
+        "en": ["keyboard shortcuts?", "volume (control|slider|adjust\\w*)", "adjust(able)? (the )?volume"],
+        "zh-Hans": ["快捷键", "音量"],
+        "zh-Hant": ["快捷鍵", "音量"],
+        "ja": ["ショートカット(キー)?", "音量"],
+        "ko": ["단축키", "볼륨"]
+      },
+      "exempt": [],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "vocab-sync",
+      "desc": "No word book, flashcards, accounts or cloud sync in WordByWord (doc 08 §1.1 history / account rows)",
+      "patterns": {
+        "en": ["flash ?cards?", "vocabulary (book|list|notebook)", "word ?book", "(cloud|account|icloud) (sync|backup)", "sync(ed|s)? across (your )?devices", "spaced repetition"],
+        "zh-Hans": ["生词本", "单词本", "闪卡", "(云端|账号|iCloud)\\s*(同步|备份)", "多设备同步"],
+        "zh-Hant": ["生詞本", "單字本", "閃卡", "(雲端|帳號|iCloud)\\s*(同步|備份)"],
+        "ja": ["単語帳", "フラッシュカード", "(クラウド|アカウント|iCloud)\\s*(同期|バックアップ)"],
+        "ko": ["단어장", "플래시 ?카드", "(클라우드|계정) (동기화|백업)"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "android",
+      "desc": "There is no Android version (F13, R73)",
+      "patterns": {
+        "en": ["android (version|app|phone)", "on android", "for android", "google play"],
+        "zh-Hans": ["安卓", "Android\\s*版", "Google Play"],
+        "zh-Hant": ["安卓", "Android\\s*版", "Google Play"],
+        "ja": ["Android(版|アプリ|端末)", "Google Play"],
+        "ko": ["안드로이드", "구글 플레이"]
+      },
+      "exempt": ["faq.items[android]"]
+    },
+    {
+      "id": "desktop-version",
+      "desc": "No web or desktop version of WordByWord; the Chrome extension is a separate product (F13, R45)",
+      "patterns": {
+        "en": ["\\bweb version of wordbyword", "desktop (app|version)\\b", "for (windows|pc)\\b"],
+        "zh-Hans": ["电脑版", "桌面版", "Windows\\s*版", "PC\\s*版"],
+        "zh-Hant": ["電腦版", "桌面版", "Windows\\s*版", "PC\\s*版"],
+        "ja": ["(PC|パソコン|デスクトップ)版", "Windows版"],
+        "ko": ["(PC|데스크톱) 버전", "윈도우 버전"]
+      },
+      "exempt": ["faq.items[devices]", "faq.items[android]"],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "x-app",
+      "desc": "X works in the built-in browser (x.com), not in the X app; never 'the only app that translates X' (doc 08 §1.1)",
+      "patterns": {
+        "en": ["\\b(in|inside) the x app", "only app (that|to) translat\\w* x\\b"],
+        "zh-Hans": ["在\\s*X\\s*App\\s*(里|中)(翻译|使用)", "唯一能翻译\\s*X"],
+        "zh-Hant": ["在\\s*X\\s*App\\s*(裡|中)(翻譯|使用)", "唯一能翻譯\\s*X"],
+        "ja": ["Xアプリ(で|内で|の中で)翻訳", "Xを翻訳できる唯一"],
+        "ko": ["X 앱에서 번역"]
+      },
+      "exempt": ["faq.items[x]"]
+    },
+    {
+      "id": "plus-early-access",
+      "desc": "'Plus gets new features first' has no implementation in the app (doc 08 §1.1)",
+      "patterns": {
+        "en": ["early access"],
+        "zh-Hans": ["抢先体验"],
+        "zh-Hant": ["搶先體驗"],
+        "ja": ["先行(体験|アクセス|利用)"],
+        "ko": ["얼리 ?액세스", "먼저 체험"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "privacy-claim",
+      "desc": "No privacy assertions in copy (F17, H6, doc 01 C-11)",
+      "patterns": {
+        "en": ["no personal data", "(does not|doesn't|never|won't) collect (any )?(personal )?(data|information)", "no tracking", "(we|it) (do|does) not track"],
+        "zh-Hans": ["不收集任何", "不收集(你的|您的)?个人", "无追踪", "不追踪"],
+        "zh-Hant": ["不收集任何", "不收集(你的|您的)?個人", "無追蹤", "不追蹤"],
+        "ja": ["個人情報(は|を)一切", "一切収集し", "トラッキングなし"],
+        "ko": ["개인 ?정보를 (전혀 )?수집하지 않", "추적하지 않"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "initial-version",
+      "desc": "Wrong fact: 'initial version' wording from the legacy site (doc 01 C-05)",
+      "patterns": {
+        "en": ["initial version"],
+        "zh-Hans": ["初始版本"],
+        "zh-Hant": ["初始版本"],
+        "ja": ["初期バージョン"],
+        "ko": ["초기 버전"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "language-pairs",
+      "desc": "Wrong fact: '20+ language pairs' — WordByWord translates into {targetLanguages} languages (doc 01 C-04)",
+      "patterns": {
+        "en": ["language pairs?"],
+        "zh-Hans": ["语言对"],
+        "zh-Hant": ["語言對"],
+        "ja": ["言語ペア"],
+        "ko": ["언어 쌍"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "style-count",
+      "desc": "Never state how many translation styles there are (R26)",
+      "patterns": {
+        "en": ["\\b\\d+ (different |translation |display )?styles", "\\b(five|six|seven|eight|nine|ten) (different |translation |display )?styles"],
+        "zh-Hans": ["\\d+\\s*种(译文|翻译|显示)?样式", "[五六七八九十]种(译文|翻译|显示)?样式"],
+        "zh-Hant": ["\\d+\\s*種(譯文|翻譯|顯示)?樣式", "[五六七八九十]種(譯文|翻譯|顯示)?樣式"],
+        "ja": ["\\d+種類?の(スタイル|表示)"],
+        "ko": ["\\d+가지 (스타일|표시)"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "auto-detect-target",
+      "desc": "Wrong fact: the app detects the page (source) language, not the target language (doc 01 C-06)",
+      "patterns": {
+        "en": ["detects? (your|the) target language", "automatic(ally)? detects? (your|the) target"],
+        "zh-Hans": ["自动(检测|识别)目标语言"],
+        "zh-Hant": ["自動(偵測|檢測|識別)目標語言"],
+        "ja": ["(翻訳先|ターゲット言語)[^。]{0,8}自動(検出|判定|検知)"],
+        "ko": ["대상 언어(를)? 자동"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "history-by-date",
+      "desc": "Wrong fact: history is not grouped by date (doc 08 §1.1)",
+      "patterns": {
+        "en": ["(grouped|sorted) by date"],
+        "zh-Hans": ["按日期分组"],
+        "zh-Hant": ["(依|按)日期分組"],
+        "ja": ["日付(ごと|別)に(整理|分類|表示)"],
+        "ko": ["날짜별로 (정리|분류)"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "plus-only",
+      "desc": "Wrong fact: syntax explanation (or any feature) is not Plus-only; every feature has a free daily allowance (doc 01 C-04, F16)",
+      "patterns": {
+        "en": ["plus[- ]only", "(only|exclusive(ly)?) (with|for|in) (wordbyword )?plus", "premium[- ]only"],
+        "zh-Hans": ["(Plus|会员)\\s*专(属|享)", "仅限\\s*Plus"],
+        "zh-Hant": ["(Plus|會員)\\s*專(屬|享)", "僅限\\s*Plus"],
+        "ja": ["Plus(限定|専用|会員のみ)"],
+        "ko": ["Plus 전용"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "speaking-practice",
+      "desc": "The app has no speaking practice (doc 08 §1.1 read-aloud row)",
+      "patterns": {
+        "en": ["speaking practice", "improve your speaking", "pronunciation (practice|training|scor\\w+)"],
+        "zh-Hans": ["提升口语", "听说同步", "口语练习"],
+        "zh-Hant": ["提升口說", "口說練習", "聽說同步"],
+        "ja": ["スピーキング(練習)?", "発音(練習|トレーニング)"],
+        "ko": ["말하기 연습", "발음 (연습|교정)"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "jargon",
+      "desc": "Jargon or mistranslation for the display modes ('alignment' etc.; research 07 §2.3, doc 08 §7.5)",
+      "patterns": {
+        "en": ["\\balignment\\b", "sentence[- ]aligned"],
+        "zh-Hans": ["句子对齐", "对齐显示"],
+        "zh-Hant": ["句子對齊", "對齊顯示"],
+        "ja": ["アライメント", "整列表示"],
+        "ko": ["문장 정렬"],
+        "es": ["alineaci[óo]n"],
+        "fr": ["alignement", "\\bbalayage\\b"],
+        "de": ["Satzausrichtung"],
+        "it": ["allineamento"],
+        "pt-BR": ["alinhamento"],
+        "tr": ["hizalama"],
+        "ru": ["выравнивани", "посрочн"],
+        "uk": ["вирівнюванн", "покроков"],
+        "vi": ["\\bqu[ée]t\\b"],
+        "ar": ["محاذاة"],
+        "hi": ["संरेखण"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "replacement-tone",
+      "desc": "SurfEnglish is complementary, never a replacement or upgrade; third person only (R40, R28; doc 03 §1.4 error patterns)",
+      "patterns": {
+        "en": ["may suit you better", "\\b(a )?better fit\\b", "instead of wordbyword", "sister app", "earlier app", "replac(e|es|ing) wordbyword", "upgrade (from wordbyword|to surfenglish)"],
+        "zh-Hans": ["可能更适合你", "更适合你", "更适合您", "(取代|替代)\\s*WordByWord", "姊妹\\s*App", "旧版\\s*WordByWord"],
+        "zh-Hant": ["可能更適合你", "更適合你", "更適合您", "(取代|替代)\\s*WordByWord", "姊妹\\s*App"],
+        "ja": ["(の方|のほう)が(合う|向いて)", "より合う", "姉妹アプリ", "前作", "旧版"],
+        "ko": ["더 잘 맞", "더 맞을 수", "자매 앱"]
+      },
+      "exempt": []
+    },
+    {
+      "id": "se-on-device-voice",
+      "desc": "On-device / offline voices are not an SE-only selling point: WordByWord's Local Read is on-device too (R41)",
+      "patterns": {
+        "en": ["on-device (ai )?voices?", "offline (voices?|speech|read\\w*)", "voices? (that work )?offline", "voices? on (your )?device"],
+        "zh-Hans": ["(端侧|离线|本机|本地)\\s*(AI\\s*)?(语音|朗读|发音)"],
+        "zh-Hant": ["(離線|本機|本地)\\s*(AI\\s*)?(語音|朗讀|發音)"],
+        "ja": ["(オフライン|端末内|オンデバイス)の?(音声|読み上げ)"],
+        "ko": ["(오프라인|기기 내) (음성|읽기)"]
+      },
+      "only": ["sibling.card", "faq.items[english-learner]"],
+      "exempt": []
+    },
+    {
+      "id": "se-hype",
+      "desc": "No 'new / faster / upgrade' framing in the SurfEnglish recommendation (doc 04 §1.3, doc 08 §7.5 hype)",
+      "patterns": {
+        "en": ["\\bnew\\b", "\\bfaster\\b", "more efficient", "\\bupgrade", "better than"],
+        "zh-Hans": ["全新", "新上线", "新版", "更高效", "更快", "升级"],
+        "zh-Hant": ["全新", "新上線", "新版", "更高效", "更快", "升級"],
+        "ja": ["新登場", "新しい", "より(速|早)く", "効率的", "アップグレード"],
+        "ko": ["새로운", "신규", "더 빠른", "업그레이드"]
+      },
+      "only": ["sibling.card", "sibling.footer", "faq.items[english-learner]", "about.family"],
+      "exempt": []
+    },
+    {
+      "id": "hype",
+      "desc": "Marketing tone: superlatives, 'revolutionary', user counts, ratings, 'the WordByWord team' (doc 08 §7.4–7.5; developer is Jinlong, third person)",
+      "patterns": {
+        "*": ["#1\\b", "★"],
+        "en": ["revolution(ary|ise|ize)", "game[- ]changer", "say goodbye to", "\\bthe best\\b", "number one", "\\bthe only\\b", "world'?s first", "\\d[\\d,.]*\\s?[km]?\\+? (users|downloads)", "millions of", "wordbyword team", "\\bour team\\b", "\\bthe makers\\b"],
+        "zh-Hans": ["革命性", "颠覆", "彻底改变", "告别", "最强", "第一款", "唯一(一款|的)", "\\d+\\s*万\\s*用户", "用户数", "WordByWord\\s*团队", "我们的团队", "开发团队"],
+        "zh-Hant": ["革命性", "顛覆", "徹底改變", "告別", "最強", "唯一(一款|的)", "WordByWord\\s*團隊", "開發團隊"],
+        "ja": ["革命的", "さよなら", "最強", "唯一の", "No\\.\\s?1", "ユーザー数", "開発チーム", "WordByWord\\s*チーム"],
+        "ko": ["혁명적", "최강", "유일한 앱", "WordByWord 팀"]
+      },
+      "exempt": ["about.disambiguation.text"]
+    },
+    {
+      "id": "io-home",
+      "desc": "WordByWord.io may only be named on /about/ and the extension pages (R15)",
+      "patterns": { "*": ["WordByWord\\.io"] },
+      "exempt": ["footer.notAffiliated"],
+      "exemptPrefix": ["about.", "chromeExtension."]
+    },
+    {
+      "id": "engine-claim",
+      "desc": "No 'powered by ChatGPT' claims for the iOS app (doc 08 §1.1 engine row)",
+      "patterns": { "*": ["ChatGPT", "\\bGPT-?\\d"] },
+      "exempt": [],
+      "exemptPrefix": ["chromeExtension."]
+    },
+    {
+      "id": "ext-language-count",
+      "desc": "The Chrome extension translates into {ext.targetLanguages} languages, not 20+ (doc 01 C-20, F20)",
+      "patterns": {
+        "en": ["\\b(1\\d|2\\d)\\+? (languages|language pairs)\\b"],
+        "zh-Hans": ["(1\\d|2\\d)\\s*\\+?\\s*种语言"],
+        "zh-Hant": ["(1\\d|2\\d)\\s*\\+?\\s*種語言"],
+        "ja": ["(1\\d|2\\d)\\s*言語(に|へ|を)翻訳"],
+        "ko": ["(1\\d|2\\d)개 언어"]
+      },
+      "only": ["chromeExtension."],
+      "exempt": []
+    }
+  ],
+  "coverage": { "warnWhenMissing": true }
+}

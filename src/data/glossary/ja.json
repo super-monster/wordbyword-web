@@ -1,0 +1,46 @@
+{
+  "locale": "ja",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (ja column), §7.2.2 rules and X13-style unification, the finalized ja copy deck (doc 08 §3).",
+    "Kickers use the app's short names without the '(AI解釈)' suffix (doc 06 §4.3 example); in-sentence app button names are quoted verbatim in 「」 (doc 08 D17)."
+  ],
+  "required": {
+    "features[swipe].kicker": "右スワイプ翻訳",
+    "features[lookup].kicker": "ダブルタップ辞書",
+    "features[x].kicker": "X（旧Twitter）",
+    "features[chunks].kicker": "英語ページ",
+    "features[speech].kicker": "読み上げ",
+    "features[syntax].kicker": "文の構造",
+    "features[engines].kicker": "翻訳エンジン",
+    "features[display].kicker": "表示",
+    "features[history].kicker": "履歴",
+    "features[devices].kicker": "対応機種",
+    "demo.ui.more": "他の意味",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "右スワイプ翻訳（クラウド）",
+    "pricing.table.rows.localSwipe": "右スワイプ翻訳（ローカル）",
+    "pricing.table.rows.lookup": "ダブルタップ辞書（AI解釈）",
+    "pricing.table.rows.more": "他の意味",
+    "pricing.table.rows.lookupSpeech": "AI発音（単語）",
+    "pricing.table.rows.swipeSpeech": "AI発音（文）",
+    "pricing.table.rows.localVoice": "iOSの音声（ローカル読み上げ）",
+    "pricing.table.rows.chunks": "チャンク抽出",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "AI文型解説"
+  },
+  "contains": {
+    "faq.items[restore].a": ["今すぐアップグレード", "購入を復元"],
+    "features[syntax].text": ["AI による文型の解説を取得"],
+    "features[speech].text": ["AI読み上げ", "ローカル読み上げ"],
+    "features[chunks].text": ["チャンク抽出", "Action Flow"],
+    "features[lookup].bullets[2]": ["他の意味"]
+  },
+  "banned": [
+    { "pattern": "左スワイプ", "use": "右スワイプ", "note": "the gesture is a right swipe (F14; doc 06 §4.3 example)" },
+    { "pattern": "左にスワイプ", "use": "右にスワイプ", "note": "F14" },
+    { "pattern": "ダブルクリック", "use": "ダブルタップ", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "(?<!ダブル)タップ(して|すると|で)(単語|辞書)", "regex": true, "use": "ダブルタップ", "note": "lookup is a double tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "その他の意味", "use": "他の意味", "note": "app name of more_definitions_title (T-A)" }
+  ],
+  "allowInKeys": []
+}

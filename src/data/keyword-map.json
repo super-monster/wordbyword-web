@@ -1,0 +1,99 @@
+{
+  "$comment": [
+    "Keyword ownership and keyword → URL map (doc 06 §3.7 L-9, §4.3; doc 03 §1.4, §1.6, §3.8; R39, R40, R46, R83).",
+    "seOwned: SurfEnglish-only primary words. They must not appear in a WordByWord page's title, H1, meta description, OG copy or features H2 (doc 03 §1.4 table; error). Generic language-learning words without 'English' belong to WordByWord (R39, R83) and must pass.",
+    "seOwnedLead: the same intent anchored at the start — no H2 anywhere may open with a learn-English clause (R40).",
+    "reserved.G1: how-to phrasing reserved for guide G1; never in the home title, H1, description or #cta H2 (doc 03 §1.6 M2, §3.8 HOWTO). A published locale without patterns gets a W.",
+    "primaryTokens: words that identify a page's primary keyword (doc 03 §1.6). Latin/Cyrillic/Arabic tokens match whole words, CJK/Thai/Devanagari tokens match substrings. Within one locale, the set of pages whose title or H1 contains all tokens of page X must be exactly {X} (uniquePrimary).",
+    "platform: the home description must name the platform (SEO-11)."
+  ],
+  "seOwned": {
+    "en": ["learn(ing)? english", "english news", "english learning", "\\bchunks?\\b"],
+    "zh-Hans": ["学英语", "英语学习", "英语新闻", "英语阅读", "语块", "语言块"],
+    "zh-Hant": ["學英文", "英文學習", "英文新聞", "英文閱讀", "語塊", "語言塊"],
+    "ja": ["英語学習", "英語ニュース", "英語多読", "英語リーディング", "チャンク"],
+    "ko": ["영어 공부", "영어 학습", "영어 뉴스", "영어 읽기", "청크", "표현 묶음"],
+    "es": ["aprender inglés", "noticias en inglés"],
+    "pt-BR": ["aprender inglês", "notícias em inglês"],
+    "fr": ["apprendre l['’]anglais"],
+    "de": ["Englisch lernen"],
+    "it": ["imparare l['’]inglese"],
+    "nl": ["Engels leren"],
+    "pl": ["nauka angielskiego"],
+    "ru": ["(учить|изучение) английск"],
+    "uk": ["(вчити|вивчення) англійськ"],
+    "tr": ["İngilizce öğren"],
+    "vi": ["học tiếng Anh", "tin tiếng Anh"],
+    "th": ["เรียนภาษาอังกฤษ", "ข่าวภาษาอังกฤษ"],
+    "id": ["belajar bahasa Inggris", "berita bahasa Inggris"],
+    "ar": ["تعلم الإنجليزية"],
+    "hi": ["अंग्रेज़ी सीख", "इंग्लिश न्यूज़"]
+  },
+  "seOwnedLead": {
+    "en": ["^\\W*learn(ing)? english"],
+    "zh-Hans": ["^\\W*(学英语|英语学习)"],
+    "zh-Hant": ["^\\W*(學英文|英文學習)"],
+    "ja": ["^\\W*英語(学習|を学)"],
+    "ko": ["^\\W*영어 (공부|학습)"],
+    "es": ["^\\W*aprende(r)? inglés"],
+    "pt-BR": ["^\\W*aprend(a|er) inglês"],
+    "fr": ["^\\W*apprendre l['’]anglais"],
+    "de": ["^\\W*Englisch lernen"],
+    "ru": ["^\\W*(учить|изучение) английск"]
+  },
+  "reserved": {
+    "G1": {
+      "en": ["\\bhow to\\b", "keep the original"],
+      "zh-Hans": ["怎么", "如何", "方法"],
+      "zh-Hant": ["怎麼", "如何", "方法"],
+      "ja": ["方法", "やり方"],
+      "ko": ["방법", "하는 법"]
+    }
+  },
+  "primaryTokens": {
+    "home": {
+      "en": ["Web Page", "App", "iPhone"],
+      "zh-Hans": ["网页", "双语对照", "App"],
+      "zh-Hant": ["網頁", "雙語對照", "App"],
+      "ja": ["Webページ", "アプリ"],
+      "ko": ["웹페이지", "앱"],
+      "es": ["iPhone", "traductor"],
+      "pt-BR": ["iPhone", "tradutor"],
+      "fr": ["iPhone", "traducteur"],
+      "de": ["iPhone", "Übersetzer-App"],
+      "it": ["iPhone", "traduttore"],
+      "nl": ["iPhone", "vertaalapp"],
+      "pl": ["iPhone", "tłumacz"],
+      "ru": ["iPhone", "Переводчик"],
+      "tr": ["iPhone", "uygulaması"],
+      "uk": ["iPhone", "перекладач"],
+      "vi": ["iPhone", "ứng dụng"],
+      "th": ["iPhone", "แอป"],
+      "id": ["iPhone", "aplikasi"],
+      "ar": ["iPhone", "تطبيق"],
+      "hi": ["iPhone", "ऐप"]
+    },
+    "G1": {
+      "en": ["How to", "Keep the Original"],
+      "zh-Hans": ["怎么", "保留原文"],
+      "zh-Hant": ["如何", "保留原文"],
+      "ja": ["方法", "原文も残す"],
+      "ko": ["방법", "원문"]
+    }
+  },
+  "platform": {
+    "*": ["iPhone"],
+    "ko": ["iPhone", "아이폰"]
+  },
+  "urlMap": [
+    { "id": "M1", "intent": "bilingual web page reader app (P1, commercial)", "url": "home", "primary": { "en": "bilingual web page translator app for iPhone", "zh-Hans": "网页双语对照翻译 App", "zh-Hant": "網頁雙語對照翻譯 App", "ja": "Webページ 翻訳・対訳 アプリ", "ko": "아이폰 웹페이지 번역 앱" } },
+    { "id": "M2", "intent": "translate web pages on iPhone and keep the original (P1, how-to)", "url": "guide:G1", "primary": { "en": "how to translate web pages on iPhone and keep the original", "zh-Hans": "iPhone 网页翻译怎么保留原文", "zh-Hant": "iPhone 網頁翻譯如何保留原文", "ja": "iPhoneでWebページを翻訳して原文も残す方法", "ko": "아이폰 웹페이지 번역 원문 같이 보는 방법" } },
+    { "id": "M3", "intent": "AI word meaning in context (P2)", "url": "home", "primary": { "en": "word meaning in context (AI dictionary)", "zh-Hans": "AI 语境查词", "zh-Hant": "AI 語境查單字", "ja": "文脈がわかるAI辞書", "ko": "AI 사전" } },
+    { "id": "M4", "intent": "read X (Twitter) bilingually (P3)", "url": "guide:G2", "primary": { "en": "how to read X (Twitter) posts bilingually on iPhone", "zh-Hans": "在 iPhone 上双语看推特", "zh-Hant": "在 iPhone 上雙語看推特", "ja": "iPhoneでXのポストを原文と訳文で読む方法", "ko": "아이폰에서 트위터 게시물 원문과 번역 같이 보기" } },
+    { "id": "M5", "intent": "word by word translation (P5, informational)", "url": "guide:G3", "primary": { "en": "word-by-word vs sentence-by-sentence translation" } },
+    { "id": "M6", "intent": "comparison with Immersive Translate", "url": "guide:G4", "primary": { "en": "immersive translate iphone alternative", "zh-Hans": "沉浸式翻译 iPhone", "ja": "イマーシブ翻訳 アプリ" } },
+    { "id": "M7", "intent": "brand navigation", "url": "home", "primary": { "en": "WordByWord" } },
+    { "id": "M8", "intent": "product entity and disambiguation", "url": "about", "primary": { "en": "About WordByWord; WordByWord vs WordByWord.io" } },
+    { "id": "M9", "intent": "Chrome extension (indexable only in S1)", "url": "chrome-extension", "primary": { "en": "WordByWord Translate for Chrome; bilingual translation Chrome extension", "zh-Hans": "网页双语对照翻译扩展" } }
+  ]
+}

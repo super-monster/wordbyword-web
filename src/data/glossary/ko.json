@@ -1,0 +1,21 @@
+{
+  "locale": "ko",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2.1–§7.2.2; R64). ko copy is not written yet (T1, publish:false); this file is ready for it.",
+    "required: app names from tables T-A/T-B; fix X4 — the feature name is the 右滑翻译 key's value 「오른쪽 스와이프 번역」, not the imperative 「번역하려면 스와이프하세요」.",
+    "script.noHanja: no Han characters anywhere (fix X3: the app's 「任意의」 → 아무 텍스트나); the validator enforces it for ko in any case."
+  ],
+  "required": {
+    "features[swipe].kicker": "오른쪽 스와이프 번역",
+    "demo.ui.more": "더 많은 정의",
+    "pricing.table.rows.more": "더 많은 정의",
+    "pricing.table.rows.chunks": "청크 추출",
+    "pricing.table.rows.actionFlow": "문장 동작 흐름"
+  },
+  "banned": [
+    { "pattern": "번역하려면 스와이프하세요", "use": "오른쪽 스와이프 번역", "note": "imperative app string is not a feature name (X4)" },
+    { "pattern": "왼쪽으로 (밀|스와이프)", "regex": true, "use": "오른쪽으로 밀기", "note": "the gesture is a right swipe (F14)" }
+  ],
+  "allowInKeys": [],
+  "script": { "noHanja": true }
+}

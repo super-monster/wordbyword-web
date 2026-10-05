@@ -1,0 +1,48 @@
+{
+  "locale": "en",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (en column = the app's own names), §7.2.2 website rules ①–② and the finalized en copy deck (doc 08 §2).",
+    "required: key path → value that must be used verbatim (the app's names for kickers, quota-table rows and the 'More Definitions' link; doc 06 §4.2 says features[].kicker and pricing.table.rows.* must equal the glossary). doc 08 §7.2.5 calls this map appNames; both names are accepted.",
+    "contains: key path → app button / setting names the sentence must quote verbatim (rule ①: 'in the app, tap …').",
+    "banned: variants that must not appear in any leaf value (pattern = literal text unless regex:true; matching is case-sensitive unless flags contains 'i'; allowInKeys exempts key paths, e.g. the Chrome extension pages where mouse wording is correct)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Swipe to Translate",
+    "features[lookup].kicker": "Double-tap to Look Up",
+    "features[x].kicker": "X (Twitter)",
+    "features[chunks].kicker": "English pages",
+    "features[speech].kicker": "Read aloud",
+    "features[syntax].kicker": "Syntax",
+    "features[engines].kicker": "Engines",
+    "features[display].kicker": "Display",
+    "features[history].kicker": "History",
+    "features[devices].kicker": "Devices",
+    "demo.ui.more": "More Definitions",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Swipe translation · cloud engine",
+    "pricing.table.rows.localSwipe": "Swipe translation · local engine",
+    "pricing.table.rows.lookup": "Double-tap lookup (AI meaning)",
+    "pricing.table.rows.more": "More Definitions",
+    "pricing.table.rows.lookupSpeech": "AI pronunciation · word",
+    "pricing.table.rows.swipeSpeech": "AI pronunciation · sentence",
+    "pricing.table.rows.localVoice": "iOS voice (Local Read)",
+    "pricing.table.rows.chunks": "Chunk Extraction",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "AI syntax explanation"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Upgrade Now", "Restore Purchase"],
+    "features[syntax].text": ["Get AI Syntax Explanation"],
+    "features[speech].text": ["AI Read", "Local Read"],
+    "features[chunks].text": ["Chunk Extraction", "Action Flow"],
+    "features[lookup].bullets[2]": ["More Definitions"]
+  },
+  "banned": [
+    { "pattern": "double[- ]click", "regex": true, "flags": "i", "use": "double-tap", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "(?<!double-)\\btap(ping)? (on )?(a|any|the) word", "regex": true, "flags": "i", "use": "double-tap a word", "note": "lookup is a double tap, never a tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "swipe left", "flags": "i", "use": "swipe right", "note": "the gesture is a right swipe (F14)" },
+    { "pattern": "Chunks Extraction", "use": "Chunk Extraction", "note": "app name (T-B)" },
+    { "pattern": "Action flow", "use": "Action Flow", "note": "App Store spelling (doc 08 D3)" }
+  ],
+  "allowInKeys": []
+}
