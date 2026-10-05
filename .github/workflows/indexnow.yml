@@ -1,0 +1,83 @@
+# IndexNow push after each production release (doc 03 §6.3, doc 06 §11.3, SEO-10; branch design-docs).
+# Cloudflare Pages builds before it deploys, so the push cannot happen inside the build: this workflow waits for the
+# Git-integration deploy, then runs scripts/indexnow.mjs (every URL of the production sitemap, no diffing).
+# No-op (green) while scripts/indexnow.mjs is missing or SITE.indexNowKey is null; the script itself also skips
+# while www is still served by GitHub Pages (before the T0 DNS cutover).
+# T0 first push (doc 06 §10.2 step 12): run manually with "legacy" checked, after releasing SITE.legacySitemap = true.
+name: indexnow
+
+on:
+  push:
+    branches: [cloudflare-deploy]
+  workflow_dispatch:
+    inputs:
+      legacy:
+        description: "Also submit every URL of sitemap-legacy.xml (T0 first push only)"
+        type: boolean
+        default: false
+      dry_run:
+        description: "Dry run: print the payload, submit nothing"
+        type: boolean
+        default: false
+      wait_seconds:
+        description: "Seconds to wait before submitting (push-triggered runs always wait 180)"
+        type: string
+        default: "0"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-${{ github.event_name }}
+  cancel-in-progress: true   # a newer release supersedes a run that is still waiting
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: cloudflare-deploy      # production source: the key and script exactly as released
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - name: gate (script present, SITE.indexNowKey set)
+        id: gate
+        run: |
+          if [ ! -f scripts/indexnow.mjs ]; then
+            echo "::notice::scripts/indexnow.mjs is not on cloudflare-deploy yet; nothing to do."
+            echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          key=$(node --input-type=module -e 'const { SITE } = await import("./src/site.mjs"); process.stdout.write(SITE.indexNowKey ? "set" : "")')
+          if [ -z "$key" ]; then
+            echo "::notice::SITE.indexNowKey is not set in src/site.mjs; IndexNow is not configured yet (doc 03 §6.3)."
+            echo "run=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "run=true" >> "$GITHUB_OUTPUT"
+
+      - name: wait for the Cloudflare Pages production deploy
+        if: steps.gate.outputs.run == 'true'
+        env:
+          WAIT: ${{ github.event_name == 'push' && '180' || inputs.wait_seconds }}
+        run: |
+          WAIT="${WAIT:-0}"
+          if [[ ! "$WAIT" =~ ^[0-9]+$ ]] || (( WAIT > 900 )); then
+            echo "::error::wait_seconds must be a whole number between 0 and 900 (got '$WAIT')."; exit 1
+          fi
+          echo "waiting ${WAIT}s"; sleep "$WAIT"
+
+      - name: submit
+        if: steps.gate.outputs.run == 'true'
+        env:
+          LEGACY: ${{ inputs.legacy && '--legacy' || '' }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: node scripts/indexnow.mjs $LEGACY $DRY_RUN

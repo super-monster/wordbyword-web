@@ -1,0 +1,53 @@
+# CI health check: build (and, once it exists, check) every pushed branch and every pull request. Never deploys:
+# Cloudflare Pages builds and deploys on its own through the Git integration (DEPLOY.md).
+# Spec: doc 06 §11.3 (branch design-docs, docs/redesign-2026/06-技术架构与工程方案.md).
+name: check
+
+on:
+  push:
+    branches-ignore:
+      - legacy-pages   # frozen legacy site served by GitHub Pages, has no build.mjs (R29, R56)
+      - design-docs    # orphan design-docs branch, has no build.mjs (H10)
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check:
+    name: check (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]   # 22 = package.json engines floor; 24 = .node-version / CF Pages NODE_VERSION
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0              # full history: sitemap <lastmod> comes from git; a shallow clone drops it (doc 06 §3.6.1)
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false   # zero dependencies, nothing to cache
+
+      - name: build (exits non-zero on any build-gate error)
+        run: node build.mjs
+
+      - name: check
+        if: hashFiles('scripts/check.mjs') != ''
+        run: node scripts/check.mjs
+
+      - name: check (skipped)
+        if: hashFiles('scripts/check.mjs') == ''
+        run: echo "::notice::scripts/check.mjs does not exist yet (doc 06 §11.2); only the build gates ran."

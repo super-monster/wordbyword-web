@@ -1,0 +1,128 @@
+# Manual PRODUCTION deploy with wrangler: backup channel + emergency-notice channel (R57). Never runs on its own.
+# Normal releases do not use it: Cloudflare Pages' Git integration deploys every push to `cloudflare-deploy`.
+#
+# Input `ref` must be
+#   cloudflare-deploy   redeploy production as-is (e.g. the Git integration is down), or
+#   hotfix/*            a branch cut from the CURRENT tip of cloudflare-deploy that changes only src/notice.json
+#                       (doc 06 §8.5). main is refused, and so is anything carrying unreleased main commits.
+# After a hotfix deploy: fast-forward cloudflare-deploy to the hotfix branch, then merge it into main (DEPLOY.md).
+#
+# Repository secrets, added by the owner (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN   API token with Account › Cloudflare Pages › Edit
+#   CLOUDFLARE_ACCOUNT_ID  account that owns the Pages project
+# Spec: doc 06 §8.5, §11.3; doc 07 §6.8; ruling R57 (branch design-docs).
+name: deploy-manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch to deploy to PRODUCTION: cloudflare-deploy, or a hotfix/* branch cut from it (never main)"
+        type: string
+        required: true
+        default: cloudflare-deploy
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  CF_PAGES_PROJECT: wordbyword-web      # = SITE.pagesProject in src/site.mjs
+  PRODUCTION_BRANCH: cloudflare-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: guard (ref is cloudflare-deploy or hotfix/*)
+        env:
+          REF: ${{ inputs.ref }}
+        run: |
+          case "$REF" in
+            "$PRODUCTION_BRANCH") ;;
+            hotfix/*)
+              if [[ ! "$REF" =~ ^hotfix/[A-Za-z0-9._/-]+$ || "$REF" == *..* ]]; then
+                echo "::error::Invalid branch name: $REF"; exit 1
+              fi ;;
+            *)
+              echo "::error::Refusing to deploy '$REF' to production. Only '$PRODUCTION_BRANCH' or a hotfix/* branch cut from it is allowed, never main (R57, DEPLOY.md)."
+              exit 1 ;;
+          esac
+
+      - name: guard (Cloudflare secrets present)
+        env:
+          HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+          HAS_ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID != '' }}
+        run: |
+          if [ "$HAS_TOKEN" != true ] || [ "$HAS_ACCOUNT" != true ]; then
+            echo "::error::Repository secrets CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID must both be set (DEPLOY.md §4)."
+            exit 1
+          fi
+
+      - uses: actions/checkout@v7
+        with:
+          ref: refs/heads/${{ inputs.ref }}
+          fetch-depth: 0               # all branches + full history: guard below, and sitemap <lastmod> intact (ENG-04)
+          persist-credentials: false
+
+      - name: guard (based on the current production tip; hotfix changes only src/notice.json)
+        env:
+          REF: ${{ inputs.ref }}
+        run: |
+          prod=$(git rev-parse --verify "refs/remotes/origin/$PRODUCTION_BRANCH^{commit}") \
+            || { echo "::error::origin/$PRODUCTION_BRANCH not found."; exit 1; }
+          head=$(git rev-parse HEAD)
+          base=$(git merge-base "$prod" "$head" || true)
+          if [ "$base" != "$prod" ]; then
+            echo "::error::'$REF' is not based on the current tip of $PRODUCTION_BRANCH (merge-base ${base:-none}, tip $prod). Recreate it from $PRODUCTION_BRANCH (or rebase onto origin/$PRODUCTION_BRANCH) and run again."
+            exit 1
+          fi
+          if [ "$REF" != "$PRODUCTION_BRANCH" ]; then
+            changed=$(git diff --name-only "$prod...$head")
+            extra=$(grep -vx 'src/notice.json' <<<"$changed" || true)
+            if [ -n "$extra" ]; then
+              echo "::error::A hotfix branch may change only src/notice.json (doc 06 §8.5); it also changes: $(tr '\n' ' ' <<<"$extra"). Ship other fixes via main → $PRODUCTION_BRANCH, or roll back in Cloudflare (DEPLOY.md §8)."
+              exit 1
+            fi
+            echo "hotfix changes: ${changed:-(none: identical to production)}"
+          fi
+          echo "deploying $REF @ $(git rev-parse --short HEAD) (production tip ${prod:0:7})"
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version   # 24, same as CF Pages NODE_VERSION
+          package-manager-cache: false
+
+      - name: build
+        run: node build.mjs
+
+      - name: deploy dist/ to Cloudflare Pages production
+        id: deploy
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4"
+          command: pages deploy dist --project-name=${{ env.CF_PAGES_PROJECT }} --branch=${{ env.PRODUCTION_BRANCH }} --commit-dirty=true
+
+      - name: summary
+        env:
+          REF: ${{ inputs.ref }}
+          URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: |
+          {
+            echo "### Production deploy (wrangler)"
+            echo "- source: \`$REF\` @ \`$(git rev-parse --short HEAD)\`"
+            echo "- deployment: ${URL:-n/a}"
+            if [ "$REF" != "$PRODUCTION_BRANCH" ]; then
+              echo "- **next**: \`git fetch origin && git push origin origin/$REF:$PRODUCTION_BRANCH\` (fast-forward), then merge \`origin/$REF\` into \`main\` (DEPLOY.md §6)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -68,3 +68,8 @@ details > summary::-webkit-details-marker { display: none; }
   .edge-mosaic { margin-block-start: var(--s-7); }
 }
 
+/* hero.lede vs hero.ledeShort (R69, R77): two definition sentences, one shown per breakpoint; the hidden one
+   is display:none so it stays out of the accessibility tree */
+.hero-lede--short { display: none; }
+@media (max-width: 559px) { .hero-lede--long { display: none; } .hero-lede--short { display: block; } }
+.img-missing { display: block; inline-size: 100%; aspect-ratio: 402 / 820; background: var(--paper-2); }
