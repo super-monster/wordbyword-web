@@ -33,6 +33,12 @@
 | H13 | 本地翻译引擎能否离线 | 本地引擎是 iOS 系统翻译（Apple `Translation` 框架，`TranslationAssetManager.swift`）：语言包状态为 `.supported` 时需先下载（App 估算约 100 MB），`.installed` 后在设备上翻译。整机断网流程（额度、统计等）未实测 → **对外不写"离线"**，可写"使用 iOS 内置翻译、在设备上完成（首次需下载语言包）" | `TranslationAssetManager.swift:26-50` |
 | H11 | 截图第三方内容、zh-Hant 截图回落 | 按默认：R31–R33、R71（zh-Hant 用 en 截图） | 裁定 |
 
+## M4-05 部分提前：GA4 后台设置（2026-10-06，用户确认）
+
+- 用户确认"现在注册"：在 WordByWord-Web（538133762）注册 5 个事件级自定义维度——Event label（`event_label`）、Page locale（`page_locale`）、Element location（`element_location`）、From locale（`from_locale`）、To locale（`to_locale`）。参数名与 `src/js/analytics.js` 一致。理由：自定义维度不回溯，提前注册才能拿到旧站最后约 6 周的 label × locale 基线。
+- 用户确认"标记"：`app_store_click` 设为关键事件（文档未要求；用于 G1 护栏与渠道转化率）。
+- 增强型衡量保持开启（出站点击产生的 `click` 与自定义事件名称不同，不重复计数）。M4-05 剩余：DebugView 逐个验证新站事件。
+
 ## M1-01 main 重建（2026-10-05）
 
 - 提交 `e3c3215`（main）："Rebuild main as a zero-dependency static generator (M1-01)"：删除旧站 84 个文件，favicon 移入 `public/`，新增 `build.mjs`、`src/site.mjs`、`src/lib/{html,seo}.mjs`、占位模板、`src/legal/*`（三份法律正文原样迁移，首行 updated 日期：privacy/support 2025-05-25，extension 2026-02-02）、`scripts/fixtures/{redirects.default.txt,requests.tsv}`（由文档 02 §5.2.2/§5.2.4 原样转写）、`.gitignore`（忽略 `docs/redesign-2026/`）。
@@ -54,7 +60,8 @@
 
 - 28 天：70 点击 / 1,306 展示 / 排名 8.3；3 个月：111 / 2,220 / 9.6。
 - **网页维度：只有 `/`、`/support.html`、`/chrome-extension/privacy.html`、`/privacy.html` 有展示；20 个语言页 0 展示。索引报告：Google 只知道 5 个网页（4 已编入、1 个"重复网页，用户未选定规范网页"）。** F30（架构为首因）由推断升级为实证。
-- 详见 `ops/m0/gsc-baseline-2026-10-05.md`。H2（GA4 基线）待做。
+- 详见 `ops/m0/gsc-baseline-2026-10-05.md`。
+- **H2（GA4 基线，2026-10-06，只读导出）**：媒体资源 WordByWord-Web（538133762），衡量 ID G-QS1CJY8YWL，报告时区 JST。90 天 446 次浏览 / 382 名活跃用户，首页占 88.6%；28 天自然搜索占会话 61.7%。G1 护栏基线：`app_store_click ÷ page_view` = 4.0%（90 天）。`surfenglish_promo` 共 24 次，其中顶部条占 22 次（新版无顶部条，R42）。**T0 切换窗口定为 13:00–16:00 JST**（会话最低谷）。自定义维度 0 项：label 用预定义维度"链接文字"（旧站把 label 写入 `link_text`）代替，`page_locale` 用网页路径代替。详见 `ops/m0/ga4-baseline-2026-10-06.md`。
 
 ## M1-02 Cloudflare Pages 项目（2026-10-06）
 
@@ -100,3 +107,11 @@
   - zh-Hans 查词图 `pins` ①.303 ②.747 ③.83、`ring` {x .025, y .286, w .288, h .033}（M2 量取，待 A12 目视复核）。
   - 节选边缘门槛由"亮度 σ < 4"改为"墨迹占比 ≤ 0.5%"，σ 只作提示：空白行横跨白底与浅灰卡片交界时 σ 可达 5–6。
   - favicon 改在 node 中绘制圆角，不依赖 Chrome headless；ICO 为 16 + 32 双图。AVIF 一律不带 alpha 平面（`alpha:false`）。
+
+## M1 退出（2026-10-06）
+
+- 提交：63555ed（校验器 L-1…L-14、D-1…D-24，M1-07/12/13）→ 12ab37e（校验器发现的文案问题、JS 包瘦身）→ 054254c（采纳 M1-03：实验组 L、C 开启，`redirectEvidence`，CF 上补全 git 历史，IndexNow 密钥文件，`sitemap-legacy.xml`）→ 5328861（CI 跑测试与伪 locale 扫描）。
+- 退出条件：① preview 构建正常（054254c：CF 实测 verify-deploy 136 PASS / 0 FAIL，contract-test 18 PASS；非浅克隆，39 个提交，sitemap lastmod 6/6）；② 38 条规则各有故意造错的样本触发（49 个测试，最后一个断言全部规则都被触发过）；③ spike 10 项均有结论，`contractMode:'proxy'`、`redirectFlags{true,true,true}` 定稿；④ 默认开关下 `_redirects` 与夹具逐行一致（67/7，测试断言；全开为 76/10）；⑤ CI Node 22/24 通过。
+- Agent D 报告的 4 个内容问题：法律页标题移入 `en.json legal.*`；about 的 `*Word by Word*` 改为“Word by Word”（已写回文档 08）；zh-Hans `chromeExtension.cta.contactSubject` 由英文改为"Chrome 扩展"（已写回文档 08，**请在 zh-Hans 审校时确认**）；JS 包 11.6 → 9.3 KB。
+- IndexNow 密钥已生成并写入 `SITE.indexNowKey`（公开值，构建输出 `/<key>.txt`）。`indexnow.yml` 在生产域名仍是 GitHub Pages 时会跳过，不会提前推送。
+- 校验器的取舍（Agent D）：L-5 允许设计上为空的两个键；D-9 的 `@id` 引用只要全站某页定义即算闭合；D-17 额外接受 `maintenance`、`info` 级别；L-8 以文档 06 §4.2 的上限优先；伪 locale 扫描跳过脚本与英文法律正文。
