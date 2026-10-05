@@ -25,9 +25,10 @@ export function icon(ctx, key, size, { alt = '', cls = '', lazy = true } = {}) {
 // iOS status bar: one component for the hero sample and every screenshot device (R67). Always 9:41, full bars.
 export const STATUS = (tone) => `<div class="ios-status" data-tone="${tone}" aria-hidden="true"><span class="ios-time">9:41</span><span class="ios-island"></span><span class="ios-sys"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 16 12"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.5 6.9a6.4 6.4 0 0 1 9 0l-1.5 1.5a4.3 4.3 0 0 0-6 0zM1.2 4.6a9.6 9.6 0 0 1 13.6 0l-1.5 1.5a7.5 7.5 0 0 0-10.6 0z"/></svg><svg viewBox="0 0 27 12"><rect x=".5" y=".5" width="23" height="11" rx="3.5" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="20" height="8" rx="2"/><path d="M25 4v4a2 2 0 0 0 0-4z" opacity=".4"/></svg></span></div>`;
 
-// Screenshot inside a CSS device (doc 05 §5.3): status bar drawn by CSS, image = status-bar-free crop.
+// Screenshot inside a CSS device (doc 05 §5.3): status bar drawn by CSS, image = status-bar-free crop. The screen is
+// always LTR, also on ar pages: iOS keeps 9:41 left and the battery right, and the screenshot is never mirrored (§9.2).
 export function deviceShot(ctx, key, { size, sizes, alt, screenExtra = '', deviceExtra = '' }) {
   const meta = ctx.img(key)?.meta ?? {};
   const bg = meta.statusBg ? ` style="--status-bg:${esc(meta.statusBg)}"` : '';
-  return `<div class="device device--${size}"${bg}><div class="device-screen">${STATUS(meta.statusTone ?? 'dark')}${picture(ctx, key, { sizes, alt })}${screenExtra}</div>${deviceExtra}</div>`;
+  return `<div class="device device--${size}"${bg}><div class="device-screen" dir="ltr">${STATUS(meta.statusTone ?? 'dark')}${picture(ctx, key, { sizes, alt })}${screenExtra}</div>${deviceExtra}</div>`;
 }

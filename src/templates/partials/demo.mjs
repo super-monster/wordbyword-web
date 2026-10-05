@@ -10,6 +10,8 @@ export function demo(ctx) {
   const { t, route } = ctx;
   const d = t.demo;
   const code = route.locale.hreflang;
+  // ar: the screen stays LTR, the translation and the lookup card run RTL; the red bar stays on the left (05 §5.2.6)
+  const rtl = route.locale.dir === 'rtl' ? ' dir="rtl"' : '';
   const cjk = route.locale.script === 'cjk';
   const lookup = d.lookup ?? null;
   let s2 = esc(d.source[1] ?? '');
@@ -19,7 +21,7 @@ export function demo(ctx) {
     s2 = esc(d.source[1]).replace(re, `$1<span class="w">$2</span>`);
   }
   const card = lookup ? `
-      <aside class="wb-card" lang="${code}">
+      <aside class="wb-card" lang="${code}"${rtl}>
         <p class="wb-card-head"><b class="wb-word" lang="${d.sourceLang}">${esc(lookup.word)}</b> <span class="wb-pos">${esc(lookup.pos)}</span><svg class="wb-speaker" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 8h3l4-3v10l-4-3H3z"/><path d="M13 7.5a3.5 3.5 0 0 1 0 5M15.2 5.5a6.4 6.4 0 0 1 0 9" fill="none"/></svg></p>
         <p class="wb-def">${esc(lookup.meaning)}</p>
         <p class="wb-note">${esc(lookup.note)}</p>
@@ -35,7 +37,7 @@ export function demo(ctx) {
         <p class="wb-title">${esc(d.articleTitle)}</p>${d.byline ? `
         <p class="wb-byline" aria-hidden="true">${esc(d.byline)}</p>` : ''}
         <p class="wb-src"><span class="s s1">${esc(d.source[0])}</span> <span class="s s2">${s2}</span></p>
-        <div class="wb-tr-wrap"><p class="wb-tr" lang="${code}"${route.locale.dir === 'rtl' ? '' : ''}>${d.translation.map(esc).join(cjk ? '' : ' ')}</p></div>
+        <div class="wb-tr-wrap"><p class="wb-tr" lang="${code}"${rtl}>${d.translation.map(esc).join(cjk ? '' : ' ')}</p></div>
         ${(d.context ?? []).map((p) => `<p class="wb-more" aria-hidden="true">${esc(p)}</p>`).join('')}
       </article>${card}
       ${TOOLS}

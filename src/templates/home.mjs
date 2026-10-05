@@ -111,7 +111,7 @@ export function home(ctx) {
             <div class="post" role="img" aria-label="${esc(`${plain(F.x.title)}: ${xs.source} — ${xs.translation}`)}">
               <p class="post-head" aria-hidden="true"><span class="post-avatar">${esc([...(xName || xs.handle.replace(/^@/, ''))][0].toUpperCase())}</span>${xName ? `<b>${esc(xName)}</b> ` : ''}<span class="post-handle">${esc(xs.time ? `${xs.handle} · ${xs.time}` : xs.handle)}</span></p>
               <p class="post-src" lang="${esc(t.demo.sourceLang)}">${esc(xs.source)}</p>
-              <p class="post-tr" lang="${l.hreflang}">${esc(xs.translation)}</p>
+              <p class="post-tr" lang="${l.hreflang}"${l.dir === 'rtl' ? ' dir="rtl"' : ''}>${esc(xs.translation)}</p>
               ${POST_ACTIONS}
             </div>
           </div>
@@ -127,7 +127,7 @@ export function home(ctx) {
   const mChunks = `
       <article class="m-card" aria-labelledby="f-chunks">
         <figure class="m-media">
-          <div class="canvas ck-canvas" role="img" aria-label="${esc(`${ch.sample.sentence} — ${ch.sample.gloss} — ${ch.sample.flowLabel}: ${ch.sample.flow}`)}">
+          <div class="canvas ck-canvas" dir="ltr" role="img" aria-label="${esc(`${ch.sample.sentence} — ${ch.sample.gloss} — ${ch.sample.flowLabel}: ${ch.sample.flow}`)}">
             <div class="ck-sample" aria-hidden="true" lang="en">
               <p class="ck-sentence">${sent}</p>
               <p class="ck-gloss" lang="${l.hreflang}">${esc(ch.sample.gloss)}</p>
@@ -207,7 +207,14 @@ export function home(ctx) {
   // ———— pricing (doc 05 §5.7, R43/R68): one table + summary + note + the WBW badge ————
   const tb = t.pricing.table;
   const q = product.wbw.quota;
-  const val = (v) => (v === '∞' ? `<span class="nolimit">${esc(tb.noLimit)}</span>` : esc(f(tb.perDay, { n: v })));
+  // "$3.99 / month (US)", "月額$3.99（米国の価格）": wrap only before the parenthesis, never inside a word (05 A7)
+  const priceLines = (s) => {
+    const i = s.search(/[（(]/);
+    if (i <= 0) return esc(s);
+    const a = s.slice(0, i);
+    return `<span class="nw">${esc(a.trimEnd())}</span>${a.endsWith(' ') ? ' ' : '<wbr>'}<span class="nw">${esc(s.slice(i))}</span>`;
+  };
+  const val = (v) => (v === '∞' ? `<span class="nolimit">${esc(tb.noLimit)}</span>` : `<span class="q-val">${esc(f(tb.perDay, { n: v }))}</span>`);
   const groups = [['translate', ['cloudSwipe', 'localSwipe']], ['lookup', ['lookup', 'more']], ['listen', ['lookupSpeech', 'swipeSpeech', 'localVoice']], ['sentence', ['chunks', 'actionFlow', 'syntax']]];
   const tbody = groups.map(([g, rows]) => `
           <tbody><tr class="grp"><th colspan="3" scope="colgroup">${esc(tb.groups[g])}</th></tr>${rows.map((row) => `
@@ -223,7 +230,7 @@ export function home(ctx) {
       <div class="table-wrap">
         <table class="quota">
           <caption>${esc(tb.caption)}</caption>
-          <thead><tr><th scope="col">${esc(tb.colFeature)}</th><th scope="col">${esc(tb.colFree)}</th><th scope="col" class="col-plus">${mosaicStrip('plus-mosaic')}<span class="plus-name">${esc(tb.colPlus)}</span><span class="plus-price">${esc(f(t.pricing.plus.price))}</span></th></tr></thead>${tbody}
+          <thead><tr><th scope="col">${esc(tb.colFeature)}</th><th scope="col">${esc(tb.colFree)}</th><th scope="col" class="col-plus">${mosaicStrip('plus-mosaic')}<span class="plus-name">${esc(tb.colPlus)}</span><span class="plus-price">${priceLines(f(t.pricing.plus.price))}</span></th></tr></thead>${tbody}
         </table>
       </div>
       ${t.pricing.summary ? `<p class="pricing-summary">${esc(f(t.pricing.summary))}</p>` : ''}

@@ -74,6 +74,8 @@
 .post-handle { color: #536471; }
 .post-src { margin-top: calc(8 * var(--pt)); }
 .post-tr { margin-top: calc(8 * var(--pt)); padding-left: calc(8 * var(--pt)); border-left: calc(3 * var(--pt)) solid #CC3355; font-family: var(--font-ui); }
+/* ar inside the LTR screen: right-aligned RTL text, bar and padding stay physically left like the app (05 §5.2.6) */
+:is(.wb-tr, .post-tr)[dir="rtl"] { text-align: right; }
 .post-actions { display: flex; justify-content: space-between; width: 72%; margin-top: calc(12 * var(--pt)); }
 .post-actions svg { width: calc(18 * var(--pt)); height: calc(18 * var(--pt)); fill: none; stroke: #536471; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 /* @physical-ok:end */

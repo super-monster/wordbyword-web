@@ -23,6 +23,8 @@
 .anno { position: relative; display: flex; align-items: flex-start; gap: var(--s-3); color: var(--ink-2); font-family: var(--font-read); font-size: var(--fs-h4); line-height: 1.45; }
 .anno-n { display: grid; flex: none; place-items: center; inline-size: 22px; block-size: 22px; margin-block-start: .15em; border-radius: 50%; background: var(--accent); color: #fff; font: 700 13px/1 var(--font-ui-latn); }
 .anno-line { display: none; }
+.anno-t { text-wrap: balance; } /* short notes: even lines, no 2-character last line in ja/zh */
+.anno-t:lang(ja) { word-break: auto-phrase; } /* and break between phrases, not inside 言い回し (Chrome) */
 @media (min-width: 900px) {
   .l2-head { margin-block-end: var(--s-7); }
   .anno { font-size: var(--fs-read); }
@@ -128,6 +130,7 @@ html[data-script="latn"] .spec-label { text-transform: uppercase; letter-spacing
 .quota th, .quota td { padding: 10px var(--s-4); border-block-start: 1px solid var(--hairline); text-align: start; vertical-align: top; }
 .quota thead th { padding-block: 10px; border-block-start: 0; vertical-align: bottom; }
 .quota thead th:first-child { color: var(--ink-3); font-size: var(--fs-xs); font-weight: 700; }
+.quota .q-val { white-space: nowrap; } /* "100 / day", "1日100回": never split a value */
 .quota thead th:not(:first-child) { font-size: var(--fs-h4); font-weight: 600; }
 .quota thead th:not(:first-child), .quota td { text-align: end; }
 .quota td { white-space: nowrap; }
@@ -138,6 +141,7 @@ html[data-script="latn"] .spec-label { text-transform: uppercase; letter-spacing
 .quota .col-plus::before { content: ""; position: absolute; inset-inline: 0; inset-block-start: 8px; block-size: 3px; background: var(--accent); }
 .plus-name { display: block; }
 .plus-price { display: block; color: var(--ink-2); font-size: var(--fs-small); font-weight: 400; white-space: nowrap; }
+.plus-price .nw { white-space: nowrap; }
 .quota .grp th { padding-block: 6px; background: var(--paper-3); color: var(--ink-2); font-size: var(--fs-xs); font-weight: 700; }
 html[data-script="latn"] .quota :is(thead th:first-child, .grp th) { text-transform: uppercase; letter-spacing: .08em; }
 .nolimit { font-weight: 600; }

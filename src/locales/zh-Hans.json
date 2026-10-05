@@ -124,7 +124,7 @@
   },
   "hero": {
     "eyebrow": "WordByWord · 为外语学习者设计的网页双语阅读 App",
-    "title": "iPhone [[网页双语对照]]：向右滑动段落，原文不动，译文插在下方。",
+    "title": "iPhone [[网页双语对照]]：{wbr}向右滑动{wbr}段落，{wbr}原文不动，{wbr}译文{wbr}插在下方。",
     "lede": "WordByWord 是一款为外语学习者设计的 iPhone / iPad 网页双语阅读 App。",
     "ledeShort": "WordByWord 是一款为外语学习者设计的 iPhone / iPad 网页双语阅读 App。",
     "ctaNote": "免费下载 · iPhone / iPad",
@@ -164,14 +164,14 @@
     "caption": "用 HTML 还原的 App 界面演示（不是截图）：英文段落下方插入了中文译文。"
   },
   "featuresIntro": {
-    "title": "右滑翻译，双击查词：任意网页都能双语对照读",
+    "title": "右滑翻译，{wbr}双击查词：{wbr}任意网页{wbr}都能{wbr}双语对照读",
     "lede": "为边读外语网页边学语言的人设计。大多数时候，这两个手势就够了；遇到需要细看的句子，还有下面这些工具。"
   },
   "features": [
     {
       "id": "swipe",
       "kicker": "右滑翻译",
-      "title": "右滑翻译：译文插在原文下方，逐段或逐句对照",
+      "title": "右滑翻译：{wbr}译文插在{wbr}原文下方，{wbr}逐段或{wbr}逐句对照",
       "text": "在内置浏览器里打开网页（输入网址或直接搜索），向右滑动一段文字，译文就插在它下面。不用切换页面，原文和译文对照着读，也不会读丢位置。",
       "bullets": [
         "显示方式：自动、段落、逐句",
@@ -184,7 +184,7 @@
     {
       "id": "lookup",
       "kicker": "双击查词",
-      "title": "AI 语境查词：双击单词，看懂它在这句话里的意思",
+      "title": "AI 语境查词：{wbr}双击单词，{wbr}看懂它在{wbr}这句话里的{wbr}意思",
       "text": "WordByWord 先读完整句话，再解释这个词，并优先识别短语和固定搭配。你看到的是它在这里的意思，而不是一长串词典义项。",
       "bullets": [
         "在网页上双击任意单词",
@@ -198,7 +198,7 @@
     {
       "id": "x",
       "kicker": "推特（X）",
-      "title": "在内置浏览器里双语看推特（X）",
+      "title": "在内置浏览器里{wbr}双语看{wbr}推特（X）",
       "text": "在 WordByWord 的内置浏览器里登录 x.com，向右滑动一条推文，译文就出现在它下面。关注用外语发帖的账号时尤其方便。",
       "image": "shot/{set}/x",
       "alt": "WordByWord 读推文的示意：英文推文下方插入了中文译文（不是截图）",
@@ -213,7 +213,7 @@
     {
       "id": "chunks",
       "kicker": "英文网页",
-      "title": "语言块提取与句子动作脉络（Action Flow），仅限英文",
+      "title": "语言块提取与{wbr}句子动作脉络{wbr}（Action Flow），{wbr}仅限英文",
       "text": "对英文句子右滑翻译后，“语言块提取”会给整体使用的短语加下划线，“句子动作脉络”会标出句子的核心动作和与之相关的动作。可设为自动、手动或关闭。",
       "note": "仅支持英文原文。",
       "sample": {
@@ -231,7 +231,7 @@
     {
       "id": "speech",
       "kicker": "朗读",
-      "title": "AI 朗读，也可用更快的 iOS 本地语音",
+      "title": "AI 朗读，{wbr}也可用{wbr}更快的 iOS 本地语音",
       "text": "单词、整句都能读出来。“AI智能朗读”用云端的自然语音；“本地朗读”用 iOS 内置语音，播放更快，可调语速，也能用你已下载的高品质（Premium / 增强）语音。",
       "image": "shot/{set}/tts",
       "alt": "iPhone 上的 WordByWord：双语对照的段落，屏幕底部是朗读播放器"
@@ -239,7 +239,7 @@
     {
       "id": "syntax",
       "kicker": "句型解析",
-      "title": "AI 句子结构解析：外语长句一眼看清",
+      "title": "AI 句子结构解析：{wbr}外语长句{wbr}一眼看清",
       "text": "从右滑翻译历史里打开一句话，点“获取 AI 句型解析”，它会把句子拆成几个部分，并解释它们之间的关系。",
       "image": "shot/{set}/syntax",
       "alt": "iPhone 上的 WordByWord：右滑翻译详情页中，一句话的 AI 句型结构解析"
@@ -253,13 +253,13 @@
     {
       "id": "display",
       "kicker": "显示",
-      "title": "译文怎么排、什么样式，你来定",
+      "title": "译文怎么排、{wbr}什么样式，{wbr}你来定",
       "text": "自动、段落、逐句；自动显示或点按显示；多种译文样式可选"
     },
     {
       "id": "history",
       "kicker": "历史",
-      "title": "翻译与查词历史，随时回看",
+      "title": "翻译与查词历史，{wbr}随时回看",
       "text": "右滑翻译的句子和查过的词连同原句保存，可回看，也可清空"
     },
     {
@@ -270,7 +270,7 @@
     }
   ],
   "gallery": {
-    "title": "App 里的设置与“更多释义”页面",
+    "title": "App 里的{wbr}设置与{wbr}“更多释义”{wbr}页面",
     "items": [
       {
         "id": "settings",
@@ -297,7 +297,7 @@
     ]
   },
   "languages": {
-    "title": "{targetLanguages} 种语言网页翻译，不只是英文网页",
+    "title": "{targetLanguages} 种语言{wbr}网页翻译，{wbr}不只是{wbr}英文网页",
     "lede": "选好译文语言就行。源语言默认是英语，WordByWord 会根据你正在读的网页识别语言并自动更新，也可以手动设置。",
     "uiCount": "App 界面 {uiLanguages} 种语言",
     "targetCount": "可译成 {targetLanguages} 种语言",
@@ -309,7 +309,7 @@
     ]
   },
   "pricing": {
-    "title": "每天免费用，读得多再升级 Plus",
+    "title": "每天{wbr}免费用，{wbr}读得多{wbr}再升级 Plus",
     "lede": "WordByWord 可免费下载，大多数功能每天都有免费额度（每日重置）；升级 WordByWord Plus 可提高额度。",
     "table": {
       "caption": "每日额度：免费版与 Plus",
@@ -349,7 +349,7 @@
     "note": "各地区价格不同，以 App Store 显示为准。订阅可随时在 Apple 账户设置中取消。"
   },
   "faq": {
-    "title": "关于 WordByWord 的常见问题",
+    "title": "关于 WordByWord\u00a0的{wbr}常见问题",
     "items": [
       {
         "id": "what-is",
@@ -442,7 +442,7 @@
     }
   },
   "cta": {
-    "title": "在 iPhone 上开始双语阅读外语网页",
+    "title": "在 iPhone 上{wbr}开始双语阅读{wbr}外语网页",
     "recap": "右滑翻译 · 双击查词 · AI 朗读 · 可译成 {targetLanguages} 种语言",
     "text": "App Store 免费下载，支持 iPhone 和 iPad。"
   },
@@ -487,7 +487,7 @@
     },
     "hero": {
       "eyebrow": "WordByWord Chrome 扩展",
-      "title": "在 Chrome 里[[双语对照]]读网页，原文保持不动",
+      "title": "在 Chrome 里{wbr}[[双语对照]]{wbr}读网页，{wbr}原文保持不动",
       "lede": "WordByWord Translate 是 WordByWord iPhone App 的开发者做的浏览器扩展。鼠标悬停在段落上，按下 Shift，译文就出现在它正下方；在单词上按 Control，会弹出它在这句话里的简短释义。",
       "worksWith": "支持 Chrome 和 Microsoft Edge。使用本地翻译模型需要 {ext.minChrome} 及以上版本。"
     },
