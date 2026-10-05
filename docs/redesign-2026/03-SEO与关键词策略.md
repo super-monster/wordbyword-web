@@ -388,7 +388,7 @@ GSC 现状（F25，28 天）：71 次点击 / 1,286 次展示；"wordbyword" 40/
 - 不放品牌（R27：品牌由 title 首词、logo alt、eyebrow、首段定义句承担，主角仍是 WordByWord，满足基线 §B1）；不放 SE；不复用 SE 的 H1 句式（SE："Read English news with the translation directly below every sentence"，研究 03 §2.3）。
 - H1 中的荧光笔短语 `[[…]]` 恰好 1 处（R65、文档 06 L-7），由文档 08 标注；建议落在 K1 核心名词上。
 - H1 拉丁 ≤ 75 字符、CJK ≤ 32 全角宽度（hero 排版两行内；计长前剥除 `[[ ]]` 与 `{wbr}`）。
-- eyebrow（H1 上方小字，`<p>` 非标题）模板：`WordByWord · <品类>`。例：en "WordByWord · Bilingual web reader"；zh-Hans "WordByWord · 网页双语阅读"；ja "WordByWord・Web対訳リーダー"。"免费 · iPhone & iPad" 不再放在 eyebrow，改为 CTA 下方的一行 `hero.priceShort`（en "Free to start · iPhone & iPad"；zh-Hans "免费使用 · iPhone / iPad"；ja「無料で使える・iPhone / iPad」），所有宽度都显示（R69、PRO-09）。
+- eyebrow（H1 上方小字，`<p>` 非标题）模板：`WordByWord · <品类>`。例：en "WordByWord · Bilingual web reader"；zh-Hans "WordByWord · 网页双语阅读"；ja "WordByWord・Web対訳リーダー"。"免费 · iPhone & iPad" 不再放在 eyebrow，改为 CTA 下方的一行 `hero.ctaNote`（原 `hero.ctaNote`，R77 收编）（en "Free to start · iPhone & iPad"；zh-Hans "免费使用 · iPhone / iPad"；ja「無料で使える・iPhone / iPad」），所有宽度都显示（R69、PRO-09）。
 
 ### 3.4 H2 / H3 层级模板（首页）
 
@@ -580,7 +580,7 @@ section 顺序以文档 02 §7.5 为准；本节规定**每块承担哪些关键
 
 ```
 ┌ header ─ logo「WordByWord」· Features · Languages · Pricing · FAQ · Chrome extension（仅 S1）· [语言切换 ▾] · [Download]（R16）
-├ #hero ─ eyebrow / H1(K1) / 短副文 / CTA + priceShort 一行 / 实时双语样张(HTML, data-nosnippet) / 定义句 p / 真实截图
+├ #hero ─ eyebrow / H1(K1) / 短副文 / CTA + ctaNote 一行（原 priceShort，R77） / 实时双语样张(HTML, data-nosnippet) / 定义句 p / 真实截图
 │          （<560 宽：H1 → 短副文 → CTA + "免费 · iPhone & iPad" → 样张；长 platformNote 移到样张之后，R69）
 ├ #features ─ H2(K1+K2 场景句)
 │    ├ H3 K1 右滑翻译      ├ H3 K2 双击语境查词   ├ H3 K9 X 双语阅读
@@ -1245,7 +1245,7 @@ ko 的 K2 H3 写「두 번 탭하면 AI 사전이 문맥에 맞는 뜻을 알려
 | R64 术语 lint | 已标注：zh-Hant 用语表与 glossary | §2.2 zh-Hant、§3.9 复核要点 ⑩、A10 |
 | R65 荧光笔只用于 H1 一个短语 | 已标注：H1 的 `[[…]]` 恰好 1 处 | §3.3 |
 | R66 / R67 hero 样张与截图状态栏 | 已标注 | §6.4 |
-| R69 手机首屏 | 已改：eyebrow 不再放"免费"，新增 `hero.priceShort` | §3.3、§3.5、§4.1 |
+| R69 手机首屏 | 已改：eyebrow 不再放"免费"，新增 `hero.ctaNote`（原 `hero.ctaNote`，R77 收编） | §3.3、§3.5、§4.1 |
 | R70 品牌可见性 | 已标注：手机端保留字标 | §4.1 header 行 |
 | R73 FAQ 增补 | 已改：新增"是否需要账号"、恢复购买、Android；删除名字含义叙事 | §3.10、§4.3 |
 | R29 / R30 / R37 / R56 / R57、R4 / R7 / R11 / R20 | 不涉及本文，或已被 R42 / R44 / R69 取代，无改动 | — |
