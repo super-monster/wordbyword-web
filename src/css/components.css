@@ -36,7 +36,7 @@
   /* device 360 = 10 bezel + 340 screen; screen height = 340 * 874 / 402 = 739.2px; the note's first line meets its pin */
   .anno { position: absolute; inset-inline: 0; top: calc(10px + var(--y) * 739.2px - 14px); }
   .anno--start { flex-direction: row-reverse; text-align: end; }
-  .anno-line { display: block; position: absolute; top: 14px; block-size: 0; inline-size: calc(var(--s-7) - 11px); border-block-start: 1px solid var(--hairline-strong); transition: transform var(--dur-4) var(--ease-out); }
+  .js .anno-line { display: block; position: absolute; top: 14px; block-size: 0; inline-size: calc(var(--s-7) - 11px); border-block-start: 1px solid var(--hairline-strong); transition: transform var(--dur-4) var(--ease-out); }
   .anno--start .anno-line { inset-inline-start: 100%; transform-origin: left center; }
   .anno--end .anno-line { inset-inline-end: 100%; transform-origin: right center; }
   html[dir="rtl"] .anno--start .anno-line { transform-origin: right center; }
@@ -158,7 +158,7 @@ html[data-script="latn"] .quota :is(thead th:first-child, .grp th) { text-transf
 }
 
 /* ===== 12. SurfEnglish sibling card (04 §3.1 + 05 §5.9; R40–R44): paper card, one SE window, text links only ===== */
-.sibling { padding-block: var(--section-y-s) 0; }
+.sibling { margin-block-start: var(--section-y-s); } /* margin, so #surfenglish measures the card itself (04 A4) */
 .sibling__inner { display: grid; gap: var(--s-6); max-inline-size: 960px; margin-inline: auto; padding: 20px; border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--paper-2); }
 .sibling__eyebrow { display: flex; align-items: center; gap: 10px; color: var(--ink-3); font-size: var(--fs-xs); font-weight: 600; line-height: 1.35; }
 html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-spacing: .06em; }
@@ -198,13 +198,6 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
   .faq-layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-6); align-items: start; }
   .faq-head { grid-column: 1 / span 4; position: sticky; inset-block-start: 88px; margin: 0; }
   .faq-list { grid-column: 5 / -1; max-inline-size: none; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  @supports (interpolate-size: allow-keywords) {
-    .faq-list { interpolate-size: allow-keywords; }
-    .faq-item::details-content { block-size: 0; overflow: hidden; transition: block-size var(--dur-3) var(--ease-out), content-visibility var(--dur-3) allow-discrete; }
-    .faq-item[open]::details-content { block-size: auto; }
-  }
 }
 
 /* ===== 14. Final CTA (05 §5.10.1; R43): the page's lower half belongs to WBW ===== */

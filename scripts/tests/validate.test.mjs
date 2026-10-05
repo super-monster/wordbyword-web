@@ -743,6 +743,15 @@ test('D-23 OG images match the copy (ENG-12, R59)', () => {
   noErrors(i, 'D-23', /home-ja: copy changed/);
 });
 
+test('D-24 extension page header: own navigation and an honest main button (doc 02 §3.5, §7.1)', () => {
+  const i = runDist((d) => edit(d, 'chrome-extension/index.html', (h) => h
+    .replace(/<a class="btn btn-small" href="[^"]*" data-ga-label="chrome_ext">[^<]*<\/a>/, '<a class="btn btn-small" href="https://apps.apple.com/app/id6741724502" data-ga-label="header">Download</a>')
+    .replaceAll('<li><a href="#features">', '<li><a href="/#features">')));
+  expectE(i, 'D-24', /S0 — the header button must be the WBW App Store link labelled as the iPhone app, not "Download"/);
+  expectE(i, 'D-24', /the extension page header must link #features/);
+  noErrors(runDist(), 'D-24');
+});
+
 test('D-24 Chrome extension sub-site S0 / S1 (R2, R16, R45)', () => {
   let i = runDist((d) => {
     edit(d, 'index.html', (h) => h

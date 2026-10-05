@@ -45,6 +45,6 @@ export function demo(ctx) {
       <span class="cue cue-tap" aria-hidden="true"></span>
     </div>
   </div>
-  <figcaption class="sample-cap"><span id="sample-cap">${esc(d.caption)}</span> <button class="sample-toggle" type="button" hidden data-pause="${esc(d.ui.pause)}" data-replay="${esc(d.ui.replay)}">${esc(d.ui.pause)}</button></figcaption>
+  <figcaption class="sample-cap"><span id="sample-cap">${esc(d.caption)}</span> <button class="sample-toggle" type="button" data-pause="${esc(d.ui.pause)}" data-replay="${esc(d.ui.replay)}">${esc(d.ui.pause)}</button></figcaption>
 </figure>`;
 }

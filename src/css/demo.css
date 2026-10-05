@@ -98,4 +98,7 @@
 .sample-cap { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 4px 12px; max-inline-size: 360px; color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.5; text-align: center; }
 .sample-toggle { min-block-size: 44px; min-inline-size: 44px; padding-inline: 14px; border: 1px solid var(--hairline-strong); border-radius: var(--r-2); background: transparent; color: var(--ink); font-size: var(--fs-xs); font-weight: 600; cursor: pointer; }
 .sample-toggle:hover { background: var(--paper-2); }
+.sample-toggle { visibility: hidden; } /* space reserved: no shift when the script shows it (D8) */
+.sample-toggle.is-ready { visibility: visible; }
+@media (prefers-reduced-motion: reduce) { .sample-toggle { display: none; } }
 

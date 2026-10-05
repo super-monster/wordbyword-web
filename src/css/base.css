@@ -30,7 +30,7 @@ html:is([data-script="latn"], [data-script="cyrl"]) :is(h1, h2, .h-sub) { letter
 html:is([data-script="latn"], [data-script="cyrl"]) h3:not(.h-sub):not(.h-4) { letter-spacing: -.01em; }
 html[data-script="cjk"] :is(h1, h2, h3) { line-height: 1.25; letter-spacing: 0; }
 html[data-script="cjk"] :is(h1, h2, h3) { word-break: keep-all; overflow-wrap: anywhere; }
-html:lang(ja) :is(h1, h2, h3) { word-break: auto-phrase; }   /* Chromium 119+; others keep keep-all + <wbr> */
+html:lang(ja) :is(h1, h2, h3):not(:has(wbr)) { word-break: auto-phrase; }   /* Chromium 119+; never over {wbr} markers (A7) */
 html:is(:lang(zh-Hans), :lang(zh-Hant)) :is(h1, h2, h3) { word-break: normal; }   /* 05 §3.5: balance, no markers */
 /* …unless the A7 review gave a heading {wbr} markers: then it breaks only there (05 §3.5 ".wbr-keep", via :has) */
 html:is(:lang(zh-Hans), :lang(zh-Hant)) :is(h1, h2, h3):has(wbr) { word-break: keep-all; }

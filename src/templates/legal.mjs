@@ -15,7 +15,7 @@ export function legal(ctx) {
   const body = source.replace(/^<!--[\s\S]*?-->\n/gm, '').trim();
   const { title, description } = ctx.t.legal[KEY[page.doc]];
   return layout(ctx, {
-    title: `${title} — WordByWord`,
+    title: title.includes('WordByWord') ? title : `${title} — WordByWord`, // no doubled brand (extension privacy)
     description,
     main: `
 <article class="legal" data-legal="${esc(page.doc)}">

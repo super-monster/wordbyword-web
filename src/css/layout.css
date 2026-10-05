@@ -17,6 +17,7 @@ details > summary::-webkit-details-marker { display: none; }
 .lang-switch[open] .i-chev { transform: rotate(180deg); }
 .lang-switch .i-chev, .lang-current { display: none; }   /* < 560: globe only; the summary's aria-label names the language */
 .lang-menu { position: fixed; inset-inline: var(--gutter); inset-block-start: 60px; z-index: var(--z-menu); max-block-size: calc(100dvh - 80px); overflow: auto; padding: var(--s-3); border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--surface); box-shadow: var(--shadow-2); }
+.lang-note { margin: 0 0 var(--s-2); padding: 6px 12px 10px; border-block-end: 1px solid var(--hairline); color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.5; }
 .lang-menu ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
 .lang-menu a { display: flex; align-items: center; min-block-size: 44px; padding-inline: 12px; border-radius: var(--r-1); color: var(--ink); font-size: .9375rem; text-decoration: none; }
 .lang-menu a:hover { background: var(--paper-2); }

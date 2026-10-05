@@ -40,7 +40,7 @@ export function chromeExtension(ctx) {
     <p class="platform-note">${esc(f(c.hero.worksWith))}</p>
   </div>
 </section>
-<section id="how" class="section" aria-labelledby="ext-how">
+<section id="features" class="section" aria-labelledby="ext-how">
   <div class="container">
     <h2 id="ext-how">${head(c.howTitle)}</h2>
     <ul class="spec ext-features">${features}</ul>

@@ -100,7 +100,7 @@
 
   if (reduced.matches || !hasIO) return;     // final frame only; no control needed
   if (btn) {
-    btn.hidden = false;
+    btn.classList.add('is-ready');
     btn.addEventListener('click', () => (playing ? stop() : play()));
   }
   new IntersectionObserver(([e]) => {
@@ -108,7 +108,7 @@
     else if (!e.isIntersecting && playing) stop();
   }, { threshold: 0.35 }).observe(fig);
   document.addEventListener('visibilitychange', () => { if (document.hidden && playing) stop(); });
-  reduced.addEventListener?.('change', () => { if (reduced.matches) { stop(); if (btn) btn.hidden = true; } });
+  reduced.addEventListener?.('change', () => { if (reduced.matches) { stop(); btn?.classList.remove('is-ready'); } });
   if ('ResizeObserver' in window) new ResizeObserver(place).observe(screen);
   document.fonts?.ready.then(place);
 })();

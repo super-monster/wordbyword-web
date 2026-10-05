@@ -982,6 +982,21 @@ function checkExtension(r, p, { cfg, strings, routes, E, at }) {
       E('D-24', `${at}: S1 — the extension CTA must link to SITE.chromeStoreUrl with data-ga-event="chrome_store_click"`);
     }
   }
+  // extension page header (doc 02 §3.5, §7.1): nav = iPhone app (home), #features, #faq; the main button is
+  // "Add to Chrome" in S1, the WBW App Store link named as the iPhone app in S0 — never the plain "Download"
+  if (isExt && header) {
+    const home = r.locale.path ? `/${r.locale.path}/` : '/';
+    const hrefs = headerNavLinks.map((a) => a.attrs.href);
+    for (const h of [home, '#features', '#faq']) if (!hrefs.includes(h)) E('D-24', `${at}: the extension page header must link ${h} (doc 02 §7.1)`);
+    for (const id of ['features', 'faq']) if (!p.ids.has(id)) E('D-24', `${at}: the extension page needs a #${id} section for its header navigation`);
+    const btn = find(header, (e) => e.tag === 'a' && hasClass(e, 'btn'));
+    const label = normSpace(textOf(btn ?? header));
+    const t = strings[r.locale.code];
+    if (live && btn?.attrs.href !== SITE.chromeStoreUrl) E('D-24', `${at}: S1 — the header button must be "Add to Chrome" to SITE.chromeStoreUrl (doc 02 §3.5)`);
+    if (!live && (!new RegExp(`id${SITE.appStoreId}\\b`).test(btn?.attrs.href ?? '') || label === normSpace(t?.nav?.download ?? ''))) {
+      E('D-24', `${at}: S0 — the header button must be the WBW App Store link labelled as the iPhone app, not "${t?.nav?.download}" (doc 02 §3.5)`);
+    }
+  }
   if (r.page.id === 'extension-privacy' && !live && r.indexable) E('D-24', `${at}: S0 — the extension privacy page follows the extension page and is noindex (R2)`);
   if (isExt && !textOf(doc, { sep: ' ' }).includes('WordByWord.io')) E('D-24', `${at}: the extension page must state it is not affiliated with WordByWord.io (R2, R15)`);
   if (r.page.id === 'home') {

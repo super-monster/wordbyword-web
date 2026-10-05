@@ -85,10 +85,24 @@ function header(ctx) {
   const anchor = (id) => (onHome ? `#${id}` : `${home}#${id}`);
   const extHref = l.code === 'zh-Hans' ? '/zh-hans/chrome-extension/' : '/chrome-extension/';
   const extLang = l.code === 'en' || l.code === 'zh-Hans' ? '' : ' hreflang="en"';
-  const navItems = `<li><a href="${anchor('features')}">${esc(t.nav.features)}</a></li><li><a href="${anchor('languages')}">${esc(t.nav.languages)}</a></li><li><a href="${anchor('pricing')}">${esc(t.nav.pricing)}</a></li><li><a href="${anchor('faq')}">${esc(t.nav.faq)}</a></li>${SITE.chromeStoreUrl ? `<li><a href="${extHref}"${extLang}>${esc(t.nav.chromeExtension)}</a></li>` : ''}`;
+  // Extension pages (doc 02 §3.5, §7.1): iPhone app → home, the page's own #features / #faq; the main button is
+  // "Add to Chrome" in S1 and, in S0, the WBW App Store link labelled as the iPhone app (ct=wbw-ext, R55).
+  const onExt = route.page.id === 'chrome-extension';
+  const navItems = onExt
+    ? `<li><a href="${home}">${esc(t.nav.iphoneApp)}</a></li><li><a href="#features">${esc(t.nav.features)}</a></li><li><a href="#faq">${esc(t.nav.faq)}</a></li>`
+    : `<li><a href="${anchor('features')}">${esc(t.nav.features)}</a></li><li><a href="${anchor('languages')}">${esc(t.nav.languages)}</a></li><li><a href="${anchor('pricing')}">${esc(t.nav.pricing)}</a></li><li><a href="${anchor('faq')}">${esc(t.nav.faq)}</a></li>${SITE.chromeStoreUrl ? `<li><a href="${extHref}"${extLang}>${esc(t.nav.chromeExtension)}</a></li>` : ''}`;
+  // the visible text is the accessible name (WCAG 2.5.3): CSS shows one of the two spans
   const dl = t.nav.downloadShort && t.nav.downloadShort !== t.nav.download
-    ? `<span class="dl-long">${esc(t.nav.download)}</span><span class="dl-short" aria-hidden="true">${esc(t.nav.downloadShort)}</span>`
+    ? `<span class="dl-long">${esc(t.nav.download)}</span><span class="dl-short">${esc(t.nav.downloadShort)}</span>`
     : esc(t.nav.download);
+  const mainButton = !onExt
+    ? `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'header'))}" data-ga-label="header">${dl}</a>`
+    : SITE.chromeStoreUrl
+      ? `<a class="btn btn-small" href="${esc(SITE.chromeStoreUrl)}" data-ga-event="chrome_store_click" data-ga-label="ext_header">${esc(t.chromeExtension.cta.available)}</a>`
+      : `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'ext'))}" data-ga-label="chrome_ext">${esc(t.chromeExtension.cta.iosApp)}</a>`;
+  // a page that exists in one language only says so at the top of the menu (doc 02 §7.2)
+  const versions = ctx.routes.filter((r) => r.page.id === route.page.id && !r.page.file).length;
+  const langNote = versions === 1 && t.common.langFallbackNote ? `<p class="lang-note">${esc(t.common.langFallbackNote)}</p>` : '';
   return `<div class="header-sentinel" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container header-inner">
@@ -97,9 +111,9 @@ function header(ctx) {
     <div class="header-tools">
       <details class="lang-switch">
         <summary aria-label="${esc(t.common.languageLabel)}: ${esc(l.native)}">${SVG.globe}<span class="lang-current" lang="${l.hreflang}">${esc(l.native)}</span>${SVG.chevron}</summary>
-        <nav class="lang-menu" aria-label="${esc(t.nav.ariaLanguages)}"><ul>${langLinks(ctx, 'header')}</ul></nav>
+        <nav class="lang-menu" aria-label="${esc(t.nav.ariaLanguages)}">${langNote}<ul>${langLinks(ctx, 'header')}</ul></nav>
       </details>
-      <a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'header'))}" data-ga-label="header" aria-label="${esc(t.nav.download)}">${dl}</a>
+      ${mainButton}
       <details class="nav-menu">
         <summary aria-label="${esc(t.common.menu)}">${SVG.menu}</summary>
         <nav class="nav-menu-panel" aria-label="${esc(t.nav.ariaMain)}"><ul>${navItems}</ul></nav>

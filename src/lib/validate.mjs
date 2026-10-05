@@ -64,6 +64,7 @@ const KW_EXACTLY_ONE = ['hero.title', 'chromeExtension.hero.title'];
 const KW_AT_MOST_ONE = ['meta.ogHeadline'];
 const WBR_FIELDS = ['hero.title', 'featuresIntro.title', 'features[*].title', 'gallery.title', 'languages.title', 'pricing.title',
   'sibling.card.title', 'faq.title', 'cta.title', 'chromeExtension.hero.title',
+  'chromeExtension.howTitle', 'chromeExtension.shotsTitle', 'chromeExtension.languages.title', 'chromeExtension.faqTitle', 'chromeExtension.iosBand.title',
   // "及各按钮文字" — button labels
   'nav.download', 'nav.downloadShort', 'hero.secondaryCta', 'chromeExtension.cta.available', 'chromeExtension.cta.contact',
   'chromeExtension.iosBand.link', 'sibling.card.linkText', 'sibling.card.appStoreLinkText'];

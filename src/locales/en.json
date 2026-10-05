@@ -721,7 +721,8 @@
       "available": "Add to Chrome",
       "unavailable": "Not in the Chrome Web Store yet",
       "contact": "Want to try it early? Email the developer",
-      "contactSubject": "Chrome extension"
+      "contactSubject": "Chrome extension",
+      "iosApp": "Get the iPhone app"
     },
     "howTitle": "How it works",
     "features": [
