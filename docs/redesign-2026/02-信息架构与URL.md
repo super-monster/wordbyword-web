@@ -494,7 +494,7 @@ D21  /pt/*           /pt-br/:splat       301
 
    | 日期 | 环境 | 请求 | 实际 Location | `QUERY_PRESERVED` |
    |---|---|---|---|---|
-   | （待填） | preview | `/ja-top.html?utm_source=t` | | |
+   | 2026-10-06 | preview（`spike-default`、`spike-lc`、`main` 三个预览） | `/ja-top.html?utm_source=t` | `/ja/?utm_source=t`（301） | 1 |
    | （待填） | 生产 | 同上 | | |
 
 7. **hash**：fragment 不会发到服务端，浏览器跳转时会自动带上。所以 `/ja-top.html#faq` 会落到 `/ja/#faq`，前提是 §7.5 保留了 `faq` 这个 id。旧版 `#cta` 同理会落到新版的最终 CTA 区（§7.5）。

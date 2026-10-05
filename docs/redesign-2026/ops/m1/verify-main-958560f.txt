@@ -1,0 +1,150 @@
+verify-deploy  https://main.wordbyword-web.pages.dev  --preview  QUERY_PRESERVED=1  2026-10-05T15:24:09Z
+
+== 0) deployment under test
+  PASS  deployed commit 958560fa724e = local HEAD, .cache describes this deployment
+
+== 1) pages: status, robots, canonical, hreflang count, language (doc 06 §11.4-1; R47, R49, R60)
+  PASS  / 200, index, self-canonical, 4 hreflang links, lang=en dir=ltr script=latn
+  PASS  /zh-hans/ 200, index, self-canonical, 4 hreflang links, lang=zh-Hans dir=ltr script=cjk
+  PASS  /ja/ 200, index, self-canonical, 4 hreflang links, lang=ja dir=ltr script=cjk
+  PASS  /about/ 200, index, self-canonical, 0 hreflang links, lang=en dir=ltr script=latn
+  PASS  /chrome-extension/ 200, noindex, no canonical, 0 hreflang links, lang=en dir=ltr script=latn
+  PASS  /zh-hans/chrome-extension/ 200, noindex, no canonical, 0 hreflang links, lang=zh-Hans dir=ltr script=cjk
+
+== 2) contract URLs: scripts/contract-test.sh (doc 06 §9.3, Q01–Q14)
+  PASS  contract-test: 21 pass, 0 warn, 0 fail
+
+== 3) _redirects: every static rule is one hop to a published 200 page; splat samples (Q06–Q11, Q15–Q21, Q32)
+  PASS  A4 /privacy → 301 /privacy.html
+  PASS  A5 /privacy/ → 301 /privacy.html
+  PASS  A6 /support → 301 /support.html
+  PASS  A7 /support/ → 301 /support.html
+  PASS  A8 /chrome-extension/privacy → 301 /chrome-extension/privacy.html
+  PASS  A9 /chrome-extension/privacy/ → 301 /chrome-extension/privacy.html
+  PASS  B1 /index.html → 301 /
+  PASS  B2 /index → 301 /
+  PASS  B3 /en-top.html → 301 /
+  PASS  B4 /en-top → 301 /
+  PASS  C01 /cn-top.html → 301 /zh-hans/
+  PASS  C02 /cn-top → 301 /zh-hans/
+  PASS  C03 /zh-top.html → 301 /zh-hans/
+  PASS  C04 /zh-top → 301 /zh-hans/
+  PASS  C05 /tw-top.html → 302 /
+  PASS  C06 /tw-top → 302 /
+  PASS  C07 /ja-top.html → 301 /ja/
+  PASS  C08 /ja-top → 301 /ja/
+  PASS  C09 /ko-top.html → 302 /
+  PASS  C10 /ko-top → 302 /
+  PASS  C11 /es-top.html → 302 /
+  PASS  C12 /es-top → 302 /
+  PASS  C13 /pt-top.html → 302 /
+  PASS  C14 /pt-top → 302 /
+  PASS  C15 /fr-top.html → 302 /
+  PASS  C16 /fr-top → 302 /
+  PASS  C17 /de-top.html → 302 /
+  PASS  C18 /de-top → 302 /
+  PASS  C19 /it-top.html → 302 /
+  PASS  C20 /it-top → 302 /
+  PASS  C21 /nl-top.html → 302 /
+  PASS  C22 /nl-top → 302 /
+  PASS  C23 /pl-top.html → 302 /
+  PASS  C24 /pl-top → 302 /
+  PASS  C25 /ru-top.html → 302 /
+  PASS  C26 /ru-top → 302 /
+  PASS  C27 /tr-top.html → 302 /
+  PASS  C28 /tr-top → 302 /
+  PASS  C29 /uk-top.html → 302 /
+  PASS  C30 /uk-top → 302 /
+  PASS  C31 /vi-top.html → 302 /
+  PASS  C32 /vi-top → 302 /
+  PASS  C33 /th-top.html → 302 /
+  PASS  C34 /th-top → 302 /
+  PASS  C35 /id-top.html → 302 /
+  PASS  C36 /id-top → 302 /
+  PASS  C37 /ar-top.html → 302 /
+  PASS  C38 /ar-top → 302 /
+  PASS  C39 /hi-top.html → 302 /
+  PASS  C40 /hi-top → 302 /
+  PASS  D01 /en → 301 /
+  PASS  D02 /en/ → 301 /
+  PASS  D03 /zh → 301 /zh-hans/
+  PASS  D04 /zh/ → 301 /zh-hans/
+  PASS  D05 /cn → 301 /zh-hans/
+  PASS  D06 /cn/ → 301 /zh-hans/
+  PASS  D07 /zh-cn → 301 /zh-hans/
+  PASS  D08 /zh-cn/ → 301 /zh-hans/
+  PASS  D09 /tw → 302 /
+  PASS  D10 /tw/ → 302 /
+  PASS  D11 /zh-tw → 302 /
+  PASS  D12 /zh-tw/ → 302 /
+  PASS  D13 /pt → 302 /
+  PASS  D14 /pt/ → 302 /
+  PASS  D15 /en/about/ → 301 /about/ (200)
+  PASS  D16 /zh/chrome-extension/ → 301 /zh-hans/chrome-extension/ (200)
+  PASS  D17 /cn/chrome-extension/ → 301 /zh-hans/chrome-extension/ (200)
+  PASS  D18 /zh-cn/chrome-extension/ → 301 /zh-hans/chrome-extension/ (200)
+  PASS  D19 /tw/about/ → 302 / (200)
+  PASS  D20 /zh-tw/about/ → 302 / (200)
+  PASS  D21 /pt/about/ → 302 / (200)
+  PASS  Q19 D15 /en/about/ → 301 /about/ (200)
+  PASS  Q20 D16 /zh/chrome-extension/ → 301 /zh-hans/chrome-extension/ (200)
+  PASS  Q21 D17 /cn/ja-top.html → 301 /zh-hans/ja-top.html (404)
+
+== 4) Cloudflare automatic 308s, case sensitivity, retired and unpublished URLs (Q15, Q16, Q22–Q30, Q32)
+  PASS  /zh-hans → 308 /zh-hans/ (Cloudflare automatic)
+  PASS  /zh-hans/index.html → 308 /zh-hans/ (Cloudflare automatic)
+  PASS  /ja → 308 /ja/ (Cloudflare automatic)
+  PASS  /ja/index.html → 308 /ja/ (Cloudflare automatic)
+  PASS  /about → 308 /about/ (Cloudflare automatic)
+  PASS  /about/index.html → 308 /about/ (Cloudflare automatic)
+  PASS  /chrome-extension → 308 /chrome-extension/ (Cloudflare automatic)
+  PASS  /chrome-extension/index.html → 308 /chrome-extension/ (Cloudflare automatic)
+  PASS  /zh-hans/chrome-extension → 308 /zh-hans/chrome-extension/ (Cloudflare automatic)
+  PASS  /zh-hans/chrome-extension/index.html → 308 /zh-hans/chrome-extension/ (Cloudflare automatic)
+  PASS  /zh-hans?utm_source=t → 308 /zh-hans/?utm_source=t (query kept)
+  PASS  Q22/Q23 /zh-hans/ 200, /zh-Hans/ → 404 (case-sensitive, no loop)
+  PASS  Q30 /backup/top.html → 404, custom 404 page
+  PASS  Q30 /README.md → 404, custom 404 page
+  PASS  Q30 /CNAME → 404, custom 404 page
+  PASS  Q30 /img/Screenshot-1.png → 404, custom 404 page
+  PASS  Q30 /wbw_logo.png → 404, custom 404 page
+  PASS  Q30 /css/style.css → 404, custom 404 page
+  PASS  Q30 /js/surfenglish-promo.js → 404, custom 404 page
+  PASS  Q30 /chrome-extension/style.css → 404, custom 404 page
+  PASS  Q30 /chrome-extension/img/hero-screenshot.png → 404, custom 404 page
+  PASS  Q30 /jp/ → 404, custom 404 page
+  PASS  Q30 /definitely-missing-xyz → 404, custom 404 page
+  PASS  Q32 zh-Hant /zh-hant/ → 404, custom 404 page
+  PASS  Q32 ko /ko/ → 404, custom 404 page
+  PASS  Q32 es /es/ → 404, custom 404 page
+  PASS  Q32 pt-BR /pt-br/ → 404, custom 404 page
+  PASS  Q32 fr /fr/ → 404, custom 404 page
+  PASS  Q32 de /de/ → 404, custom 404 page
+  PASS  Q32 it /it/ → 404, custom 404 page
+  PASS  Q32 nl /nl/ → 404, custom 404 page
+  PASS  Q32 pl /pl/ → 404, custom 404 page
+  PASS  Q32 ru /ru/ → 404, custom 404 page
+  PASS  Q32 tr /tr/ → 404, custom 404 page
+  PASS  Q32 uk /uk/ → 404, custom 404 page
+  PASS  Q32 vi /vi/ → 404, custom 404 page
+  PASS  Q32 th /th/ → 404, custom 404 page
+  PASS  Q32 id /id/ → 404, custom 404 page
+  PASS  Q32 ar /ar/ → 404, custom 404 page
+  PASS  Q32 hi /hi/ → 404, custom 404 page
+
+== 5) headers (doc 06 §3.6.4, §11.4-5)
+  PASS  / Cache-Control: public, max-age=0, must-revalidate (HTML revalidates)
+  PASS  / X-Content-Type-Options: nosniff
+  PASS  /assets/img/brand/common/icon-160.18b2fd1b.png Cache-Control: public, max-age=31536000, immutable (/assets/*)
+  PASS  /icons/apple-touch-icon.png Cache-Control: public, max-age=604800 (/icons/*)
+  PASS  /favicon.ico Cache-Control: public, max-age=604800 (/favicon.ico)
+  PASS  / X-Robots-Tag: noindex (preview)
+
+== 6) sitemap.xml, robots.txt, favicon, GA (doc 06 §11.4-6, doc 02 §6.7–6.8, Q31)
+  PASS  /sitemap.xml 200, exactly the 6 indexable routes
+  PASS  /robots.txt 200, Sitemap: https://www.word-by-word.app/sitemap.xml
+  PASS  /favicon.ico 200
+  PASS  GA G-QS1CJY8YWL on /
+
+132 pass, 0 warn, 0 fail, 0 skip  (https://main.wordbyword-web.pages.dev --preview)
+ALL PASS

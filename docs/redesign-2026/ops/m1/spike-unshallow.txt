@@ -1,0 +1,45 @@
+# spike/unshallow (5cb0277) — /__unshallow.json + /__build.json, 2026-10-05T15:25Z (origin URL credentials redacted by the probe)
+{
+  "remoteHost": {
+    "ok": true,
+    "out": "https://***@github.com/super-monster/wordbyword-web"
+  },
+  "before": {
+    "ok": true,
+    "out": "true"
+  },
+  "countBefore": {
+    "ok": true,
+    "out": "1"
+  },
+  "fetch": {
+    "ok": true,
+    "out": ""
+  },
+  "fetchMs": 2061,
+  "after": {
+    "ok": true,
+    "out": "false"
+  },
+  "countAfter": {
+    "ok": true,
+    "out": "36"
+  },
+  "aboutDate": {
+    "ok": true,
+    "out": "2026-10-05"
+  }
+}
+{
+  "node": "v24.13.1",
+  "branch": "spike/unshallow",
+  "commit": "5cb027772b6e24347b3c3e8aca7d576fc41c6f0a",
+  "gitShallow": false,
+  "gitCommits": "36",
+  "builtAt": "2026-10-05T15:25:24.718Z"
+}
+
+6
+legal-updated">Last updated: October 5, 2026
+
+[exited with code 0]

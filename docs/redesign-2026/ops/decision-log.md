@@ -55,3 +55,48 @@
 - 28 天：70 点击 / 1,306 展示 / 排名 8.3；3 个月：111 / 2,220 / 9.6。
 - **网页维度：只有 `/`、`/support.html`、`/chrome-extension/privacy.html`、`/privacy.html` 有展示；20 个语言页 0 展示。索引报告：Google 只知道 5 个网页（4 已编入、1 个"重复网页，用户未选定规范网页"）。** F30（架构为首因）由推断升级为实证。
 - 详见 `ops/m0/gsc-baseline-2026-10-05.md`。H2（GA4 基线）待做。
+
+## M1-02 Cloudflare Pages 项目（2026-10-06）
+
+- 用户本人执行 `git push origin main:cloudflare-deploy`（7c1bde1）。
+- 在 CF 控制台（用户 Chrome "Browser 2"）创建 Pages 项目 **`wordbyword-web`**，连接 GitHub `super-monster/wordbyword-web`。（更正：当时以为 CF GitHub App 已有该仓库权限，实际没有，见下文"构建未触发"。）
+  - 生产分支 `cloudflare-deploy`，自动部署开启；构建命令 `node build.mjs`，输出 `dist`，框架预设"无"，根目录空，构建系统版本 3。
+  - 环境变量 `NODE_VERSION=24`（生产、预览均已核实）。
+  - 预览分支：**自定义**，包括 `*`，排除 `legacy-pages`、`design-docs`、`dev`。
+  - 自定义域名：未添加（T0 当天才添加，R/06 §10.2 第 7 步）。
+- 首次生产部署成功：`https://wordbyword-web.pages.dev`（部署 c645bbb9）。实测：`x-robots-tag: noindex`（pages.dev 主机规则生效）；`/__build.json` 404（生产不输出构建戳）；**`/privacy.html` 直接 200，未被 CF 自动 308**（C-1 契约代理在 CF 上成立）；`/ja-top.html` → 301 `/ja/`。
+- 控制台曾短暂显示"此项目已与您的 Git 帐户断开连接"提示；设置页显示仓库已连接（有"断开"按钮），后续推送若未触发构建再处理。
+- 推送实测分支 `spike/default`（= 498026d，全部 20 语言发布的骨架）与 `spike/lc`（实验组 L、C 开启 + 合成用例），用于 M1-03。
+- **构建未触发（已修复）**：推送 `main` 与 spike 分支后 CF 无新部署，控制台提示"此项目已与您的 Git 帐户断开连接"。原因：GitHub App "Cloudflare Workers and Pages" 安装为"仅选定仓库"，列表中只有 4 个仓库，不含 `wordbyword-web`，推送不会通知 CF。经用户同意（"同意，由你来加"），在 GitHub 设置 → Applications → Cloudflare Workers and Pages → Repository access 中加入 `wordbyword-web`（现为 5 个）。重推后 webhook 生效，`main`、`spike/default`、`spike/lc` 均完成预览构建。
+
+## M1-03 preview 实测 spike（2026-10-06，已完成）
+
+部署：`main`（958560f）；`spike/default`（e1c2ed5 = 498026d + 空提交，20 种语言全部发布）；`spike/lc`（2fb6cd3：实验组 L、C 开启，另加合成用例）；`spike/unshallow`（5cb0277：构建内先尝试 `git fetch --unshallow`）。spike 分支一律不合并。探针脚本为 `scripts/spike-check.sh`；main 另跑 `verify-deploy.sh --preview`（`QUERY_PRESERVED=1`）与 `contract-test.sh`。原始输出见 `ops/m1/`。
+
+| # | 实测项 | 结果 | 结论 / 动作 |
+|---|---|---|---|
+| 1 | C-1 契约代理 | 3 个契约 URL 均 200、无 Location；`/privacy.html` 与 `/legal/privacy/` 的 body 字节一致；canonical 为契约绝对地址；扩展隐私页（S0）noindex、无 canonical；带 `?from=app` 仍 200；HEAD 200；6 个变体均单跳 301 | 采用 C-1，`contractMode:'proxy'` 定稿 |
+| 2 | `_redirects` 是否保留 query | `/ja-top.html?utm_source=t` → `301 /ja/?utm_source=t` | 保留。verify-deploy 默认改为 `QUERY_PRESERVED=1`（丢 query 判 FAIL）；正式域名切换后复测（文档 02 §5.3 第 6 条） |
+| 3 | 是否区分大小写（实验组 C） | 关：`/zh-Hans/`、`/pt-BR/`、`/ZH-HANS/` 均 404，`/zh-hans/` 200 → 匹配区分大小写（Q22）。开：`/zh-Hans/` → 301 `/zh-hans/`，`/pt-BR/` → 301 `/pt-br/`，无循环（Q23）；`/ZH-HANS/` 仍 404（只收 BCP 47 写法） | 开启 `experimentC` |
+| 4 | `/index.html` 规则会不会循环 | `/index.html` → 301 `/`，`/index` → 301 `/`，无循环 | 保留 `indexHtmlRule:true` |
+| 5 | 实验组 L | 开启后契约 URL 仍 200（data-page 正确）；`/legal/privacy/`、`/legal/support/`、`/legal/extension-privacy/` 单跳 301 到对应契约 URL | 开启 `experimentL`。contract-test 对 `/legal/*/` 的断言按 `.cache/redirects.json` 自动切换为单跳 301 |
+| 6 | 嵌套 404 | `/spike-404/missing` 返回 `/spike-404/404.html`，`/ja/missing` 返回 `/ja/404.html`，状态码均为 404 | CF 支持就近查找 404。M4-12（本地化 404）具备条件，仍为 M4 可选项（R21） |
+| 7 | Node 版本 | `v24.13.1`（`NODE_VERSION=24`） | 符合 |
+| 8 | 浅克隆 | CF 克隆深度为 1（`gitShallow:true`，`gitCommits:1`）。后果：sitemap 无 lastmod；about 页"Last updated"退回构建日，每次部署都会变。`spike/unshallow`：构建内 `git fetch --unshallow` 成功，耗时约 2 s，之后 36 个提交，sitemap lastmod 6/6，about 日期等于源文件的 git 日期 | 在 CF 上构建前先补全历史，失败时按文档 06 §3.6.1 省略 lastmod 并告警。**注意：CF 构建环境的 origin 地址内嵌 GitHub 访问令牌**，构建不得打印或写出 remote 地址（探针输出已脱敏） |
+| 9 | `_headers` 同名头 | 两条规则命中同一路径时，同名头的**两个值都会发出**（`x-spike: a` 与 `x-spike: b`）；`/assets/*` 的 Cache-Control 为单值 `public, max-age=31536000, immutable`，未与 CF 默认值叠加 | 维持 R47：同名头只出现在互不重叠的规则中。当前 `_headers` 已满足：安全头在 `/*`，缓存头在路径规则，noindex 在主机规则 |
+| 10 | preview 是否自带 noindex | 去掉自有的 pages.dev 规则后，preview 仍返回 `X-Robots-Tag: noindex` | CF 对 preview 部署默认 noindex。生产 pages.dev 子域仍需自有主机规则（保留） |
+
+- main（958560f）：`verify-deploy.sh --preview` 132 PASS / 0 WARN / 0 FAIL / 0 SKIP；`contract-test.sh` 21 PASS。
+- 其它观察：`/cn/ja-top.html` → `/zh-hans/ja-top.html`（404），按文档 02 §5.3 第 9 条接受。CF 对 HTML 默认 `Cache-Control: public, max-age=0, must-revalidate`。
+- **M1-09 验收（本地模拟器 vs CF）**：用同一套探针跑 `scripts/serve.mjs`（`--emulate-host` 对应预览主机，dist 来自同一提交）。唯一差异是同名头的表示：CF 分两行发出，模拟器原先合并为 `a, b`。已改为分行，并把就近 404 设为默认（新增 `--flat-404` 退回只用 `/404.html`）。改后 spike-default、spike-lc 两套配置的输出与 CF **逐行一致**；本地 `verify-deploy.sh --preview` 131 PASS / 1 SKIP（部署提交戳只能在真实边缘验证）。
+- 定稿：`SITE.contractMode:'proxy'`；`SITE.redirectFlags = { indexHtmlRule: true, experimentL: true, experimentC: true }`。按文档 02 §5.2.3，全部语言发布后条数为 76/10；未发布语言的 X 规则不生成。
+
+## M2-09 图片管线（2026-10-06，958560f）
+
+- 产物：`assets/img/**` 91 个文件 + `assets/img/images.json`；`public/favicon.ico`（16 + 32）、`public/icons/*`、`public/site.webmanifest`。闸门：`scripts/check-images.mjs`（结构检查 + Chrome 实际解码，R79），CI 中运行。
+- 偏离文档 05 v1.3 的实测修正（已写回文档 05 §5.x、§7.1、§7.3、§7.4、§7.8 与文档 06 §7.4；manifest `note` 字段记有依据）：
+  - ja 朗读节选 y .658 → **.661**：.658 的首行切到红色译文条（墨迹 0.83%）。
+  - zh-Hans 朗读节选 y .645 → **.6667**：.645 上下边都切到文字（墨迹 4.9% / 2.1%）。
+  - zh-Hans 查词图 `pins` ①.303 ②.747 ③.83、`ring` {x .025, y .286, w .288, h .033}（M2 量取，待 A12 目视复核）。
+  - 节选边缘门槛由"亮度 σ < 4"改为"墨迹占比 ≤ 0.5%"，σ 只作提示：空白行横跨白底与浅灰卡片交界时 σ 可达 5–6。
+  - favicon 改在 node 中绘制圆角，不依赖 Chrome headless；ICO 为 16 + 32 双图。AVIF 一律不带 alpha 平面（`alpha:false`）。

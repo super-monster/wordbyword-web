@@ -1,0 +1,66 @@
+== https://spike-default.wordbyword-web.pages.dev  2026-10-05T15:21:50Z
+build stamp                        {"node":"v24.13.1","branch":"spike/default","commit":"e1c2ed531db0ea2c772047db99a7e8094b0beb0c","gitShallow":true,"gitCommits":"1","builtAt":"2026-10-05T15:19:55.494Z"}
+-- contracts (C-1, Q01–Q05)
+/privacy.html                      200   data-page="privacy"  canonical=https://www.word-by-word.app/privacy.html  robots=[noindex]
+/support.html                      200   data-page="support"  canonical=https://www.word-by-word.app/support.html  robots=[noindex]
+/chrome-extension/privacy.html     200   data-page="extension-privacy"  canonical=  robots=[noindex]
+/privacy.html?from=app             200 
+HEAD /privacy.html                 200
+body(/privacy.html)=/legal/privacy/ SAME
+-- contract variants (Q06–Q11)
+/privacy                           301 /privacy.html
+/privacy/                          301 /privacy.html
+/support                           301 /support.html
+/support/                          301 /support.html
+/chrome-extension/privacy          301 /chrome-extension/privacy.html
+/chrome-extension/privacy/         301 /chrome-extension/privacy.html
+-- /legal/* (Q12–Q14)
+/legal/privacy/                    200 
+/legal/support/                    200 
+/legal/extension-privacy/          200 
+-- index rule & CF automatic 308 (Q15, Q16, Q24–Q29)
+/index.html                        301 /
+/index                             301 /
+/ja                                308 /ja/
+/ja/index.html                     308 /ja/
+/about                             308 /about/
+/chrome-extension                  308 /chrome-extension/
+/zh-hans/chrome-extension          308 /zh-hans/chrome-extension/
+/chrome-extension/index.html       308 /chrome-extension/
+-- legacy & aliases (sample of Q17–Q21)
+/ja-top.html                       301 /ja/
+/ja-top                            301 /ja/
+/cn-top.html                       301 /zh-hans/
+/tw-top                            301 /zh-hant/
+/pt-top.html                       301 /pt-br/
+/en-top.html                       301 /
+/en                                301 /
+/en/                               301 /
+/zh                                301 /zh-hans/
+/cn/                               301 /zh-hans/
+/zh-tw                             301 /zh-hant/
+/pt/                               301 /pt-br/
+/en/about/                         301 /about/
+/zh/chrome-extension/              301 /zh-hans/chrome-extension/
+/cn/ja-top.html                    301 /zh-hans/ja-top.html
+/ja-top.html?utm_source=t (Q18)    301 /ja/?utm_source=t
+-- case sensitivity (Q22, Q23)
+/zh-hans/                          200 
+/zh-Hans/                          404 
+/pt-BR/                            404 
+/ZH-HANS/                          404 
+-- 404s (Q30)
+/backup/top.html                   404   data-page="404"
+/README.md                         404   data-page="404"
+/CNAME                             404   data-page="404"
+/img/Screenshot-1.png              404   data-page="404"
+/wbw_logo.png                      404   data-page="404"
+/css/style.css                     404   data-page="404"
+/jp/                               404   data-page="404"
+/definitely-missing-xyz            404   data-page="404"
+-- headers
+/ x-robots-tag                     [noindex]
+/ cache-control                    [public, max-age=0, must-revalidate]
+/ strict-transport-security        [max-age=31536000]
+/robots.txt                        200
+/sitemap.xml                       200 urls=23

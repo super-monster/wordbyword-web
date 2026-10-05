@@ -1,0 +1,28 @@
+contract-test  https://main.wordbyword-web.pages.dev  2026-10-05T15:24:31Z
+-- privacy: C-1 (proxy), indexable, experiment L off
+PASS  Q01-Q03 /privacy.html 200, data-page=privacy, canonical https://www.word-by-word.app/privacy.html  [x-robots-tag: noindex]
+PASS  Q04 /privacy.html?from=app 200, data-page=privacy, canonical https://www.word-by-word.app/privacy.html  [x-robots-tag: noindex]
+PASS  Q05 HEAD /privacy.html 200
+PASS  Q06-Q11 /privacy → 301 /privacy.html
+PASS  Q06-Q11 /privacy/ → 301 /privacy.html
+PASS  Q12-Q14 /legal/privacy/ 200, data-page=privacy, canonical https://www.word-by-word.app/privacy.html  [x-robots-tag: noindex]
+PASS  Q12-Q14 /legal/privacy/ body identical to /privacy.html
+-- support: C-1 (proxy), indexable, experiment L off
+PASS  Q01-Q03 /support.html 200, data-page=support, canonical https://www.word-by-word.app/support.html  [x-robots-tag: noindex]
+PASS  Q04 /support.html?from=app 200, data-page=support, canonical https://www.word-by-word.app/support.html  [x-robots-tag: noindex]
+PASS  Q05 HEAD /support.html 200
+PASS  Q06-Q11 /support → 301 /support.html
+PASS  Q06-Q11 /support/ → 301 /support.html
+PASS  Q12-Q14 /legal/support/ 200, data-page=support, canonical https://www.word-by-word.app/support.html  [x-robots-tag: noindex]
+PASS  Q12-Q14 /legal/support/ body identical to /support.html
+-- extension-privacy: C-1 (proxy), S0 noindex, experiment L off
+PASS  Q01-Q03 /chrome-extension/privacy.html 200, data-page=extension-privacy, noindex, no canonical  [x-robots-tag: noindex]
+PASS  Q04 /chrome-extension/privacy.html?from=app 200, data-page=extension-privacy, noindex, no canonical  [x-robots-tag: noindex]
+PASS  Q05 HEAD /chrome-extension/privacy.html 200
+PASS  Q06-Q11 /chrome-extension/privacy → 301 /chrome-extension/privacy.html
+PASS  Q06-Q11 /chrome-extension/privacy/ → 301 /chrome-extension/privacy.html
+PASS  Q12-Q14 /legal/extension-privacy/ 200, data-page=extension-privacy, noindex, no canonical  [x-robots-tag: noindex]
+PASS  Q12-Q14 /legal/extension-privacy/ body identical to /chrome-extension/privacy.html
+
+21 pass, 0 warn, 0 fail
+CONTRACT PASS
