@@ -1,0 +1,655 @@
+{
+  "_meta": {
+    "generatedBy": "scripts/extract-legacy.mjs",
+    "source": "legacy-pages @ 7a389baa6695081d8e02fce3b7f4b18e0b0c6fc4",
+    "content": "Legacy ja home page (ja-top.html) aligned segment by segment with index.html, plus the js/site-notice.js strings.",
+    "warning": "Translation memory (TM) for reference only — outdated, not reviewed, not used by the build. The legacy copy contains outdated or wrong product facts: use it for established terms and phrasing, never as a source of facts. Doc 08 (§1.1 fact red lines, §7 translation brief) always wins over this file.",
+    "rule": "TM 不参与构建，也不保证事实正确（F11）— doc 06 §4.5；已过时，仅作术语参考 — doc 04 §9",
+    "fields": {
+      "legacy": "legacy file prefixes of this locale (LOCALES[].legacy in src/site.mjs)",
+      "sources": "legacy files of this locale (blob = git object id); a further file names the one it duplicates and whether it is byte-identical",
+      "lang": "<html lang> of the legacy page",
+      "dir": "<html dir> of the legacy page; null = not set (left to right)",
+      "title": "<title> of the legacy page (also segment head.title)",
+      "description": "<meta name=\"description\"> of the legacy page (also segment head.description)",
+      "alignment": "pairing report against index.html: enOnly = en segments without a counterpart here; structure = element counts per section that differ from index.html (inline elements such as <br> do not affect pairing)",
+      "segments": "the page copy in document order (head, header, hero, features, screenshots, cta, faq, footer)",
+      "notice": "js/site-notice.js strings (service-outage banner, off on the legacy site; already migrated to src/notice.json)",
+      "id": "stable segment id: <section>[.<n> of a repeated block].<role>[.<n>]; the same id is the same slot in every legacy/<code>.json",
+      "kind": "title | meta | alt | brand | nav | h1 | p | button | h2 | h3 | li | faq-q | faq-a | link | eyebrow | heading",
+      "en": "the index.html segment in the same slot (<br> kept as \\n, inline emphasis as plain text, whitespace collapsed)",
+      "target": "this locale's text, normalised the same way",
+      "aligned": "true = slot verified: same structural path with equal sibling counts, same link target and same images in its repeated block; false = paired by section + position only (see note)",
+      "note": "why a pair is not verified, or other alignment remarks",
+      "warnings": "known problems: \"doc …\" entries come from the design docs (doc 08 §1.1 / §8, doc 01 §2.9, doc 04 §5.7); \"found at extraction\" entries were spotted while building this TM; \"claims-lint <rule>\" entries are hits of src/data/claims-lint.json patterns for this locale in the text, at extraction time"
+    }
+  },
+  "locale": "ja",
+  "legacy": [
+    "ja"
+  ],
+  "sources": [
+    {
+      "file": "ja-top.html",
+      "blob": "a7e48b9adb8484deabb4080dae84149c6f1c6a2f"
+    }
+  ],
+  "lang": "ja",
+  "dir": null,
+  "title": "WordByWord - 外国語学習翻訳アシスタント",
+  "description": "WordByWord：ブラウザでなぞるだけで即翻訳、文ごとの対訳、文脈解釈とAI音声、一括で外国語の読解力とリスニング力を向上。",
+  "alignment": {
+    "reference": "index.html",
+    "pairs": 67,
+    "aligned": 63,
+    "unaligned": 4,
+    "enOnly": [
+      "screenshots.alt.5",
+      "screenshots.alt.6",
+      "screenshots.alt.7",
+      "screenshots.alt.8"
+    ],
+    "structure": [
+      "screenshots: img 4 (en 8)"
+    ]
+  },
+  "segments": [
+    {
+      "id": "head.title",
+      "kind": "title",
+      "en": "WordByWord - Your Smart Language Learning Assistant",
+      "target": "WordByWord - 外国語学習翻訳アシスタント",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: generic \"smart assistant\" title, dropped; only the positioning \"reading assistant for language learners\" survives (hero.lede / meta.description, R39; doc 03 §3.1)"
+      ]
+    },
+    {
+      "id": "head.description",
+      "kind": "meta",
+      "en": "WordByWord: Instantly translate by swiping text in your browser, sentence-by-sentence alignment, AI context explanation and pronunciation. All-in-one tool to boost your reading and listening in foreign languages.",
+      "target": "WordByWord：ブラウザでなぞるだけで即翻訳、文ごとの対訳、文脈解釈とAI音声、一括で外国語の読解力とリスニング力を向上。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"swiping text in your browser\" reads as a browser extension: it is the built-in browser of an iPhone/iPad app (C-08); \"sentence-by-sentence alignment\" is jargon (C-16)"
+      ]
+    },
+    {
+      "id": "header.alt",
+      "kind": "alt",
+      "en": "Word by Word Logo",
+      "target": "Word by Word ロゴ",
+      "aligned": true
+    },
+    {
+      "id": "header.brand",
+      "kind": "brand",
+      "en": "WordByWord",
+      "target": "WordByWord",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.1",
+      "kind": "nav",
+      "en": "Features",
+      "target": "主な機能",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.2",
+      "kind": "nav",
+      "en": "Screenshots",
+      "target": "画面プレビュー",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.3",
+      "kind": "nav",
+      "en": "FAQ",
+      "target": "よくある質問",
+      "aligned": true
+    },
+    {
+      "id": "hero.h1",
+      "kind": "h1",
+      "en": "Word by Word\nInstant Translation, Smarter Language Learning",
+      "target": "Word by Word\nなぞるだけで即翻訳 スマートに外国語学習",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the new H1 never splits off \"Word by Word\" and follows doc 03 §3.9 (F11)"
+      ]
+    },
+    {
+      "id": "hero.p",
+      "kind": "p",
+      "en": "Effortlessly translate any text on any webpage by swiping, insert sentence-by-sentence translations, and get AI-powered context explanations and pronunciation.\nNo need to switch apps—improve your vocabulary and reading comprehension as you browse. Supports over 20 language pairs, including Chinese, Japanese, Korean, and more.\nWordByWord is your intelligent assistant for mastering new languages with ease.",
+      "target": "どんなウェブページでも簡単になぞるだけで翻訳、文ごとの対訳挿入、AIによる文脈解釈と音声再生。\nアプリを切り替える必要なく、読解力と語彙力を効率的にアップ。20以上の言語ペアに対応し、日本語・中国語・韓国語など多言語間の相互翻訳もサポート。\nWordByWordはあなたの語学学習をサポートするスマートアシスタントです。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"over 20 language pairs\" is wrong — {uiLanguages} interface languages, translation into {targetLanguages} languages (C-07); \"no need to switch apps\" contradicts the product (an app with its own browser); \"intelligent assistant\" is a generic phrase — keep only \"for language learners\" (R39)",
+        "claims-lint language-pairs: \"言語ペア\""
+      ]
+    },
+    {
+      "id": "hero.button.1",
+      "kind": "button",
+      "en": "Download on App Store",
+      "target": "App Store でダウンロード",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: linked to #cta, not to the App Store (C-15); the new CTA is Apple's official badge (common.appStoreBadgeAlt)"
+      ]
+    },
+    {
+      "id": "hero.button.2",
+      "kind": "button",
+      "en": "Learn More",
+      "target": "詳細を見る",
+      "aligned": true
+    },
+    {
+      "id": "hero.alt",
+      "kind": "alt",
+      "en": "App Interface Example",
+      "target": "アプリ画面例",
+      "aligned": true,
+      "note": "image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "features.h2",
+      "kind": "h2",
+      "en": "Key Features",
+      "target": "主な機能",
+      "aligned": true
+    },
+    {
+      "id": "features.1.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Icon",
+      "target": "スワイプ翻訳アイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.1.h3",
+      "kind": "h3",
+      "en": "Swipe to Translate, Sentence Alignment",
+      "target": "スワイプ翻訳・文ごとの対訳",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Sentence Alignment\" is jargon (C-16, research 07 §2.3) → features[swipe] without it"
+      ]
+    },
+    {
+      "id": "features.1.p",
+      "kind": "p",
+      "en": "Simply swipe any paragraph on a webpage—our system automatically detects complete sentences and inserts translations right below the original text. Enjoy smart segmentation and one-to-one alignment for seamless bilingual reading.",
+      "target": "ウェブページ上で任意のテキストを右にスワイプするだけで、システムが自動的に文を認識し、翻訳を原文の下に挿入します。文ごとに分割され、原文と訳文が一目で比較でき、シームレスな対訳読書が可能です。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[swipe] (\"detects complete sentences\" = Auto mode), except the \"alignment\" wording (C-16)"
+      ]
+    },
+    {
+      "id": "features.1.alt.2",
+      "kind": "alt",
+      "en": "Swipe Translation",
+      "target": "スワイプ翻訳",
+      "aligned": true
+    },
+    {
+      "id": "features.2.alt.1",
+      "kind": "alt",
+      "en": "Double Tap Dictionary Icon",
+      "target": "ダブルタップ辞書アイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.2.h3",
+      "kind": "h3",
+      "en": "Double Tap for Word Lookup & AI Explanation",
+      "target": "ダブルタップ辞書・AI解釈",
+      "aligned": true
+    },
+    {
+      "id": "features.2.p",
+      "kind": "p",
+      "en": "Double-tap any word and AI will analyze its meaning in context, prioritizing common phrases. Go beyond literal translations—understand usage, part of speech, example sentences, and collocations.",
+      "target": "単語をダブルタップすると、AIが文脈を考慮して意味を解析し、よく使われるフレーズも優先的に認識します。直訳に頼らず、用法・品詞・例文・コロケーションまでしっかり理解できます。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[lookup]; it omits the limitation that double-tap lookup does not work on Chinese, Japanese or Korean source text (F15)"
+      ]
+    },
+    {
+      "id": "features.2.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup",
+      "target": "ダブルタップ辞書",
+      "aligned": true
+    },
+    {
+      "id": "features.3.alt.1",
+      "kind": "alt",
+      "en": "AI Pronunciation Icon",
+      "target": "AI音声アイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.3.h3",
+      "kind": "h3",
+      "en": "AI Pronunciation, Listen & Speak",
+      "target": "AI音声・リスニング強化",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"Listen & Speak\" is wrong — the app has no speaking practice; features[speech] keeps AI Read + Local Read only"
+      ]
+    },
+    {
+      "id": "features.3.p",
+      "kind": "p",
+      "en": "Switch between AI-generated and native TTS voices. Listen to words or full sentences with natural pronunciation—improve your listening and speaking skills together.",
+      "target": "AI合成音声と端末TTSの切り替えに対応。単語も文も自然に読み上げ、リスニングとスピーキング力を同時に伸ばせます。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"improve … speaking skills\" is wrong (no speaking practice); the two voices (AI / on-device iOS) are right",
+        "claims-lint speaking-practice: \"スピーキング\""
+      ]
+    },
+    {
+      "id": "features.3.alt.2",
+      "kind": "alt",
+      "en": "AI Pronunciation",
+      "target": "AI音声",
+      "aligned": true
+    },
+    {
+      "id": "features.4.alt.1",
+      "kind": "alt",
+      "en": "Context Analysis Icon",
+      "target": "文脈解析アイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.4.h3",
+      "kind": "h3",
+      "en": "Context Analysis, Phrase Priority",
+      "target": "文脈解析・フレーズ優先",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.p",
+      "kind": "p",
+      "en": "Our AI intelligently identifies word meanings, phrases, and collocations within sentences, providing the most relevant interpretation for the context so you truly understand the content.",
+      "target": "AIが文中の単語やフレーズ、コロケーションを自動判別。文脈に最も合った意味を提示し、内容を深く理解できます。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.alt.2",
+      "kind": "alt",
+      "en": "Context Analysis",
+      "target": "文脈解析",
+      "aligned": true
+    },
+    {
+      "id": "features.5.alt.1",
+      "kind": "alt",
+      "en": "History Icon",
+      "target": "履歴アイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.5.h3",
+      "kind": "h3",
+      "en": "History, Auto Grouping",
+      "target": "履歴管理・自動グループ化",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Auto Grouping\" (by date) is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.p",
+      "kind": "p",
+      "en": "All your swipe translations and word lookups are automatically saved and grouped by date. Instantly review or delete records—track your learning progress at a glance.",
+      "target": "すべてのスワイプ翻訳や辞書検索履歴を自動保存。日付ごとにグループ化され、ワンタップで確認・削除も簡単。学習の軌跡が一目瞭然です。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"grouped by date\" is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.alt.2",
+      "kind": "alt",
+      "en": "History",
+      "target": "履歴管理",
+      "aligned": true
+    },
+    {
+      "id": "features.6.alt.1",
+      "kind": "alt",
+      "en": "Customization Icon",
+      "target": "カスタマイズアイコン",
+      "aligned": true
+    },
+    {
+      "id": "features.6.h3",
+      "kind": "h3",
+      "en": "Personalized Settings, Full Control",
+      "target": "カスタマイズ・自由設定",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the iOS app has no shortcuts, volume control or theme colours (C-03); features[display] / features[engines] describe the real settings"
+      ]
+    },
+    {
+      "id": "features.6.p",
+      "kind": "p",
+      "en": "Customize translation/lookup shortcuts, adjust TTS speed and volume, and freely switch theme colors—tailor the app to your learning habits.",
+      "target": "翻訳や辞書のショートカットキー、TTSの速度や音量、テーマカラーなどを自由にカスタマイズ。自分に合った学習スタイルを実現します。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — no shortcuts, no volume control, no theme colours on iOS (C-03)",
+        "claims-lint dark-mode-theme: \"テーマカラー\"",
+        "claims-lint shortcuts-volume: \"ショートカットキー\""
+      ]
+    },
+    {
+      "id": "features.6.alt.2",
+      "kind": "alt",
+      "en": "Customization",
+      "target": "カスタマイズ",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.h2",
+      "kind": "h2",
+      "en": "App Preview",
+      "target": "画面プレビュー",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Demo",
+      "target": "スワイプ翻訳デモ",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_swipe_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "screenshots.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup Demo",
+      "target": "ダブルタップ辞書デモ",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-2.png here"
+    },
+    {
+      "id": "screenshots.alt.3",
+      "kind": "alt",
+      "en": "AI Pronunciation Demo",
+      "target": "AI音声デモ",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_tts_demo.png in index.html, img:Screenshot-3.png here"
+    },
+    {
+      "id": "screenshots.alt.4",
+      "kind": "alt",
+      "en": "History Page",
+      "target": "履歴画面",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_history_demo.png in index.html, img:Screenshot-4.png here"
+    },
+    {
+      "id": "cta.h2",
+      "kind": "h2",
+      "en": "Free to Use, Unlock More with Upgrade",
+      "target": "無料で始める・アップグレードでさらに便利に",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.title (F16)"
+      ]
+    },
+    {
+      "id": "cta.p.1",
+      "kind": "p",
+      "en": "WordByWord's basic features are always free, including swipe translation, native TTS pronunciation, and daily AI trial features.\nSubscribe to \"Plus\" for:",
+      "target": "WordByWordの基本機能はずっと無料でご利用いただけます（スワイプ翻訳、端末TTS音声、毎日のAI機能お試しなど）。\n「Plus版」サブスクリプションで以下の機能が解放されます：",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.lede (F16); quotas and prices are placeholders in the new copy, never literal numbers (doc 08 §1.4)"
+      ]
+    },
+    {
+      "id": "cta.li.1",
+      "kind": "li",
+      "en": "• More daily AI translations and context analysis",
+      "target": "• 毎日より多くのAI翻訳・文脈解析",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the higher daily quotas go into pricing.summary (F16)"
+      ]
+    },
+    {
+      "id": "cta.li.2",
+      "kind": "li",
+      "en": "• Unlimited AI pronunciation with higher quality",
+      "target": "• AI音声の利用回数無制限＆高品質音声",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — Plus has daily AI-voice limits; never \"unlimited AI pronunciation\" (C-01)"
+      ]
+    },
+    {
+      "id": "cta.li.3",
+      "kind": "li",
+      "en": "• Sentence structure analysis and example recommendations",
+      "target": "• 文型解析や例文推薦",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — syntax explanation is not Plus-only, the free plan has a daily quota (C-04)"
+      ]
+    },
+    {
+      "id": "cta.li.4",
+      "kind": "li",
+      "en": "• Custom themes and dark mode",
+      "target": "• テーマやダークモードのカスタマイズ",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — custom themes and dark mode do not exist in the app (C-02)",
+        "claims-lint dark-mode-theme: \"ダークモード\""
+      ]
+    },
+    {
+      "id": "cta.li.5",
+      "kind": "li",
+      "en": "• Early access to new features",
+      "target": "• 新機能の先行体験",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — \"early access to new features\" has no implementation in the app (doc 08 §1.1)",
+        "claims-lint plus-early-access: \"先行体験\""
+      ]
+    },
+    {
+      "id": "cta.alt",
+      "kind": "alt",
+      "en": "Download on the App Store",
+      "target": "Download on the App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-14: the legacy badge was the English artwork with an English alt on every page; the new site uses Apple's localized badges"
+      ]
+    },
+    {
+      "id": "cta.p.2",
+      "kind": "p",
+      "en": "Plus Subscription:\n• Monthly plan (supports in-app purchase on iOS)\n• Manage or cancel anytime in the app.",
+      "target": "Plus版サブスクリプション：\n• 月額プラン（iOSアプリ内課金対応）\n• いつでもアプリ内で管理・解約可能です。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — subscriptions are managed or cancelled in the Apple account settings, not in the app (→ pricing.note)"
+      ]
+    },
+    {
+      "id": "faq.h2",
+      "kind": "h2",
+      "en": "Frequently Asked Questions",
+      "target": "よくある質問",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.q",
+      "kind": "faq-q",
+      "en": "Q1: How do I use the swipe translation feature?",
+      "target": "Q1：スワイプ翻訳はどう使いますか？",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.a",
+      "kind": "faq-a",
+      "en": "Simply swipe a section of text on any webpage with your finger or mouse, and the app will automatically insert the translation below the original sentence. To remove a translation, just swipe left on the translated text.",
+      "target": "ウェブページ上で指やマウスで右にスワイプしてテキストを選択すると、自動的にその文の翻訳が原文下に挿入されます。翻訳を消したい場合は、訳文を左にスワイプしてください。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"with your finger or mouse\" is wrong (C-10); the left swipe that removes a translation is real but must not be mentioned (claims-lint swipe-left)",
+        "claims-lint swipe-left: \"左にスワイプ\""
+      ]
+    },
+    {
+      "id": "faq.2.q",
+      "kind": "faq-q",
+      "en": "Q2: How does double-tap word lookup ensure accurate explanations?",
+      "target": "Q2：ダブルタップ辞書の精度は？",
+      "aligned": true
+    },
+    {
+      "id": "faq.2.a",
+      "kind": "faq-a",
+      "en": "The app sends the word and its surrounding context to the AI backend, prioritizing multi-word phrases and providing the most contextually relevant meaning and examples—so you won't be misled by literal translations.",
+      "target": "単語とその前後の文脈をAIが解析し、複数語のフレーズも優先的に認識。文脈に最適な意味や例文を提示するので、直訳に惑わされません。",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.q",
+      "kind": "faq-q",
+      "en": "Q3: What are the limitations of the free version?",
+      "target": "Q3：無料版の利用制限は？",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.a",
+      "kind": "faq-a",
+      "en": "The free version allows a limited number of AI translations and 20 AI pronunciations per day. For details, see the in-app introduction. To lift the limits, upgrade to Plus or use native TTS mode.",
+      "target": "無料版では毎日回数制限付きのAI翻訳と20回のAI音声が利用できます。詳細はアプリ内でご確認ください。上限を超えた場合はPlus版へのアップグレード、または端末TTS音声をご利用ください。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong quota — \"20 AI pronunciations per day\" (C-05); quotas are placeholders in the new copy (faq[free] + pricing table)"
+      ]
+    },
+    {
+      "id": "faq.4.q",
+      "kind": "faq-q",
+      "en": "Q4: Which languages are supported?",
+      "target": "Q4：どんな言語の翻訳に対応していますか？",
+      "aligned": true
+    },
+    {
+      "id": "faq.4.a",
+      "kind": "faq-a",
+      "en": "The initial version supports translation and explanation between over 20 languages, including Chinese, Japanese, Korean, and more. More language pairs will be added in future updates. The app automatically detects the target language and uses the best prompt template for high-quality results.",
+      "target": "初期バージョンでは20言語以上の相互翻訳・解釈に対応。今後さらに多言語対応予定です。アプリが自動でターゲット言語を判別し、最適なプロンプトで高品質な翻訳を提供します。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"initial version\" (C-06); the app detects the source language, not the target language (C-06); \"over 20 languages / language pairs\" (C-07); \"prompt template\" is internal jargon (C-17)",
+        "claims-lint initial-version: \"初期バージョン\""
+      ]
+    },
+    {
+      "id": "faq.5.q",
+      "kind": "faq-q",
+      "en": "Q5: How can I view my history?",
+      "target": "Q5：履歴はどこで見られますか？",
+      "aligned": true
+    },
+    {
+      "id": "faq.5.a",
+      "kind": "faq-a",
+      "en": "Tap the \"History\" icon at the bottom of the main screen to view all your translation and lookup records, grouped by date. Swipe left or right to delete individual records or view details.",
+      "target": "メイン画面下部の「履歴」アイコンをタップすると、日付ごとにグループ化された翻訳・辞書履歴を一覧できます。左右スワイプで個別削除や詳細表示も可能です。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — history is not grouped by date; the history location described here is not reused (→ features[history])"
+      ]
+    },
+    {
+      "id": "footer.alt",
+      "kind": "alt",
+      "en": "WordByWord Logo",
+      "target": "WordByWord ロゴ",
+      "aligned": true
+    },
+    {
+      "id": "footer.p",
+      "kind": "p",
+      "en": "© 2025 WordByWord. All rights reserved.\nIndependently developed. No personal data is collected.",
+      "target": "© 2025 WordByWord. All rights reserved.\n独立開発者による運営。個人情報は一切収集しません。",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"© 2025 WordByWord. All rights reserved.\" → footer.copyright \"© {yearRange} Jinlong\" (C-12); \"No personal data is collected\" is wrong — the app uses Firebase Analytics and the site GA4 (C-11); only \"independently developed\" survives (footer.madeBy)",
+        "doc 01 C-17: \"All rights reserved.\" left in English",
+        "claims-lint privacy-claim: \"個人情報は一切\""
+      ]
+    },
+    {
+      "id": "footer.1.link",
+      "kind": "link",
+      "en": "Privacy Policy",
+      "target": "プライバシーポリシー",
+      "aligned": true
+    },
+    {
+      "id": "footer.2.link",
+      "kind": "link",
+      "en": "Contact Us",
+      "target": "お問い合わせ",
+      "aligned": true
+    },
+    {
+      "id": "footer.3.link",
+      "kind": "link",
+      "en": "FAQ",
+      "target": "よくある質問",
+      "aligned": true
+    }
+  ],
+  "notice": [
+    {
+      "id": "notice.eyebrow",
+      "kind": "eyebrow",
+      "en": "Service Status Update",
+      "target": "サービス状況のお知らせ",
+      "aligned": true
+    },
+    {
+      "id": "notice.title",
+      "kind": "heading",
+      "en": "Online translation service is temporarily unavailable",
+      "target": "オンライン翻訳サービスは一時的に利用できません",
+      "aligned": true
+    },
+    {
+      "id": "notice.message",
+      "kind": "p",
+      "en": "Our backend translation service is currently experiencing a technical issue. Translation requests cannot be processed correctly at the moment. We are working urgently to restore service and sincerely apologize for the inconvenience.",
+      "target": "現在、バックエンドの翻訳サービスで技術的な問題が発生しており、オンライン翻訳リクエストを正常に処理できません。復旧を最優先で進めております。ご不便をおかけし申し訳ありません。",
+      "aligned": true
+    }
+  ]
+}

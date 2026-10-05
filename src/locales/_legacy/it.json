@@ -1,0 +1,666 @@
+{
+  "_meta": {
+    "generatedBy": "scripts/extract-legacy.mjs",
+    "source": "legacy-pages @ 7a389baa6695081d8e02fce3b7f4b18e0b0c6fc4",
+    "content": "Legacy it home page (it-top.html) aligned segment by segment with index.html, plus the js/site-notice.js strings.",
+    "warning": "Translation memory (TM) for reference only — outdated, not reviewed, not used by the build. The legacy copy contains outdated or wrong product facts: use it for established terms and phrasing, never as a source of facts. Doc 08 (§1.1 fact red lines, §7 translation brief) always wins over this file.",
+    "rule": "TM 不参与构建，也不保证事实正确（F11）— doc 06 §4.5；已过时，仅作术语参考 — doc 04 §9",
+    "fields": {
+      "legacy": "legacy file prefixes of this locale (LOCALES[].legacy in src/site.mjs)",
+      "sources": "legacy files of this locale (blob = git object id); a further file names the one it duplicates and whether it is byte-identical",
+      "lang": "<html lang> of the legacy page",
+      "dir": "<html dir> of the legacy page; null = not set (left to right)",
+      "title": "<title> of the legacy page (also segment head.title)",
+      "description": "<meta name=\"description\"> of the legacy page (also segment head.description)",
+      "alignment": "pairing report against index.html: enOnly = en segments without a counterpart here; structure = element counts per section that differ from index.html (inline elements such as <br> do not affect pairing)",
+      "segments": "the page copy in document order (head, header, hero, features, screenshots, cta, faq, footer)",
+      "notice": "js/site-notice.js strings (service-outage banner, off on the legacy site; already migrated to src/notice.json)",
+      "id": "stable segment id: <section>[.<n> of a repeated block].<role>[.<n>]; the same id is the same slot in every legacy/<code>.json",
+      "kind": "title | meta | alt | brand | nav | h1 | p | button | h2 | h3 | li | faq-q | faq-a | link | eyebrow | heading",
+      "en": "the index.html segment in the same slot (<br> kept as \\n, inline emphasis as plain text, whitespace collapsed)",
+      "target": "this locale's text, normalised the same way",
+      "aligned": "true = slot verified: same structural path with equal sibling counts, same link target and same images in its repeated block; false = paired by section + position only (see note)",
+      "note": "why a pair is not verified, or other alignment remarks",
+      "warnings": "known problems: \"doc …\" entries come from the design docs (doc 08 §1.1 / §8, doc 01 §2.9, doc 04 §5.7); \"found at extraction\" entries were spotted while building this TM; \"claims-lint <rule>\" entries are hits of src/data/claims-lint.json patterns for this locale in the text, at extraction time"
+    }
+  },
+  "locale": "it",
+  "legacy": [
+    "it"
+  ],
+  "sources": [
+    {
+      "file": "it-top.html",
+      "blob": "12b62b2b433db1a8c4601f1bbdaf60d672204a34"
+    }
+  ],
+  "lang": "it",
+  "dir": null,
+  "title": "WordByWord - Assistente intelligente per l'apprendimento delle lingue",
+  "description": "WordByWord: Traduzione istantanea selezionando il testo nel browser, allineamento frase per frase, spiegazione del contesto tramite IA e pronuncia. Soluzione completa per migliorare lettura e ascolto nelle lingue straniere.",
+  "alignment": {
+    "reference": "index.html",
+    "pairs": 67,
+    "aligned": 63,
+    "unaligned": 4,
+    "enOnly": [
+      "screenshots.alt.5",
+      "screenshots.alt.6",
+      "screenshots.alt.7",
+      "screenshots.alt.8"
+    ],
+    "structure": [
+      "screenshots: img 4 (en 8)"
+    ]
+  },
+  "segments": [
+    {
+      "id": "head.title",
+      "kind": "title",
+      "en": "WordByWord - Your Smart Language Learning Assistant",
+      "target": "WordByWord - Assistente intelligente per l'apprendimento delle lingue",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: generic \"smart assistant\" title, dropped; only the positioning \"reading assistant for language learners\" survives (hero.lede / meta.description, R39; doc 03 §3.1)"
+      ]
+    },
+    {
+      "id": "head.description",
+      "kind": "meta",
+      "en": "WordByWord: Instantly translate by swiping text in your browser, sentence-by-sentence alignment, AI context explanation and pronunciation. All-in-one tool to boost your reading and listening in foreign languages.",
+      "target": "WordByWord: Traduzione istantanea selezionando il testo nel browser, allineamento frase per frase, spiegazione del contesto tramite IA e pronuncia. Soluzione completa per migliorare lettura e ascolto nelle lingue straniere.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"swiping text in your browser\" reads as a browser extension: it is the built-in browser of an iPhone/iPad app (C-08); \"sentence-by-sentence alignment\" is jargon (C-16)",
+        "claims-lint selection-translate: \"selezionando\"",
+        "claims-lint jargon: \"allineamento\""
+      ]
+    },
+    {
+      "id": "header.alt",
+      "kind": "alt",
+      "en": "Word by Word Logo",
+      "target": "Logo Word by Word",
+      "aligned": true
+    },
+    {
+      "id": "header.brand",
+      "kind": "brand",
+      "en": "WordByWord",
+      "target": "WordByWord",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.1",
+      "kind": "nav",
+      "en": "Features",
+      "target": "Funzionalità",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.2",
+      "kind": "nav",
+      "en": "Screenshots",
+      "target": "Screenshot",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.3",
+      "kind": "nav",
+      "en": "FAQ",
+      "target": "Domande frequenti",
+      "aligned": true
+    },
+    {
+      "id": "hero.h1",
+      "kind": "h1",
+      "en": "Word by Word\nInstant Translation, Smarter Language Learning",
+      "target": "Word by Word\nTraduzione istantanea, apprendimento linguistico intelligente",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the new H1 never splits off \"Word by Word\" and follows doc 03 §3.9 (F11)"
+      ]
+    },
+    {
+      "id": "hero.p",
+      "kind": "p",
+      "en": "Effortlessly translate any text on any webpage by swiping, insert sentence-by-sentence translations, and get AI-powered context explanations and pronunciation.\nNo need to switch apps—improve your vocabulary and reading comprehension as you browse. Supports over 20 language pairs, including Chinese, Japanese, Korean, and more.\nWordByWord is your intelligent assistant for mastering new languages with ease.",
+      "target": "Traduci facilmente qualsiasi testo su qualsiasi pagina web semplicemente selezionandolo, inserisci traduzioni frase per frase, ottieni spiegazioni contestuali e pronuncia IA.\nNessun bisogno di cambiare app: migliora il tuo vocabolario e la comprensione mentre navighi. Supporta oltre 20 coppie di lingue, tra cui cinese, giapponese, coreano e altre.\nWordByWord è il tuo assistente intelligente per padroneggiare nuove lingue con facilità.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"over 20 language pairs\" is wrong — {uiLanguages} interface languages, translation into {targetLanguages} languages (C-07); \"no need to switch apps\" contradicts the product (an app with its own browser); \"intelligent assistant\" is a generic phrase — keep only \"for language learners\" (R39)",
+        "claims-lint selection-translate: \"selezionando\""
+      ]
+    },
+    {
+      "id": "hero.button.1",
+      "kind": "button",
+      "en": "Download on App Store",
+      "target": "Scarica su App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: linked to #cta, not to the App Store (C-15); the new CTA is Apple's official badge (common.appStoreBadgeAlt)"
+      ]
+    },
+    {
+      "id": "hero.button.2",
+      "kind": "button",
+      "en": "Learn More",
+      "target": "Scopri di più",
+      "aligned": true
+    },
+    {
+      "id": "hero.alt",
+      "kind": "alt",
+      "en": "App Interface Example",
+      "target": "Esempio interfaccia app",
+      "aligned": true,
+      "note": "image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "features.h2",
+      "kind": "h2",
+      "en": "Key Features",
+      "target": "Funzionalità principali",
+      "aligned": true
+    },
+    {
+      "id": "features.1.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Icon",
+      "target": "Icona traduzione selezione",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "features.1.h3",
+      "kind": "h3",
+      "en": "Swipe to Translate, Sentence Alignment",
+      "target": "Seleziona per tradurre, allineamento frase per frase",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Sentence Alignment\" is jargon (C-16, research 07 §2.3) → features[swipe] without it",
+        "doc 01 C-09: describes the gesture as selecting text (\"Selezion…\") — it is a right swipe (research 07 §2.3)",
+        "claims-lint jargon: \"allineamento\""
+      ]
+    },
+    {
+      "id": "features.1.p",
+      "kind": "p",
+      "en": "Simply swipe any paragraph on a webpage—our system automatically detects complete sentences and inserts translations right below the original text. Enjoy smart segmentation and one-to-one alignment for seamless bilingual reading.",
+      "target": "Basta selezionare qualsiasi paragrafo su una pagina: il sistema rileva automaticamente le frasi complete e inserisce la traduzione subito sotto il testo originale. Goditi l'allineamento intelligente per una lettura bilingue senza interruzioni.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[swipe] (\"detects complete sentences\" = Auto mode), except the \"alignment\" wording (C-16)",
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)",
+        "claims-lint jargon: \"allineamento\""
+      ]
+    },
+    {
+      "id": "features.1.alt.2",
+      "kind": "alt",
+      "en": "Swipe Translation",
+      "target": "Traduzione selezione",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "features.2.alt.1",
+      "kind": "alt",
+      "en": "Double Tap Dictionary Icon",
+      "target": "Icona dizionario IA",
+      "aligned": true
+    },
+    {
+      "id": "features.2.h3",
+      "kind": "h3",
+      "en": "Double Tap for Word Lookup & AI Explanation",
+      "target": "Doppio tocco per ricerca parola & spiegazione IA",
+      "aligned": true
+    },
+    {
+      "id": "features.2.p",
+      "kind": "p",
+      "en": "Double-tap any word and AI will analyze its meaning in context, prioritizing common phrases. Go beyond literal translations—understand usage, part of speech, example sentences, and collocations.",
+      "target": "Tocca due volte una parola e l'IA analizzerà il significato nel contesto, dando priorità alle espressioni comuni. Vai oltre la traduzione letterale: comprendi uso, parte del discorso, esempi e collocazioni.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[lookup]; it omits the limitation that double-tap lookup does not work on Chinese, Japanese or Korean source text (F15)"
+      ]
+    },
+    {
+      "id": "features.2.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup",
+      "target": "Ricerca IA",
+      "aligned": true
+    },
+    {
+      "id": "features.3.alt.1",
+      "kind": "alt",
+      "en": "AI Pronunciation Icon",
+      "target": "Icona pronuncia IA",
+      "aligned": true
+    },
+    {
+      "id": "features.3.h3",
+      "kind": "h3",
+      "en": "AI Pronunciation, Listen & Speak",
+      "target": "Pronuncia IA, ascolta e parla",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"Listen & Speak\" is wrong — the app has no speaking practice; features[speech] keeps AI Read + Local Read only"
+      ]
+    },
+    {
+      "id": "features.3.p",
+      "kind": "p",
+      "en": "Switch between AI-generated and native TTS voices. Listen to words or full sentences with natural pronunciation—improve your listening and speaking skills together.",
+      "target": "Passa tra voci generate da IA e TTS nativo. Ascolta parole o frasi intere con pronuncia naturale: migliora ascolto e parlato insieme.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"improve … speaking skills\" is wrong (no speaking practice); the two voices (AI / on-device iOS) are right"
+      ]
+    },
+    {
+      "id": "features.3.alt.2",
+      "kind": "alt",
+      "en": "AI Pronunciation",
+      "target": "Pronuncia IA",
+      "aligned": true
+    },
+    {
+      "id": "features.4.alt.1",
+      "kind": "alt",
+      "en": "Context Analysis Icon",
+      "target": "Icona analisi contesto",
+      "aligned": true
+    },
+    {
+      "id": "features.4.h3",
+      "kind": "h3",
+      "en": "Context Analysis, Phrase Priority",
+      "target": "Analisi del contesto, priorità alle espressioni",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.p",
+      "kind": "p",
+      "en": "Our AI intelligently identifies word meanings, phrases, and collocations within sentences, providing the most relevant interpretation for the context so you truly understand the content.",
+      "target": "L'IA identifica in modo intelligente significati, espressioni e collocazioni nelle frasi, fornendo l'interpretazione più rilevante per il contesto e aiutandoti a comprendere davvero i contenuti.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.alt.2",
+      "kind": "alt",
+      "en": "Context Analysis",
+      "target": "Analisi contesto",
+      "aligned": true
+    },
+    {
+      "id": "features.5.alt.1",
+      "kind": "alt",
+      "en": "History Icon",
+      "target": "Icona cronologia",
+      "aligned": true
+    },
+    {
+      "id": "features.5.h3",
+      "kind": "h3",
+      "en": "History, Auto Grouping",
+      "target": "Cronologia, raggruppamento automatico",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Auto Grouping\" (by date) is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.p",
+      "kind": "p",
+      "en": "All your swipe translations and word lookups are automatically saved and grouped by date. Instantly review or delete records—track your learning progress at a glance.",
+      "target": "Tutte le traduzioni e le ricerche vengono salvate automaticamente e raggruppate per data. Rivedi o elimina rapidamente: monitora facilmente i tuoi progressi di apprendimento.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"grouped by date\" is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.alt.2",
+      "kind": "alt",
+      "en": "History",
+      "target": "Cronologia",
+      "aligned": true
+    },
+    {
+      "id": "features.6.alt.1",
+      "kind": "alt",
+      "en": "Customization Icon",
+      "target": "Icona personalizzazione",
+      "aligned": true
+    },
+    {
+      "id": "features.6.h3",
+      "kind": "h3",
+      "en": "Personalized Settings, Full Control",
+      "target": "Personalizzazione, controllo totale",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the iOS app has no shortcuts, volume control or theme colours (C-03); features[display] / features[engines] describe the real settings"
+      ]
+    },
+    {
+      "id": "features.6.p",
+      "kind": "p",
+      "en": "Customize translation/lookup shortcuts, adjust TTS speed and volume, and freely switch theme colors—tailor the app to your learning habits.",
+      "target": "Personalizza scorciatoie per traduzione/ricerca, regola velocità e volume TTS, cambia i colori del tema: adatta l'app alle tue abitudini di apprendimento.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — no shortcuts, no volume control, no theme colours on iOS (C-03)"
+      ]
+    },
+    {
+      "id": "features.6.alt.2",
+      "kind": "alt",
+      "en": "Customization",
+      "target": "Personalizzazione",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.h2",
+      "kind": "h2",
+      "en": "App Preview",
+      "target": "Anteprima dell'app",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Demo",
+      "target": "Demo traduzione selezione",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_swipe_demo.png in index.html, img:Screenshot-1.png here",
+      "warnings": [
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "screenshots.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup Demo",
+      "target": "Demo ricerca IA",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-2.png here"
+    },
+    {
+      "id": "screenshots.alt.3",
+      "kind": "alt",
+      "en": "AI Pronunciation Demo",
+      "target": "Demo pronuncia IA",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_tts_demo.png in index.html, img:Screenshot-3.png here"
+    },
+    {
+      "id": "screenshots.alt.4",
+      "kind": "alt",
+      "en": "History Page",
+      "target": "Pagina cronologia",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_history_demo.png in index.html, img:Screenshot-4.png here"
+    },
+    {
+      "id": "cta.h2",
+      "kind": "h2",
+      "en": "Free to Use, Unlock More with Upgrade",
+      "target": "Gratis da usare, sblocca di più con l'upgrade",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.title (F16)"
+      ]
+    },
+    {
+      "id": "cta.p.1",
+      "kind": "p",
+      "en": "WordByWord's basic features are always free, including swipe translation, native TTS pronunciation, and daily AI trial features.\nSubscribe to \"Plus\" for:",
+      "target": "Le funzionalità base di WordByWord sono sempre gratuite: traduzione selezione, pronuncia TTS nativa e prova IA giornaliera.\nAbbonati a \"Plus\" per:",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.lede (F16); quotas and prices are placeholders in the new copy, never literal numbers (doc 08 §1.4)",
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "cta.li.1",
+      "kind": "li",
+      "en": "• More daily AI translations and context analysis",
+      "target": "• Più traduzioni IA e analisi del contesto ogni giorno",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the higher daily quotas go into pricing.summary (F16)"
+      ]
+    },
+    {
+      "id": "cta.li.2",
+      "kind": "li",
+      "en": "• Unlimited AI pronunciation with higher quality",
+      "target": "• Pronuncia IA illimitata e di alta qualità",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — Plus has daily AI-voice limits; never \"unlimited AI pronunciation\" (C-01)"
+      ]
+    },
+    {
+      "id": "cta.li.3",
+      "kind": "li",
+      "en": "• Sentence structure analysis and example recommendations",
+      "target": "• Analisi della struttura delle frasi e suggerimenti di esempi",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — syntax explanation is not Plus-only, the free plan has a daily quota (C-04)"
+      ]
+    },
+    {
+      "id": "cta.li.4",
+      "kind": "li",
+      "en": "• Custom themes and dark mode",
+      "target": "• Temi personalizzati e modalità scura",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — custom themes and dark mode do not exist in the app (C-02)"
+      ]
+    },
+    {
+      "id": "cta.li.5",
+      "kind": "li",
+      "en": "• Early access to new features",
+      "target": "• Accesso anticipato alle nuove funzionalità",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — \"early access to new features\" has no implementation in the app (doc 08 §1.1)"
+      ]
+    },
+    {
+      "id": "cta.alt",
+      "kind": "alt",
+      "en": "Download on the App Store",
+      "target": "Download on the App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-14: the legacy badge was the English artwork with an English alt on every page; the new site uses Apple's localized badges"
+      ]
+    },
+    {
+      "id": "cta.p.2",
+      "kind": "p",
+      "en": "Plus Subscription:\n• Monthly plan (supports in-app purchase on iOS)\n• Manage or cancel anytime in the app.",
+      "target": "Abbonamento Plus:\n• Piano mensile (acquisto in-app su iOS disponibile)\n• Gestisci o annulla in qualsiasi momento dall'app.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — subscriptions are managed or cancelled in the Apple account settings, not in the app (→ pricing.note)"
+      ]
+    },
+    {
+      "id": "faq.h2",
+      "kind": "h2",
+      "en": "Frequently Asked Questions",
+      "target": "Domande frequenti",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.q",
+      "kind": "faq-q",
+      "en": "Q1: How do I use the swipe translation feature?",
+      "target": "D1: Come si usa la funzione di traduzione selezione?",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "faq.1.a",
+      "kind": "faq-a",
+      "en": "Simply swipe a section of text on any webpage with your finger or mouse, and the app will automatically insert the translation below the original sentence. To remove a translation, just swipe left on the translated text.",
+      "target": "Basta selezionare un testo su qualsiasi pagina con dito o mouse e l'app inserirà automaticamente la traduzione sotto la frase originale. Per rimuoverla, scorri a sinistra sulla traduzione.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"with your finger or mouse\" is wrong (C-10); the left swipe that removes a translation is real but must not be mentioned (claims-lint swipe-left)",
+        "doc 01 C-09: describes the gesture as selecting text (\"selezion…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "faq.2.q",
+      "kind": "faq-q",
+      "en": "Q2: How does double-tap word lookup ensure accurate explanations?",
+      "target": "D2: Come garantire spiegazioni IA accurate?",
+      "aligned": true
+    },
+    {
+      "id": "faq.2.a",
+      "kind": "faq-a",
+      "en": "The app sends the word and its surrounding context to the AI backend, prioritizing multi-word phrases and providing the most contextually relevant meaning and examples—so you won't be misled by literal translations.",
+      "target": "L'app invia la parola e il contesto circostante all'IA, dando priorità alle espressioni e fornendo il significato e gli esempi più rilevanti — evitando traduzioni letterali fuorvianti.",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.q",
+      "kind": "faq-q",
+      "en": "Q3: What are the limitations of the free version?",
+      "target": "D3: Quali sono i limiti della versione gratuita?",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.a",
+      "kind": "faq-a",
+      "en": "The free version allows a limited number of AI translations and 20 AI pronunciations per day. For details, see the in-app introduction. To lift the limits, upgrade to Plus or use native TTS mode.",
+      "target": "La versione gratuita consente un numero limitato di traduzioni IA e 20 pronunce IA al giorno. Vedi dettagli nell'app. Per uso illimitato, passa a Plus o usa la modalità TTS nativa.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong quota — \"20 AI pronunciations per day\" (C-05); quotas are placeholders in the new copy (faq[free] + pricing table)"
+      ]
+    },
+    {
+      "id": "faq.4.q",
+      "kind": "faq-q",
+      "en": "Q4: Which languages are supported?",
+      "target": "D4: Quali lingue sono supportate?",
+      "aligned": true
+    },
+    {
+      "id": "faq.4.a",
+      "kind": "faq-a",
+      "en": "The initial version supports translation and explanation between over 20 languages, including Chinese, Japanese, Korean, and more. More language pairs will be added in future updates. The app automatically detects the target language and uses the best prompt template for high-quality results.",
+      "target": "La versione iniziale supporta traduzione e spiegazione tra oltre 20 lingue, tra cui cinese, giapponese, coreano e altre. Nuove coppie di lingue verranno aggiunte con i prossimi aggiornamenti. L'app rileva automaticamente la lingua di destinazione e usa il miglior modello di prompt.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"initial version\" (C-06); the app detects the source language, not the target language (C-06); \"over 20 languages / language pairs\" (C-07); \"prompt template\" is internal jargon (C-17)"
+      ]
+    },
+    {
+      "id": "faq.5.q",
+      "kind": "faq-q",
+      "en": "Q5: How can I view my history?",
+      "target": "D5: Come visualizzare la cronologia?",
+      "aligned": true
+    },
+    {
+      "id": "faq.5.a",
+      "kind": "faq-a",
+      "en": "Tap the \"History\" icon at the bottom of the main screen to view all your translation and lookup records, grouped by date. Swipe left or right to delete individual records or view details.",
+      "target": "Tocca l'icona \"Cronologia\" in basso nella schermata principale per vedere tutte le traduzioni e ricerche, raggruppate per data. Scorri per eliminare o vedere i dettagli.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — history is not grouped by date; the history location described here is not reused (→ features[history])"
+      ]
+    },
+    {
+      "id": "footer.alt",
+      "kind": "alt",
+      "en": "WordByWord Logo",
+      "target": "Logo WordByWord",
+      "aligned": true
+    },
+    {
+      "id": "footer.p",
+      "kind": "p",
+      "en": "© 2025 WordByWord. All rights reserved.\nIndependently developed. No personal data is collected.",
+      "target": "© 2025 WordByWord. Sviluppato in modo indipendente. Nessun dato personale viene raccolto.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"© 2025 WordByWord. All rights reserved.\" → footer.copyright \"© {yearRange} Jinlong\" (C-12); \"No personal data is collected\" is wrong — the app uses Firebase Analytics and the site GA4 (C-11); only \"independently developed\" survives (footer.madeBy)"
+      ]
+    },
+    {
+      "id": "footer.1.link",
+      "kind": "link",
+      "en": "Privacy Policy",
+      "target": "Informativa sulla privacy",
+      "aligned": true
+    },
+    {
+      "id": "footer.2.link",
+      "kind": "link",
+      "en": "Contact Us",
+      "target": "Contatti",
+      "aligned": true
+    },
+    {
+      "id": "footer.3.link",
+      "kind": "link",
+      "en": "FAQ",
+      "target": "Domande frequenti",
+      "aligned": true
+    }
+  ],
+  "notice": [
+    {
+      "id": "notice.eyebrow",
+      "kind": "eyebrow",
+      "en": "Service Status Update",
+      "target": "Aggiornamento sul servizio",
+      "aligned": true
+    },
+    {
+      "id": "notice.title",
+      "kind": "heading",
+      "en": "Online translation service is temporarily unavailable",
+      "target": "Il servizio di traduzione online è temporaneamente non disponibile",
+      "aligned": true
+    },
+    {
+      "id": "notice.message",
+      "kind": "p",
+      "en": "Our backend translation service is currently experiencing a technical issue. Translation requests cannot be processed correctly at the moment. We are working urgently to restore service and sincerely apologize for the inconvenience.",
+      "target": "Il nostro servizio backend di traduzione sta riscontrando un problema tecnico. Al momento le richieste di traduzione online non possono essere elaborate correttamente. Stiamo lavorando con la massima urgenza per ripristinare il servizio e ci scusiamo per il disagio.",
+      "aligned": true
+    }
+  ]
+}

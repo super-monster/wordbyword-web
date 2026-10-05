@@ -168,6 +168,17 @@ test('scripts/check.mjs: validateDist + HTML basics on a built dist, and --keys'
 
 // ———————————————————————————— L-1 … L-14 ————————————————————————————
 
+test('L-1 a misnamed locale file in src/locales is an error (codes are case-sensitive)', () => {
+  const root = join(TMP, 'stray-root');
+  mkdirSync(join(root, 'src/locales'), { recursive: true });
+  for (const f of ['en.json', 'zh-hans.json']) writeFileSync(join(root, 'src/locales', f), '{}');
+  mkdirSync(join(root, 'src/locales/_legacy'), { recursive: true });
+  writeFileSync(join(root, 'src/locales/_legacy/de.json'), '{}'); // the translation memory folder is ignored
+  const i = runLocales(null, { cfgMut: (cfg) => { cfg.root = root; } });
+  expectE(i, 'L-1', /src\/locales\/zh-hans\.json is not a registered locale file/);
+  assert.ok(!i.error.some((m) => /_legacy|en\.json is not/.test(m)), i.error.join('\n'));
+});
+
 test('L-1 missing key, type, removed key, fixed-length arrays, extra keys', () => {
   let i = runLocales((s) => { delete s.ja.hero.lede; feat(s.ja, 'swipe').bullets = 'x'; });
   expectE(i, 'L-1', /^L-1 ja hero\.lede: missing/);

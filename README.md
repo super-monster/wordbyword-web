@@ -35,6 +35,7 @@ build.mjs                 generator entry (routes → templates → SEO artifact
 src/site.mjs              SITE / LOCALES / PAGES / CONTRACTS / ALIASES
 src/lib/                  html, seo (_redirects, _headers, sitemap, hreflang), validate*, assets …
 src/locales/              copy per locale (en, ja, zh-Hans published; the rest arrive in M3)
+src/locales/_legacy/      translation memory from the legacy site (scripts/extract-legacy.mjs; not built, may be wrong)
 src/data/                 product facts, SurfEnglish config, claims-lint, keyword map, glossaries
 src/templates/            page templates (pure functions)
 src/legal/                privacy / support / extension privacy bodies (first line: <!-- updated: YYYY-MM-DD -->)

@@ -11,7 +11,7 @@
 // locale, the simplified-only character list) produce a single W instead of an error.
 
 import { join } from 'node:path';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 
 import { buildRedirects } from './seo.mjs';
 import { textLength, graphemes, wuLimit, unitLabel } from './text-length.mjs';
@@ -341,6 +341,10 @@ export function validateLocales(cfg, strings, issues) {
   const unpublished = cfg.LOCALES.filter((l) => !l.publish).map((l) => l.code);
   if (unpublished.length) W('L-1', `not published yet (no copy): ${unpublished.join(' ')}`);
   for (const code of Object.keys(strings)) if (!cfg.LOCALES.some((l) => l.code === code)) E('L-1', `locale file ${code}.json is not a registered locale`);
+  // loadStrings only opens registered codes, so a misnamed file (zh-hans.json, pt-br.json) would never publish silently
+  const localeDir = join(cfg.root ?? '.', 'src/locales');
+  const files = existsSync(localeDir) ? readdirSync(localeDir).filter((f) => f.endsWith('.json')) : [];
+  for (const f of files) if (!cfg.LOCALES.some((l) => `${l.code}.json` === f)) E('L-1', `src/locales/${f} is not a registered locale file — codes are case-sensitive (LOCALES in src/site.mjs)`);
 
   const X = {
     cfg, data, E, W, en, enShape: shape(en),

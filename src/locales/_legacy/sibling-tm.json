@@ -1,0 +1,3824 @@
+{
+  "_meta": {
+    "generatedBy": "scripts/extract-legacy.mjs",
+    "source": "legacy-pages @ 7a389baa6695081d8e02fce3b7f4b18e0b0c6fc4",
+    "content": "SurfEnglish cross-promotion of the legacy site (js/surfenglish-promo.js, I18N table: label, announcement bar, promo section) — the only existing de/fr/it/nl/pl/ru/tr/uk translations of SurfEnglish copy (research 04 §6.1). Rewrite into sibling.* per doc 08 §2 / §7.8 and doc 04 §5.7 T1–T10.",
+    "warning": "Translation memory (TM) for reference only — outdated, not reviewed, not used by the build. The legacy copy contains outdated or wrong product facts: use it for established terms and phrasing, never as a source of facts. Doc 08 (§1.1 fact red lines, §7 translation brief) always wins over this file.",
+    "rule": "TM 不参与构建，也不保证事实正确（F11）— doc 06 §4.5；已过时，仅作术语参考 — doc 04 §9",
+    "fields": {
+      "locales": "one entry per I18N language, keyed by our locale code",
+      "legacyKey": "key of the I18N table (zh-CN, zh-TW and pt are zh-Hans, zh-Hant and pt-BR)",
+      "sitePath": "surfenglish.app path the promo linked to; \"\" = the English home page, i.e. SurfEnglish had no page in this language",
+      "badge": "Apple badge locale the promo used",
+      "dir": "text direction set by the promo (\"rtl\" for ar), null = page direction",
+      "warning": "a problem that concerns the whole language",
+      "segments": "the strings in table order: label, bar.* (announcement bar), promo.* (promo section)",
+      "id": "key path in the I18N table, arrays 0-based as doc 04 §5.7 cites them (promo.chips[2])",
+      "kind": "label | bar | link | aria | eyebrow | tagline | h2 | p | li | note | alt",
+      "en": "the I18N.en string with the same key (inline <strong> as plain text)",
+      "target": "this locale's text, normalised the same way",
+      "aligned": "always true: the strings are paired by their key in the I18N table, and every language has exactly the keys of en (checked)",
+      "warnings": "known problems: \"doc …\" entries come from the design docs (doc 08 §1.1 / §8, doc 01 §2.9, doc 04 §5.7); \"found at extraction\" entries were spotted while building this TM; \"claims-lint <rule>\" entries are hits of src/data/claims-lint.json patterns for this locale in the text, at extraction time"
+    }
+  },
+  "source": {
+    "file": "js/surfenglish-promo.js",
+    "blob": "8af4ae33ad49756f376b6ec0246a57c22741c73e"
+  },
+  "locales": {
+    "ar": {
+      "legacyKey": "ar",
+      "sitePath": "ar/",
+      "badge": "ar-sa",
+      "dir": "rtl",
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "جديد",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "جديد من فريق WordByWord: SurfEnglish — تعلَّم الإنجليزية بكفاءة أعلى عبر قراءة مقالات حقيقية.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "جديد: SurfEnglish — تعلَّم الإنجليزية بقراءة مقالات حقيقية",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "اعرف المزيد",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "إغلاق",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "جديد · من صنّاع WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "تصفَّح الويب وتعلَّم الإنجليزية",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "تعلَّم الإنجليزية بقراءة ما يعجبك فعلًا.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "يحوّل SurfEnglish المقالات الحقيقية ومنشورات X والبودكاست إلى تمرين يومي في الإنجليزية. اسحب الجملة لترجمتها في مكانها، وانقر مرتين على أي كلمة لمعرفة معناها في سياقها، واستمع بصوت ذكاء اصطناعي يعمل على جهازك، ثم راجع بألعاب مبنية مما قرأت. مجانًا على iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "مقالات حقيقية بمستويات A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "اسحب للترجمة · انقر مرتين للمعنى",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "صوت ذكاء اصطناعي على الجهاز، يعمل دون إنترنت",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "ألعاب مبنية مما تقرأ",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "زُر surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "ابدأ مجانًا · التطبيق بـ 12 لغة · يترجم إلى 21 لغة",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "تنزيل من App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "الصفحة الرئيسية في SurfEnglish: مقالات إنجليزية حقيقية مع مستوى الصعوبة",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "اسحب جملة لترى ترجمتها أسفلها مباشرة",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — لعبة أركيد كلاسيكية مبنية من الكلمات التي بحثت عنها",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "de": {
+      "legacyKey": "de",
+      "sitePath": "",
+      "badge": "de-de",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Neu",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Neu vom WordByWord-Team: SurfEnglish — Englisch schneller lernen, indem du echte Artikel liest.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Neu: SurfEnglish — Englisch lernen mit echten Artikeln",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Mehr erfahren",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Schließen",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Neu · Von den Machern von WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surfe im Web, lerne Englisch.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Lerne Englisch mit Texten, die dich wirklich interessieren.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish macht aus echten Artikeln, X-Posts und Podcasts dein tägliches Englischtraining. Wische über einen Satz, um ihn direkt an Ort und Stelle zu übersetzen, tippe doppelt auf ein Wort für seine Bedeutung im Kontext, lass dir Texte von einer KI-Stimme auf dem Gerät vorlesen — und wiederhole mit Spielen, die aus deiner Lektüre entstehen. Kostenlos fürs iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Echte Artikel, Niveau A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Wischen zum Übersetzen · Doppeltippen zum Nachschlagen",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "KI-Stimme auf dem Gerät, auch offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Spiele aus dem, was du liest",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "surfenglish.app besuchen",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Kostenlos starten · App in 12 Sprachen · Übersetzt in 21 Sprachen",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Laden im App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish-Startseite: echte englische Artikel mit Schwierigkeitsgrad",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Über einen Satz wischen und die Übersetzung direkt darunter sehen",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — ein Retro-Arcade-Spiel aus den Wörtern, die du nachgeschlagen hast",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "en": {
+      "legacyKey": "en",
+      "sitePath": "",
+      "badge": "en-us",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)",
+            "claims-lint se-hype: \"New\""
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)",
+            "claims-lint se-hype: \"New\"",
+            "claims-lint hype: \"WordByWord team\""
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)",
+            "claims-lint se-hype: \"New\""
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store"
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more"
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss"
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)",
+            "claims-lint se-hype: \"New\"",
+            "claims-lint hype: \"the makers\""
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)",
+            "claims-lint se-on-device-voice: \"on-device AI voice\""
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1"
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up"
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)",
+            "claims-lint offline: \"offline\"",
+            "claims-lint se-on-device-voice: \"On-device AI voice\""
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading"
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "es": {
+      "legacyKey": "es",
+      "sitePath": "es/",
+      "badge": "es-es",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Nuevo",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Nuevo del equipo de WordByWord: SurfEnglish — aprende inglés más rápido leyendo artículos reales.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Nuevo: SurfEnglish — aprende inglés leyendo artículos reales",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Saber más",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Cerrar",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Nuevo · De los creadores de WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surfea la web, aprende inglés.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Aprende inglés leyendo lo que de verdad te interesa.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish convierte artículos reales, posts de X y podcasts en tu práctica diaria de inglés. Desliza una frase para traducirla en el momento, toca dos veces una palabra para ver su significado en contexto, escucha con una voz de IA en tu dispositivo y repasa con juegos creados a partir de lo que lees. Gratis en iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Artículos reales, niveles A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Desliza para traducir · Toca dos veces para consultar",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Voz de IA en el dispositivo, funciona sin conexión",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Juegos creados a partir de tus lecturas",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Visita surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Gratis para empezar · App en 12 idiomas · Traduce a 21 idiomas",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Descárgalo en el App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Feed de inicio de SurfEnglish: artículos reales en inglés con nivel de dificultad",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Desliza una frase para ver su traducción integrada",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid: un juego arcade retro creado con las palabras que consultaste",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "legacyKey": "fr",
+      "sitePath": "",
+      "badge": "fr-fr",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Nouveau",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Nouveau de l’équipe WordByWord : SurfEnglish — apprenez l’anglais plus vite en lisant de vrais articles.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Nouveau : SurfEnglish — apprenez l’anglais avec de vrais articles",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "En savoir plus",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Fermer",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Nouveau · Par les créateurs de WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surfez sur le web, apprenez l’anglais.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Apprenez l’anglais en lisant ce qui vous intéresse vraiment.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish transforme de vrais articles, des posts X et des podcasts en entraînement quotidien à l’anglais. Balayez une phrase pour la traduire sur place, touchez deux fois un mot pour voir son sens dans le contexte, écoutez avec une voix IA embarquée sur votre appareil, puis révisez avec des jeux créés à partir de vos lectures. Gratuit sur iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "De vrais articles, niveaux A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Balayer pour traduire · Toucher deux fois pour chercher",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Voix IA sur l’appareil, fonctionne hors ligne",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Des jeux créés à partir de vos lectures",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Découvrir surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Gratuit pour commencer · App en 12 langues · Traduit vers 21 langues",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Télécharger dans l’App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Fil d’accueil SurfEnglish : de vrais articles en anglais avec niveau de difficulté",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Balayez une phrase pour afficher sa traduction juste en dessous",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — un jeu d’arcade rétro créé à partir des mots que vous avez cherchés",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "hi": {
+      "legacyKey": "hi",
+      "sitePath": "hi/",
+      "badge": "hi-in",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "नया",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWord टीम का नया ऐप: SurfEnglish — असली आर्टिकल पढ़कर अंग्रेज़ी और तेज़ी से सीखें।",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "नया: SurfEnglish — असली आर्टिकल पढ़कर अंग्रेज़ी सीखें",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "और जानें",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "बंद करें",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "नया · WordByWord बनाने वाली टीम से",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "वेब पर सर्फ करें, अंग्रेज़ी सीखें",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "वही पढ़ें जो आपको सच में पसंद है — और अंग्रेज़ी सीखते जाएँ।",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish असली आर्टिकल, X पोस्ट और पॉडकास्ट को रोज़ की अंग्रेज़ी प्रैक्टिस में बदल देता है। वाक्य पर स्वाइप करें और वहीं अनुवाद पाएँ, शब्द पर डबल-टैप करके संदर्भ के अनुसार मतलब देखें, डिवाइस पर चलने वाली AI आवाज़ से सुनें, और अपने पढ़े हुए से बने गेम्स के साथ दोहराएँ। iPhone पर मुफ़्त।",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "असली आर्टिकल, A1–C1 स्तर",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "स्वाइप से अनुवाद · डबल-टैप से मतलब",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "डिवाइस पर AI आवाज़, ऑफ़लाइन भी",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "आपके पढ़े हुए से बने गेम्स",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "surfenglish.app पर जाएँ",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "शुरुआत मुफ़्त · ऐप 12 भाषाओं में · 21 भाषाओं में अनुवाद",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "App Store से डाउनलोड करें",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish होम फ़ीड: कठिनाई स्तर के साथ असली अंग्रेज़ी आर्टिकल",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "वाक्य पर स्वाइप करें और अनुवाद ठीक नीचे देखें",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — आपके खोजे गए शब्दों से बना रेट्रो आर्केड गेम",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "id": {
+      "legacyKey": "id",
+      "sitePath": "id/",
+      "badge": "id-id",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Baru",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Baru dari tim WordByWord: SurfEnglish — belajar bahasa Inggris lebih efektif dengan membaca artikel asli.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Baru: SurfEnglish — belajar bahasa Inggris lewat artikel asli",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Pelajari lebih lanjut",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Tutup",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Baru · Dari pembuat WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Berselancar di web, belajar bahasa Inggris.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Belajar bahasa Inggris dengan membaca hal yang benar-benar kamu sukai.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish mengubah artikel asli, postingan X, dan podcast menjadi latihan bahasa Inggris harian. Geser kalimat untuk langsung menerjemahkannya, ketuk dua kali sebuah kata untuk melihat artinya sesuai konteks, dengarkan dengan suara AI on-device, lalu ulas lewat game yang dibuat dari bacaanmu. Gratis di iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Artikel asli, level A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Geser untuk menerjemahkan · Ketuk dua kali untuk arti kata",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Suara AI on-device, bisa offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Game yang dibuat dari bacaanmu",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Kunjungi surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Gratis untuk memulai · Aplikasi dalam 12 bahasa · Menerjemahkan ke 21 bahasa",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Unduh di App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Beranda SurfEnglish: artikel bahasa Inggris asli dengan tingkat kesulitan",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Geser kalimat untuk melihat terjemahannya tepat di bawah",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — game arcade retro yang dibuat dari kata-kata yang kamu cari",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "it": {
+      "legacyKey": "it",
+      "sitePath": "",
+      "badge": "it-it",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Novità",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Novità dal team di WordByWord: SurfEnglish — impara l’inglese più in fretta leggendo articoli veri.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Novità: SurfEnglish — impara l’inglese con articoli veri",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Scopri di più",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Chiudi",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Novità · Dai creatori di WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Naviga sul web, impara l’inglese.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Impara l’inglese leggendo ciò che ti interessa davvero.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish trasforma articoli veri, post di X e podcast nel tuo allenamento quotidiano di inglese. Scorri una frase per tradurla sul posto, tocca due volte una parola per vederne il significato nel contesto, ascolta con una voce IA che gira sul dispositivo e ripassa con giochi creati da ciò che hai letto. Gratis su iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Articoli veri, livelli A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Scorri per tradurre · Tocca due volte per cercare",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Voce IA sul dispositivo, funziona offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Giochi creati dalle tue letture",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Visita surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Gratis per iniziare · App in 12 lingue · Traduce in 21 lingue",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Scarica su App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Feed iniziale di SurfEnglish: articoli veri in inglese con livello di difficoltà",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Scorri una frase per vederne la traduzione subito sotto",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — un gioco arcade retrò creato dalle parole che hai cercato",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "ja": {
+      "legacyKey": "ja",
+      "sitePath": "ja/",
+      "badge": "ja-jp",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "New",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWordチームの新作 SurfEnglish — 本物の英文記事を読んで、英語をもっと効率よく学ぼう。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)",
+            "claims-lint hype: \"WordByWordチーム\""
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "新登場 SurfEnglish — 本物の記事を読んで英語を学ぶ",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)",
+            "claims-lint se-hype: \"新登場\""
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "詳しく見る",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "閉じる",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "新登場 · WordByWordチームより",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)",
+            "claims-lint se-hype: \"新登場\"",
+            "claims-lint hype: \"WordByWordチーム\""
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "ネットの波に乗って、英語を学ぼう",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "本当に興味のあるものを読んで、英語を身につける。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglishは、本物の英文記事・Xの投稿・ポッドキャストを毎日の英語学習に変えるアプリ。スワイプで文をその場で翻訳、ダブルタップで文脈に合った単語の意味を表示、端末内AI音声で読み上げ。読んだ内容からゲームが自動生成されます。iPhoneで無料。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "本物の記事、A1–C1のレベル表示",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "スワイプで翻訳 · ダブルタップで単語検索",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "端末内AI音声、オフライン対応",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)",
+            "claims-lint offline: \"オフライン\""
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "読んだ内容から生まれるゲーム",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "公式サイト surfenglish.app へ",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "無料で始められる · アプリは12言語対応 · 21言語に翻訳",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "App Storeでダウンロード",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglishのホームフィード：難易度付きの本物の英文記事",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "文をスワイプすると、その場に翻訳が表示",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — 調べた単語から作られるレトロなアーケードゲーム",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "ko": {
+      "legacyKey": "ko",
+      "sitePath": "ko/",
+      "badge": "ko-kr",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "New",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWord 팀의 새 앱 SurfEnglish — 진짜 영어 기사를 읽으며 더 효율적으로 영어를 배우세요.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)",
+            "claims-lint hype: \"WordByWord 팀\""
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "새 앱 SurfEnglish — 진짜 기사를 읽으며 영어 배우기",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "자세히 보기",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "닫기",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "새로 출시 · WordByWord 팀",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)",
+            "claims-lint hype: \"WordByWord 팀\""
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "웹서핑하며 영어 배우기",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "정말 흥미로운 글을 읽으며 영어를 배우세요.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish는 진짜 영어 기사, X 포스트, 팟캐스트를 매일의 영어 연습으로 바꿉니다. 문장을 밀어 그 자리에서 번역하고, 단어를 두 번 탭해 문맥 속 뜻을 확인하고, 온디바이스 AI 음성으로 들어 보세요. 읽은 내용은 게임이 됩니다. iPhone에서 무료.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "진짜 기사, A1–C1 난이도 표시",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "밀어서 번역 · 두 번 탭으로 단어 찾기",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "온디바이스 AI 음성, 오프라인 지원",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)",
+            "claims-lint offline: \"오프라인\""
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "읽은 내용으로 만들어지는 게임",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "공식 사이트 surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "무료로 시작 · 12개 언어 인터페이스 · 21개 언어로 번역",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "App Store에서 다운로드",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish 홈 피드: 난이도가 표시된 진짜 영어 기사",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "문장을 밀면 번역이 바로 아래에 표시",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — 찾아본 단어로 만들어지는 레트로 아케이드 게임",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "nl": {
+      "legacyKey": "nl",
+      "sitePath": "",
+      "badge": "nl-nl",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Nieuw",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Nieuw van het WordByWord-team: SurfEnglish — leer sneller Engels door echte artikelen te lezen.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Nieuw: SurfEnglish — leer Engels met echte artikelen",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Meer info",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Sluiten",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Nieuw · Van de makers van WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surf op het web, leer Engels.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Leer Engels door te lezen wat je écht interessant vindt.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish maakt van echte artikelen, X-posts en podcasts je dagelijkse Engelse oefening. Veeg over een zin om die ter plekke te vertalen, tik dubbel op een woord voor de betekenis in context, luister met een AI-stem die op je toestel draait en herhaal met games die uit je eigen leesvoer ontstaan. Gratis op iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Echte artikelen, niveau A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Vegen om te vertalen · Dubbeltikken om op te zoeken",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "AI-stem op het toestel, werkt offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Games gemaakt van wat je leest",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Bezoek surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Gratis te beginnen · App in 12 talen · Vertaalt naar 21 talen",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Download in de App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish-startfeed: echte Engelse artikelen met moeilijkheidsgraad",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Veeg over een zin en zie de vertaling er direct onder",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — een retro arcadegame gemaakt van de woorden die je opzocht",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "pl": {
+      "legacyKey": "pl",
+      "sitePath": "",
+      "badge": "pl-pl",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Nowość",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Nowość od zespołu WordByWord: SurfEnglish — ucz się angielskiego szybciej, czytając prawdziwe artykuły.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Nowość: SurfEnglish — ucz się angielskiego z prawdziwych artykułów",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Dowiedz się więcej",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Zamknij",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Nowość · Od twórców WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surfuj po sieci, ucz się angielskiego.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Ucz się angielskiego, czytając to, co naprawdę Cię interesuje.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish zamienia prawdziwe artykuły, posty z X i podcasty w codzienną praktykę angielskiego. Przesuń zdanie, by przetłumaczyć je na miejscu, stuknij dwukrotnie słowo, by zobaczyć jego znaczenie w kontekście, słuchaj głosu AI działającego na Twoim urządzeniu i powtarzaj w grach tworzonych z tego, co czytasz. Za darmo na iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Prawdziwe artykuły, poziomy A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Przesuń, by przetłumaczyć · Stuknij dwukrotnie, by sprawdzić",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Głos AI na urządzeniu, działa offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Gry tworzone z tego, co czytasz",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Odwiedź surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Zacznij za darmo · Aplikacja w 12 językach · Tłumaczy na 21 języków",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Pobierz w App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Strona główna SurfEnglish: prawdziwe artykuły po angielsku z poziomem trudności",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Przesuń zdanie, by zobaczyć tłumaczenie tuż pod nim",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — retro gra zręcznościowa zbudowana ze słów, które sprawdzałeś",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "pt-BR": {
+      "legacyKey": "pt",
+      "sitePath": "pt-br/",
+      "badge": "pt-br",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Novo",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Novo do time do WordByWord: SurfEnglish — aprenda inglês mais rápido lendo artigos de verdade.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Novo: SurfEnglish — aprenda inglês lendo artigos de verdade",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Saiba mais",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Fechar",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Novo · Dos criadores do WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Surfe na web, aprenda inglês.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Aprenda inglês lendo o que realmente interessa a você.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "O SurfEnglish transforma artigos reais, posts do X e podcasts em treino diário de inglês. Deslize uma frase para traduzi-la na hora, toque duas vezes em uma palavra para ver o significado no contexto, ouça com uma voz de IA no aparelho e revise com jogos criados a partir do que você leu. Grátis no iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Artigos reais, níveis A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Deslize para traduzir · Toque duas vezes para consultar",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Voz de IA no aparelho, funciona offline",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Jogos criados a partir da sua leitura",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Acesse surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Comece grátis · App em 12 idiomas · Traduz para 21 idiomas",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Baixar na App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Feed inicial do SurfEnglish: artigos reais em inglês com nível de dificuldade",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Deslize uma frase para ver a tradução logo abaixo",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — um jogo arcade retrô criado com as palavras que você consultou",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "ru": {
+      "legacyKey": "ru",
+      "sitePath": "",
+      "badge": "ru-ru",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Новое",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Новинка от команды WordByWord: SurfEnglish — учите английский быстрее, читая настоящие статьи.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Новинка: SurfEnglish — английский по настоящим статьям",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Подробнее",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Закрыть",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Новинка · От создателей WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Сёрфи по сети, учи английский.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Учите английский, читая то, что вам действительно интересно.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish превращает настоящие статьи, посты из X и подкасты в ежедневную практику английского. Проведите по предложению, чтобы перевести его на месте, дважды коснитесь слова, чтобы увидеть его значение в контексте, слушайте ИИ-голос, работающий прямо на устройстве, и повторяйте в играх, собранных из того, что вы прочитали. Бесплатно на iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Настоящие статьи, уровни A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Свайп — перевод · Двойное касание — значение",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "ИИ-голос на устройстве, работает офлайн",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Игры из того, что вы читаете",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Открыть surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Бесплатный старт · Приложение на 12 языках · Перевод на 21 язык",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Загрузить в App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Главная лента SurfEnglish: настоящие статьи на английском с уровнем сложности",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Проведите по предложению — перевод появится прямо под ним",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — ретро-аркада из слов, которые вы искали",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "th": {
+      "legacyKey": "th",
+      "sitePath": "th/",
+      "badge": "th-th",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "ใหม่",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "ใหม่จากทีม WordByWord: SurfEnglish — เรียนภาษาอังกฤษได้ผลกว่าเดิมด้วยการอ่านบทความจริง",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "ใหม่: SurfEnglish — เรียนภาษาอังกฤษจากบทความจริง",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "ดูเพิ่มเติม",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "ปิด",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "ใหม่ · จากทีมผู้สร้าง WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "ท่องเว็บไปพร้อมกับฝึกภาษาอังกฤษ",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "เรียนภาษาอังกฤษจากเรื่องที่คุณอยากอ่านจริง ๆ",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish เปลี่ยนบทความจริง โพสต์บน X และพอดแคสต์ให้เป็นการฝึกภาษาอังกฤษประจำวัน ปัดประโยคเพื่อแปลทันทีตรงนั้น แตะสองครั้งที่คำเพื่อดูความหมายตามบริบท ฟังเสียง AI ที่ทำงานบนเครื่อง แล้วทบทวนด้วยเกมที่สร้างจากสิ่งที่คุณอ่าน ฟรีบน iPhone",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "บทความจริง แบ่งระดับ A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "ปัดเพื่อแปล · แตะสองครั้งเพื่อดูคำศัพท์",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "เสียง AI บนเครื่อง ใช้ออฟไลน์ได้",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "เกมที่สร้างจากสิ่งที่คุณอ่าน",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "ไปที่ surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "เริ่มต้นใช้ฟรี · แอปรองรับ 12 ภาษา · แปลได้ 21 ภาษา",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "ดาวน์โหลดบน App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "หน้าแรก SurfEnglish: บทความภาษาอังกฤษจริงพร้อมระดับความยาก",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "ปัดประโยคเพื่อดูคำแปลใต้ต้นฉบับ",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — เกมอาร์เคดย้อนยุคที่สร้างจากคำศัพท์ที่คุณค้นหา",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "tr": {
+      "legacyKey": "tr",
+      "sitePath": "",
+      "badge": "tr-tr",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Yeni",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWord ekibinden yeni: SurfEnglish — gerçek makaleler okuyarak İngilizceyi daha hızlı öğrenin.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Yeni: SurfEnglish — gerçek makalelerle İngilizce öğrenin",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Daha fazla bilgi",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Kapat",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Yeni · WordByWord’ün yapımcılarından",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Web’de gezin, İngilizce öğrenin.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Gerçekten ilginizi çeken şeyleri okuyarak İngilizce öğrenin.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish gerçek makaleleri, X gönderilerini ve podcast’leri günlük İngilizce pratiğine dönüştürür. Bir cümleyi kaydırarak olduğu yerde çevirin, bir kelimeye çift dokunarak bağlamdaki anlamını görün, cihaz üzerinde çalışan yapay zekâ sesiyle dinleyin ve okuduklarınızdan oluşturulan oyunlarla tekrar edin. iPhone’da ücretsiz.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Gerçek makaleler, A1–C1 seviyeleri",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Kaydırarak çevir · Çift dokunarak sözlüğe bak",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Cihaz üzerinde yapay zekâ sesi, çevrimdışı çalışır",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Okuduklarınızdan oluşturulan oyunlar",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "surfenglish.app’i ziyaret edin",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Ücretsiz başlayın · 12 dilde uygulama · 21 dile çeviri",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "App Store’dan indirin",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish ana akışı: zorluk seviyeli gerçek İngilizce makaleler",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Bir cümleyi kaydırın, çevirisi hemen altında belirsin",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — baktığınız kelimelerden oluşturulan retro bir atari oyunu",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "uk": {
+      "legacyKey": "uk",
+      "sitePath": "",
+      "badge": "uk-ua",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Нове",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Новинка від команди WordByWord: SurfEnglish — вивчайте англійську швидше, читаючи справжні статті.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Новинка: SurfEnglish — англійська за справжніми статтями",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Дізнатися більше",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Закрити",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Новинка · Від творців WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Серфіть мережею, вивчайте англійську.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Вивчайте англійську, читаючи те, що вам справді цікаво.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish перетворює справжні статті, дописи з X і подкасти на щоденну практику англійської. Проведіть по реченню, щоб перекласти його на місці, двічі торкніться слова, щоб побачити його значення в контексті, слухайте ШІ-голос, що працює просто на пристрої, і повторюйте в іграх, створених із прочитаного. Безкоштовно на iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Справжні статті, рівні A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Свайп — переклад · Подвійний дотик — значення",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "ШІ-голос на пристрої, працює офлайн",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Ігри з того, що ви читаєте",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Відкрити surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Безкоштовний старт · Застосунок 12 мовами · Переклад 21 мовою",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: \"App in 12 <languages>\" misleads — SurfEnglish has no interface in this language; use the doc 04 §5.7 uiNote instead (T6; P3, F10)"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Завантажити в App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Головна стрічка SurfEnglish: справжні статті англійською з рівнем складності",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Проведіть по реченню — переклад з’явиться одразу під ним",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — ретро-аркада зі слів, які ви шукали",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "vi": {
+      "legacyKey": "vi",
+      "sitePath": "vi/",
+      "badge": "vi-vn",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "Mới",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)"
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "Mới từ đội ngũ WordByWord: SurfEnglish — học tiếng Anh hiệu quả hơn bằng cách đọc bài báo thật.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)"
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "Mới: SurfEnglish — học tiếng Anh qua bài báo thật",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)"
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "Tìm hiểu thêm",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "Đóng",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "Mới · Từ đội ngũ làm ra WordByWord",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)"
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "Lướt web, học tiếng Anh.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "Học tiếng Anh bằng cách đọc những gì bạn thực sự thích.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish biến bài báo thật, bài đăng trên X và podcast thành bài luyện tiếng Anh mỗi ngày. Vuốt một câu để dịch ngay tại chỗ, chạm hai lần vào từ để xem nghĩa trong ngữ cảnh, nghe bằng giọng AI chạy trên máy, và ôn lại bằng trò chơi tạo từ chính những gì bạn đã đọc. Miễn phí trên iPhone.",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "Bài báo thật, phân cấp A1–C1",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "Vuốt để dịch · Chạm hai lần để tra từ",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "Giọng AI trên máy, dùng được ngoại tuyến",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "Trò chơi tạo từ nội dung bạn đã đọc",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "Truy cập surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "Bắt đầu miễn phí · Ứng dụng có 12 ngôn ngữ · Dịch sang 21 ngôn ngữ",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "Tải về trên App Store",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "Trang chủ SurfEnglish: bài báo tiếng Anh thật kèm mức độ khó",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "Vuốt một câu để xem bản dịch ngay bên dưới",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid — trò chơi arcade cổ điển tạo từ những từ bạn đã tra",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "zh-Hans": {
+      "legacyKey": "zh-CN",
+      "sitePath": "zh-hans/",
+      "badge": "zh-cn",
+      "dir": null,
+      "warning": "SurfEnglish is not on the China mainland App Store (F18): zh-Hans shows no card and no App Store link, only FAQ / footer / about (R42; doc 08 §8.3)",
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "新上线",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)",
+            "claims-lint se-hype: \"新上线\""
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWord 团队新作：SurfEnglish —— 读真实英语文章，更高效地学英语。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)",
+            "claims-lint se-hype: \"更高效\"",
+            "claims-lint hype: \"WordByWord 团队\""
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "SurfEnglish 新上线 —— 读真实文章，更高效学英语",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)",
+            "claims-lint se-hype: \"新上线\""
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store 下载",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "了解更多",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "关闭",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "新上线 · 来自 WordByWord 团队",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)",
+            "claims-lint se-hype: \"新上线\"",
+            "claims-lint hype: \"WordByWord 团队\""
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "边冲浪，边学英语",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "读你真正感兴趣的内容，更高效地学英语。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)",
+            "claims-lint se-hype: \"更高效\""
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish 把真实的英语文章、X 帖子和播客变成每天的英语练习：右滑翻译整句、双击查看单词在语境中的含义、本地 AI 语音朗读，读过的内容还会自动生成单词游戏。iPhone 免费下载。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)",
+            "claims-lint se-on-device-voice: \"本地 AI 语音\""
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "真实文章，A1–C1 难度分级",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "右滑翻译 · 双击查词",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "本地 AI 语音，离线可用",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)",
+            "claims-lint offline: \"离线\"",
+            "claims-lint se-on-device-voice: \"本地 AI 语音\""
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "游戏由你读过的内容生成",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "访问官网 surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "免费开始 · 应用界面 12 种语言 · 可译成 21 种语言",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "在 App Store 下载",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish 首页信息流：带难度等级的真实英语文章",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "右滑一句，译文就在原文下方出现",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid —— 由你查过的单词生成的复古街机游戏",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    },
+    "zh-Hant": {
+      "legacyKey": "zh-TW",
+      "sitePath": "zh-hant/",
+      "badge": "zh-tw",
+      "dir": null,
+      "segments": [
+        {
+          "id": "label",
+          "kind": "label",
+          "en": "New",
+          "target": "新上線",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — no \"New\" framing (doc 04 §5.7 T1; R40)",
+            "claims-lint se-hype: \"新上線\""
+          ]
+        },
+        {
+          "id": "bar.text",
+          "kind": "bar",
+          "en": "New from the WordByWord team: SurfEnglish — learn English faster by reading real articles.",
+          "target": "WordByWord 團隊新作：SurfEnglish —— 讀真實英文文章，更有效率地學英語。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning, \"faster\" claim, \"WordByWord team\" (T1)",
+            "claims-lint hype: \"WordByWord 團隊\""
+          ]
+        },
+        {
+          "id": "bar.short",
+          "kind": "bar",
+          "en": "New: SurfEnglish — learn English faster by reading real articles",
+          "target": "SurfEnglish 新上線 —— 讀真實文章，學英語更有效率",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted with the announcement bar — outdated positioning (T1)",
+            "claims-lint se-hype: \"新上線\""
+          ]
+        },
+        {
+          "id": "bar.cta",
+          "kind": "link",
+          "en": "App Store",
+          "target": "App Store 下載",
+          "aligned": true
+        },
+        {
+          "id": "bar.more",
+          "kind": "link",
+          "en": "Learn more",
+          "target": "了解更多",
+          "aligned": true
+        },
+        {
+          "id": "bar.close",
+          "kind": "aria",
+          "en": "Dismiss",
+          "target": "關閉",
+          "aligned": true
+        },
+        {
+          "id": "promo.eyebrow",
+          "kind": "eyebrow",
+          "en": "New · From the makers of WordByWord",
+          "target": "新上線 · 來自 WordByWord 團隊",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T2: reuse without the \"New ·\" prefix; \"makers / team\" → the developer (singular, third person)",
+            "claims-lint se-hype: \"新上線\"",
+            "claims-lint hype: \"WordByWord 團隊\""
+          ]
+        },
+        {
+          "id": "promo.tagline",
+          "kind": "tagline",
+          "en": "Surf the web, learn English.",
+          "target": "邊衝浪，邊學英語",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE tagline (T1)"
+          ]
+        },
+        {
+          "id": "promo.title",
+          "kind": "h2",
+          "en": "Learn English by reading what you actually enjoy.",
+          "target": "讀你真正感興趣的內容，更有效率地學英語。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated SE positioning; the new title starts with \"SurfEnglish: \" + English news at your level (T1, T3; R40)"
+          ]
+        },
+        {
+          "id": "promo.lead",
+          "kind": "p",
+          "en": "SurfEnglish turns real articles, X posts and podcasts into daily English practice. Swipe a sentence to translate it in place, double-tap a word for its meaning in context, listen with an on-device AI voice — and play games built from what you read. Free on iPhone.",
+          "target": "SurfEnglish 把真實的英文文章、X 貼文和 Podcast 變成每天的英語練習：右滑翻譯整句、雙擊查看單字在語境中的意思、裝置端 AI 語音朗讀，讀過的內容還會自動變成單字遊戲。iPhone 免費下載。",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §8.3: deleted — outdated positioning; \"X posts and podcasts\" and the on-device voice are not used as SE selling points (T1; R41)"
+          ]
+        },
+        {
+          "id": "promo.chips[0]",
+          "kind": "li",
+          "en": "Real articles, graded A1–C1",
+          "target": "真實文章，A1–C1 難度分級",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[1]",
+          "kind": "li",
+          "en": "Swipe to translate · Double-tap to look up",
+          "target": "右滑翻譯 · 雙擊查詞",
+          "aligned": true
+        },
+        {
+          "id": "promo.chips[2]",
+          "kind": "li",
+          "en": "On-device AI voice, works offline",
+          "target": "裝置端 AI 語音，離線可用",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T1/T5: not used — an on-device / offline voice is not an SE-only selling point (R41)",
+            "claims-lint offline: \"離線\""
+          ]
+        },
+        {
+          "id": "promo.chips[3]",
+          "kind": "li",
+          "en": "Games built from your reading",
+          "target": "遊戲由你讀過的內容生成",
+          "aligned": true
+        },
+        {
+          "id": "promo.site",
+          "kind": "link",
+          "en": "Visit surfenglish.app",
+          "target": "前往官網 surfenglish.app",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T7: the new link text is SE's core phrase + brand, never the bare domain (R76)"
+          ]
+        },
+        {
+          "id": "promo.note",
+          "kind": "note",
+          "en": "Free to start · App in 12 languages · Translates into 21 languages",
+          "target": "免費開始 · 介面支援 12 種語言 · 可翻譯成 21 種語言",
+          "aligned": true,
+          "warnings": [
+            "doc 08 §1.4: language counts are placeholders ({se.uiLanguages}, {se.targetLanguages}) in the new copy"
+          ]
+        },
+        {
+          "id": "promo.store",
+          "kind": "alt",
+          "en": "Download on the App Store",
+          "target": "在 App Store 下載",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §5.7 T8: SE gets a text link \"Get SurfEnglish on the App Store\", never the black badge (R43); reuse only the verb"
+          ]
+        },
+        {
+          "id": "promo.alts[0]",
+          "kind": "alt",
+          "en": "SurfEnglish home feed: real English articles with difficulty levels",
+          "target": "SurfEnglish 首頁動態：帶難度等級的真實英文文章",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[1]",
+          "kind": "alt",
+          "en": "Swipe a sentence to see its translation inline",
+          "target": "右滑一句，譯文就出現在原文下方",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        },
+        {
+          "id": "promo.alts[2]",
+          "kind": "alt",
+          "en": "Word Raid — a retro arcade game built from the words you looked up",
+          "target": "Word Raid —— 由你查過的單字生成的復古街機遊戲",
+          "aligned": true,
+          "warnings": [
+            "doc 04 §6 / R44: the screenshots changed (games-home crop); these alts describe images that are no longer used"
+          ]
+        }
+      ]
+    }
+  }
+}

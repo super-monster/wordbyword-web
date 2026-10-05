@@ -1,0 +1,645 @@
+{
+  "_meta": {
+    "generatedBy": "scripts/extract-legacy.mjs",
+    "source": "legacy-pages @ 7a389baa6695081d8e02fce3b7f4b18e0b0c6fc4",
+    "content": "Legacy nl home page (nl-top.html) aligned segment by segment with index.html, plus the js/site-notice.js strings.",
+    "warning": "Translation memory (TM) for reference only — outdated, not reviewed, not used by the build. The legacy copy contains outdated or wrong product facts: use it for established terms and phrasing, never as a source of facts. Doc 08 (§1.1 fact red lines, §7 translation brief) always wins over this file.",
+    "rule": "TM 不参与构建，也不保证事实正确（F11）— doc 06 §4.5；已过时，仅作术语参考 — doc 04 §9",
+    "fields": {
+      "legacy": "legacy file prefixes of this locale (LOCALES[].legacy in src/site.mjs)",
+      "sources": "legacy files of this locale (blob = git object id); a further file names the one it duplicates and whether it is byte-identical",
+      "lang": "<html lang> of the legacy page",
+      "dir": "<html dir> of the legacy page; null = not set (left to right)",
+      "title": "<title> of the legacy page (also segment head.title)",
+      "description": "<meta name=\"description\"> of the legacy page (also segment head.description)",
+      "alignment": "pairing report against index.html: enOnly = en segments without a counterpart here; structure = element counts per section that differ from index.html (inline elements such as <br> do not affect pairing)",
+      "segments": "the page copy in document order (head, header, hero, features, screenshots, cta, faq, footer)",
+      "notice": "js/site-notice.js strings (service-outage banner, off on the legacy site; already migrated to src/notice.json)",
+      "id": "stable segment id: <section>[.<n> of a repeated block].<role>[.<n>]; the same id is the same slot in every legacy/<code>.json",
+      "kind": "title | meta | alt | brand | nav | h1 | p | button | h2 | h3 | li | faq-q | faq-a | link | eyebrow | heading",
+      "en": "the index.html segment in the same slot (<br> kept as \\n, inline emphasis as plain text, whitespace collapsed)",
+      "target": "this locale's text, normalised the same way",
+      "aligned": "true = slot verified: same structural path with equal sibling counts, same link target and same images in its repeated block; false = paired by section + position only (see note)",
+      "note": "why a pair is not verified, or other alignment remarks",
+      "warnings": "known problems: \"doc …\" entries come from the design docs (doc 08 §1.1 / §8, doc 01 §2.9, doc 04 §5.7); \"found at extraction\" entries were spotted while building this TM; \"claims-lint <rule>\" entries are hits of src/data/claims-lint.json patterns for this locale in the text, at extraction time"
+    }
+  },
+  "locale": "nl",
+  "legacy": [
+    "nl"
+  ],
+  "sources": [
+    {
+      "file": "nl-top.html",
+      "blob": "40fb22740598cd475af411642b470e938bb1d7ac"
+    }
+  ],
+  "lang": "nl",
+  "dir": null,
+  "title": "WordByWord - Jouw Slimme Taalhulp",
+  "description": "WordByWord: Vertaal direct door tekst te vegen in je browser, zin-voor-zin vergelijking, AI-contextuitleg en uitspraak. Alles-in-één app om je lees- en luistervaardigheid in vreemde talen te verbeteren.",
+  "alignment": {
+    "reference": "index.html",
+    "pairs": 67,
+    "aligned": 63,
+    "unaligned": 4,
+    "enOnly": [
+      "screenshots.alt.5",
+      "screenshots.alt.6",
+      "screenshots.alt.7",
+      "screenshots.alt.8"
+    ],
+    "structure": [
+      "screenshots: img 4 (en 8)"
+    ]
+  },
+  "segments": [
+    {
+      "id": "head.title",
+      "kind": "title",
+      "en": "WordByWord - Your Smart Language Learning Assistant",
+      "target": "WordByWord - Jouw Slimme Taalhulp",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: generic \"smart assistant\" title, dropped; only the positioning \"reading assistant for language learners\" survives (hero.lede / meta.description, R39; doc 03 §3.1)"
+      ]
+    },
+    {
+      "id": "head.description",
+      "kind": "meta",
+      "en": "WordByWord: Instantly translate by swiping text in your browser, sentence-by-sentence alignment, AI context explanation and pronunciation. All-in-one tool to boost your reading and listening in foreign languages.",
+      "target": "WordByWord: Vertaal direct door tekst te vegen in je browser, zin-voor-zin vergelijking, AI-contextuitleg en uitspraak. Alles-in-één app om je lees- en luistervaardigheid in vreemde talen te verbeteren.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"swiping text in your browser\" reads as a browser extension: it is the built-in browser of an iPhone/iPad app (C-08); \"sentence-by-sentence alignment\" is jargon (C-16)"
+      ]
+    },
+    {
+      "id": "header.alt",
+      "kind": "alt",
+      "en": "Word by Word Logo",
+      "target": "Word by Word Logo",
+      "aligned": true
+    },
+    {
+      "id": "header.brand",
+      "kind": "brand",
+      "en": "WordByWord",
+      "target": "WordByWord",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.1",
+      "kind": "nav",
+      "en": "Features",
+      "target": "Belangrijkste functies",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.2",
+      "kind": "nav",
+      "en": "Screenshots",
+      "target": "Screenshots",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.3",
+      "kind": "nav",
+      "en": "FAQ",
+      "target": "FAQ",
+      "aligned": true
+    },
+    {
+      "id": "hero.h1",
+      "kind": "h1",
+      "en": "Word by Word\nInstant Translation, Smarter Language Learning",
+      "target": "Word by Word\nDirect Vertalen, Slimmer Talen Leren",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the new H1 never splits off \"Word by Word\" and follows doc 03 §3.9 (F11)"
+      ]
+    },
+    {
+      "id": "hero.p",
+      "kind": "p",
+      "en": "Effortlessly translate any text on any webpage by swiping, insert sentence-by-sentence translations, and get AI-powered context explanations and pronunciation.\nNo need to switch apps—improve your vocabulary and reading comprehension as you browse. Supports over 20 language pairs, including Chinese, Japanese, Korean, and more.\nWordByWord is your intelligent assistant for mastering new languages with ease.",
+      "target": "Vertaal moeiteloos elke tekst op elke webpagina door te vegen, voeg zin-voor-zin vertalingen toe en krijg AI-contextuitleg en uitspraak.\nJe hoeft niet van app te wisselen—verrijk je woordenschat en leesvaardigheid tijdens het surfen. Ondersteunt meer dan 20 taalkoppels, waaronder Nederlands, Engels, Chinees, Japans, Koreaans en meer.\nWordByWord is jouw slimme assistent om eenvoudig nieuwe talen te beheersen.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"over 20 language pairs\" is wrong — {uiLanguages} interface languages, translation into {targetLanguages} languages (C-07); \"no need to switch apps\" contradicts the product (an app with its own browser); \"intelligent assistant\" is a generic phrase — keep only \"for language learners\" (R39)"
+      ]
+    },
+    {
+      "id": "hero.button.1",
+      "kind": "button",
+      "en": "Download on App Store",
+      "target": "Download in de App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: linked to #cta, not to the App Store (C-15); the new CTA is Apple's official badge (common.appStoreBadgeAlt)"
+      ]
+    },
+    {
+      "id": "hero.button.2",
+      "kind": "button",
+      "en": "Learn More",
+      "target": "Meer informatie",
+      "aligned": true
+    },
+    {
+      "id": "hero.alt",
+      "kind": "alt",
+      "en": "App Interface Example",
+      "target": "Voorbeeld app-interface",
+      "aligned": true,
+      "note": "image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "features.h2",
+      "kind": "h2",
+      "en": "Key Features",
+      "target": "Kernfuncties",
+      "aligned": true
+    },
+    {
+      "id": "features.1.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Icon",
+      "target": "Veegvertaling icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.1.h3",
+      "kind": "h3",
+      "en": "Swipe to Translate, Sentence Alignment",
+      "target": "Veegvertaling, Zin-voor-zin Vergelijking",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Sentence Alignment\" is jargon (C-16, research 07 §2.3) → features[swipe] without it"
+      ]
+    },
+    {
+      "id": "features.1.p",
+      "kind": "p",
+      "en": "Simply swipe any paragraph on a webpage—our system automatically detects complete sentences and inserts translations right below the original text. Enjoy smart segmentation and one-to-one alignment for seamless bilingual reading.",
+      "target": "Veeg eenvoudig over een tekstgedeelte op een webpagina—het systeem herkent automatisch volledige zinnen en plaatst de vertaling direct onder de originele tekst. Geniet van slimme segmentatie en één-op-één vergelijking voor soepel tweetalig lezen.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[swipe] (\"detects complete sentences\" = Auto mode), except the \"alignment\" wording (C-16)"
+      ]
+    },
+    {
+      "id": "features.1.alt.2",
+      "kind": "alt",
+      "en": "Swipe Translation",
+      "target": "Veegvertaling",
+      "aligned": true
+    },
+    {
+      "id": "features.2.alt.1",
+      "kind": "alt",
+      "en": "Double Tap Dictionary Icon",
+      "target": "Dubbel tikken woordenboek icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.2.h3",
+      "kind": "h3",
+      "en": "Double Tap for Word Lookup & AI Explanation",
+      "target": "Dubbel tikken voor Woordenboek & AI-Uitleg",
+      "aligned": true
+    },
+    {
+      "id": "features.2.p",
+      "kind": "p",
+      "en": "Double-tap any word and AI will analyze its meaning in context, prioritizing common phrases. Go beyond literal translations—understand usage, part of speech, example sentences, and collocations.",
+      "target": "Tik dubbel op een woord en AI analyseert de betekenis in context, met prioriteit voor veelvoorkomende uitdrukkingen. Begrijp gebruik, woordsoort, voorbeeldzinnen en collocaties—veel meer dan alleen een letterlijke vertaling.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[lookup]; it omits the limitation that double-tap lookup does not work on Chinese, Japanese or Korean source text (F15)"
+      ]
+    },
+    {
+      "id": "features.2.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup",
+      "target": "Dubbel tikken woordenboek",
+      "aligned": true
+    },
+    {
+      "id": "features.3.alt.1",
+      "kind": "alt",
+      "en": "AI Pronunciation Icon",
+      "target": "AI-Uitspraak icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.3.h3",
+      "kind": "h3",
+      "en": "AI Pronunciation, Listen & Speak",
+      "target": "AI-Uitspraak, Luisteren & Spreken",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"Listen & Speak\" is wrong — the app has no speaking practice; features[speech] keeps AI Read + Local Read only"
+      ]
+    },
+    {
+      "id": "features.3.p",
+      "kind": "p",
+      "en": "Switch between AI-generated and native TTS voices. Listen to words or full sentences with natural pronunciation—improve your listening and speaking skills together.",
+      "target": "Wissel tussen AI-gegenereerde en native TTS-stemmen. Luister naar woorden of volledige zinnen met natuurlijke uitspraak—verbeter je luister- en spreekvaardigheid tegelijk.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"improve … speaking skills\" is wrong (no speaking practice); the two voices (AI / on-device iOS) are right"
+      ]
+    },
+    {
+      "id": "features.3.alt.2",
+      "kind": "alt",
+      "en": "AI Pronunciation",
+      "target": "AI-Uitspraak",
+      "aligned": true
+    },
+    {
+      "id": "features.4.alt.1",
+      "kind": "alt",
+      "en": "Context Analysis Icon",
+      "target": "Contextanalyse icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.4.h3",
+      "kind": "h3",
+      "en": "Context Analysis, Phrase Priority",
+      "target": "Contextanalyse, Prioriteit voor Uitdrukkingen",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.p",
+      "kind": "p",
+      "en": "Our AI intelligently identifies word meanings, phrases, and collocations within sentences, providing the most relevant interpretation for the context so you truly understand the content.",
+      "target": "Onze AI herkent slim woordbetekenissen, uitdrukkingen en collocaties binnen zinnen en geeft de meest relevante interpretatie voor de context, zodat je de inhoud echt begrijpt.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.alt.2",
+      "kind": "alt",
+      "en": "Context Analysis",
+      "target": "Contextanalyse",
+      "aligned": true
+    },
+    {
+      "id": "features.5.alt.1",
+      "kind": "alt",
+      "en": "History Icon",
+      "target": "Geschiedenis icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.5.h3",
+      "kind": "h3",
+      "en": "History, Auto Grouping",
+      "target": "Geschiedenis, Automatische Groepering",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Auto Grouping\" (by date) is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.p",
+      "kind": "p",
+      "en": "All your swipe translations and word lookups are automatically saved and grouped by date. Instantly review or delete records—track your learning progress at a glance.",
+      "target": "Al je veegvertalingen en woordenboekopzoekingen worden automatisch opgeslagen en per datum gegroepeerd. Bekijk of verwijder notities direct—volg je leerproces in één oogopslag.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"grouped by date\" is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.alt.2",
+      "kind": "alt",
+      "en": "History",
+      "target": "Geschiedenis",
+      "aligned": true
+    },
+    {
+      "id": "features.6.alt.1",
+      "kind": "alt",
+      "en": "Customization Icon",
+      "target": "Personalisatie icoon",
+      "aligned": true
+    },
+    {
+      "id": "features.6.h3",
+      "kind": "h3",
+      "en": "Personalized Settings, Full Control",
+      "target": "Persoonlijke Instellingen, Volledige Controle",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the iOS app has no shortcuts, volume control or theme colours (C-03); features[display] / features[engines] describe the real settings"
+      ]
+    },
+    {
+      "id": "features.6.p",
+      "kind": "p",
+      "en": "Customize translation/lookup shortcuts, adjust TTS speed and volume, and freely switch theme colors—tailor the app to your learning habits.",
+      "target": "Pas sneltoetsen voor vertalen/woordenboek aan, stel TTS-snelheid en volume in, en wissel vrij van kleurthema—maak de app helemaal passend bij jouw leerstijl.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — no shortcuts, no volume control, no theme colours on iOS (C-03)"
+      ]
+    },
+    {
+      "id": "features.6.alt.2",
+      "kind": "alt",
+      "en": "Customization",
+      "target": "Personalisatie",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.h2",
+      "kind": "h2",
+      "en": "App Preview",
+      "target": "App Voorbeeld",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Demo",
+      "target": "Demo veegvertaling",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_swipe_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "screenshots.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup Demo",
+      "target": "Demo dubbel tikken woordenboek",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-2.png here"
+    },
+    {
+      "id": "screenshots.alt.3",
+      "kind": "alt",
+      "en": "AI Pronunciation Demo",
+      "target": "Demo AI-uitspraak",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_tts_demo.png in index.html, img:Screenshot-3.png here"
+    },
+    {
+      "id": "screenshots.alt.4",
+      "kind": "alt",
+      "en": "History Page",
+      "target": "Geschiedenispagina",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_history_demo.png in index.html, img:Screenshot-4.png here"
+    },
+    {
+      "id": "cta.h2",
+      "kind": "h2",
+      "en": "Free to Use, Unlock More with Upgrade",
+      "target": "Gratis te gebruiken, meer functies met upgrade",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.title (F16)"
+      ]
+    },
+    {
+      "id": "cta.p.1",
+      "kind": "p",
+      "en": "WordByWord's basic features are always free, including swipe translation, native TTS pronunciation, and daily AI trial features.\nSubscribe to \"Plus\" for:",
+      "target": "De basisfuncties van WordByWord zijn altijd gratis, inclusief veegvertaling, native TTS-uitspraak en dagelijkse AI-proefmogelijkheden.\nAbonneer je op \"Plus\" voor:",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.lede (F16); quotas and prices are placeholders in the new copy, never literal numbers (doc 08 §1.4)"
+      ]
+    },
+    {
+      "id": "cta.li.1",
+      "kind": "li",
+      "en": "• More daily AI translations and context analysis",
+      "target": "• Meer dagelijkse AI-vertalingen en contextanalyse",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the higher daily quotas go into pricing.summary (F16)"
+      ]
+    },
+    {
+      "id": "cta.li.2",
+      "kind": "li",
+      "en": "• Unlimited AI pronunciation with higher quality",
+      "target": "• Onbeperkte AI-uitspraak met hogere kwaliteit",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — Plus has daily AI-voice limits; never \"unlimited AI pronunciation\" (C-01)"
+      ]
+    },
+    {
+      "id": "cta.li.3",
+      "kind": "li",
+      "en": "• Sentence structure analysis and example recommendations",
+      "target": "• Zinsstructuuranalyse en voorbeeldsuggesties",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — syntax explanation is not Plus-only, the free plan has a daily quota (C-04)"
+      ]
+    },
+    {
+      "id": "cta.li.4",
+      "kind": "li",
+      "en": "• Custom themes and dark mode",
+      "target": "• Aangepaste thema's en donkere modus",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — custom themes and dark mode do not exist in the app (C-02)"
+      ]
+    },
+    {
+      "id": "cta.li.5",
+      "kind": "li",
+      "en": "• Early access to new features",
+      "target": "• Vroege toegang tot nieuwe functies",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — \"early access to new features\" has no implementation in the app (doc 08 §1.1)"
+      ]
+    },
+    {
+      "id": "cta.alt",
+      "kind": "alt",
+      "en": "Download on the App Store",
+      "target": "Download on the App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-14: the legacy badge was the English artwork with an English alt on every page; the new site uses Apple's localized badges"
+      ]
+    },
+    {
+      "id": "cta.p.2",
+      "kind": "p",
+      "en": "Plus Subscription:\n• Monthly plan (supports in-app purchase on iOS)\n• Manage or cancel anytime in the app.",
+      "target": "Plus-abonnement:\n• Maandelijks plan (in-app aankoop op iOS mogelijk)\n• Beheer of annuleer op elk moment in de app.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — subscriptions are managed or cancelled in the Apple account settings, not in the app (→ pricing.note)"
+      ]
+    },
+    {
+      "id": "faq.h2",
+      "kind": "h2",
+      "en": "Frequently Asked Questions",
+      "target": "Veelgestelde Vragen",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.q",
+      "kind": "faq-q",
+      "en": "Q1: How do I use the swipe translation feature?",
+      "target": "V1: Hoe gebruik ik de veegvertaling?",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.a",
+      "kind": "faq-a",
+      "en": "Simply swipe a section of text on any webpage with your finger or mouse, and the app will automatically insert the translation below the original sentence. To remove a translation, just swipe left on the translated text.",
+      "target": "Veeg met je vinger of muis over een tekstgedeelte op een webpagina en de app plaatst automatisch de vertaling onder de originele zin. Om een vertaling te verwijderen, veeg je naar links over de vertaalde tekst.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"with your finger or mouse\" is wrong (C-10); the left swipe that removes a translation is real but must not be mentioned (claims-lint swipe-left)"
+      ]
+    },
+    {
+      "id": "faq.2.q",
+      "kind": "faq-q",
+      "en": "Q2: How does double-tap word lookup ensure accurate explanations?",
+      "target": "V2: Hoe zorgt dubbel tikken voor nauwkeurige uitleg?",
+      "aligned": true
+    },
+    {
+      "id": "faq.2.a",
+      "kind": "faq-a",
+      "en": "The app sends the word and its surrounding context to the AI backend, prioritizing multi-word phrases and providing the most contextually relevant meaning and examples—so you won't be misled by literal translations.",
+      "target": "De app stuurt het woord en de omliggende context naar de AI-backend, geeft prioriteit aan meerwoordige uitdrukkingen en biedt de meest contextueel relevante betekenis en voorbeelden—zodat je niet wordt misleid door letterlijke vertalingen.",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.q",
+      "kind": "faq-q",
+      "en": "Q3: What are the limitations of the free version?",
+      "target": "V3: Wat zijn de beperkingen van de gratis versie?",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.a",
+      "kind": "faq-a",
+      "en": "The free version allows a limited number of AI translations and 20 AI pronunciations per day. For details, see the in-app introduction. To lift the limits, upgrade to Plus or use native TTS mode.",
+      "target": "De gratis versie staat een beperkt aantal AI-vertalingen en 20 AI-uitspraakacties per dag toe. Zie de introductie in de app voor details. Om de limieten op te heffen, upgrade naar Plus of gebruik de native TTS-modus.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong quota — \"20 AI pronunciations per day\" (C-05); quotas are placeholders in the new copy (faq[free] + pricing table)"
+      ]
+    },
+    {
+      "id": "faq.4.q",
+      "kind": "faq-q",
+      "en": "Q4: Which languages are supported?",
+      "target": "V4: Welke talen worden ondersteund?",
+      "aligned": true
+    },
+    {
+      "id": "faq.4.a",
+      "kind": "faq-a",
+      "en": "The initial version supports translation and explanation between over 20 languages, including Chinese, Japanese, Korean, and more. More language pairs will be added in future updates. The app automatically detects the target language and uses the best prompt template for high-quality results.",
+      "target": "De eerste versie ondersteunt vertaling en uitleg tussen meer dan 20 talen, waaronder Nederlands, Engels, Chinees, Japans, Koreaans en meer. Meer taalkoppels worden toegevoegd in toekomstige updates. De app detecteert automatisch de doeltaal en gebruikt het beste prompt-sjabloon voor hoogwaardige resultaten.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"initial version\" (C-06); the app detects the source language, not the target language (C-06); \"over 20 languages / language pairs\" (C-07); \"prompt template\" is internal jargon (C-17)"
+      ]
+    },
+    {
+      "id": "faq.5.q",
+      "kind": "faq-q",
+      "en": "Q5: How can I view my history?",
+      "target": "V5: Hoe kan ik mijn geschiedenis bekijken?",
+      "aligned": true
+    },
+    {
+      "id": "faq.5.a",
+      "kind": "faq-a",
+      "en": "Tap the \"History\" icon at the bottom of the main screen to view all your translation and lookup records, grouped by date. Swipe left or right to delete individual records or view details.",
+      "target": "Tik op het \"Geschiedenis\"-icoon onderaan het hoofdscherm om al je vertaal- en opzoeknotities per datum gegroepeerd te bekijken. Veeg naar links of rechts om notities te verwijderen of details te bekijken.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — history is not grouped by date; the history location described here is not reused (→ features[history])"
+      ]
+    },
+    {
+      "id": "footer.alt",
+      "kind": "alt",
+      "en": "WordByWord Logo",
+      "target": "WordByWord Logo",
+      "aligned": true
+    },
+    {
+      "id": "footer.p",
+      "kind": "p",
+      "en": "© 2025 WordByWord. All rights reserved.\nIndependently developed. No personal data is collected.",
+      "target": "© 2025 WordByWord. Alle rechten voorbehouden.\nOnafhankelijk ontwikkeld. Er worden geen persoonlijke gegevens verzameld.",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"© 2025 WordByWord. All rights reserved.\" → footer.copyright \"© {yearRange} Jinlong\" (C-12); \"No personal data is collected\" is wrong — the app uses Firebase Analytics and the site GA4 (C-11); only \"independently developed\" survives (footer.madeBy)"
+      ]
+    },
+    {
+      "id": "footer.1.link",
+      "kind": "link",
+      "en": "Privacy Policy",
+      "target": "Privacybeleid",
+      "aligned": true
+    },
+    {
+      "id": "footer.2.link",
+      "kind": "link",
+      "en": "Contact Us",
+      "target": "Contact",
+      "aligned": true
+    },
+    {
+      "id": "footer.3.link",
+      "kind": "link",
+      "en": "FAQ",
+      "target": "FAQ",
+      "aligned": true
+    }
+  ],
+  "notice": [
+    {
+      "id": "notice.eyebrow",
+      "kind": "eyebrow",
+      "en": "Service Status Update",
+      "target": "Servicestatus",
+      "aligned": true
+    },
+    {
+      "id": "notice.title",
+      "kind": "heading",
+      "en": "Online translation service is temporarily unavailable",
+      "target": "De online vertaaldienst is tijdelijk niet beschikbaar",
+      "aligned": true
+    },
+    {
+      "id": "notice.message",
+      "kind": "p",
+      "en": "Our backend translation service is currently experiencing a technical issue. Translation requests cannot be processed correctly at the moment. We are working urgently to restore service and sincerely apologize for the inconvenience.",
+      "target": "Onze backend-vertaaldienst ondervindt momenteel een technisch probleem. Online vertaalverzoeken kunnen op dit moment niet correct worden verwerkt. We werken met spoed aan herstel van de service en bieden onze excuses aan voor het ongemak.",
+      "aligned": true
+    }
+  ]
+}

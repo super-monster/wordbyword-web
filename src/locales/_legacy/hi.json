@@ -1,0 +1,651 @@
+{
+  "_meta": {
+    "generatedBy": "scripts/extract-legacy.mjs",
+    "source": "legacy-pages @ 7a389baa6695081d8e02fce3b7f4b18e0b0c6fc4",
+    "content": "Legacy hi home page (hi-top.html) aligned segment by segment with index.html, plus the js/site-notice.js strings.",
+    "warning": "Translation memory (TM) for reference only — outdated, not reviewed, not used by the build. The legacy copy contains outdated or wrong product facts: use it for established terms and phrasing, never as a source of facts. Doc 08 (§1.1 fact red lines, §7 translation brief) always wins over this file.",
+    "rule": "TM 不参与构建，也不保证事实正确（F11）— doc 06 §4.5；已过时，仅作术语参考 — doc 04 §9",
+    "fields": {
+      "legacy": "legacy file prefixes of this locale (LOCALES[].legacy in src/site.mjs)",
+      "sources": "legacy files of this locale (blob = git object id); a further file names the one it duplicates and whether it is byte-identical",
+      "lang": "<html lang> of the legacy page",
+      "dir": "<html dir> of the legacy page; null = not set (left to right)",
+      "title": "<title> of the legacy page (also segment head.title)",
+      "description": "<meta name=\"description\"> of the legacy page (also segment head.description)",
+      "alignment": "pairing report against index.html: enOnly = en segments without a counterpart here; structure = element counts per section that differ from index.html (inline elements such as <br> do not affect pairing)",
+      "segments": "the page copy in document order (head, header, hero, features, screenshots, cta, faq, footer)",
+      "notice": "js/site-notice.js strings (service-outage banner, off on the legacy site; already migrated to src/notice.json)",
+      "id": "stable segment id: <section>[.<n> of a repeated block].<role>[.<n>]; the same id is the same slot in every legacy/<code>.json",
+      "kind": "title | meta | alt | brand | nav | h1 | p | button | h2 | h3 | li | faq-q | faq-a | link | eyebrow | heading",
+      "en": "the index.html segment in the same slot (<br> kept as \\n, inline emphasis as plain text, whitespace collapsed)",
+      "target": "this locale's text, normalised the same way",
+      "aligned": "true = slot verified: same structural path with equal sibling counts, same link target and same images in its repeated block; false = paired by section + position only (see note)",
+      "note": "why a pair is not verified, or other alignment remarks",
+      "warnings": "known problems: \"doc …\" entries come from the design docs (doc 08 §1.1 / §8, doc 01 §2.9, doc 04 §5.7); \"found at extraction\" entries were spotted while building this TM; \"claims-lint <rule>\" entries are hits of src/data/claims-lint.json patterns for this locale in the text, at extraction time"
+    }
+  },
+  "locale": "hi",
+  "legacy": [
+    "hi"
+  ],
+  "sources": [
+    {
+      "file": "hi-top.html",
+      "blob": "964ade43efa79c27bd51007b5c7c7758ad455d27"
+    }
+  ],
+  "lang": "hi",
+  "dir": null,
+  "title": "WordByWord - आपकी स्मार्ट भाषा सीखने की सहायक",
+  "description": "WordByWord: ब्राउज़र में टेक्स्ट चुनते ही तुरंत अनुवाद, वाक्य-दर-वाक्य संरेखण, AI द्वारा संदर्भ व्याख्या और उच्चारण। विदेशी भाषाओं में पढ़ने और सुनने की क्षमता बढ़ाने के लिए एक ही जगह सब कुछ।",
+  "alignment": {
+    "reference": "index.html",
+    "pairs": 67,
+    "aligned": 63,
+    "unaligned": 4,
+    "enOnly": [
+      "screenshots.alt.5",
+      "screenshots.alt.6",
+      "screenshots.alt.7",
+      "screenshots.alt.8"
+    ],
+    "structure": [
+      "screenshots: img 4 (en 8)"
+    ]
+  },
+  "segments": [
+    {
+      "id": "head.title",
+      "kind": "title",
+      "en": "WordByWord - Your Smart Language Learning Assistant",
+      "target": "WordByWord - आपकी स्मार्ट भाषा सीखने की सहायक",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: generic \"smart assistant\" title, dropped; only the positioning \"reading assistant for language learners\" survives (hero.lede / meta.description, R39; doc 03 §3.1)"
+      ]
+    },
+    {
+      "id": "head.description",
+      "kind": "meta",
+      "en": "WordByWord: Instantly translate by swiping text in your browser, sentence-by-sentence alignment, AI context explanation and pronunciation. All-in-one tool to boost your reading and listening in foreign languages.",
+      "target": "WordByWord: ब्राउज़र में टेक्स्ट चुनते ही तुरंत अनुवाद, वाक्य-दर-वाक्य संरेखण, AI द्वारा संदर्भ व्याख्या और उच्चारण। विदेशी भाषाओं में पढ़ने और सुनने की क्षमता बढ़ाने के लिए एक ही जगह सब कुछ।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"swiping text in your browser\" reads as a browser extension: it is the built-in browser of an iPhone/iPad app (C-08); \"sentence-by-sentence alignment\" is jargon (C-16)",
+        "claims-lint selection-translate: \"चुनते ही\"",
+        "claims-lint jargon: \"संरेखण\""
+      ]
+    },
+    {
+      "id": "header.alt",
+      "kind": "alt",
+      "en": "Word by Word Logo",
+      "target": "Word by Word Logo",
+      "aligned": true
+    },
+    {
+      "id": "header.brand",
+      "kind": "brand",
+      "en": "WordByWord",
+      "target": "WordByWord",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.1",
+      "kind": "nav",
+      "en": "Features",
+      "target": "मुख्य विशेषताएँ",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.2",
+      "kind": "nav",
+      "en": "Screenshots",
+      "target": "स्क्रीनशॉट्स",
+      "aligned": true
+    },
+    {
+      "id": "header.nav.3",
+      "kind": "nav",
+      "en": "FAQ",
+      "target": "सामान्य प्रश्न",
+      "aligned": true
+    },
+    {
+      "id": "hero.h1",
+      "kind": "h1",
+      "en": "Word by Word\nInstant Translation, Smarter Language Learning",
+      "target": "Word by Word\nतुरंत अनुवाद, स्मार्ट भाषा सीखना",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the new H1 never splits off \"Word by Word\" and follows doc 03 §3.9 (F11)"
+      ]
+    },
+    {
+      "id": "hero.p",
+      "kind": "p",
+      "en": "Effortlessly translate any text on any webpage by swiping, insert sentence-by-sentence translations, and get AI-powered context explanations and pronunciation.\nNo need to switch apps—improve your vocabulary and reading comprehension as you browse. Supports over 20 language pairs, including Chinese, Japanese, Korean, and more.\nWordByWord is your intelligent assistant for mastering new languages with ease.",
+      "target": "किसी भी वेबपेज पर टेक्स्ट चुनते ही तुरंत अनुवाद करें, वाक्य-दर-वाक्य अनुवाद जोड़ें, और AI द्वारा संदर्भ व्याख्या व उच्चारण पाएं।\nऐप बदलने की जरूरत नहीं—ब्राउज़ करते हुए ही शब्दावली और पढ़ने की समझ बढ़ाएँ। 20+ भाषा जोड़ों का समर्थन, जिनमें चीनी, जापानी, कोरियाई आदि शामिल हैं।\nWordByWord आपके लिए नई भाषाएँ सीखने का स्मार्ट सहायक है।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"over 20 language pairs\" is wrong — {uiLanguages} interface languages, translation into {targetLanguages} languages (C-07); \"no need to switch apps\" contradicts the product (an app with its own browser); \"intelligent assistant\" is a generic phrase — keep only \"for language learners\" (R39)",
+        "claims-lint selection-translate: \"चुनते ही\""
+      ]
+    },
+    {
+      "id": "hero.button.1",
+      "kind": "button",
+      "en": "Download on App Store",
+      "target": "App Store से डाउनलोड करें",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: linked to #cta, not to the App Store (C-15); the new CTA is Apple's official badge (common.appStoreBadgeAlt)"
+      ]
+    },
+    {
+      "id": "hero.button.2",
+      "kind": "button",
+      "en": "Learn More",
+      "target": "और जानें",
+      "aligned": true
+    },
+    {
+      "id": "hero.alt",
+      "kind": "alt",
+      "en": "App Interface Example",
+      "target": "ऐप इंटरफ़ेस उदाहरण",
+      "aligned": true,
+      "note": "image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "features.h2",
+      "kind": "h2",
+      "en": "Key Features",
+      "target": "मुख्य विशेषताएँ",
+      "aligned": true
+    },
+    {
+      "id": "features.1.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Icon",
+      "target": "स्वाइप अनुवाद आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.1.h3",
+      "kind": "h3",
+      "en": "Swipe to Translate, Sentence Alignment",
+      "target": "स्वाइप अनुवाद, वाक्य संरेखण",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Sentence Alignment\" is jargon (C-16, research 07 §2.3) → features[swipe] without it",
+        "claims-lint jargon: \"संरेखण\""
+      ]
+    },
+    {
+      "id": "features.1.p",
+      "kind": "p",
+      "en": "Simply swipe any paragraph on a webpage—our system automatically detects complete sentences and inserts translations right below the original text. Enjoy smart segmentation and one-to-one alignment for seamless bilingual reading.",
+      "target": "किसी भी वेबपेज पर किसी भी अनुच्छेद को दाएँ स्वाइप करें—सिस्टम स्वतः पूर्ण वाक्य पहचानकर अनुवाद को मूल पाठ के नीचे जोड़ता है। स्मार्ट विभाजन और एक-से-एक संरेखण के साथ द्विभाषी पढ़ाई का अनुभव लें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[swipe] (\"detects complete sentences\" = Auto mode), except the \"alignment\" wording (C-16)",
+        "claims-lint jargon: \"संरेखण\""
+      ]
+    },
+    {
+      "id": "features.1.alt.2",
+      "kind": "alt",
+      "en": "Swipe Translation",
+      "target": "स्वाइप अनुवाद डेमो",
+      "aligned": true
+    },
+    {
+      "id": "features.2.alt.1",
+      "kind": "alt",
+      "en": "Double Tap Dictionary Icon",
+      "target": "डबल टैप डिक्शनरी आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.2.h3",
+      "kind": "h3",
+      "en": "Double Tap for Word Lookup & AI Explanation",
+      "target": "डबल टैप शब्दकोश और AI व्याख्या",
+      "aligned": true
+    },
+    {
+      "id": "features.2.p",
+      "kind": "p",
+      "en": "Double-tap any word and AI will analyze its meaning in context, prioritizing common phrases. Go beyond literal translations—understand usage, part of speech, example sentences, and collocations.",
+      "target": "किसी भी शब्द पर डबल टैप करें, AI संदर्भ के अनुसार अर्थ विश्लेषण करता है और सामान्य वाक्यांशों को प्राथमिकता देता है। केवल शाब्दिक अनुवाद नहीं—प्रयोग, शब्द-प्रकार, उदाहरण वाक्य और कोलोकेशन भी जानें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: reusable for features[lookup]; it omits the limitation that double-tap lookup does not work on Chinese, Japanese or Korean source text (F15)"
+      ]
+    },
+    {
+      "id": "features.2.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup",
+      "target": "डबल टैप डिक्शनरी डेमो",
+      "aligned": true
+    },
+    {
+      "id": "features.3.alt.1",
+      "kind": "alt",
+      "en": "AI Pronunciation Icon",
+      "target": "AI उच्चारण आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.3.h3",
+      "kind": "h3",
+      "en": "AI Pronunciation, Listen & Speak",
+      "target": "AI उच्चारण, सुनें और बोलें",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"Listen & Speak\" is wrong — the app has no speaking practice; features[speech] keeps AI Read + Local Read only"
+      ]
+    },
+    {
+      "id": "features.3.p",
+      "kind": "p",
+      "en": "Switch between AI-generated and native TTS voices. Listen to words or full sentences with natural pronunciation—improve your listening and speaking skills together.",
+      "target": "AI और स्थानीय TTS आवाज़ों के बीच स्विच करें। शब्द या पूरे वाक्य को प्राकृतिक उच्चारण के साथ सुनें—सुनने और बोलने की क्षमता एक साथ बढ़ाएँ।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §1.1: \"improve … speaking skills\" is wrong (no speaking practice); the two voices (AI / on-device iOS) are right"
+      ]
+    },
+    {
+      "id": "features.3.alt.2",
+      "kind": "alt",
+      "en": "AI Pronunciation",
+      "target": "AI उच्चारण डेमो",
+      "aligned": true
+    },
+    {
+      "id": "features.4.alt.1",
+      "kind": "alt",
+      "en": "Context Analysis Icon",
+      "target": "संदर्भ विश्लेषण आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.4.h3",
+      "kind": "h3",
+      "en": "Context Analysis, Phrase Priority",
+      "target": "संदर्भ विश्लेषण, वाक्यांश प्राथमिकता",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.p",
+      "kind": "p",
+      "en": "Our AI intelligently identifies word meanings, phrases, and collocations within sentences, providing the most relevant interpretation for the context so you truly understand the content.",
+      "target": "हमारा AI वाक्यों में शब्दों के अर्थ, वाक्यांश और कोलोकेशन को बुद्धिमानी से पहचानता है, और संदर्भ के अनुसार सबसे उपयुक्त व्याख्या देता है।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — duplicates the double-tap lookup (merged into features[lookup]; F8)"
+      ]
+    },
+    {
+      "id": "features.4.alt.2",
+      "kind": "alt",
+      "en": "Context Analysis",
+      "target": "संदर्भ विश्लेषण डेमो",
+      "aligned": true
+    },
+    {
+      "id": "features.5.alt.1",
+      "kind": "alt",
+      "en": "History Icon",
+      "target": "इतिहास आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.5.h3",
+      "kind": "h3",
+      "en": "History, Auto Grouping",
+      "target": "इतिहास, स्वचालित समूह",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"Auto Grouping\" (by date) is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.p",
+      "kind": "p",
+      "en": "All your swipe translations and word lookups are automatically saved and grouped by date. Instantly review or delete records—track your learning progress at a glance.",
+      "target": "आपके सभी स्वाइप अनुवाद और शब्द खोज स्वतः सहेजे जाते हैं और तिथि के अनुसार समूहित होते हैं। रिकॉर्ड तुरंत देखें या हटाएँ—सीखने की प्रगति पर नज़र रखें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"grouped by date\" is wrong — history is saved with the original sentence and can be cleared (→ features[history])"
+      ]
+    },
+    {
+      "id": "features.5.alt.2",
+      "kind": "alt",
+      "en": "History",
+      "target": "इतिहास डेमो",
+      "aligned": true
+    },
+    {
+      "id": "features.6.alt.1",
+      "kind": "alt",
+      "en": "Customization Icon",
+      "target": "पर्सनलाइज़ेशन आइकन",
+      "aligned": true
+    },
+    {
+      "id": "features.6.h3",
+      "kind": "h3",
+      "en": "Personalized Settings, Full Control",
+      "target": "व्यक्तिगत सेटिंग्स, पूरी नियंत्रण",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the iOS app has no shortcuts, volume control or theme colours (C-03); features[display] / features[engines] describe the real settings"
+      ]
+    },
+    {
+      "id": "features.6.p",
+      "kind": "p",
+      "en": "Customize translation/lookup shortcuts, adjust TTS speed and volume, and freely switch theme colors—tailor the app to your learning habits.",
+      "target": "अनुवाद/शब्दकोश शॉर्टकट्स को कस्टमाइज़ करें, TTS गति और वॉल्यूम समायोजित करें, थीम रंग बदलें—ऐप को अपनी अध्ययन आदतों के अनुसार ढालें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — no shortcuts, no volume control, no theme colours on iOS (C-03)"
+      ]
+    },
+    {
+      "id": "features.6.alt.2",
+      "kind": "alt",
+      "en": "Customization",
+      "target": "पर्सनलाइज़ेशन डेमो",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.h2",
+      "kind": "h2",
+      "en": "App Preview",
+      "target": "ऐप पूर्वावलोकन",
+      "aligned": true
+    },
+    {
+      "id": "screenshots.alt.1",
+      "kind": "alt",
+      "en": "Swipe Translation Demo",
+      "target": "स्वाइप अनुवाद डेमो",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_swipe_demo.png in index.html, img:Screenshot-1.png here"
+    },
+    {
+      "id": "screenshots.alt.2",
+      "kind": "alt",
+      "en": "Double Tap Lookup Demo",
+      "target": "डबल टैप डिक्शनरी डेमो",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_doubletap_demo.png in index.html, img:Screenshot-2.png here"
+    },
+    {
+      "id": "screenshots.alt.3",
+      "kind": "alt",
+      "en": "AI Pronunciation Demo",
+      "target": "AI उच्चारण डेमो",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_tts_demo.png in index.html, img:Screenshot-3.png here"
+    },
+    {
+      "id": "screenshots.alt.4",
+      "kind": "alt",
+      "en": "History Page",
+      "target": "इतिहास पृष्ठ",
+      "aligned": false,
+      "note": "img ×4 here, ×8 in index.html: paired by position; image differs: img:feature_history_demo.png in index.html, img:Screenshot-4.png here"
+    },
+    {
+      "id": "cta.h2",
+      "kind": "h2",
+      "en": "Free to Use, Unlock More with Upgrade",
+      "target": "मुफ़्त में उपयोग करें, अपग्रेड पर और सुविधाएँ पाएं",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.title (F16)"
+      ]
+    },
+    {
+      "id": "cta.p.1",
+      "kind": "p",
+      "en": "WordByWord's basic features are always free, including swipe translation, native TTS pronunciation, and daily AI trial features.\nSubscribe to \"Plus\" for:",
+      "target": "WordByWord की मूलभूत सुविधाएँ हमेशा मुफ़्त हैं, जिनमें स्वाइप अनुवाद, स्थानीय TTS उच्चारण और दैनिक AI ट्रायल शामिल हैं।\n\"Plus\" सब्सक्रिप्शन लेकर पाएं:",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: rewritten as pricing.lede (F16); quotas and prices are placeholders in the new copy, never literal numbers (doc 08 §1.4)"
+      ]
+    },
+    {
+      "id": "cta.li.1",
+      "kind": "li",
+      "en": "• More daily AI translations and context analysis",
+      "target": "• प्रतिदिन अधिक AI अनुवाद और संदर्भ विश्लेषण",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — the higher daily quotas go into pricing.summary (F16)"
+      ]
+    },
+    {
+      "id": "cta.li.2",
+      "kind": "li",
+      "en": "• Unlimited AI pronunciation with higher quality",
+      "target": "• असीमित और उच्च गुणवत्ता वाला AI उच्चारण",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — Plus has daily AI-voice limits; never \"unlimited AI pronunciation\" (C-01)"
+      ]
+    },
+    {
+      "id": "cta.li.3",
+      "kind": "li",
+      "en": "• Sentence structure analysis and example recommendations",
+      "target": "• वाक्य संरचना विश्लेषण और उदाहरण अनुशंसा",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — syntax explanation is not Plus-only, the free plan has a daily quota (C-04)"
+      ]
+    },
+    {
+      "id": "cta.li.4",
+      "kind": "li",
+      "en": "• Custom themes and dark mode",
+      "target": "• कस्टम थीम और डार्क मोड",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — custom themes and dark mode do not exist in the app (C-02)"
+      ]
+    },
+    {
+      "id": "cta.li.5",
+      "kind": "li",
+      "en": "• Early access to new features",
+      "target": "• नई सुविधाओं का जल्दी एक्सेस",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — \"early access to new features\" has no implementation in the app (doc 08 §1.1)"
+      ]
+    },
+    {
+      "id": "cta.alt",
+      "kind": "alt",
+      "en": "Download on the App Store",
+      "target": "Download on the App Store",
+      "aligned": true,
+      "warnings": [
+        "doc 01 C-14: the legacy badge was the English artwork with an English alt on every page; the new site uses Apple's localized badges"
+      ]
+    },
+    {
+      "id": "cta.p.2",
+      "kind": "p",
+      "en": "Plus Subscription:\n• Monthly plan (supports in-app purchase on iOS)\n• Manage or cancel anytime in the app.",
+      "target": "Plus सब्सक्रिप्शन:\n• मासिक प्लान (iOS इन-ऐप खरीदारी समर्थित)\n• ऐप में कभी भी प्रबंधित या रद्द करें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong — subscriptions are managed or cancelled in the Apple account settings, not in the app (→ pricing.note)"
+      ]
+    },
+    {
+      "id": "faq.h2",
+      "kind": "h2",
+      "en": "Frequently Asked Questions",
+      "target": "सामान्य प्रश्न",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.q",
+      "kind": "faq-q",
+      "en": "Q1: How do I use the swipe translation feature?",
+      "target": "प्र1: स्वाइप अनुवाद फीचर का उपयोग कैसे करें?",
+      "aligned": true
+    },
+    {
+      "id": "faq.1.a",
+      "kind": "faq-a",
+      "en": "Simply swipe a section of text on any webpage with your finger or mouse, and the app will automatically insert the translation below the original sentence. To remove a translation, just swipe left on the translated text.",
+      "target": "किसी भी वेबपेज पर अपनी उंगली या माउस से टेक्स्ट चुनें, ऐप स्वतः अनुवाद को मूल वाक्य के नीचे जोड़ देगा। अनुवाद हटाने के लिए अनुवादित टेक्स्ट को बाएँ स्वाइप करें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"with your finger or mouse\" is wrong (C-10); the left swipe that removes a translation is real but must not be mentioned (claims-lint swipe-left)",
+        "doc 01 C-09: describes the gesture as selecting text (\"चुन…\") — it is a right swipe (research 07 §2.3)"
+      ]
+    },
+    {
+      "id": "faq.2.q",
+      "kind": "faq-q",
+      "en": "Q2: How does double-tap word lookup ensure accurate explanations?",
+      "target": "प्र2: डबल टैप शब्दकोश कैसे सटीक व्याख्या देता है?",
+      "aligned": true
+    },
+    {
+      "id": "faq.2.a",
+      "kind": "faq-a",
+      "en": "The app sends the word and its surrounding context to the AI backend, prioritizing multi-word phrases and providing the most contextually relevant meaning and examples—so you won't be misled by literal translations.",
+      "target": "ऐप शब्द और उसके आसपास के संदर्भ को AI को भेजता है, बहु-शब्द वाक्यांशों को प्राथमिकता देता है और सबसे उपयुक्त अर्थ व उदाहरण देता है—शाब्दिक अनुवाद से भ्रमित न हों।",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.q",
+      "kind": "faq-q",
+      "en": "Q3: What are the limitations of the free version?",
+      "target": "प्र3: मुफ़्त संस्करण की सीमाएँ क्या हैं?",
+      "aligned": true
+    },
+    {
+      "id": "faq.3.a",
+      "kind": "faq-a",
+      "en": "The free version allows a limited number of AI translations and 20 AI pronunciations per day. For details, see the in-app introduction. To lift the limits, upgrade to Plus or use native TTS mode.",
+      "target": "मुफ़्त संस्करण में सीमित संख्या में AI अनुवाद और 20 AI उच्चारण प्रतिदिन मिलते हैं। विवरण के लिए ऐप में देखें। सीमा हटाने के लिए Plus लें या स्थानीय TTS मोड का उपयोग करें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: wrong quota — \"20 AI pronunciations per day\" (C-05); quotas are placeholders in the new copy (faq[free] + pricing table)"
+      ]
+    },
+    {
+      "id": "faq.4.q",
+      "kind": "faq-q",
+      "en": "Q4: Which languages are supported?",
+      "target": "प्र4: कौन-कौन सी भाषाएँ समर्थित हैं?",
+      "aligned": true
+    },
+    {
+      "id": "faq.4.a",
+      "kind": "faq-a",
+      "en": "The initial version supports translation and explanation between over 20 languages, including Chinese, Japanese, Korean, and more. More language pairs will be added in future updates. The app automatically detects the target language and uses the best prompt template for high-quality results.",
+      "target": "प्रारंभिक संस्करण में 20+ भाषाओं के बीच अनुवाद और व्याख्या का समर्थन है, जिनमें चीनी, जापानी, कोरियाई आदि शामिल हैं। भविष्य में और भाषा जोड़े जाएंगे। ऐप स्वतः लक्ष्य भाषा पहचानता है और उच्च गुणवत्ता के लिए सर्वोत्तम टेम्पलेट का उपयोग करता है।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — \"initial version\" (C-06); the app detects the source language, not the target language (C-06); \"over 20 languages / language pairs\" (C-07); \"prompt template\" is internal jargon (C-17)"
+      ]
+    },
+    {
+      "id": "faq.5.q",
+      "kind": "faq-q",
+      "en": "Q5: How can I view my history?",
+      "target": "प्र5: मैं अपना इतिहास कैसे देख सकता हूँ?",
+      "aligned": true
+    },
+    {
+      "id": "faq.5.a",
+      "kind": "faq-a",
+      "en": "Tap the \"History\" icon at the bottom of the main screen to view all your translation and lookup records, grouped by date. Swipe left or right to delete individual records or view details.",
+      "target": "मुख्य स्क्रीन के नीचे \"इतिहास\" आइकन पर टैप करें, सभी अनुवाद और खोज रिकॉर्ड तिथि के अनुसार समूहित दिखेंगे। बाएँ या दाएँ स्वाइप कर व्यक्तिगत रिकॉर्ड हटाएँ या विवरण देखें।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: deleted — history is not grouped by date; the history location described here is not reused (→ features[history])"
+      ]
+    },
+    {
+      "id": "footer.alt",
+      "kind": "alt",
+      "en": "WordByWord Logo",
+      "target": "WordByWord Logo",
+      "aligned": true
+    },
+    {
+      "id": "footer.p",
+      "kind": "p",
+      "en": "© 2025 WordByWord. All rights reserved.\nIndependently developed. No personal data is collected.",
+      "target": "© 2025 WordByWord. सर्वाधिकार सुरक्षित।\nस्वतंत्र रूप से विकसित। कोई व्यक्तिगत डेटा एकत्र नहीं किया जाता।",
+      "aligned": true,
+      "warnings": [
+        "doc 08 §8.1: \"© 2025 WordByWord. All rights reserved.\" → footer.copyright \"© {yearRange} Jinlong\" (C-12); \"No personal data is collected\" is wrong — the app uses Firebase Analytics and the site GA4 (C-11); only \"independently developed\" survives (footer.madeBy)"
+      ]
+    },
+    {
+      "id": "footer.1.link",
+      "kind": "link",
+      "en": "Privacy Policy",
+      "target": "गोपनीयता नीति",
+      "aligned": true
+    },
+    {
+      "id": "footer.2.link",
+      "kind": "link",
+      "en": "Contact Us",
+      "target": "संपर्क करें",
+      "aligned": true
+    },
+    {
+      "id": "footer.3.link",
+      "kind": "link",
+      "en": "FAQ",
+      "target": "सामान्य प्रश्न",
+      "aligned": true
+    }
+  ],
+  "notice": [
+    {
+      "id": "notice.eyebrow",
+      "kind": "eyebrow",
+      "en": "Service Status Update",
+      "target": "सेवा स्थिति अपडेट",
+      "aligned": true
+    },
+    {
+      "id": "notice.title",
+      "kind": "heading",
+      "en": "Online translation service is temporarily unavailable",
+      "target": "ऑनलाइन अनुवाद सेवा अस्थायी रूप से उपलब्ध नहीं है",
+      "aligned": true
+    },
+    {
+      "id": "notice.message",
+      "kind": "p",
+      "en": "Our backend translation service is currently experiencing a technical issue. Translation requests cannot be processed correctly at the moment. We are working urgently to restore service and sincerely apologize for the inconvenience.",
+      "target": "हमारी बैकएंड अनुवाद सेवा इस समय तकनीकी समस्या का सामना कर रही है। फिलहाल ऑनलाइन अनुवाद अनुरोध सही तरीके से संसाधित नहीं किए जा सकते। हम सेवा बहाल करने के लिए तेजी से काम कर रहे हैं और हुई असुविधा के लिए क्षमा चाहते हैं।",
+      "aligned": true
+    }
+  ]
+}
