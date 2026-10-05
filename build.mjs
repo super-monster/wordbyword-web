@@ -11,7 +11,7 @@ import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { performance } from 'node:perf_hooks';
 
-import { buildRedirects, buildHeaders, buildSitemap, buildRobots, alternatesFor, gitInfo } from './src/lib/seo.mjs';
+import { buildRedirects, buildHeaders, buildSitemap, buildLegacySitemap, buildRobots, alternatesFor, gitInfo, deepenClone } from './src/lib/seo.mjs';
 import { fill, placeholderVars } from './src/lib/html.mjs';
 import { emitAssets } from './src/lib/assets.mjs';
 import { loadConfig, loadStrings, expandRoutes, publicView, modeOf } from './src/lib/context.mjs';
@@ -132,6 +132,8 @@ const year = new Date().getUTCFullYear();
 const absUrl = (p) => SITE.url + p;
 const routes = expandRoutes(cfg);
 const publishedLocales = LOCALES.filter((l) => l.publish);
+const deepened = process.env.CF_PAGES === '1' ? deepenClone() : null; // Cloudflare clones with depth 1
+if (deepened === false) warn('D-3', 'git fetch --unshallow failed on Cloudflare: the clone stays shallow');
 const git = gitInfo();
 
 rmSync(DIST, { recursive: true, force: true });
@@ -200,6 +202,8 @@ write(join(DIST, 'sitemap.xml'), buildSitemap(routes, {
   imagesFor: () => [], // images & OG land in M2 (doc 06 §3.6.1)
 }));
 write(join(DIST, 'robots.txt'), buildRobots({ SITE }));
+if (SITE.legacySitemap) write(join(DIST, 'sitemap-legacy.xml'), buildLegacySitemap(redirects.rules, { absUrl }));
+if (SITE.indexNowKey) write(join(DIST, `${SITE.indexNowKey}.txt`), SITE.indexNowKey); // IndexNow key file (doc 03 §6.3)
 
 // Preview-only build stamp (not emitted on the production branch): used by the M1-03 spike.
 const branch = process.env.CF_PAGES_BRANCH;

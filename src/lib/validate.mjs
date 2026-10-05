@@ -235,6 +235,12 @@ export function validateConfig(cfg, issues) {
   const flags = SITE.redirectFlags ?? {};
   for (const k of REDIRECT_FLAGS) if (typeof flags[k] !== 'boolean') E('D-12', `SITE.redirectFlags.${k} must be a boolean`);
   for (const k of Object.keys(flags)) if (!REDIRECT_FLAGS.includes(k)) E('D-12', `SITE.redirectFlags has unknown switch "${k}"`);
+  // a switch away from the doc 02 §5.2.1 default needs its preview measurement (M1-03); C without one could loop
+  const evidence = SITE.redirectEvidence ?? {};
+  for (const k of Object.keys(evidence)) if (!REDIRECT_FLAGS.includes(k)) E('D-12', `SITE.redirectEvidence has unknown switch "${k}"`);
+  if (flags.experimentC && !evidence.experimentC) E('D-12', 'SITE.redirectFlags.experimentC is on without a preview measurement in SITE.redirectEvidence: a case-insensitive _redirects match would loop (doc 02 §5.3-5, Q22)');
+  if (flags.experimentL && !evidence.experimentL) W('D-12', 'SITE.redirectFlags.experimentL is on without a preview measurement in SITE.redirectEvidence (doc 02 §5.4)');
+  if (SITE.indexNowKey != null && !/^[A-Za-z0-9-]{8,128}$/.test(SITE.indexNowKey)) E('D-14', `SITE.indexNowKey "${SITE.indexNowKey}" is not a valid IndexNow key (8–128 characters from a-z A-Z 0-9 -)`);
   for (const c of CONTRACTS) {
     const at = `contract ${c.id}`;
     if (!/^\/[a-z0-9/-]+\.html$/.test(c.public ?? '')) E('D-12', `${at}: public "${c.public}" must be a .html path`);

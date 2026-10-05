@@ -39,13 +39,16 @@ export const SITE = {
 
   // — Search engines —
   verification: { google: null, bing: null, yandex: null, naver: null },
-  indexNowKey: null,
+  indexNowKey: '7e821565917eb89c0908b806e7ec1aca', // public by design: the build serves /<key>.txt (doc 03 §6.3)
 
   // — Hosting & redirects (doc 02 §5.2.1) —
   pagesProject: 'wordbyword-web',
   contractMode: 'proxy',                        // 'proxy' = C-1 | 'file' = C-2 | per-contract object
-  redirectFlags: { indexHtmlRule: true, experimentL: false, experimentC: false },
-  legacySitemap: false,
+  redirectFlags: { indexHtmlRule: true, experimentL: true, experimentC: true },
+  // The preview measurement behind each switch (M1-03; ops/decision-log.md on the design-docs branch). D-12 refuses
+  // experimentC without one (a case-insensitive _redirects would loop) and warns for experimentL.
+  redirectEvidence: { indexHtmlRule: 'M1-03 2026-10-06', experimentL: 'M1-03 2026-10-06', experimentC: 'M1-03 2026-10-06' },
+  legacySitemap: false,                         // true from T0 until GSC shows every URL redirected or 6 weeks pass
 
   // — SEO —
   robots: { extra: [] },

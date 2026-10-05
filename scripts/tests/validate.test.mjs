@@ -21,6 +21,7 @@ import { graphemes, textLength, wu } from '../../src/lib/text-length.mjs';
 import { getPath, keyMatch, leaves, setPath, shape } from '../../src/lib/keypath.mjs';
 import { parseHTML, textOf, idIndex } from '../../src/lib/dom.mjs';
 import { hasToken, loadData, newIssues } from '../../src/lib/validate-util.mjs';
+import { buildRedirects, buildLegacySitemap } from '../../src/lib/seo.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const TMP = mkdtempSync(join(tmpdir(), 'wbw-validate-'));
@@ -562,9 +563,18 @@ test('D-12 _redirects structure, fixture and the all-switches self-test (R54)', 
   const fixture = readRedirectFixture(join(ROOT, 'scripts/fixtures/redirects.default.txt'));
   const cfg = freshCfg();
   cfg.LOCALES.forEach((l) => { l.publish = true; });
+  cfg.SITE.contractMode = 'proxy';
+  cfg.SITE.redirectFlags = { indexHtmlRule: true, experimentL: false, experimentC: false };
   assert.deepEqual(expectedRedirects(fixture, { cfg, site: cfg.SITE }).map((r) => `${r.from} ${r.to} ${r.code}`), fixture.map((r) => `${r.from} ${r.to} ${r.code}`));
   assert.equal(fixture.filter((r) => !r.from.includes('*')).length, 67);
-  assert.equal(parseRedirects(readFileSync(join(BUILT, '_redirects'), 'utf8')).length, 74);
+  // all switches on: the doc 02 §5.2.3 count table says 76 static / 10 dynamic
+  cfg.SITE.redirectFlags = { indexHtmlRule: true, experimentL: true, experimentC: true };
+  const all = expectedRedirects(fixture, { cfg, site: cfg.SITE });
+  assert.deepEqual([all.filter((r) => !r.from.includes('*')).length, all.filter((r) => r.from.includes('*')).length], [76, 10]);
+  // the build of the real configuration equals the fixture plus the deltas of its own switches
+  const real = freshCfg();
+  assert.deepEqual(parseRedirects(readFileSync(join(BUILT, '_redirects'), 'utf8')).map((r) => `${r.from} ${r.to} ${r.code}`),
+    expectedRedirects(fixture, { cfg: real, site: real.SITE }).map((r) => `${r.from} ${r.to} ${r.code}`));
 });
 
 test('D-13 _headers', () => {
@@ -584,6 +594,28 @@ test('D-14 required and forbidden files', () => {
   expectE(i, 'D-14', /dist\/404\.html missing/);
   expectE(i, 'D-14', /dist\/privacy\.html exists while contract privacy is proxied/);
   expectE(i, 'D-14', /dist\/assets\/extra\.css: CSS\/JS outside the fingerprinted bundle/);
+});
+
+test('D-12 switches need their M1-03 evidence; D-14 IndexNow key and legacy sitemap', () => {
+  const c = runConfig((cfg) => { delete cfg.SITE.redirectEvidence.experimentC; delete cfg.SITE.redirectEvidence.experimentL; cfg.SITE.redirectEvidence.typo = 'x'; });
+  expectE(c, 'D-12', /experimentC is on without a preview measurement/);
+  expectW(c, 'D-12', /experimentL is on without a preview measurement/);
+  expectE(c, 'D-12', /SITE\.redirectEvidence has unknown switch "typo"/);
+  noErrors(runConfig(), 'D-12');
+  expectE(runConfig((cfg) => { cfg.SITE.indexNowKey = 'bad key!'; }), 'D-14', /not a valid IndexNow key/);
+  const key = freshCfg().SITE.indexNowKey;
+  assert.ok(key && existsSync(join(BUILT, `${key}.txt`)), 'the build publishes /<key>.txt');
+  expectE(runDist((d) => rmSync(join(d, `${key}.txt`))), 'D-14', /must exist and contain the IndexNow key/);
+  expectE(runDist(null, { cfgMut: (cfg) => { cfg.SITE.legacySitemap = true; } }), 'D-14', /sitemap-legacy\.xml missing/);
+  // all locales published: /index.html, /en-top(.html) and the 40 C sources — 43 old URLs, absolute, in rule order
+  const cfg = freshCfg();
+  cfg.LOCALES.forEach((l) => { l.publish = true; });
+  const xml = buildLegacySitemap(buildRedirects({ SITE: cfg.SITE, LOCALES: cfg.LOCALES, CONTRACTS: cfg.CONTRACTS, ALIASES: cfg.ALIASES }).rules, { absUrl: (p) => cfg.SITE.url + p });
+  const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+  assert.equal(locs.length, 43);
+  assert.deepEqual(locs.slice(0, 4), ['/index.html', '/en-top.html', '/en-top', '/cn-top.html'].map((p) => cfg.SITE.url + p));
+  const paths = locs.map((u) => u.slice(cfg.SITE.url.length));
+  assert.ok(paths.every((p) => p === '/index.html' || /^\/[a-z]+-top(\.html)?$/.test(p)), paths.join(' ')); // no /index, /legal/*, X or splats
 });
 
 test('D-15 (a) product claims in template literals, SIBLING and notice copy', () => {

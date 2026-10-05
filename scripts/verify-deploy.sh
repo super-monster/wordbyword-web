@@ -150,10 +150,11 @@ out('robots-header', '/');
 out('server', '/');
 out('https');
 
-group('6) sitemap.xml, robots.txt, favicon, GA (doc 06 §11.4-6, doc 02 §6.7–6.8, Q31)');
+group('6) sitemap.xml, robots.txt, favicon, IndexNow key, GA (doc 06 §11.4-6, doc 02 §6.7–6.8, Q31, doc 03 §6.3)');
 out('sitemap', routes.filter((r) => r.indexable).map((r) => r.publicUrl).join(' '), routes.filter((r) => !r.indexable).map((r) => r.publicUrl).join(' '));
 out('robots', `${SITE.url}/sitemap.xml`);
 if (existsSync(join(root, 'dist/favicon.ico'))) out('status', '/favicon.ico', 200);
+if (SITE.indexNowKey) out('indexnow', `/${SITE.indexNowKey}.txt`, SITE.indexNowKey); // IndexNow answers 403 without it
 out('ga', SITE.gaId, SITE.gaId && read('dist/index.html').includes(SITE.gaId) ? 1 : 0);
 JS
 node "$TMP/plan.mjs" "$ROOT" > "$TMP/plan.tsv" || { echo "could not derive expectations from .cache/*.json" >&2; exit 2; }
@@ -348,6 +349,12 @@ check_robots() { # expected Sitemap URL
 
 check_status() { local s; s=$(curl -s -o /dev/null -w '%{http_code}' "$B$1"); if [ "$s" = "$2" ]; then pass "$1 $s"; else fail "$1 → $s (expected $2)"; fi; }
 
+check_indexnow() { # path key: served as is, without a redirect (doc 03 §6.3)
+  local s; s=$(curl -s -o "$TMP/key.txt" -w '%{http_code}' "$B$1")
+  if [ "$s" = 200 ] && [ "$(tr -d '[:space:]' < "$TMP/key.txt")" = "$2" ]; then pass "$1 200, IndexNow key"
+  else fail "$1 → $s, must answer 200 with the IndexNow key"; fi
+}
+
 check_ga() { # id rendered-by-this-build
   if [ "$1" = - ]; then skip "GA: SITE.gaId is not set"
   elif [ "$2" != 1 ]; then warn "GA $1: this build does not render the tag yet (doc 06 §8.1); checked once dist/index.html has it"
@@ -379,6 +386,7 @@ while IFS=$'\t' read -r -u 3 kind a b c d e f g h; do
     sitemap) check_sitemap "$a" "$b" ;;
     robots) check_robots "$a" ;;
     status) check_status "$a" "$b" ;;
+    indexnow) check_indexnow "$a" "$b" ;;
     ga) check_ga "$a" "$b" ;;
     skip) skip "$a" ;;
     fail) fail "$a" ;;

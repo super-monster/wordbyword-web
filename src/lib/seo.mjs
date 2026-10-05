@@ -116,6 +116,17 @@ export function alternatesFor(route, routes, absUrl) {
 
 // ———————————————————————————— lastmod & sitemap (doc 06 §3.6.1) ————————————————————————————
 
+// Cloudflare Pages clones with depth 1 (M1-03), which would drop <lastmod> and date the about page's "Last updated"
+// to every deploy. Fetching the rest of the history takes ~2 s there. Output is discarded on purpose: on Cloudflare
+// the origin URL carries an access token, so neither the remote nor git's messages may reach the build log.
+// Returns null when there is nothing to do, else whether the clone is complete now.
+export function deepenClone() {
+  const git = (args, timeout) => execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], timeout }).trim();
+  try { if (git(['rev-parse', '--is-shallow-repository']) !== 'true') return null; } catch { return null; }
+  try { git(['fetch', '--unshallow', '--quiet', 'origin'], 60_000); } catch { /* reported by the caller */ }
+  try { return git(['rev-parse', '--is-shallow-repository']) === 'false'; } catch { return false; }
+}
+
 export function gitInfo() {
   const run = (args) => { try { return execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim(); } catch { return null; } };
   const shallow = run(['rev-parse', '--is-shallow-repository']);
@@ -145,6 +156,20 @@ export function buildSitemap(routes, { absUrl, lastmodFor, alternates, imagesFor
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
     ...entries,
+    '</urlset>',
+    '',
+  ].join('\n');
+}
+
+// Temporary sitemap of the old flat URLs (doc 02 P1-12, doc 03 §6.2): the B and C rule sources that answer with a
+// permanent redirect — /index.html and every /<old>-top(.html). Submitted to GSC and IndexNow at T0 only; never
+// referenced from robots.txt (SITE.legacySitemap, doc 06 §10.2 steps 12 and 15).
+export function buildLegacySitemap(rules, { absUrl }) {
+  const urls = rules.filter((r) => /^(B1|B3|B4|C\d+)$/.test(r.id) && r.code === 301).map((r) => absUrl(r.from));
+  return [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.map((u) => `  <url><loc>${xmlEsc(u)}</loc></url>`),
     '</urlset>',
     '',
   ].join('\n');

@@ -168,7 +168,7 @@ export function checkRedirectRules(rules, ctx, issues) {
     if (!resolvePath(r.to, files).file) E(`${r.from} → ${r.to} 200: proxy target does not resolve to a file in dist (c)`);
     if (files.has(r.from.slice(1))) E(`${r.from} 200: a file with the source's name exists in dist — Cloudflare would 308 it (c, doc 02 §5.5-4)`);
     const loop = r3.find((s) => matches(r.to, s));
-    if (loop) W(`${r.from} → ${r.to} 200: the proxy target is also redirected (${loop.from} → ${loop.to}, experiment L) — needs the M1-03 measurement (c)`);
+    if (loop && !site.redirectEvidence?.experimentL) W(`${r.from} → ${r.to} 200: the proxy target is also redirected (${loop.from} → ${loop.to}, experiment L) — needs the M1-03 measurement (c)`);
   }
   // counts (F24) and generator consistency
   const st = rules.filter((r) => !isDynamic(r.from)).length;
@@ -374,6 +374,9 @@ export function validateDist(dist, ctx, issues) {
 
   // ——— D-14: required and forbidden files ———
   for (const f of ['404.html', 'robots.txt', 'sitemap.xml', '_redirects', '_headers']) if (!fileSet.has(f)) E('D-14', `dist/${f} missing`);
+  const key = SITE.indexNowKey;
+  if (key && (!fileSet.has(`${key}.txt`) || readFileSync(join(dist, `${key}.txt`), 'utf8').trim() !== key)) E('D-14', `dist/${key}.txt must exist and contain the IndexNow key (doc 03 §6.3)`);
+  if (SITE.legacySitemap && !fileSet.has('sitemap-legacy.xml')) E('D-14', 'dist/sitemap-legacy.xml missing while SITE.legacySitemap is on');
   for (const f of ['_headers', '_redirects']) if (existsSync(join(root, 'public', f))) E('D-14', `public/${f} must not exist — it is generated (ENG-16)`);
   for (const c of cfg.CONTRACTS) if (modeOf(SITE, c.id) === 'proxy' && fileSet.has(c.public.slice(1))) E('D-14', `dist${c.public} exists while contract ${c.id} is proxied (C-1): Cloudflare would 308 it (doc 02 §5.5-4)`);
   for (const r of routes) if (!fileSet.has(r.outFile)) E('D-14', `${r.publicUrl} (${r.locale.code}): ${r.outFile} was not built`);
