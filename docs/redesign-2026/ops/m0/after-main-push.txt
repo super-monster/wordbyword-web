@@ -1,0 +1,5 @@
+/ 200 11664 4ac4f4ea935a4b1746adfc41fcfe4ffd
+/ja-top.html 200 11822 6eef333756cd27641354a54fd002980e
+/privacy.html 200 4469 e600e953c94afc3a12282186c40c98bf
+/support.html 200 4811 3a4b6997efd345749ff309d1fa5cf027
+/chrome-extension/privacy.html 200 9040 158873293bbcede92b0db040b9af048d
