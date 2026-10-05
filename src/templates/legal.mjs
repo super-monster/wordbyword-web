@@ -5,18 +5,15 @@ import { readFileSync } from 'node:fs';
 import { esc } from '../lib/html.mjs';
 import { layout } from './layout.mjs';
 
-const TITLES = {
-  privacy: ['Privacy Policy', 'How the WordByWord iPhone and iPad app handles data.'],
-  support: ['Support', 'Get help with WordByWord: contact, bug reports, subscriptions and privacy.'],
-  'extension-privacy': ['Privacy Policy — WordByWord Chrome Extension', 'How the WordByWord Translate Chrome extension handles data.'],
-};
+// Title and description are copy (en.json legal.*, keyed by the camel-cased contract id); the body stays verbatim.
+const KEY = { privacy: 'privacy', support: 'support', 'extension-privacy': 'extensionPrivacy' };
 
 export function legal(ctx) {
   const { page } = ctx.route;
   const source = readFileSync(page.contract.source, 'utf8');
   const updated = page.updated();
   const body = source.replace(/^<!--[\s\S]*?-->\n/gm, '').trim();
-  const [title, description] = TITLES[page.doc];
+  const { title, description } = ctx.t.legal[KEY[page.doc]];
   return layout(ctx, {
     title: `${title} — WordByWord`,
     description,

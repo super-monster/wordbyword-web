@@ -464,6 +464,20 @@
     "home": "Go to the WordByWord home page",
     "languages": "Or open WordByWord in your language:"
   },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How the WordByWord iPhone and iPad app handles data."
+    },
+    "support": {
+      "title": "Support",
+      "description": "Get help with WordByWord: contact, bug reports, subscriptions and privacy."
+    },
+    "extensionPrivacy": {
+      "title": "Privacy Policy — WordByWord Chrome Extension",
+      "description": "How the WordByWord Translate Chrome extension handles data."
+    }
+  },
   "about": {
     "meta": {
       "title": "About WordByWord — Bilingual Web Reader for iPhone & iPad",
@@ -655,7 +669,7 @@
     },
     "disambiguation": {
       "title": "Not to be confused with",
-      "text": "WordByWord (word-by-word.app) is not related to **WordByWord.io** or its browser extensions, to the Chrome Web Store extension “WordByWord – Vocabulary Highlighter”, to Quran or Bible word-by-word apps, or to books titled *Word by Word*. The only official WordByWord app is the one from the developer of this site: [WordByWord on the App Store](@appstore-dev)."
+      "text": "WordByWord (word-by-word.app) is not related to **WordByWord.io** or its browser extensions, to the Chrome Web Store extension “WordByWord – Vocabulary Highlighter”, to Quran or Bible word-by-word apps, or to books titled “Word by Word”. The only official WordByWord app is the one from the developer of this site: [WordByWord on the App Store](@appstore-dev)."
     },
     "contact": {
       "title": "Contact",

@@ -117,4 +117,5 @@ export function publishedLocales(cfg, strings) {
 }
 
 // Page id → the locale-JSON subtree that holds its copy (doc 06 §4.2; L-3).
-export const PAGE_KEY_ROOT = { about: 'about', 'chrome-extension': 'chromeExtension', '404': 'notfound' };
+export const PAGE_KEY_ROOT = { about: 'about', 'chrome-extension': 'chromeExtension', '404': 'notfound',
+  privacy: 'legal', support: 'legal', 'extension-privacy': 'legal' };

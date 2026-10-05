@@ -501,7 +501,7 @@ function ruleL3(X, c) {
   for (const [root, locs] of Object.entries(X.pageRoots)) {
     const required = locs.includes(c.code);
     const mine = getPath(c.t, root);
-    if (required && mine === undefined) { E('L-3', `${c.code} ${root}.* is required for this locale (${root === 'chromeExtension' ? 'R1' : root === 'notfound' ? 'R21' : 'about is en-only'})`); continue; }
+    if (required && mine === undefined) { E('L-3', `${c.code} ${root}.* is required for this locale (${{ chromeExtension: 'R1', notfound: 'R21', legal: 'contract pages are en-only, doc 06 §5.5' }[root] ?? 'about is en-only'})`); continue; }
     if (mine === undefined || c.code === 'en') continue;
     compareSubtree(X, c, root, required ? 'E' : 'W');
   }

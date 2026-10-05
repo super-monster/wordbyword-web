@@ -16,7 +16,20 @@ function bundleCss(root) {
     .split('\n').map((l) => l.trim()).filter(Boolean).join('\n') + '\n';
 }
 
-const bundleJs = (root) => JS_ORDER.map((n) => readFileSync(join(root, `src/js/${n}.js`), 'utf8')).join('\n');
+// JS: the same safe subset per file — block comments that start a line, whole-line // comments, blank lines and
+// indentation. Trailing comments stay (removing them needs a tokenizer: '//' also occurs in URLs). A file with a
+// template literal spanning lines is left as is, because trimming would change the string (D-18 warns).
+function bundleJs(root, issues) {
+  return JS_ORDER.map((n) => {
+    const src = readFileSync(join(root, `src/js/${n}.js`), 'utf8');
+    if (src.split('\n').some((l) => (l.match(/`/g) ?? []).length % 2)) {
+      issues?.warn.push(`D-18 src/js/${n}.js has a multi-line template literal: bundled without whitespace removal`);
+      return src;
+    }
+    return src.replace(/^[ \t]*\/\*[\s\S]*?\*\//gm, '')
+      .split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('//')).join('\n');
+  }).join('\n') + '\n';
+}
 
 export function emitAssets(root, dist, issues) {
   const out = { count: 0, bytes: {} };
@@ -31,7 +44,7 @@ export function emitAssets(root, dist, issues) {
   const css = Buffer.from(bundleCss(root));
   out.css = emit(`assets/site.${hash(css, 12)}.css`, css);
   out.bytes.css = css.length;
-  const js = Buffer.from(bundleJs(root));
+  const js = Buffer.from(bundleJs(root, issues));
   out.js = emit(`assets/site.${hash(js, 12)}.js`, js);
   out.bytes.js = js.length;
 
