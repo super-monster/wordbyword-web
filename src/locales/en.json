@@ -481,7 +481,8 @@
   "about": {
     "meta": {
       "title": "About WordByWord — Bilingual Web Reader for iPhone & iPad",
-      "description": "Official facts about WordByWord, the iPhone and iPad reading assistant for language learners: features, price, who makes it, and why it is not WordByWord.io."
+      "description": "Official facts about WordByWord, the iPhone and iPad reading assistant for language learners: features, price, who makes it, and why it is not WordByWord.io.",
+      "ogImageAlt": "About WordByWord: the app on iPhone with a Spanish paragraph, its English translation below and an AI card explaining a word"
     },
     "eyebrow": "Official product information",
     "h1": "About WordByWord",

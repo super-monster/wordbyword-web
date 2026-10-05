@@ -77,5 +77,5 @@ export function about(ctx) {
   </div>
 </article>`;
 
-  return layout(ctx, { title: a.meta.title, description: f(a.meta.description), ogAlt: plain(a.meta.title), main });
+  return layout(ctx, { title: a.meta.title, description: f(a.meta.description), ogAlt: a.meta.ogImageAlt ?? plain(a.meta.title), main });
 }

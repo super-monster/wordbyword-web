@@ -24,6 +24,7 @@ npm run check        # build with the pseudo-locale scan, then re-check dist/
 npm test             # validator tests: a broken sample per rule
 npm run check:keys   # missing / extra copy keys per locale
 npm run images       # regenerate assets/img from the manifest (macOS: sips + Chrome decode check)
+npm run og           # re-render the OG cards after changing their copy (macOS + Chrome; the build fails until you do)
 npm run verify -- https://main.wordbyword-web.pages.dev --preview   # acceptance of a deployment
 ```
 

@@ -21,6 +21,7 @@
     "serve:cf": "node build.mjs && npx --yes wrangler pages dev dist --port 8788",
     "images": "node scripts/images.mjs && node scripts/check-images.mjs --render",
     "images:check": "node scripts/check-images.mjs",
-    "images:prune": "node scripts/images.mjs --prune"
+    "images:prune": "node scripts/images.mjs --prune",
+    "og": "node scripts/og.mjs"
   }
 }

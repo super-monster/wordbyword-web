@@ -1,0 +1,77 @@
+{
+  "template": "94714826de2c",
+  "images": {
+    "home-en": {
+      "file": "assets/og/home-en.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "1bf6213cde0e402827b690fd6feda08e21366bbe7ab52f88cdbfe88cd438f593",
+      "inputs": {
+        "headline": "Read any web page bilingually. [[Keep the original.]]",
+        "subline": "Swipe right on a paragraph · double-tap a word for its meaning in context",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-zh-Hans": {
+      "file": "assets/og/home-zh-hans.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "7f6f0886f638f2042cc852ba08ccccbc2fd52541dca59a0090229b4ca8896941",
+      "inputs": {
+        "headline": "iPhone 网页双语对照：[[原文不动，译文在下]]",
+        "subline": "向右滑动段落即译 · 双击单词看 AI 语境释义",
+        "shot": "shot/zh-hans/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-ja": {
+      "file": "assets/og/home-ja.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "b82c0bb69c187e8d4966a83785ec533710a99a04f60be0c5b2e7fe979f0724a2",
+      "inputs": {
+        "headline": "Webページを対訳で読む。[[原文はそのまま。]]",
+        "subline": "段落を右にスワイプ・単語をダブルタップで文脈に合った意味",
+        "shot": "shot/ja/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "about-en": {
+      "file": "assets/og/about-en.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "c87635a67b6252557007561396a8bc4acec35c6ad302a0cc1537d859ebac0c99",
+      "inputs": {
+        "headline": "About WordByWord",
+        "subline": "Official facts about WordByWord, the iPhone and iPad reading assistant for language learners: features, price, who makes it, and why it is not WordByWord.io.",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "chrome-extension-en": {
+      "file": "assets/og/chrome-extension-en.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "aaeee2ea132f21cf197d77c1fbb2062204bc9cfcc713fe0a5db7898e87a9b954",
+      "inputs": {
+        "headline": "[[Bilingual web translation]] in Chrome, with the original kept in place",
+        "subline": "From the maker of the WordByWord iPhone app: hover over a paragraph and press Shift to see its translation below the original, or press Control on a word.",
+        "shot": "ext/common/hero",
+        "template": "94714826de2c"
+      }
+    },
+    "chrome-extension-zh-Hans": {
+      "file": "assets/og/chrome-extension-zh-hans.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "414efa11645d01e6e92f9f1a65c88265d8b8cac8c6a1fb1e66fa973b3e5a81b4",
+      "inputs": {
+        "headline": "在 Chrome 里{wbr}[[双语对照]]{wbr}读网页，{wbr}原文保持不动",
+        "subline": "WordByWord iPhone App 开发者出品的 Chrome 扩展：鼠标悬停在段落上按 Shift，译文出现在原文下方；在单词上按 Control，查看它在句中的意思。",
+        "shot": "ext/common/hero",
+        "template": "94714826de2c"
+      }
+    }
+  }
+}

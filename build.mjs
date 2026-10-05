@@ -19,7 +19,7 @@ import { entryVariants, registryEntries, resolveRegistryPath } from './src/lib/i
 import { validateConfig, validateLocales, validateDist } from './src/lib/validate.mjs';
 import { readOgRegistry, ogKey } from './src/lib/validate-dist.mjs';
 import { pseudoStrings, pseudoNotice, scanPseudoDist, wrap } from './src/lib/pseudo.mjs';
-import { home } from './src/templates/home.mjs';
+import { home, imageSet } from './src/templates/home.mjs';
 import { about } from './src/templates/about.mjs';
 import { chromeExtension } from './src/templates/chrome-extension.mjs';
 import { legal } from './src/templates/legal.mjs';
@@ -199,7 +199,10 @@ write(join(DIST, '_headers'), buildHeaders({ SITE }));
 write(join(DIST, 'sitemap.xml'), buildSitemap(routes, {
   absUrl, lastmodFor,
   alternates: (r) => alternatesFor(r, routes, absUrl),
-  imagesFor: () => [], // images & OG land in M2 (doc 06 §3.6.1)
+  // Home pages: the L1 screenshot (shot/<set>/swipe, its 540w JPEG fallback — the hero is HTML, ENG-15) and the OG
+  // image, at the fingerprinted URLs the page and og:image use (doc 02 §6.7, doc 06 §3.6.1; R9). Other pages: none.
+  imagesFor: (r) => (r.page.id === 'home'
+    ? [img(`shot/${imageSet(r.locale)}/swipe`)?.fallback.url, ogFor(r)?.url].filter(Boolean).map(absUrl) : []),
 }));
 write(join(DIST, 'robots.txt'), buildRobots({ SITE }));
 if (SITE.legacySitemap) write(join(DIST, 'sitemap-legacy.xml'), buildLegacySitemap(redirects.rules, { absUrl }));
