@@ -349,7 +349,7 @@
       {
         "id": "what-is",
         "q": "WordByWordとは？",
-        "a": "WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。アプリ内ブラウザでページを開き、段落を右にスワイプすると原文の下に訳文が入り、単語をダブルタップするとその文での意味がわかります。個人開発者のJinlongが開発しています。[WordByWordについて詳しく](@about)"
+        "a": "WordByWordは、外国語を学びながらWebを読む人のためのiPhone・iPadアプリです。アプリ内ブラウザでページを開き、段落を右にスワイプすると原文の下に訳文が入り、単語をダブルタップするとその文での意味がわかります。個人開発者のJinlongが開発しています。[WordByWordについて詳しく（英語）](@about)"
       },
       {
         "id": "whole-page",
@@ -409,8 +409,8 @@
       {
         "id": "devices",
         "q": "iPadやMac、パソコンのブラウザでも使えますか？",
-        "a": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのブラウザで使える版はまだありません。同じ開発者によるChrome拡張機能を準備中です。詳しくは[Chrome拡張機能のページ](@chrome)をご覧ください。",
-        "aExtLive": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのChrome向けには、同じ開発者による別の拡張機能[WordByWord Translate（Chrome拡張機能）](@chrome)があります。インストールは、そのページのリンクから行ってください。"
+        "a": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのブラウザで使える版はまだありません。同じ開発者によるChrome拡張機能を準備中です。詳しくは[Chrome拡張機能のページ（英語）](@chrome)をご覧ください。",
+        "aExtLive": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのChrome向けには、同じ開発者による別の拡張機能[WordByWord Translate（Chrome拡張機能・英語）](@chrome)があります。インストールは、そのページのリンクから行ってください。"
       }
     ]
   },

@@ -344,7 +344,7 @@
       {
         "id": "what-is",
         "q": "¿Qué es WordByWord?",
-        "a": "WordByWord es un asistente de lectura en iPhone y iPad para estudiantes de idiomas y para cualquiera que lea sitios web en otro idioma. Abre una página en su navegador integrado, desliza un párrafo a la derecha para insertar la traducción debajo y toca dos veces una palabra para ver qué significa en esa frase. Lo crea Jinlong, un desarrollador independiente. [Más sobre WordByWord](@about)"
+        "a": "WordByWord es un asistente de lectura en iPhone y iPad para estudiantes de idiomas y para cualquiera que lea sitios web en otro idioma. Abre una página en su navegador integrado, desliza un párrafo a la derecha para insertar la traducción debajo y toca dos veces una palabra para ver qué significa en esa frase. Lo crea Jinlong, un desarrollador independiente. [Más sobre WordByWord (en inglés)](@about)"
       },
       {
         "id": "whole-page",
@@ -404,8 +404,8 @@
       {
         "id": "devices",
         "q": "¿WordByWord funciona en iPad, Mac o en un navegador de escritorio?",
-        "a": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Todavía no hay una versión para navegadores de escritorio; el mismo desarrollador está preparando una extensión para Chrome: consulta la [página de la extensión de Chrome](@chrome).",
-        "aExtLive": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Para Chrome de escritorio hay una extensión aparte del mismo desarrollador, [WordByWord Translate para Chrome](@chrome). Instálala solo desde el enlace de esa página."
+        "a": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Todavía no hay una versión para navegadores de escritorio; el mismo desarrollador está preparando una extensión para Chrome: consulta la [página de la extensión de Chrome (en inglés)](@chrome).",
+        "aExtLive": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Para Chrome de escritorio hay una extensión aparte del mismo desarrollador, [WordByWord Translate para Chrome (en inglés)](@chrome). Instálala solo desde el enlace de esa página."
       }
     ]
   },
