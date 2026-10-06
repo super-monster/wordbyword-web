@@ -80,7 +80,9 @@ export function parseHTML(html) {
     cur.children.push(el);
     i = j;
     if (RAW.has(tag) && !selfClose) {
-      const close = html.toLowerCase().indexOf(`</${tag}`, i);
+      const endRe = new RegExp(`</${tag}`, 'gi'); // not html.toLowerCase(): "İ" lowercases to two code units, shifting every index after it
+      endRe.lastIndex = i;
+      const close = endRe.exec(html)?.index ?? -1;
       const end = close < 0 ? n : close;
       if (end > i) el.children.push({ type: 'text', text: html.slice(i, end), parent: el, start: i, raw: true });
       const gt = close < 0 ? n : html.indexOf('>', close);
