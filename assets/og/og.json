@@ -193,6 +193,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-id": {
+      "file": "assets/og/home-id.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "45045fcc8f34111e6f04d904f18ac5608dc5cc31f122ef50838c101f1f8a23cf",
+      "inputs": {
+        "headline": "Baca halaman web dalam dua bahasa. [[Teks asli tetap utuh.]]",
+        "subline": "Geser paragraf ke kanan · ketuk dua kali sebuah kata untuk melihat artinya sesuai konteks",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,

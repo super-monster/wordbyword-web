@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "title": "WordByWord: aplikasi terjemahan halaman web untuk iPhone",
+    "description": "Bagi pelajar bahasa: geser paragraf ke kanan di WordByWord, terjemahannya muncul di bawah. Ketuk dua kali kata untuk melihat artinya. Gratis di iPhone dan iPad.",
+    "ogHeadline": "Baca halaman web dalam dua bahasa. [[Teks asli tetap utuh.]]",
+    "ogSubline": "Geser paragraf ke kanan · ketuk dua kali sebuah kata untuk melihat artinya sesuai konteks",
+    "ogImageAlt": "WordByWord di iPhone (antarmuka bahasa Inggris): teks Spanyol, terjemahan Inggris di bawahnya, dan kartu AI penjelas kata",
+    "appStoreName": "WordByWord",
+    "appStoreSubtitle": "Geser untuk menerjemahkan, AI menjelaskan"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "halaman web",
+      "aplikasi"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "aplikasi terjemahan halaman web untuk iPhone",
+        "secondary": [
+          "asisten membaca untuk pelajar bahasa",
+          "terjemahkan halaman web di iPhone",
+          "terjemahan di bawah teks asli",
+          "aplikasi baca dwibahasa untuk situs web apa pun",
+          "belajar bahasa asing dengan membaca situs web"
+        ]
+      },
+      "K2": {
+        "primary": "arti kata sesuai konteks dengan AI",
+        "secondary": [
+          "kamus AI",
+          "ketuk dua kali untuk mencari arti kata",
+          "arti frasa dan ungkapan",
+          "contoh kalimat dan bentuk kata"
+        ]
+      },
+      "K3": {
+        "primary": "bacakan teks dengan suara AI",
+        "secondary": [
+          "bacakan halaman web",
+          "suara iOS dengan kecepatan yang bisa diatur"
+        ]
+      },
+      "K4": {
+        "primary": "analisis struktur kalimat dengan AI",
+        "secondary": [
+          "memahami kalimat panjang",
+          "tata bahasa sebuah kalimat dijelaskan"
+        ]
+      },
+      "K6": {
+        "primary": "riwayat terjemahan dan pencarian kata",
+        "secondary": [
+          "kata yang dicari, lengkap dengan kalimatnya"
+        ]
+      },
+      "K7": {
+        "primary": "terjemahan cloud atau di perangkat",
+        "secondary": [
+          "terjemahan dengan Azure dan Google",
+          "terjemahan bawaan iOS di perangkat"
+        ]
+      },
+      "K8": {
+        "primary": "terjemahan ke 21 bahasa",
+        "secondary": [
+          "aplikasi dalam 20 bahasa",
+          "mendeteksi bahasa halaman secara otomatis"
+        ]
+      },
+      "K9": {
+        "primary": "terjemahkan postingan X (Twitter) di iPhone",
+        "secondary": [
+          "baca tweet bersama teks aslinya",
+          "terjemahan X di browser bawaan"
+        ]
+      },
+      "K10": {
+        "primary": "aplikasi terjemahan gratis untuk iPhone",
+        "secondary": [
+          "batas gratis harian",
+          "harga WordByWord Plus"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Langsung ke konten",
+    "languageLabel": "Bahasa",
+    "comingSoon": "Segera hadir",
+    "contactUs": "Kontak",
+    "lastUpdated": "Terakhir diperbarui",
+    "breadcrumbHome": "Beranda",
+    "appStoreBadgeAlt": "Download WordByWord di App Store",
+    "langFallbackNote": "Halaman ini hanya tersedia dalam bahasa Inggris. Bahasa lain membuka halaman beranda masing-masing.",
+    "menu": "Menu",
+    "close": "Tutup",
+    "figLabel": "Gbr.",
+    "screenshotLabel": "Layar iPhone (antarmuka bahasa Inggris)",
+    "screenshotExcerptLabel": "Detail layar (antarmuka bahasa Inggris)",
+    "noteLabel": "Catatan",
+    "demoLabel": "Demo aplikasi"
+  },
+  "nav": {
+    "features": "Fitur",
+    "languages": "Bahasa",
+    "pricing": "Harga",
+    "faq": "Tanya jawab",
+    "chromeExtension": "Ekstensi Chrome",
+    "about": "Tentang",
+    "download": "Unduh",
+    "downloadShort": "Unduh",
+    "iphoneApp": "Aplikasi iPhone",
+    "ariaMain": "Utama",
+    "ariaLanguages": "Pilih bahasa"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Pembaca web dwibahasa untuk pelajar bahasa",
+    "title": "Geser paragraf [[halaman web]] ke\u00a0kanan, terjemahan muncul di bawahnya.",
+    "lede": "WordByWord adalah asisten membaca untuk pelajar bahasa asing, di iPhone dan iPad.",
+    "ledeShort": "WordByWord adalah asisten membaca untuk pelajar bahasa asing, di iPhone dan iPad.",
+    "ctaNote": "Unduh gratis · iPhone dan iPad",
+    "how": "Buka situs web di browser bawaan aplikasi, lalu geser paragraf ke kanan: terjemahannya muncul di bawahnya. Ketuk dua kali sebuah kata, dan AI menjelaskan artinya di kalimat itu.",
+    "platformNote": "Gratis, dengan batas harian · Plus: langganan bulanan · {minOS} ke atas; juga di Mac dengan chip Apple dan Apple Vision Pro",
+    "secondaryCta": "Lihat cara kerjanya"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "Perpustakaan di lingkungan kami buka pagi-pagi setiap hari Sabtu.",
+      "Orang-orang datang membawa kopi dan akhirnya membaca sampai tengah hari."
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "kata kerja",
+      "meaning": "(end up + -ing) akhirnya (melakukan sesuatu); di sini: tanpa sadar terus membaca sampai tengah hari",
+      "note": "Dalam kalimat ini, “end” adalah bagian dari phrasal verb “end up”."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Geser ke kanan",
+      "more": "Definisi Lainnya",
+      "pause": "Jeda",
+      "replay": "Putar ulang"
+    },
+    "caption": "Demo aplikasi dalam HTML, bukan tangkapan layar: paragraf bahasa Inggris dengan terjemahan bahasa Indonesia yang disisipkan di bawahnya."
+  },
+  "featuresIntro": {
+    "title": "Geser untuk menerjemahkan, ketuk dua kali untuk arti kata — di situs yang Anda baca",
+    "lede": "Dibuat untuk pelajar bahasa yang membaca situs web sungguhan. Dua gerakan sudah cukup untuk hampir semua hal; fitur lainnya siap saat sebuah kalimat perlu dicermati."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Geser untuk Menerjemahkan",
+      "title": "Geser untuk Menerjemahkan: terjemahan muncul tepat di bawah teks asli",
+      "text": "Buka halaman di browser bawaan (ketik alamat atau cari), lalu geser paragraf ke kanan. Terjemahannya disisipkan di bawahnya, jadi Anda bisa membaca keduanya tanpa berpindah layar atau kehilangan posisi baca.",
+      "bullets": [
+        "Tampilan Otomatis, Paragraf, atau Kalimat demi Kalimat",
+        "Terjemahan tampil otomatis, atau setelah diketuk",
+        "Berita, blog, dokumentasi, X: halaman yang Anda buka di aplikasi"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "WordByWord di iPhone (antarmuka bahasa Inggris): Wikipedia bahasa Spanyol dengan terjemahan Inggris di bawah teks asli"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Ketuk dua kali untuk Mencari",
+      "title": "Ketuk dua kali untuk melihat arti kata sesuai konteks dengan AI",
+      "text": "WordByWord membaca seluruh kalimat sebelum menjelaskan sebuah kata dan memeriksa frasa lebih dulu, jadi Anda mendapat arti yang pas di sini, bukan daftar entri kamus.",
+      "bullets": [
+        "Ketuk dua kali kata apa pun di halaman",
+        "Frasa dan ungkapan dikenali lebih dulu",
+        "Definisi Lainnya: entri lengkap dengan contoh, bentuk kata, dan pelafalan"
+      ],
+      "note": "Tidak tersedia untuk teks sumber berbahasa Mandarin, Jepang, atau Korea.",
+      "image": "shot/{set}/lookup",
+      "alt": "WordByWord di iPhone (antarmuka bahasa Inggris): kata Spanyol “convirtiéndose” disorot, dengan kartu arti sesuai konteks"
+    },
+    {
+      "id": "x",
+      "kicker": "X (dulu Twitter)",
+      "title": "Baca postingan X (Twitter) dalam dua bahasa di browser bawaan",
+      "text": "Masuk ke x.com di dalam WordByWord, lalu geser postingan ke kanan untuk melihat terjemahannya di bawah. Praktis untuk mengikuti akun yang menulis dalam bahasa lain.",
+      "image": "shot/{set}/x",
+      "alt": "Ilustrasi postingan di WordByWord: teks bahasa Inggris dengan terjemahan Indonesia di bawahnya (bukan tangkapan layar)",
+      "sample": {
+        "name": "Akun Contoh",
+        "handle": "@runner.example",
+        "time": "3 jam",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "Baru saja selesai lari 10K pertamaku. Pelan, tapi tidak berhenti sekali pun."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "Teks bahasa Inggris",
+      "title": "Ekstraksi Bagian dan Action Flow, untuk kalimat bahasa Inggris",
+      "text": "Setelah kalimat bahasa Inggris diterjemahkan dengan geser, “Ekstraksi Bagian” menggarisbawahi frasa yang menjadi satu kesatuan, dan Action Flow (“Alur Tindakan Kalimat” di aplikasi) menunjukkan tindakan inti kalimat beserta tindakan terkait. Bisa otomatis, saat diketuk, atau dimatikan.",
+      "note": "Hanya untuk teks sumber bahasa Inggris.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for: berangkat menuju suatu tempat",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Ilustrasi, bukan tangkapan layar"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Bacakan teks",
+      "title": "Bacakan teks dengan suara AI, atau suara iOS yang cepat di perangkat",
+      "text": "Dengarkan kata atau kalimat. “Bacaan AI” memakai suara cloud yang alami; “Bacaan Lokal” memakai suara bawaan iOS: lebih cepat, kecepatannya bisa diatur, dan bisa memakai suara Premium atau Enhanced yang sudah Anda unduh.",
+      "image": "shot/{set}/tts",
+      "alt": "WordByWord di iPhone (antarmuka bahasa Inggris): pemutar suara di bagian bawah layar membacakan kalimat bahasa Spanyol"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Sintaksis",
+      "title": "Analisis struktur kalimat dengan AI untuk kalimat panjang",
+      "text": "Di “Riwayat Terjemahan Geser”, buka sebuah kalimat, lalu ketuk “Dapatkan Penjelasan Sintaks AI”. AI menguraikan kalimat itu menjadi beberapa bagian dan menjelaskan hubungan antarbagiannya.",
+      "image": "shot/{set}/syntax",
+      "alt": "WordByWord di iPhone (antarmuka bahasa Inggris): layar Swipe Translation Detail dengan penjelasan sintaks AI satu kalimat"
+    },
+    {
+      "id": "engines",
+      "kicker": "Mesin terjemahan",
+      "title": "Terjemahan cloud atau di perangkat",
+      "text": "Cloud (Azure dan Google) atau iOS di perangkat. Kuota cloud habis? Pakai lokal."
+    },
+    {
+      "id": "display",
+      "kicker": "Tampilan",
+      "title": "Tata letak dan gaya terjemahan",
+      "text": "Otomatis, Paragraf, Kalimat demi Kalimat; langsung atau diketuk; berbagai gaya."
+    },
+    {
+      "id": "history",
+      "kicker": "Riwayat",
+      "title": "Riwayat terjemahan dan kata yang dicari",
+      "text": "Terjemahan dan kata yang dicari disimpan dengan kalimatnya; hapus kapan saja."
+    },
+    {
+      "id": "devices",
+      "kicker": "Perangkat",
+      "title": "iPhone, iPad, Mac, dan Vision Pro",
+      "text": "iPhone dan iPad ({minOS}+), Mac (chip Apple, {minMacOS}+), dan Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Pengaturan, definisi lengkap, dan pilihan bahasa di aplikasi",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Pengaturan terjemahan dan suara (antarmuka bahasa Inggris)",
+        "alt": "Pengaturan WordByWord di iPhone (antarmuka bahasa Inggris): mode terjemahan Auto, Quote Style, dan Local Read"
+      },
+      {
+        "id": "dictionary",
+        "caption": "Definisi Lainnya dan contoh (antarmuka bahasa Inggris)",
+        "alt": "Layar More Definitions WordByWord (antarmuka bahasa Inggris): kata Spanyol “matrimonio” dengan definisi dan contoh kalimat"
+      },
+      {
+        "id": "languages",
+        "caption": "Bahasa: Spanyol ke Inggris AS (antarmuka bahasa Inggris)",
+        "alt": "Pengaturan bahasa WordByWord (antarmuka bahasa Inggris): bahasa sumber Spanyol, bahasa target Inggris (AS)"
+      },
+      {
+        "id": "languageList",
+        "caption": "Daftar {targetLanguages} bahasa terjemahan (antarmuka bahasa Inggris)",
+        "alt": "Daftar bahasa WordByWord di iPhone (antarmuka bahasa Inggris): Vietnam, Portugis, Ukraina, Italia, Mandarin, dan lainnya"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Terjemahan ke {targetLanguages} bahasa, bukan hanya dari bahasa Inggris",
+    "lede": "Pilih bahasa terjemahan Anda. Bahasa halaman awalnya Inggris; WordByWord mendeteksi bahasa yang Anda baca dan memperbaruinya, atau atur sendiri.",
+    "uiCount": "Aplikasi dalam {uiLanguages} bahasa",
+    "targetCount": "Terjemahan ke {targetLanguages} bahasa",
+    "sourceNote": "Bahasa halaman: bahasa Inggris secara default, terdeteksi otomatis, bisa diubah",
+    "targetListLabel": "Bahasa terjemahan",
+    "limits": [
+      "Halaman Mandarin, Jepang, dan Korea: terjemahan geser dan pembacaan teks berfungsi, tetapi pencarian arti dengan ketuk dua kali tidak.",
+      "Ekstraksi Bagian dan Action Flow hanya berfungsi pada teks bahasa Inggris."
+    ]
+  },
+  "pricing": {
+    "title": "Gratis tiap hari — Plus saat banyak membaca",
+    "lede": "WordByWord gratis diunduh. Sebagian besar fitur memiliki kuota gratis yang diperbarui setiap hari; WordByWord Plus menaikkannya.",
+    "table": {
+      "caption": "Batas harian, Gratis dan Plus",
+      "colFeature": "Fitur",
+      "colFree": "Gratis",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Terjemahkan",
+        "lookup": "Cari arti",
+        "listen": "Dengarkan",
+        "sentence": "Analisis kalimat"
+      },
+      "rows": {
+        "cloudSwipe": "Geser untuk Menerjemahkan · cloud",
+        "localSwipe": "Geser untuk Menerjemahkan · lokal",
+        "lookup": "Ketuk dua kali untuk Mencari (Arti AI)",
+        "more": "Definisi Lainnya",
+        "lookupSpeech": "Pengucapan AI · kata",
+        "swipeSpeech": "Pengucapan AI · kalimat",
+        "localVoice": "Suara iOS (Bacaan Lokal)",
+        "chunks": "Ekstraksi Bagian",
+        "actionFlow": "Alur Tindakan Kalimat",
+        "syntax": "Penjelasan Sintaks AI"
+      },
+      "perDay": "{n}/hari",
+      "noLimit": "Tanpa batas harian",
+      "englishOnly": "Hanya Inggris"
+    },
+    "summary": "Semua fitur gratis dalam batas ini; Plus menaikkannya seharga {plus.priceUS}/bulan (AS).",
+    "free": {
+      "name": "Gratis"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "{plus.priceUS}/bulan (AS)"
+    },
+    "note": "Harga berbeda di tiap wilayah dan ditampilkan di App Store. Anda bisa membatalkan langganan kapan saja di pengaturan Akun Apple Anda."
+  },
+  "faq": {
+    "title": "Tanya jawab WordByWord",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "Apa itu WordByWord?",
+        "a": "WordByWord adalah asisten membaca di iPhone dan iPad untuk pelajar bahasa asing dan siapa pun yang membaca situs web dalam bahasa lain. Buka halaman di browser bawaannya, geser paragraf ke kanan untuk menyisipkan terjemahan di bawahnya, dan ketuk dua kali sebuah kata untuk melihat artinya di kalimat itu. Aplikasi ini dibuat oleh pengembang independen, Jinlong. [Tentang WordByWord (dalam bahasa Inggris)](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "Bisakah WordByWord menerjemahkan seluruh halaman web sekaligus?",
+        "a": "Tidak. WordByWord menerjemahkan paragraf yang Anda geser dan menyisipkan terjemahannya tepat di bawahnya; bagian lain halaman tetap dalam bahasa aslinya. Anda bisa menampilkan terjemahan per paragraf atau per kalimat (atau membiarkan mode Otomatis yang menentukan), dan memilih apakah terjemahan langsung muncul atau baru muncul saat diketuk."
+      },
+      {
+        "id": "safari",
+        "q": "Apakah bisa dipakai di Safari atau di dalam aplikasi lain?",
+        "a": "Tidak. WordByWord bukan ekstensi Safari dan tidak menambahkan tombol terjemahan ke aplikasi lain. WordByWord memiliki browser sendiri dengan tab dan bookmark: ketik alamat web atau cari, lalu geser untuk menerjemahkan di sana."
+      },
+      {
+        "id": "word-by-word",
+        "q": "Apakah WordByWord penerjemah kata per kata?",
+        "a": "Tidak dalam arti harfiah. Menerjemahkan kata demi kata sering membuat maknanya hilang, jadi WordByWord menerjemahkan kalimat atau paragraf utuh dan hanya menjelaskan satu kata saat Anda mengetuknya dua kali, sesuai konteks kalimat tempat kata itu berada."
+      },
+      {
+        "id": "x",
+        "q": "Bisakah saya membaca X (dulu Twitter) dengan WordByWord?",
+        "a": "Bisa. Buka x.com di browser bawaan dan masuk ke akun Anda, lalu geser postingan ke kanan untuk melihat terjemahannya di bawah, dan ketuk dua kali sebuah kata untuk mencari artinya (tidak tersedia untuk postingan berbahasa Mandarin, Jepang, atau Korea). Ini berfungsi dengan situs web X di dalam WordByWord, bukan dengan aplikasi X."
+      },
+      {
+        "id": "languages",
+        "q": "Bahasa apa saja yang didukung WordByWord?",
+        "a": "Aplikasinya tersedia dalam {uiLanguages} bahasa dan bisa menerjemahkan ke {targetLanguages} bahasa, termasuk Mandarin Sederhana dan Tradisional, serta bahasa Inggris versi AS dan Inggris Raya. Bahasa halaman secara default adalah bahasa Inggris; WordByWord mendeteksi bahasa yang sedang Anda baca dan memperbaruinya, dan Anda juga bisa mengubahnya secara manual. Beberapa fitur bergantung pada bahasa tersebut: ketuk dua kali untuk mencari arti tidak berfungsi pada teks bahasa Mandarin, Jepang, atau Korea, sedangkan Ekstraksi Bagian dan Action Flow hanya berfungsi untuk bahasa Inggris."
+      },
+      {
+        "id": "free",
+        "q": "Apakah WordByWord gratis? Berapa batas hariannya?",
+        "a": "Ya. WordByWord gratis diunduh dan dipakai, dengan batas harian. Setiap hari, paket gratis mencakup {quota.cloudSwipe.free} terjemahan geser dengan mesin cloud, {quota.localSwipe.free} dengan mesin lokal, {quota.lookup.free} pencarian arti dengan ketuk dua kali, {quota.chunks.free} Ekstraksi Bagian, {quota.actionFlow.free} Action Flow, dan {quota.syntax.free} penjelasan sintaks AI; suara iOS tidak memiliki batas harian. **WordByWord Plus** adalah langganan bulanan ({plus.priceUS} di AS; harga lokal ditampilkan di App Store) yang menaikkan batas-batas ini."
+      },
+      {
+        "id": "engines",
+        "q": "Mesin terjemahan apa yang dipakai?",
+        "a": "Anda yang memilih. Mesin terjemahan cloud saat ini didukung layanan terjemahan Azure dan Google. Mesin lokal memakai terjemahan bawaan iOS; saat pertama kali dipakai, iOS mungkin perlu mengunduh sumber daya bahasa. Jika kuota terjemahan cloud hari itu habis, beralihlah ke mesin lokal lalu coba lagi. Penjelasan kata, analisis sintaksis, dan “Bacaan AI” memakai layanan AI di cloud."
+      },
+      {
+        "id": "account",
+        "q": "Apakah saya perlu akun untuk memakai WordByWord?",
+        "a": "Tidak. WordByWord bisa dipakai tanpa mendaftar. Anda hanya masuk ke situs web seperti x.com di browser bawaannya, sama seperti di browser lain. Langganan WordByWord Plus terikat pada Akun Apple Anda, bukan pada akun WordByWord."
+      },
+      {
+        "id": "restore",
+        "q": "Bagaimana memulihkan WordByWord Plus di iPhone atau iPad baru?",
+        "a": "Gunakan Akun Apple yang sama di perangkat baru. Di pengaturan WordByWord, ketuk “Tingkatkan Sekarang”, lalu “Pulihkan Pembelian”. Untuk mengubah atau membatalkan langganan, buka pengaturan langganan di Akun Apple Anda."
+      },
+      {
+        "id": "android",
+        "q": "Apakah ada versi Android?",
+        "a": "Tidak. WordByWord hanya tersedia di App Store, untuk iPhone dan iPad, Mac dengan chip Apple, dan Apple Vision Pro."
+      },
+      {
+        "id": "english-learner",
+        "q": "Saya sedang belajar bahasa Inggris. Apakah SurfEnglish juga layak dicoba?",
+        "a": "Tetap gunakan WordByWord untuk halaman dan postingan X yang Anda pilih, dalam bahasa Inggris atau bahasa lain apa pun. Jika Anda juga menginginkan berita bahasa Inggris harian yang dikelompokkan per level ({se.levels}) dan permainan untuk mengulang kalimat serta kata yang sudah Anda simpan, SurfEnglish, dari pengembang yang sama, menyediakannya dengan geser dan ketuk dua kali yang sama. Kedua aplikasi bisa dipakai berdampingan. [Situs web SurfEnglish](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "Apakah WordByWord bisa dipakai di iPad, Mac, atau browser komputer?",
+        "a": "WordByWord berjalan di iPhone dan iPad dengan {minOS} atau versi lebih baru, dan dari App Store juga di Mac dengan chip Apple ({minMacOS} atau versi lebih baru) serta di Apple Vision Pro. Belum ada versi untuk browser komputer; pengembang yang sama sedang menyiapkan ekstensi Chrome, lihat [halaman ekstensi Chrome (dalam bahasa Inggris)](@chrome).",
+        "aExtLive": "WordByWord berjalan di iPhone dan iPad dengan {minOS} atau versi lebih baru, dan dari App Store juga di Mac dengan chip Apple ({minMacOS} atau versi lebih baru) serta di Apple Vision Pro. Untuk Chrome di komputer, ada ekstensi terpisah dari pengembang yang sama, [WordByWord Translate untuk Chrome (dalam bahasa Inggris)](@chrome). Pasang ekstensi itu hanya dari tautan di halaman tersebut."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "Dari pengembang WordByWord",
+      "title": "SurfEnglish: berita bahasa Inggris sesuai level Anda",
+      "body": "Sedang belajar bahasa Inggris? Tetap baca halaman apa pun di WordByWord, dan coba juga SurfEnglish: berita harian per level dan game latihan, dengan gerakan yang sama.",
+      "points": [
+        "Berita bahasa Inggris asli, level {se.levels}",
+        "Game latihan dari bacaan Anda",
+        "Bagikan artikel bahasa Inggris dari Safari"
+      ],
+      "note": "Gratis untuk mulai · iPhone dan iPad · Antarmuka {se.uiLanguages} bahasa, termasuk Indonesia · Terjemahan ke {se.targetLanguages} bahasa",
+      "linkText": "Berita bahasa Inggris dengan terjemahan — SurfEnglish",
+      "appStoreLinkText": "Download SurfEnglish di App Store",
+      "shotAlt": "Layar Games SurfEnglish (antarmuka bahasa Inggris): Sentence Builder dan Word Raid dengan kalimat dan kata tersimpan",
+      "shotCaption": "Tangkapan layar SurfEnglish (antarmuka bahasa Inggris)"
+    },
+    "footer": {
+      "heading": "Dari pengembang yang sama",
+      "linkText": "SurfEnglish: Berita Inggris"
+    }
+  },
+  "cta": {
+    "title": "Mulai membaca situs web dalam dua bahasa di iPhone",
+    "recap": "Geser untuk menerjemahkan · Ketuk dua kali untuk mencari arti · Bacakan teks · {targetLanguages} bahasa",
+    "text": "Gratis di App Store, untuk iPhone dan iPad."
+  },
+  "footer": {
+    "tagline": "Asisten membaca untuk pelajar bahasa asing, di iPhone dan iPad.",
+    "product": "Produk",
+    "help": "Bantuan",
+    "iosApp": "Aplikasi iPhone & iPad",
+    "chromeExtension": "Ekstensi Chrome",
+    "about": "Tentang WordByWord",
+    "support": "Dukungan",
+    "privacy": "Kebijakan Privasi",
+    "contact": "Kontak",
+    "faq": "Tanya jawab",
+    "languagesTitle": "Bahasa",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Dibuat oleh Jinlong",
+    "notAffiliated": "Tidak berafiliasi dengan WordByWord.io.",
+    "appleNotice": "Apple, logo Apple, iPhone, iPad, Mac, dan Apple Vision Pro adalah merek dagang Apple Inc., yang terdaftar di AS serta negara dan kawasan lain. App Store adalah merek layanan Apple Inc.",
+    "ariaNav": "Situs"
+  },
+  "langSuggest": {
+    "message": "Halaman ini juga tersedia dalam bahasa Indonesia.",
+    "action": "Tampilkan dalam bahasa Indonesia",
+    "close": "Tutup"
+  },
+  "notfound": {
+    "title": "Halaman tidak ditemukan",
+    "text": "Halaman yang Anda cari tidak ada di sini. Mungkin halaman itu dipindahkan saat situs ini dibangun ulang.",
+    "home": "Ke beranda WordByWord",
+    "languages": "Atau buka WordByWord dalam bahasa Anda:"
+  }
+}

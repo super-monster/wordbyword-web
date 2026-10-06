@@ -1,0 +1,52 @@
+{
+  "locale": "id",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (id column), each value checked against WordByWordPrototype/Localizable.xcstrings (localizations.id) and the app's Free/Plus comparison labels (FeatureQuotaManager.swift featureDisplayName); §7.2.2 rules ①–③ and fix X12; §7.3 id row (Anda; 'geser ke kanan', 'ketuk dua kali').",
+    "X12: the app titles the feature 'Gesek untuk Menerjemahkan' (daily_sentence_translation_limit) but its own tip says 'Geser ke kanan pada teks apa pun…' (tip_swipe_to_translate); the website uses 'geser' everywhere, so the kicker and the quota rows read 'Geser untuk Menerjemahkan' (reported to the app side).",
+    "required: kickers and quota-table rows use the app's names (rule ①). The lookup kicker drops the '(Arti AI)' suffix like en / ja / es / it; the quota rows join the engine and the AI pronunciation unit with ' · ' as en does ('· cloud' / '· lokal', '· kata' / '· kalimat'). Action Flow keeps the App Store name in headings and the sample (doc 08 D3, §7.2.3); the quota row uses the app's own comparison label 'Alur Tindakan Kalimat' (sentence_skeleton_settings_navigation_title), as zh-Hans / ko / it do.",
+    "contains: app button and screen names the sentences quote verbatim in “ ” (rule ①; T-B get_syntax_explanation_button, view_title_swipe_history; T-C audio_playback_title_*; T-E upgrade_now_button / restore_purchase_button).",
+    "banned: 'gesek' (X12); left swipes (F14); mouse wording (X7 by analogy); a single tap for lookup (doc 08 §1.1); variants of the app names; the informal 'kamu' (doc 08 §7.3: Anda); Malay words that leaked into one app string (tts_trial_exhausted_fallback_message: 'percubaan percuma', 'sebutan tempatan', 'naik taraf' — rule ③, reported to the app side; in Indonesian 'percuma' means 'in vain')."
+  ],
+  "required": {
+    "features[swipe].kicker": "Geser untuk Menerjemahkan",
+    "features[lookup].kicker": "Ketuk dua kali untuk Mencari",
+    "features[x].kicker": "X (dulu Twitter)",
+    "features[chunks].kicker": "Teks bahasa Inggris",
+    "features[speech].kicker": "Bacakan teks",
+    "features[syntax].kicker": "Sintaksis",
+    "features[engines].kicker": "Mesin terjemahan",
+    "features[display].kicker": "Tampilan",
+    "features[history].kicker": "Riwayat",
+    "features[devices].kicker": "Perangkat",
+    "demo.ui.more": "Definisi Lainnya",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Geser untuk Menerjemahkan · cloud",
+    "pricing.table.rows.localSwipe": "Geser untuk Menerjemahkan · lokal",
+    "pricing.table.rows.lookup": "Ketuk dua kali untuk Mencari (Arti AI)",
+    "pricing.table.rows.more": "Definisi Lainnya",
+    "pricing.table.rows.lookupSpeech": "Pengucapan AI · kata",
+    "pricing.table.rows.swipeSpeech": "Pengucapan AI · kalimat",
+    "pricing.table.rows.localVoice": "Suara iOS (Bacaan Lokal)",
+    "pricing.table.rows.chunks": "Ekstraksi Bagian",
+    "pricing.table.rows.actionFlow": "Alur Tindakan Kalimat",
+    "pricing.table.rows.syntax": "Penjelasan Sintaks AI"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Tingkatkan Sekarang", "Pulihkan Pembelian"],
+    "features[syntax].text": ["Dapatkan Penjelasan Sintaks AI", "Riwayat Terjemahan Geser"],
+    "features[speech].text": ["Bacaan AI", "Bacaan Lokal"],
+    "features[chunks].text": ["Ekstraksi Bagian", "Action Flow", "Alur Tindakan Kalimat"],
+    "features[lookup].bullets[2]": ["Definisi Lainnya"]
+  },
+  "banned": [
+    { "pattern": "(?<![\\p{L}])(meng|di|ter)?gesek\\w*", "regex": true, "flags": "i", "use": "geser (Geser untuk Menerjemahkan)", "note": "X12: the app's feature title says 'Gesek', its tip says 'Geser'; the website uses 'geser' only" },
+    { "pattern": "(geser|usap|swipe)\\w*[^.;:!?]{0,30}(ke|arah) kiri", "regex": true, "flags": "i", "use": "geser ke kanan", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "klik (dua kali|ganda)|(dobel|double)[- ]?(klik|click)", "regex": true, "flags": "i", "use": "ketuk dua kali", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "(?<![\\p{L}])(ketuk|tekan|sentuh)(lah)? (sebuah |satu |setiap |tiap )?kata(?![\\p{L}])", "regex": true, "flags": "i", "use": "ketuk dua kali sebuah kata", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "Definisi Lain(?!nya)|Definisi Tambahan|Arti Lainnya", "regex": true, "use": "Definisi Lainnya", "note": "app name of more_definitions_title (T-A)" },
+    { "pattern": "Ekstraksi (Chunk|Potongan|Frasa|Kelompok)", "regex": true, "flags": "i", "use": "Ekstraksi Bagian", "note": "app name of Chunk Extraction (T-B)" },
+    { "pattern": "(?<![\\p{L}])kamu(?![\\p{L}])", "regex": true, "flags": "i", "use": "Anda", "note": "doc 08 §7.3: the id pages address the reader as Anda" },
+    { "pattern": "(?<![\\p{L}])(percuma|naik taraf|tempatan|percubaan)(?![\\p{L}])", "regex": true, "flags": "i", "use": "gratis / tingkatkan / lokal / uji coba", "note": "Malay, not Indonesian (the app's tts_trial_exhausted_fallback_message is Malay — rule ③, reported to the app side)" }
+  ],
+  "allowInKeys": []
+}
