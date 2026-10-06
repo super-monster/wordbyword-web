@@ -423,3 +423,37 @@
   - 禁用 JS 的 en 首页分段截图：全部内容可读。demo 显示静态画面；FAQ、页眉菜单、语言切换都是原生 `<details>`，不依赖 JS。
   - VoiceOver 实机检查留给负责人，可选。
 - **Naver**：负责人决定以后再做。
+
+## M5 切换完成（T0 = 2026-10-06 23:57:15 JST，负责人决定提前切换）
+
+- **决策**：负责人在 M4 汇总时选择"现在就开始切换"（原窗口 11/17–11/26 13:00–16:00 JST；午夜同为低流量时段，DNS 回滚只需秒级）。zh-Hans、ja 终校改为上线后补。
+- **预检**（压缩 T-7／T-1）：
+  1. 生产发布 `cloudflare-deploy` ddb2a3b → f38b01d，对 pages.dev 跑 verify-deploy：177 pass、0 fail、1 skip（生产无提交标记）；契约 18 pass。
+  2. 旧站冻结复核 FREEZE OK：与 M0 before.txt 逐项一致。
+  3. GitHub Pages 证书 notAfter 2026-12-23 07:32:53 GMT，距 T0 约 77 天，≥ 21 天，即 DNS 回滚截止日。
+  4. www CNAME TTL 5；NS、DS 无变化。
+- **T0 执行**：
+  1. CF `wordbyword-web` 添加自定义域 www.word-by-word.app，选"我的 DNS 提供商"，CNAME 方式，未迁 NS。
+  2. Cloud DNS（VirtualApiProject）只改 www：`super-monster.github.io.` → `wordbyword-web.pages.dev.`，TTL 5，其他记录未动。23:57:15 权威 DNS 与 8.8.8.8／1.1.1.1 都返回新目标。
+  3. 23:58:56 https://www.word-by-word.app/ 返回 200，server: cloudflare，新证书 Let's Encrypt YE1（到 2027-01-04）。TLS 空窗约 1 分 41 秒。CF 状态显示"活动 / SSL 已启用"。
+  4. 正式域名：契约测试 18 pass／0 fail，verify-deploy --prod 179 pass／0 fail／1 skip。中止条件均未触发。
+  5. 抽查：
+     - 旧 `/<xx>-top.html` 一跳 301 到 `/<xx>/`；
+     - `/index.html`、`/en-top.html` 跳到 `/`；`/zh/` 跳到 `/zh-hans/`；
+     - 契约 URL 都是 200，`/nope` 是 404；
+     - 生产没有 X-Robots-Tag，有 HSTS，HTML 为 max-age=0。
+  6. `SITE.legacySitemap = true` 并发布（bc24e63）：sitemap-legacy.xml 43 个旧 URL，sitemap.xml 23 个 URL。
+     - 失误：这次推送前的干净校验报了 FAILED，推送仍被执行，原因是管道末尾的 tail 吞掉了退出码。失败的只是一条测试夹具，假设旧站点地图默认关闭；网站构建与检查都是 0 error，生产不受影响。已修测试（099dbb0），推送改用 `if verify; then push; fi`。
+  7. 生产 `cloudflare-deploy` 与 main 对齐到 099dbb0。仓库变量 `PROD_MONITOR=on`，monitor 每天 06:17 JST 运行。
+  8. 搜索引擎：
+     - IndexNow：push 触发的 #4 已提交生产 sitemap；手动勾选 legacy 的首推（run 37484441083）submit 成功。
+     - GSC（网域资源）：提交 sitemap.xml 与 sitemap-legacy.xml，初始状态"无法抓取"属于刚提交时的常态；以 Googlebot UA 实测两者都是 200 application/xml，robots 允许。
+     - URL 检查后已请求编入索引：`/`（原已收录旧版）、`/zh-hans/`、`/ja/`、`/zh-hant/`、`/ko/`、`/es/`。
+     - Bing：已从 GSC 导入，48 小时处理。Naver 延后。
+  9. GA 实时报告出现新站标题的 page_view。GA 注释和 iPhone 内的链接实测待负责人做。
+- **后续**（DEPLOY.md §13 日历）：
+  - T+1h／T+1d 复跑 verify-deploy --prod，看 CF 的 4xx／5xx；
+  - T+7d 内做 PR-SE-2（SE 页脚链接换成 WBW 各语言页）；
+  - `sitemap-legacy.xml` 最迟 2026-11-17 撤下；
+  - GitHub Pages 在 2026-11-04～12-16 之间下线，必须早于回滚截止 2026-12-23 16:32 JST；
+  - zh-Hans、ja、zh-Hant、ko 及 T2／T3 的母语补审。
