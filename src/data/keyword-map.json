@@ -14,9 +14,9 @@
     "ja": ["英語学習", "英語ニュース", "英語多読", "英語リーディング", "チャンク"],
     "ko": ["영어 공부", "영어 학습", "영어 뉴스", "영어 읽기", "청크", "표현 묶음"],
     "es": ["aprender inglés", "noticias en inglés"],
-    "pt-BR": ["aprender inglês", "notícias em inglês"],
+    "pt-BR": ["aprender inglês", "notícias em inglês", "aprend\\w* inglês", "estud\\w* inglês", "inglês (por|no seu) nível", "\\bblocos?\\b"],
     "fr": ["apprendre l['’]anglais"],
-    "de": ["Englisch lernen"],
+    "de": ["Englisch lernen", "Englisch (zu )?lernen", "Englisch-?lernen", "englische (Nachrichten|News)", "Englisch-(Nachrichten|News)", "\\bChunks?\\b"],
     "it": ["imparare l['’]inglese"],
     "nl": ["Engels leren"],
     "pl": ["nauka angielskiego"],
@@ -36,9 +36,9 @@
     "ja": ["^\\W*英語(学習|を学)"],
     "ko": ["^\\W*영어 (공부|학습)"],
     "es": ["^\\W*aprende(r)? inglés"],
-    "pt-BR": ["^\\W*aprend(a|er) inglês"],
+    "pt-BR": ["^\\W*aprend(a|er) inglês", "^\\W*(aprend|estud)\\w* inglês", "^\\W*(estou|está) aprendendo inglês"],
     "fr": ["^\\W*apprendre l['’]anglais"],
-    "de": ["^\\W*Englisch lernen"],
+    "de": ["^\\W*Englisch lernen", "^\\W*(Lernst du|Du lernst) Englisch", "^\\W*Englisch (zu )?lernen", "^\\W*Englisch-?lernen"],
     "ru": ["^\\W*(учить|изучение) английск"]
   },
   "reserved": {
@@ -49,7 +49,9 @@
       "ja": ["方法", "やり方"],
       "ko": ["방법", "하는 법"],
       "es": ["\\bcómo (traducir|leer|ver)\\b", "(conservar|mantener|sin perder) el (texto )?original"],
-      "fr": ["\\bcomment\\b", "(en )?(gardant|conservant) l[’']original", "(garder|conserver) l[’']original"]
+      "fr": ["\\bcomment\\b", "(en )?(gardant|conservant) l[’']original", "(garder|conserver) l[’']original"],
+      "pt-BR": ["\\bcomo (traduzir|ler)\\b", "\\b(manter|mantendo|preservar|preservando|sem perder) o (texto )?original", "\\bpasso a passo\\b"],
+      "de": ["(?<![\\p{L}])wie (man|du)(?![\\p{L}])", "Anleitung", "Original (behalten|beibehalten)"]
     }
   },
   "primaryTokens": {

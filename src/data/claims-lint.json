@@ -17,7 +17,9 @@
         "ja": ["ページ全体を(一括|一度に|まるごと)", "ワンタップで翻訳", "ページ全体の翻訳", "丸ごと翻訳"],
         "ko": ["페이지 전체(를)? (한 번에 )?번역", "원탭 번역"],
         "es": ["traduc\\w* (toda |una |la )?(la )?página (web )?(entera|completa)", "página (web )?(entera|completa) de una vez", "traducción de (páginas?|webs?|sitios?)( web)? (enteras?|completas?)", "(con|en) un (solo )?toque", "traduc\\w* (todo el|un) sitio (web )?(entero|completo)"],
-        "fr": ["tradui\\w* (toute la|toute une|une|la) page( web)? (entière|complète|d[’']un (seul )?coup)", "tradui\\w* toute (la|une) page", "\\bpages? (web )?(entières?|complètes?)", "en un (seul )?(toucher|geste|clic)", "traduction de (la|toute la) page"]
+        "fr": ["tradui\\w* (toute la|toute une|une|la) page( web)? (entière|complète|d[’']un (seul )?coup)", "tradui\\w* toute (la|une) page", "\\bpages? (web )?(entières?|complètes?)", "en un (seul )?(toucher|geste|clic)", "traduction de (la|toute la) page"],
+        "pt-BR": ["tradu\\w* (a |uma )?página( da web)? inteira", "tradu\\w* (o |um )?site inteiro", "página (da web )?inteira de uma (só )?vez", "tradução de páginas? inteiras?", "tradu\\w* com (apenas )?um (só )?toque", "um toque para traduzir"],
+        "de": ["(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal |mit einem (tipp|klick) )?(zu )?übersetz", "übersetz\\w* (die |eine )?(ganze|gesamte|komplette)n? (web)?seite", "(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal|mit einem (tipp|klick))", "mit einem (tipp|klick) übersetz", "ganzseiten-?übersetzung", "ganze websites? (zu )?übersetz"]
       },
       "exempt": ["faq.items[whole-page]", "about.sections[limits].text", "about.facts[*].value"],
       "exemptPrefix": ["chromeExtension."]
@@ -32,7 +34,9 @@
         "ja": ["左に?スワイプ"],
         "ko": ["왼쪽으로 (밀|스와이프)"],
         "es": ["desliz\\w*[^.;:]{0,30}izquierda"],
-        "fr": ["(balay|gliss)\\w*(\\s+\\S+){0,3}\\s+(vers la gauche|à gauche)"]
+        "fr": ["(balay|gliss)\\w*(\\s+\\S+){0,3}\\s+(vers la gauche|à gauche)"],
+        "pt-BR": ["desliz\\w*[^.;:!?]{0,30}esquerda", "para a esquerda"],
+        "de": ["nach links (zu )?wisch", "wisch\\w* (\\S+ ){0,4}nach links", "links-?wisch"]
       },
       "exempt": []
     },
@@ -46,7 +50,9 @@
         "ja": ["Safari ?拡張", "共有拡張", "どのアプリでも", "アプリを切り替えずに"],
         "ko": ["(사파리|Safari) 확장", "공유 확장", "어떤 앱에서(든|나)"],
         "es": ["extensión (de|para) Safari", "extensión (para|de) compartir", "en cualquier (otra )?app\\b", "dentro de (cualquier|otras) apps?", "desde cualquier app", "sin cambiar de app"],
-        "fr": ["extension (pour |de )?safari", "extension de partage", "dans (n[’']importe quelle|toutes? les|chaque) (autre )?app", "sans changer d[’']app"]
+        "fr": ["extension (pour |de )?safari", "extension de partage", "dans (n[’']importe quelle|toutes? les|chaque) (autre )?app", "sans changer d[’']app"],
+        "pt-BR": ["extensão (do|para o) safari", "extensão de compartilhamento", "em qualquer (outro )?app\\b", "dentro de (qualquer|outros) apps?\\b", "sem (trocar|mudar|sair) de app"],
+        "de": ["safari-?erweiterung", "share-?extension", "teilen-?erweiterung", "in (jeder|allen) (anderen )?apps?\\b", "aus jeder app", "ohne (die )?apps? zu wechseln", "ohne app-?wechsel"]
       },
       "exempt": ["faq.items[safari]", "about.sections[limits].text"],
       "exemptPrefix": ["chromeExtension."]
@@ -85,7 +91,9 @@
         "ja": ["オフライン", "ネット(接続)?なしで"],
         "ko": ["오프라인", "인터넷 없이"],
         "es": ["sin conexión", "\\boffline\\b", "sin (acceso a )?internet", "fuera de línea"],
-        "fr": ["hors[ -]ligne", "hors[ -]connexion", "sans (connexion( internet)?|internet|réseau)"]
+        "fr": ["hors[ -]ligne", "hors[ -]connexion", "sans (connexion( internet)?|internet|réseau)"],
+        "pt-BR": ["\\boffline\\b", "sem (conexão|internet)", "não precisa de (conexão|internet)"],
+        "de": ["\\boffline\\b", "ohne internet", "kein internet(verbindung)? (nötig|erforderlich)"]
       },
       "exempt": []
     },
@@ -99,7 +107,9 @@
         "ja": ["無制限のAI", "AI(読み上げ|発音)[^。]{0,6}無制限"],
         "ko": ["무제한 AI", "AI (발음|읽기) 무제한"],
         "es": ["(IA|AI) ilimitad", "(pronunciación|lectura|voz|voces)( con| de)? (IA|AI) (ilimitad|sin límite)", "ilimitad\\w* (de |con )?(IA|AI)"],
-        "fr": ["ia illimitée", "illimit\\w* (de )?(prononciation|lecture|voix)", "(prononciation|lecture|voix)\\w*( \\w+)? (ia|ai) illimit"]
+        "fr": ["ia illimitée", "illimit\\w* (de )?(prononciation|lecture|voix)", "(prononciation|lecture|voix)\\w*( \\w+)? (ia|ai) illimit"],
+        "pt-BR": ["(IA|AI) ilimitad", "(pronúncias?|leituras?|voz|vozes)( \\w+)? (AI|IA)[^.]{0,20}(ilimitad|sem limite)", "ilimitad\\w* (de |com |da |do )?(IA|AI|pronúncia|voz|vozes|leitura)"],
+        "de": ["unbegrenzte\\w* ki-(aussprache|stimmen?|vorlese\\w*)", "ki-(aussprache|stimmen?) ohne (tages)?limit", "unbegrenzt\\w* (aussprache|vorlesen)"]
       },
       "exempt": []
     },
@@ -113,7 +123,9 @@
         "ja": ["ダークモード", "テーマ(カラー|色)", "着せ替え"],
         "ko": ["다크 ?모드", "테마 (색|변경)"],
         "es": ["modo oscuro", "modo noche", "temas? personalizad", "colou?r(es)? de(l)? tema"],
-        "fr": ["mode (sombre|nuit)", "thèmes? personnalis", "couleurs? de thème", "thème de couleur"]
+        "fr": ["mode (sombre|nuit)", "thèmes? personnalis", "couleurs? de thème", "thème de couleur"],
+        "pt-BR": ["modo escuro", "modo noturno", "temas? personalizad", "cores? (do|de) tema"],
+        "de": ["dunkelmodus", "dark mode", "nachtmodus", "dunkle[rs]? (modus|design)", "farbschema", "\\bthemes?\\b", "designfarben?"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -128,7 +140,9 @@
         "ja": ["ショートカット(キー)?", "音量"],
         "ko": ["단축키", "볼륨"],
         "es": ["atajos? de teclado", "volumen"],
-        "fr": ["raccourcis? (clavier|de traduction)", "(réglage|contrôle|curseur) du volume", "régler le volume"]
+        "fr": ["raccourcis? (clavier|de traduction)", "(réglage|contrôle|curseur) du volume", "régler le volume"],
+        "pt-BR": ["atalhos? de teclado", "\\bvolume\\b"],
+        "de": ["tasten(kombination|kürzel)", "tastaturkürzel", "\\bshortcuts?\\b", "lautstärke"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -143,7 +157,9 @@
         "ja": ["単語帳", "フラッシュカード", "(クラウド|アカウント|iCloud)\\s*(同期|バックアップ)"],
         "ko": ["단어장", "플래시 ?카드", "(클라우드|계정) (동기화|백업)"],
         "es": ["tarjetas de (memoria|estudio)", "flash ?cards?", "(cuaderno|lista|libreta) de vocabulario", "sincroniz\\w*", "copia de seguridad en la nube", "repetición espaciada"],
-        "fr": ["flash ?cards?", "fiches? (de révision|mémo)", "(carnet|liste) de vocabulaire", "synchronis\\w* (icloud|du compte|entre (vos )?appareils|dans le cloud)", "sauvegarde (icloud|dans le cloud)", "répétition espacée"]
+        "fr": ["flash ?cards?", "fiches? (de révision|mémo)", "(carnet|liste) de vocabulaire", "synchronis\\w* (icloud|du compte|entre (vos )?appareils|dans le cloud)", "sauvegarde (icloud|dans le cloud)", "répétition espacée"],
+        "pt-BR": ["flash ?cards?", "cartões de memorização", "caderno de (vocabulário|palavras)", "lista de vocabulário", "sincroniz", "repetição espaçada", "backup na nuvem"],
+        "de": ["vokabel(heft|liste|buch)", "karteikarten", "lernkarten", "(cloud|konto|icloud)-?(sync|synchronisierung|backup)", "geräteübergreifend synchron"]
       },
       "exempt": []
     },
@@ -157,7 +173,9 @@
         "ja": ["Android(版|アプリ|端末)", "Google Play"],
         "ko": ["안드로이드", "구글 플레이"],
         "es": ["android", "google play"],
-        "fr": ["version android", "sur android", "pour android", "appli(cation)? android", "google play"]
+        "fr": ["version android", "sur android", "pour android", "appli(cation)? android", "google play"],
+        "pt-BR": ["\\bandroid\\b", "google play"],
+        "de": ["android-?(version|app|handy|smartphone|gerät)", "für android", "auf android", "google play"]
       },
       "exempt": ["faq.items[android]"]
     },
@@ -171,7 +189,9 @@
         "ja": ["(PC|パソコン|デスクトップ)版", "Windows版"],
         "ko": ["(PC|데스크톱) 버전", "윈도우 버전"],
         "es": ["versión (de|para) (escritorio|PC|Windows|ordenador|computadora)", "app de escritorio", "para (Windows|PC)\\b"],
-        "fr": ["version (pour )?(ordinateur|pc|windows|de bureau)", "application de bureau", "pour (windows|pc)\\b"]
+        "fr": ["version (pour )?(ordinateur|pc|windows|de bureau)", "application de bureau", "pour (windows|pc)\\b"],
+        "pt-BR": ["versão (para|de) (computador|desktop|pc|windows)", "\\bpara windows\\b", "versão web do wordbyword"],
+        "de": ["desktop-?(app|version)", "für (windows|pc)\\b", "web-?version von wordbyword", "pc-?version"]
       },
       "exempt": ["faq.items[devices]", "faq.items[android]"],
       "exemptPrefix": ["chromeExtension."]
@@ -186,7 +206,9 @@
         "ja": ["Xアプリ(で|内で|の中で)翻訳", "Xを翻訳できる唯一"],
         "ko": ["X 앱에서 번역"],
         "es": ["(en|dentro de) la app de X\\b", "única app (que|para) traduc\\w* X\\b"],
-        "fr": ["dans l[’']app(lication)? x\\b", "seule app\\w* (qui|à) tradui\\w* x\\b"]
+        "fr": ["dans l[’']app(lication)? x\\b", "seule app\\w* (qui|à) tradui\\w* x\\b"],
+        "pt-BR": ["\\bno app do X\\b", "dentro do app do X\\b", "único app (que|para) tradu\\w* (o )?X\\b"],
+        "de": ["in der x-app (zu )?(übersetz|nutz|verwend)", "übersetz\\w* (\\S+ ){0,3}in der x-app", "einzige app, die x\\b"]
       },
       "exempt": ["faq.items[x]"]
     },
@@ -200,7 +222,9 @@
         "ja": ["先行(体験|アクセス|利用)"],
         "ko": ["얼리 ?액세스", "먼저 체험"],
         "es": ["acceso anticipado"],
-        "fr": ["accès anticipé", "en avant-première"]
+        "fr": ["accès anticipé", "en avant-première"],
+        "pt-BR": ["acesso antecipado"],
+        "de": ["(früher|vorzeitiger|exklusiver) zugang", "early access", "neue funktionen (als erste|zuerst)"]
       },
       "exempt": []
     },
@@ -214,7 +238,9 @@
         "ja": ["個人情報(は|を)一切", "一切収集し", "トラッキングなし"],
         "ko": ["개인 ?정보를 (전혀 )?수집하지 않", "추적하지 않"],
         "es": ["no (se )?recopila\\w* (ningún |ninguna )?(dato|información)", "sin rastreo", "no (te )?rastrea"],
-        "fr": ["aucune donnée (personnelle|collectée)", "ne collecte (aucune|pas de|jamais de) (donnée|information)", "sans (pistage|traçage|suivi publicitaire)", "aucun (pistage|traçage)"]
+        "fr": ["aucune donnée (personnelle|collectée)", "ne collecte (aucune|pas de|jamais de) (donnée|information)", "sans (pistage|traçage|suivi publicitaire)", "aucun (pistage|traçage)"],
+        "pt-BR": ["nenhum dado pessoal", "não coleta (nenhum|dados|informações)", "sem rastreamento", "não rastreia"],
+        "de": ["keine (persönlichen|personenbezogenen) daten", "(sammelt|erhebt|speichert) keine (persönlichen |personenbezogenen )?daten", "kein tracking"]
       },
       "exempt": []
     },
@@ -228,7 +254,9 @@
         "ja": ["初期バージョン"],
         "ko": ["초기 버전"],
         "es": ["versión inicial"],
-        "fr": ["version initiale"]
+        "fr": ["version initiale"],
+        "pt-BR": ["versão inicial"],
+        "de": ["anfangsversion", "erste version unterstützt"]
       },
       "exempt": []
     },
@@ -242,7 +270,9 @@
         "ja": ["言語ペア"],
         "ko": ["언어 쌍"],
         "es": ["pares? de idiomas"],
-        "fr": ["paires? de langues"]
+        "fr": ["paires? de langues"],
+        "pt-BR": ["pares? de (idiomas|línguas)"],
+        "de": ["sprachpaar"]
       },
       "exempt": []
     },
@@ -256,7 +286,9 @@
         "ja": ["\\d+種類?の(スタイル|表示)"],
         "ko": ["\\d+가지 (스타일|표시)"],
         "es": ["\\b\\d+ estilos", "\\b(cinco|seis|siete|ocho|nueve|diez) estilos"],
-        "fr": ["\\b\\d+ styles", "\\b(cinq|six|sept|huit|neuf|dix) styles"]
+        "fr": ["\\b\\d+ styles", "\\b(cinq|six|sept|huit|neuf|dix) styles"],
+        "pt-BR": ["\\b\\d+ (estilos|tipos de estilo)", "\\b(cinco|seis|sete|oito|nove|dez) estilos"],
+        "de": ["\\b\\d+ (verschiedene )?(übersetzungs|anzeige)?stile", "\\b(fünf|sechs|sieben|acht|neun|zehn) (verschiedene )?(übersetzungs|anzeige)?stile"]
       },
       "exempt": []
     },
@@ -270,7 +302,9 @@
         "ja": ["(翻訳先|ターゲット言語)[^。]{0,8}自動(検出|判定|検知)"],
         "ko": ["대상 언어(를)? 자동"],
         "es": ["detecta\\w* (automáticamente )?(el )?idioma de destino"],
-        "fr": ["détect\\w* (automatiquement )?(la|votre) langue cible", "langue cible (est )?détectée"]
+        "fr": ["détect\\w* (automatiquement )?(la|votre) langue cible", "langue cible (est )?détectée"],
+        "pt-BR": ["detecta\\w* (automaticamente )?o idioma de destino", "idioma de destino[^.]{0,20}automaticamente"],
+        "de": ["erkennt (automatisch )?(deine |die )?zielsprache", "zielsprache (wird )?automatisch erkannt"]
       },
       "exempt": []
     },
@@ -284,7 +318,9 @@
         "ja": ["日付(ごと|別)に(整理|分類|表示)"],
         "ko": ["날짜별로 (정리|분류)"],
         "es": ["(agrupad|ordenad|clasificad)\\w* por fecha"],
-        "fr": ["(regroup|class|tri)\\w* par date"]
+        "fr": ["(regroup|class|tri)\\w* par date"],
+        "pt-BR": ["(agrupad|organizad|separad)\\w* por data"],
+        "de": ["nach datum (gruppiert|sortiert|geordnet)"]
       },
       "exempt": []
     },
@@ -298,7 +334,9 @@
         "ja": ["Plus(限定|専用|会員のみ)"],
         "ko": ["Plus 전용"],
         "es": ["solo (para|con|en) (WordByWord )?Plus", "exclusiv\\w* (de|para) (WordByWord )?Plus"],
-        "fr": ["réservée? (à|aux abonnés) plus", "exclusi\\w* (à|de|avec) (wordbyword )?plus", "uniquement (avec|dans|pour) (wordbyword )?plus", "(avec|dans) plus uniquement"]
+        "fr": ["réservée? (à|aux abonnés) plus", "exclusi\\w* (à|de|avec) (wordbyword )?plus", "uniquement (avec|dans|pour) (wordbyword )?plus", "(avec|dans) plus uniquement"],
+        "pt-BR": ["exclusiv\\w* (do|para o|para assinantes do) plus", "(só|somente|apenas) (no|para o|com o) plus"],
+        "de": ["nur (mit|für|in) (wordbyword )?plus\\b", "plus-exklusiv", "exklusiv (für|mit|in) (wordbyword )?plus", "nur für plus-(nutzer|abonnenten)"]
       },
       "exempt": []
     },
@@ -312,7 +350,9 @@
         "ja": ["スピーキング(練習)?", "発音(練習|トレーニング)"],
         "ko": ["말하기 연습", "발음 (연습|교정)"],
         "es": ["expresión oral", "practica\\w* (la |tu )?pronunciación", "mejora\\w* tu (forma de )?hablar", "práctica de conversación"],
-        "fr": ["expression orale", "pratique de l[’']oral", "améliore\\w* (votre )?(prononciation|oral)", "entraînement (à la prononciation|à l[’']oral)"]
+        "fr": ["expression orale", "pratique de l[’']oral", "améliore\\w* (votre )?(prononciation|oral)", "entraînement (à la prononciation|à l[’']oral)"],
+        "pt-BR": ["prática de (fala|conversação)", "praticar a fala", "pratic\\w* (a |sua )?pronúncia", "melhor\\w* (a sua |sua )?(fala|pronúncia)", "treino de pronúncia"],
+        "de": ["sprech(übung|training|fähigkeit)", "aussprachetraining", "sprechen (üben|verbessern|trainieren)"]
       },
       "exempt": []
     },
@@ -349,7 +389,9 @@
         "ja": ["(の方|のほう)が(合う|向いて)", "より合う", "姉妹アプリ", "前作", "旧版"],
         "ko": ["더 잘 맞", "더 맞을 수", "자매 앱"],
         "es": ["puede encajarte mejor", "te (puede )?encaja\\w* mejor", "más adecuad", "en lugar de WordByWord", "app hermana", "(sustitu|reemplaz)\\w* (a )?WordByWord", "versión anterior de WordByWord"],
-        "fr": ["vous conviendra (peut-être )?mieux", "(plus|mieux) adapté", "au lieu de wordbyword", "(app|application) sœur", "ancienne (app|version de wordbyword)", "remplac\\w* wordbyword", "passer de wordbyword à surfenglish"]
+        "fr": ["vous conviendra (peut-être )?mieux", "(plus|mieux) adapté", "au lieu de wordbyword", "(app|application) sœur", "ancienne (app|version de wordbyword)", "remplac\\w* wordbyword", "passer de wordbyword à surfenglish"],
+        "pt-BR": ["(pode )?combina\\w* melhor", "mais adequad", "em vez do WordByWord", "substitu\\w* o WordByWord", "(app|aplicativo) irmão", "(app|aplicativo) (anterior|antigo)"],
+        "de": ["passt (vielleicht )?besser", "besser geeignet", "(statt|anstelle von) wordbyword", "schwester-?app", "nachfolger", "(?<![\\p{L}])ersetzt wordbyword", "upgrade (von wordbyword|auf surfenglish)", "(frühere|ältere) (app|version von wordbyword)"]
       },
       "exempt": []
     },
@@ -363,7 +405,9 @@
         "ja": ["(オフライン|端末内|オンデバイス)の?(音声|読み上げ)"],
         "ko": ["(오프라인|기기 내) (음성|읽기)"],
         "es": ["voz (de IA )?en (el|tu) dispositivo", "voces? (de IA )?en (el|tu) dispositivo", "voces? sin conexión"],
-        "fr": ["voix (ia |ai )?(sur l[’']appareil|embarquées?|hors[ -]ligne|locales?)", "voix\\w* (qui fonctionnent )?hors[ -]ligne"]
+        "fr": ["voix (ia |ai )?(sur l[’']appareil|embarquées?|hors[ -]ligne|locales?)", "voix\\w* (qui fonctionnent )?hors[ -]ligne"],
+        "pt-BR": ["voz(es)? (de IA )?no (aparelho|dispositivo)", "funciona\\w* offline", "voz(es)? offline"],
+        "de": ["(offline|geräte|on-device)-?(stimmen?|sprachausgabe)", "stimmen? (auf dem gerät|offline)", "ki-stimmen? auf dem gerät"]
       },
       "only": ["sibling.card", "faq.items[english-learner]"],
       "exempt": []
@@ -378,7 +422,9 @@
         "ja": ["新登場", "新しい", "より(速|早)く", "効率的", "アップグレード"],
         "ko": ["새로운", "신규", "더 빠른", "업그레이드"],
         "es": ["\\bnuev[oa]s?\\b", "más rápid", "más eficiente", "\\bactualiza", "mejor que"],
-        "fr": ["\\bnouve(au|lle|aux|lles)\\b", "plus rapide", "plus efficace", "mise à niveau", "meilleure? que"]
+        "fr": ["\\bnouve(au|lle|aux|lles)\\b", "plus rapide", "plus efficace", "mise à niveau", "meilleure? que"],
+        "pt-BR": ["\\bnov[oa]s?\\b", "mais rápid", "mais eficiente", "\\bupgrade", "\\batualiz", "melhor (do )?que"],
+        "de": ["\\bneu(e|en|er|es)?\\b", "schneller", "effizienter", "\\bupgrade", "besser als"]
       },
       "only": ["sibling.card", "sibling.footer", "faq.items[english-learner]", "about.family"],
       "exempt": []
@@ -394,7 +440,9 @@
         "ja": ["革命的", "さよなら", "最強", "唯一の", "No\\.\\s?1", "ユーザー数", "開発チーム", "WordByWord\\s*チーム"],
         "ko": ["혁명적", "최강", "유일한 앱", "WordByWord 팀"],
         "es": ["revolucionari", "\\bel mejor\\b", "\\bla mejor\\b", "número uno", "\\bel único\\b", "\\bla única\\b", "primer\\w* del mundo", "(miles|millones) de (usuarios|personas|descargas)", "\\d[\\d.,]*\\s?(mil )?(usuarios|descargas)", "equipo de WordByWord", "nuestro equipo", "di adiós"],
-        "fr": ["révolution", "change la donne", "dites adieu", "\\b(le|la) meilleure?\\b", "numéro un", "\\b(le|la) seule?\\b", "premi\\w+ au monde", "des millions d", "\\d[\\d\\u00A0\\u202F .,]*\\s?[km]?\\+? (utilisateurs|téléchargements)", "équipe (de )?wordbyword", "notre équipe", "\\bles créateurs\\b"]
+        "fr": ["révolution", "change la donne", "dites adieu", "\\b(le|la) meilleure?\\b", "numéro un", "\\b(le|la) seule?\\b", "premi\\w+ au monde", "des millions d", "\\d[\\d\\u00A0\\u202F .,]*\\s?[km]?\\+? (utilisateurs|téléchargements)", "équipe (de )?wordbyword", "notre équipe", "\\bles créateurs\\b"],
+        "pt-BR": ["revolucionári", "\\bo melhor\\b", "\\ba melhor\\b", "\\bos melhores\\b", "número (1|um)\\b", "\\bo único\\b", "\\ba única\\b", "primeir\\w* do mundo", "(milhares|milhões) de (usuários|pessoas|downloads)", "equipe do WordByWord", "nossa equipe", "nosso time", "diga adeus"],
+        "de": ["revolution\\w*", "bahnbrechend", "schluss mit", "\\b(die|der|das) beste\\b", "nummer eins", "\\b(die|der|das) einzige\\b", "weltweit erste", "\\d[\\d.,]*\\s?(tsd\\.|mio\\.)?\\+? (nutzer|downloads)", "millionen (von )?nutzer", "wordbyword-?team", "\\bunser(em)? team\\b", "\\b(die|den) machern?\\b"]
       },
       "exempt": ["about.disambiguation.text"]
     },
@@ -422,7 +470,9 @@
         "ja": ["(1\\d|2\\d)\\s*言語(に|へ|を)翻訳"],
         "ko": ["(1\\d|2\\d)개 언어"],
         "es": ["\\b(1\\d|2\\d)\\+? (idiomas|pares de idiomas)\\b"],
-        "fr": ["\\b(1\\d|2\\d)\\+? (langues|paires de langues)\\b"]
+        "fr": ["\\b(1\\d|2\\d)\\+? (langues|paires de langues)\\b"],
+        "pt-BR": ["\\b(1\\d|2\\d)\\+? (idiomas|línguas|pares de idiomas)\\b"],
+        "de": ["\\b(1\\d|2\\d)\\+? sprachen\\b"]
       },
       "only": ["chromeExtension."],
       "exempt": []
