@@ -468,3 +468,14 @@
     2. 以 Googlebot UA 请求：HTTP/2 200，application/xml，无 X-Robots-Tag，无 BOM，XML 完整，23 个 URL；
     3. GSC 网址检查对 sitemap.xml 做实时测试：用户代理"Google 检查工具智能手机版"，允许抓取，网页抓取成功。
   - 结论：Google 能正常读取，新提交的站点地图在首次处理前会一直显示"无法抓取"，通常几小时到几天内更新，无需处理。T+1d 定时检查会复看；超过约 3 天仍未读取，再删除后重新提交。
+- **StylioStudio 网域资源（2026-10-07 00:35，负责人要求，不属于 WBW 改版）**：
+  - 原因：styliostudio.app 在 GSC 里只有网址前缀资源 `https://styliostudio.app/`，所以资源列表下没有"网域资源"。网址前缀资源只统计这一个前缀下的网址；网域资源覆盖 http／https 和所有子域名。
+  - 操作：
+    1. GSC 新增 `sc-domain:styliostudio.app`，提供商选"任何 DNS 提供商"，不走 Cloudflare 授权。
+    2. 在 Cloudflare 的 styliostudio.app 区域 apex 加一条 TXT（`google-site-verification=ncYa…HSU`，TTL 自动），其他记录都没动。
+    3. 权威 NS、1.1.1.1、8.8.8.8 都已能查到这条 TXT，GSC 已自动完成验证。
+  - 注意：
+    - 这条 TXT 必须长期保留，删掉就会失去验证。
+    - 历史数据仍在网址前缀资源里，两个资源并存，旧资源不删；新资源约 1 天后开始有数据。
+    - sitemap 不必在新资源重复提交，robots.txt 已经声明了 sitemap。
+  - 顺带发现：有一个原型子域名可以公开访问且没有 noindex。网址检查显示 Google 目前还不知道这个网址，没有收录。已告知负责人，没有改动。
