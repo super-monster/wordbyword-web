@@ -30,7 +30,7 @@ export function siblingCard(ctx) {
         <ul class="sibling__points">${sb.points.map((p) => `<li>${esc(ctx.f(p)).replace(levels, `<bdi>${levels}</bdi>`)}</li>`).join('')}</ul>
         <p class="sibling__note">${esc(ctx.f(note))}</p>
         <p class="sibling__actions">
-          <a class="sibling__store" href="${esc(appStoreLink(SITE, SIBLING.appStoreId, 'card'))}" data-ga-event="surfenglish_promo" data-ga-label="card_appstore">${esc(sb.appStoreLinkText)}<span aria-hidden="true">&#160;→</span></a>
+          <a class="sibling__store" href="${esc(appStoreLink(SITE, SIBLING.appStoreId, 'card'))}" data-ga-event="surfenglish_promo" data-ga-label="card_appstore">${esc(sb.appStoreLinkText)}<span aria-hidden="true">&#160;${route.locale.dir === 'rtl' ? '←' : '→'}</span></a>
           <a class="sibling__link" href="${esc(se.href)}" hreflang="${se.hreflang}" data-ga-event="surfenglish_promo" data-ga-label="card_site">${esc(sb.linkText)}</a>
         </p>
       </div>

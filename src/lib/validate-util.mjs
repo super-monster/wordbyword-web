@@ -108,7 +108,7 @@ export const RICH_LINK = /\[([^\]]+)\]\(([^)]*)\)/g;
 // What a reader sees: markup removed ([[ ]], {wbr}, **, [text](@ref) → text).
 // Invisible format characters (soft hyphen, zero-width space, word joiner, BOM) steer line breaking only (th joins
 // words with U+2060, doc 05 §3.5); they must not let a banned word or a keyword slip past a pattern or a length.
-export const INVISIBLE = /[\u00ad\u200b\u2060\ufeff]/g;
+export const INVISIBLE = /[\u00ad\u200b\u200e\u200f\u2060\u2066-\u2069\ufeff]/g; // + the bidi marks and isolates the template puts around RTL runs
 export const displayText = (s) => plain(String(s ?? '').replace(RICH_LINK, '$1')).replace(INVISIBLE, '').normalize('NFC');
 
 export const YEAR = new Date().getUTCFullYear();

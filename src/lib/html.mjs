@@ -99,16 +99,19 @@ const nbsp = (s) => String(s).replace(/ /g, '\u00a0');
 
 // Flatten product.json + SITE into the placeholder namespace used by doc 08 §1.4.
 export function placeholderVars({ product, SITE, locale, year, extra = {} }) {
+  // RTL (ar): a Latin / number run inside Arabic text keeps its own order in an LRI…PDI isolate, so "3.99 US$" does
+  // not render as "$US 3.99" nor "iOS 18" as "18 iOS" (doc 08 §7.7: the template wraps mixed runs, the copy has no controls)
+  const ltr = locale.dir === 'rtl' ? (s) => `\u2066${s}\u2069` : (s) => s;
   const v = {
     uiLanguages: product.wbw.uiLanguages,
     targetLanguages: product.wbw.targetLanguages,
-    minOS: nbsp(product.wbw.minOS),         // "iOS 18" / "macOS 15" never break inside: a line ending in "(macOS" reads as cut off
-    minMacOS: nbsp(product.wbw.minMacOS),
+    minOS: ltr(nbsp(product.wbw.minOS)),         // "iOS 18" / "macOS 15" never break inside: a line ending in "(macOS" reads as cut off
+    minMacOS: ltr(nbsp(product.wbw.minMacOS)),
     version: product.wbw.version,
     versionDate: product.wbw.versionDate,
     releaseDate: product.wbw.releaseDate,
-    'plus.priceUS': new Intl.NumberFormat(locale.code, { style: 'currency', currency: 'USD' }).format(product.wbw.plus.priceUSD),
-    'se.levels': product.se.levels,
+    'plus.priceUS': ltr(new Intl.NumberFormat(locale.code, { style: 'currency', currency: 'USD' }).format(product.wbw.plus.priceUSD).replace(/[\u200e\u200f]/g, '')),
+    'se.levels': ltr(product.se.levels.replace(/–/g, '\u2060–\u2060')), // "A1–C1" never breaks after the dash
     'se.uiLanguages': product.se.uiLanguages,
     'se.targetLanguages': product.se.targetLanguages,
     'ext.version': product.ext.version,
