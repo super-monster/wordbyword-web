@@ -11,15 +11,15 @@
 
 ## 0. 摘要
 
-1. 键与 en 完全一致（`check.mjs --keys vi`：0 缺、0 多；与 ja 一样不提供 `about.*`、`chromeExtension.*`、`legal.*`，提供 `notfound.*`）。最终验证用的新副本 = 真实仓库 HEAD `7925eb9`（已含 en / zh-Hans / zh-Hant / ja / ko / es / fr / pt-BR / de / it / nl / pl / uk，工作区干净）+ vi 的两个文件，在副本里生成 `home-vi` OG 后：`node build.mjs` 与 `--pseudo` 均 **0 error**（21 页），`node scripts/check.mjs` 0 error / 0 warning，`node --test scripts/tests/*.test.mjs` **60/60** 通过。
-2. vi 自己的 warning 只有三类：L-4 两条 review（`meta.appStoreSubtitle` 照录越南店面显示的英文副标题、`common.menu` = "Menu"，§6-5 / §6-6）+ 6 条文档 08 §1.5 列为正常的照抄值；L-14（25 条规则没有 vi 写法）与 L-9（没有 vi 的 G1 how-to 模式）来自数据文件缺 vi 词表——我按简报没改数据文件，补丁见 `vi-lint.json`（附录 A），在副本里合入后这两条消失、全站仍 0 error、测试 60/60。**vi 没有 L-8 warning**（kicker、alt、规格清单等全部在上限内）。
+1. 键与 en 完全一致（`check.mjs --keys vi`：0 缺、0 多；与 ja 一样不提供 `about.*`、`chromeExtension.*`、`legal.*`，提供 `notfound.*`）。最终验证用的新副本 = 真实仓库 HEAD `3d520ab`（含 54afac8 价格表换行、bb689eb 数据模式 Unicode 化、78b1856 解析修正；已发布 en / zh-Hans / zh-Hant / ja / ko / es / fr / pt-BR / de / it / nl / pl / uk / ru / tr，工作区干净）+ vi 的两个文件，在副本里生成 `home-vi` OG 后：`node build.mjs` 与 `--pseudo` 均 **0 error**（23 页），`node scripts/check.mjs` 0 error / 0 warning，`node --test scripts/tests/*.test.mjs` **62/62** 通过。
+2. vi 自己的 warning 只有三类：L-4 两条 review（`meta.appStoreSubtitle` 照录越南店面显示的英文副标题、`common.menu` = "Menu"，§6-5 / §6-6）+ 6 条文档 08 §1.5 列为正常的照抄值；L-14（25 条规则没有 vi 写法）与 L-9（没有 vi 的 G1 how-to 模式）来自数据文件缺 vi 词表——我按简报没改数据文件，补丁见 `vi-lint.json`（附录 A），在副本里合入后这两条消失、全站仍 0 error、测试 62/62。**vi 没有 L-8 warning**（kicker、alt、规格清单等全部在上限内）。
 3. title 逐字采用文档 03 §3.9 vi 草案（56 字符）；description 按文档 08 §7.3 把草案的「Chạm hai lần」改成 App 用词「Nhấn đúp」，「một đoạn」改成「một đoạn văn」，结尾「Miễn phí trên iPhone và iPad.」（160 字符）；H1 在草案基础上把「đoạn」改「đoạn văn」、逗号改成越南语常用的结果连接词「là」，荧光笔标在 K1 核心名词「trang web」上（74 字符）。
 4. 手势：句中「vuốt sang phải」（App `tip_swipe_to_translate` 原文）、「nhấn đúp」（App `tip_double_tap_context_meaning` 原文；文档 08 §7.3 已把文档 03 草案的「chạm hai lần」改掉），单击写「nhấn」（与 App 一致）。glossary 把「chạm hai lần」、鼠标说法「nhấp / bấm đúp」、左滑、单击查词列为禁用。
 5. 复数：vi 的 CLDR 复数类别只有 `other`，名词没有数的变化，按文档 08 §1.4（"en、ja、zh-Hans、zh-Hant、ko、vi、th、id 不需要复数对象"）不写复数对象，与 ja / zh-Hans / zh-Hant / ko 相同（§2 Q2、§6-7）。
 6. SurfEnglish：`seMode('vi')` = local（文档 08 §7.8 的 full 模式）。卡片、FAQ ②、页脚 ④ 都链 `https://surfenglish.app/vi/`（`hreflang="vi"`）；`note` 写"界面 12 种语言，含越南语"（T6）；`linkText` 用文档 04 §5.7 的 vi 种子「Đọc tin tiếng Anh song ngữ — SurfEnglish」；页脚取文档 04 §5.5 的 vi 定值。
 7. 英文界面：5 处截图 alt、4 条画廊图注与 alt、`common.screenshotLabel` / `screenshotExcerptLabel`、OG alt、SE 截图 alt 与图注都写「(giao diện tiếng Anh)」；`features[x].alt` 描述社交帖样张并注明「không phải ảnh chụp màn hình」。指向英文页的富文本链接（`@about`、`@chrome` 的 `a` 与 `aExtLive`）在链接文字里加「(tiếng Anh)」；`@se-site` 指向 SE 越南语页，不加。
 8. OG（只在副本）：`node scripts/og.mjs --only home-vi` 一次通过：标题 56 px × 2 行、副标题 30 px × 2 行、q82、146.0 KB；越南语叠加声调在 OG 字体里渲染正常（已目视检查）。
-9. 渲染（`scripts/serve.mjs --port 4607` + headless Chrome，外部请求全部拦截）：1280 / 900 / 768 / 414 / 390 / 375 / 320 px 都没有横向溢出；SE 卡片 361 / 379 / 312 / 419 / 440 / 440 / 540 px（上限 420 / 420 / 480 / 480 / 480 / 480 / 560）；390 px 整页 **12,999 px**（目标 ≤ 13,000；同副本 en 12,917、es 13,143、pt-BR 13,165、it 13,060、pl 13,484、uk 13,695、de 13,736）；样张红色译文条顶端 735 px（390 × 844）/ 733 px（375 × 812），与 en 相同。
+9. 渲染（`scripts/serve.mjs --port 4607` + headless Chrome，外部请求全部拦截）：1280 / 900 / 768 / 560 / 414 / 390 / 375 / 360 / 320 px 都没有横向溢出，价格表在所有宽度都不需要横向滚动；SE 卡片 361 / 379 / 312 / 412 / 419 / 440 / 440 / 462 / 540 px（上限 420 / 420 / 480 / 480 / 480 / 480 / 480 / 480 / 560）；390 px 整页 **12,961 px**（目标 ≤ 13,000；同副本 en 12,879、it 12,955、tr 13,025、pt-BR 13,104、es 13,145、pl 13,459、uk 13,621、de 13,628、ru 13,865）；样张红色译文条顶端 735 px（390 × 844）/ 733 px（375 × 812），与 en 相同。
 10. 需要负责人决定的事见 §6，主要是：OG 图（D-23）、是否合入 vi lint 词表、App 的越南语字符串问题（X9 之外又发现 6 处）、SE 页脚店名与研究 05 的出入、`meta.appStoreSubtitle`、页面高度目标随语言数增长。
 
 ## 1. 关键词落点（title / H1 / description 用了哪些主词）
@@ -44,7 +44,7 @@
 
 | # | 结果 | 说明 |
 |---|---|---|
-| Q1 | ✓ | JSON 能解析，文件为 NFC；键、数组 id 与顺序同 en（L-1、L-2）；新副本 build / `--pseudo` 0 error，`check.mjs` 0 / 0，测试 60/60。真实仓库在生成 OG 前会报 D-23（§6-1） |
+| Q1 | ✓ | JSON 能解析，文件为 NFC；键、数组 id 与顺序同 en（L-1、L-2）；新副本 build / `--pseudo` 0 error，`check.mjs` 0 / 0，测试 62/62。真实仓库在生成 OG 前会报 D-23（§6-1） |
 | Q2 | ✓ | 占位符、`[[ ]]`、`**`、`[文本](@ref)` 都保留；ref 只用 `@about`、`@chrome`、`@se-site`（白名单内）；没有写死额度、价格、语言数（L-12 0 条）。vi 不需要复数对象（§0 第 5 条）；代入当前值后核对了渲染："Giao diện ứng dụng: 20 ngôn ngữ""Bản dịch: 21 ngôn ngữ""50 lượt vuốt để dịch…""20 lượt nhấn đúp…""5 lượt giải thích cú pháp…""Giao diện 12 ngôn ngữ, có tiếng Việt""Dịch sang 21 ngôn ngữ"。价格渲染为「3,99 US$」（`Intl.NumberFormat('vi')`），Plus 表头第二行在「(tại Mỹ)」前换行 |
 | Q3 | ✓ | title 以品牌位开头，含 `titleMust` 全部词元；K1 是产品 / 品类意图（ứng dụng dịch trang web）；没有 §1.4 禁用主词与 how-to 句式 |
 | Q4 | ✓ | `hero.title` 恰好 1 处 `[[trang web]]`（2 词）；功能 H3、`languages.title` 无 `[[ ]]`；`hero.lede` 以「WordByWord là」开头，写明「dành cho người học ngoại ngữ」 |
@@ -150,14 +150,14 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 - **截图 alt**：截图是英文界面，alt 里的界面字样按截图英文原样引用（Auto、Quote Style、Local Read、More Definitions、Games、Sentence Builder、Word Raid），并注明「(giao diện tiếng Anh)」。
 - **Apple 用语**：「Tài khoản Apple」（Apple 自 2024 起的越南语叫法）、「máy Mac dùng chip Apple」、vi-vn 徽章文字「Tải về trên App Store」→ `common.appStoreBadgeAlt`「Tải WordByWord trên App Store」、SE 文字链接「Tải SurfEnglish trên App Store」（T8：徽章动词 + 品牌）。
 - **X**：kicker 写「X (trước đây là Twitter)」（§7.2.3 首次出现的格式），其余写「X (Twitter)」；帖子叫「bài đăng」。
-- **数字与价格**：`{plus.priceUS}` 渲染为「3,99 US$」；表格单元「{n} lượt/ngày」（与 FAQ 的「lượt」一致；App 的 `limit_per_day%lld` 是「%lld lần mỗi ngày」，表格里用斜线形式省宽）。
+- **数字与价格**：`{plus.priceUS}` 渲染为「3,99 US$」；表格单元「{n}/ngày」，与 en 的 "{n} / day" 同构（App 的 `limit_per_day%lld` 是「%lld lần mỗi ngày」）。初稿是「{n} lượt/ngày」：54afac8 让手机上的单元格可以换行后，它让 vi 价格表在 390 px 比 en 高 60 px（872 vs 812）；「{n}/ngày」在 390 / 375 px 与 en 等高（812 / 833 px），320 px 为 1,077 px（en 937，初稿 1,223）。
 - **语体**：全页「bạn」，不用「quý khách / các bạn」；开发者只用第三人称「Jinlong」「nhà phát triển」；FAQ 答案首句直接作答（Có. / Không.）。
-- **第二模型通读**（只读，独立于起草过程）：结论是"没有事实偏差"；提出 29 条措辞意见，采纳 25 条（其中 4 条改了写法再采纳：devices 改成「nhà phát triển của WordByWord」、english-learner 改成「thì SurfEnglish, ứng dụng của cùng nhà phát triển, có sẵn những thứ đó」、查词截图 alt 为守 125 字符改成「…được tô sáng và thẻ giải nghĩa trong câu」、价格区导语为守 13,000 px 改成「gói Plus」），部分采纳 1 条（朗读正文去掉重复的「dùng」，但 Premium / Enhanced 不改，§4-11），未采纳 3 条（页脚栏标题「Cùng nhà phát triển」是文档 04 §5.5 定值；「cấp độ」与 word-by-word 首句见 §4-13、§4-14）。
+- **第二模型通读**（只读，独立于起草过程）：结论是"没有事实偏差"；提出 29 条措辞意见，采纳 25 条（价格表单元的「lượt」后来随上一条改成「{n}/ngày」；另有 4 条改了写法再采纳：devices 改成「nhà phát triển của WordByWord」、english-learner 改成「thì SurfEnglish, ứng dụng của cùng nhà phát triển, có sẵn những thứ đó」、查词截图 alt 为守 125 字符改成「…được tô sáng và thẻ giải nghĩa trong câu」、价格区导语为守 13,000 px 改成「gói Plus」），部分采纳 1 条（朗读正文去掉重复的「dùng」，但 Premium / Enhanced 不改，§4-11），未采纳 3 条（页脚栏标题「Cùng nhà phát triển」是文档 04 §5.5 定值；「cấp độ」与 word-by-word 首句见 §4-13、§4-14）。
 
 ## 6. 需要负责人决定的问题
 
 1. **OG 图（D-23）**：按简报，`home-vi.jpg` 与 `og.json` 没有复制进真实仓库。vi.json 进库后，`node build.mjs` 会报 `D-23 home-vi: no OG image`，直到运行 `node scripts/og.mjs --only home-vi`（新副本实测一次通过：56 px × 2 行、副标题 30 px × 2 行、146.0 KB）。
-2. **vi lint 词表**：`docs/redesign-2026/ops/m3/vi-lint.json`（附录 A）覆盖 26 条规则（比 de / pt-BR 多 `selection-translate`：该规则已有 it / pl / ru / tr / pt-BR / hi / ar 等，但没有 vi）+ `seOwned` 追加 / `seOwnedLead` / `reserved.G1`。副本合入后全站 0 error、vi 的 L-14 / L-9 warning 消失、测试 60/60。是否合入、由谁合入，请决定。请特别看 `seOwned` 新增的「trích xuất cụm」「nhóm nghĩa」：它们会禁止 title / H1 / description / OG / 功能区 H2 出现 App 的 Chunk Extraction 名「Trích Xuất Cụm」和 SE 越南语站对语块的叫法（与 en 禁 "chunks"、pt-BR 禁 "blocos" 同理；功能区 H3 不受影响）。
+2. **vi lint 词表**：`docs/redesign-2026/ops/m3/vi-lint.json`（附录 A）覆盖 26 条规则（比 de / pt-BR 多 `selection-translate`：该规则已有 it / pl / ru / tr / pt-BR / hi / ar 等，但没有 vi）+ `seOwned` 追加 / `seOwnedLead` / `reserved.G1`。副本（HEAD `3d520ab` + vi）合入后全站 0 error、vi 的 L-14 / L-9 warning 消失、测试 62/62。是否合入、由谁合入，请决定。请特别看 `seOwned` 新增的「trích xuất cụm」「nhóm nghĩa」：它们会禁止 title / H1 / description / OG / 功能区 H2 出现 App 的 Chunk Extraction 名「Trích Xuất Cụm」和 SE 越南语站对语块的叫法（与 en 禁 "chunks"、pt-BR 禁 "blocos" 同理；功能区 H3 不受影响）。
 3. **报给 App 侧的越南语字符串问题**（规则 ③；网站已按括号里的方式处理）：
    - X9：`view_title_swipe_history`「Lịch Sử Dịch Chuyển」，同样的词还在 `view_title_swipe_detail`「Chi Tiết Dịch Chuyển」（网站写「lịch sử dịch bằng thao tác vuốt」）。
    - 双击两种说法：`tip_double_tap_context_meaning` / `word_meaning_lookup_title` 用「Nhấn đúp」，`double_tap_not_supported_message` 用「chạm hai lần」，而且把查词叫成「tính năng dịch」（网站统一「nhấn đúp」）。
@@ -171,30 +171,33 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 6. **L-4 `common.menu` = "Menu"**：越南语网站的汉堡菜单通常就写 "Menu"（「Trình đơn」偏书面、少见），保留。
 7. **复数对象**：按文档 08 §1.4 不写（vi 只有 other 类别，与 ja / zh-Hans / zh-Hant / ko 相同）。若负责人希望所有语言统一写复数对象，把各处"数字占位符 + 名词"改成 `{targetLanguages, plural, other{# ngôn ngữ}}` 这种只有 other 分支的对象即可，渲染结果不变。
 8. **en 的朗读截图 alt**：`features[speech].alt` 在 en 写 "a translated paragraph with the read-aloud player"，但页面实际显示的 `tts-ex` 节选只有播放器卡片和一句西语原文。vi 按图片实际内容写；en 及其他语言的 alt 是否同步修正，请决定。
-9. **页面高度目标**：390 px 下 vi 为 12,999 px，余量只有 1 px。页脚语言列表每多发布两种语言就长约 32 px（本次验证期间从 12 种增加到 14 种，en 已到 12,917），20 种语言全部上线后 en 本身也会超过 13,000。建议把目标改成"相对 en 的增量"或把页脚语言列表折叠（与 pt-BR 记录的建议相同）。
+9. **页面高度目标**：390 px 下 vi 为 12,961 px（en 12,879）。页脚语言列表每多发布两种语言就长约 32 px（本次工作期间从 12 种增加到 16 种），20 种语言全部上线后 en 本身也会逼近 13,000，已发布的 de / pl / ru / uk 早已超过。建议把目标改成"相对 en 的增量"或把页脚语言列表折叠（与 pt-BR 记录的建议相同）。
 10. **母语审校**：按 R36，vi 上线后补越南语母语审校；请审校人重点看 §4 的 14 处、§6-3 的 App 用词，以及全页「bạn」的语气。
 
-## 7. 版面实测（新副本 + `scripts/serve.mjs --port 4607`，headless Chrome，外部请求全部拦截）
+## 7. 版面实测（新副本 HEAD `3d520ab` + vi，`scripts/serve.mjs --port 4607`，headless Chrome，外部请求全部拦截）
 
 | 视口 | 横向溢出 | SE 卡片高度（上限） | 样张红色译文条顶端 | H1 行数 | 整页高度 |
 |---|---|---|---|---|---|
 | 1280 × 800 | 无 | 361 px（420） | 378 px | 4 | 10,119 px（en 10,079） |
 | 900 × 900 | 无 | 379 px（420） | 378 px | 4 | 9,821 px |
-| 768 × 1024 | 无 | 312 px（480） | 699 px | 3 | 12,127 px |
-| 414 × 896 | 无 | 419 px（480） | 738 px | 4 | 12,982 px |
-| 390 × 844 | 无 | 440 px（480） | 735 px（< 844，R69；en 735） | 4 | **12,999 px**（目标 ≤ 13,000；en 12,917、es 13,143、pt-BR 13,165、it 13,060、pl 13,484、uk 13,695、de 13,736） |
-| 375 × 812 | 无 | 440 px（480） | 733 px（en 733） | 4 | 13,063 px（en 12,994） |
-| 320 × 640 | 无 | 540 px（560，R84） | 816 px（en 873） | 5 | 13,615 px（en 13,458） |
+| 768 × 1024 | 无 | 312 px（480） | 699 px | 3 | 12,159 px |
+| 560 × 900 | 无 | 412 px（480） | 771 px | 4 | 12,455 px |
+| 414 × 896 | 无 | 419 px（480） | 738 px | 4 | 13,014 px |
+| 390 × 844 | 无 | 440 px（480） | 735 px（< 844，R69；en 735） | 4 | **12,961 px**（目标 ≤ 13,000；en 12,879、it 12,955、tr 13,025、pt-BR 13,104、es 13,145、pl 13,459、uk 13,621、de 13,628、ru 13,865） |
+| 375 × 812 | 无 | 440 px（480） | 733 px（en 733） | 4 | 13,046 px（en 12,955） |
+| 360 × 780 | 无 | 462 px（480） | 763 px | 5 | 13,287 px |
+| 320 × 640 | 无 | 540 px（560，R84） | 816 px（en 873） | 5 | 13,843 px（en 13,388） |
 
-页眉下载按钮在所有宽度都是「Tải về」（`nav.download` = `downloadShort`）。为满足上面的数字所做的调整（初稿 → 定稿）：
+价格表在所有宽度都不出现横向滚动（54afac8 之后 < 768 px 单元格可换行）；页眉下载按钮在所有宽度都是「Tải về」（`nav.download` = `downloadShort`），< 360 px 只显示图标（54afac8）。为满足上面的数字所做的调整（初稿 → 定稿）：
 
 - SE 卡片：eyebrow「Từ nhà phát triển của WordByWord」→「Từ nhà phát triển WordByWord」（375 px 下 2 行 → 1 行）；要点 2、3 缩短到一行；note「Miễn phí để bắt đầu」→「Bắt đầu miễn phí」：375 px 504 → 440 px，320 px 582 → 540 px。
 - `hero.secondaryCta`「Xem cách hoạt động」→「Cách hoạt động」：初稿在 375 px 下掉到徽章下一行，样张下移 52 px（红条 785 → 733 px）。
 - `hero.eyebrow`：「…cho người học ngoại ngữ」→「…để học ngoại ngữ」，1280 px 下 2 行 → 1 行（§4-8）。
-- FAQ 四个问句缩短（safari、devices 由 3 行变 2 行；engines、android 由 2 行变 1 行），价格区导语「WordByWord Plus」→「gói Plus」（4 行 → 3 行）：同一副本 390 px 整页 13,025 → 12,967 px；之后真实仓库又发布了 pl、uk，页脚语言列表变长 32 px，最终副本为 12,999 px（§6-9）。
-- 价格表 `lookup` 行去掉 App 名的「(Ý Nghĩa AI)」后缀：手机上不再折成「(Ý ／ Nghĩa AI)」三行。
-- H1 的「sang phải」「bản dịch」、`features[chunks].title` 的「Action Flow」用不换行空格，避免双音节词在行尾拆开（H1 行数不变）。
-- 目视检查（深色模式截图）：390 / 375 / 320 px 的 hero、样张查词卡、L1 / L2 功能块（①②③ 页边注）、X 样张、语块示意、规格清单、语言段、价格表、SE 卡片、FAQ、页脚，1280 px 的页眉、hero、价格表、SE 卡片：没有溢出、词中断行或字体回落；越南语声调在各字体里叠加正常。
+- FAQ 四个问句缩短（safari、devices 由 3 行变 2 行；engines、android 由 2 行变 1 行），价格区导语「WordByWord Plus」→「gói Plus」（4 行 → 3 行）。
+- 价格表单元「{n} lượt/ngày」→「{n}/ngày」（与 en 同构，见 §5「数字与价格」）：54afac8 之后 390 px 价格区 1,410 → 1,350 px，整页 13,021 → 12,961 px。
+- 价格表 `lookup` 行用 App 名去掉「(Ý Nghĩa AI)」后缀的写法（与 kicker 相同），不是为了旧的裁切：在 54afac8 的 CSS 下实测，完整原名在 390 / 375 px 折成「(Ý ／ Nghĩa AI)」，给括号加不换行空格又会让 320 px 的价格表出现横向滚动。
+- H1 的「sang phải」「bản dịch」、`features[chunks].title` 的「Action Flow」用不换行空格，避免双音节词在行尾拆开（H1 行数不变；375–1280 px 断行为「Vuốt một đoạn văn ／ trên trang web ／ sang phải là bản dịch ／ hiện ngay bên dưới.」）。
+- 目视检查（深色模式截图）：390 / 375 / 320 px 的 hero、样张查词卡、L1 / L2 功能块（①②③ 页边注）、X 样张、语块示意、规格清单、语言段、价格表、SE 卡片、FAQ、页脚，1280 px 的页眉、hero、价格表、SE 卡片，320 px 的页眉：没有溢出、词中断行或字体回落；越南语声调在各字体里叠加正常。
 
 ## 附录 A：建议的 vi lint 词表（`docs/redesign-2026/ops/m3/vi-lint.json`）
 
@@ -202,7 +205,7 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 
 写法要点：越南语每个音节之间有空格、字母大多不在 ASCII 内，词边界一律用 `(?<![\p{L}])` / `(?![\p{L}])`，多音节词之间用 `\s+`；没有用 `\w` / `\b`，所以在 `bb689eb`（数据模式里的 `\w` `\b` 改为 Unicode 感知）前后行为相同。匹配方式同校验器（`iu`，在代入占位符、去掉标记后的文本上；文件均为 NFC）。
 
-**自测**（`scratchpad/vi-lint-test.mjs`，与 `compileAll` 用同一套 Unicode 改写）：① vi 文案 0 命中（按各规则自带的 `exempt` / `only` 键路径，与 L-14 相同）；② 下列反例句每条都命中各自规则；③ 必须放行的句子 0 命中：「Cho người học ngoại ngữ」「học ngoại ngữ qua trang web」（文档 03 §1.4 的 vi 通用学习词）、「giọng iOS không giới hạn số lần」「Không giới hạn」（价格表 / FAQ 的属实说法）、「tiện khi theo dõi những tài khoản…」（X 卡片，theo dõi = 关注）、「Một số tính năng…」（FAQ，"một số" = 一些）、「Thư viện khu phố của chúng tôi…」（样张译文里的"我们"属于虚构文章）。把词表合入新副本（HEAD `7925eb9` + vi）后：构建 / `--pseudo` 全站 0 error，vi 的 L-14 / L-9 汇总 W 消失，`check.mjs` 0 / 0，测试 60/60；测完已把副本的数据文件还原，并与真实仓库逐字节比对一致。
+**自测**（`scratchpad/vi-lint-test.mjs`，与 `compileAll` 用同一套 Unicode 改写）：① vi 文案 0 命中（按各规则自带的 `exempt` / `only` 键路径，与 L-14 相同）；② 下列反例句每条都命中各自规则；③ 必须放行的句子 0 命中：「Cho người học ngoại ngữ」「học ngoại ngữ qua trang web」（文档 03 §1.4 的 vi 通用学习词）、「giọng iOS không giới hạn số lần」「Không giới hạn」（价格表 / FAQ 的属实说法）、「tiện khi theo dõi những tài khoản…」（X 卡片，theo dõi = 关注）、「Một số tính năng…」（FAQ，"một số" = 一些）、「Thư viện khu phố của chúng tôi…」（样张译文里的"我们"属于虚构文章）。把词表合入新副本（HEAD `3d520ab` + vi）后：构建 / `--pseudo` 全站 0 error，vi 的 L-14 / L-9 汇总 W 消失，`check.mjs` 0 / 0，测试 62/62；测完已把副本的数据文件还原，并与真实仓库逐字节比对一致。
 
 | 规则 | 反例句（全部命中） |
 |---|---|
@@ -240,17 +243,17 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 
 ## 附录 B：验证记录
 
-最终验证在 `…/scratchpad/wbw-m3-vi-final/`：rsync 自真实仓库（HEAD `7925eb9`，工作区干净，已含 en / zh-Hans / zh-Hant / ja / ko / es / fr / pt-BR / de / it / nl / pl / uk），加入 `vi.json`、`glossary/vi.json`，并在副本里生成 `home-vi` OG；与真实仓库逐文件比对，只多这三个文件和 `og.json` 里的 home-vi 一项。
+最终验证在 `…/scratchpad/wbw-m3-vi-final/`：rsync 自真实仓库（HEAD `3d520ab`，工作区干净，已发布 en / zh-Hans / zh-Hant / ja / ko / es / fr / pt-BR / de / it / nl / pl / uk / ru / tr），加入 `vi.json`、`glossary/vi.json`，并在副本里生成 `home-vi` OG；与真实仓库逐文件比对，只多这三个文件和 `og.json` 里的 home-vi 一项。
 
 | 命令 | 结果 |
 |---|---|
 | `node scripts/og.mjs --only home-vi` | ✓ headline 56 px × 2、sub 30 px × 2、q82、146.0 KB |
-| `node build.mjs --out …/dist` | 21 页，**0 error**；vi 的 W：L-4（2 review + 6 expected）、L-14（25 条规则无 vi 词表）、L-9（无 vi 的 G1 模式） |
+| `node build.mjs --out …/dist` | 23 页，**0 error**；vi 的 W：L-4（2 review + 6 expected）、L-14（25 条规则无 vi 词表）、L-9（无 vi 的 G1 模式） |
 | `node build.mjs --pseudo --out …/dist-pseudo` | **0 error** |
-| `node scripts/check.mjs` | 21 个 HTML，0 error，0 warning |
+| `node scripts/check.mjs` | 23 个 HTML，0 error，0 warning |
 | `node scripts/check.mjs --keys vi` | 0 missing，0 not in en |
-| `node --test scripts/tests/*.test.mjs` | 60 / 60 通过 |
-| 合入 `vi-lint.json` 后 build / `--pseudo` / check / 测试 | 0 error；vi 只剩 L-4；check 0 / 0；测试 60 / 60（测完已还原数据文件） |
+| `node --test scripts/tests/*.test.mjs` | 62 / 62 通过 |
+| 合入 `vi-lint.json` 后 build / `--pseudo` / check / 测试 | 0 error；vi 只剩 L-4；check 0 / 0；测试 62 / 62（测完已还原数据文件） |
 
 长度实测（占位符代入后，`text-length.mjs` 口径，拉丁文字按字素计）：
 

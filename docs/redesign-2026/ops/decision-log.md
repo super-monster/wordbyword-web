@@ -238,3 +238,14 @@
      - ru 店面副标题与 FAQ 口径相反；
      - uk 的 App 里混入了俄语词；
      - tr 的 "Limit Raporlandı" 意思不对。
+- **vi 已接入**（1331454，lint 数据 2dc25ec）：
+  - OG 图：home-vi 56px × 2 行。
+  - 状态：16 种语言、23 页，干净 HEAD 校验 CLEAN。
+- **strings-v1 之后的 en 改动（f44fd7e）**：朗读功能截图（tts-ex 节选）实际显示的是朗读播放器正在读一句西班牙文，并没有"翻译后的段落"，vi agent 发现了这一点。
+  - en 的 `features[speech].alt` 已按图改写。
+  - 跟随 en 旧说法的 ko、es、pt-BR、fr、de、it、nl 也由负责人一并改写，这 7 处请母语审校时顺带确认。
+  - zh-Hant、pl、ru、tr、uk、vi 原本就是按图写的；zh-Hans、ja 用的是各自语言的截图，不受影响。
+- **vi 带出的待决事项**：
+  1. SE 页脚店名：文档 04 写「SurfEnglish: Đọc tin tiếng Anh」，研究 05 记录的 VN 店面名是 "SurfEnglish: Bilingual News"。用哪个？
+  2. VN 店面没有越南语本地化：appStoreSubtitle 照录了 US 英文副标题，所以有 1 条 L-4。
+  3. App 侧字符串问题：X9「Dịch Chuyển」、双击和 local 各有两种说法、查词译成"搜索"等，清单见 `vi-qa.md`。
