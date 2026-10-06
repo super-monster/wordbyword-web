@@ -124,7 +124,7 @@ html[data-script="latn"] .spec-label { text-transform: uppercase; letter-spacing
 
 /* ===== 11. Pricing (05 §5.7): paper section, one table + one note + WBW badge (R43, R68) ===== */
 .pricing-body { max-inline-size: 46rem; }
-.table-wrap { overflow: hidden; border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--surface); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--surface); } /* a long translation scrolls inside the frame instead of losing the Plus column */
 .quota { inline-size: 100%; border-collapse: collapse; font-size: .9375rem; font-variant-numeric: tabular-nums; }
 .quota caption { padding: var(--s-4) var(--s-4) var(--s-2); color: var(--ink-3); font-size: var(--fs-small); font-weight: 600; text-align: start; }
 .quota th, .quota td { padding: 10px var(--s-4); border-block-start: 1px solid var(--hairline); text-align: start; vertical-align: top; }
@@ -153,8 +153,18 @@ html[data-script="latn"] .quota :is(thead th:first-child, .grp th) { text-transf
 @media (max-width: 559px) {
   .quota { font-size: .875rem; }
   .quota th, .quota td { padding: 8px 10px; }
-  .quota td { white-space: normal; }
-  .plus-price { white-space: normal; }
+}
+/* < 768: cells, the Plus price and the English-only tag may wrap; nowrap ran fr 97 px and pl 33 px wide at 560
+   (fr "Anglais uniquement" alone is 150 px). A value (.q-val) still never splits. */
+@media (max-width: 767px) {
+  .quota td, .plus-price, .quota .tag { white-space: normal; }
+}
+/* < 400 (320–390 phones): the three columns must fit 288–358 px in every language (fr / nl / uk were cut at 320) */
+@media (max-width: 399px) {
+  .quota { font-size: .8125rem; }
+  .quota th, .quota td { padding-inline: 8px; }
+  .quota tbody th { hyphens: auto; }
+  .plus-price .nw { white-space: normal; }
 }
 
 /* ===== 12. SurfEnglish sibling card (04 §3.1 + 05 §5.9; R40–R44): paper card, one SE window, text links only ===== */

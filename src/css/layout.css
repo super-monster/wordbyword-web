@@ -28,7 +28,7 @@ details > summary::-webkit-details-marker { display: none; }
    the wordmark below 380 in S1 ("Add to Chrome", the only .btn with data-ga-event) and below 350 in S0 ("iPhone app"):
    logo only there (its alt names the link) */
 @media (max-width: 379px) { .brand { font-size: 14px; } .btn-small, .nf .btn { padding-inline: 12px; } .header-inner:has(.btn[data-ga-event]) .brand-name { display: none; } }
-@media (max-width: 349px) { [data-page="chrome-extension"] .brand-name { display: none; } }
+@media (max-width: 359px) { .brand-name { display: none; } } /* the icon carries the name (alt): a longer downloadShort ("Descargar") no longer pushes the language button onto the wordmark */
 /* < 560: the header Download button shows nav.downloadShort (R77, 05 §5.1; en "Get", ja「入手」) instead of being
    hidden below 360 (v1.1 D6). Only the visible span is in the accessible name, so the label stays in the name. */
 .dl-short { display: none; }
