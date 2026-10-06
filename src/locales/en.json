@@ -226,7 +226,7 @@
       "title": "AI read-aloud, or fast on-device iOS voices",
       "text": "Hear a word or a whole sentence. AI Read uses a natural-sounding cloud voice; Local Read uses the voices built into iOS — faster, with adjustable speed, and it can use Premium or Enhanced voices you have downloaded.",
       "image": "shot/{set}/tts",
-      "alt": "WordByWord on iPhone: a translated paragraph with the read-aloud player at the bottom of the screen"
+      "alt": "WordByWord on iPhone: the read-aloud player at the bottom of the screen, reading a Spanish sentence"
     },
     {
       "id": "syntax",

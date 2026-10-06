@@ -226,7 +226,7 @@
       "title": "Lectura en voz alta con IA o con las voces rápidas de iOS",
       "text": "Escucha una palabra o una frase entera. “Lectura AI” usa una voz natural en la nube; “Lectura local” usa las voces integradas en iOS: es más rápida, permite ajustar la velocidad y puede usar las voces Premium o Enhanced que hayas descargado.",
       "image": "shot/{set}/tts",
-      "alt": "WordByWord en iPhone (interfaz en inglés): un párrafo traducido y el reproductor de lectura en la parte inferior"
+      "alt": "WordByWord en iPhone (interfaz en inglés): el reproductor de lectura en voz alta abajo, leyendo una frase en español"
     },
     {
       "id": "syntax",
