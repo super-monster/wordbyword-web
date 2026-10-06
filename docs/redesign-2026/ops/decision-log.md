@@ -162,3 +162,31 @@
 - M2 退出条件：① 页面齐全（S1 用临时构建验证）；② 视觉矩阵评审通过（ar 用临时阿语构建核对 RTL）；③ D-6/D-7 与 AVIF 两层校验通过；④ 文档 04 A1–A9 通过（A6/A7 需更多语言上线与外网）；⑤ 模板 0 个硬编码界面字符串（伪 locale 扫描）。→ 打 tag `strings-v1`（M3-02）。
 - CI 修复（94f9810）：Node 22 下根级 `after()` 钩子提前执行，删掉了校验器测试的共享构建目录（8b203b1 新增测试文件后时序改变才暴露）；改为每个测试文件独立进程（`node --test scripts/tests/*.test.mjs`），临时目录在进程退出时清理。CI Node 22/24 均通过。
 - **`strings-v1` 已打 tag（94f9810，M3-02）**：en 文案冻结，M3 开始。
+
+## M3 进行中（2026-10-06）
+
+- 第一批（T1/T2）6 个翻译 agent：zh-Hant 完成；ko、es、pt-BR、fr、de 因使用额度上限中断，已分批恢复（进度保存在各自的私有副本与上下文中）。
+- **zh-Hant 已接入**：`src/locales/zh-Hant.json` + OG 图 `home-zh-hant`（60px × 2 行，142.8 KB）；构建 0 error（11 页，`_redirects` 74/9），测试 58/58。QA 记录 `ops/m3/zh-Hant-qa.md`（关键词落点、Q1–Q13、回译、10 处没把握的措辞）。台湾用语人工排查；16 个标题加 `{wbr}`、5 处 `\u00a0`，320/375/768/1280 宽复测均在短语边界断行（文档 08 §7.7 已同步）。T1：上线前须母语审校（H7：外部审校或按 R36 回落）。
+  - 待负责人决定：① `meta.appStoreSubtitle` 写「右滑翻譯 AI 解釋」，与 TW 店面原文「滑動翻譯 AI 解釋」不同（glossary X13 禁用「滑動翻譯」；该键在 zh-Hant 页面不显示）；② 指向英文 about／扩展页的链接文字加了「（英文頁面）」，ja、zh-Hans 未加——是否统一；③ 若 H11 改用 zh-Hans 截图，9 处 alt 与图注需重写。
+- 测试夹具不再写死已发布语言数（`--keys` 取第一个未发布语言；D-2 按实际 hreflang 条数推算）。
+- **PR-SE-1**：SE 仓库分支 `wbw-family-pr1`（f8dbc27、4a3ce46、42be5af、733b1d9）经用户同意已推送到 origin，供用户审阅；未合并、未动 main/cloudflare-deploy。S6 未做（需人工判断）。about 页 App Store 链接暂为普通链接，待 H3 provider token 后加 `ct=se-about`。
+- **额度与节奏（2026-10-06 12:50）**：本周总额度已用 89%（10/9 00:00 JST 重置）。经用户确认选"继续全速"。为了在额度见底时尽量多留下已完成的语言，每个 agent 只做 1 种语言（第一批的数据显示，一个 agent 做 2 种语言时上下文会接近上限，总消耗反而更高），并发控制在约 7 个，有空位再补。
+- **es、fr、ko 已接入**（e8e1aaf）：
+  - OG 图：home-es 64px × 3 行，home-fr 58px × 3 行，home-ko 64px × 2 行。
+  - 构建 0 error（14 页），测试 58/58，pseudo 0 error，check 0/0。
+  - QA 记录：`ops/m3/{es,fr,ko}-qa.md`。ko 另做了 Sonnet 第二模型互检（R36），31 条意见中采纳 23 条。
+  - demo 模板修复：ko 在宽度计算上属于 cjk，但句子之间要空格。原来的 demo 只要是 cjk 就把译文句子直接连写，现在改为只有 zh／ja 连写，ko 稿里临时加的尾空格已去掉。
+- **es、fr 的 claims-lint 与 G1 词表已合入**（1d5fe5b）：各 25 条规则加上本语言写法，G1 加入 how-to 说法。采用最小文本插入，保留原文件的手工排版。L-14 与 L-9 的 es、fr 警告已消除。抽查反例句全部命中。
+- **第二波开工**：
+  - it、nl、pl、ru、tr 已启动；pt-BR、de 已恢复。uk、vi、th、id、ar、hi 排队。
+  - 简报补了"Wave 2 notes"：每个 agent 只做 1 种语言；在最新 HEAD 的新副本上做最终校验；lint 补丁写成 `ops/m3/<code>-lint.json`，由负责人合入；仅有英文的页面统一标注；App 叫法照 App 原文；渲染检查各用独立端口。
+- **待负责人决定（第一批汇总）**：
+  1. 指向仅有英文页面的链接是否统一加"（英文）"标注。现状：zh-Hant、ko、fr 加了，es、ja、zh-Hans 没加。第二波按"加"执行。
+  2. 截图可见图注是否注明"英文界面"。现状：zh-Hant、ko、es 加了，ja、zh-Hans 没加。
+  3. App 侧字符串问题，建议转给 App：
+     - es、fr 界面里 "AI" 与 "IA" 混用；
+     - fr 按钮名用了英语式词首大写；
+     - ko 的「더블 탭 번역」「검색 기록 상세」两处措辞。
+  4. 各语言 `meta.appStoreSubtitle` 未核实（这些页面不渲染该键）。
+  5. lookup 功能区的 kicker 保留 App 原名，es、fr 因此各有一条 L-8 警告：保留原名，还是改成自然说法。
+  6. fr 首页在 375 宽下约 13.7k px，超出 13k 的软目标。
