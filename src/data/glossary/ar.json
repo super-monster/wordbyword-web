@@ -1,0 +1,114 @@
+{
+  "locale": "ar",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (ar column), checked key by key against WordByWordPrototype/Localizable.xcstrings (ar values) and the app's Free/Plus comparison screen (FeatureQuotaManager.swift featureDisplayName); §7.2.2 fix X8 (sentence_skeleton_* has no Arabic: Action Flow keeps the App Store name, the body adds (تسلسل الأفعال في الجملة), pending native review; multi-word Latin names carry no-break spaces in visible copy so they never split across an RTL line break, hence \"Action\\u00a0Flow\" below); §7.3 ar row (generic masculine imperative; gestures: اسحب الفقرة لليمين / انقر نقرًا مزدوجًا); §7.7 (RTL: the gesture is written with its physical direction, R63; Western digits; no hand-made RLM/LRM).",
+    "required: kickers and quota-table rows use the app's names (rule ①). The lookup kicker drops the \"(معنى AI)\" suffix like en / ja / es / fr; the quota rows follow the app's comparison screen (daily_sentence_translation_limit + engine, shortened to \"· المحرك السحابي\" / \"· المحرك المحلي\" like en's \"· cloud engine\"; word_meaning_lookup_title; more_definitions_title; ai_pronunciation_word / _sentence; Chunk Extraction; grammar_structure_analysis). demo.ui.swipeCue is the app's own tip wording with the direction (R63, doc 03 §2.3).",
+    "contains: app button and setting names quoted verbatim in « » (rule ①; T-E for faq.items[restore]); the H1, the description, the OG sub-line and hero.how must keep the right-swipe direction (R63, I18-01).",
+    "banned: left swipes (F14; the legacy ar FAQ told readers to swipe the translation to the left); a single tap for lookup and other double-tap wordings than the app's انقر نقرًا مزدوجًا (the SurfEnglish site writes انقر نقرتين); select/highlight-to-translate (legacy \"عند تحديد النص\", C-09); the jargon محاذاة (C-16); the generic \"smart assistant\" of the legacy title; other names for More Definitions; تاريخ for history (the app's تاريخ الترجمة also reads as 'date'; body copy uses سجل, doc 03 table B K6); الآيفون outside the one FAQ question that carries it (SEO-11, doc 03 §4.3); Arabic-Indic digits (doc 08 §7.7: Western digits like the app's %lld); hand-made bidi controls (doc 08 §7.7). Patterns spell out \\p{L} / \\p{M}: glossary patterns are not rewritten by unicodeWords()."
+  ],
+  "required": {
+    "features[swipe].kicker": "اسحب للترجمة",
+    "features[lookup].kicker": "انقر نقرًا مزدوجًا للبحث",
+    "features[x].kicker": "X (تويتر سابقًا)",
+    "features[chunks].kicker": "الصفحات الإنجليزية",
+    "features[speech].kicker": "القراءة بصوت عالٍ",
+    "features[syntax].kicker": "التركيب النحوي",
+    "features[engines].kicker": "محركات الترجمة",
+    "features[display].kicker": "العرض",
+    "features[history].kicker": "السجل",
+    "features[devices].kicker": "الأجهزة",
+    "demo.ui.more": "تعريفات إضافية",
+    "demo.ui.swipeCue": "اسحب لليمين",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "اسحب للترجمة · المحرك السحابي",
+    "pricing.table.rows.localSwipe": "اسحب للترجمة · المحرك المحلي",
+    "pricing.table.rows.lookup": "انقر نقرًا مزدوجًا للبحث (معنى AI)",
+    "pricing.table.rows.more": "تعريفات إضافية",
+    "pricing.table.rows.lookupSpeech": "النطق بالذكاء الاصطناعي (الكلمة)",
+    "pricing.table.rows.swipeSpeech": "النطق بالذكاء الاصطناعي (الجملة)",
+    "pricing.table.rows.localVoice": "صوت iOS (القراءة المحلية)",
+    "pricing.table.rows.chunks": "استخراج المقاطع",
+    "pricing.table.rows.actionFlow": "Action\u00a0Flow",
+    "pricing.table.rows.syntax": "تحليل بنية الجملة النحوية للذكاء الاصطناعي"
+  },
+  "contains": {
+    "faq.items[restore].a": ["ترقية الآن", "استعادة الشراء"],
+    "features[syntax].text": ["احصل على شرح التركيب النحوي للذكاء الاصطناعي"],
+    "features[speech].text": ["قراءة الذكاء الاصطناعي", "القراءة المحلية"],
+    "features[chunks].text": ["استخراج المقاطع", "Action\u00a0Flow", "تسلسل الأفعال في الجملة"],
+    "features[swipe].bullets[0]": ["تلقائي", "فقرة", "جملة بجملة"],
+    "features[lookup].bullets[2]": ["تعريفات إضافية"],
+    "hero.title": ["لليمين"],
+    "hero.how": ["اسحب الفقرة لليمين"],
+    "meta.description": ["إلى اليمين"],
+    "meta.ogSubline": ["اسحب الفقرة لليمين"]
+  },
+  "banned": [
+    {
+      "pattern": "(?<!\\p{L})(اسحب\\p{L}*|تسحب\\p{L}*|بالسحب|السحب|سحب)(?!\\p{L})[^.،؛؟]{0,30}(لليسار|إلى\\s+اليسار|نحو\\s+اليسار|يسار\\p{M}*ا)",
+      "regex": true,
+      "use": "اسحب الفقرة لليمين",
+      "note": "the gesture is a right swipe; a left swipe removes the translation (F14; the legacy ar FAQ said \"اسحب النص المترجم إلى اليسار\")"
+    },
+    {
+      "pattern": "(?<!\\p{L})(انقر|اضغط|المس|انقره|انقرها)\\s+(على\\s+)?(أي\\s+|أية\\s+)?(ال)?كلم\\p{L}*",
+      "regex": true,
+      "use": "انقر نقرًا مزدوجًا على الكلمة",
+      "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)"
+    },
+    {
+      "pattern": "نقرتين|نقرتان|(انقر|اضغط|النقر|الضغط|المس)\\s+مرتين",
+      "regex": true,
+      "use": "انقر نقرًا مزدوجًا",
+      "note": "one wording for the double tap: the app's word_meaning_lookup_title / tip_double_tap_context_meaning (doc 08 §7.3); the SurfEnglish site and the legacy page write انقر نقرتين / انقر مرتين"
+    },
+    {
+      "pattern": "(تحديد|بتحديد|حدد|تظليل|ظلل)\\s+(ال)?(نص|كلمة|كلمات|جملة)",
+      "regex": true,
+      "use": "اسحب الفقرة لليمين",
+      "note": "no select-to-translate in the iOS app (legacy \"ترجمة فورية عند تحديد النص\", C-09; claims-lint selection-translate)"
+    },
+    {
+      "pattern": "محاذاة",
+      "use": "عرض جملة بجملة",
+      "note": "jargon for the display modes (doc 08 §7.5, C-16; legacy \"محاذاة جملة بجملة\")"
+    },
+    {
+      "pattern": "(مساعد\\p{L}*\\s+(ال)?ذكي|(ال)?مساعد\\s+(ال)?ذكي)",
+      "regex": true,
+      "use": "مساعد قراءة (only in the definition sentence)",
+      "note": "generic \"smart assistant\" wording (doc 08 §7.4; the legacy title \"مساعدك الذكي لتعلم اللغات\")"
+    },
+    {
+      "pattern": "(ال)?مزيد\\s+من\\s+(ال)?تعريفات|تعريفات\\s+أخرى",
+      "regex": true,
+      "use": "تعريفات إضافية",
+      "note": "app name of more_definitions_title (T-A)"
+    },
+    {
+      "pattern": "تاريخ\\s+(ال)?(ترجم|بحث)",
+      "regex": true,
+      "use": "سجل الترجمات / سجل البحث",
+      "note": "the app's تاريخ الترجمة / تاريخ ترجمة السحب also reads as 'date of translation'; the site writes سجل like the app's own مسح سجل ترجمة الجمل (doc 03 table B K6)"
+    },
+    {
+      "pattern": "آيفون",
+      "use": "iPhone",
+      "note": "the colloquial الآيفون appears once, in the devices FAQ question (SEO-11, doc 03 §3.2 / §4.3); everywhere else iPhone",
+      "allowInKeys": ["faq.items[devices].q"]
+    },
+    {
+      "pattern": "[٠-٩۰-۹]",
+      "regex": true,
+      "use": "0–9",
+      "note": "Western digits, like the app's %lld (doc 08 §7.7)"
+    },
+    {
+      "pattern": "[\\u200E\\u200F\\u202A-\\u202E\\u2066-\\u2069]",
+      "regex": true,
+      "use": "(nothing)",
+      "note": "no hand-made RLM / LRM / embedding controls: the template wraps mixed runs (doc 08 §7.7)"
+    }
+  ],
+  "allowInKeys": []
+}

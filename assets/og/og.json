@@ -217,6 +217,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-ar": {
+      "file": "assets/og/home-ar.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "6090d00244c87d436a52fc36a1575264aff2098f374c5852e2287fc4b03bab40",
+      "inputs": {
+        "headline": "اقرأ المواقع بلغتين. [[الأصل في مكانه.]]",
+        "subline": "اسحب الفقرة لليمين · انقر نقرًا مزدوجًا على كلمة لتعرف معناها في سياقها",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "home-hi": {
       "file": "assets/og/home-hi.jpg",
       "width": 1200,
