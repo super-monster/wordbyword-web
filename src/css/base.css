@@ -4,6 +4,8 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-to
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 var(--fs-body)/1.6 var(--font-ui); -webkit-font-smoothing: antialiased; }
 html[data-script="cjk"] body { line-height: 1.75; line-break: strict; }
+html:is([data-script="thai"], [data-script="arab"]) body { line-height: 1.8; } /* 05 §3.3: marks stack above and below the line */
+html[data-script="deva"] body { line-height: 1.75; }
 html:lang(ko) body { word-break: keep-all; }
 img, svg, picture { display: block; max-inline-size: 100%; }
 img { block-size: auto; }
@@ -29,6 +31,8 @@ html:is([data-script="latn"], [data-script="cyrl"]) .h-display { letter-spacing:
 html:is([data-script="latn"], [data-script="cyrl"]) :is(h1, h2, .h-sub) { letter-spacing: -.02em; }
 html:is([data-script="latn"], [data-script="cyrl"]) h3:not(.h-sub):not(.h-4) { letter-spacing: -.01em; }
 html[data-script="cjk"] :is(h1, h2, h3) { line-height: 1.25; letter-spacing: 0; }
+html:is([data-script="thai"], [data-script="arab"]) :is(h1, h2, h3) { line-height: 1.35; letter-spacing: 0; }
+html[data-script="deva"] :is(h1, h2, h3) { line-height: 1.3; letter-spacing: 0; }
 html[data-script="cjk"] :is(h1, h2, h3) { word-break: keep-all; overflow-wrap: anywhere; }
 html:lang(ja) :is(h1, h2, h3):not(:has(wbr)) { word-break: auto-phrase; }   /* Chromium 119+; never over {wbr} markers (A7) */
 html:is(:lang(zh-Hans), :lang(zh-Hant)) :is(h1, h2, h3) { word-break: normal; }   /* 05 §3.5: balance, no markers */
