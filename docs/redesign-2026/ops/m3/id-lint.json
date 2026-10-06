@@ -1,0 +1,182 @@
+{
+  "$comment": [
+    "Proposed id (Bahasa Indonesia) additions to src/data/claims-lint.json and src/data/keyword-map.json (M3, wave-2 shape). Not merged: the lead merges them.",
+    "claimsLint: one entry per claims-lint rule that has per-locale patterns and no id key yet (27 rules; io-home and engine-claim are '*'-only and skipped). Matched like L-14: flags 'iu' on each leaf with placeholders filled and markup stripped; since bb689eb \\w / \\b are Unicode-aware, and the patterns also use explicit (?<![\\p{L}]) / (?![\\p{L}]) where a word edge matters.",
+    "keywordMap.seOwned is added to the existing id list ['belajar bahasa Inggris', 'berita bahasa Inggris']; 'kelompok kata' is SurfEnglish's own Indonesian word for chunks (surfenglish.app/id/), like en 'chunks' / pt-BR 'blocos'. Generic learning words without 'Inggris' (pelajar bahasa, belajar bahasa asing) belong to WordByWord (R39, R83) and pass.",
+    "keywordMap.reservedG1: how-to phrasing reserved for guide G1 (R46). 'terjemahkan halaman web di iPhone' is deliberately NOT reserved: doc 03 §2.3 table A keeps it as an H1 / body secondary word for the home page.",
+    "Tested on the id copy (0 hits, exempt keys aside) and on the counter-examples listed in docs/redesign-2026/ops/m3/id-qa.md appendix A."
+  ],
+  "claimsLint": {
+    "whole-page": [
+      "(?<![\\p{L}])(mene|dite|te)rjemah\\w*\\s+(se)?(seluruh|semua|keseluruhan)\\s+(isi\\s+)?(halaman|situs|laman)",
+      "(?<![\\p{L}])(seluruh|semua|keseluruhan)\\s+(isi\\s+)?(halaman|situs|laman)(\\s+web)?\\s+(langsung\\s+|sekaligus\\s+)?(dite|te)rjemah",
+      "(?<![\\p{L}])terjemahan\\s+(seluruh|satu|sebuah)\\s+(halaman|situs|laman)",
+      "(?<![\\p{L}])(halaman|situs|laman)\\s+(web\\s+)?(utuh|penuh|lengkap)\\s+(sekaligus|dalam sekali)",
+      "(?<![\\p{L}])(sekali|satu)\\s+(ketuk|ketukan|tap|klik|sentuh|sentuhan)(?![\\p{L}])"
+    ],
+    "swipe-left": [
+      "(geser|gesek|usap|swipe)\\w*[^.;:!?]{0,30}(ke|arah) kiri(?![\\p{L}])"
+    ],
+    "safari-extension": [
+      "ekstensi\\s+(untuk\\s+|di\\s+|pada\\s+)?safari",
+      "ekstensi\\s+(berbagi|bagikan|share)",
+      "(?<![\\p{L}])(di|dalam|pada|dari)\\s+(aplikasi|app)\\s+apa\\s+pun(?![\\p{L}])",
+      "(?<![\\p{L}])(di|dalam|pada)\\s+(semua|setiap)\\s+aplikasi(?![\\p{L}])",
+      "tanpa\\s+(perlu\\s+)?(berpindah|pindah|beralih|ganti|keluar\\s+dari)\\s+aplikasi"
+    ],
+    "selection-translate": [
+      "(?<![\\p{L}])(pilih|sorot|blok|tandai|seleksi)\\w*(\\s+(teks|kata|kalimat)\\w*)?\\s+(untuk|lalu|dan)\\s+(mene|dite|te)rjemah",
+      "(?<![\\p{L}])(mene|dite|te)rjemah\\w*\\s+(saat|ketika|dengan|sambil)\\s+(memilih|menyorot|memblok|menandai|menyeleksi)"
+    ],
+    "offline": [
+      "(?<![\\p{L}])(offline|luring)(?![\\p{L}])",
+      "(?<![\\p{L}])tanpa\\s+(koneksi|sambungan|jaringan|akses)(\\s+internet)?(?![\\p{L}])",
+      "(?<![\\p{L}])tanpa\\s+internet",
+      "tidak\\s+(perlu|butuh|memerlukan|membutuhkan)\\s+(koneksi\\s+)?internet"
+    ],
+    "unlimited-ai-voice": [
+      "(?<![\\p{L}])AI\\s+(tanpa batas|tak terbatas|tidak terbatas|unlimited)",
+      "(pengucapan|pelafalan|suara|bacaan|pembacaan)(\\s+\\p{L}+)?\\s+AI[^.;:]{0,20}(tanpa batas|tak terbatas|tidak terbatas|unlimited)",
+      "(tanpa batas|tak terbatas|tidak terbatas|unlimited)[^.;:]{0,15}(pengucapan|pelafalan|suara|bacaan)\\s+AI",
+      "(pengucapan|pelafalan)\\s+(tanpa batas|tak terbatas|tidak terbatas)"
+    ],
+    "dark-mode-theme": [
+      "(?<![\\p{L}])mode\\s+(gelap|malam)",
+      "(?<![\\p{L}])dark\\s+mode",
+      "(?<![\\p{L}])tema\\s+(kustom|khusus|pribadi|sendiri|warna)",
+      "(?<![\\p{L}])warna\\s+tema"
+    ],
+    "shortcuts-volume": [
+      "(?<![\\p{L}])pintasan(?![\\p{L}])",
+      "(?<![\\p{L}])tombol\\s+pintas",
+      "(?<![\\p{L}])volume(?![\\p{L}])"
+    ],
+    "vocab-sync": [
+      "(?<![\\p{L}])flash\\s?cards?",
+      "(?<![\\p{L}])kartu\\s+(hafalan|kilat|belajar)",
+      "(?<![\\p{L}])(buku|daftar|catatan)\\s+(kosakata|kosa\\s+kata)",
+      "(?<![\\p{L}])(di|ter)?sinkron",
+      "(cadangan|pencadangan|backup)\\s+(ke\\s+|di\\s+)?(cloud|icloud)",
+      "pengulangan\\s+berjarak",
+      "spaced\\s+repetition"
+    ],
+    "android": [
+      "(?<![\\p{L}])android(?![\\p{L}])",
+      "google\\s+play",
+      "play\\s+store"
+    ],
+    "desktop-version": [
+      "(?<![\\p{L}])versi\\s+(untuk\\s+)?(desktop|komputer|pc|windows|laptop)(?![\\p{L}])",
+      "(?<![\\p{L}])versi\\s+(untuk\\s+)?browser\\s+(komputer|desktop|pc)(?![\\p{L}])",
+      "(?<![\\p{L}])aplikasi\\s+(desktop|komputer|pc|windows)(?![\\p{L}])",
+      "(?<![\\p{L}])untuk\\s+(windows|pc)(?![\\p{L}])",
+      "versi\\s+web\\s+(dari\\s+)?wordbyword"
+    ],
+    "x-app": [
+      "(?<![\\p{L}])(di|dalam|dengan|lewat|melalui|pada)\\s+aplikasi\\s+(resmi\\s+)?X(?![\\p{L}])",
+      "satu-satunya\\s+aplikasi\\s+(yang|untuk)\\s+(bisa\\s+|dapat\\s+)?menerjemahkan\\s+X(?![\\p{L}])"
+    ],
+    "plus-early-access": [
+      "(?<![\\p{L}])akses\\s+(lebih\\s+)?(awal|dini)",
+      "early\\s+access",
+      "fitur\\s+baru\\s+(lebih\\s+(dulu|awal)|pertama\\s+kali)"
+    ],
+    "privacy-claim": [
+      "tidak\\s+(mengumpulkan|menyimpan|merekam)\\s+(data|informasi)",
+      "tidak\\s+ada\\s+data(\\s+pribadi)?\\s+yang\\s+(dikumpulkan|disimpan)",
+      "(?<![\\p{L}])tanpa\\s+(pelacakan|tracking)",
+      "(?<![\\p{L}])tidak\\s+melacak"
+    ],
+    "initial-version": [
+      "(?<![\\p{L}])versi\\s+(awal|pertama)(?![\\p{L}])"
+    ],
+    "language-pairs": [
+      "(?<![\\p{L}])(pasangan|kombinasi)\\s+bahasa"
+    ],
+    "style-count": [
+      "(?<![\\p{L}\\p{N}])\\d+\\s+(macam\\s+|jenis\\s+|pilihan\\s+)?gaya(?![\\p{L}])",
+      "(?<![\\p{L}])(lima|enam|tujuh|delapan|sembilan|sepuluh)\\s+(macam\\s+|jenis\\s+|pilihan\\s+)?gaya(?![\\p{L}])"
+    ],
+    "auto-detect-target": [
+      "(mendeteksi|deteksi|mengenali)\\w*\\s+(otomatis\\s+)?bahasa\\s+(target|tujuan)",
+      "bahasa\\s+(target|tujuan)\\s+(akan\\s+)?(terdeteksi|dideteksi|dikenali)"
+    ],
+    "history-by-date": [
+      "(dikelompokkan|diurutkan|disusun|dikategorikan|dipisahkan)\\s+(menurut|berdasarkan|per)\\s+tanggal"
+    ],
+    "plus-only": [
+      "(hanya|khusus|eksklusif)\\s+(untuk|bagi|di)\\s+(pengguna\\s+|pelanggan\\s+)?(WordByWord\\s+)?Plus(?![\\p{L}])",
+      "(?<![\\p{L}])Plus[- ]only"
+    ],
+    "speaking-practice": [
+      "latihan\\s+(berbicara|bicara|percakapan|pengucapan|pelafalan)",
+      "(tingkatkan|meningkatkan|melatih|latih)\\s+(kemampuan\\s+)?(berbicara|bicara|pengucapan|pelafalan)",
+      "(?<![\\p{L}])speaking(?![\\p{L}])"
+    ],
+    "jargon": [
+      "perbandingan\\s+(kalimat|satu[- ]satu)",
+      "(?<![\\p{L}])(penyelarasan|penjajaran)",
+      "(?<![\\p{L}])alignment(?![\\p{L}])",
+      "segmentasi\\s+cerdas"
+    ],
+    "replacement-tone": [
+      "(mungkin\\s+)?lebih\\s+(cocok|sesuai|pas)\\s+(untuk|bagi)\\s+Anda",
+      "mungkin\\s+lebih\\s+cocok",
+      "(sebagai\\s+)?pengganti\\s+WordByWord",
+      "(alih-alih|daripada|menggantikan|mengganti)\\s+WordByWord",
+      "aplikasi\\s+saudara",
+      "aplikasi\\s+(lama|sebelumnya|terdahulu)",
+      "versi\\s+(lama|sebelumnya)\\s+(dari\\s+)?WordByWord",
+      "beralih\\s+(dari\\s+WordByWord\\s+)?ke\\s+SurfEnglish",
+      "upgrade\\s+(dari\\s+WordByWord|ke\\s+SurfEnglish)"
+    ],
+    "se-on-device-voice": [
+      "suara\\s+(AI\\s+)?(di|pada)\\s+perangkat",
+      "suara\\s+(AI\\s+)?(offline|luring|on-device)",
+      "suara[^.;:]{0,20}(bisa|dapat)\\s+(dipakai\\s+|digunakan\\s+)?(secara\\s+)?(offline|luring)",
+      "berfungsi\\s+(secara\\s+)?(offline|luring)"
+    ],
+    "se-hype": [
+      "(?<![\\p{L}])baru(?![\\p{L}])",
+      "lebih\\s+(cepat|efisien|hebat)",
+      "(?<![\\p{L}])(upgrade|tingkatkan)(?![\\p{L}])",
+      "lebih\\s+baik\\s+(dari|daripada)"
+    ],
+    "hype": [
+      "revolusioner",
+      "(?<![\\p{L}])terbaik(?![\\p{L}])",
+      "nomor\\s+(satu|1)(?![\\p{L}\\p{N}])",
+      "satu-satunya",
+      "pertama\\s+di\\s+dunia",
+      "(ribuan|jutaan)\\s+(pengguna|orang|unduhan)",
+      "(?<![\\p{L}\\p{N}])\\d[\\d.,]*\\s?(rb|ribu|juta|jt|k)?\\+?\\s+(pengguna|unduhan)(?![\\p{L}])",
+      "(?<![\\p{L}])tim\\s+(WordByWord|kami)(?![\\p{L}])",
+      "(?<![\\p{L}])para\\s+pembuat(?![\\p{L}])",
+      "selamat\\s+tinggal\\s+(pada|untuk|kepada)"
+    ],
+    "ext-language-count": [
+      "(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+?\\s+(bahasa|pasangan\\s+bahasa)(?![\\p{L}])"
+    ]
+  },
+  "keywordMap": {
+    "seOwned": [
+      "(?<![\\p{L}])(belajar|mempelajari|pelajari|kursus|latihan)\\s+bahasa\\s+Inggris",
+      "(?<![\\p{L}])(berita|artikel|bacaan)\\s+(berbahasa\\s+|bahasa\\s+)?Inggris(?![\\p{L}])",
+      "bahasa\\s+Inggris\\s+(sesuai|per|berdasarkan|menurut)\\s+(level|tingkat)",
+      "(?<![\\p{L}])kelompok\\s+kata(?![\\p{L}])",
+      "(?<![\\p{L}])chunks?(?![\\p{L}])"
+    ],
+    "seOwnedLead": [
+      "^\\W*(sedang\\s+)?(belajar|mempelajari)\\s+bahasa\\s+Inggris",
+      "^\\W*(saya|anda)\\s+(sedang\\s+)?belajar\\s+bahasa\\s+Inggris"
+    ],
+    "reservedG1": [
+      "(?<![\\p{L}])cara\\s+(menerjemahkan|membaca|melihat)(?![\\p{L}])",
+      "(?<![\\p{L}])bagaimana\\s+(cara\\s+)?(menerjemahkan|membaca)(?![\\p{L}])",
+      "(mempertahankan|menyimpan|menjaga|tetap\\s+menampilkan)\\s+teks\\s+asli",
+      "tanpa\\s+kehilangan\\s+teks\\s+asli",
+      "langkah\\s+demi\\s+langkah",
+      "(?<![\\p{L}])panduan(?![\\p{L}])"
+    ]
+  }
+}

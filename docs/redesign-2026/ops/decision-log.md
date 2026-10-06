@@ -249,3 +249,14 @@
   1. SE 页脚店名：文档 04 写「SurfEnglish: Đọc tin tiếng Anh」，研究 05 记录的 VN 店面名是 "SurfEnglish: Bilingual News"。用哪个？
   2. VN 店面没有越南语本地化：appStoreSubtitle 照录了 US 英文副标题，所以有 1 条 L-4。
   3. App 侧字符串问题：X9「Dịch Chuyển」、双击和 local 各有两种说法、查词译成"搜索"等，清单见 `vi-qa.md`。
+- **id 已接入**（fbfd7c2，lint 数据 2e8ced2）：
+  - OG 图：home-id 64px × 3 行。
+  - 状态：17 种语言、24 页，干净 HEAD 校验 CLEAN。
+  - 措辞处理：右滑按 X12 写 "Geser"；App 自己的功能名是 "Gesek untuk Menerjemahkan"，glossary 已禁用 gesek。
+- **id 带出的待决事项**：
+  1. App 侧字符串问题：
+     - X12 的 "Gesek"；
+     - `tts_trial_exhausted_fallback_message` 整条是马来语，"mainan AI" 意思是"AI 玩具"；
+     - Upgrade／Tingkatkan 混用；
+     - 清单见 `id-qa.md`。
+  2. 两条 kicker 的 L-8 warning（App 原名 25、28 > 24），与其他语言一起定。
