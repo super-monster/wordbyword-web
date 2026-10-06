@@ -212,7 +212,7 @@
   3. **nl-lint 可能误伤**：`hype` 的 "de enige" 和 `initial-version` 的 "eerste versie" 有误伤正常句子的可能，留待母语审校。
   4. **App 侧字符串问题**：it、nl 两种语言的问题清单在各自 QA 记录里，nl 的较多。
 - **pl、uk、ru、tr 已接入**：
-  - 文案：pl 4fa56f6，uk 7925eb9 之前一次，ru、tr 5fc3223；各自的 lint 数据另行提交。
+  - 文案：pl 4fa56f6，uk 0b68efc，ru、tr 5fc3223；各自的 lint 数据另行提交。
   - OG 图：home-pl、home-uk、home-ru、home-tr 都是 64px × 3 行。
   - 状态：15 种语言、22 页；干净 HEAD（3d520ab）上构建 0 error，测试 62/62，pseudo 0 error，check 0/0。
   - 流程改进：agent 会随时往仓库放未跟踪文件，有一次 uk.json 恰好在校验中途落地，导致误报。改为"先本地提交，再用 `git archive HEAD` 导出的干净副本跑全套校验，通过才推送"（scratchpad/verify-head.sh）。
