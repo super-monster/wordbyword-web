@@ -133,6 +133,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-pl": {
+      "file": "assets/og/home-pl.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "c0f4cd783f91e9c3edcef572b19811447c227effb3691f850f28cc2ad7458c79",
+      "inputs": {
+        "headline": "Czytaj strony WWW w dwóch językach. [[Oryginał zostaje.]]",
+        "subline": "Przesuń akapit w prawo · dotknij dwukrotnie słowa, by poznać jego znaczenie w kontekście",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,

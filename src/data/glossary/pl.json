@@ -1,0 +1,120 @@
+{
+  "locale": "pl",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (pl column), checked against WordByWordPrototype/Localizable.xcstrings (pl values) and the quota screen (FeatureQuotaManager.swift featureDisplayName); §7.2.2 rules ①–③ (no X-fix lists pl); §7.3 pl row (ty, imperative; \"przesuń w prawo\", \"dotknij dwukrotnie\" — the doc 03 draft \"Stuknij dwa razy\" is corrected to the app wording).",
+    "required: kickers and quota-table rows use the app's names (rule ①). Kickers drop the \"(Znaczenie AI)\" suffix like en / ja / es / fr; the quota rows follow the app's own comparison screen: daily_sentence_translation_limit + engine (the app shows \"(Chmurowy silnik tłumaczeń)\" / \"(Silnik lokalny)\"; shortened to \"· w chmurze\" / \"· lokalnie\" so each row fits the 390 px table), word_meaning_lookup_title, more_definitions_title, ai_pronunciation_word / _sentence, audio_playback_title_local, Chunk Extraction, sentence_skeleton_settings_navigation_title, grammar_structure_analysis. Action Flow keeps the App Store name in headings and the sample label (doc 08 D3, §7.2.3); the app's \"Przebieg działań\" is quoted in features[chunks].text.",
+    "contains: app button and setting names quoted verbatim in „ ” (rule ①; T-E for faq.items[restore]); the app writes them in English-style title case (\"Uaktualnij Teraz\", \"Przywróć Zakup\", \"Zdanie po Zdaniu\", \"Lokalne Czytanie\") — quoted as the app shows them, reported to the app side in docs/redesign-2026/ops/m3/pl-qa.md.",
+    "banned: left swipes (F14); mouse wording for the double tap (the legacy pl site wrote \"kliknij dwukrotnie\" / \"podwójne kliknięcie\"); a single tap for lookup (doc 08 §1.1); \"stuknij dwa razy\" (the doc 03 draft; the site follows the app's \"dotknij dwukrotnie\", doc 08 §7.3); selecting text to translate (legacy \"przez zaznaczenie\", C-09; also claims-lint selection-translate); \"wyrównanie\" for the display modes (jargon, C-16); the generic \"inteligentny asystent\" (doc 08 §7.4, legacy title); other names for More Definitions. Patterns use \\s so they also match the copy's no-break spaces (U+00A0)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Przesuń, aby przetłumaczyć",
+    "features[lookup].kicker": "Dotknij dwukrotnie, aby wyszukać",
+    "features[x].kicker": "X (dawniej Twitter)",
+    "features[chunks].kicker": "Strony po angielsku",
+    "features[speech].kicker": "Czytanie na głos",
+    "features[syntax].kicker": "Składnia",
+    "features[engines].kicker": "Silniki tłumaczenia",
+    "features[display].kicker": "Wyświetlanie",
+    "features[history].kicker": "Historia",
+    "features[devices].kicker": "Urządzenia",
+    "demo.ui.more": "Więcej definicji",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Przesuń, aby przetłumaczyć · w\u00a0chmurze",
+    "pricing.table.rows.localSwipe": "Przesuń, aby przetłumaczyć · lokalnie",
+    "pricing.table.rows.lookup": "Dotknij dwukrotnie, aby wyszukać (Znaczenie AI)",
+    "pricing.table.rows.more": "Więcej definicji",
+    "pricing.table.rows.lookupSpeech": "Wymowa AI (Słowo)",
+    "pricing.table.rows.swipeSpeech": "Wymowa AI (Zdanie)",
+    "pricing.table.rows.localVoice": "Głos iOS (Lokalne Czytanie)",
+    "pricing.table.rows.chunks": "Ekstrakcja Fragmentów",
+    "pricing.table.rows.actionFlow": "Przebieg działań w\u00a0zdaniu",
+    "pricing.table.rows.syntax": "Analiza struktury składni AI"
+  },
+  "contains": {
+    "faq.items[restore].a": [
+      "Uaktualnij Teraz",
+      "Przywróć Zakup"
+    ],
+    "features[syntax].text": [
+      "Pobierz wyjaśnienie składni AI"
+    ],
+    "features[speech].text": [
+      "Czytanie AI",
+      "Lokalne Czytanie"
+    ],
+    "features[chunks].text": [
+      "Ekstrakcja Fragmentów",
+      "Action Flow",
+      "Przebieg działań"
+    ],
+    "features[swipe].bullets[0]": [
+      "Automatycznie",
+      "Akapit",
+      "Zdanie po Zdaniu"
+    ],
+    "features[lookup].bullets[2]": [
+      "Więcej definicji"
+    ]
+  },
+  "banned": [
+    {
+      "pattern": "przesu\\p{L}*(\\s+\\S+){0,3}\\s+w\\s+lewo|w\\s+lewo\\s+przesu",
+      "regex": true,
+      "flags": "i",
+      "use": "przesuń akapit w prawo",
+      "note": "the gesture is a right swipe; a left swipe removes the translation (F14)"
+    },
+    {
+      "pattern": "(klikni\\p{L}*|klikaj\\p{L}*|kliknąć|klika\\p{L}*)\\s+dwukrotnie|dwukrotn\\p{L}*\\s+klik|podwójn\\p{L}*\\s+klik|dwuklik",
+      "regex": true,
+      "flags": "i",
+      "use": "dotknij dwukrotnie",
+      "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy; the legacy pl site)",
+      "allowInKeys": [
+        "chromeExtension."
+      ]
+    },
+    {
+      "pattern": "(?<!\\p{L})(dotknij|stuknij|dotykając|dotknięciu|stuknięciu)\\s+(dowolnego\\s+|jednego\\s+|tego\\s+)?(słowa|słowo|wyrazu|wyraz)(?!\\p{L})",
+      "regex": true,
+      "flags": "i",
+      "use": "dotknij dwukrotnie słowa",
+      "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)"
+    },
+    {
+      "pattern": "stukn\\p{L}*\\s+(dwa\\s+razy|dwukrotnie)|dwa\\s+razy\\s+stukn",
+      "regex": true,
+      "flags": "i",
+      "use": "dotknij dwukrotnie",
+      "note": "the app's wording (word_meaning_lookup_title, tip_double_tap_context_meaning); doc 08 §7.3 corrects the doc 03 draft"
+    },
+    {
+      "pattern": "zaznacz\\p{L}*",
+      "regex": true,
+      "flags": "i",
+      "use": "przesuń akapit w prawo",
+      "note": "no select-to-translate in the iOS app (legacy pl \"przez zaznaczenie tekstu\", C-09; claims-lint selection-translate)"
+    },
+    {
+      "pattern": "wyrówna\\p{L}*",
+      "regex": true,
+      "flags": "i",
+      "use": "wyświetlanie zdanie po zdaniu",
+      "note": "jargon for the display modes (doc 08 §7.5, C-16; legacy \"wyrównanie zdanie po zdaniu\")"
+    },
+    {
+      "pattern": "inteligentn\\p{L}*\\s+asystent",
+      "regex": true,
+      "flags": "i",
+      "use": "asystent czytania (only in the definition sentence)",
+      "note": "generic \"smart assistant\" wording (doc 08 §7.4; the legacy pl title)"
+    },
+    {
+      "pattern": "Inne definicje|Więcej Definicji|Dodatkowe definicje",
+      "regex": true,
+      "use": "Więcej definicji",
+      "note": "app name of more_definitions_title (T-A)"
+    }
+  ],
+  "allowInKeys": []
+}
