@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "title": "WordByWord翻譯：iPhone 網頁雙語對照 App｜右滑即譯，AI 語境查單字",
+    "description": "WordByWord 是為外語學習者設計的 iPhone／iPad 網頁雙語閱讀 App：在內建瀏覽器裡向右滑動段落，譯文就插在原文下方；點兩下單字，AI 會依上下文解釋它的意思。免費使用。",
+    "ogHeadline": "iPhone 網頁雙語對照：[[原文不動，譯文在下]]",
+    "ogSubline": "向右滑動段落即譯 · 點兩下單字看 AI 語境釋義",
+    "ogImageAlt": "iPhone 上的 WordByWord（英文介面）：西班牙文段落下方是英文譯文，AI 卡片解釋其中一個單字",
+    "appStoreName": "WordByWord翻譯",
+    "appStoreSubtitle": "右滑翻譯 AI 解釋"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "網頁",
+      "雙語對照",
+      "App"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "網頁雙語對照翻譯 App",
+        "secondary": [
+          "iPhone 網頁翻譯 App",
+          "網頁翻譯推薦",
+          "原文下方顯示譯文",
+          "右滑翻譯",
+          "用網頁學外語",
+          "外語學習者的網頁閱讀助手"
+        ]
+      },
+      "K2": {
+        "primary": "AI 語境查單字",
+        "secondary": [
+          "點兩下查單字",
+          "單字在句子裡的意思",
+          "片語解釋與例句",
+          "查單字 App"
+        ]
+      },
+      "K3": {
+        "primary": "AI 朗讀",
+        "secondary": [
+          "網頁朗讀",
+          "單字發音"
+        ]
+      },
+      "K4": {
+        "primary": "AI 句子結構解析",
+        "secondary": [
+          "長句解析",
+          "文法結構分析"
+        ]
+      },
+      "K6": {
+        "primary": "翻譯與查詢紀錄",
+        "secondary": [
+          "查單字紀錄複習",
+          "右滑翻譯紀錄"
+        ]
+      },
+      "K7": {
+        "primary": "雲端／裝置端翻譯引擎",
+        "secondary": [
+          "iOS 系統翻譯",
+          "Azure 與 Google 翻譯"
+        ]
+      },
+      "K8": {
+        "primary": "21 種語言網頁翻譯",
+        "secondary": [
+          "日文網站翻譯",
+          "介面 20 種語言",
+          "自動偵測網頁語言"
+        ]
+      },
+      "K9": {
+        "primary": "X（推特）雙語翻譯",
+        "secondary": [
+          "推特翻譯 iPhone",
+          "推文原文譯文對照"
+        ]
+      },
+      "K10": {
+        "primary": "免費網頁翻譯 App",
+        "secondary": [
+          "每日免費額度",
+          "WordByWord Plus 價格"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "跳到主要內容",
+    "languageLabel": "語言",
+    "comingSoon": "即將推出",
+    "contactUs": "聯絡開發者",
+    "lastUpdated": "最後更新",
+    "breadcrumbHome": "首頁",
+    "appStoreBadgeAlt": "在 App Store 下載 WordByWord",
+    "langFallbackNote": "本頁只有英文版。選擇其他語言會開啟該語言的首頁。",
+    "menu": "選單",
+    "close": "關閉",
+    "figLabel": "圖",
+    "screenshotLabel": "iPhone 截圖（英文介面）",
+    "screenshotExcerptLabel": "iPhone 截圖（英文介面，局部）",
+    "noteLabel": "附註",
+    "demoLabel": "App 示範"
+  },
+  "nav": {
+    "features": "功能",
+    "languages": "支援語言",
+    "pricing": "價格",
+    "faq": "常見問題",
+    "chromeExtension": "Chrome 擴充功能",
+    "about": "關於",
+    "download": "下載",
+    "downloadShort": "下載",
+    "iphoneApp": "iPhone App",
+    "ariaMain": "主要導覽",
+    "ariaLanguages": "選擇語言"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · 外語學習者的網頁雙語閱讀 App",
+    "title": "iPhone [[網頁雙語對照]]：{wbr}向右滑動{wbr}段落，{wbr}原文不動，{wbr}譯文{wbr}插在下方。",
+    "lede": "WordByWord 是一款為外語學習者設計的 iPhone／iPad 閱讀助手，幫你用真實網頁學外語。",
+    "ledeShort": "WordByWord 是一款為外語學習者設計的 iPhone／iPad 閱讀助手，幫你用真實網頁學外語。",
+    "ctaNote": "免費下載 · iPhone／iPad",
+    "how": "用內建瀏覽器開啟任何網頁，向右滑動一段文字，譯文就會插在原文下方；點兩下單字，AI 會依照所在的句子解釋它的意思。",
+    "platformNote": "免費使用（每日有額度）· Plus 為每月訂閱 · {minOS} 以上；也能在搭載 Apple 晶片的 Mac 和 Apple Vision Pro 上使用",
+    "secondaryCta": "看看怎麼用"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "我們社區的圖書館週六一早就開門。",
+      "大家帶著咖啡進來，不知不覺就讀到了中午。"
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "動詞",
+      "meaning": "（end up + -ing）結果、最後（做了某事）；這裡指不知不覺就讀到了中午",
+      "note": "在這句話裡，它是片語「end up」的一部分。"
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "向右滑動",
+      "more": "更多釋義",
+      "pause": "暫停",
+      "replay": "重播"
+    },
+    "caption": "以 HTML 重現的 App 畫面示範（不是截圖）：英文段落下方插入了中文譯文。"
+  },
+  "featuresIntro": {
+    "title": "右滑翻譯，{wbr}點兩下查單字：{wbr}平常讀的網頁{wbr}都能{wbr}雙語對照",
+    "lede": "為一邊讀外語網頁、一邊學語言的人設計。大部分時候，這兩個手勢就夠用了；遇到需要細看的句子，還有下面這些工具。"
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "右滑翻譯",
+      "title": "右滑翻譯：{wbr}譯文插在{wbr}原文下方，{wbr}逐段或{wbr}逐句對照",
+      "text": "用內建瀏覽器開啟網頁（輸入網址或直接搜尋），向右滑動一段文字，譯文就會插在它下面。不必切換畫面，原文和譯文對照著讀，也不會讀到一半找不到位置。",
+      "bullets": [
+        "顯示方式：自動、段落、逐句",
+        "譯文可自動顯示，也可以點一下再顯示",
+        "新聞、部落格、技術文件、X……在 App 裡開啟的網頁都能用"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "iPhone 上的 WordByWord（英文介面）：西班牙文維基百科頁面，原文下方插入了英文譯文"
+    },
+    {
+      "id": "lookup",
+      "kicker": "雙擊查詞",
+      "title": "AI 語境查單字：{wbr}點兩下單字，{wbr}看懂它在{wbr}這句話裡的{wbr}意思",
+      "text": "WordByWord 會先讀完整個句子，再解釋這個單字，並優先辨識片語和固定搭配。你看到的是它在這裡的意思，而不是一長串字典解釋。",
+      "bullets": [
+        "在網頁上點兩下任何單字",
+        "優先辨識片語和固定搭配",
+        "「更多釋義」：完整解釋、例句、詞形變化和發音"
+      ],
+      "note": "中文、日文、韓文的原文不支援雙擊查詞。",
+      "image": "shot/{set}/lookup",
+      "alt": "iPhone 上的 WordByWord（英文介面）：西班牙文單字「convirtiéndose」被標示出來，卡片解釋它在這句話裡的意思"
+    },
+    {
+      "id": "x",
+      "kicker": "X（推特）",
+      "title": "在內建瀏覽器裡{wbr}雙語看 X（推特）貼文",
+      "text": "在 WordByWord 的內建瀏覽器裡登入 x.com，向右滑動一則貼文，譯文就會出現在它下方。追蹤用外語發文的帳號時特別方便。",
+      "image": "shot/{set}/x",
+      "alt": "WordByWord 閱讀貼文的示意圖：英文貼文下方插入了中文譯文（不是截圖）",
+      "sample": {
+        "name": "範例帳號",
+        "handle": "@runner.example",
+        "time": "3 小時",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "剛跑完人生第一個 10 公里。跑得很慢，但全程一次都沒停。"
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "英文網頁",
+      "title": "語言塊提取與{wbr}句子動作脈絡{wbr}（Action Flow），{wbr}僅限英文",
+      "text": "對英文句子右滑翻譯後，「語言塊提取」會替整組使用的片語畫上底線，「句子動作脈絡」會標出句子的核心動作，以及和它相關的動作。可以設為自動、手動或關閉。",
+      "note": "僅支援英文原文。",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for：動身前往（某地）",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "示意圖，不是截圖"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "朗讀",
+      "title": "AI 朗讀，{wbr}或用更快的 iOS 內建語音",
+      "text": "單字、整句都能朗讀。「AI朗讀」使用雲端的自然語音；「本地朗讀」使用 iOS 內建語音，播放較快、可調整語速，也能使用你已下載的 Premium 或 Enhanced 高品質語音。",
+      "image": "shot/{set}/tts",
+      "alt": "iPhone 上的 WordByWord（英文介面）：畫面下方的朗讀播放器，正在朗讀一段西班牙文"
+    },
+    {
+      "id": "syntax",
+      "kicker": "句法解析",
+      "title": "AI 句子結構解析：{wbr}外語長句{wbr}一眼看懂",
+      "text": "從「右滑翻譯歷史」開啟一個句子，點一下「取得 AI 句法解析」，它會把句子拆成幾個部分，並說明各部分之間的關係。",
+      "image": "shot/{set}/syntax",
+      "alt": "iPhone 上的 WordByWord（英文介面）：右滑翻譯詳情頁中，AI 對一個句子的句法解析"
+    },
+    {
+      "id": "engines",
+      "kicker": "翻譯引擎",
+      "title": "雲端翻譯或 iOS 本機翻譯",
+      "text": "雲端（Azure 和 Google）或 iOS 本機翻譯任選；雲端次數用完可改用本機重試"
+    },
+    {
+      "id": "display",
+      "kicker": "顯示",
+      "title": "譯文怎麼排、{wbr}用什麼樣式，{wbr}你來決定",
+      "text": "自動、段落、逐句；自動顯示或點一下再顯示；多種譯文樣式可選"
+    },
+    {
+      "id": "history",
+      "kicker": "紀錄",
+      "title": "翻譯與查單字紀錄，{wbr}隨時回顧",
+      "text": "右滑翻譯的句子和查過的單字連同原句一起儲存，可回顧，也可清除"
+    },
+    {
+      "id": "devices",
+      "kicker": "裝置",
+      "title": "iPhone、iPad、Mac、Vision Pro",
+      "text": "iPhone、iPad（{minOS} 以上），也支援搭載 Apple 晶片的 Mac 和 Vision Pro"
+    }
+  ],
+  "gallery": {
+    "title": "App\u00a0裡的設定、{wbr}「更多釋義」{wbr}與語言選擇",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "設定：翻譯模式、譯文樣式與朗讀方式（英文介面）",
+        "alt": "iPhone 上 WordByWord 的設定頁（英文介面）：翻譯模式 Auto、譯文樣式 Quote Style、朗讀方式 Local Read"
+      },
+      {
+        "id": "dictionary",
+        "caption": "「更多釋義」：完整解釋與例句（英文介面）",
+        "alt": "WordByWord 的 More Definitions 頁面（英文介面）：西班牙文單字「matrimonio」的解釋與例句"
+      },
+      {
+        "id": "languages",
+        "caption": "原文語言設為西班牙文、目標語言設為美式英文（英文介面）",
+        "alt": "WordByWord 的語言設定（英文介面）：原文語言為西班牙文，目標語言為英文（美國）"
+      },
+      {
+        "id": "languageList",
+        "caption": "從 {targetLanguages} 種譯文語言中選擇（英文介面）",
+        "alt": "iPhone 上 WordByWord 的語言清單（英文介面）：越南文、葡萄牙文、烏克蘭文、義大利文、中文等"
+      }
+    ]
+  },
+  "languages": {
+    "title": "{targetLanguages}\u00a0種語言{wbr}網頁翻譯，{wbr}不限{wbr}英文網頁",
+    "lede": "選好譯文語言就可以了。原文語言預設為英文，WordByWord 會依你正在讀的網頁偵測語言並自動更新，你也可以自己設定。",
+    "uiCount": "App 介面支援 {uiLanguages} 種語言",
+    "targetCount": "可譯成 {targetLanguages} 種語言",
+    "sourceNote": "原文語言：預設英文，自動偵測，可手動更改",
+    "targetListLabel": "譯文語言",
+    "limits": [
+      "中文、日文、韓文網頁：可以右滑翻譯和朗讀，但不支援雙擊查詞。",
+      "語言塊提取和句子動作脈絡僅支援英文原文。"
+    ]
+  },
+  "pricing": {
+    "title": "每天{wbr}免費用，{wbr}讀得多{wbr}再升級\u00a0Plus",
+    "lede": "WordByWord 可免費下載，大部分功能每天都有免費額度（每日重置）；升級 WordByWord Plus 可提高額度。",
+    "table": {
+      "caption": "每日額度：免費版與 Plus",
+      "colFeature": "功能",
+      "colFree": "免費",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "翻譯",
+        "lookup": "查單字",
+        "listen": "朗讀",
+        "sentence": "句子工具"
+      },
+      "rows": {
+        "cloudSwipe": "右滑翻譯 · 雲端引擎",
+        "localSwipe": "右滑翻譯 · 本機引擎",
+        "lookup": "雙擊查詞（AI 釋義）",
+        "more": "更多釋義",
+        "lookupSpeech": "AI 發音 · 單字",
+        "swipeSpeech": "AI 發音 · 整句",
+        "localVoice": "iOS 內建語音（本機朗讀）",
+        "chunks": "語言塊提取",
+        "actionFlow": "句子動作脈絡",
+        "syntax": "AI 句法解析"
+      },
+      "perDay": "{n} 次／天",
+      "noLimit": "不限次數",
+      "englishOnly": "僅限英文"
+    },
+    "summary": "額度內所有功能都免費；Plus 可提高額度，美國售價每月 {plus.priceUS}。",
+    "free": {
+      "name": "免費版"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "每月 {plus.priceUS}（美國售價）"
+    },
+    "note": "各地區價格不同，以 App Store 顯示的為準。你可以隨時在 Apple 帳號設定中取消訂閱。"
+  },
+  "faq": {
+    "title": "關於 WordByWord\u00a0的{wbr}常見問題",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "WordByWord 是什麼？",
+        "a": "WordByWord 是一款 iPhone／iPad 閱讀助手，為外語學習者，以及任何需要讀外語網站的人設計。用它的內建瀏覽器開啟網頁，向右滑動段落，譯文就會插在原文下方；點兩下單字，就能看到它在這句話裡的意思。WordByWord 由獨立開發者 Jinlong 開發。[進一步了解 WordByWord（英文頁面）](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "WordByWord 能在 iPhone 上一鍵翻譯整個網頁嗎？",
+        "a": "不能。WordByWord 只翻譯你滑動的那一段，譯文插在它正下方，頁面其他部分維持原文。譯文可以按段落或逐句顯示（也可以交給「自動」），也可以選擇立即顯示，或點一下再顯示。"
+      },
+      {
+        "id": "safari",
+        "q": "可以在 Safari 或其他 App 裡使用嗎？",
+        "a": "不行。WordByWord 不是 Safari 延伸功能，也不會在其他 App 裡加上翻譯按鈕。它有自己的瀏覽器，支援分頁和書籤：輸入網址或搜尋來開啟網頁，然後在裡面右滑翻譯。"
+      },
+      {
+        "id": "word-by-word",
+        "q": "WordByWord 是逐字翻譯工具嗎？",
+        "a": "不是字面意義上的逐字直譯。一個字一個字地翻，常常會把意思弄錯，所以 WordByWord 以整句或整段為單位翻譯；只有在你點兩下某個單字時，才會依照它所在的句子解釋它。"
+      },
+      {
+        "id": "x",
+        "q": "可以用 WordByWord 看 X（推特）嗎？",
+        "a": "可以。用內建瀏覽器開啟 x.com 並登入，向右滑動貼文就能在下方看到譯文，也可以點兩下單字查詢意思（中文、日文、韓文貼文除外）。這個功能適用於在 WordByWord 裡開啟的 X 網頁版，而不是 X App。"
+      },
+      {
+        "id": "languages",
+        "q": "WordByWord 支援哪些語言？",
+        "a": "App 介面支援 {uiLanguages} 種語言，譯文可選 {targetLanguages} 種（包括簡體中文、繁體中文，以及美式和英式英文）。原文語言預設為英文，WordByWord 會偵測你正在讀的網頁語言並更新，你也可以手動更改。部分功能取決於原文語言：中文、日文、韓文原文不支援雙擊查詞；語言塊提取和句子動作脈絡只支援英文。"
+      },
+      {
+        "id": "free",
+        "q": "WordByWord 免費嗎？每天可以用幾次？",
+        "a": "是的。WordByWord 可以免費下載、免費使用，每天有額度。免費版每天可用：雲端右滑翻譯 {quota.cloudSwipe.free} 次、本機引擎翻譯 {quota.localSwipe.free} 次、雙擊查詞 {quota.lookup.free} 次、語言塊提取 {quota.chunks.free} 次、句子動作脈絡 {quota.actionFlow.free} 次、AI 句法解析 {quota.syntax.free} 次；iOS 內建語音不限次數。**WordByWord Plus** 為每月訂閱（美國售價 {plus.priceUS}，其他地區以 App Store 顯示的為準），可提高這些額度。"
+      },
+      {
+        "id": "engines",
+        "q": "用的是哪種翻譯引擎？",
+        "a": "由你選擇。雲端翻譯引擎目前由 Azure 和 Google 的翻譯服務提供；本機引擎（App 內名稱為「本地引擎」）使用 iOS 內建的裝置端翻譯，第一次使用時，iOS 可能需要先下載語言資源。當天的雲端翻譯次數用完後，可以切換到本機引擎重試。單字解釋、句法解析和 AI 朗讀則使用雲端的 AI 服務。"
+      },
+      {
+        "id": "account",
+        "q": "使用 WordByWord 需要註冊帳號嗎？",
+        "a": "不需要。WordByWord 不用註冊就能使用。只有在內建瀏覽器裡使用 x.com 等網站時，才需要登入那個網站，就跟在一般瀏覽器裡一樣。WordByWord Plus 訂閱綁定的是你的 Apple 帳號，而不是 WordByWord 帳號。"
+      },
+      {
+        "id": "restore",
+        "q": "換了新的 iPhone 或 iPad，要怎麼恢復 WordByWord Plus？",
+        "a": "在新裝置上使用同一個 Apple 帳號，開啟 WordByWord 的設定，點「立即升級」，再點「恢復購買」。如果要更改或取消訂閱，請到 Apple 帳號的訂閱設定中操作。"
+      },
+      {
+        "id": "android",
+        "q": "有 Android 版嗎？",
+        "a": "沒有。WordByWord 只在 App Store 上架，可用於 iPhone、iPad、搭載 Apple 晶片的 Mac 和 Apple Vision Pro。"
+      },
+      {
+        "id": "english-learner",
+        "q": "我在學英文，SurfEnglish 也值得一試嗎？",
+        "a": "你自己選的網頁和 X 貼文，不論是英文還是其他語言，都可以繼續用 WordByWord 讀。如果你還想每天讀依程度分級（{se.levels}）的英文新聞，並用小遊戲複習存下來的句子和單字，可以試試同一位開發者的 SurfEnglish，右滑翻譯和雙擊查詞的用法都一樣。兩款 App 可以一起用。[SurfEnglish 官網](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "WordByWord 可以在 iPad、Mac 或電腦瀏覽器上使用嗎？",
+        "a": "WordByWord 支援 iPhone 和 iPad（{minOS} 以上），也可以從 App Store 安裝到搭載 Apple 晶片的 Mac（{minMacOS} 以上）和 Apple Vision Pro。目前還沒有電腦瀏覽器版本；同一位開發者的 Chrome 擴充功能正在準備中，詳見 [Chrome 擴充功能頁面（英文）](@chrome)。",
+        "aExtLive": "WordByWord 支援 iPhone 和 iPad（{minOS} 以上），也可以從 App Store 安裝到搭載 Apple 晶片的 Mac（{minMacOS} 以上）和 Apple Vision Pro。電腦上的 Chrome 另有同一位開發者製作的擴充功能：[WordByWord Translate Chrome 擴充功能（英文頁面）](@chrome)。請只透過該頁面上的連結安裝。"
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "來自 WordByWord 的開發者",
+      "title": "SurfEnglish：{wbr}符合你程度的{wbr}每日英文新聞",
+      "body": "在學英文嗎？想讀的任何網頁，照樣可以用 WordByWord 讀；也不妨試試 SurfEnglish：每天依程度分級的英文新聞，加上複習小遊戲，右滑翻譯和雙擊查詞的用法都一樣。",
+      "points": [
+        "{se.levels} 分級的真實英文新聞",
+        "用你讀過的內容生成的複習遊戲",
+        "從 Safari 把英文文章分享到 App 裡讀"
+      ],
+      "note": "免費開始使用 · iPhone／iPad · App 介面支援繁體中文等 {se.uiLanguages} 種語言 · 可譯成 {se.targetLanguages} 種語言",
+      "linkText": "用 SurfEnglish 雙語對照讀分級英文新聞",
+      "appStoreLinkText": "在 App Store 取得 SurfEnglish",
+      "shotAlt": "SurfEnglish 的遊戲頁：可以用存下來的句子和單字玩 Sentence Builder 與 Word Raid",
+      "shotCaption": "SurfEnglish 截圖（英文介面）"
+    },
+    "footer": {
+      "heading": "同一開發者的其他 App",
+      "linkText": "SurfEnglish：英文新聞·雙語對照"
+    }
+  },
+  "cta": {
+    "title": "在\u00a0iPhone\u00a0上{wbr}開始雙語閱讀{wbr}外語網頁",
+    "recap": "右滑翻譯 · 雙擊查詞 · AI 朗讀 · 可譯成 {targetLanguages} 種語言",
+    "text": "可在 App Store 免費下載，支援 iPhone 和 iPad。"
+  },
+  "footer": {
+    "tagline": "為外語學習者設計的 iPhone／iPad 閱讀助手。",
+    "product": "產品",
+    "help": "說明",
+    "iosApp": "iPhone／iPad App",
+    "chromeExtension": "Chrome 擴充功能",
+    "about": "關於 WordByWord",
+    "support": "支援",
+    "privacy": "隱私權政策",
+    "contact": "聯絡開發者",
+    "faq": "常見問題",
+    "languagesTitle": "語言",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "開發者：Jinlong",
+    "notAffiliated": "與 WordByWord.io 無關。",
+    "appleNotice": "Apple、Apple 標誌、iPhone、iPad、Mac 和 Apple Vision Pro 是 Apple Inc. 在美國及其他國家和地區註冊的商標。App Store 是 Apple Inc. 的服務標章。",
+    "ariaNav": "網站導覽"
+  },
+  "langSuggest": {
+    "message": "本頁面也有繁體中文版。",
+    "action": "查看繁體中文版",
+    "close": "關閉"
+  },
+  "notfound": {
+    "title": "找不到這個頁面",
+    "text": "你要找的頁面不在這裡，可能在網站改版時移動了位置。",
+    "home": "回到 WordByWord 首頁",
+    "languages": "或用你的語言開啟 WordByWord："
+  }
+}

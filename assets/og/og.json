@@ -25,6 +25,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-zh-Hant": {
+      "file": "assets/og/home-zh-hant.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "77840439485fe9a3b5ad37d0ebb88248f44537c281bdd618e4bb893fc194e9b3",
+      "inputs": {
+        "headline": "iPhone 網頁雙語對照：[[原文不動，譯文在下]]",
+        "subline": "向右滑動段落即譯 · 點兩下單字看 AI 語境釋義",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "home-ja": {
       "file": "assets/og/home-ja.jpg",
       "width": 1200,

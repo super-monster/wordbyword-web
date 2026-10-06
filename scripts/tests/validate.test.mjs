@@ -163,7 +163,8 @@ test('scripts/check.mjs: validateDist + HTML basics on a built dist, and --keys'
   assert.equal(r.status, 0, `${r.stdout}\n${r.stderr}`);
   const k = spawnSync(process.execPath, ['scripts/check.mjs', '--keys'], { cwd: ROOT, encoding: 'utf8' });
   assert.equal(k.status, 0);
-  assert.match(k.stdout, /zh-Hant {2}\(no src\/locales\/zh-Hant\.json/);
+  const unpublished = BASE.LOCALES.find((l) => !l.publish); // none once all 20 locales are published (M3)
+  if (unpublished) assert.match(k.stdout, new RegExp(`${unpublished.code} {2}\\(no src/locales/${unpublished.code}\\.json`));
 });
 
 // ———————————————————————————— L-1 … L-14 ————————————————————————————
@@ -446,7 +447,8 @@ test('D-2 hreflang clusters (HL-1…HL-11)', () => {
     edit(d, 'ja/index.html', (h) => h.replace('<link rel="alternate" hreflang="zh-Hans" href="https://www.word-by-word.app/zh-hans/">\n', ''));
     edit(d, 'about/index.html', (h) => h.replace('<meta property="og:type"', '<link rel="alternate" hreflang="en" href="https://surfenglish.app/">\n<meta property="og:type"'));
   });
-  expectE(i, 'D-2', /\/ja\/ \(ja\): 3 hreflang links, expected 4/);
+  const n = (readFileSync(join(BUILT, 'ja/index.html'), 'utf8').match(/<link rel="alternate" hreflang=/g) ?? []).length; // grows with M3
+  expectE(i, 'D-2', new RegExp(`/ja/ \\(ja\\): ${n - 1} hreflang links, expected ${n}`));
   expectE(i, 'D-2', /\/ja\/ \(ja\): expected hreflang zh-Hans → https:\/\/www\.word-by-word\.app\/zh-hans\/, got nothing/);
   expectE(i, 'D-2', /\/zh-hans\/ \(zh-Hans\): https:\/\/www\.word-by-word\.app\/ja\/ does not list this page back/);
   expectE(i, 'D-2', /\/about\/ \(en\): hreflang must never point to surfenglish\.app/);
