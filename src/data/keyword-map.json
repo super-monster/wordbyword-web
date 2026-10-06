@@ -20,9 +20,9 @@
     "it": ["imparare l['’]inglese", "impar\\w* (l['’])?inglese", "stud\\w* (l['’])?inglese", "notizie in inglese", "inglese (al tuo|per) livello", "(?<![\\p{L}])segmenti(?![\\p{L}])", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
     "nl": ["Engels leren", "Engels (studeren|oefenen)", "(?<![\\p{L}])leer( je)? Engels", "(?<![\\p{L}])Engelse? nieuws", "(?<![\\p{L}])nieuws in het Engels", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
     "pl": ["nauka angielskiego", "(nauk\\p{L}*|ucz\\p{L}*\\s+się)\\s+(języka\\s+)?angielskiego", "angielsk\\p{L}*\\s+wiadomoś", "wiadomoś\\p{L}*\\s+(po\\s+angielsku|w\\s+języku\\s+angielskim)", "(?<!\\p{L})chunk", "ekstrakcj\\p{L}*\\s+fragment"],
-    "ru": ["(учить|изучение) английск"],
+    "ru": ["(учить|изучение) английск", "(вы)?уч(ить|ите|им|у|ат|ишь|ит)\\s+английск", "изуч\\p{L}*\\s+английск", "английск\\p{L}*\\s+новост", "новост\\p{L}*\\s+на\\s+английском", "(?<![\\p{L}])чанк"],
     "uk": ["(вчити|вивчення) англійськ", "(вивча\\p{L}*|вчи\\p{L}*|навча\\p{L}*)\\s+англійськ", "новин\\p{L}*\\s+англійською", "англійськ\\p{L}*\\s+новин", "(?<![\\p{L}])чанк\\p{L}*", "виділенн\\p{L}*\\s+фрагмент"],
-    "tr": ["İngilizce öğren"],
+    "tr": ["İngilizce öğren", "[İi]ngilizce öğren", "[İi]ngilizce haber", "[İi]ngilizce okuma", "parça çıkarma", "(?<!\\p{L})chunk"],
     "vi": ["học tiếng Anh", "tin tiếng Anh"],
     "th": ["เรียนภาษาอังกฤษ", "ข่าวภาษาอังกฤษ"],
     "id": ["belajar bahasa Inggris", "berita bahasa Inggris"],
@@ -39,11 +39,12 @@
     "pt-BR": ["^\\W*aprend(a|er) inglês", "^\\W*(aprend|estud)\\w* inglês", "^\\W*(estou|está) aprendendo inglês"],
     "fr": ["^\\W*apprendre l['’]anglais"],
     "de": ["^\\W*Englisch lernen", "^\\W*(Lernst du|Du lernst) Englisch", "^\\W*Englisch (zu )?lernen", "^\\W*Englisch-?lernen"],
-    "ru": ["^\\W*(учить|изучение) английск"],
+    "ru": ["^\\W*(учить|изучение) английск", "^[\\s\\p{P}\\p{S}]*(вы)?уч(ить|ите|им|у)\\s+английск", "^[\\s\\p{P}\\p{S}]*изуч\\p{L}*\\s+английск"],
     "it": ["^\\W*impar\\w* (l['’])?inglese", "^\\W*(stai imparando|studi|studiare) (l['’])?inglese"],
     "nl": ["^\\W*(Engels leren|leer( je)? Engels)"],
     "pl": ["^\\W*(nauk\\p{L}*|ucz\\p{L}*\\s+się)\\s+(języka\\s+)?angielskiego"],
-    "uk": ["^[\\s\\p{P}\\p{S}]*(вч(и|і|у)\\p{L}*|вивча\\p{L}*|вивченн\\p{L}*|навча\\p{L}*)\\s+англійськ"]
+    "uk": ["^[\\s\\p{P}\\p{S}]*(вч(и|і|у)\\p{L}*|вивча\\p{L}*|вивченн\\p{L}*|навча\\p{L}*)\\s+англійськ"],
+    "tr": ["^\\W*[İi]ngilizce (mi )?öğren"]
   },
   "reserved": {
     "G1": {
@@ -59,7 +60,9 @@
       "it": ["(?<![\\p{L}])come (tradurre|leggere|vedere)(?![\\p{L}])", "(mantenere|mantenendo|conservare|conservando|tenere|tenendo|senza perdere) l['’](originale|testo originale)", "(?<![\\p{L}])guida(?![\\p{L}])"],
       "nl": ["(?<![\\p{L}])hoe(?![\\p{L}])", "(?<![\\p{L}])zo (vertaal|lees|bewaar|houd|zie|behoud) je(?![\\p{L}])", "(?<![\\p{L}])(het )?origineel (behouden|bewaren|houden|erbij houden)", "(?<![\\p{L}])met behoud van (het )?origineel", "(?<![\\p{L}])(behoud|bewaar|houd) (het )?origineel"],
       "pl": ["(?<!\\p{L})jak\\s+(przetłumaczyć|tłumaczyć|czytać|zachować)", "zachow\\p{L}*\\s+oryginał"],
-      "uk": ["(?<![\\p{L}])як\\s+(перекласти|перекладати|читати|прочитати)(?![\\p{L}])", "(зберіга\\p{L}*|зберегти|залиша\\p{L}*|залишити)\\s+(\\p{L}+\\s+)?оригінал", "(?<![\\p{L}])інструкці\\p{L}*"]
+      "uk": ["(?<![\\p{L}])як\\s+(перекласти|перекладати|читати|прочитати)(?![\\p{L}])", "(зберіга\\p{L}*|зберегти|залиша\\p{L}*|залишити)\\s+(\\p{L}+\\s+)?оригінал", "(?<![\\p{L}])інструкці\\p{L}*"],
+      "ru": ["(?<![\\p{L}])как (перевести|переводить|читать|сохранить|оставить)(?![\\p{L}])", "(сохран|оставл|остави)\\p{L}* (оригинал|исходн\\p{L}* текст)", "с сохранением оригинала"],
+      "tr": ["(?<!\\p{L})nasıl(?!\\p{L})", "orijinal(i|ini)?( metn?i)? (koru|kaybetme|bozma)", "(?<!\\p{L})yöntem", "adım adım"]
     }
   },
   "primaryTokens": {
