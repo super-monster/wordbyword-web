@@ -461,3 +461,10 @@
 - **切换后复查（2026-10-07 00:21，约 T+25min）**：正式域名契约测试 18 pass，verify-deploy --prod 179 pass／0 fail。GSC 两个 sitemap 仍是"无法抓取"，"上次读取时间"为空，即 Google 尚未读取，属刚提交时的常态；T+1d 复查时若仍未读取再排查。
 - **T+1d 定时检查**：已创建一次性定时任务 `wbw-t1d-check`，2026-10-07 15:07 JST 运行。只读：验收脚本、GSC、品牌词排名、GA、CF、PR-SE-2 就绪情况，中文汇报。应用未开着时，会在下次启动时运行。
 - 收尾：本地 Cloudflare 模拟服务器（serve.mjs :4580）已停止，没有残留的测速、axe 或截图进程。
+- **GSC 站点地图"无法抓取"排查（2026-10-07 00:27，负责人提问）**：
+  - 两个 sitemap 的"上次读取时间"为空，"已发现的网页"为 0，即 Google 尚未处理，不是抓取失败。
+  - 验证：
+    1. dns.google 解析 www → wordbyword-web.pages.dev（TTL 5）；
+    2. 以 Googlebot UA 请求：HTTP/2 200，application/xml，无 X-Robots-Tag，无 BOM，XML 完整，23 个 URL；
+    3. GSC 网址检查对 sitemap.xml 做实时测试：用户代理"Google 检查工具智能手机版"，允许抓取，网页抓取成功。
+  - 结论：Google 能正常读取，新提交的站点地图在首次处理前会一直显示"无法抓取"，通常几小时到几天内更新，无需处理。T+1d 定时检查会复看；超过约 3 天仍未读取，再删除后重新提交。
