@@ -38,7 +38,7 @@ export function about(ctx) {
   <h2 id="about-family" class="h-3">${head(fam.title)}</h2>
   <p>${R(fam.text)}</p>
   <div class="table-wrap"><table class="quota quota--text about-table">
-    <thead><tr>${fam.table.head.map((h) => `<th scope="col">${esc(h)}</th>`).join('')}</tr></thead>
+    <thead><tr>${fam.table.head.map((h) => (h ? `<th scope="col">${esc(h)}</th>` : '<td></td>')).join('')}</tr></thead>
     <tbody>${fam.table.rows.map((r) => `<tr><th scope="row">${esc(f(r.label))}</th><td>${esc(f(r.wbw))}</td><td>${esc(f(r.se))}</td></tr>`).join('')}</tbody>
   </table></div>
   <p>${R(fam.closing)}</p>

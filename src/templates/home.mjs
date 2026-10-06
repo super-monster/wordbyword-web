@@ -176,7 +176,7 @@ export function home(ctx) {
 <section id="screenshots" class="section section--end" aria-labelledby="gallery-h">
   <div class="container">
     <h2 id="gallery-h" class="h-sub">${head(t.gallery.title)}</h2>
-    <div class="gallery" data-count="${gItems.length}" role="region" aria-labelledby="gallery-h" tabindex="0">${gItems.map((g, i) => `
+    <div class="gallery" data-count="${gItems.length}" role="group" aria-labelledby="gallery-h" tabindex="0">${gItems.map((g, i) => `
       <figure class="gallery-item">${deviceShot(ctx, `shot/${set}/${galIds[g.id] ?? g.id}`, { size: gSize, sizes: gSizes, alt: g.alt })}
         <figcaption><span class="fig-no">${esc(t.common.figLabel)} ${i + 1}</span> ${esc(f(g.caption))}</figcaption></figure>`).join('')}
     </div>
