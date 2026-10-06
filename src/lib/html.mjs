@@ -95,13 +95,15 @@ function lookup(vars, key, context) {
   return vars[key];
 }
 
+const nbsp = (s) => String(s).replace(/ /g, '\u00a0');
+
 // Flatten product.json + SITE into the placeholder namespace used by doc 08 §1.4.
 export function placeholderVars({ product, SITE, locale, year, extra = {} }) {
   const v = {
     uiLanguages: product.wbw.uiLanguages,
     targetLanguages: product.wbw.targetLanguages,
-    minOS: product.wbw.minOS,
-    minMacOS: product.wbw.minMacOS,
+    minOS: nbsp(product.wbw.minOS),         // "iOS 18" / "macOS 15" never break inside: a line ending in "(macOS" reads as cut off
+    minMacOS: nbsp(product.wbw.minMacOS),
     version: product.wbw.version,
     versionDate: product.wbw.versionDate,
     releaseDate: product.wbw.releaseDate,
