@@ -281,3 +281,20 @@
      - engine 被译成"发动机"；
      - 同一手势有两种叫法；
      - App 的 en 源串也有两处错：`folder_name_label` 是 "Border"，`usage_section_title` 是 "Dashed Underline"。
+- **hi 已接入**（3ddf9d4，lint 数据 189a224）：
+  - OG 图：home-hi 64px × 2 行。
+  - 状态：19 种语言、26 页，干净 HEAD 校验 CLEAN，测试 64/64。
+  - 措辞处理：
+    - 按 X10，App 的 "AI पढ़ाई" 不照抄。Local Read 的 "स्थानीय पढ़ाई" 有同样问题，按规则 ③ 一并改写。
+    - nukta 统一用"基字 + U+093C"。
+- **NFC 规范化**（f6a6d22）：校验器在匹配前把文本和数据规则都转成 NFC，预组合的 nukta 字母（U+0958–095F）和"基字 + U+093C"两种写法都能命中。
+- **hi 带出的待决事项**：
+  1. **OG 模板**：`ogCopy()` 不把印地语句号「।」当句末，荧光笔短语不会单独起行。hi 已改写 OG 标题绕开了。若改模板，所有 OG 图都要重新生成，暂不改，记为改进项。
+  2. **其他确认项**：
+     - FAQ 里一处 Hinglish "website translate"（文档 08 §7.7 允许）；
+     - hi 用的是英文 App Store 徽章，但徽章 alt 写的是印地语，是否保留；
+     - hi 的 appStoreSubtitle 没有资料。
+  3. **App 侧问题**：共 10 处，清单见 `hi-qa.md` §6。例如：
+     - "असदस्ताक्षरित" 不是一个词；
+     - "संदर्भित अर्थ" 意思错了；
+     - `search_or_enter` 译反了。
