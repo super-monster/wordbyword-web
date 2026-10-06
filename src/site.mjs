@@ -48,7 +48,7 @@ export const SITE = {
   // The preview measurement behind each switch (M1-03; ops/decision-log.md on the design-docs branch). D-12 refuses
   // experimentC without one (a case-insensitive _redirects would loop) and warns for experimentL.
   redirectEvidence: { indexHtmlRule: 'M1-03 2026-10-06', experimentL: 'M1-03 2026-10-06', experimentC: 'M1-03 2026-10-06' },
-  legacySitemap: false,                         // true from T0 until GSC shows every URL redirected or 6 weeks pass
+  legacySitemap: true,                          // true from T0 until GSC shows every URL redirected or 6 weeks pass
 
   // — SEO —
   robots: { extra: [] },

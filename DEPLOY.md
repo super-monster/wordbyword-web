@@ -118,11 +118,11 @@ T0 目标窗口 2026-11-17 ～ 11-26（预期 11-25），避开 12-18 ～ 01-04�
 | 记录项 | 值 | 依据 |
 |---|---|---|
 | DNS 控制台 | **GCP Cloud DNS**：项目 VirtualApiProject（`virtualapiproject`），区域 `word-by-word-app`（DNSSEC 开）。注册在同一项目的 Cloud Domains：自动续订开，2027-02-03 到期，续费走该项目的结算账号（2026-10-06 核实） | 06 §10.1、M0-04 |
-| T0 日期与时段（GA 低谷） | ＿＿＿＿ | 07 §6.4 |
-| T-1 实测 GitHub Pages 证书 notAfter | ＿＿＿＿ | 06 §10.2 第 6 步 |
-| **DNS 回滚截止 = 上一行的 notAfter** | ＿＿＿＿ | R23 |
-| GitHub Pages 下线日（≥ T+4 周，且早于回滚截止） | ＿＿＿＿ | §9 |
-| 撤下 `sitemap-legacy.xml`（GSC 全部"已重定向"或满 6 周，先到者为准） | ＿＿＿＿ | 06 §10.2 第 15 步 |
+| T0 日期与时段（GA 低谷） | **2026-10-06 23:57 JST**（负责人决定提前切换，原窗口 11/17–11/26；午夜同为低流量时段） | 07 §6.4 |
+| T-1 实测 GitHub Pages 证书 notAfter | 2026-12-23 07:32:53 GMT（Let's Encrypt YR1，notBefore 2026-09-24；T0 前实测） | 06 §10.2 第 6 步 |
+| **DNS 回滚截止 = 上一行的 notAfter** | **2026-12-23 16:32 JST** | R23 |
+| GitHub Pages 下线日（≥ T+4 周，且早于回滚截止） | 2026-11-04 ～ 2026-12-16 之间（建议 11 月中旬，T+4 周复盘之后） | §9 |
+| 撤下 `sitemap-legacy.xml`（GSC 全部"已重定向"或满 6 周，先到者为准） | 最迟 2026-11-17（T+6 周） | 06 §10.2 第 15 步 |
 
 - **T-7**：内容冻结，此后只修 bug；发布到 `cloudflare-deploy`，对 `https://wordbyword-web.pages.dev` 跑 `verify-deploy --preview` 无 FAIL；
   截图 GitHub Pages 设置；重新导出 GSC 与 GA 数据；重跑冻结复核（§10）无差异；回滚剧本（§8）存到手机。
@@ -209,7 +209,7 @@ DNS 回滚后 `/ja/` 等新 URL 在 GitHub 上是 404，属预期：回滚只是
 
 ## 11. GA 报表连续性（新旧对照，06 §8.4）
 
-切换当天在 GA4 加一条注释（Annotation），写明切换日期，并把日期补记在这里：**T0 = ＿＿＿＿（待填）**。
+切换当天在 GA4 加一条注释（Annotation），写明切换日期，并把日期补记在这里：**T0 = 2026-10-06 23:57 JST**。
 
 | 旧 `page_path` | 旧 `page_locale` | 新 `page_path` | 新 `page_locale` |
 |---|---|---|---|
