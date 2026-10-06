@@ -1,0 +1,41 @@
+{
+  "$comment": [
+    "Proposed Italian patterns for src/data/claims-lint.json (patterns.it of each rule) and src/data/keyword-map.json (seOwned.it, seOwnedLead.it, reserved.G1.it). Not merged: the owner decides (M3 it translator, 2026-10-06).",
+    "Coverage: every claims-lint rule with per-locale patterns and no it key yet (25 rules). Skipped: selection-translate and jargon (already have it), io-home and engine-claim ('*' only).",
+    "Matching as in the validator: case-insensitive with the u flag, on the rendered text (placeholders filled, markup stripped). Apostrophes are written ['’] so both forms match; no \\b next to accented letters (JS \\b is ASCII-only, so Unicode lookarounds are used instead).",
+    "Tested on a fresh copy of HEAD c657445 + src/locales/it.json: 0 hits outside the rules' exempt keys; build / --pseudo 0 errors; node --test 58/58. Every rule catches the counter-examples listed in docs/redesign-2026/ops/m3/it-qa.md (appendix A); the generic learning words of doc 03 §1.4 ('impara le lingue', 'per chi impara le lingue') pass seOwned.",
+    "keywordMap.seOwned extends the existing it entry ('imparare l['’]inglese') with SurfEnglish's English-news / learn-English phrasing and the chunk words ('segmenti' = the app's 'Estrazione Segmenti'), as de and pt-BR now do. seOwnedLead is applied to every H2 of every locale (validate-dist D-8), so its it patterns only match Italian openings. reservedG1 = how-to phrasing kept out of the home title, H1, description and #cta H2 (doc 03 §1.6 M2)."
+  ],
+  "claimsLint": {
+    "whole-page": ["tradu\\w* (un['’]|l['’])intera pagina", "tradu\\w* (tutta la|una|la) pagina( web)? (intera|completa)", "tradu\\w* tutt[ae] l[ae] pagin[ae]", "pagin[ae] (web )?(intera|intere|completa|complete)(?![\\p{L}])", "tradu\\w* (con|in) un (solo )?tocco", "traduzione (dell['’]intera|di tutta la|di intere) pagin", "tradu\\w* (un['’]|l['’])?intero sito"],
+    "swipe-left": ["(scorr\\w*|swip\\w*)[^.;:]{0,30}(a|verso) sinistra"],
+    "safari-extension": ["estensione (per |di )?safari", "estensione (di|per la) condivisione", "in (qualsiasi|ogni) (altra )?app(?![\\p{L}])", "in tutte le (altre )?app(?![\\p{L}])", "da qualsiasi (altra )?app(?![\\p{L}])", "senza cambiare app"],
+    "offline": ["(?<![\\p{L}])offline(?![\\p{L}])", "senza (connessione( a internet)?|internet|rete)(?![\\p{L}])", "non (serve|servono|richiede) (la |una )?connessione"],
+    "unlimited-ai-voice": ["(?<![\\p{L}])(ai|ia) illimitat", "(pronuncia|pronunce|lettura|voce|voci)( \\p{L}+)? (ai|ia) (illimitat|senza limit)", "illimitat\\w* (di |con )?(pronunc|lettur|voc)", "(pronuncia|pronunce|lettura|voce|voci) (ai |ia )?illimitat"],
+    "dark-mode-theme": ["modalità (scura|notte|notturna)", "dark mode", "temi personalizzat", "colori? del tema", "tema (scuro|personalizzato)"],
+    "shortcuts-volume": ["scorciatoi[ae]", "tasti (rapidi|di scelta rapida)", "(regola\\w*|controllo|cursore|regolazione) (del |il )?volume", "volume regolabile"],
+    "vocab-sync": ["flash ?cards?", "schede di (memoria|studio)", "(quaderno|rubrica|lista|elenco) (dei |di )?vocaboli", "vocabolario personale", "sincronizz\\w* (con |tra |su |in )?(icloud|il cloud|i tuoi dispositivi|i dispositivi|l['’]account|più dispositivi)", "backup (su |nel )?(icloud|cloud)", "ripetizione (dilazionata|spaziata)"],
+    "android": ["(?<![\\p{L}])android(?![\\p{L}])", "google play"],
+    "desktop-version": ["versione (per |da )?(desktop|computer|pc|windows)(?![\\p{L}])", "app (per |da )?desktop", "per (windows|pc)(?![\\p{L}])", "versione web di wordbyword"],
+    "x-app": ["(nell['’]|dentro l['’]|nella )app (di )?x(?![\\p{L}])", "unica app (che|per) tradu\\w* x(?![\\p{L}])"],
+    "plus-early-access": ["accesso anticipato", "in anteprima", "nuove funzion\\w* (per prim|in anticipo)"],
+    "privacy-claim": ["nessun dato (personale|raccolto)", "non raccoglie (alcun |nessun )?(dat|informazion)", "senza (tracciamento|tracking)", "nessun (tracciamento|tracking)", "non (ti )?traccia(?![\\p{L}])"],
+    "initial-version": ["versione iniziale", "prima versione supporta"],
+    "language-pairs": ["coppie? di lingue", "combinazioni di lingue"],
+    "style-count": ["(?<![\\p{L}\\p{N}])\\d+ (diversi )?stili", "(?<![\\p{L}])(cinque|sei|sette|otto|nove|dieci) (diversi )?stili"],
+    "auto-detect-target": ["rilev\\w* (automaticamente |in automatico )?(la )?lingua di destinazione", "lingua di destinazione (viene )?rilevata"],
+    "history-by-date": ["(raggruppat|ordinat|organizzat|suddivis)\\w* per data"],
+    "plus-only": ["solo (con|per|in) (wordbyword )?plus(?![\\p{L}])", "esclusiv\\w* (di|per|con) (wordbyword )?plus", "riservat\\w* (a|agli abbonati) plus", "solo per (gli )?(utenti|abbonati) plus"],
+    "speaking-practice": ["pratica (di |della )?(conversazione|pronuncia|orale)", "migliora\\w* (la tua |la )?(pronuncia|parlato|espressione orale)", "esercit\\w* (a parlare|la pronuncia|nel parlato)", "allenamento (della pronuncia|all['’]orale)", "(?<![\\p{L}])speaking(?![\\p{L}])"],
+    "replacement-tone": ["potrebbe fare (più )?al caso tuo", "fa (più )?al caso tuo", "(più|meglio) adatt[aoie](?![\\p{L}])", "(al posto|invece) di wordbyword", "app sorella", "(sostitui|rimpiazz)\\w* wordbyword", "vecchia (app|versione di wordbyword)", "versione precedente di wordbyword", "passa(re)? da wordbyword a surfenglish"],
+    "se-on-device-voice": ["voc[ei] (ai |ia )?(sul|nel) (tuo )?dispositivo", "voc[ei] (ai |ia )?(offline|locali?)(?![\\p{L}])", "voc[ei] che funzionan\\w* (anche )?offline"],
+    "se-hype": ["(?<![\\p{L}])nuov[oaie](?![\\p{L}])", "più (veloce|rapid[oaie]|efficiente)", "(?<![\\p{L}])aggiorna\\w*", "(?<![\\p{L}])upgrade(?![\\p{L}])", "meglio di", "migliore di"],
+    "hype": ["rivoluzionari", "cambia le regole del gioco", "(?<![\\p{L}])(di['’]|dì|dite) addio", "(?<![\\p{L}])(il|la) miglior[ei]?(?![\\p{L}])", "numero uno", "(?<![\\p{L}])(l['’]|la |il )unic[oa](?![\\p{L}])", "prim[oa] al mondo", "\\d[\\d.,]*\\s?(mila|mln)?\\s?(utenti|download)(?![\\p{L}])", "milioni di (utenti|persone|download)", "team (di )?wordbyword", "il nostro team", "(?<![\\p{L}])i creatori(?![\\p{L}])"],
+    "ext-language-count": ["(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+? (lingue|coppie di lingue)(?![\\p{L}])"]
+  },
+  "keywordMap": {
+    "seOwned": ["imparare l['’]inglese", "impar\\w* (l['’])?inglese", "stud\\w* (l['’])?inglese", "notizie in inglese", "inglese (al tuo|per) livello", "(?<![\\p{L}])segmenti(?![\\p{L}])", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
+    "seOwnedLead": ["^\\W*impar\\w* (l['’])?inglese", "^\\W*(stai imparando|studi|studiare) (l['’])?inglese"],
+    "reservedG1": ["(?<![\\p{L}])come (tradurre|leggere|vedere)(?![\\p{L}])", "(mantenere|mantenendo|conservare|conservando|tenere|tenendo|senza perdere) l['’](originale|testo originale)", "(?<![\\p{L}])guida(?![\\p{L}])"]
+  }
+}

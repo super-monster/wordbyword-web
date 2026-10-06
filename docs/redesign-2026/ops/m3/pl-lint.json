@@ -1,0 +1,166 @@
+{
+  "$comment": [
+    "Proposed pl patterns for src/data/claims-lint.json (patterns.pl of each rule) and src/data/keyword-map.json (seOwned.pl, seOwnedLead.pl, reserved.G1.pl). Drafted with the pl copy (M3, T3); merge is the lead's decision (wave-2 note).",
+    "Covers every claims-lint rule with per-locale patterns except selection-translate (already has pl) and the '*'-only rules io-home and engine-claim.",
+    "Flags are 'ui' (claims-lint) / 'iu' (keyword-map): \\p{L} is used instead of \\w (JS \\w and \\b are ASCII-only, so they miss ą ć ę ł ń ó ś ź ż), (?<!\\p{L}) / (?!\\p{L}) stand in for \\b, and \\s also matches the copy's no-break spaces (U+00A0).",
+    "Tested in a private copy: 0 hits on src/locales/pl.json (exempt keys as in claims-lint.json), and every rule hits at least one counter-example (docs/redesign-2026/ops/m3/pl-qa.md, appendix A)."
+  ],
+  "claimsLint": {
+    "whole-page": [
+      "tłumacz\\p{L}*\\s+(całą|całe|całej|całych|cały)\\s+(stron|witryn|serwis)",
+      "(cał\\p{L}*|pełn\\p{L}*)\\s+(stron\\p{L}*|witryn\\p{L}*)(\\s+\\S+)?\\s+(naraz|na\\s+raz|od\\s+razu|jednym\\s+\\p{L}+)",
+      "jednym\\s+(dotknięciem|kliknięciem|stuknięciem)",
+      "(stron\\p{L}*|witryn\\p{L}*)\\s+w\\s+całości"
+    ],
+    "swipe-left": [
+      "przesu\\p{L}*(\\s+\\S+){0,3}\\s+w\\s+lewo",
+      "w\\s+lewo\\s+przesu",
+      "(przesunięci\\p{L}*|gest\\p{L}*|ruch\\p{L}*)\\s+w\\s+lewo"
+    ],
+    "safari-extension": [
+      "rozszerzeni\\p{L}*\\s+(do\\s+|dla\\s+)?safari",
+      "rozszerzeni\\p{L}*\\s+(do\\s+)?udostępniania",
+      "w\\s+(każdej|dowolnej|innej|innych|wszystkich)\\s+(innej\\s+|innych\\s+)?aplikacj",
+      "bez\\s+(przełączania|zmiany|zmieniania)\\s+aplikacj"
+    ],
+    "offline": [
+      "(?<!\\p{L})offline(?!\\p{L})",
+      "bez\\s+(dostępu\\s+do\\s+)?(internetu|sieci)",
+      "bez\\s+połączenia(\\s+z\\s+(internetem|siecią))?"
+    ],
+    "unlimited-ai-voice": [
+      "(nieograniczon\\p{L}*|nielimitowan\\p{L}*)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*|AI)",
+      "(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI\\s+(bez\\s+(limitu|limitów|ograniczeń)|nieograniczon|nielimitowan)",
+      "(bez\\s+limitu|bez\\s+ograniczeń)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI"
+    ],
+    "dark-mode-theme": [
+      "tryb\\p{L}*\\s+(ciemn|nocn)",
+      "ciemn\\p{L}*\\s+motyw",
+      "motyw\\p{L}*\\s+(kolorystyczn|ciemn|własn)",
+      "kolor\\p{L}*\\s+motyw",
+      "(własn|niestandardow)\\p{L}*\\s+motyw"
+    ],
+    "shortcuts-volume": [
+      "skrót\\p{L}*\\s+klawiszow",
+      "głośnoś[cć]\\p{L}*"
+    ],
+    "vocab-sync": [
+      "fiszk\\p{L}*",
+      "flash\\s?cards?",
+      "(zeszyt|list|lista|notes)\\p{L}*\\s+(słówek|słownictwa)",
+      "słowniczek",
+      "synchroniz\\p{L}*",
+      "kopi\\p{L}*\\s+zapasow\\p{L}*\\s+(w\\s+chmurze|w\\s+icloud|icloud)",
+      "powtórk\\p{L}*\\s+(w\\s+odstępach|interwałow)"
+    ],
+    "android": [
+      "(?<!\\p{L})android",
+      "google\\s+play"
+    ],
+    "desktop-version": [
+      "wersj\\p{L}*\\s+(na|dla)\\s+(komputer|pc|windows|desktop)",
+      "aplikacj\\p{L}*\\s+(na\\s+|dla\\s+)?(komputer|pc|windows|desktop)",
+      "(na|dla)\\s+(windows|pc)(?!\\p{L})"
+    ],
+    "x-app": [
+      "w\\s+aplikacji\\s+X(?!\\p{L}|\\.\\p{L})",
+      "jedyn\\p{L}*\\s+aplikacj\\p{L}*,?\\s+(która|do|dla)\\s+(\\p{L}+\\s+)?X(?!\\p{L}|\\.\\p{L})"
+    ],
+    "plus-early-access": [
+      "wczesn\\p{L}*\\s+dostęp",
+      "dostęp\\p{L}*\\s+(do\\s+nowych\\s+funkcji\\s+)?(przed\\s+innymi|jako\\s+pierwsz)",
+      "jako\\s+pierwsi\\s+(dostaj|otrzym)"
+    ],
+    "privacy-claim": [
+      "nie\\s+(zbiera|gromadzi|zbieramy|gromadzimy|przechowuje)\\p{L}*\\s+(żadnych\\s+)?(danych|informacji)",
+      "żadn\\p{L}*\\s+dan\\p{L}*\\s+osobow",
+      "bez\\s+śledzenia",
+      "nie\\s+śledzi"
+    ],
+    "initial-version": [
+      "wersj\\p{L}*\\s+(początkow|wstępn)"
+    ],
+    "language-pairs": [
+      "par\\p{L}*\\s+językow"
+    ],
+    "style-count": [
+      "(?<!\\p{N})\\d+\\s+(różn\\p{L}*\\s+)?styl",
+      "(pięć|sześć|siedem|osiem|dziewięć|dziesięć)\\s+(różn\\p{L}*\\s+)?styl"
+    ],
+    "auto-detect-target": [
+      "wykryw\\p{L}*\\s+(automatycznie\\s+)?(twój\\s+)?język\\p{L}*\\s+docelow",
+      "język\\p{L}*\\s+docelow\\p{L}*\\s+(jest\\s+)?(wykrywan|rozpoznawan|wykryt)"
+    ],
+    "history-by-date": [
+      "(grupowan|pogrupowan|sortowan|posortowan|uporządkowan)\\p{L}*\\s+(według|wg|po)\\s+(daty|dat|dniach|dniu)"
+    ],
+    "plus-only": [
+      "(tylko|wyłącznie)\\s+(w|z|dla)\\s+(wersji\\s+|subskrypcji\\s+|subskrybentów\\s+)?(WordByWord\\s+)?Plus",
+      "(dostępn|zarezerwowan)\\p{L}*\\s+(tylko|wyłącznie)\\s+(w|dla)\\s+(wersji\\s+)?(WordByWord\\s+)?Plus",
+      "(tylko|wyłącznie)\\s+(dla\\s+|w\\s+)?(wersji\\s+|użytkowników\\s+)?premium(?!\\s+lub\\s+enhanced)"
+    ],
+    "speaking-practice": [
+      "(ćwiczeni\\p{L}*|trening\\p{L}*|praktyk\\p{L}*)\\s+(mówienia|wymowy|konwersacj)",
+      "(popraw|ulepsz|rozwij)\\p{L}*\\s+(swoj\\p{L}*\\s+)?(wymow|mówieni)",
+      "(?<!\\p{L})mówieni\\p{L}*"
+    ],
+    "jargon": [
+      "wyrównani\\p{L}*"
+    ],
+    "replacement-tone": [
+      "może\\s+(ci\\s+)?(lepiej|bardziej)\\s+(pasować|odpowiadać|się\\s+sprawdzić)",
+      "lepiej\\s+(dopasowan|pasując)",
+      "bardziej\\s+odpowiedni",
+      "lepszy\\s+wybór",
+      "zamiast\\s+WordByWord",
+      "aplikacj\\p{L}*\\s+siostrzan",
+      "(zastąp|zastępuj|zastępstw|zastąpi)\\p{L}*\\s+WordByWord",
+      "(wcześniejsz|poprzedni|starsz)\\p{L}*\\s+(aplikacj|wersj)",
+      "następc\\p{L}*\\s+WordByWord"
+    ],
+    "se-on-device-voice": [
+      "głos\\p{L}*\\s+(AI\\s+)?(na\\s+urządzeniu|w\\s+urządzeniu|offline|lokaln)",
+      "(lokaln|offline)\\p{L}*\\s+głos",
+      "działa\\p{L}*\\s+offline"
+    ],
+    "se-hype": [
+      "(?<!\\p{L})now(y|a|e|ego|ej|ą|ym|ych|ymi|ość|ości)(?!\\p{L})",
+      "szybciej|szybsz\\p{L}*",
+      "wydajniej|wydajniejsz\\p{L}*|efektywniej|efektywniejsz\\p{L}*",
+      "(?<!\\p{L})lepsz\\p{L}*\\s+niż",
+      "uaktualni\\p{L}*|ulepszeni\\p{L}*|(?<!\\p{L})aktualizacj\\p{L}*"
+    ],
+    "hype": [
+      "rewolucj\\p{L}*|rewolucyjn\\p{L}*",
+      "(?<!\\p{L})najlepsz\\p{L}*",
+      "numer\\s+(jeden|1)(?!\\p{N})",
+      "(?<!\\p{L})jedyn(y|a|e|ą|ym|ej)\\s+(tak\\p{L}*|aplikacj\\p{L}*|narzędzi\\p{L}*|tłumacz\\p{L}*|na\\s+świecie)",
+      "pierwsz\\p{L}*\\s+na\\s+świecie",
+      "(milion\\p{L}*|tysiąc\\p{L}*|tysięcy)\\s+(użytkowników|pobrań|osób)",
+      "\\d[\\d\\s\\u00A0.,]*\\s?(tys\\.|mln)?\\s*(użytkowników|pobrań)",
+      "zesp(ół|ołu|ole|ołem)\\s+WordByWord",
+      "nasz\\p{L}*\\s+zesp",
+      "(?<!\\p{L})pożegnaj|powiedz\\s+(do\\s+widzenia|żegnaj)",
+      "zmieni\\p{L}*\\s+(wszystko|zasady\\s+gry)"
+    ],
+    "ext-language-count": [
+      "(?<!\\p{N})(1\\d|2\\d)\\+?\\s+(języków|językach|języki|par\\s+językowych)"
+    ]
+  },
+  "keywordMap": {
+    "seOwned": [
+      "(nauk\\p{L}*|ucz\\p{L}*\\s+się)\\s+(języka\\s+)?angielskiego",
+      "angielsk\\p{L}*\\s+wiadomoś",
+      "wiadomoś\\p{L}*\\s+(po\\s+angielsku|w\\s+języku\\s+angielskim)",
+      "(?<!\\p{L})chunk",
+      "ekstrakcj\\p{L}*\\s+fragment"
+    ],
+    "seOwnedLead": [
+      "^\\W*(nauk\\p{L}*|ucz\\p{L}*\\s+się)\\s+(języka\\s+)?angielskiego"
+    ],
+    "reservedG1": [
+      "(?<!\\p{L})jak\\s+(przetłumaczyć|tłumaczyć|czytać|zachować)",
+      "zachow\\p{L}*\\s+oryginał"
+    ]
+  }
+}

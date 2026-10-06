@@ -1,0 +1,41 @@
+{
+  "$comment": [
+    "Proposed tr additions for src/data/claims-lint.json (patterns.tr per rule) and src/data/keyword-map.json (M3, tr). Not merged: the lead merges them (Wave 2 notes).",
+    "Every claims-lint rule with per-locale patterns is covered except selection-translate and jargon, which already have tr (seçerek / metni seç; hizalama). Rules whose only key is '*' (io-home, engine-claim) are skipped.",
+    "Patterns are matched like L-14 (flags 'iu', placeholders filled). Word edges are written as explicit (?<!\\p{L}) / (?!\\p{L}), so they hold with or without the Unicode-aware \\w / \\W / \\b of bb689eb. The /iu flags do not fold the Turkish capital İ (U+0130) to i, so words that start with İ/i are written [İi]….",
+    "keywordMap.seOwned is meant to replace the current seOwned.tr [\"İngilizce öğren\"] (same intent; [İi] also catches lower-case and ASCII spellings). seOwnedLead is applied to every H2 of every locale (validate-dist D-8), so its tr pattern only matches Turkish openings. \"parça çıkarma\" (the app name of Chunk Extraction) enforces R83 in the title / H1 / description / OG zone.",
+    "Tested in the private copy (scratchpad wbw-m3-tr): 0 hits on src/locales/tr.json; at least one hit per rule on the counter-example sentences listed in docs/redesign-2026/ops/m3/tr-qa.md (appendix A)."
+  ],
+  "claimsLint": {
+    "whole-page": ["(sayfanın|sitenin|sayfasının|sitesinin) tamamını [^.;:]{0,30}çevir", "(tüm|bütün) (bir )?(web )?(sayfa(yı|sını|ları)|site(yi|sini|leri)) [^.;:]{0,25}çevir", "tek (bir )?(dokunuşla|dokunuşta|tıkla|tıklamayla|hamlede) [^.;:]{0,20}çevir", "tam sayfa çeviri", "sayfanın tamamının çevirisi"],
+    "swipe-left": ["(?<!\\p{L})sola (doğru )?kaydır", "(?<!\\p{L})sola kaydırma"],
+    "safari-extension": ["safari (uzantı|eklenti)", "paylaş(ım|ma) (uzantı|eklenti)", "(herhangi bir|her|tüm|bütün) (başka )?uygulama(da|larda|nın içinde|ların içinde)(?!\\p{L})", "uygulama(lar)? (arasında )?(geçiş yapmadan|değiştirmeden)"],
+    "offline": ["çevrim ?dışı", "(?<!\\p{L})offline(?!\\p{L})", "[İi]nternet(siz| olmadan| bağlantısı olmadan| bağlantısı gerekmeden| gerekmeden)"],
+    "unlimited-ai-voice": ["(sınırsız|limitsiz) (yapay zek[aâ]|ai(?!\\p{L})|yz(?!\\p{L}))", "(sınırsız|limitsiz) (telaffuz|sesli okuma|seslendirme)", "(yapay zek[aâ]|ai) (telaffuz|ses|okuma)\\p{L}*[^.;]{0,15}(sınırsız|limitsiz|sınır yok)"],
+    "dark-mode-theme": ["karanlık mod", "koyu (mod|tema)", "gece modu", "(özel|kişisel|kişiselleştirilmiş) temalar?(?!\\p{L})", "tema ren[kg]", "renk tema"],
+    "shortcuts-volume": ["klavye kısayol", "kısayol tuş", "ses (düzeyi|seviyesi)", "(?<!\\p{L})volüm"],
+    "vocab-sync": ["flash ?kart", "bilgi kartlar", "ezber kart", "kelime defter", "(bulut|hesap|icloud)\\s*(senkronizasyon|eşitleme|yedekleme)", "cihazlar arası (senkronizasyon|eşitleme)", "aralıklı tekrar"],
+    "android": ["android", "google play"],
+    "desktop-version": ["masaüstü (uygulama|sürüm|versiyon)", "bilgisayar (sürüm|versiyon|uygulama)", "(windows|pc)[’']?(\\p{L}*)? (için|sürüm|versiyon)", "wordbyword[’']?(ün)? web sürüm"],
+    "x-app": ["(?<!\\p{L})x uygulaması(nda| içinde)", "x[’']?(i|’i)? çevirebilen tek"],
+    "plus-early-access": ["erken erişim", "yeni özellik\\p{L}* (herkesten |ilk )?önce"],
+    "privacy-claim": ["(kişisel )?veri\\p{L}* (toplanmaz|toplamaz|toplanmıyor|toplamıyor)", "hiçbir (kişisel )?(veri|bilgi)", "(takip|[İi]zleme) (yok|etmez|edilmez)"],
+    "initial-version": ["[İi]lk sürüm(de|ünde)(?!\\p{L})", "başlangıç sürüm"],
+    "language-pairs": ["dil çift(i|leri)(?!\\p{L})"],
+    "style-count": ["(?<!\\d)\\d+ (farklı |çeviri |görüntüleme )?stil", "(?<!\\p{L})(beş|altı|yedi|sekiz|dokuz|on) (farklı |çeviri |görüntüleme )?stil"],
+    "auto-detect-target": ["hedef dil(i|ini)? (otomatik(\\p{L}*)? )?(algıla|tanı)", "hedef dil(i)? otomatik"],
+    "history-by-date": ["tarih(e|lere) göre (grupl|sırala|düzenlen|ayrıl)"],
+    "plus-only": ["(yalnızca|sadece) (wordbyword )?plus", "plus[’']?(a|ın)? özel(?!\\p{L})", "plus (abone|kullanıcı|üye)\\p{L}* özel", "premium[’']?(a)? özel(?!\\p{L})"],
+    "speaking-practice": ["konuşma (prati[kğ]|alıştırma|beceri)", "telaffuz (prati[kğ]|alıştırma|eğitim|puan)", "konuşmanızı geliştir"],
+    "replacement-tone": ["daha uygun", "size daha iyi uy", "wordbyword[’']?(ün|u)? yerine", "kardeş uygulama", "eski (uygulama|sürüm)", "wordbyword[’']?(ün|u) yerini al", "surfenglish[’']?e (geçin|geçiş|yükselt)"],
+    "se-on-device-voice": ["cihaz(da|daki|ınızdaki| üzerinde)( çalışan)? (yapay zek[aâ] )?ses", "çevrim ?dışı (çalışan )?(yapay zek[aâ] )?ses", "yerel (yapay zek[aâ] )?ses"],
+    "se-hype": ["(?<!\\p{L})yeni(?!\\p{L})", "daha hızlı", "daha verimli", "yükselt", "(?<!\\p{L})(daha|en) iyi(?!\\p{L})"],
+    "hype": ["devrim(sel|ci)", "(?<!\\p{L})en iyi(?!\\p{L})", "bir numara", "(?<!\\p{L})tek (uygulama|çözüm)", "dünyada (bir )?ilk", "(milyon|bin)lerce (kullanıcı|indirme|kişi)", "\\d[\\d.,]*\\s?(bin |milyon )?(kullanıcı|indirme)", "wordbyword ekibi", "ekibimiz", "geliştirici ekib", "elveda deyin", "oyunun kurallarını"],
+    "ext-language-count": ["(?<!\\d)(1\\d|2\\d)\\+?[’']?(den|dan)? (fazla )?(dil|dile|dilde|dil çifti)(?!\\p{L})"]
+  },
+  "keywordMap": {
+    "seOwned": ["[İi]ngilizce öğren", "[İi]ngilizce haber", "[İi]ngilizce okuma", "parça çıkarma", "(?<!\\p{L})chunk"],
+    "seOwnedLead": ["^\\W*[İi]ngilizce (mi )?öğren"],
+    "reservedG1": ["(?<!\\p{L})nasıl(?!\\p{L})", "orijinal(i|ini)?( metn?i)? (koru|kaybetme|bozma)", "(?<!\\p{L})yöntem", "adım adım"]
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "$comment": [
+    "Proposed nl additions for src/data/claims-lint.json (patterns.nl per rule) and src/data/keyword-map.json (seOwned.nl, seOwnedLead.nl, reserved.G1.nl). Drafted with the M3 nl copy (docs/redesign-2026/ops/m3/nl-qa.md); not merged — the lead merges.",
+    "Every claims-lint rule with per-locale patterns is covered (io-home and engine-claim only have '*'); no rule had an nl key yet. Tested in a private copy: 0 hits on src/locales/nl.json (rule only / exempt / exemptPrefix applied as the validator does), each counter-example sentence in the QA record is caught.",
+    "Matching is case-insensitive with the u flag. Lookbehind / lookahead on \\p{L} replace \\b where a word may start or end with a non-ASCII letter, and keep 'nieuw' (new) from matching 'nieuws' (news).",
+    "seOwned.nl keeps the existing 'Engels leren'. reserved.G1.nl: the Dutch how-to markers ('hoe', 'zo … je', keeping the original) for the home title, H1, description and #cta H2 (doc 03 §1.6 M2)."
+  ],
+  "claimsLint": {
+    "whole-page": [
+      "(?<![\\p{L}])(hele|gehele|volledige|complete) (web)?(pagina|site)(’s|'s|s)? (in één keer |ineens |direct )?(te )?vertaa?l",
+      "(?<![\\p{L}])vertaal\\w* (in één keer |ineens )?(een |de |je )?(hele|gehele|volledige|complete) (web)?(pagina|site)",
+      "(?<![\\p{L}])(met|in) één (tik|klik|tap)(?![\\p{L}])",
+      "(?<![\\p{L}])(volledige |hele )?paginavertaling"
+    ],
+    "swipe-left": [
+      "(?<![\\p{L}])(veeg|veegt|vegen|swipe|swipen|swipet)\\w*(\\s+\\S+){0,4}\\s+naar links",
+      "(?<![\\p{L}])(naar )?links (vegen|swipen)",
+      "(?<![\\p{L}])linksveeg"
+    ],
+    "safari-extension": [
+      "safari[- ]?(extensie|uitbreiding)",
+      "extensie voor safari",
+      "(?<![\\p{L}])(deel|share)[- ]?extensie",
+      "(?<![\\p{L}])in (elke|iedere|alle|willekeurige) (andere )?apps?(?![\\p{L}])",
+      "(?<![\\p{L}])vanuit (elke|iedere|alle) (andere )?apps?(?![\\p{L}])",
+      "(?<![\\p{L}])(niet|zonder) (van )?apps? te (wisselen|switchen)"
+    ],
+    "selection-translate": [
+      "(?<![\\p{L}])selecteer\\w* (de |een |het |je )?(tekst|woord|woorden|zin|zinnen) (om|en) (te |ze |het )?(te )?vertaa?l",
+      "(?<![\\p{L}])markeer\\w* (de |een |het |je )?(tekst|woord|woorden|zin) (om|en) (te |ze |het )?(te )?vertaa?l",
+      "(?<![\\p{L}])(selecteren|markeren) en (direct )?vertalen",
+      "(?<![\\p{L}])(door|bij) (het )?(selecteren|markeren) (van )?(tekst|woorden)"
+    ],
+    "offline": [
+      "(?<![\\p{L}])offline(?![\\p{L}])",
+      "(?<![\\p{L}])zonder (internet|internetverbinding|wifi|wi-fi|netwerk|verbinding)(?![\\p{L}])",
+      "(?<![\\p{L}])geen (internet|internetverbinding|verbinding|netwerk) nodig"
+    ],
+    "unlimited-ai-voice": [
+      "(?<![\\p{L}])onbeperkt\\w* (ai|uitspraak|uitspraken|voorlezen|stemmen)",
+      "(?<![\\p{L}])(ai-?)?(uitspraak|uitspraken|voorlezen|stem|stemmen)\\w*( met ai)? (zonder (dag)?limiet|onbeperkt)"
+    ],
+    "dark-mode-theme": [
+      "(?<![\\p{L}])donkere modus",
+      "(?<![\\p{L}])dark mode",
+      "(?<![\\p{L}])nachtmodus",
+      "(?<![\\p{L}])(eigen|aangepaste|persoonlijke) thema",
+      "(?<![\\p{L}])kleurthema",
+      "(?<![\\p{L}])themakleur"
+    ],
+    "shortcuts-volume": [
+      "(?<![\\p{L}])sneltoets",
+      "(?<![\\p{L}])toetscombinatie",
+      "(?<![\\p{L}])(geluids)?volume(?![\\p{L}])"
+    ],
+    "vocab-sync": [
+      "(?<![\\p{L}])flash ?cards?",
+      "(?<![\\p{L}])flitskaart",
+      "(?<![\\p{L}])(woordenschat|vocabulaire)(lijst|boek|schrift)",
+      "(?<![\\p{L}])(cloud|account|icloud)[- ]?(synchronisatie|sync|back-?up)",
+      "(?<![\\p{L}])synchroniseer\\w* (tussen|met|over) (je |al je |alle )?(apparaten|toestellen)",
+      "(?<![\\p{L}])gesynchroniseerd",
+      "(?<![\\p{L}])gespreide herhaling"
+    ],
+    "android": [
+      "(?<![\\p{L}])android[- ]?(versie|app|telefoon|toestel)",
+      "(?<![\\p{L}])(op|voor) android(?![\\p{L}])",
+      "(?<![\\p{L}])google play",
+      "(?<![\\p{L}])play store"
+    ],
+    "desktop-version": [
+      "(?<![\\p{L}])(desktop|pc|windows|computer|laptop)[- ]?versie",
+      "(?<![\\p{L}])versie voor (de |je |een )?(desktop|pc|windows|computer|laptop)",
+      "(?<![\\p{L}])desktop[- ]?app(?![\\p{L}])",
+      "(?<![\\p{L}])voor (windows|pc)(?![\\p{L}])",
+      "(?<![\\p{L}])webversie van wordbyword"
+    ],
+    "x-app": [
+      "(?<![\\p{L}])(in|binnen) de x-app(?![\\p{L}])",
+      "(?<![\\p{L}])(in|binnen) de app van x(?![\\p{L}])",
+      "(?<![\\p{L}])enige app die x(?![\\p{L}])"
+    ],
+    "plus-early-access": [
+      "(?<![\\p{L}])vroege toegang",
+      "(?<![\\p{L}])early access",
+      "(?<![\\p{L}])als eerste (toegang tot )?nieuwe functies",
+      "(?<![\\p{L}])voorrang (op|bij) nieuwe functies"
+    ],
+    "privacy-claim": [
+      "(?<![\\p{L}])geen persoonlijke gegevens",
+      "(?<![\\p{L}])(verzamelt|verzamelen|verzameld) geen (persoonlijke )?(gegevens|data|informatie)",
+      "(?<![\\p{L}])geen (gegevens|data) (worden |wordt )?verzameld",
+      "(?<![\\p{L}])(geen|zonder) tracking",
+      "(?<![\\p{L}])volgt je niet"
+    ],
+    "initial-version": [
+      "(?<![\\p{L}])(eerste|initiële) versie(?![\\p{L}])"
+    ],
+    "language-pairs": [
+      "(?<![\\p{L}])(taalpaar|taalparen|taalkoppels?|talenparen)(?![\\p{L}])"
+    ],
+    "style-count": [
+      "(?<![\\p{L}\\p{N}])\\d+ (verschillende )?(vertaal|weergave)?stijlen",
+      "(?<![\\p{L}])(vijf|zes|zeven|acht|negen|tien) (verschillende )?(vertaal|weergave)?stijlen"
+    ],
+    "auto-detect-target": [
+      "(?<![\\p{L}])(herkent|herkennen|detecteert|detecteren)\\w* (automatisch )?(de |je |jouw )?doeltaal",
+      "(?<![\\p{L}])doeltaal (wordt )?(automatisch )?(herkend|gedetecteerd)"
+    ],
+    "history-by-date": [
+      "(?<![\\p{L}])(gegroepeerd|gesorteerd|geordend|ingedeeld) (op|per) datum",
+      "(?<![\\p{L}])per datum (gegroepeerd|gesorteerd|geordend|ingedeeld)"
+    ],
+    "plus-only": [
+      "(?<![\\p{L}])(alleen|uitsluitend) (voor|met|in|bij) (wordbyword )?plus(?![\\p{L}])",
+      "(?<![\\p{L}])exclusief (voor|bij|in) (wordbyword )?plus(?![\\p{L}])",
+      "(?<![\\p{L}])plus[- ]?exclusief",
+      "(?<![\\p{L}])(alleen|uitsluitend) voor (plus-)?abonnees"
+    ],
+    "speaking-practice": [
+      "(?<![\\p{L}])spreekvaardigheid",
+      "(?<![\\p{L}])spreken oefenen",
+      "(?<![\\p{L}])spreekoefening",
+      "(?<![\\p{L}])uitspraak (oefenen|trainen|verbeteren)",
+      "(?<![\\p{L}])(oefen|train|verbeter)\\w* (je |jouw )?uitspraak"
+    ],
+    "jargon": [
+      "(?<![\\p{L}])uitlijning",
+      "(?<![\\p{L}])uitgelijnd",
+      "(?<![\\p{L}])zin-voor-zin[- ]?vergelijking",
+      "(?<![\\p{L}])één-op-één[- ]?vergelijking"
+    ],
+    "replacement-tone": [
+      "(?<![\\p{L}])past (wellicht |mogelijk |misschien )?beter bij (je|jou)(?![\\p{L}])",
+      "(?<![\\p{L}])past misschien beter",
+      "(?<![\\p{L}])(geschikter|beter geschikt)",
+      "(?<![\\p{L}])in plaats van wordbyword",
+      "(?<![\\p{L}])(zuster|zus)[- ]?app",
+      "(?<![\\p{L}])(vervang|vervangt|vervangen)\\w* (van )?wordbyword",
+      "(?<![\\p{L}])(eerdere|oudere|oude) (app|versie)(?![\\p{L}])",
+      "(?<![\\p{L}])overstappen (van wordbyword )?naar surfenglish"
+    ],
+    "se-on-device-voice": [
+      "(?<![\\p{L}])(ai-?)?stem(men)? op (je|het) (apparaat|toestel)",
+      "(?<![\\p{L}])(ai-?)?stem(men)? (die )?(ook )?offline",
+      "(?<![\\p{L}])offline (stem|stemmen|voorlezen|spraak)",
+      "(?<![\\p{L}])(lokale|ingebouwde) (ai-?)?stem(men)?"
+    ],
+    "se-hype": [
+      "(?<![\\p{L}])nieuwe?(?![\\p{L}])",
+      "(?<![\\p{L}])sneller(?![\\p{L}])",
+      "(?<![\\p{L}])efficiënter",
+      "(?<![\\p{L}])upgrade",
+      "(?<![\\p{L}])beter dan(?![\\p{L}])"
+    ],
+    "hype": [
+      "(?<![\\p{L}])revolutionair",
+      "(?<![\\p{L}])baanbrekend",
+      "(?<![\\p{L}])zeg vaarwel",
+      "(?<![\\p{L}])de beste(?![\\p{L}])",
+      "(?<![\\p{L}])nummer (één|1)(?![\\p{L}\\p{N}])",
+      "(?<![\\p{L}])de enige(?![\\p{L}])",
+      "(?<![\\p{L}])(eerste ter wereld|werelds eerste)",
+      "(?<![\\p{L}])miljoenen",
+      "(?<![\\p{L}\\p{N}])\\d[\\d.,]*\\s?(k|duizend|miljoen)?\\+? (gebruikers|downloads)",
+      "(?<![\\p{L}])(wordbyword-?team|team (van|achter) wordbyword)",
+      "(?<![\\p{L}])ons team",
+      "(?<![\\p{L}])de makers(?![\\p{L}])"
+    ],
+    "ext-language-count": [
+      "(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+? (talen|taalparen)(?![\\p{L}])"
+    ]
+  },
+  "keywordMap": {
+    "seOwned": [
+      "Engels leren",
+      "Engels (studeren|oefenen)",
+      "(?<![\\p{L}])leer( je)? Engels",
+      "(?<![\\p{L}])Engelse? nieuws",
+      "(?<![\\p{L}])nieuws in het Engels",
+      "(?<![\\p{L}])chunks?(?![\\p{L}])"
+    ],
+    "seOwnedLead": [
+      "^\\W*(Engels leren|leer( je)? Engels)"
+    ],
+    "reservedG1": [
+      "(?<![\\p{L}])hoe(?![\\p{L}])",
+      "(?<![\\p{L}])zo (vertaal|lees|bewaar|houd|zie|behoud) je(?![\\p{L}])",
+      "(?<![\\p{L}])(het )?origineel (behouden|bewaren|houden|erbij houden)",
+      "(?<![\\p{L}])met behoud van (het )?origineel",
+      "(?<![\\p{L}])(behoud|bewaar|houd) (het )?origineel"
+    ]
+  }
+}
