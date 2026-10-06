@@ -57,11 +57,35 @@ export function re(source, flags = 'iu') {
   return r;
 }
 
+// Data patterns (claims-lint, keyword-map) are written for every script, so with the u flag \w, \W and \b mean letters,
+// marks and digits of any script, not ASCII only: "zaznacz\w* tekst" must see "zaznaczyć tekst", "\bíntegra" must
+// match after a space. Inside a character class only \w is widened (the data has no \W or \b there).
+const WORD = '\\p{L}\\p{M}\\p{N}_';
+export function unicodeWords(src) {
+  let out = '';
+  let cls = false;
+  for (let i = 0; i < src.length; i++) {
+    const ch = src[i];
+    if (ch === '\\' && i + 1 < src.length) {
+      const nx = src[++i];
+      if (nx === 'w') out += cls ? WORD : `[${WORD}]`;
+      else if (nx === 'W' && !cls) out += `[^${WORD}]`;
+      else if (nx === 'b' && !cls) out += `(?:(?<=[${WORD}])(?![${WORD}])|(?<![${WORD}])(?=[${WORD}]))`;
+      else out += ch + nx;
+      continue;
+    }
+    if (ch === '[' && !cls) cls = true;
+    else if (ch === ']' && cls) cls = false;
+    out += ch;
+  }
+  return out;
+}
+
 // Compile a list of regex sources; an invalid regex is reported (once) instead of crashing the build.
 export function compileAll(list, flags, onBad) {
   const out = [];
   for (const src of list ?? []) {
-    try { out.push(re(src, flags)); } catch (e) { onBad?.(src, e.message); }
+    try { out.push(re(flags.includes('u') ? unicodeWords(src) : src, flags)); } catch (e) { onBad?.(src, e.message); }
   }
   return out;
 }
