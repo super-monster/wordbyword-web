@@ -97,7 +97,7 @@ const LENGTH_RULES = [
   { keys: ['hero.secondaryCta'], n: 24 },
   { keys: ['demo.articleTitle'], n: 60 },
   { keys: ['demo.byline'], n: 40 },
-  { keys: ['features[*].kicker'], wu: 24 },
+  { keys: ['features[*].kicker'], wu: 32, why: 'room for the app\'s own feature name in Latin scripts (owner, 2026-10-06)' },
   { keys: ['features[*].title'], wu: 70 },
   { keys: ['features[*].text'], n: 320 },
   { keys: ['features[*].bullets[*]'], wu: 80 },
