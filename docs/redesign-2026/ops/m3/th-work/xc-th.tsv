@@ -1,0 +1,321 @@
+		None
+      %@	      %@	None
+    %@	    %@	None
+ %@ )	 %@ )	None
+( %@	( %@	None
+(%@, %@)	(%1$@, %2$@)	None
+%@ %@	%1$@ %2$@	None
+%@：	%@：	None
+%lld / %lld	%1$lld / %2$lld	None
+%lld word_count_hint	%lld words	%lld คำ
+%lld. %@	%1$lld. %2$@	None
+🇬🇧 %@	🇬🇧 %@	None
+🇺🇸 %@	🇺🇸 %@	None
+📌 %@	📌 %@	None
+0.5x	0.5x	None
+1.5x	1.5x	None
+3-finger or 4-finger tap anywhere to show or hide this panel.	3-finger or 4-finger tap anywhere to show or hide this panel.	None
+ai_pronunciation_sentence	AI Pronunciation (Sentence)	การออกเสียง AI (ประโยค)
+ai_pronunciation_word	AI Pronunciation (Word)	การออกเสียง AI (คำ)
+already_plus_user_message	You are already a Plus user	คุณเป็นผู้ใช้ Plus อยู่แล้ว
+Audio Playback Mode Settings	Speech Mode Settings	การตั้งค่าโหมดการอ่าน
+audio_playback_description_local	Uses device’s built-in voice engine, fast speed, robotic tone.	ใช้เครื่องยนต์เสียงในตัวของอุปกรณ์ ความเร็วสูง โทนเสียงหุ่นยนต์
+audio_playback_description_streaming	Uses cloud-based AI speech synthesis, natural tone, slower speed.	ใช้การสังเคราะห์เสียง AI บนคลาวด์ โทนเสียงธรรมชาติ ความเร็วช้าลงเล็กน้อย
+audio_playback_settings_navigation_title	Audio Playback Settings	การตั้งค่าการเล่นเสียง
+audio_playback_title_local	Local Read	การอ่านท้องถิ่น
+audio_playback_title_streaming	AI Read	การอ่าน AI
+Background Color	Background Color	สีพื้นหลัง
+bookmark_already_exists_alert	🔖 Bookmark Already Exists	🔖 รายการโปรดนี้มีอยู่แล้ว
+bookmark_saved_message	Your bookmark was saved successfully	รายการโปรดของคุณถูกบันทึกเรียบร้อยแล้ว
+bookmark_saved_title	🔖 Bookmark Saved	🔖 บันทึกรายการโปรดแล้ว
+bookmark_title	Bookmarks	รายการโปรด
+Border	Border	ขอบ
+button_text_cancel	Cancel	ยกเลิก
+button_text_clear	Clear	ล้าง
+button_text_clear_sentence_translation_history	Clear Sentence Translation History	ล้างประวัติการแปลประโยค
+button_text_clear_word_translation_history	Clear Word Translation History	ล้างประวัติการแปลคำ
+button_text_close	Close	ปิด
+button_text_detail	Detail	รายละเอียด
+button_text_favorite	Favorite	รายการโปรด
+button_text_help	Help	ช่วยเหลือ
+button_text_play	Play	เล่น
+button_text_refresh	Refresh	รีเฟรช
+button_text_reload	Reload	โหลดใหม่
+button_text_share	Share	แชร์
+button_text_theme	Theme	ธีม
+Cancel	Cancel	None
+Chunk Extraction	Chunk Extraction	การแยกชังก์
+Chunk Extraction Settings	Chunk Extraction Settings	การตั้งค่าการแยกชังก์
+Chunk extraction trigger	Chunk extraction trigger	วิธีเริ่มการแยกชังก์
+chunk_extraction_mode_description_automatic	Extract chunks automatically after swipe translation, while keeping manual controls available.	แยกชังก์อัตโนมัติหลังจากแปลด้วยการปัด โดยยังคงให้ควบคุมแบบแมนนวลได้
+chunk_extraction_mode_description_disabled	Hide chunk actions and skip extraction.	ซ่อนการทำงานของชังก์และข้ามการแยก
+chunk_extraction_mode_description_manual	Show the chunk button after swipe translation and extract when tapped.	แสดงปุ่มชังก์หลังการแปลด้วยการปัด และแยกเมื่อแตะ
+chunk_extraction_mode_title_automatic	Automatic	อัตโนมัติ
+chunk_extraction_mode_title_disabled	Disabled	ปิด
+chunk_extraction_mode_title_manual	Manual	ด้วยตนเอง
+chunk_extraction_settings_navigation_title	Chunk Extraction	การแยกชังก์
+chunk_extraction_settings_picker_title	Choose when chunk extraction runs	เลือกเวลาที่จะให้ทำการแยกชังก์
+chunk_extraction_settings_section_title	Chunk Extraction Settings	การตั้งค่าการแยกชังก์
+chunk_extraction_ui_close	Close chunks	ปิดชังก์
+chunk_extraction_ui_extract	Extract chunks	แยกชังก์
+chunk_extraction_ui_list	Chunk list	รายการชังก์
+chunk_extraction_ui_loading	Extracting...	กำลังแยก...
+Clear All	Clear All	None
+Clear all quick meaning logs?	Clear all quick meaning logs?	None
+Clear Session	Clear Session	None
+Clear this debug session?	Clear this debug session?	None
+collapse_button	Collapse	ย่อ
+Compact	Compact	None
+compare_free_and_plus_title	Compare Free and Plus Features	เปรียบเทียบคุณสมบัติฟรีและ Plus
+context_section_title	Context	บริบท
+create_folder_button	Create Folder	สร้างโฟลเดอร์
+daily_sentence_translation_limit	Swipe to Translate	ปัดเพื่อแปล
+Dashed Underline	Dashed Underline	ขีดเส้นใต้แบบประปราย
+default_folder_name	New Folder	โฟลเดอร์ใหม่
+delete_bookmark_button	Delete Bookmark	ลบบุ๊กมาร์ก
+delete_bookmark_confirm	Do you want to delete the bookmark?	คุณต้องการลบบุ๊กมาร์กหรือไม่
+delete_swipe_action	Delete	ลบ
+dictionary_load_failed_message	Unable to fetch dictionary data. Please try again later.	ไม่สามารถดึงข้อมูลพจนานุกรมได้ โปรดลองอีกครั้งในภายหลัง
+dictionary_load_failed_title	Failed to load dictionary data	ไม่สามารถโหลดข้อมูลพจนานุกรมได้
+done_button	Done	เสร็จสิ้น
+double_tap_not_supported_message	Double-tap translation is currently not supported for Chinese, Japanese, and Korean.	ขณะนี้ไม่รองรับการแปลแบบแตะสองครั้งสำหรับภาษาจีน ญี่ปุ่น และเกาหลี
+download_button	Download	ดาวน์โหลด
+download_cancelled_message	Download cancelled	การดาวน์โหลดถูกยกเลิก
+download_language_pack_title	Download Language Pack	ดาวน์โหลดชุดภาษา
+edit_bookmark_button	Edit Bookmark	แก้ไขบุ๊กมาร์ก
+edit_bookmark_title	Edit Bookmarks	แก้ไขบุ๊กมาร์ก
+edit_button	Edit	แก้ไข
+Enter URL	Enter URL	ป้อน URL
+expand_button	Expand	ขยาย
+Expanded	Expanded	None
+explanations_available	Syntax analysis available	การวิเคราะห์ไวยากรณ์พร้อมใช้งาน
+feature_trial_exhausted_message	You've used all today's free attempts for this feature. Upgrade to unlock more.	คุณได้ใช้การทดลองฟรีสำหรับฟีเจอร์นี้หมดแล้วในวันนี้ อัปเกรดเพื่อปลดล็อกเพิ่มเติม
+Feedback Submitted	Feedback Submitted	ส่งข้อเสนอแนะแล้ว
+Feedback submitted successfully. Thank you!	Feedback submitted successfully. Thank you!	ส่งข้อเสนอแนะเรียบร้อยแล้ว ขอบคุณ!
+feedback_email_notice	We may contact you regarding your feedback if necessary.	หากจำเป็น เราอาจติดต่อคุณเกี่ยวกับข้อเสนอแนะแต่ละรายการ
+feedback_email_placeholder	Email address (optional)	ที่อยู่อีเมล (ไม่บังคับ)
+feedback_form_notice_message	We welcome your feedback. Please don’t include any confidential information. For questions or legal concerns, use Help or Support.	เรายินดีรับฟังความคิดเห็นของคุณ โปรดอย่าใส่ข้อมูลที่เป็นความลับ สำหรับคำถามหรือข้อกังวลทางกฎหมาย ให้ใช้ความช่วยเหลือหรือการสนับสนุน
+feedback_submit_button	Send Feedback	ส่งข้อเสนอแนะ
+folder_empty_message	This folder is empty	โฟลเดอร์นี้ว่างเปล่า
+folder_name_label	Border	ชื่อ
+free_tts_limit_message	You've used all your free pronunciations for today. Upgrade to Plus for more.	คุณได้ใช้การออกเสียงฟรีสำหรับวันนี้หมดแล้ว อัปเกรดเป็น Plus เพื่อรับเพิ่มเติม
+get_syntax_explanation_button	Get AI Syntax Explanation	รับคำอธิบายไวยากรณ์ AI
+grammar_structure_analysis	AI Syntax Structure Analysis	การวิเคราะห์โครงสร้างไวยากรณ์ AI
+Hide Text	Hide Text	ซ่อนข้อความ
+https://example.com	https://example.com	None
+label_original_sentence	Original Sentence	ประโยคต้นฉบับ
+label_source_url	Source	แหล่งที่มา
+label_syntax_explanations	Syntax Explanations	คำอธิบายไวยากรณ์
+label_translation_result	Translation	การแปล
+Language	Language	ภาษา
+Language Selection	Language Selection	การเลือกภาษา
+Language Settings	Language Settings	การตั้งค่าภาษา
+language_not_set_placeholder	Not Set	ยังไม่ได้ตั้งค่า
+language_pack_alert_message %lld	To continue using translation, about %lldMB of system language resources need to be downloaded. Do you want to download now?
+You can also download it later when you have a better network connection.	หากต้องการใช้ฟีเจอร์แปลต่อไป จะต้องดาวน์โหลดทรัพยากรภาษาระบบประมาณ %lldMB คุณต้องการดาวน์โหลดตอนนี้หรือไม่?
+คุณยังสามารถดาวน์โหลดได้ในภายหลังเมื่อมีเครือข่ายที่ดีกว่า
+language_pack_download_later_hint	You can download the language pack later when the network is better.	คุณสามารถดาวน์โหลดแพ็กเกจภาษาในภายหลังเมื่อเครือข่ายดีขึ้น
+language_pack_downloaded_message	Language pack downloaded	ดาวน์โหลดแพ็กเกจภาษาแล้ว
+language_pack_failed_message	Language pack download failed	ดาวน์โหลดแพ็กเกจภาษาล้มเหลว
+language_pack_required_message	Language pack required	ต้องดาวน์โหลดแพ็กเกจภาษา
+language_pack_required_retry_message %lld	Translation requires about %lldMB of system language resources. Please download and try again.	การแปลต้องการดาวน์โหลดทรัพยากรภาษาระบบประมาณ %lldMB โปรดดาวน์โหลดแล้วลองอีกครั้ง
+learn_about_plus_link	Learn About Plus Features	เรียนรู้เกี่ยวกับฟีเจอร์ Plus
+learn_more_link_button	Learn More	เรียนรู้เพิ่มเติม
+learn_more_plus_features_button	Learn More About Plus Benefits	เรียนรู้เพิ่มเติมเกี่ยวกับสิทธิประโยชน์ Plus
+limit_3_per_day	3 times per day	3 ครั้งต่อวัน
+limit_5_per_day	5 times per day	5 ครั้งต่อวัน
+limit_10_per_day	10 times per day	10 ครั้งต่อวัน
+limit_30_per_day	30 times per day	30 ครั้งต่อวัน
+limit_50_per_day	50 times per day	50 ครั้งต่อวัน
+limit_80_per_day	80 times per day	80 ครั้งต่อวัน
+limit_per_day%lld	%lld times per day	%lld ครั้งต่อวัน
+limit_reached_title	Limit Reached	ถึงขีดจำกัดแล้ว
+limit_unlimited	Unlimited	ไม่จำกัด
+load_failed_message %@	Failed to Load: %@	โหลดล้มเหลว: %@
+loading_indicator_text	Loading…	กำลังโหลด…
+loading_languages_list	Loading languages...	กำลังโหลดภาษา...
+loading_subscription_text	Loading subscription...	กำลังโหลดการสมัครสมาชิก...
+local_speech_engine_action_preview	Preview	ทดลองฟัง
+local_speech_engine_badge_downloaded	Downloaded	ดาวน์โหลดแล้ว
+local_speech_engine_badge_not_downloaded	Not Downloaded	ยังไม่ได้ดาวน์โหลด
+local_speech_engine_badge_recommended	Recommended	แนะนำ
+local_speech_engine_badge_selected	Selected	เลือกแล้ว
+local_speech_engine_disabled_footer	This option becomes available when Local playback mode is selected.	ตัวเลือกนี้จะพร้อมใช้งานเมื่อเลือกโหมดเล่นแบบภายในเครื่อง
+local_speech_engine_empty_state_body	For better local playback, open Settings > Accessibility > Spoken Content > Voices and download a Premium or Enhanced voice.	เพื่อให้การเล่นภายในเครื่องดีขึ้น ให้ไปที่ การตั้งค่า > การช่วยการเข้าถึง > เนื้อหาที่พูด > เสียง แล้วดาวน์โหลดเสียง Premium หรือ Enhanced
+local_speech_engine_empty_state_title	No downloaded Premium or Enhanced voices	ไม่พบเสียง Premium หรือ Enhanced ที่ดาวน์โหลดไว้
+local_speech_engine_fallback_body	It still works, but the result may sound less natural than Premium or Enhanced voices.	ยังใช้งานได้ แต่ผลลัพธ์อาจฟังดูไม่เป็นธรรมชาติเท่าเสียง Premium หรือ Enhanced
+local_speech_engine_fallback_title	Current effective system voice	เสียงระบบที่ใช้งานอยู่ในขณะนี้
+local_speech_engine_section_footer	Only downloaded Premium / Enhanced voices are shown here. For better results, open Settings > Accessibility > Spoken Content > Voices to download more.	ที่นี่จะแสดงเฉพาะเสียง Premium / Enhanced ที่ดาวน์โหลดแล้วเท่านั้น หากต้องการผลลัพธ์ที่ดีกว่า ให้ไปที่ การตั้งค่า > การช่วยการเข้าถึง > เนื้อหาที่พูด > เสียง แล้วดาวน์โหลดเพิ่ม
+local_speech_engine_section_footer_no_high_quality	No Premium or Enhanced voices are installed yet. For better results, open Settings > Accessibility > Spoken Content > Voices and download one.	ยังไม่ได้ติดตั้งเสียง Premium / Enhanced หากต้องการผลลัพธ์ที่ดีกว่า ให้ไปที่ การตั้งค่า > การช่วยการเข้าถึง > เนื้อหาที่พูด > เสียง แล้วดาวน์โหลดหนึ่งเสียง
+local_speech_engine_section_title	Local Voice Engine	เอนจินเสียงภายในเครื่อง
+local_speech_speed_current_label	Current	ปัจจุบัน
+local_speech_speed_section_footer	1.0x is the standard system speed. This setting applies only to local iOS voice playback.	1.0x คือความเร็วมาตรฐานของระบบ การตั้งค่านี้มีผลกับการเล่นเสียงภายในเครื่องบน iOS เท่านั้น
+local_speech_speed_section_title	Local Speech Speed	ความเร็วเสียงภายในเครื่อง
+Log Detail	Log Detail	None
+more_definitions_title	More Definitions	คำจำกัดความเพิ่มเติม
+more_definitions_trial_exhausted_message	You've used all your free trials for “More Definitions” today. Upgrade to Plus to unlock more.	คุณได้ใช้การทดลองใช้ฟรีสำหรับ “คำจำกัดความเพิ่มเติม” ทั้งหมดในวันนี้ อัปเกรดเป็น Plus เพื่อปลดล็อกเพิ่มเติม
+move_to_folder_title	Move to Folder	ย้ายไปยังโฟลเดอร์
+navigationTitle_history_detail	History Detail	รายละเอียดประวัติ
+network_or_retry_message	Please check your internet connection or try again later	โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณหรือลองอีกครั้งในภายหลัง
+No quick meaning debug sessions yet.	No quick meaning debug sessions yet.	None
+No quick meaning logs yet. Double-tap a word to start collecting events.	No quick meaning logs yet. Double-tap a word to start collecting events.	None
+not_subscribed_label	Not Subscribed	ไม่ได้สมัครสมาชิก
+Only the current quick meaning session will be removed.	Only the current quick meaning session will be removed.	None
+privacy_policy	Privacy Policy	นโยบายความเป็นส่วนตัว
+queried_words_section_title	Queried Words	คำที่ค้นหา
+query_detail_navigation_title	Query Details	รายละเอียดการค้นหา
+Quick Meaning Debug	Quick Meaning Debug	None
+Quick Meaning Logs	Quick Meaning Logs	None
+quick_start_guide_title	Quick Start Guide	คู่มือเริ่มต้นอย่างรวดเร็ว
+Quote Style	Quote Style	รูปแบบการอ้างอิง
+remaining_sentence_tts_today%lld	Remaining sentence pronunciations today: %lld	การออกเสียงประโยคที่เหลือในวันนี้: %lld
+remaining_word_tts_today%lld	Remaining word pronunciations today: %lld	การออกเสียงคำที่เหลือในวันนี้: %lld
+restore_purchase_button	Restore Purchase	กู้คืนการซื้อ
+retry_button	Retry	ลองอีกครั้ง
+save_button	Save	บันทึก
+search_or_enter	Search or enter a URL	ค้นหาหรือป้อน URL
+Select Language	Select Language	เลือกภาษา
+select_source_language_title	Select Source Language	เลือกภาษาต้นฉบับ
+select_target_language_title	Select Target Language	เลือกภาษาเป้าหมาย
+send_feedback_button	Feedback	ส่งข้อเสนอแนะแบบฟีดแบ็ก
+sentence_skeleton_mode_description_auto	Analyze the action flow automatically after swipe translation, while keeping manual controls available.	วิเคราะห์ลำดับการกระทำอัตโนมัติหลังแปลด้วยการปัด และยังคงให้สั่งเองได้
+sentence_skeleton_mode_description_manual	Show the action flow button after swipe translation and analyze when tapped.	แสดงปุ่มลำดับการกระทำหลังแปลด้วยการปัด และวิเคราะห์เมื่อแตะ
+sentence_skeleton_mode_description_off	Hide action flow controls and skip analysis.	ซ่อนการควบคุมลำดับการกระทำและไม่วิเคราะห์
+sentence_skeleton_mode_title_auto	Automatic	อัตโนมัติ
+sentence_skeleton_mode_title_manual	Manual	ด้วยตนเอง
+sentence_skeleton_mode_title_off	Off	ปิด
+sentence_skeleton_settings_navigation_title	Sentence Action Flow	ลำดับการกระทำของประโยค
+sentence_skeleton_settings_picker_title	Choose when sentence action flow runs	เลือกเวลาวิเคราะห์ลำดับการกระทำของประโยค
+sentence_skeleton_settings_section_title	Sentence Action Flow Settings	การตั้งค่าลำดับการกระทำของประโยค
+sentence_skeleton_ui_analyze	Action flow	ลำดับการกระทำ
+sentence_skeleton_ui_close	Close flow	ปิดลำดับ
+sentence_skeleton_ui_empty	No action flow to show yet.	ยังไม่มีลำดับการกระทำให้แสดง
+sentence_skeleton_ui_failure	Unable to generate an action flow right now. Please try again later.	ยังสร้างลำดับการกระทำไม่ได้ โปรดลองอีกครั้งภายหลัง
+sentence_skeleton_ui_list	Action flow	ลำดับการกระทำ
+sentence_skeleton_ui_loading	Analyzing...	กำลังวิเคราะห์...
+sentence_history_cleared_message	Sentence translation history cleared	ประวัติการแปลประโยคถูกล้าง
+Session not found.	Session not found.	None
+setting_app_language	App Language	ภาษาแอป
+setting_description_other_settings	Other Settings	การตั้งค่าอื่น ๆ
+swipe_translation_result_display_settings_title	Translation Result Display	การแสดงผลลัพธ์การแปล
+swipe_translation_result_display_mode_title_automatic	Show Automatically	แสดงอัตโนมัติ
+swipe_translation_result_display_mode_title_manual	Show Manually	แสดงด้วยตนเอง
+swipe_translation_result_display_mode_description_automatic	Translate and show the result immediately after a right swipe.	แปลและแสดงผลทันทีหลังจากปัดไปทางขวา
+swipe_translation_result_display_mode_description_manual	Insert a placeholder first, then translate and show the result after tapping Show translation.	แทรกตำแหน่งว่างก่อน แล้วจะแปลเมื่อแตะแสดงคำแปล
+setting_description_select_translation_mode	Select Translation Mode	เลือกโหมดการแปล
+setting_description_source_language	Source Language	ภาษาแหล่งที่มา
+setting_description_source_language_setting	Source Language Settings	การตั้งค่าภาษาแหล่งที่มา
+setting_description_target_language	Target Language	ภาษาเป้าหมาย
+setting_description_target_language_settings	Target Language Settings	การตั้งค่าภาษาเป้าหมาย
+setting_title_app_language	App Language Settings	การตั้งค่าภาษาแอป
+setting_title_audio_playback_mode_selection	Speech Mode	โหมดการอ่าน
+setting_title_translation_style_selection	Translation Style Selection	เลือกสไตล์การแปล
+settings_menu_source_language_detail	Default: English
+Hint: It changes automatically based on detected content. If detection is wrong, you can change it manually.	ค่าเริ่มต้น: ภาษาอังกฤษ
+คำแนะนำ: ระบบจะเปลี่ยนให้อัตโนมัติตามเนื้อหาที่ตรวจพบ หากตรวจจับผิด คุณสามารถเปลี่ยนเองได้
+settings_menu_target_language_detail	Default: Device language
+Hint: You can change it manually.	ค่าเริ่มต้น: ภาษาของอุปกรณ์
+คำแนะนำ: คุณสามารถเปลี่ยนเองได้
+Show Text	Show Text	แสดงข้อความ
+source_language_changed_title	Source Language Changed	ภาษาแหล่งที่มาเปลี่ยนแล้ว
+source_language_update_prompt	The detected language is different from your current setting. Do you want to update the source language?	ภาษาที่ตรวจพบแตกต่างจากการตั้งค่าปัจจุบันของคุณ คุณต้องการอัปเดตภาษาหรือไม่?
+Speak	Speak	พูด
+Speaking...	Speaking...	กำลังพูด...
+Speed	Speed	ความเร็ว
+subscribe_button	Subscribe	สมัครสมาชิก
+subscribed_label	Subscribed	สมัครสมาชิกแล้ว
+subscribed_user_message	You are a subscribed user	คุณเป็นผู้ใช้ที่สมัครสมาชิก
+subscription_status_label	Subscription Status	สถานะการสมัครสมาชิก
+subscription_success_title	Subscription Successful!	สมัครสมาชิกสำเร็จ!
+subscription_unlocked_message	You've unlocked more pronunciation features.	คุณได้ปลดล็อกฟีเจอร์การออกเสียงเพิ่มเติมแล้ว
+Swipe down to close	Swipe down to close	ปัดลงเพื่อปิด
+Swipe Right Translation Mode Settings	Swipe Right Translation Mode Settings	การตั้งค่าโหมดแปลเมื่อปัดไปทางขวา
+swipe_translation_engine_mode_api_description	Uses the cloud translation engine, currently backed by Azure and Google translation services. Works out of the box and is limited by daily online quota.	ใช้เอนจินแปลภาษาบนคลาวด์ ซึ่งปัจจุบันรองรับโดยบริการแปลของ Azure และ Google ใช้งานได้ทันที แต่ถูกจำกัดด้วยโควตาออนไลน์รายวัน
+swipe_translation_engine_mode_api_title	Cloud Translation Engine	เอนจินแปลภาษาบนคลาวด์
+swipe_translation_engine_mode_local_description	Uses iOS system translation. Language resources may need to be downloaded the first time.	ใช้การแปลภาษาระบบของ iOS อาจต้องดาวน์โหลดทรัพยากรภาษาครั้งแรกที่ใช้งาน
+swipe_translation_engine_mode_local_title	Local Engine	เอนจินภายในเครื่อง
+swipe_translation_engine_settings_navigation_title	Swipe Translation Engine	เอนจินแปลด้วยการปัด
+swipe_translation_engine_settings_picker_title	Choose the default engine for swipe translation	เลือกเอนจินเริ่มต้นสำหรับการแปลด้วยการปัด
+swipe_translation_engine_settings_section_title	Swipe Translation Engine Settings	การตั้งค่าเอนจินแปลด้วยการปัด
+swipe_translation_online_limit_reached_message	You've used all online swipe translations for today. Switch to the local engine to keep going.	คุณใช้โควตาการแปลแบบปัดออนไลน์ของวันนี้หมดแล้ว สลับไปใช้เอนจินในเครื่องเพื่อใช้งานต่อได้
+swipe_translation_online_limit_reached_title	Online Translation Limit Reached	ถึงขีดจำกัดการแปลออนไลน์แล้ว
+swipe_translation_switch_and_retry_button	Switch and Retry	สลับแล้วลองอีกครั้ง
+tab_manager_view_switch_tabs	Switch Tabs	สลับแท็บ
+terms_of_use	Terms of Use	ข้อกำหนดในการใช้งาน
+Test_Text	Test	ทดสอบ
+This folder contains %lld items. Delete it?	This folder contains %lld items. Delete it?	โฟลเดอร์นี้มี %lld รายการ คุณต้องการลบหรือไม่?
+This removes all stored quick meaning debug sessions.	This removes all stored quick meaning debug sessions.	None
+tip_double_tap_context_meaning	Double-tap any word to view its contextual meaning.	แตะสองครั้งที่คำใดก็ได้เพื่อดูความหมายตามบริบท
+tip_swipe_to_translate	Swipe right on any text to show its translation.	ปัดไปทางขวาบนข้อความใดก็ได้เพื่อแสดงการแปล
+title_label	Title	หัวเรื่อง
+Translation Display Style Settings	Translation Display Style Settings	การตั้งค่าสไตล์การแสดงผลการแปล
+translation_card_ui_show_translation	Show translation	แสดงคำแปล
+translation_card_ui_loading_translation	Translating...	กำลังแปล...
+translation_card_ui_close	Close	ปิด
+translation_card_ui_close_all	Close all	ปิดทั้งหมด
+translation_mode_description_auto	The system auto-detects paragraphs and segments them properly.	ระบบจะตรวจจับย่อหน้าโดยอัตโนมัติและแบ่งส่วนแสดงผลอย่างเหมาะสม
+translation_mode_description_paragraph	Displays the entire selected paragraph.	แสดงย่อหน้าที่เลือกทั้งหมด
+translation_mode_description_sentenceBySentence	Displays translation sentence by sentence.	แสดงการแปลแบบประโยคต่อประโยค
+translation_mode_title_auto	Auto	อัตโนมัติ
+translation_mode_title_paragraph	Paragraph	ย่อหน้า
+translation_mode_title_sentenceBySentence	Sentence by Sentence	ประโยคต่อประโยค
+translation_ready_message	You can now continue using the translation feature	คุณสามารถใช้ฟีเจอร์การแปลต่อได้แล้ว
+translation_style_description_background	Background Color	สีพื้นหลัง
+translation_style_description_border	Border	เส้นขอบ
+translation_style_description_no_style	No Style	ไม่มีสไตล์
+translation_style_description_quote_tyle	Default style, simple and clear.	รูปแบบเริ่มต้น เรียบง่ายและชัดเจน
+translation_style_description_underline_dashed	Dashed Underline	ขีดเส้นใต้แบบเส้นประ
+translation_style_description_underline_solid	Solid Underline	ขีดเส้นใต้แบบเส้นตรง
+translation_style_description_underline_wavy	Wavy Underline	ขีดเส้นใต้แบบคลื่น
+translation_style_title_background	Background Color	สีพื้นหลัง
+translation_style_title_border	Border	เส้นขอบ
+translation_style_title_no_style	No Style	ไม่มีสไตล์
+translation_style_title_quote_style	Quote Style	รูปแบบการอ้างอิง
+translation_style_title_underline_dashed	Dashed Underline	ขีดเส้นใต้แบบเส้นประ
+translation_style_title_underline_solid	Solid Underline	ขีดเส้นใต้แบบเส้นตรง
+translation_style_title_underline_wavy	Wavy Underline	ขีดเส้นใต้แบบคลื่น
+trial_limit_reached_title	Trial Limit Reached	ถึงขีดจำกัดการทดลองใช้
+tts_option_local_synthesis	Local Synthesized Voice	เสียงสังเคราะห์ในท้องถิ่น
+tts_trial_exhausted_fallback_message	You've used up today's free trial. Switched to local pronunciation. Upgrade to Plus to unlock more AI plays.	คุณได้ใช้การทดลองใช้งานฟรีในวันนี้หมดแล้ว เปลี่ยนไปใช้การออกเสียงท้องถิ่น อัปเกรดเป็น Plus เพื่อปลดล็อกการเล่น AI เพิ่มเติม
+tts_trial_limit_reached_title	Playback Limit Reached	ถึงขีดจำกัดการเล่น
+unknown_language_name	Unknown Language	ภาษาที่ไม่รู้จัก
+unlock_pronunciation_prompt	Use AI translation, context analysis, and high-quality AI voice with more freedom. Upgrade your language learning experience.	ใช้การแปล AI การวิเคราะห์บริบท และเสียง AI คุณภาพสูงได้อย่างอิสระยิ่งขึ้น ปรับปรุงประสบการณ์การเรียนรู้ภาษา
+unsupported_language_message	Unsupported Language	ไม่รองรับภาษา
+unsupported_languages_title	Languages Not Supported	ไม่รองรับภาษา
+update_now_button	Update Now	อัปเดตตอนนี้
+upgrade_now_button	Upgrade Now	อัปเกรดตอนนี้
+upgrade_to_plus_button	Upgrade to Plus	อัปเกรดเป็น Plus
+URL	URL	None
+usage_section_title	Dashed Underline	การใช้งาน
+usage_status_free_subtitle	For limited features, badges show today's remaining free quota.	สำหรับฟีเจอร์ที่มีขีดจำกัด ป้ายจะแสดงโควต้าฟรีที่เหลือของวันนี้
+usage_status_link	Usage Status	สถานะการใช้งาน
+usage_status_plus_subtitle	For limited features, badges show today's used Plus quota.	สำหรับฟีเจอร์ที่มีขีดจำกัด ป้ายจะแสดงโควต้า Plus ที่ใช้ไปแล้วในวันนี้
+usage_status_title	Usage Status	สถานะการใช้งาน
+usage_status_upgrade_hint %@	Upgrade to Plus to raise it to %@.	อัปเกรดเป็น Plus เพื่อเพิ่มเป็น %@
+user_type_free %@	Free User: %@	ผู้ใช้ฟรี: %@
+user_type_not_subscribed	Not Subscribed	ไม่ได้สมัครสมาชิก
+user_type_plus	Plus	Plus
+user_type_plus %@	Plus User: %@	ผู้ใช้ Plus: %@
+view_bookmarks_button	View Bookmarks	ดูบุ๊กมาร์ก
+view_sub_title_translation_history	🔍 Translation History	🔍 ประวัติการแปล
+view_title_context	📖 Context	📖 บริบท
+view_title_swipe_detail	Swipe Translation Detail	รายละเอียดการแปลแบบสไลด์
+view_title_swipe_history	Swipe Translation History	ประวัติการแปลแบบสไลด์
+view_title_translation_history	Translation History	ประวัติการแปล
+Word By Word	Word By Word	None
+word_history_cleared_message	Word translation history cleared	ประวัติการแปลคำถูกล้างแล้ว
+word_meaning_lookup_title	Double-tap to Look Up (AI Meaning)	แตะสองครั้งเพื่อค้นหา (ความหมาย AI)
+x	x	None
+your@example.com	your@example.com	None
+剩余：%lld 次	Remaining: %1$lld	คงเหลือ: %1$lld ครั้ง
+功能使用限额（今日）	Feature Usage Limits (Today)	ขีดจำกัดการใช้ฟีเจอร์ (วันนี้)
+加载语言列表...	Loading languages...	None
+双击发音	Double-Tap Pronunciation	None
+双击翻译	Double-Tap Translation	None
+句型解析	Syntax Explanation	None
+右にスワイプ%@	Swipe right %1$@	None
+右滑发音	Swipe Pronunciation	None
+右滑翻译	Swipe Translation	None
+图标加载失败	Failed to load icon	โหลดไอคอนไม่สำเร็จ
+更多解释	More Explanations	None
+正在创建默认标签页...	Creating default tab...	กำลังสร้างแท็บเริ่มต้น...

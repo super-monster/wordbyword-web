@@ -6,13 +6,13 @@
 | 交付 | `src/locales/th.json`（新建：首页全部键 + `notfound.*`；th 没有 about / 扩展页 / legal 页，与 ja、ko、it 一样不交付 `about`、`chromeExtension`、`legal`）；`src/data/glossary/th.json`（新建，§7.2.5 格式）；`docs/redesign-2026/ops/m3/th-lint.json`（claims-lint / keyword-map 的 th 词表提案，未合并） |
 | 依据 | 文档 08 §7（7.1–7.10）、§1.1、§1.4、§1.5、§2 en 母版；文档 03 §1.4、§1.5、§1.6、§2.3（th 行，表 A / B / C）、§3.1–§3.9（th 草案）、§4.3（th 的 FAQ 问句写"ไอโฟน"）；文档 04 §5.1、§5.5、§5.7（th 的 linkText 种子、页脚表、T1–T11）、§8.6；文档 05 §3.3、§3.5（泰文断行、U+2060）；裁定 R36、R39–R43、R46、R52、R61–R65、R71、R75–R78、R83、R84；`ja.json` / `zh-Hans.json` 作结构参照，es / fr / ko / zh-Hant / de / pt-BR / it 的 QA 记录作流程参照 |
 | App 叫法来源 | `WordByWordPrototype/Localizable.xcstrings` 的 `localizations.th`（逐条核对 T-A…T-E），App 内 Free / Plus 对比表的行名（`FeatureQuotaManager.swift` `featureDisplayName`、`SubscriptionComparisonView.swift`）；SurfEnglish 泰文站 `SurfEnglishWebsite/src/locales/th.json`（家族用语：เบราว์เซอร์ในตัว、หน้าจอแอป 12 ภาษา、ปัดไปทางขวา、แตะคำสองครั้ง） |
-| 工作方式 | 私有副本 `scratchpad/wbw-m3-th/` 写作、构建、渲染检查；最终校验在新副本 `scratchpad/wbw-m3-th-final/`（真实仓库 HEAD 2dc25ec，工作区干净 + 本次两个文件 + 副本内生成的 `home-th` OG）上完成。OG 图只在副本里生成，**没有**复制进真实仓库 |
+| 工作方式 | 私有副本 `scratchpad/wbw-m3-th/` 写作、构建、渲染检查；最终校验在新副本 `scratchpad/wbw-m3-th-final/`（真实仓库 HEAD 2e8ced2，工作区干净 + 本次两个文件 + 副本内生成的 `home-th` OG）上完成。OG 图只在副本里生成，**没有**复制进真实仓库 |
 | 断行工具 | `scratchpad/th-work/th.src.json`（不含零宽字符的干净稿）→ `scratchpad/th-work/glue-th.mjs` 生成 `th.json`（插入 U+2060 / U+00A0，见 §8）→ `glossary-th.mjs` 按生成结果写 glossary。三个文件都在 scratchpad，没有放进仓库（§6-3） |
 | 日期 | 2026-10-06 |
 
 ## 0. 摘要
 
-1. 键与 en 完全一致（`check.mjs --keys th`：0 缺、0 多）。新副本（HEAD 2dc25ec + th 两个文件 + 副本内 `home-th` OG）上：`node build.mjs` **0 error**，`--pseudo` **0 error**，`scripts/check.mjs` 0 error / 0 warning，`node --test scripts/tests/*.test.mjs` **62/62**。
+1. 键与 en 完全一致（`check.mjs --keys th`：0 缺、0 多）。新副本（HEAD 2e8ced2 + th 两个文件 + 副本内 `home-th` OG）上：`node build.mjs` **0 error**，`--pseudo` **0 error**，`scripts/check.mjs` 0 error / 0 warning，`node --test scripts/tests/*.test.mjs` **62/62**。
 2. th 自己的 warning：只有 L-4（7 个值与 en 相同：6 个是文档 08 §1.5 列为正常的样张照抄值，另 1 个是 `meta.appStoreSubtitle`，泰国区店面的副标题本来就是英文 "Swipe to translate AI explains"，§6-5）。真实仓库的数据文件还缺 th 词表，所以另有 L-14（26 条规则"未覆盖"）与 L-9（无 G1 how-to 模式）两条汇总 W；把 `th-lint.json` 并进副本后这两条消失，th 文案 0 命中（附录 A、B）。
 3. title / description / H1 以文档 03 §3.9 的 th 草案为起点：title 在草案上加了"แบบ"（v43，避免读成"翻译双语网站的 App"）；description 调整语序、补"ใช้"（v138）；H1 用草案原句，荧光笔标在「หน้าเว็บ」（v44）。
 4. **泰文断行（本 locale 的主要工作，§8）**：Chrome 用 ICU 词典给泰文断行，外来词和不少复合词会被断在词中（实测："คลา|วด์""เอน|จิ|นภา|ย""ชัง|ก์""อิน|เท|อร์เฟซ""การก|ระ|ทำ""มอง|หาว|ลี""ภูมิ|ภา|คอื่นๆ"）。处理：① 标题类键（H1、H2、H3、FAQ 问句、价格表行名、图注、eyebrow、SE 卡片标题与要点、CTA 要点）里的复合词与固定词组按文档 05 §3.5 用 U+2060 连接；② 全文（正文也算）只对 ICU 会断成非词的外来词与 App 按钮名加 U+2060；③ 数字占位符与量词之间用不换行空格（"21 ภาษา"），"ๆ" 写成 RI 规范的"อื่น ๆ"并用不换行空格防止"ๆ"落到行首；④ meta.title / description / ogHeadline / alt 一律不加。共 70 个键、233 个 U+2060、20 个 U+00A0。重测 320 / 375 / 390 / 1280 px：所有标题、FAQ 问句、价格表行名、图注都只断在词或词组边界（§7）。为此还改写了几处 ICU 会断错的说法（"มองหาวลี"→"ตรวจดูวลี"、"การเตรียม"→"กำลังเตรียม…อยู่"、"ที่มากับ iOS"→"ในตัวของ iOS"、"เดโม"→"ภาพจำลอง"、"อินเทอร์เฟซภาษาอังกฤษ"→"แอปเป็นภาษาอังกฤษ"、"บุ๊กมาร์ก"→App 的"รายการโปรด"、"สหราชอาณาจักร"→"(US และ UK)"）。
@@ -28,14 +28,14 @@
 | `meta.title` | « WordByWord: แอปแปลเว็บไซต์แบบสองภาษาบน iPhone » | 品牌位 WordByWord 在首（TH 店面名是 WordByWord Translate，但文档 03 §1.5 只有 zh-Hant / ru 用店面名）；K1 主词「แอปแปลเว็บไซต์สองภาษาบน iPhone」（表 A）中间加了"แบบ"；`titleMust` = iPhone / เว็บ / แอป 全部命中；`primaryTokens.home.th`（iPhone、แอป）命中；无 how-to 句式 | v43（上限 60） |
 | `meta.description` | « สำหรับผู้เรียนภาษา: ปัดย่อหน้าไปทางขวาในเบราว์เซอร์ของ WordByWord แล้วคำแปลจะแสดงใต้ต้นฉบับ แตะคำสองครั้งเพื่อดูความหมายตามบริบทด้วย AI ใช้ฟรีบน iPhone และ iPad » | 受众词「ผู้เรียนภาษา」（表 C，R39）；K1 动作 + 结果在前半；"ในเบราว์เซอร์ของ WordByWord"（文档 03 §3.2：内置浏览器 / 在 WordByWord 里）；K2「ความหมาย…ตามบริบทด้วย AI」；平台 + 免费收尾（SEO-11）；不写价格；"ไอโฟน"按 §3.2 不进 description | v138（100–160） |
 | `hero.title`（H1） | « ปัดย่อหน้าบน[[หน้าเว็บ]]ไปทางขวา คำแปลจะแสดงอยู่ใต้ต้นฉบับ » | 文档 03 §3.9 草案原句；K1 核心名词「หน้าเว็บ」（荧光笔 1 个词，R65）；"段落"一级动作 + 方向 + 结果「คำแปล…ใต้ต้นฉบับ」（文档 04 §8.6 把"คำแปลใต้ต้นฉบับ"划给 WBW）；不暗示整页（R46）；不含品牌（R27） | v44（上限 75） |
-| `hero.eyebrow` | « WordByWord · แอปอ่านเว็บสองภาษาสำหรับผู้เรียนภาษา » | 品牌 + 品类（bilingual web reader → แอปอ่านเว็บสองภาษา）+ 受众 | 42（≤ 60） |
+| `hero.eyebrow` | « WordByWord · แอปอ่านเว็บสองภาษาสำหรับผู้เรียนภาษา » | 品牌 + 品类（bilingual web reader → แอปอ่านเว็บสองภาษา）+ 受众 | 43（≤ 60） |
 | `hero.lede` = `ledeShort` | « WordByWord คือแอปช่วยอ่านสำหรับผู้เรียนภาษา บน iPhone และ iPad » | R39 定义句，以"WordByWord คือ"开头；"แอปช่วยอ่าน"（阅读辅助 App）只用在定义句（D13），没有用"ผู้ช่วยอัจฉริยะ"（旧站 smart assistant） | v55（≤ 90，故两者相同） |
 | `meta.ogHeadline` | « อ่านหน้าเว็บไหนก็ได้แบบสองภาษา [[ต้นฉบับยังอยู่ครบ]] » | K1 场景（任意网页双语读 + 原文保留）；"เว็บไซต์ไหนก็อ่านแบบสองภาษาได้"这类不带"英语"的说法按文档 04 §8.6 归 WBW；荧光笔 1 处 | 54 px × 2 行 |
 | 功能区 H2 | « ปัดเพื่อแปล แตะสองครั้งเพื่อดูความหมาย บนเว็บไซต์ที่คุณอ่าน » | K1「ปัดเพื่อแปล」（App 名）+ K2「ความหมาย」；"บนเว็บไซต์ที่คุณอ่าน"（PRO-16，不写"任何网站"） | v45 |
 | 功能 H3 | K1「ปัดเพื่อแปล: คำแปลแสดงตรงใต้ต้นฉบับ」；K2「แตะสองครั้งที่คำ ให้ AI บอกความหมายตามบริบท」；K9「แปลโพสต์ X (Twitter) อ่านคู่ต้นฉบับในเบราว์เซอร์ในตัว」；K5「การแยกชังก์และ Action Flow สำหรับประโยคภาษาอังกฤษ」（R83 带"ภาษาอังกฤษ"）；K3「อ่านออกเสียงด้วย AI หรือเสียง iOS ในเครื่องที่เร็วกว่า」；K4「วิเคราะห์โครงสร้างประโยคยาวด้วย AI」；K7「แปลบนคลาวด์หรือในเครื่อง」；K6「ประวัติการแปลและการค้นหาคำ」 | K3、K6、K7 与表 A / B 主词逐字一致；K4 只多一个"ยาว"；K9 主词去掉"บน iPhone"（how-to 归 G2）；K2「ความหมาย…ตามบริบท…AI」为主词的语序变体 | 全部 ≤ 70 |
-| 语言段 H2 | « แปลได้ 21 ภาษา จากต้นฉบับหลายภาษา ไม่ใช่แค่ภาษาอังกฤษ » | K8 主词「แปลได้ 21 ภาษา」逐字（数字是占位符） | 49 |
+| 语言段 H2 | « แปลได้ 21 ภาษา จากต้นฉบับหลายภาษา ไม่ใช่แค่ภาษาอังกฤษ » | K8 主词「แปลได้ 21 ภาษา」逐字（数字是占位符） | 46 |
 | 价格段 H2 | « ใช้ฟรีทุกวัน อ่านเยอะขึ้นเมื่อไรค่อยอัปเกรดเป็น Plus » | K10「ใช้ฟรี」+ Plus；"อัปเกรดเป็น Plus"是 App 原文（`upgrade_to_plus_button`） | — |
-| 最终 CTA H2 | « เริ่มอ่านเว็บไซต์แบบสองภาษาบน iPhone » | 动作句，不是 G1 标题，不暗示整页（R46） | 33 |
+| 最终 CTA H2 | « เริ่มอ่านเว็บไซต์แบบสองภาษาบน iPhone » | 动作句，不是 G1 标题，不暗示整页（R46） | 31 |
 | FAQ `devices` 问句 | « WordByWord ใช้บนไอโฟน iPad, Mac หรือเบราว์เซอร์บนคอมพิวเตอร์ได้ไหม » | SEO-11：th 的本地写法"ไอโฟน"只出现这一次（文档 03 §4.3） | — |
 
 检查结果：title / description / H1 / OG / 功能区 H2 里没有 SE 独占词（现有 `เรียนภาษาอังกฤษ`、`ข่าวภาษาอังกฤษ` 与附录 A 新增的 `ข่าวอังกฤษ`、`ฝึกภาษาอังกฤษ`、`ภาษาอังกฤษตามระดับ`、`ชังก์`、`กลุ่มคำ` 全部 0 命中；"ผู้เรียนภาษา"不命中）；title / H1 / description / `cta.title` 里没有 how-to 句式（วิธีแปล、อย่างไร、ยังไง、เก็บต้นฉบับไว้）。
@@ -50,9 +50,9 @@
 | Q4 | ✓ | `hero.title` 恰好 1 处 `[[หน้าเว็บ]]`（1 个词）；功能 H3、`languages.title` 无 `[[ ]]`；`hero.lede` 以"WordByWord คือ"开头，写明"สำหรับผู้เรียนภาษา"。注意 L-8 按空格数词，泰文短语永远算 1 个词，这条检查对 th 不起作用（§6-3） |
 | Q5 | ✓ | §1.1 红线逐行核对：整页翻译只出现在 FAQ `whole-page` 的否定回答里；Safari 扩展只出现在 FAQ `safari` 的否定回答里；没写离线、无限 AI 发音、暗色模式 / 主题、快捷键 / 音量、生词本 / 闪卡 / 同步、"Plus 专属"、样式数量、口语练习、ChatGPT、"ผู้ช่วยอัจฉริยะ"；CJK 原文不能双击查词、การแยกชังก์ / Action Flow 仅英语都写在同屏；没有沿用旧站的"เทียบประโยคต่อประโยค"（jargon）、"ไม่ต้องสลับแอป"、"ปัดไปทางซ้าย…"。附录 A 的 th 词表在副本里跑 L-14：0 命中（带与不带 U+2060 两种都测了） |
 | Q6 | ✓ | kicker 与价格表行名用 App 叫法（glossary `required`，L-13 0 违规）；句子里按 §7.3 写"ปัดไปทางขวา""แตะสองครั้ง"；按钮 / 界面名照 App 原文加引号引用："อัปเกรดตอนนี้""กู้คืนการซื้อ""รับคำอธิบายไวยากรณ์ AI""ประวัติการแปลแบบสไลด์""การแยกชังก์""ลำดับการกระทำของประโยค""คำจำกัดความเพิ่มเติม""อัตโนมัติ / ย่อหน้า / ประโยคต่อประโยค"。X11 已执行：App 的"การอ่านท้องถิ่น"（Local Read）在正文写成"การอ่านออกเสียงด้วยเสียงในเครื่อง"，价格表写"เสียง iOS (อ่านด้วยเสียงในเครื่อง)"，glossary 禁用"ท้องถิ่น" |
-| Q7 | ✓ | 5 处截图 alt、4 条画廊图注 + alt、2 个截图标签（`common.screenshotLabel` / `screenshotExcerptLabel`）、OG alt、SE 截图 alt 与图注都写了"(แอปเป็นภาษาอังกฤษ)"（App 是英文界面，§4-2）；内容逐张对照了 `assets/img/shot/en/*`（西语维基页 + 英文译文、"convirtiéndose"卡片、设置页 Auto / Quote Style / Local Read、"matrimonio"释义页、Spanish → English (US)、语言列表——列表里确实有"Thai (ไทย)"，所以 alt 写了"ไทย"）；`features[x].alt` 描述社交帖样张并注明"ไม่ใช่ภาพหน้าจอ"；`demo.lookup.word` = "end"，出现在 `demo.source[1]` |
+| Q7 | ✓ | 5 处截图 alt、4 条画廊图注 + alt、2 个截图标签（`common.screenshotLabel` / `screenshotExcerptLabel`）、OG alt、SE 截图 alt 与图注都写了"(แอปเป็นภาษาอังกฤษ)"（App 是英文界面，§4-2）；内容逐张对照了 `assets/img/shot/en/*`（西语维基页 + 英文译文、"convirtiéndose"卡片、设置页 Auto / Quote Style / Local Read、"matrimonio"释义页、Spanish → English (US)、语言列表——列表里确实有"Thai (ไทย)"，所以 alt 写了"ไทย"）；朗读节选的 alt 按 f44fd7e 写成"播放器在屏幕底部朗读一句西语"；`features[x].alt` 描述社交帖样张并注明"ไม่ใช่ภาพหน้าจอ"；`demo.lookup.word` = "end"，出现在 `demo.source[1]` |
 | Q8 | ✓ | full（local）模式：note 写"หน้าจอแอป {se.uiLanguages} ภาษา รวมภาษาไทย"；H2 以 SurfEnglish 开头；body 首句是条件句"กำลังเรียนภาษาอังกฤษอยู่ใช่ไหม"；卖点只用分级新闻、复习游戏、从 Safari 分享（R41），不提语音；没有"อาจเหมาะกว่า / ใหม่ / อัปเกรด / แทน WordByWord"（T10）；linkText 是 SE 核心词短语 + 品牌，不是裸域名（R76） |
-| Q9 | ✓ | 代入占位符后全部在 §7.6 / L-8 限内（th 按可见字符计，U+2060 不计）：title 43、description 138、H1 44、eyebrow 42、lede 55、how 117、platformNote 104、规格清单 4 条 49–75、SE H2 42、要点 ≤ 36、linkText 41、`pricing.summary` 74、`cta.recap` 56、所有 alt ≤ 109 |
+| Q9 | ✓ | 代入占位符后全部在 §7.6 / L-8 限内（th 按可见字符计，U+2060 不计）：title 43、description 138、H1 44、eyebrow 43、lede 55、how 125、platformNote 109、规格清单 4 条 49–75、功能 H3 20–45、kicker 5–16、SE H2 42、要点 ≤ 35、linkText 41、`pricing.summary` 77、`cta.recap` 56、所有 alt ≤ 106（字素） |
 | Q10 | ✓ | 泰文：词间不加空格，短语之间用空格；没有零宽空格（U+200B）；U+2060 按文档 05 §3.5 用于标题类字段中不能断开的复合词，另用于外来词（§8）；没有 `{wbr}`（R61） |
 | Q12 | ✓ | 见 §7：四个宽度 + 21 个宽度无横向溢出，没有字体回落成方框（Thonburi） |
 | Q13 | ✓ | FAQ `devices` 的 `a`（S0）只写"同一开发者正在准备一个 Chrome 扩展"，不写扩展名称；`aExtLive` 写了名称和"โปรดติดตั้งจากลิงก์ในหน้านั้นเท่านั้น"；首页没有 WordByWord.io（`footer.notAffiliated` 不在首页渲染） |
@@ -153,7 +153,7 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 - **标点与排版**：引号用 “ ”（与 App 一致），App 原文的 ‘ ’ 用于样张释义；"ๆ"按 RI 规范写"อื่น ๆ"，并用不换行空格（U+00A0）防止"ๆ"落到行首；数字用阿拉伯数字。
 - **Apple 用词**：บัญชี Apple（Apple Account）、ส่วนขยาย Safari、"iOS 18 ขึ้นไป"、商标声明按 Apple 泰文写法（"…ที่จดทะเบียนในสหรัฐอเมริกาและประเทศและภูมิภาคอื่น ๆ"）。
 - **App Store 徽章**：th-th 徽章是 Apple 官方泰文版，`common.appStoreBadgeAlt` = "ดาวน์โหลด WordByWord บน App Store"，SE 文字链接 = "ดาวน์โหลด SurfEnglish บน App Store"（T8）。
-- **glossary**（`src/data/glossary/th.json`）：`required` 锁定 10 个 kicker、`demo.ui.more`、样张 flowLabel 与 10 个价格表行名；`contains` 要求 FAQ `restore`、`syntax`、`chunks`、`lookup.bullets[2]` 逐字引用 App 名；`banned` 收录左滑、鼠标"ดับเบิลคลิก"、"ท้องถิ່น"（X11）、"เครื่องยนต์"（App 把 engine 误译成"发动机"）、App 名的变体、旧站的"ผู้ช่วยอัจฉริยะ"。因为 L-13 比较原始字符串，`required` / `contains` 里的值带着与 th.json 相同的 U+2060（`glossary-th.mjs` 从 th.json 读出，先确认去掉 U+2060 后等于 App 名）。
+- **glossary**（`src/data/glossary/th.json`）：`required` 锁定 10 个 kicker、`demo.ui.more`、样张 flowLabel 与 10 个价格表行名；`contains` 要求 FAQ `restore`、`syntax`、`chunks`、`lookup.bullets[2]` 逐字引用 App 名；`banned` 收录左滑、鼠标"ดับเบิลคลิก"、"ท้องถิ่น"（X11）、"เครื่องยนต์"（App 把 engine 误译成"发动机"）、App 名的变体、旧站的"ผู้ช่วยอัจฉริยะ"。因为 L-13 比较原始字符串，`required` / `contains` 里的值带着与 th.json 相同的 U+2060（`glossary-th.mjs` 从 th.json 读出，先确认去掉 U+2060 后等于 App 名）。
 - `meta.appStoreName` / `appStoreSubtitle` = "WordByWord Translate" / "Swipe to translate AI explains"：泰国区店面的名称和副标题就是这两个英文串（`scratchpad/as_th.html`，研究 05 §2.1），照抄（§6-5）。
 
 ## 6. 需要负责人决定的问题
@@ -231,7 +231,7 @@ FAQ 答案（不在回译清单里）也逐句对过 en：额度全部是占位�
 
 文件形状按 Wave 2 约定：`{"claimsLint": {"<rule id>": [...]}, "keywordMap": {"seOwned": [...], "seOwnedLead": [...], "reservedG1": [...]}}`。覆盖 27 条规则（跳过只有 `*` 的 `io-home`、`engine-claim`；`hype` 有 `*` 也有各语言模式，所以补了 th）。匹配方式同校验器（`iu` + bb689eb 的 Unicode `\w`，在代入占位符、去掉标记后的文本上）；泰文模式全部是子串，`[^ ]{0,n}` 只在一个泰文短语内部跨越（泰文用空格分短语），没用 `\b`。
 
-自测（新副本 = HEAD 2dc25ec + th 两个文件 + 本词表）：th 文案 0 命中（否定句在各规则自带的豁免键内），去掉 U+2060 的 th 文案也 0 命中；构建 0 error、L-14 / L-9 的 th 汇总 W 消失；测试 62/62。下列 60 个反例句全部命中（`scratchpad/th-work/lint-test-th.mjs`）：
+自测（新副本 = HEAD 2e8ced2 + th 两个文件 + 本词表）：th 文案 0 命中（否定句在各规则自带的豁免键内），去掉 U+2060 的 th 文案也 0 命中；构建 0 error、L-14 / L-9 的 th 汇总 W 消失；测试 62/62。下列 60 个反例句全部命中（`scratchpad/th-work/lint-test-th.mjs`）：
 
 | 规则 | 反例句（全部命中） |
 |---|---|

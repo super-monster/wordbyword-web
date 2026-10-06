@@ -1,0 +1,98 @@
+{
+  "locale": "th",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (th column), each value checked against WordByWordPrototype/Localizable.xcstrings (localizations.th) and the app's Free/Plus comparison labels (FeatureQuotaManager.swift featureDisplayName, SubscriptionComparisonView.swift); §7.2.2 rules ①–③ and fix X11 (th); §7.3 th row (neutral polite, no ครับ/ค่ะ; 'ปัดไปทางขวา', 'แตะสองครั้ง').",
+    "required: kickers and quota-table rows use the app's names (rule ①). The lookup kicker drops the '(ความหมาย AI)' suffix like en / ja / es / it; the quota row keeps it. The engine rows shorten the app's 'ปัดเพื่อแปล (เอนจินแปลภาษาบนคลาวด์ / เอนจินภายในเครื่อง)' to '· เอนจินบนคลาวด์ / · เอนจินภายในเครื่อง'. Action Flow keeps the App Store name in headings and the sample (doc 08 D3, §7.2.3); the quota row uses the app's own comparison label 'ลำดับการกระทำของประโยค' (sentence_skeleton_settings_navigation_title), as zh-Hans / ko / es / it do.",
+    "U+2060: src/locales/th.json carries U+2060 word joiners inside some words (Thai line-break hints, doc 05 §3.5; written as \\u2060 escapes). L-13 compares raw strings, so the required / contains values below carry the same joiners; each one equals the app's name once the joiners are removed (generated from the clean copy by scratchpad/th-work/glossary-th.mjs, see docs/redesign-2026/ops/m3/th-qa.md §8).",
+    "Rule ③ / X11: the app's audio_playback_title_local 'การอ่านท้องถิ่น' (and tts_option_local_synthesis 'เสียงสังเคราะห์ในท้องถิ่น') use ท้องถิ่น = 'regional / of a locality'; the website writes 'อ่านออกเสียงด้วยเสียงในเครื่อง' / 'เสียงในเครื่อง' (on the device) and reports the strings to the app side. audio_playback_description_local says 'เครื่องยนต์เสียง' (a motor engine) — the website writes 'เอนจิน' like the app's other engine strings.",
+    "contains: app button and screen names the sentences quote verbatim in “ ” (rule ①; T-B get_syntax_explanation_button and view_title_swipe_history; T-E upgrade_now_button / restore_purchase_button; Chunk Extraction).",
+    "banned: left swipes (F14); mouse wording 'ดับเบิลคลิก / คลิกสองครั้ง' (X7 by analogy); 'ท้องถิ่น' (X11); 'เครื่องยนต์' for an engine; variants of the app names; 'ผู้ช่วยอัจฉริยะ' (the legacy 'smart assistant' title, doc 08 §8.1)."
+  ],
+  "required": {
+    "features[swipe].kicker": "ปัดเพื่อแปล",
+    "features[lookup].kicker": "แตะสองครั้งเพื่อค้นหา",
+    "features[x].kicker": "X (Twitter เดิม)",
+    "features[chunks].kicker": "หน้าเว็บภาษาอังกฤษ",
+    "features[speech].kicker": "อ่านออกเสียง",
+    "features[syntax].kicker": "ไวยากรณ์",
+    "features[engines].kicker": "เอนจินแปลภาษา",
+    "features[display].kicker": "การแสดงผล",
+    "features[history].kicker": "ประวัติ",
+    "features[devices].kicker": "อุปกรณ์",
+    "demo.ui.more": "คำจำกัดความเพิ่มเติม",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "ปัดเพื่อแปล · เอนจินบนคลาวด์",
+    "pricing.table.rows.localSwipe": "ปัดเพื่อแปล · เอนจินภายในเครื่อง",
+    "pricing.table.rows.lookup": "แตะสองครั้งเพื่อค้นหา (ความหมาย AI)",
+    "pricing.table.rows.more": "คำจำกัดความเพิ่มเติม",
+    "pricing.table.rows.lookupSpeech": "การออกเสียง AI (คำ)",
+    "pricing.table.rows.swipeSpeech": "การออกเสียง AI (ประโยค)",
+    "pricing.table.rows.localVoice": "เสียง iOS (อ่านด้วยเสียงในเครื่อง)",
+    "pricing.table.rows.chunks": "การแยกชังก์",
+    "pricing.table.rows.actionFlow": "ลำดับการกระทำของประโยค",
+    "pricing.table.rows.syntax": "คำอธิบายไวยากรณ์ AI"
+  },
+  "contains": {
+    "faq.items[restore].a": [
+      "อัปเกรดตอนนี้",
+      "กู้คืนการซื้อ"
+    ],
+    "features[syntax].text": [
+      "รับคำอธิบายไวยากรณ์ AI",
+      "ประวัติการแปลแบบสไลด์"
+    ],
+    "features[chunks].text": [
+      "การแยกชังก์",
+      "Action Flow",
+      "ลำดับการกระทำของประโยค"
+    ],
+    "features[lookup].bullets[2]": [
+      "คำจำกัดความเพิ่มเติม"
+    ]
+  },
+  "banned": [
+    {
+      "pattern": "(ปัด|เลื่อน|สไลด์)[^ ]{0,20}(ไป)?ทางซ้าย",
+      "regex": true,
+      "use": "ปัดไปทางขวา",
+      "note": "the gesture is a right swipe; a left swipe removes the translation (F14)"
+    },
+    {
+      "pattern": "ดับเบิลคลิก|คลิกสองครั้ง|ดับเบิ้ลคลิก",
+      "regex": true,
+      "use": "แตะสองครั้ง",
+      "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)",
+      "allowInKeys": [
+        "chromeExtension."
+      ]
+    },
+    {
+      "pattern": "ท้องถิ่น",
+      "use": "ในเครื่อง / ภายในเครื่อง",
+      "note": "X11: the app's การอ่านท้องถิ่น means 'regional reading'; the website writes อ่านออกเสียงด้วยเสียงในเครื่อง (reported to the app side)"
+    },
+    {
+      "pattern": "เครื่องยนต์",
+      "use": "เอนจิน",
+      "note": "เครื่องยนต์ is a motor engine (audio_playback_description_local; reported to the app side)"
+    },
+    {
+      "pattern": "คำจำกัดความอื่น|นิยามเพิ่มเติม|ความหมายเพิ่มเติม",
+      "regex": true,
+      "use": "คำจำกัดความเพิ่มเติม",
+      "note": "app name of more_definitions_title (T-A)"
+    },
+    {
+      "pattern": "การแยกกลุ่มคำ|การดึงชังก์|การแยกชังค์|แยกชังก์ออก",
+      "regex": true,
+      "use": "การแยกชังก์",
+      "note": "app name of Chunk Extraction (T-B); กลุ่มคำ is SurfEnglish's word for chunks"
+    },
+    {
+      "pattern": "ผู้ช่วยอัจฉริยะ",
+      "use": "แอปช่วยอ่านสำหรับผู้เรียนภาษา",
+      "note": "the legacy 'smart assistant' title is dropped (doc 08 §8.1, R39)"
+    }
+  ],
+  "allowInKeys": []
+}
