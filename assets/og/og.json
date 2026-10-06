@@ -193,6 +193,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-th": {
+      "file": "assets/og/home-th.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "24c67683c2d0426366a2d3b60564f4827d34d8c4a9029e642a0bc954de712962",
+      "inputs": {
+        "headline": "อ่านหน้าเว็บไหนก็ได้แบบสองภาษา [[ต้นฉบับยังอยู่ครบ]]",
+        "subline": "ปัดย่อหน้าไปทาง⁠ขวา · แตะคำสอง⁠ครั้งเพื่อดูความ⁠หมายตามบริบท",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "home-id": {
       "file": "assets/og/home-id.jpg",
       "width": 1200,
