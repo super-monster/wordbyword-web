@@ -117,7 +117,7 @@ T0 目标窗口 2026-11-17 ～ 11-26（预期 11-25），避开 12-18 ～ 01-04�
 
 | 记录项 | 值 | 依据 |
 |---|---|---|
-| DNS 控制台（Squarespace Domains 或 GCP Cloud DNS：能看到 `api.`、`backend-test.`、`backend.` 三条记录的那一个） | ＿＿＿＿ | 06 §10.1、M0-04 |
+| DNS 控制台 | **GCP Cloud DNS**：项目 VirtualApiProject（`virtualapiproject`），区域 `word-by-word-app`（DNSSEC 开）。注册在同一项目的 Cloud Domains：自动续订开，2027-02-03 到期，续费走该项目的结算账号（2026-10-06 核实） | 06 §10.1、M0-04 |
 | T0 日期与时段（GA 低谷） | ＿＿＿＿ | 07 §6.4 |
 | T-1 实测 GitHub Pages 证书 notAfter | ＿＿＿＿ | 06 §10.2 第 6 步 |
 | **DNS 回滚截止 = 上一行的 notAfter** | ＿＿＿＿ | R23 |
