@@ -7,7 +7,7 @@ const MOSAIC = ['KKBO', 'OOOK', 'BBOC', 'KBKC'];
 const CELL = { O: '#44111C', B: '#882239', C: '#CC3355' };
 const cell = (ch, x, y, s) => `<rect x="${x}" y="${y}" width="${s}" height="${s}"${ch === 'K' ? ' class="mk"' : ` fill="${CELL[ch]}"`}/>`;
 
-export const mosaicSquare = (cls) => `<svg class="${cls}" viewBox="0 0 4 4" aria-hidden="true" shape-rendering="crispEdges">${MOSAIC.flatMap((r, y) => [...r].map((ch, x) => cell(ch, x, y, 1))).join('')}</svg>`;
+export const mosaicSquare = (cls, size) => `<svg class="${cls}"${size ? ` width="${size}" height="${size}"` : ''} viewBox="0 0 4 4" aria-hidden="true" shape-rendering="crispEdges">${MOSAIC.flatMap((r, y) => [...r].map((ch, x) => cell(ch, x, y, 1))).join('')}</svg>`;
 export const mosaicStrip = (cls) => `<svg class="${cls}" viewBox="0 0 16 1" preserveAspectRatio="none" aria-hidden="true" shape-rendering="crispEdges">${[...MOSAIC.join('')].map((ch, x) => cell(ch, x, 0, 1)).join('')}</svg>`;
 export function mosaicEdge() {
   const rows = [MOSAIC[0] + MOSAIC[1], MOSAIC[2] + MOSAIC[3]];

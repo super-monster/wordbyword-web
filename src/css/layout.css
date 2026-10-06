@@ -24,7 +24,11 @@ details > summary::-webkit-details-marker { display: none; }
 .lang-menu a[aria-current] { font-weight: 600; text-decoration: underline 2px var(--accent); text-underline-offset: .35em; }
 .nav-menu-panel { position: fixed; inset-inline: 0; inset-block-start: 56px; z-index: var(--z-menu); padding: var(--s-2) var(--gutter) var(--s-4); border-block: 1px solid var(--hairline); background: var(--paper); box-shadow: var(--shadow-2); }
 .nav-menu-panel a { display: flex; align-items: center; min-block-size: 48px; border-block-end: 1px solid var(--hairline); color: var(--ink); font-size: 1.0625rem; text-decoration: none; }
-@media (max-width: 379px) { .brand { font-size: 14px; } .btn-small { padding-inline: 12px; } }
+/* < 380: compact buttons (the 404's long home button fits 320). The extension page's header button leaves no room for
+   the wordmark below 380 in S1 ("Add to Chrome", the only .btn with data-ga-event) and below 350 in S0 ("iPhone app"):
+   logo only there (its alt names the link) */
+@media (max-width: 379px) { .brand { font-size: 14px; } .btn-small, .nf .btn { padding-inline: 12px; } .header-inner:has(.btn[data-ga-event]) .brand-name { display: none; } }
+@media (max-width: 349px) { [data-page="chrome-extension"] .brand-name { display: none; } }
 /* < 560: the header Download button shows nav.downloadShort (R77, 05 §5.1; en "Get", ja「入手」) instead of being
    hidden below 360 (v1.1 D6). Only the visible span is in the accessible name, so the label stays in the name. */
 .dl-short { display: none; }

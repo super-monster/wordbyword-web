@@ -172,7 +172,7 @@ function renderAll(outDir, { copy, noticeData, pseudo = false }) {
       SITE, route, routes, absUrl, product, notice: noticeData, assets, img, badgeUrl,
       imgUrl: (key, w, fmt) => img(key)?.variant?.(w, fmt) ?? null,
       og: ogFor(route),
-      t, enStrings: copy.en,
+      t, enStrings: copy.en, strings: copy, // strings: every locale's copy (the 404's translated lines, doc 05 §6.7)
       f: (s, extra = {}) => fill(s, { ...vars, ...extra }, route.locale.code),
       dateLong, updated,
       locales: publishedLocales,

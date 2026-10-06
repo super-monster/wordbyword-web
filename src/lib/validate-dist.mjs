@@ -630,8 +630,14 @@ export function validateDist(dist, ctx, issues) {
       const src = img.attrs.src ?? '?';
       for (const a of ['width', 'height']) if (!/^\d+$/.test(img.attrs[a] ?? '') || Number(img.attrs[a]) <= 0) E('D-6', `${at}: <img src="${src}"> needs a positive integer ${a}`);
       if (!('alt' in img.attrs)) E('D-6', `${at}: <img src="${src}"> has no alt attribute (decorative images use alt="")`);
-      if (i > 0 && img.attrs.loading !== 'lazy') E('D-6', `${at}: <img src="${src}"> is not the first image and lacks loading="lazy"`);
+      // besides the first image, the page's LCP image loads eagerly: fetchpriority="high" (doc 05 §8.2 — the
+      // extension page's hero screenshot), at most one per page and never lazy
+      const lcp = img.attrs.fetchpriority === 'high';
+      if (i > 0 && img.attrs.loading !== 'lazy' && !lcp) E('D-6', `${at}: <img src="${src}"> is not the first image and lacks loading="lazy"`);
+      if (lcp && img.attrs.loading === 'lazy') E('D-6', `${at}: <img src="${src}"> has fetchpriority="high" but loading="lazy"`);
     });
+    const lcps = imgs.filter((e) => e.attrs.fetchpriority === 'high').length;
+    if (lcps > 1) E('D-6', `${at}: ${lcps} images with fetchpriority="high" — only the page's LCP image may have it (doc 05 §8.2)`);
     for (const e of allEls) if ('data-img-key' in e.attrs) imgPlaceholders.add(e.attrs['data-img-key']);
     if (!pending.images) for (const e of allEls) if ('data-img-key' in e.attrs) E('D-6', `${at}: image "${e.attrs['data-img-key']}" is not in assets/img/images.json — a placeholder was rendered`);
 

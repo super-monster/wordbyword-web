@@ -190,12 +190,12 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
 .faq-item { border-block-end: 1px solid var(--hairline); }
 .faq-item > summary { display: flex; align-items: center; gap: var(--s-4); min-block-size: 56px; padding-block: var(--s-3); }
 .faq-q { font-family: var(--font-read); font-size: var(--fs-h4); font-weight: 600; line-height: 1.4; }
-.faq-item > summary::after { content: ""; flex: none; inline-size: 14px; block-size: 14px; margin-inline-start: auto; color: var(--ink-3); background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 14px no-repeat; }
-.faq-item[open] > summary::after { background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat; }
+.faq-item > summary::after, .site-notice__more > summary::after { content: ""; flex: none; inline-size: 14px; block-size: 14px; margin-inline-start: auto; color: var(--ink-3); background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat, linear-gradient(currentColor, currentColor) center / 1.5px 14px no-repeat; }
+.faq-item[open] > summary::after, .site-notice__more[open] > summary::after { background: linear-gradient(currentColor, currentColor) center / 14px 1.5px no-repeat; }
 .faq-item > summary:hover { color: var(--accent-text); }
 .faq-a { margin-block-end: var(--s-5); padding-inline-start: var(--s-4); border-inline-start: var(--quote-bar); color: var(--ink-2); }
 @media (min-width: 900px) {
-  .faq-layout { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-6); align-items: start; }
+  .faq-layout, .ext-hero-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--s-6); align-items: start; }
   .faq-head { grid-column: 1 / span 4; position: sticky; inset-block-start: 88px; margin: 0; }
   .faq-list { grid-column: 5 / -1; max-inline-size: none; }
 }
@@ -219,7 +219,7 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
 .footer-grid { display: grid; gap: var(--s-5); }
 .footer-tagline { max-inline-size: 36ch; margin-block: var(--s-2) var(--s-4); }
 .footer-heading { margin-block-end: var(--s-2); color: var(--ink-3); font-size: var(--fs-xs); font-weight: 700; line-height: 1.4; letter-spacing: 0; }
-html[data-script="latn"] .footer-heading { text-transform: uppercase; letter-spacing: .1em; }
+html[data-script="latn"] :is(.footer-heading, .site-notice__eyebrow) { text-transform: uppercase; letter-spacing: .1em; }
 .footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); }
 .footer-links a, .lang-list a { display: inline-flex; align-items: center; color: var(--ink-2); text-decoration: none; }
 .footer-links a { min-block-size: 32px; }
@@ -244,7 +244,66 @@ html[data-script="latn"] .footer-heading { text-transform: uppercase; letter-spa
   .footer-langs { grid-column: 8 / -1; }
 }
 
-/* ===== 16. Dark / motion / forced colours ===== */
+/* ===== 16. Site notice (05 §5.15, 06 §8.5): an oxblood band before the header, in the flow (no fixed, no JS). A long
+   message folds into <details> under the title (layout.mjs) with the FAQ's +/-; the eyebrow is #FEE437 text ===== */
+.site-notice { padding-block: var(--s-3); background: var(--band-deep); color: var(--on-band-deep); font-weight: 700; }
+.site-notice__body { padding-inline-start: var(--s-4); border-inline-start: 4px solid var(--accent); }
+.site-notice__eyebrow { color: var(--brand-marker); font-size: .875rem; }
+.site-notice__message { font-size: .9375rem; font-weight: 400; }
+.site-notice__more > summary { display: inline-flex; align-items: center; gap: var(--s-3); min-block-size: 44px; }
+.site-notice__more > summary::after { color: inherit; }
+.site-notice + .header-sentinel { inset-block-start: auto; }   /* the header counts as stuck once the notice is gone */
+
+/* ===== 17. Secondary pages (05 §6.3, §6.4, §6.7): H1 = --fs-h1 (05 §3.2), one flow rhythm ===== */
+.flow > * + * { margin-block-start: var(--s-4); }
+
+/* about (08 §5.1): one --w-text column of 17px text, both tables in the pricing look, the timeline as dated rows;
+   from 1200px the disambiguation note is the 240px margin rail (05 §6.3) */
+.about-block { max-inline-size: var(--w-text); margin-block-start: var(--s-7); font-size: 1.0625rem; }
+/* margin notes: hairlines above and below, small --ink-2 text, never a red bar (VIS-20); after .about-block, which it overrides */
+.rule-note { padding-block: var(--s-3); border-block: 1px solid var(--hairline); color: var(--ink-2); font-size: var(--fs-small); }
+.timeline-date { inline-size: 7.5rem; }
+.quota.quota--text :is(thead th, td) { text-align: start; }
+.quota.quota--text td { white-space: normal; font-weight: 400; }
+.quota--text tbody th { font-weight: 600; }
+.about-facts tr:first-child > * { border-block-start: 0; }
+@media (min-width: 560px) { .about-facts th { inline-size: 32%; } }
+@media (max-width: 559px) {   /* th over td (05 §6.3); the comparison keeps its two value columns */
+  .timeline li { flex-direction: column; gap: 0; }
+  .quota--text tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .quota--text th:first-child, .about-facts td { grid-column: span 2; }
+  .quota--text :empty { display: none; }
+  .quota--text td { padding-block-start: 0; border: 0; }
+}
+@media (min-width: 1200px) {
+  .about-layout { position: relative; }
+  .about-note { position: absolute; inset-block-start: 0; inset-inline-end: var(--gutter); inline-size: 240px; margin: 0; }
+}
+
+/* Chrome extension (05 §5.11, §6.4): copy | browser window, the "not affiliated" note under them (R2, R15) */
+.ext-hero .eyebrow { flex-wrap: wrap; align-items: baseline; }
+.tag--status { box-shadow: inset 0 0 0 1px var(--hairline-strong); color: var(--ink-2); }
+.tag--key { background: var(--paper-2); box-shadow: inset 0 0 0 1px var(--hairline), inset 0 -2px var(--hairline); }
+kbd { font: inherit; }
+/* window shots carry their own Chrome UI: clip + outline only, no CSS frame, no shadow; strips keep their ratio */
+.browser { aspect-ratio: auto; border-color: var(--hairline-strong); border-radius: var(--r-2); }
+.strip { aspect-ratio: auto; }
+.ext-row { padding-block: var(--s-6); border-block-start: 1px solid var(--hairline); }
+@media (min-width: 900px) {
+  .ext-hero-head { grid-column: 1 / span 10; }
+  .ext-hero-copy, .ext-note { grid-column: 1 / span 5; }
+  .ext-hero .browser { grid-column: 6 / -1; grid-row: 2 / span 2; }
+  .ext-note { align-self: end; }
+}
+
+/* 404 (05 §6.7): the page is a bilingual sample — serif original, translations under the red bar (.faq-a) */
+.nf h1 { font: 700 clamp(2rem, 1.6rem + 1.6vw, 2.5rem)/1.15 var(--font-read); }
+.nf-tr { font-size: var(--fs-read); }
+.nf .footer-heading, .nf-mosaic { margin-block-start: var(--s-7); }
+@media (max-width: 559px) { .nf-mosaic { display: none; } }
+@media (min-width: 560px) { .nf .lang-list { max-inline-size: var(--w-text); grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* ===== 18. Dark / motion / forced colours ===== */
 @media (prefers-color-scheme: dark) {
   .shot { border-color: var(--hairline-strong); }
   .tag--en-only { background: transparent; box-shadow: inset 0 0 0 1px var(--hairline-strong); }   /* VIS-21 */

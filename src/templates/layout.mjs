@@ -1,6 +1,7 @@
 // Page shell (doc 06 §5.1): <head> SEO block, header with language switcher, notice slot, footer.
 
 import { esc, plain } from '../lib/html.mjs';
+import { wu } from '../lib/text-length.mjs';
 import { localePath, appStoreLink, seSite } from '../lib/links.mjs';
 import { jsonld } from './partials/jsonld.mjs';
 import { icon } from './partials/picture.mjs';
@@ -91,15 +92,15 @@ function header(ctx) {
   const navItems = onExt
     ? `<li><a href="${home}">${esc(t.nav.iphoneApp)}</a></li><li><a href="#features">${esc(t.nav.features)}</a></li><li><a href="#faq">${esc(t.nav.faq)}</a></li>`
     : `<li><a href="${anchor('features')}">${esc(t.nav.features)}</a></li><li><a href="${anchor('languages')}">${esc(t.nav.languages)}</a></li><li><a href="${anchor('pricing')}">${esc(t.nav.pricing)}</a></li><li><a href="${anchor('faq')}">${esc(t.nav.faq)}</a></li>${SITE.chromeStoreUrl ? `<li><a href="${extHref}"${extLang}>${esc(t.nav.chromeExtension)}</a></li>` : ''}`;
-  // the visible text is the accessible name (WCAG 2.5.3): CSS shows one of the two spans
-  const dl = t.nav.downloadShort && t.nav.downloadShort !== t.nav.download
-    ? `<span class="dl-long">${esc(t.nav.download)}</span><span class="dl-short">${esc(t.nav.downloadShort)}</span>`
-    : esc(t.nav.download);
+  // < 560 the button shows its short label (R77, 05 §5.1; on the extension page nav.iphoneApp, else the long label
+  // crowds the brand at 375). The visible text is the accessible name (WCAG 2.5.3): CSS shows one of the two spans.
+  const label = (long, short) => (short && short !== long
+    ? `<span class="dl-long">${esc(long)}</span><span class="dl-short">${esc(short)}</span>` : esc(long));
   const mainButton = !onExt
-    ? `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'header'))}" data-ga-label="header">${dl}</a>`
+    ? `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'header'))}" data-ga-label="header">${label(t.nav.download, t.nav.downloadShort)}</a>`
     : SITE.chromeStoreUrl
       ? `<a class="btn btn-small" href="${esc(SITE.chromeStoreUrl)}" data-ga-event="chrome_store_click" data-ga-label="ext_header">${esc(t.chromeExtension.cta.available)}</a>`
-      : `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'ext'))}" data-ga-label="chrome_ext">${esc(t.chromeExtension.cta.iosApp)}</a>`;
+      : `<a class="btn btn-small" href="${esc(appStoreLink(SITE, SITE.appStoreId, 'ext'))}" data-ga-label="chrome_ext">${label(t.chromeExtension.cta.iosApp, t.nav.iphoneApp)}</a>`;
   // a page that exists in one language only says so at the top of the menu (doc 02 §7.2)
   const versions = ctx.routes.filter((r) => r.page.id === route.page.id && !r.page.file).length;
   const langNote = versions === 1 && t.common.langFallbackNote ? `<p class="lang-note">${esc(t.common.langFallbackNote)}</p>` : '';
@@ -127,7 +128,12 @@ function brandLink(ctx, lazy) {
   return `<a class="brand" href="${localePath(ctx.route.locale)}">${icon(ctx, 'brand/common/icon', 28, { alt: 'WordByWord', cls: 'brand-icon', lazy })}<span class="brand-name" aria-hidden="true">WordByWord</span></a>`;
 }
 
-// ———————————————————————————— notice (doc 06 §8.5) ————————————————————————————
+// ———————————————————————————— notice (doc 06 §8.5, doc 05 §5.15) ————————————————————————————
+
+// The message shows at most 2 lines (05 §5.15); longer ones fold into <details> under the title. Without JS the
+// fold cannot follow the viewport, so the build measures against the narrowest layout: two 15px lines at a 375px
+// phone ≈ 2 × 43 width units (wu: Latin 1, CJK 2 ≈ 7.5px each).
+const NOTICE_FOLD_WU = 86;
 
 function notice(ctx) {
   const n = ctx.notice;
@@ -135,8 +141,11 @@ function notice(ctx) {
   if (n.pages === 'home' && ctx.route.page.id !== 'home') return '';
   const copy = n.copy[ctx.route.locale.code] ?? n.copy.en;
   const l = ctx.route.locale;
+  const body = wu(copy.message) > NOTICE_FOLD_WU
+    ? `<details class="site-notice__more"><summary class="site-notice__title">${esc(copy.title)}</summary><p class="site-notice__message">${esc(copy.message)}</p></details>`
+    : `<p class="site-notice__title">${esc(copy.title)}</p><p class="site-notice__message">${esc(copy.message)}</p>`;
   return `<div class="site-notice site-notice--${esc(n.level)}" role="status" data-nosnippet lang="${l.hreflang}" dir="${l.dir}">
-  <div class="container"><p class="site-notice__eyebrow">${esc(copy.eyebrow)}</p><p class="site-notice__title">${esc(copy.title)}</p><p class="site-notice__message">${esc(copy.message)}</p></div>
+  <div class="container"><div class="site-notice__body"><p class="site-notice__eyebrow">${esc(copy.eyebrow)}</p>${body}</div></div>
 </div>`;
 }
 

@@ -494,6 +494,17 @@ test('D-6 <img> attributes, placeholders, srcset files', () => {
   if (existsSync(join(ROOT, 'assets/img/images.json'))) expectE(i, 'D-6', /image "shot\/en\/nothing" is not in assets\/img\/images\.json/);
 });
 
+test('D-6 one eager LCP image (fetchpriority="high") besides the first image', () => {
+  // the extension page's hero screenshot is eager by design (doc 05 §8.2) and passes as built
+  assert.ok(readFileSync(join(BUILT, 'chrome-extension/index.html'), 'utf8').includes('fetchpriority="high"'));
+  assert.ok(!runDist().error.some((e) => e.includes('D-6')));
+  const i = runDist((d) => edit(d, 'chrome-extension/index.html', (h) => h
+    .replace(/(<footer[\s\S]*?<img [^>]*?) loading="lazy"/, '$1 fetchpriority="high"')
+    .replace(/(<section id="screenshots"[\s\S]*?<img [^>]*?)>/, '$1 fetchpriority="high">')));
+  expectE(i, 'D-6', /\/chrome-extension\/ \(en\): 3 images with fetchpriority="high"/);
+  expectE(i, 'D-6', /has fetchpriority="high" but loading="lazy"/);
+});
+
 test('D-7 image budget', (t) => {
   if (!existsSync(join(ROOT, 'assets/img/images.json'))) return t.skip('image registry not generated yet (D-7 is skipped with a warning)');
   const i = runDist((d) => {
@@ -756,7 +767,7 @@ test('D-23 OG images match the copy (ENG-12, R59)', () => {
 
 test('D-24 extension page header: own navigation and an honest main button (doc 02 §3.5, §7.1)', () => {
   const i = runDist((d) => edit(d, 'chrome-extension/index.html', (h) => h
-    .replace(/<a class="btn btn-small" href="[^"]*" data-ga-label="chrome_ext">[^<]*<\/a>/, '<a class="btn btn-small" href="https://apps.apple.com/app/id6741724502" data-ga-label="header">Download</a>')
+    .replace(/<a class="btn btn-small" href="[^"]*" data-ga-label="chrome_ext">.*?<\/a>/, '<a class="btn btn-small" href="https://apps.apple.com/app/id6741724502" data-ga-label="header">Download</a>')
     .replaceAll('<li><a href="#features">', '<li><a href="/#features">')));
   expectE(i, 'D-24', /S0 — the header button must be the WBW App Store link labelled as the iPhone app, not "Download"/);
   expectE(i, 'D-24', /the extension page header must link #features/);

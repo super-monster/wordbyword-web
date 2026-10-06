@@ -1,4 +1,4 @@
-/* ===== 17. Legal pages (privacy / support / extension privacy; doc 06 §5.5) ===== */
+/* ===== 19. Legal pages (privacy / support / extension privacy; doc 06 §5.5) ===== */
 .legal { padding-block: var(--section-y-m); }
 .legal .container { max-inline-size: calc(46rem + 2 * var(--gutter)); }
 .legal h1 { margin-block-end: .25em; }

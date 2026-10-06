@@ -9,11 +9,26 @@ const hash = (buf, n) => createHash('sha256').update(buf).digest('hex').slice(0,
 const CSS_ORDER = ['tokens', 'base', 'layout', 'components', 'demo', 'legal'];
 const JS_ORDER = ['analytics', 'main'];
 
-// CSS: concatenate in order, drop comments, blank lines and leading indentation (D-18 measures this output).
-function bundleCss(root) {
-  return CSS_ORDER.map((n) => readFileSync(join(root, `src/css/${n}.css`), 'utf8')).join('\n')
+// CSS: concatenate in order, drop comments and the whitespace next to { } ; , and after ':' (D-18 measures this
+// output). Strings and url() are set aside first. Spaces BEFORE ':' stay (`html :is(…)` is a descendant combinator),
+// and so do spaces inside values (`calc(a - b)`). When introduced, Chrome's CSSOM parsed the old and the minified bundle
+// into the same 425 rules, cssText for cssText; scripts/tests/assets.test.mjs keeps the tricky cases covered.
+export function minifyCss(css) {
+  const kept = [];
+  const keep = (m) => `\u0000${kept.push(m) - 1}\u0000`;
+  return css
     .replace(/\/\*[\s\S]*?\*\//g, '')
-    .split('\n').map((l) => l.trim()).filter(Boolean).join('\n') + '\n';
+    .replace(/"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|url\([^)]*\)/g, keep)
+    .replace(/\s+/g, ' ')
+    .replace(/ ?([{};,]) ?/g, '$1')
+    .replace(/: /g, ':')
+    .replace(/;}/g, '}')
+    .replace(/\u0000(\d+)\u0000/g, (_, i) => kept[i])
+    .trim() + '\n';
+}
+
+function bundleCss(root) {
+  return minifyCss(CSS_ORDER.map((n) => readFileSync(join(root, `src/css/${n}.css`), 'utf8')).join('\n'));
 }
 
 // JS: the same safe subset per file — block comments that start a line, whole-line // comments, blank lines and

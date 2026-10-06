@@ -785,6 +785,7 @@
       }
     ],
     "shotsNote": "Screenshots show the extension with a Chinese interface and Chinese translations.",
+    "excerptLabel": "Chrome extension · screenshot excerpt",
     "languages": {
       "title": "Languages",
       "text": "Translates into {ext.targetLanguages} languages: Chinese, English, French, German, Japanese, Korean and Spanish. The language of the page is detected automatically. The extension’s menus are available in English, Japanese, Korean and Simplified Chinese."
