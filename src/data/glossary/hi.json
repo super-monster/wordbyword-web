@@ -1,0 +1,55 @@
+{
+  "locale": "hi",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (hi column), checked value by value against WordByWordPrototype/Localizable.xcstrings (localizations.hi), plus the app's Free/Plus comparison screen (FeatureQuotaManager.swift featureDisplayName: 'अनुवाद के लिए स्वाइप करें (क्लाउड अनुवाद इंजन / स्थानीय इंजन)', 'AI अर्थ के लिए डबल टैप करें', 'AI उच्चारण (शब्द / वाक्य)', 'अधिक परिभाषाएँ', 'खंड निष्कर्षण', 'वाक्य क्रिया प्रवाह', 'एआई वाक्य रचना संरचना विश्लेषण', 'स्थानीय संश्लेषित आवाज़'; limit_per_day%lld = 'दिन में %lld बार'); §7.2.2 rules ①–③ and fix X10; §7.3 hi row (आप; 'दाईं ओर स्वाइप करें', 'डबल टैप करें'); §7.7 hi row (nukta spelt the same way throughout; AI, iPhone, App Store in Latin letters).",
+    "required: kickers, quota-table rows, demo.ui.more and the chunks flow label use the app's names verbatim (rule ①). hi has no short name for the swipe feature (T-A '—'), so the swipe kicker and rows use the feature name 'अनुवाद के लिए स्वाइप करें'; the lookup name 'AI अर्थ के लिए डबल टैप करें' has no '(AI Meaning)' suffix to drop. Rows are shortened to 'feature · engine' as in the other locales. Action Flow keeps the App Store name (doc 08 D3, §7.2.3); features[chunks].text quotes the app's 'वाक्य क्रिया प्रवाह' once. The syntax row keeps the app's own spelling 'एआई' (grammar_structure_analysis); body copy writes 'AI' (§7.7).",
+    "Rule ③ / X10: the app's audio_playback_title_streaming = 'AI पढ़ाई' and audio_playback_title_local = 'स्थानीय पढ़ाई' use पढ़ाई ('studies'); the site writes 'AI से पढ़कर सुनाना' / 'स्थानीय आवाज़ से पढ़कर सुनाना' and never quotes the app names (reported to the app side in docs/redesign-2026/ops/m3/hi-qa.md).",
+    "contains: app buttons, screens and settings that sentences quote between “ ” so readers find them on screen (T-B, T-D, T-E).",
+    "banned: a left swipe (it removes the translation, F14); a single tap for the word lookup (doc 08 §1.1); mouse wording; पढ़ाई (X10); one spelling per word: हिन्दी (as in the language switcher), वेब पेज, डबल टैप; nukta letters as base + U+093C (NFC) and never dropped (§7.7), so the lint patterns see one form; 'एआई' outside the two quoted app names; gendered first-person questions (हूँ) — the copy addresses the reader with आप or uses the passive. The claims-lint rules cover selection-to-translate ('चुनते ही', 'टेक्स्ट चुन') and the jargon 'संरेखण' (C-16)."
+  ],
+  "required": {
+    "features[swipe].kicker": "अनुवाद के लिए स्वाइप करें",
+    "features[lookup].kicker": "AI अर्थ के लिए डबल टैप करें",
+    "features[x].kicker": "X (पहले Twitter)",
+    "features[chunks].kicker": "अंग्रेज़ी पेज",
+    "features[speech].kicker": "पढ़कर सुनाना",
+    "features[syntax].kicker": "वाक्य रचना",
+    "features[engines].kicker": "अनुवाद इंजन",
+    "features[display].kicker": "प्रदर्शन",
+    "features[history].kicker": "इतिहास",
+    "features[devices].kicker": "डिवाइस",
+    "demo.ui.more": "अधिक परिभाषाएँ",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "अनुवाद के लिए स्वाइप करें · क्लाउड इंजन",
+    "pricing.table.rows.localSwipe": "अनुवाद के लिए स्वाइप करें · स्थानीय इंजन",
+    "pricing.table.rows.lookup": "AI अर्थ के लिए डबल टैप करें",
+    "pricing.table.rows.more": "अधिक परिभाषाएँ",
+    "pricing.table.rows.lookupSpeech": "AI उच्चारण (शब्द)",
+    "pricing.table.rows.swipeSpeech": "AI उच्चारण (वाक्य)",
+    "pricing.table.rows.localVoice": "iOS आवाज़ (स्थानीय)",
+    "pricing.table.rows.chunks": "खंड निष्कर्षण",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "एआई वाक्य रचना संरचना विश्लेषण"
+  },
+  "contains": {
+    "faq.items[restore].a": ["अब अपग्रेड करें", "खरीदारी पुनर्स्थापित करें"],
+    "features[syntax].text": ["एआई वाक्य रचना व्याख्या प्राप्त करें", "स्वाइप अनुवाद इतिहास"],
+    "features[chunks].text": ["खंड निष्कर्षण", "Action Flow", "वाक्य क्रिया प्रवाह"],
+    "features[swipe].bullets[0]": ["अनुवाद मोड", "स्वचालित", "अनुच्छेद", "वाक्य\u00a0दर\u00a0वाक्य"],
+    "features[lookup].bullets[2]": ["अधिक परिभाषाएँ"]
+  },
+  "banned": [
+    { "pattern": "(बाईं|बाईँ|बायीं|बाएँ|बाएं|बाँए)\\s*(ओर|तरफ़|तरफ)?\\s*स्वाइप|स्वाइप[^।.;:!?]{0,24}(बाईं|बायीं|बाएँ|बाएं)\\s*(ओर|तरफ़|तरफ)", "regex": true, "use": "दाईं ओर स्वाइप करें", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "शब्द(ों)?\\s+(पर|को)\\s+(सिर्फ़\\s+|एक\\s+बार\\s+)?टैप", "regex": true, "use": "शब्द पर डबल टैप करें", "note": "the word lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "माउस|क्लिक", "regex": true, "use": "डबल टैप करें / दाईं ओर स्वाइप करें", "note": "touch gestures, not a mouse (the legacy hi FAQ said 'उंगली या माउस से', doc 01 C-10)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "पढ़ाई", "use": "AI से पढ़कर सुनाना / स्थानीय आवाज़ से पढ़कर सुनाना", "note": "X10: the app's 'AI पढ़ाई' / 'स्थानीय पढ़ाई' read as 'studies'; report to the app side (rule ③)" },
+    { "pattern": "हिंदी", "use": "हिन्दी", "note": "one spelling, the same as the language switcher (LOCALES.native) and the SurfEnglish hi site" },
+    { "pattern": "वेबपेज", "use": "वेब पेज", "note": "one spelling (doc 03 §2.3 K1, seo.titleMust)" },
+    { "pattern": "दो\\s+बार\\s+टैप|डबल-टैप", "regex": true, "use": "डबल टैप", "note": "one gesture word (doc 08 §7.3 hi row; the app's lookup name says 'डबल टैप करें')" },
+    { "pattern": "[\\u0958-\\u095F]", "regex": true, "use": "base letter + nukta U+093C (NFC)", "note": "precomposed nukta letters are not NFC; one encoding keeps the lint patterns and search matching consistent (§7.7)" },
+    { "pattern": "मुफ्त|अंग्रेजी|ज्यादा|ब्राउजर|इंटरफेस|फिलहाल|जरूर|डिफॉल्ट|कॉफी|फॉलो|आजमा|फ्रेजल|आवाज(?!\\u093C)|पैराग्राफ(?!\\u093C)|सिर्फ(?!\\u093C)|न्यूज(?!\\u093C)|(?<![\\p{L}\\p{M}])तेज(?!\\u093C)|(?<![\\p{L}\\p{M}])रोज(?!\\u093C)", "regex": true, "use": "मुफ़्त, अंग्रेज़ी, ज़्यादा, ब्राउज़र, इंटरफ़ेस, फ़िलहाल, ज़रूर, डिफ़ॉल्ट, कॉफ़ी, फ़ॉलो, आज़मा-, फ़्रेज़ल, आवाज़, पैराग्राफ़, सिर्फ़, न्यूज़, तेज़, रोज़", "note": "nukta spelt the same way throughout (doc 08 §7.7: फ़, ज़); the app itself writes 'मुफ्त'" },
+    { "pattern": "एआई", "use": "AI", "note": "body copy writes AI in Latin letters (§7.7); only the app's K4 names keep its 'एआई'", "allowInKeys": ["features[syntax].text", "pricing.table.rows.syntax"] },
+    { "pattern": "(रहा|रही|सकता|सकती|चाहता|चाहती)\\s+हूँ", "regex": true, "use": "आप-form or passive (… पढ़ा जा सकता है?)", "note": "first-person questions force a gender in Hindi; the FAQ asks in a gender-neutral form" }
+  ],
+  "allowInKeys": []
+}

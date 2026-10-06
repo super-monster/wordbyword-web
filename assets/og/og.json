@@ -217,6 +217,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-hi": {
+      "file": "assets/og/home-hi.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "6bfb8eb45d4d73cb784074e1b6f1da3e82cdfc6fcd9e1b93ec98a7addc9e78bb",
+      "inputs": {
+        "headline": "वेब पेज दो भाषाओं में पढ़ें। [[मूल पाठ जस का तस।]]",
+        "subline": "पैराग्राफ़ को दाईं ओर स्वाइप करें · शब्द पर डबल टैप करें और संदर्भ के अनुसार अर्थ देखें",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,
