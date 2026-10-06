@@ -45,7 +45,7 @@ jobs:
         run: node build.mjs
 
       - name: validator tests (a broken sample per rule L-1…L-14, D-1…D-24)
-        run: node --test scripts/tests/
+        run: node --test scripts/tests/*.test.mjs   # one process per file
 
       - name: pseudo-locale scan for hard-coded text (D-15 b)
         run: node build.mjs --pseudo

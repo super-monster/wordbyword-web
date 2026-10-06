@@ -1,8 +1,8 @@
 // Build-time validator (doc 06 §3.7): every rule L-1…L-14 and D-1…D-24 is caught by at least one deliberately broken
 // sample (doc 07 M1 exit criterion ②), and the real content passes with 0 errors.
-// Run: node --test scripts/tests/     (zero dependencies, Node ≥ 22)
+// Run: npm test   (node --test scripts/tests/*.test.mjs, one process per file; zero dependencies, Node ≥ 22)
 
-import { after, test } from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
 import { copyFileSync, cpSync, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
@@ -25,7 +25,7 @@ import { buildRedirects, buildLegacySitemap } from '../../src/lib/seo.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const TMP = mkdtempSync(join(tmpdir(), 'wbw-validate-'));
-after(() => rmSync(TMP, { recursive: true, force: true }));
+process.on('exit', () => rmSync(TMP, { recursive: true, force: true })); // not after(): on Node 22 a root hook can run early
 
 const RULES = [...Array.from({ length: 14 }, (_, i) => `L-${i + 1}`), ...Array.from({ length: 24 }, (_, i) => `D-${i + 1}`)];
 const caught = new Set();

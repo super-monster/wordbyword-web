@@ -1,7 +1,7 @@
 // OG cards (doc 05 §7.8, doc 06 §7.4): the pure parts of src/templates/og.mjs — copy selection, reused site CSS, card
 // markup — and the D-23 contract against the committed assets/og/og.json. Rendering needs macOS + Chrome
 // (scripts/og.mjs, R34) and is not exercised here.
-// Run: node --test scripts/tests/
+// Run: npm test   (node --test scripts/tests/*.test.mjs, one process per file)
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';

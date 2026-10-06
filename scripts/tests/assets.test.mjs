@@ -1,5 +1,5 @@
 // CSS minification of the bundle (src/lib/assets.mjs, D-18): only whitespace that cannot change the meaning goes.
-// Run: node --test scripts/tests/
+// Run: npm test   (node --test scripts/tests/*.test.mjs, one process per file)
 
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
