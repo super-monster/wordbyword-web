@@ -138,9 +138,10 @@ export const PAGES = [
     sources: () => [c.source, tpl('legal')],
     updated: () => legalUpdated(c.source),
   })),
-  { id: '404', template: 'notfound', locales: ['en'], file: '404.html', // R21: en only in Phase 1
+  // M4-12 (R21): one 404 per locale; CF serves the nearest <dir>/404.html (doc 02 §6.9, verified in M1-03)
+  { id: '404', template: 'notfound', locales: '*', file: (l) => `${l.path ? `${l.path}/` : ''}404.html`,
     indexable: false, sitemap: false, contentGroup: '404', sibling: 'footer-only', notice: true,
-    sources: () => [tpl('notfound'), 'src/locales/en.json'] },
+    sources: (l) => [tpl('notfound'), `src/locales/${l.code}.json`] },
 ];
 
 // Contract mode for one contract id: 'proxy' (C-1) or 'file' (C-2).

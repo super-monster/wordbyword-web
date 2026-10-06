@@ -54,8 +54,8 @@ export function expandRoutes(cfg, site = cfg.SITE) {
         outFile = page.contract.public.slice(1);
         publicUrl = page.contract.bare;
       } else if (page.file) {
-        outFile = page.file;
-        publicUrl = '/' + page.file;
+        outFile = typeof page.file === 'function' ? page.file(locale) : page.file;
+        publicUrl = '/' + outFile;
       } else {
         const path = page.path(locale);
         outFile = path + 'index.html';
