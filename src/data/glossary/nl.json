@@ -1,0 +1,126 @@
+{
+  "locale": "nl",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (nl column), checked against WordByWordPrototype/Localizable.xcstrings (nl); §7.2.2 rules ①–③ and fixes X5 (ai_pronunciation_sentence is Norwegian, 'AI Uttale (Setning)'), X6 ('Cita Stijl' → 'Citaatstijl'), X7 (tip_double_tap_context_meaning says 'Dubbelklik', mouse wording); §7.3 nl row (je; 'veeg naar rechts', 'dubbeltikken'); §7.5 jargon row (C-16).",
+    "required: kickers and quota-table rows use the app's names (rule ①). nl has no short name for the swipe feature (T-A '—'), so the kicker is the feature name 'Veeg om te vertalen'; the lookup kicker drops the '(AI Betekenis)' suffix like en / ja / es / fr, the lookup row shortens it to '(AI)' and the swipe rows say '· cloud' / '· lokaal' so that each row fits two lines in the 390 px table (as es does). The two AI-pronunciation rows follow X5 ('AI-uitspraak (zin)') and, so that they match, the word row writes the app's 'AI Uitspraak (Woord)' as 'AI-uitspraak (woord)'. Action Flow keeps the App Store name (doc 08 D3, §7.2.3); the app's 'Actieverloop van de zin' is quoted in features[chunks].text. Rows with '·' use U+00A0 before the dot.",
+    "contains: app button and setting names quoted verbatim between “ ” (rule ①; T-E for faq.items[restore]). 'AI Lezing' / 'Lokale Lezing' are the app's names for AI Read / Local Read; body copy says 'voorlezen' ('lezing' reads as 'lecture' — reported for the app in docs/redesign-2026/ops/m3/nl-qa.md).",
+    "banned: X5–X7 variants, left swipes (F14), a single tap for lookup (doc 08 §1.1), the app's spatiefouten ('Bron Taal', 'AI Betekenis', 'AI Uitspraak'), the app's English 'engine' (the app's own names say 'motor') and the alignment jargon of the legacy site (C-16)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Veeg om te vertalen",
+    "features[lookup].kicker": "Dubbel tikken om op te zoeken",
+    "features[x].kicker": "X (voorheen Twitter)",
+    "features[chunks].kicker": "Engelse pagina’s",
+    "features[speech].kicker": "Voorlezen",
+    "features[syntax].kicker": "Zinsbouw",
+    "features[engines].kicker": "Vertaalmotoren",
+    "features[display].kicker": "Weergave",
+    "features[history].kicker": "Geschiedenis",
+    "features[devices].kicker": "Apparaten",
+    "demo.ui.more": "Meer definities",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Veeg om te vertalen · cloud",
+    "pricing.table.rows.localSwipe": "Veeg om te vertalen · lokaal",
+    "pricing.table.rows.lookup": "Dubbel tikken om op te zoeken (AI)",
+    "pricing.table.rows.more": "Meer definities",
+    "pricing.table.rows.lookupSpeech": "AI-uitspraak (woord)",
+    "pricing.table.rows.swipeSpeech": "AI-uitspraak (zin)",
+    "pricing.table.rows.localVoice": "iOS-stem (Lokale Lezing)",
+    "pricing.table.rows.chunks": "Segmentextractie",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "AI-syntaxuitleg"
+  },
+  "contains": {
+    "faq.items[restore].a": [
+      "Nu Upgraden",
+      "Aankoop Herstellen"
+    ],
+    "features[syntax].text": [
+      "AI-syntaxuitleg ophalen"
+    ],
+    "features[speech].text": [
+      "AI Lezing",
+      "Lokale Lezing"
+    ],
+    "features[chunks].text": [
+      "Segmentextractie",
+      "Action Flow",
+      "Actieverloop van de zin"
+    ],
+    "features[lookup].bullets[2]": [
+      "Meer definities"
+    ]
+  },
+  "banned": [
+    {
+      "pattern": "dubbel[- ]?klik",
+      "regex": true,
+      "flags": "i",
+      "use": "dubbeltik / dubbeltikken",
+      "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7: the app's tip says 'Dubbelklik')",
+      "allowInKeys": [
+        "chromeExtension."
+      ]
+    },
+    {
+      "pattern": "\\b(Uttale|Setning)\\b",
+      "regex": true,
+      "flags": "i",
+      "use": "AI-uitspraak (zin)",
+      "note": "Norwegian in the app (doc 08 §7.2.2 X5)"
+    },
+    {
+      "pattern": "Cita Stijl|Citatstijl",
+      "regex": true,
+      "flags": "i",
+      "use": "Citaatstijl",
+      "note": "doc 08 §7.2.2 X6 (the app has both misspellings)"
+    },
+    {
+      "pattern": "(veeg|veegt|vegen|swipe|swipen|swipet)\\w*(\\s+\\S+){0,4}\\s+naar links|naar links (vegen|swipen)",
+      "regex": true,
+      "flags": "i",
+      "use": "naar rechts",
+      "note": "the gesture is a right swipe; a left swipe removes the translation (F14)"
+    },
+    {
+      "pattern": "\\btik(t|ken)? (op |één keer op )?(een|het|elk|ieder) woord",
+      "regex": true,
+      "flags": "i",
+      "use": "dubbeltik op een woord",
+      "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)"
+    },
+    {
+      "pattern": "Bron Taal",
+      "use": "brontaal",
+      "note": "spatiefout in the app (setting_description_source_language); Dutch writes the compound as one word"
+    },
+    {
+      "pattern": "AI Betekenis|AI Uitspraak",
+      "regex": true,
+      "use": "AI-betekenis / AI-uitspraak",
+      "note": "a compound with an abbreviation takes a hyphen (spatiefout in the app)"
+    },
+    {
+      "pattern": "\\bengine\\b",
+      "regex": true,
+      "flags": "i",
+      "use": "motor (Cloudvertaalmotor / Lokale motor)",
+      "note": "the app's names say 'motor'; one app message says 'lokale engine'"
+    },
+    {
+      "pattern": "uitlijn|uitgelijnd|zin-voor-zin ?vergelijking|één-op-één ?vergelijking",
+      "regex": true,
+      "flags": "i",
+      "use": "zin voor zin",
+      "note": "alignment jargon of the legacy site (doc 08 §7.5 jargon, C-16)"
+    },
+    {
+      "pattern": "Meer Definities|Meer betekenissen",
+      "regex": true,
+      "use": "Meer definities",
+      "note": "app name of more_definitions_title (T-A)"
+    }
+  ],
+  "allowInKeys": []
+}

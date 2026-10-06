@@ -1,0 +1,52 @@
+{
+  "locale": "it",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (it column), each value checked against WordByWordPrototype/Localizable.xcstrings (localizations.it) and the app's Free/Plus comparison labels (FeatureQuotaManager.swift featureDisplayName); §7.2.2 rules ①–③ (no X-fix lists it); §7.3 it row (tu; 'scorri verso destra', 'tocca due volte').",
+    "required: kickers and quota-table rows use the app's names (rule ①). Kickers drop the '(Significato AI)' suffix like en / ja / es / fr; quota rows are shortened so each fits the 390 px table in two lines (engine as '· cloud' / '· locale', the lookup row as '(AI)'), as es does. 'Scorri per Tradurre' keeps the app's capital T (the kicker is upper-cased by CSS; reported to the app side). Action Flow keeps the App Store name in headings and the sample (doc 08 D3, §7.2.3); the quota row uses the app's own comparison label 'Flusso azioni della frase' (sentence_skeleton_settings_navigation_title), as zh-Hans / ko / es do.",
+    "Rule ③ correction: the app's pronunciation labels read 'AI Pronuncia (Parola)' / 'AI Pronuncia (Frase)' (English word order); the website writes 'Pronuncia AI · parola / frase' and reports the string to the app side.",
+    "AI, not IA: every Italian app string writes 'AI' (Lettura AI, Significato AI, Ottieni spiegazione sintattica AI, AI Pronuncia, voce AI); the website follows the app so quoted names and sentences match (deviation from the '(IA)' in doc 03 §2.3 table A / doc 08 §7.3 — owner decision recorded in docs/redesign-2026/ops/m3/it-qa.md).",
+    "contains: app button and screen names the sentences quote verbatim in “ ” (rule ①; T-B get_syntax_explanation_button, view_title_swipe_history; T-C audio_playback_title_*; T-E upgrade_now_button / restore_purchase_button). The app's straight apostrophe is set as ’ on the website.",
+    "banned: left swipes (F14); mouse wording (X7 by analogy); a single tap for lookup (doc 08 §1.1); variants of the app names; 'IA' (see above)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Scorri per Tradurre",
+    "features[lookup].kicker": "Tocca due volte per cercare",
+    "features[x].kicker": "X (ex Twitter)",
+    "features[chunks].kicker": "Pagine in inglese",
+    "features[speech].kicker": "Lettura ad alta voce",
+    "features[syntax].kicker": "Sintassi",
+    "features[engines].kicker": "Motori di traduzione",
+    "features[display].kicker": "Visualizzazione",
+    "features[history].kicker": "Cronologia",
+    "features[devices].kicker": "Dispositivi",
+    "demo.ui.more": "Altre definizioni",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Scorri per Tradurre · cloud",
+    "pricing.table.rows.localSwipe": "Scorri per Tradurre · locale",
+    "pricing.table.rows.lookup": "Tocca due volte per cercare (AI)",
+    "pricing.table.rows.more": "Altre definizioni",
+    "pricing.table.rows.lookupSpeech": "Pronuncia AI · parola",
+    "pricing.table.rows.swipeSpeech": "Pronuncia AI · frase",
+    "pricing.table.rows.localVoice": "Voce iOS (Lettura locale)",
+    "pricing.table.rows.chunks": "Estrazione Segmenti",
+    "pricing.table.rows.actionFlow": "Flusso azioni della frase",
+    "pricing.table.rows.syntax": "Spiegazione sintattica AI"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Aggiorna Ora", "Ripristina Acquisto"],
+    "features[syntax].text": ["Ottieni spiegazione sintattica AI", "Cronologia Traduzione Swipe"],
+    "features[speech].text": ["Lettura AI", "Lettura locale"],
+    "features[chunks].text": ["Estrazione Segmenti", "Action Flow", "Flusso azioni della frase"],
+    "features[lookup].bullets[2]": ["Altre definizioni"]
+  },
+  "banned": [
+    { "pattern": "(scorr\\w*|swipe)[^.;:]{0,30}(a|verso) sinistra", "regex": true, "flags": "i", "use": "scorri verso destra / a destra", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "doppio[- ]?cli(c|ck)", "regex": true, "flags": "i", "use": "tocca due volte / doppio tocco", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "\\b(tocca|toccare|toccando|tocchi)( su)? (una|la|qualsiasi|ogni|ciascuna) parola(?!\\s+due volte)", "regex": true, "flags": "i", "use": "tocca due volte una parola", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "Più definizioni|Altre Definizioni|Ulteriori definizioni", "regex": true, "use": "Altre definizioni", "note": "app name of more_definitions_title (T-A)" },
+    { "pattern": "Estrazione (dei |di )?(segmenti|chunk)|Estrazione Chunk", "regex": true, "use": "Estrazione Segmenti", "note": "app name of Chunk Extraction (T-B)" },
+    { "pattern": "AI Pronuncia", "use": "Pronuncia AI", "note": "the app's ai_pronunciation_* labels use English word order (rule ③; reported to the app side)" },
+    { "pattern": "\\bIA\\b", "regex": true, "use": "AI", "note": "the Italian app writes AI everywhere; the website follows it (owner decision, it-qa.md)" }
+  ],
+  "allowInKeys": []
+}

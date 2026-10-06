@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "title": "WordByWord: tweetalige vertaalapp voor webpagina’s op iPhone",
+    "description": "Voor taalleerders: veeg in WordByWord een alinea naar rechts en de vertaling staat eronder. Dubbeltik op een woord voor de betekenis. Gratis op iPhone en iPad.",
+    "ogHeadline": "Lees elke webpagina tweetalig. [[Het origineel blijft staan.]]",
+    "ogSubline": "Veeg een alinea naar rechts · dubbeltik op een woord voor de betekenis in context",
+    "ogImageAlt": "WordByWord op iPhone (Engelse interface): Spaanse tekst, de Engelse vertaling eronder en een AI-kaart die één woord uitlegt",
+    "appStoreName": "WordByWord",
+    "appStoreSubtitle": "Veeg om te vertalen, AI legt uit"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "webpagina",
+      "vertaalapp"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "tweetalige vertaalapp voor webpagina’s op iPhone",
+        "secondary": [
+          "website vertalen op iPhone",
+          "leesassistent voor taalleerders",
+          "vertaling onder de originele tekst",
+          "websites tweetalig lezen",
+          "talen leren door websites te lezen"
+        ]
+      },
+      "K2": {
+        "primary": "betekenis van een woord in context (AI)",
+        "secondary": [
+          "AI-woordenboek",
+          "dubbeltikken om een woord op te zoeken",
+          "betekenis van uitdrukkingen en idiomen",
+          "voorbeeldzinnen en woordvormen"
+        ]
+      },
+      "K3": {
+        "primary": "voorlezen met AI-stem",
+        "secondary": [
+          "webpagina’s laten voorlezen",
+          "iOS-stemmen met instelbare snelheid"
+        ]
+      },
+      "K4": {
+        "primary": "zinsbouw analyseren met AI",
+        "secondary": [
+          "lange zinnen ontleden",
+          "grammatica van een zin uitgelegd"
+        ]
+      },
+      "K6": {
+        "primary": "geschiedenis van vertalingen en opgezochte woorden",
+        "secondary": [
+          "opgezochte woorden in hun context terugzien"
+        ]
+      },
+      "K7": {
+        "primary": "vertalen in de cloud of op het apparaat",
+        "secondary": [
+          "vertaling via Azure en Google",
+          "vertaling op het apparaat met iOS"
+        ]
+      },
+      "K8": {
+        "primary": "vertalen naar 21 talen",
+        "secondary": [
+          "app in 20 talen",
+          "herkent automatisch de taal van de pagina"
+        ]
+      },
+      "K9": {
+        "primary": "X-berichten (Twitter) vertalen op iPhone",
+        "secondary": [
+          "tweets lezen met het origineel erbij",
+          "X vertalen in een ingebouwde browser"
+        ]
+      },
+      "K10": {
+        "primary": "gratis vertaalapp voor iPhone",
+        "secondary": [
+          "dagelijkse gratis limieten",
+          "prijs van WordByWord Plus"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Naar de inhoud",
+    "languageLabel": "Taal",
+    "comingSoon": "Binnenkort beschikbaar",
+    "contactUs": "Neem contact op",
+    "lastUpdated": "Laatst bijgewerkt",
+    "breadcrumbHome": "Startpagina",
+    "appStoreBadgeAlt": "Download WordByWord in de App Store",
+    "langFallbackNote": "Deze pagina is alleen in het Engels beschikbaar. Andere talen openen hun startpagina.",
+    "menu": "Menu",
+    "close": "Sluiten",
+    "figLabel": "Afb.",
+    "screenshotLabel": "iPhone-screenshot (Engelse interface)",
+    "screenshotExcerptLabel": "Screenshot-uitsnede (Engelse interface)",
+    "noteLabel": "Let op",
+    "demoLabel": "App-demo"
+  },
+  "nav": {
+    "features": "Functies",
+    "languages": "Talen",
+    "pricing": "Prijzen",
+    "faq": "Vragen",
+    "chromeExtension": "Chrome-extensie",
+    "about": "Over de app",
+    "download": "Downloaden",
+    "downloadShort": "Download",
+    "iphoneApp": "iPhone-app",
+    "ariaMain": "Hoofdnavigatie",
+    "ariaLanguages": "Kies een taal"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Websites tweetalig lezen, voor taalleerders",
+    "title": "Veeg een alinea van een [[webpagina]] naar rechts: de vertaling staat eronder.",
+    "lede": "WordByWord is een leesassistent voor taalleerders op iPhone en iPad.",
+    "ledeShort": "WordByWord is een leesassistent voor taalleerders op iPhone en iPad.",
+    "ctaNote": "Gratis downloaden · iPhone en iPad",
+    "how": "Open een website in de ingebouwde browser en veeg naar rechts over een alinea: de vertaling verschijnt eronder. Dubbeltik op een woord en AI legt uit wat het in die zin betekent.",
+    "platformNote": "Gratis te gebruiken, met daglimieten · Plus is een maandabonnement · {minOS} of nieuwer; ook op Macs met Apple-chip en Apple Vision Pro",
+    "secondaryCta": "Zo werkt het"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "Onze buurtbibliotheek gaat op zaterdag vroeg open.",
+      "Mensen komen binnen met een kop koffie en blijven uiteindelijk tot het middaguur lezen."
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "werkwoord",
+      "meaning": "(end up + -ing) uiteindelijk iets gaan doen; hier: ongemerkt tot het middaguur blijven lezen",
+      "note": "In deze zin hoort het bij het phrasal verb “end up”."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Veeg naar rechts",
+      "more": "Meer definities",
+      "pause": "Pauzeren",
+      "replay": "Opnieuw afspelen"
+    },
+    "caption": "HTML-demo van de app, geen screenshot: een Engelse alinea met de Nederlandse vertaling eronder."
+  },
+  "featuresIntro": {
+    "title": "Veeg om te vertalen, dubbeltik voor de betekenis – op de websites die je leest",
+    "lede": "Gemaakt voor taalleerders die echte websites lezen. Twee gebaren doen het meeste werk; de rest is er als een zin wat meer aandacht nodig heeft."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Veeg om te vertalen",
+      "title": "Veeg om te vertalen: de vertaling staat direct onder het origineel",
+      "text": "Open een pagina in de ingebouwde browser (typ een adres of zoek iets) en veeg naar rechts over een alinea. De vertaling komt er direct onder, zodat je allebei leest zonder van scherm te wisselen of je plek kwijt te raken.",
+      "bullets": [
+        "Weergave “Automatisch”, “Alinea” of “Zin voor Zin”",
+        "Toon vertalingen automatisch, of pas na een tik",
+        "Nieuws, blogs, documentatie, X – pagina’s die je in de app opent"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "WordByWord op iPhone (Engelse interface): een Spaanse Wikipedia-pagina met Engelse vertalingen onder de originele tekst"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Dubbel tikken om op te zoeken",
+      "title": "Dubbeltik op een woord: AI geeft de betekenis in context",
+      "text": "WordByWord leest eerst de hele zin en kijkt of een woord bij een uitdrukking hoort. Zo krijg je de betekenis die hier past, geen lijst met woordenboekbetekenissen.",
+      "bullets": [
+        "Dubbeltik op elk woord op de pagina",
+        "Uitdrukkingen en vaste combinaties worden eerst herkend",
+        "“Meer definities”: volledig lemma met voorbeelden, woordvormen en uitspraak"
+      ],
+      "note": "Niet beschikbaar voor Chinese, Japanse of Koreaanse brontekst.",
+      "image": "shot/{set}/lookup",
+      "alt": "WordByWord op iPhone (Engelse interface): Spaans woord “convirtiéndose” gemarkeerd, met een kaart over de betekenis in de zin"
+    },
+    {
+      "id": "x",
+      "kicker": "X (voorheen Twitter)",
+      "title": "X-berichten (Twitter) tweetalig lezen in de ingebouwde browser",
+      "text": "Log in op x.com in WordByWord en veeg naar rechts over een bericht om de vertaling eronder te zien – handig als je accounts volgt die in een andere taal posten.",
+      "image": "shot/{set}/x",
+      "alt": "Illustratie van een bericht in WordByWord: een Engels bericht met de Nederlandse vertaling eronder (geen screenshot)",
+      "sample": {
+        "name": "Voorbeeldaccount",
+        "handle": "@runner.example",
+        "time": "3 u",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "Net mijn eerste 10 km gelopen. Langzaam, maar ik ben geen moment gestopt."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "Engelse pagina’s",
+      "title": "Segmentextractie en Action Flow, voor Engelse zinnen",
+      "text": "Als je een Engelse zin met een veeg hebt vertaald, onderstreept “Segmentextractie” de woordgroepen die samen één geheel vormen, en toont Action Flow (in de app: “Actieverloop van de zin”) de kernhandeling van de zin en de handelingen die ermee samenhangen. Laat ze automatisch draaien, pas na een tik, of zet ze uit.",
+      "note": "Alleen voor Engelse brontekst.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for — op weg gaan naar een plek",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Illustratie, geen screenshot"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Voorlezen",
+      "title": "Voorlezen met een AI-stem of met snelle iOS-stemmen op je apparaat",
+      "text": "Laat een woord of een hele zin voorlezen. “AI Lezing” gebruikt een natuurlijk klinkende stem in de cloud; “Lokale Lezing” gebruikt de stemmen die in iOS zijn ingebouwd – sneller, met instelbare snelheid, en geschikt voor Premium- of Enhanced-stemmen die je hebt gedownload.",
+      "image": "shot/{set}/tts",
+      "alt": "WordByWord op iPhone (Engelse interface): een vertaalde alinea met de voorleesspeler onder in beeld"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Zinsbouw",
+      "title": "Zinsbouw analyseren met AI, handig bij lange zinnen",
+      "text": "Open een vertaalde zin uit de geschiedenis van je veegvertalingen en tik op “AI-syntaxuitleg ophalen”. De zin wordt in delen opgesplitst, met uitleg over hoe die samenhangen.",
+      "image": "shot/{set}/syntax",
+      "alt": "WordByWord op iPhone (Engelse interface): het detailscherm van een vertaalde zin met AI-uitleg over de zinsbouw"
+    },
+    {
+      "id": "engines",
+      "kicker": "Vertaalmotoren",
+      "title": "Vertalen in de cloud of op het apparaat",
+      "text": "Cloud (Azure en Google) of iOS op het apparaat; cloudtegoed op? Kies lokaal."
+    },
+    {
+      "id": "display",
+      "kicker": "Weergave",
+      "title": "Opmaak en stijl van de vertaling",
+      "text": "Automatisch, per alinea of zin voor zin; direct of na een tik; diverse stijlen."
+    },
+    {
+      "id": "history",
+      "kicker": "Geschiedenis",
+      "title": "Geschiedenis van vertalingen en opgezochte woorden",
+      "text": "Vertalingen en opgezochte woorden worden met hun zin bewaard; altijd te wissen."
+    },
+    {
+      "id": "devices",
+      "kicker": "Apparaten",
+      "title": "iPhone, iPad, Mac en Vision Pro",
+      "text": "iPhone en iPad ({minOS}+), Macs met Apple-chip ({minMacOS}+) en Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Instellingen, volledige definities en taalkeuze in de app",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Instellingen: vertaalmodus, vertaalstijl en spraakmodus (Engelse interface)",
+        "alt": "Instellingen van WordByWord op iPhone (Engelse interface): vertaalmodus automatisch, citaatstijl en lokaal voorlezen"
+      },
+      {
+        "id": "dictionary",
+        "caption": "“Meer definities”: het volledige lemma, met voorbeeldzinnen (Engelse interface)",
+        "alt": "WordByWord-scherm “Meer definities” (Engelse interface): het Spaanse woord “matrimonio” met definities en voorbeeldzinnen"
+      },
+      {
+        "id": "languages",
+        "caption": "Bron- en doeltaal: van Spaans naar Amerikaans-Engels (Engelse interface)",
+        "alt": "Taalinstellingen van WordByWord (Engelse interface): brontaal Spaans, doeltaal Engels (VS)"
+      },
+      {
+        "id": "languageList",
+        "caption": "Kies een van de {targetLanguages, plural, one{# vertaaltaal} other{# vertaaltalen}} (Engelse interface)",
+        "alt": "Talenlijst van WordByWord op iPhone (Engelse interface): Vietnamees, Portugees, Oekraïens, Italiaans, Nederlands en meer"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Vertalen naar {targetLanguages, plural, one{# taal} other{# talen}} – en niet alleen vanuit het Engels",
+    "lede": "Kies in welke taal je de vertalingen wilt. WordByWord gaat eerst uit van Engels, herkent de taal van de pagina die je leest en werkt de instelling bij. Je kunt ook zelf kiezen.",
+    "uiCount": "App in {uiLanguages, plural, one{# taal} other{# talen}}",
+    "targetCount": "Vertalingen naar {targetLanguages, plural, one{# taal} other{# talen}}",
+    "sourceNote": "Taal van de pagina: standaard Engels, automatisch herkend, aan te passen",
+    "targetListLabel": "Vertaaltalen",
+    "limits": [
+      "Chinese, Japanse en Koreaanse pagina’s: vertalen met een veeg en voorlezen werken, opzoeken met dubbeltikken niet.",
+      "Segmentextractie en Action Flow werken alleen bij Engelse tekst."
+    ]
+  },
+  "pricing": {
+    "title": "Elke dag gratis – upgrade naar Plus als je meer leest",
+    "lede": "WordByWord is gratis te downloaden. De meeste functies hebben een gratis dagtegoed dat elke dag opnieuw begint; WordByWord Plus verhoogt het.",
+    "table": {
+      "caption": "Daglimieten: Gratis en Plus",
+      "colFeature": "Functie",
+      "colFree": "Gratis",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Vertalen",
+        "lookup": "Opzoeken",
+        "listen": "Luisteren",
+        "sentence": "Zinsanalyse"
+      },
+      "rows": {
+        "cloudSwipe": "Veeg om te vertalen · cloud",
+        "localSwipe": "Veeg om te vertalen · lokaal",
+        "lookup": "Dubbel tikken om op te zoeken (AI)",
+        "more": "Meer definities",
+        "lookupSpeech": "AI-uitspraak (woord)",
+        "swipeSpeech": "AI-uitspraak (zin)",
+        "localVoice": "iOS-stem (Lokale Lezing)",
+        "chunks": "Segmentextractie",
+        "actionFlow": "Action Flow",
+        "syntax": "AI-syntaxuitleg"
+      },
+      "perDay": "{n}/dag",
+      "noLimit": "Geen limiet",
+      "englishOnly": "Alleen Engels"
+    },
+    "summary": "Alle functies zijn gratis binnen deze limieten; Plus verhoogt ze voor {plus.priceUS} per maand (VS).",
+    "free": {
+      "name": "Gratis"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "{plus.priceUS}/maand (VS)"
+    },
+    "note": "Prijzen verschillen per regio en staan in de App Store. Je kunt het abonnement altijd opzeggen in de instellingen van je Apple Account."
+  },
+  "faq": {
+    "title": "Veelgestelde vragen over WordByWord",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "Wat is WordByWord?",
+        "a": "WordByWord is een leesassistent voor taalleerders en voor iedereen die websites in een andere taal leest, op iPhone en iPad. Open een pagina in de ingebouwde browser, veeg naar rechts over een alinea om de vertaling eronder in te voegen, en dubbeltik op een woord om te zien wat het in die zin betekent. WordByWord is gemaakt door een onafhankelijke ontwikkelaar, Jinlong. [Meer over WordByWord (in het Engels)](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "Kan WordByWord een hele webpagina in één keer vertalen?",
+        "a": "Nee. WordByWord vertaalt de alinea waarover je veegt en zet de vertaling er direct onder; de rest van de pagina blijft in de oorspronkelijke taal. Je kunt vertalingen per alinea of per zin tonen (of “Automatisch” laten kiezen), en kiezen of ze meteen verschijnen of pas als je tikt."
+      },
+      {
+        "id": "safari",
+        "q": "Werkt het in Safari of in andere apps?",
+        "a": "Nee. WordByWord is geen Safari-extensie en voegt geen vertaalknop toe aan andere apps. De app heeft een eigen browser met tabbladen en bladwijzers: typ een webadres of zoek iets, en vertaal daar met een veeg."
+      },
+      {
+        "id": "word-by-word",
+        "q": "Vertaalt WordByWord woord voor woord?",
+        "a": "Niet letterlijk. Wie woord voor woord vertaalt, mist vaak de betekenis. Daarom vertaalt WordByWord hele zinnen of alinea’s, en legt het losse woorden alleen uit als je erop dubbeltikt – in de context van de zin waarin ze staan."
+      },
+      {
+        "id": "x",
+        "q": "Kan ik X (voorheen Twitter) lezen met WordByWord?",
+        "a": "Ja. Open x.com in de ingebouwde browser en log in. Veeg daarna naar rechts over een bericht om de vertaling eronder te zien, en dubbeltik op een woord om het op te zoeken (niet bij berichten in het Chinees, Japans of Koreaans). Dit werkt met de website van X in WordByWord, niet met de X-app."
+      },
+      {
+        "id": "languages",
+        "q": "Welke talen ondersteunt WordByWord?",
+        "a": "De app is beschikbaar in {uiLanguages, plural, one{# taal} other{# talen}} en vertaalt naar {targetLanguages, plural, one{# taal} other{# talen}}, waaronder vereenvoudigd en traditioneel Chinees en zowel Amerikaans als Brits Engels. De taal van de pagina is standaard Engels; WordByWord herkent de taal die je leest en past de instelling aan, en je kunt die ook zelf wijzigen. Sommige functies hangen af van die taal: opzoeken met dubbeltikken werkt niet bij Chinese, Japanse of Koreaanse tekst, en Segmentextractie en Action Flow werken alleen bij Engels."
+      },
+      {
+        "id": "free",
+        "q": "Is WordByWord gratis? Wat zijn de daglimieten?",
+        "a": "Ja. WordByWord is gratis te downloaden en te gebruiken, met daglimieten. De gratis versie biedt per dag {quota.cloudSwipe.free, plural, one{# veegvertaling} other{# veegvertalingen}} met de cloudmotor, {quota.localSwipe.free} met de lokale motor, {quota.lookup.free, plural, one{# woordverklaring} other{# woordverklaringen}} met dubbeltikken, {quota.chunks.free, plural, one{# segmentextractie} other{# segmentextracties}}, {quota.actionFlow.free, plural, one{# Action Flow-analyse} other{# Action Flow-analyses}} en {quota.syntax.free, plural, one{# AI-syntaxanalyse} other{# AI-syntaxanalyses}}; iOS-stemmen hebben geen daglimiet. **WordByWord Plus** is een maandabonnement ({plus.priceUS} in de VS; lokale prijzen staan in de App Store) dat deze limieten verhoogt."
+      },
+      {
+        "id": "engines",
+        "q": "Welke vertaalmotor gebruikt de app?",
+        "a": "Dat kies je zelf. De cloudvertaalmotor werkt op dit moment met de vertaaldiensten van Azure en Google. De lokale motor gebruikt de vertaalfunctie die in iOS is ingebouwd; de eerste keer moet iOS misschien taalbronnen downloaden. Zijn je cloudvertalingen voor vandaag op, schakel dan over naar de lokale motor en probeer het opnieuw. Woorduitleg, zinsanalyse en “AI Lezing” gebruiken AI-diensten in de cloud."
+      },
+      {
+        "id": "account",
+        "q": "Heb ik een account nodig voor WordByWord?",
+        "a": "Nee. WordByWord werkt zonder registratie. Je logt alleen in op websites zoals x.com in de ingebouwde browser, net als in elke andere browser. Een abonnement op WordByWord Plus hoort bij je Apple Account, niet bij een WordByWord-account."
+      },
+      {
+        "id": "restore",
+        "q": "Hoe krijg ik WordByWord Plus terug op een nieuwe iPhone of iPad?",
+        "a": "Gebruik op het nieuwe apparaat hetzelfde Apple Account. Tik in de instellingen van WordByWord op “Nu Upgraden” en daarna op “Aankoop Herstellen”. Je abonnement wijzigen of opzeggen doe je in de abonnementsinstellingen van je Apple Account."
+      },
+      {
+        "id": "android",
+        "q": "Is er een Android-versie?",
+        "a": "Nee. WordByWord is alleen te krijgen in de App Store, voor iPhone en iPad, Macs met Apple-chip en Apple Vision Pro."
+      },
+      {
+        "id": "english-learner",
+        "q": "Ik leer Engels. Is SurfEnglish ook het proberen waard?",
+        "a": "Blijf WordByWord gebruiken voor de pagina’s en X-berichten die je zelf kiest, in het Engels of in een andere taal. Wil je daarnaast elke dag Engels nieuws per niveau ({se.levels}) en spelletjes waarmee je de zinnen en woorden herhaalt die je hebt bewaard? Dat vind je in SurfEnglish, van dezelfde ontwikkelaar, met hetzelfde vegen en dubbeltikken. De twee apps werken naast elkaar. De interface van SurfEnglish is niet in het Nederlands beschikbaar (wel in het Engels en 11 andere talen), maar de app kan wel naar het Nederlands vertalen. [Website van SurfEnglish (in het Engels)](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "Werkt WordByWord op iPad, Mac of in een desktopbrowser?",
+        "a": "WordByWord werkt op iPhone en iPad met {minOS} of nieuwer, en via de App Store ook op Macs met Apple-chip ({minMacOS} of nieuwer) en op Apple Vision Pro. Een versie voor desktopbrowsers is er nog niet; een Chrome-extensie van dezelfde ontwikkelaar is in voorbereiding – zie de [pagina over de Chrome-extensie (in het Engels)](@chrome).",
+        "aExtLive": "WordByWord werkt op iPhone en iPad met {minOS} of nieuwer, en via de App Store ook op Macs met Apple-chip ({minMacOS} of nieuwer) en op Apple Vision Pro. Voor Chrome op een computer is er een aparte extensie van dezelfde ontwikkelaar: [WordByWord Translate voor Chrome (in het Engels)](@chrome). Installeer die alleen via de link op die pagina."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "Van de ontwikkelaar van WordByWord",
+      "title": "SurfEnglish: dagelijks Engels nieuws op jouw niveau",
+      "body": "Leer je Engels? Blijf in WordByWord lezen wat je wilt en probeer ook SurfEnglish: dagelijks Engels nieuws per niveau en herhaalspelletjes, met hetzelfde vegen en dubbeltikken.",
+      "points": [
+        "Echt Engels nieuws op niveau {se.levels}",
+        "Herhaalspelletjes met wat je hebt gelezen",
+        "Deel Engelse artikelen vanuit Safari"
+      ],
+      "note": "Gratis om te beginnen · iPhone en iPad · Vertalingen naar {se.targetLanguages, plural, one{# taal} other{# talen}}",
+      "uiNote": "Gratis · Geen Nederlandse interface (wel Engels en 11 andere talen) · Vertaalt naar het Nederlands",
+      "linkText": "Engels nieuws tweetalig lezen – SurfEnglish (Engelstalige website)",
+      "appStoreLinkText": "Download SurfEnglish in de App Store",
+      "shotAlt": "SurfEnglish, scherm Games (Engelse interface): Sentence Builder en Word Raid, te spelen met bewaarde zinnen en woorden",
+      "shotCaption": "Screenshot van SurfEnglish (Engelse interface)"
+    },
+    "footer": {
+      "heading": "Van dezelfde ontwikkelaar",
+      "linkText": "SurfEnglish: Bilingual News (EN)"
+    }
+  },
+  "cta": {
+    "title": "Lees websites voortaan tweetalig op je iPhone",
+    "recap": "Veeg om te vertalen · Dubbeltik voor de betekenis · Voorlezen · {targetLanguages, plural, one{# taal} other{# talen}}",
+    "text": "Gratis in de App Store, voor iPhone en iPad."
+  },
+  "footer": {
+    "tagline": "Een leesassistent voor taalleerders op iPhone en iPad.",
+    "product": "Product",
+    "help": "Hulp",
+    "iosApp": "App voor iPhone en iPad",
+    "chromeExtension": "Chrome-extensie",
+    "about": "Over WordByWord",
+    "support": "Ondersteuning",
+    "privacy": "Privacybeleid",
+    "contact": "Contact opnemen",
+    "faq": "Veelgestelde vragen",
+    "languagesTitle": "Talen",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Gemaakt door Jinlong",
+    "notAffiliated": "Niet verbonden aan WordByWord.io.",
+    "appleNotice": "Apple, het Apple-logo, iPhone, iPad, Mac en Apple Vision Pro zijn handelsmerken van Apple Inc., gedeponeerd in de VS en andere landen en regio’s. App Store is een dienstmerk van Apple Inc.",
+    "ariaNav": "Sitenavigatie"
+  },
+  "langSuggest": {
+    "message": "Deze pagina is ook beschikbaar in het Nederlands.",
+    "action": "Toon in het Nederlands",
+    "close": "Sluiten"
+  },
+  "notfound": {
+    "title": "Pagina niet gevonden",
+    "text": "De pagina die je zoekt, staat hier niet. Misschien is de pagina verplaatst toen deze site werd vernieuwd.",
+    "home": "Naar de startpagina van WordByWord",
+    "languages": "Of open WordByWord in jouw taal:"
+  }
+}

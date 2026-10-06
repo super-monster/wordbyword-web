@@ -109,6 +109,30 @@
         "template": "94714826de2c"
       }
     },
+    "home-it": {
+      "file": "assets/og/home-it.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "e168062634da51188195a786c3003ee6eac53ece62a3ed09bda9656d789a2f6c",
+      "inputs": {
+        "headline": "Leggi qualsiasi pagina web in due lingue. [[L’originale resta lì.]]",
+        "subline": "Scorri a destra su un paragrafo · tocca due volte una parola per il suo significato nel contesto",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-nl": {
+      "file": "assets/og/home-nl.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "b963fc3d3a67a9c8424949ecd8b64c55d439bd476a721de65c5ab92bcfb4801d",
+      "inputs": {
+        "headline": "Lees elke webpagina tweetalig. [[Het origineel blijft staan.]]",
+        "subline": "Veeg een alinea naar rechts · dubbeltik op een woord voor de betekenis in context",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,
