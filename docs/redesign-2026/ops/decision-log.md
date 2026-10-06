@@ -385,3 +385,24 @@
   3. 同一分支关闭公告，deploy-manual #3 用时 61s，公告立即消失，SE 卡片恢复。
   4. 收尾：`cloudflare-deploy` 快进到 ddb2a3b，hotfix 以 `--no-ff` 并回 main（37543b9）。
   - deploy-manual #1 因令牌无效失败，生产没有变化。
+- **M4-05 GA4 事件核对**（Browser 2，媒体资源 538133762，数据流 word-by-word-top）：
+  - 客户端：在预览站上逐个触发，包装 `gtag` 记录事件名和参数。都符合 06 §8.2：
+    - `app_store_click` 4 处，label 分别为 header／hero／pricing／cta；
+    - `section_anchor_click`；
+    - `nav_click`（页眉）；
+    - `language_switch`（header:ja，from_locale／to_locale = en→ja，R38）；
+    - `surfenglish_promo`（card_site／card_appstore）；
+    - `contact_email_click`、`button_click`（Pause）、`faq_toggle`（label = FAQ id）；
+    - `surfenglish_promo_view`（card，在无头 Chrome 中验证；后台标签页的 IntersectionObserver 不触发）。
+  - **问题与修复（9eab3b4）**：新页脚的链接列表放在 `<nav>` 里，页脚链接全被记成 `nav_click`，旧站是 `footer_link_click`。已把页脚判断移到 nav 判断之前，复测为 `footer_link_click`。
+  - 服务器端：实时报告收到上述事件，`app_store_click` 计为关键事件。DebugView 未出现调试事件（`gtag('set',{debug_mode})` 无效，改用 `config` 后也没有出现），以实时报告为准。
+  - 增强型衡量：网页浏览、滚动、出站点击，另有 4 项，都已开启。出站点击会另记 `click` 事件，与自定义事件名不同，不会在同一指标里重复计数；旧站设置相同，为保持基线可比，**维持现状**（负责人可要求关闭）。
+  - 数据污染：Lighthouse 与事件核对在预览站产生了约 26 个会话（主机名 main.wordbyword-web.pages.dev），报表按主机名过滤即可（DEPLOY.md §11）。
+- **Bing**：负责人已完成登录与从 GSC 导入，Bing 提示需要 48 小时处理。
+- **Naver**：
+  - 负责人在 searchadvisor.naver.com 添加站点，选 HTML 태그，把 content 值发给 Claude；
+  - Claude 写入 `SITE.verification.naver`（layout 已支持输出该 meta），随切换上线；
+  - T0 之后点验证并提交 sitemap。
+- **PR-SE-1 说明**：SE 仓库分支 `wbw-family-pr1`，4 个提交、18 个文件（+143／−35），未合并。
+  - 内容：共享 Person（Jinlong）、页脚 "More from the maker"、about 页加 "Also by Jinlong"、SE 标题与关键词限定为英语、对应的 lint。
+  - 待负责人审阅预览站 https://wbw-family-pr1.surfenglishwebsite.pages.dev/ 后，在 T0 前合并上线（R51）。
