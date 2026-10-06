@@ -457,3 +457,5 @@
   - `sitemap-legacy.xml` 最迟 2026-11-17 撤下；
   - GitHub Pages 在 2026-11-04～12-16 之间下线，必须早于回滚截止 2026-12-23 16:32 JST；
   - zh-Hans、ja、zh-Hant、ko 及 T2／T3 的母语补审。
+- **T0 第 5 步（负责人 iPhone 实测）通过**：WBW App 设置 → 隐私政策、订阅页的隐私链接、App Store 页面的 Marketing／Support／Privacy 三个链接都正常（2026-10-07 负责人确认）。
+- **切换后复查（2026-10-07 00:21，约 T+25min）**：正式域名契约测试 18 pass，verify-deploy --prod 179 pass／0 fail。GSC 两个 sitemap 仍是"无法抓取"，"上次读取时间"为空，即 Google 尚未读取，属刚提交时的常态；T+1d 复查时若仍未读取再排查。
