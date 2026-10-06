@@ -28,3 +28,10 @@ test('invisible break controls do not hide a word from the checks', async () => 
   assert.ok(re.test(normSpace('ใช้งาน ออฟ​ไลน์')), 'U+200B in dist text');
   assert.equal(displayText('off­line'), 'offline');
 });
+
+test('a Devanagari nukta letter matches in either encoding', async () => {
+  const { displayText } = await import('../../src/lib/validate-util.mjs');
+  const pre = 'फ़', dec = 'फ़'; // फ़ precomposed / फ + nukta
+  const [a] = compileAll([`${pre}्री`], 'iu'); const [b] = compileAll([`${dec}्री`], 'iu');
+  for (const re of [a, b]) for (const text of [`मु${pre}्री ऐप`, `मु${dec}्री ऐप`]) assert.ok(re.test(displayText(text)));
+});

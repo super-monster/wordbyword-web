@@ -85,7 +85,7 @@ export function unicodeWords(src) {
 export function compileAll(list, flags, onBad) {
   const out = [];
   for (const src of list ?? []) {
-    try { out.push(re(flags.includes('u') ? unicodeWords(src) : src, flags)); } catch (e) { onBad?.(src, e.message); }
+    try { out.push(re(flags.includes('u') ? unicodeWords(src.normalize('NFC')) : src, flags)); } catch (e) { onBad?.(src, e.message); } // NFC both sides: hi nukta letters come precomposed or as base + U+093C
   }
   return out;
 }
@@ -109,7 +109,7 @@ export const RICH_LINK = /\[([^\]]+)\]\(([^)]*)\)/g;
 // Invisible format characters (soft hyphen, zero-width space, word joiner, BOM) steer line breaking only (th joins
 // words with U+2060, doc 05 §3.5); they must not let a banned word or a keyword slip past a pattern or a length.
 export const INVISIBLE = /[\u00ad\u200b\u2060\ufeff]/g;
-export const displayText = (s) => plain(String(s ?? '').replace(RICH_LINK, '$1')).replace(INVISIBLE, '');
+export const displayText = (s) => plain(String(s ?? '').replace(RICH_LINK, '$1')).replace(INVISIBLE, '').normalize('NFC');
 
 export const YEAR = new Date().getUTCFullYear();
 
