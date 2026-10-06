@@ -17,8 +17,8 @@
     "pt-BR": ["aprender inglês", "notícias em inglês", "aprend\\w* inglês", "estud\\w* inglês", "inglês (por|no seu) nível", "\\bblocos?\\b"],
     "fr": ["apprendre l['’]anglais"],
     "de": ["Englisch lernen", "Englisch (zu )?lernen", "Englisch-?lernen", "englische (Nachrichten|News)", "Englisch-(Nachrichten|News)", "\\bChunks?\\b"],
-    "it": ["imparare l['’]inglese"],
-    "nl": ["Engels leren"],
+    "it": ["imparare l['’]inglese", "impar\\w* (l['’])?inglese", "stud\\w* (l['’])?inglese", "notizie in inglese", "inglese (al tuo|per) livello", "(?<![\\p{L}])segmenti(?![\\p{L}])", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
+    "nl": ["Engels leren", "Engels (studeren|oefenen)", "(?<![\\p{L}])leer( je)? Engels", "(?<![\\p{L}])Engelse? nieuws", "(?<![\\p{L}])nieuws in het Engels", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
     "pl": ["nauka angielskiego"],
     "ru": ["(учить|изучение) английск"],
     "uk": ["(вчити|вивчення) англійськ"],
@@ -39,7 +39,9 @@
     "pt-BR": ["^\\W*aprend(a|er) inglês", "^\\W*(aprend|estud)\\w* inglês", "^\\W*(estou|está) aprendendo inglês"],
     "fr": ["^\\W*apprendre l['’]anglais"],
     "de": ["^\\W*Englisch lernen", "^\\W*(Lernst du|Du lernst) Englisch", "^\\W*Englisch (zu )?lernen", "^\\W*Englisch-?lernen"],
-    "ru": ["^\\W*(учить|изучение) английск"]
+    "ru": ["^\\W*(учить|изучение) английск"],
+    "it": ["^\\W*impar\\w* (l['’])?inglese", "^\\W*(stai imparando|studi|studiare) (l['’])?inglese"],
+    "nl": ["^\\W*(Engels leren|leer( je)? Engels)"]
   },
   "reserved": {
     "G1": {
@@ -51,7 +53,9 @@
       "es": ["\\bcómo (traducir|leer|ver)\\b", "(conservar|mantener|sin perder) el (texto )?original"],
       "fr": ["\\bcomment\\b", "(en )?(gardant|conservant) l[’']original", "(garder|conserver) l[’']original"],
       "pt-BR": ["\\bcomo (traduzir|ler)\\b", "\\b(manter|mantendo|preservar|preservando|sem perder) o (texto )?original", "\\bpasso a passo\\b"],
-      "de": ["(?<![\\p{L}])wie (man|du)(?![\\p{L}])", "Anleitung", "Original (behalten|beibehalten)"]
+      "de": ["(?<![\\p{L}])wie (man|du)(?![\\p{L}])", "Anleitung", "Original (behalten|beibehalten)"],
+      "it": ["(?<![\\p{L}])come (tradurre|leggere|vedere)(?![\\p{L}])", "(mantenere|mantenendo|conservare|conservando|tenere|tenendo|senza perdere) l['’](originale|testo originale)", "(?<![\\p{L}])guida(?![\\p{L}])"],
+      "nl": ["(?<![\\p{L}])hoe(?![\\p{L}])", "(?<![\\p{L}])zo (vertaal|lees|bewaar|houd|zie|behoud) je(?![\\p{L}])", "(?<![\\p{L}])(het )?origineel (behouden|bewaren|houden|erbij houden)", "(?<![\\p{L}])met behoud van (het )?origineel", "(?<![\\p{L}])(behoud|bewaar|houd) (het )?origineel"]
     }
   },
   "primaryTokens": {
