@@ -15,7 +15,9 @@
         "zh-Hans": ["一键翻译整", "整页翻译", "翻译整个(网页|页面)", "自动翻译整"],
         "zh-Hant": ["一鍵翻譯整", "整頁翻譯", "翻譯整個(網頁|頁面)", "自動翻譯整"],
         "ja": ["ページ全体を(一括|一度に|まるごと)", "ワンタップで翻訳", "ページ全体の翻訳", "丸ごと翻訳"],
-        "ko": ["페이지 전체(를)? (한 번에 )?번역", "원탭 번역"]
+        "ko": ["페이지 전체(를)? (한 번에 )?번역", "원탭 번역"],
+        "es": ["traduc\\w* (toda |una |la )?(la )?página (web )?(entera|completa)", "página (web )?(entera|completa) de una vez", "traducción de (páginas?|webs?|sitios?)( web)? (enteras?|completas?)", "(con|en) un (solo )?toque", "traduc\\w* (todo el|un) sitio (web )?(entero|completo)"],
+        "fr": ["tradui\\w* (toute la|toute une|une|la) page( web)? (entière|complète|d[’']un (seul )?coup)", "tradui\\w* toute (la|une) page", "\\bpages? (web )?(entières?|complètes?)", "en un (seul )?(toucher|geste|clic)", "traduction de (la|toute la) page"]
       },
       "exempt": ["faq.items[whole-page]", "about.sections[limits].text", "about.facts[*].value"],
       "exemptPrefix": ["chromeExtension."]
@@ -28,7 +30,9 @@
         "zh-Hans": ["左滑", "向左滑"],
         "zh-Hant": ["左滑", "向左滑"],
         "ja": ["左に?スワイプ"],
-        "ko": ["왼쪽으로 (밀|스와이프)"]
+        "ko": ["왼쪽으로 (밀|스와이프)"],
+        "es": ["desliz\\w*[^.;:]{0,30}izquierda"],
+        "fr": ["(balay|gliss)\\w*(\\s+\\S+){0,3}\\s+(vers la gauche|à gauche)"]
       },
       "exempt": []
     },
@@ -40,7 +44,9 @@
         "zh-Hans": ["Safari ?扩展", "分享扩展", "在任何 ?App ?(里|中)", "任意 ?App ?(里|中)", "无需切换 ?App"],
         "zh-Hant": ["Safari ?(延伸功能|擴充)", "分享延伸功能", "在任何 ?App ?(裡|中)", "無需切換 ?App"],
         "ja": ["Safari ?拡張", "共有拡張", "どのアプリでも", "アプリを切り替えずに"],
-        "ko": ["(사파리|Safari) 확장", "공유 확장", "어떤 앱에서(든|나)"]
+        "ko": ["(사파리|Safari) 확장", "공유 확장", "어떤 앱에서(든|나)"],
+        "es": ["extensión (de|para) Safari", "extensión (para|de) compartir", "en cualquier (otra )?app\\b", "dentro de (cualquier|otras) apps?", "desde cualquier app", "sin cambiar de app"],
+        "fr": ["extension (pour |de )?safari", "extension de partage", "dans (n[’']importe quelle|toutes? les|chaque) (autre )?app", "sans changer d[’']app"]
       },
       "exempt": ["faq.items[safari]", "about.sections[limits].text"],
       "exemptPrefix": ["chromeExtension."]
@@ -77,7 +83,9 @@
         "zh-Hans": ["离线", "无网", "断网", "不联网"],
         "zh-Hant": ["離線", "無網路", "不需網路"],
         "ja": ["オフライン", "ネット(接続)?なしで"],
-        "ko": ["오프라인", "인터넷 없이"]
+        "ko": ["오프라인", "인터넷 없이"],
+        "es": ["sin conexión", "\\boffline\\b", "sin (acceso a )?internet", "fuera de línea"],
+        "fr": ["hors[ -]ligne", "hors[ -]connexion", "sans (connexion( internet)?|internet|réseau)"]
       },
       "exempt": []
     },
@@ -89,7 +97,9 @@
         "zh-Hans": ["无限\\s*次?\\s*AI", "AI\\s*(发音|朗读)\\s*(无限|不限)"],
         "zh-Hant": ["無限\\s*次?\\s*AI", "AI\\s*(發音|朗讀)\\s*(無限|不限)"],
         "ja": ["無制限のAI", "AI(読み上げ|発音)[^。]{0,6}無制限"],
-        "ko": ["무제한 AI", "AI (발음|읽기) 무제한"]
+        "ko": ["무제한 AI", "AI (발음|읽기) 무제한"],
+        "es": ["(IA|AI) ilimitad", "(pronunciación|lectura|voz|voces)( con| de)? (IA|AI) (ilimitad|sin límite)", "ilimitad\\w* (de |con )?(IA|AI)"],
+        "fr": ["ia illimitée", "illimit\\w* (de )?(prononciation|lecture|voix)", "(prononciation|lecture|voix)\\w*( \\w+)? (ia|ai) illimit"]
       },
       "exempt": []
     },
@@ -101,7 +111,9 @@
         "zh-Hans": ["暗色模式", "深色模式", "夜间模式", "自定义主题", "主题色", "更换主题"],
         "zh-Hant": ["暗色模式", "深色模式", "夜間模式", "自訂主題", "主題色"],
         "ja": ["ダークモード", "テーマ(カラー|色)", "着せ替え"],
-        "ko": ["다크 ?모드", "테마 (색|변경)"]
+        "ko": ["다크 ?모드", "테마 (색|변경)"],
+        "es": ["modo oscuro", "modo noche", "temas? personalizad", "colou?r(es)? de(l)? tema"],
+        "fr": ["mode (sombre|nuit)", "thèmes? personnalis", "couleurs? de thème", "thème de couleur"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -114,7 +126,9 @@
         "zh-Hans": ["快捷键", "音量"],
         "zh-Hant": ["快捷鍵", "音量"],
         "ja": ["ショートカット(キー)?", "音量"],
-        "ko": ["단축키", "볼륨"]
+        "ko": ["단축키", "볼륨"],
+        "es": ["atajos? de teclado", "volumen"],
+        "fr": ["raccourcis? (clavier|de traduction)", "(réglage|contrôle|curseur) du volume", "régler le volume"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -127,7 +141,9 @@
         "zh-Hans": ["生词本", "单词本", "闪卡", "(云端|账号|iCloud)\\s*(同步|备份)", "多设备同步"],
         "zh-Hant": ["生詞本", "單字本", "閃卡", "(雲端|帳號|iCloud)\\s*(同步|備份)"],
         "ja": ["単語帳", "フラッシュカード", "(クラウド|アカウント|iCloud)\\s*(同期|バックアップ)"],
-        "ko": ["단어장", "플래시 ?카드", "(클라우드|계정) (동기화|백업)"]
+        "ko": ["단어장", "플래시 ?카드", "(클라우드|계정) (동기화|백업)"],
+        "es": ["tarjetas de (memoria|estudio)", "flash ?cards?", "(cuaderno|lista|libreta) de vocabulario", "sincroniz\\w*", "copia de seguridad en la nube", "repetición espaciada"],
+        "fr": ["flash ?cards?", "fiches? (de révision|mémo)", "(carnet|liste) de vocabulaire", "synchronis\\w* (icloud|du compte|entre (vos )?appareils|dans le cloud)", "sauvegarde (icloud|dans le cloud)", "répétition espacée"]
       },
       "exempt": []
     },
@@ -139,7 +155,9 @@
         "zh-Hans": ["安卓", "Android\\s*版", "Google Play"],
         "zh-Hant": ["安卓", "Android\\s*版", "Google Play"],
         "ja": ["Android(版|アプリ|端末)", "Google Play"],
-        "ko": ["안드로이드", "구글 플레이"]
+        "ko": ["안드로이드", "구글 플레이"],
+        "es": ["android", "google play"],
+        "fr": ["version android", "sur android", "pour android", "appli(cation)? android", "google play"]
       },
       "exempt": ["faq.items[android]"]
     },
@@ -151,7 +169,9 @@
         "zh-Hans": ["电脑版", "桌面版", "Windows\\s*版", "PC\\s*版"],
         "zh-Hant": ["電腦版", "桌面版", "Windows\\s*版", "PC\\s*版"],
         "ja": ["(PC|パソコン|デスクトップ)版", "Windows版"],
-        "ko": ["(PC|데스크톱) 버전", "윈도우 버전"]
+        "ko": ["(PC|데스크톱) 버전", "윈도우 버전"],
+        "es": ["versión (de|para) (escritorio|PC|Windows|ordenador|computadora)", "app de escritorio", "para (Windows|PC)\\b"],
+        "fr": ["version (pour )?(ordinateur|pc|windows|de bureau)", "application de bureau", "pour (windows|pc)\\b"]
       },
       "exempt": ["faq.items[devices]", "faq.items[android]"],
       "exemptPrefix": ["chromeExtension."]
@@ -164,7 +184,9 @@
         "zh-Hans": ["在\\s*X\\s*App\\s*(里|中)(翻译|使用)", "唯一能翻译\\s*X"],
         "zh-Hant": ["在\\s*X\\s*App\\s*(裡|中)(翻譯|使用)", "唯一能翻譯\\s*X"],
         "ja": ["Xアプリ(で|内で|の中で)翻訳", "Xを翻訳できる唯一"],
-        "ko": ["X 앱에서 번역"]
+        "ko": ["X 앱에서 번역"],
+        "es": ["(en|dentro de) la app de X\\b", "única app (que|para) traduc\\w* X\\b"],
+        "fr": ["dans l[’']app(lication)? x\\b", "seule app\\w* (qui|à) tradui\\w* x\\b"]
       },
       "exempt": ["faq.items[x]"]
     },
@@ -176,7 +198,9 @@
         "zh-Hans": ["抢先体验"],
         "zh-Hant": ["搶先體驗"],
         "ja": ["先行(体験|アクセス|利用)"],
-        "ko": ["얼리 ?액세스", "먼저 체험"]
+        "ko": ["얼리 ?액세스", "먼저 체험"],
+        "es": ["acceso anticipado"],
+        "fr": ["accès anticipé", "en avant-première"]
       },
       "exempt": []
     },
@@ -188,7 +212,9 @@
         "zh-Hans": ["不收集任何", "不收集(你的|您的)?个人", "无追踪", "不追踪"],
         "zh-Hant": ["不收集任何", "不收集(你的|您的)?個人", "無追蹤", "不追蹤"],
         "ja": ["個人情報(は|を)一切", "一切収集し", "トラッキングなし"],
-        "ko": ["개인 ?정보를 (전혀 )?수집하지 않", "추적하지 않"]
+        "ko": ["개인 ?정보를 (전혀 )?수집하지 않", "추적하지 않"],
+        "es": ["no (se )?recopila\\w* (ningún |ninguna )?(dato|información)", "sin rastreo", "no (te )?rastrea"],
+        "fr": ["aucune donnée (personnelle|collectée)", "ne collecte (aucune|pas de|jamais de) (donnée|information)", "sans (pistage|traçage|suivi publicitaire)", "aucun (pistage|traçage)"]
       },
       "exempt": []
     },
@@ -200,7 +226,9 @@
         "zh-Hans": ["初始版本"],
         "zh-Hant": ["初始版本"],
         "ja": ["初期バージョン"],
-        "ko": ["초기 버전"]
+        "ko": ["초기 버전"],
+        "es": ["versión inicial"],
+        "fr": ["version initiale"]
       },
       "exempt": []
     },
@@ -212,7 +240,9 @@
         "zh-Hans": ["语言对"],
         "zh-Hant": ["語言對"],
         "ja": ["言語ペア"],
-        "ko": ["언어 쌍"]
+        "ko": ["언어 쌍"],
+        "es": ["pares? de idiomas"],
+        "fr": ["paires? de langues"]
       },
       "exempt": []
     },
@@ -224,7 +254,9 @@
         "zh-Hans": ["\\d+\\s*种(译文|翻译|显示)?样式", "[五六七八九十]种(译文|翻译|显示)?样式"],
         "zh-Hant": ["\\d+\\s*種(譯文|翻譯|顯示)?樣式", "[五六七八九十]種(譯文|翻譯|顯示)?樣式"],
         "ja": ["\\d+種類?の(スタイル|表示)"],
-        "ko": ["\\d+가지 (스타일|표시)"]
+        "ko": ["\\d+가지 (스타일|표시)"],
+        "es": ["\\b\\d+ estilos", "\\b(cinco|seis|siete|ocho|nueve|diez) estilos"],
+        "fr": ["\\b\\d+ styles", "\\b(cinq|six|sept|huit|neuf|dix) styles"]
       },
       "exempt": []
     },
@@ -236,7 +268,9 @@
         "zh-Hans": ["自动(检测|识别)目标语言"],
         "zh-Hant": ["自動(偵測|檢測|識別)目標語言"],
         "ja": ["(翻訳先|ターゲット言語)[^。]{0,8}自動(検出|判定|検知)"],
-        "ko": ["대상 언어(를)? 자동"]
+        "ko": ["대상 언어(를)? 자동"],
+        "es": ["detecta\\w* (automáticamente )?(el )?idioma de destino"],
+        "fr": ["détect\\w* (automatiquement )?(la|votre) langue cible", "langue cible (est )?détectée"]
       },
       "exempt": []
     },
@@ -248,7 +282,9 @@
         "zh-Hans": ["按日期分组"],
         "zh-Hant": ["(依|按)日期分組"],
         "ja": ["日付(ごと|別)に(整理|分類|表示)"],
-        "ko": ["날짜별로 (정리|분류)"]
+        "ko": ["날짜별로 (정리|분류)"],
+        "es": ["(agrupad|ordenad|clasificad)\\w* por fecha"],
+        "fr": ["(regroup|class|tri)\\w* par date"]
       },
       "exempt": []
     },
@@ -260,7 +296,9 @@
         "zh-Hans": ["(Plus|会员)\\s*专(属|享)", "仅限\\s*Plus"],
         "zh-Hant": ["(Plus|會員)\\s*專(屬|享)", "僅限\\s*Plus"],
         "ja": ["Plus(限定|専用|会員のみ)"],
-        "ko": ["Plus 전용"]
+        "ko": ["Plus 전용"],
+        "es": ["solo (para|con|en) (WordByWord )?Plus", "exclusiv\\w* (de|para) (WordByWord )?Plus"],
+        "fr": ["réservée? (à|aux abonnés) plus", "exclusi\\w* (à|de|avec) (wordbyword )?plus", "uniquement (avec|dans|pour) (wordbyword )?plus", "(avec|dans) plus uniquement"]
       },
       "exempt": []
     },
@@ -272,7 +310,9 @@
         "zh-Hans": ["提升口语", "听说同步", "口语练习"],
         "zh-Hant": ["提升口說", "口說練習", "聽說同步"],
         "ja": ["スピーキング(練習)?", "発音(練習|トレーニング)"],
-        "ko": ["말하기 연습", "발음 (연습|교정)"]
+        "ko": ["말하기 연습", "발음 (연습|교정)"],
+        "es": ["expresión oral", "practica\\w* (la |tu )?pronunciación", "mejora\\w* tu (forma de )?hablar", "práctica de conversación"],
+        "fr": ["expression orale", "pratique de l[’']oral", "améliore\\w* (votre )?(prononciation|oral)", "entraînement (à la prononciation|à l[’']oral)"]
       },
       "exempt": []
     },
@@ -307,7 +347,9 @@
         "zh-Hans": ["可能更适合你", "更适合你", "更适合您", "(取代|替代)\\s*WordByWord", "姊妹\\s*App", "旧版\\s*WordByWord"],
         "zh-Hant": ["可能更適合你", "更適合你", "更適合您", "(取代|替代)\\s*WordByWord", "姊妹\\s*App"],
         "ja": ["(の方|のほう)が(合う|向いて)", "より合う", "姉妹アプリ", "前作", "旧版"],
-        "ko": ["더 잘 맞", "더 맞을 수", "자매 앱"]
+        "ko": ["더 잘 맞", "더 맞을 수", "자매 앱"],
+        "es": ["puede encajarte mejor", "te (puede )?encaja\\w* mejor", "más adecuad", "en lugar de WordByWord", "app hermana", "(sustitu|reemplaz)\\w* (a )?WordByWord", "versión anterior de WordByWord"],
+        "fr": ["vous conviendra (peut-être )?mieux", "(plus|mieux) adapté", "au lieu de wordbyword", "(app|application) sœur", "ancienne (app|version de wordbyword)", "remplac\\w* wordbyword", "passer de wordbyword à surfenglish"]
       },
       "exempt": []
     },
@@ -319,7 +361,9 @@
         "zh-Hans": ["(端侧|离线|本机|本地)\\s*(AI\\s*)?(语音|朗读|发音)"],
         "zh-Hant": ["(離線|本機|本地)\\s*(AI\\s*)?(語音|朗讀|發音)"],
         "ja": ["(オフライン|端末内|オンデバイス)の?(音声|読み上げ)"],
-        "ko": ["(오프라인|기기 내) (음성|읽기)"]
+        "ko": ["(오프라인|기기 내) (음성|읽기)"],
+        "es": ["voz (de IA )?en (el|tu) dispositivo", "voces? (de IA )?en (el|tu) dispositivo", "voces? sin conexión"],
+        "fr": ["voix (ia |ai )?(sur l[’']appareil|embarquées?|hors[ -]ligne|locales?)", "voix\\w* (qui fonctionnent )?hors[ -]ligne"]
       },
       "only": ["sibling.card", "faq.items[english-learner]"],
       "exempt": []
@@ -332,7 +376,9 @@
         "zh-Hans": ["全新", "新上线", "新版", "更高效", "更快", "升级"],
         "zh-Hant": ["全新", "新上線", "新版", "更高效", "更快", "升級"],
         "ja": ["新登場", "新しい", "より(速|早)く", "効率的", "アップグレード"],
-        "ko": ["새로운", "신규", "더 빠른", "업그레이드"]
+        "ko": ["새로운", "신규", "더 빠른", "업그레이드"],
+        "es": ["\\bnuev[oa]s?\\b", "más rápid", "más eficiente", "\\bactualiza", "mejor que"],
+        "fr": ["\\bnouve(au|lle|aux|lles)\\b", "plus rapide", "plus efficace", "mise à niveau", "meilleure? que"]
       },
       "only": ["sibling.card", "sibling.footer", "faq.items[english-learner]", "about.family"],
       "exempt": []
@@ -346,7 +392,9 @@
         "zh-Hans": ["革命性", "颠覆", "彻底改变", "告别", "最强", "第一款", "唯一(一款|的)", "\\d+\\s*万\\s*用户", "用户数", "WordByWord\\s*团队", "我们的团队", "开发团队"],
         "zh-Hant": ["革命性", "顛覆", "徹底改變", "告別", "最強", "唯一(一款|的)", "WordByWord\\s*團隊", "開發團隊"],
         "ja": ["革命的", "さよなら", "最強", "唯一の", "No\\.\\s?1", "ユーザー数", "開発チーム", "WordByWord\\s*チーム"],
-        "ko": ["혁명적", "최강", "유일한 앱", "WordByWord 팀"]
+        "ko": ["혁명적", "최강", "유일한 앱", "WordByWord 팀"],
+        "es": ["revolucionari", "\\bel mejor\\b", "\\bla mejor\\b", "número uno", "\\bel único\\b", "\\bla única\\b", "primer\\w* del mundo", "(miles|millones) de (usuarios|personas|descargas)", "\\d[\\d.,]*\\s?(mil )?(usuarios|descargas)", "equipo de WordByWord", "nuestro equipo", "di adiós"],
+        "fr": ["révolution", "change la donne", "dites adieu", "\\b(le|la) meilleure?\\b", "numéro un", "\\b(le|la) seule?\\b", "premi\\w+ au monde", "des millions d", "\\d[\\d\\u00A0\\u202F .,]*\\s?[km]?\\+? (utilisateurs|téléchargements)", "équipe (de )?wordbyword", "notre équipe", "\\bles créateurs\\b"]
       },
       "exempt": ["about.disambiguation.text"]
     },
@@ -372,7 +420,9 @@
         "zh-Hans": ["(1\\d|2\\d)\\s*\\+?\\s*种语言"],
         "zh-Hant": ["(1\\d|2\\d)\\s*\\+?\\s*種語言"],
         "ja": ["(1\\d|2\\d)\\s*言語(に|へ|を)翻訳"],
-        "ko": ["(1\\d|2\\d)개 언어"]
+        "ko": ["(1\\d|2\\d)개 언어"],
+        "es": ["\\b(1\\d|2\\d)\\+? (idiomas|pares de idiomas)\\b"],
+        "fr": ["\\b(1\\d|2\\d)\\+? (langues|paires de langues)\\b"]
       },
       "only": ["chromeExtension."],
       "exempt": []

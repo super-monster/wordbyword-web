@@ -47,7 +47,9 @@
       "zh-Hans": ["怎么", "如何", "方法"],
       "zh-Hant": ["怎麼", "如何", "方法"],
       "ja": ["方法", "やり方"],
-      "ko": ["방법", "하는 법"]
+      "ko": ["방법", "하는 법"],
+      "es": ["\\bcómo (traducir|leer|ver)\\b", "(conservar|mantener|sin perder) el (texto )?original"],
+      "fr": ["\\bcomment\\b", "(en )?(gardant|conservant) l[’']original", "(garder|conserver) l[’']original"]
     }
   },
   "primaryTokens": {
