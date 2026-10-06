@@ -406,3 +406,20 @@
 - **PR-SE-1 说明**：SE 仓库分支 `wbw-family-pr1`，4 个提交、18 个文件（+143／−35），未合并。
   - 内容：共享 Person（Jinlong）、页脚 "More from the maker"、about 页加 "Also by Jinlong"、SE 标题与关键词限定为英语、对应的 lint。
   - 待负责人审阅预览站 https://wbw-family-pr1.surfenglishwebsite.pages.dev/ 后，在 T0 前合并上线（R51）。
+- **PR-SE-1 已合并上线（M3-10，负责人确认后，2026-10-06 23:47）**：
+  - SE 仓库：`main` 由 7c464b6 快进到 733b1d9；`cloudflare-deploy` 由 2899a57 快进到 733b1d9；CF 自动构建，23:49 生效。
+  - 顺带上线的 7c464b6（负责人 9-18 的宣传视频工具 `promo/`）：分别构建生产版与 main，dist 逐字节一致，对网站没有影响。
+  - 线上核对（surfenglish.app）：
+    - 页脚 "More from the maker" 链接 https://www.word-by-word.app/，旧站新站都可用；
+    - about 页有 "Also by Jinlong: WordByWord"；
+    - 无 X-Robots-Tag，抽查页面都是 200。
+  - Person JSON-LD 与 WBW 新站逐字一致（R17）：@id https://surfenglish.app/about/#maker，name Jinlong，alternateName Chi Jinlong，sameAs 为 x.com/JinlongDev 与 App Store 开发者页。
+  - 后续：PR-SE-2 在 T+7d 内完成，把 SE 页脚链接换成 WBW 对应语言页（R51）。
+- **M4-03 完成**：
+  - axe-core 4.14（取自已获准下载的 lighthouse 缓存）在无头 Chrome 中运行，范围是 WCAG 2.1 A/AA + best-practice，亮色与暗色、390 与 1280 宽。
+    - 修复前有 2 条 best-practice：首页截图滚动区是与所在 section 同名的第二个 region 地标（landmark-unique）；about 表格左上角是空的 `th`（empty-table-header）。
+    - 修复（f38b01d）：滚动区改为带名称的 `role="group"`，仍可用键盘聚焦滚动；空表头改为 `td`。
+  - 暗色模式没有对比度问题。
+  - 禁用 JS 的 en 首页分段截图：全部内容可读。demo 显示静态画面；FAQ、页眉菜单、语言切换都是原生 `<details>`，不依赖 JS。
+  - VoiceOver 实机检查留给负责人，可选。
+- **Naver**：负责人决定以后再做。
