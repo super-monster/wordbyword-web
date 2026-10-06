@@ -208,11 +208,12 @@ export function home(ctx) {
   const tb = t.pricing.table;
   const q = product.wbw.quota;
   // "$3.99 / month (US)", "月額$3.99（米国の価格）": wrap only before the parenthesis, never inside a word (05 A7)
+  const slash = (x) => esc(x).replaceAll('/', '/<wbr>'); // "US$3,99/bulan" may break after the slash below 400 px (.nw wraps there)
   const priceLines = (s) => {
     const i = s.search(/[（(]/);
-    if (i <= 0) return esc(s);
+    if (i <= 0) return slash(s);
     const a = s.slice(0, i);
-    return `<span class="nw">${esc(a.trimEnd())}</span>${a.endsWith(' ') ? ' ' : '<wbr>'}<span class="nw">${esc(s.slice(i))}</span>`;
+    return `<span class="nw">${slash(a.trimEnd())}</span>${a.endsWith(' ') ? ' ' : '<wbr>'}<span class="nw">${slash(s.slice(i))}</span>`;
   };
   const val = (v) => (v === '∞' ? `<span class="nolimit">${esc(tb.noLimit)}</span>` : `<span class="q-val">${esc(f(tb.perDay, { n: v }))}</span>`);
   const groups = [['translate', ['cloudSwipe', 'localSwipe']], ['lookup', ['lookup', 'more']], ['listen', ['lookupSpeech', 'swipeSpeech', 'localVoice']], ['sentence', ['chunks', 'actionFlow', 'syntax']]];
