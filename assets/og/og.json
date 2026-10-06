@@ -49,6 +49,42 @@
         "template": "94714826de2c"
       }
     },
+    "home-ko": {
+      "file": "assets/og/home-ko.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "96d47515f87bcd4aaaafa9bc605808654a38f398dc1be092bc878317af95e543",
+      "inputs": {
+        "headline": "웹페이지를 번역과 함께. [[원문은 그대로.]]",
+        "subline": "문단을 오른쪽으로 밀면 번역 · 단어를 두 번 탭하면 문맥 속 뜻",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-es": {
+      "file": "assets/og/home-es.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "859a036395ba8de67e7df78cb4a73024a6c064db570e0498f41f4ce4d4b9c808",
+      "inputs": {
+        "headline": "Lee cualquier página web en dos idiomas. [[El original, intacto.]]",
+        "subline": "Desliza un párrafo a la derecha · toca dos veces una palabra: su significado en contexto",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-fr": {
+      "file": "assets/og/home-fr.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "1e08e4e41fd2c955cd119e81a9594f261b51fb17d2a31dd1d5248aa320c35189",
+      "inputs": {
+        "headline": "Lisez le web en deux langues. [[L’original reste en place.]]",
+        "subline": "Balayez un paragraphe vers la droite · touchez deux fois un mot pour son sens en contexte",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,

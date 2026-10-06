@@ -1,0 +1,50 @@
+{
+  "locale": "fr",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (fr column = the app's xcstrings names), §7.2.2 rules ①–③ and fix X7 (the app's tip says 'Double-cliquez', mouse wording; the site writes 'touchez deux fois'), §7.3 fr row (vous; 'balayez … vers la droite', 'touchez deux fois'), §7.5 jargon row (C-16).",
+    "required: kickers and quota-table rows use the app's names (rule ①). Kickers drop the '(Signification IA)' suffix like en / ja; the lookup row keeps the full name. Action Flow keeps the App Store name (doc 08 D3, §7.2.3); the app's 'Fil d’actions' is quoted in features[chunks].text. The app writes AI in 'Lecture AI' / 'Prononciation AI' and IA elsewhere: names are quoted as the app shows them, sentences say IA.",
+    "contains: app button and setting names the sentences quote verbatim between « » (rule ①; T-E for faq.items[restore]). The website sets the app's straight apostrophe as the typographic ’ (French typography, same characters otherwise).",
+    "banned: 'balayage' as a noun reads as 'scanning' (doc 08 §7.5 jargon, C-16; also claims-lint jargon) — the gesture is the verb 'balayer'; mouse wording (X7); left swipes (F14); a single tap for lookup (doc 08 §1.1); the English noun 'double-tap' in sentences (doc 08 §7.3). The app's own feature name 'Double-tapez pour rechercher' stays in the kicker and the quota table (it does not match \\bdouble-tap\\b)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Balayer pour traduire",
+    "features[lookup].kicker": "Double-tapez pour rechercher",
+    "features[x].kicker": "X (ex-Twitter)",
+    "features[chunks].kicker": "Pages en anglais",
+    "features[speech].kicker": "Lecture à voix haute",
+    "features[syntax].kicker": "Syntaxe",
+    "features[engines].kicker": "Moteurs de traduction",
+    "features[display].kicker": "Affichage",
+    "features[history].kicker": "Historique",
+    "features[devices].kicker": "Appareils",
+    "demo.ui.more": "Plus de définitions",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Balayer pour traduire\u00a0· moteur cloud",
+    "pricing.table.rows.localSwipe": "Balayer pour traduire\u00a0· moteur local",
+    "pricing.table.rows.lookup": "Double-tapez pour rechercher (Signification IA)",
+    "pricing.table.rows.more": "Plus de définitions",
+    "pricing.table.rows.lookupSpeech": "Prononciation AI (Mot)",
+    "pricing.table.rows.swipeSpeech": "Prononciation AI (Phrase)",
+    "pricing.table.rows.localVoice": "Voix iOS (Lecture locale)",
+    "pricing.table.rows.chunks": "Extraction de Segments",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "Explication de la syntaxe par l’IA"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Mettre à Niveau Maintenant", "Restaurer l’Achat"],
+    "features[syntax].text": ["Obtenir l’explication de la syntaxe par l’IA"],
+    "features[speech].text": ["Lecture AI", "Lecture locale"],
+    "features[chunks].text": ["Extraction de Segments", "Action Flow", "Fil d’actions"],
+    "features[lookup].bullets[2]": ["Plus de définitions"]
+  },
+  "banned": [
+    { "pattern": "\\bbalayages?\\b", "regex": true, "flags": "i", "use": "le verbe : « balayez un paragraphe vers la droite » ; nom de fonction : « Balayer pour traduire »", "note": "as a noun 'balayage' reads as 'scanning' (doc 08 §7.5 jargon, C-16)" },
+    { "pattern": "double[- ]?cli(c|qu)", "regex": true, "flags": "i", "use": "touchez deux fois", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7: the app's tip says 'Double-cliquez')", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "(balay|gliss|fai\\w* glisser)\\w*(\\s+\\S+){0,3}\\s+(vers la gauche|à gauche)", "regex": true, "flags": "i", "use": "vers la droite", "note": "the gesture is a right swipe (F14)" },
+    { "pattern": "\\b(touchez|toucher|touchant|appuyez sur|tapez sur) (un|le|ce|chaque|n’importe quel) mot(?!\\s+deux fois)", "regex": true, "flags": "i", "use": "touchez deux fois un mot", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "\\bdouble[- ]tap\\b", "regex": true, "flags": "i", "use": "toucher deux fois", "note": "sentences use the natural gesture wording (doc 08 §7.2.2 rule ②, §7.3); the app's name 'Double-tapez pour rechercher' is not matched" },
+    { "pattern": "\\balignements?\\b", "regex": true, "flags": "i", "use": "affichage phrase par phrase", "note": "jargon (doc 08 §7.5, C-16; also claims-lint jargon)" },
+    { "pattern": "Autres définitions|Plus de Définitions", "regex": true, "use": "Plus de définitions", "note": "app name of more_definitions_title (T-A)" }
+  ],
+  "allowInKeys": []
+}

@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "title": "WordByWord: traductor bilingüe de páginas web para iPhone",
+    "description": "Aprende idiomas: en WordByWord, desliza un párrafo y su traducción aparece debajo. Toca dos veces una palabra para ver su significado. Gratis en iPhone y iPad.",
+    "ogHeadline": "Lee cualquier página web en dos idiomas. [[El original, intacto.]]",
+    "ogSubline": "Desliza un párrafo a la derecha · toca dos veces una palabra: su significado en contexto",
+    "ogImageAlt": "WordByWord en iPhone (interfaz en inglés): texto en español, traducción al inglés debajo y una palabra explicada por IA",
+    "appStoreName": "WordByWord",
+    "appStoreSubtitle": "Desliza para traducir, la IA explica"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "páginas web",
+      "traductor"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "traductor bilingüe de páginas web para iPhone",
+        "secondary": [
+          "asistente de lectura para aprender idiomas",
+          "traducir páginas web en iPhone",
+          "traducción debajo del original",
+          "app de lectura bilingüe para cualquier web",
+          "aprender idiomas leyendo sitios web"
+        ]
+      },
+      "K2": {
+        "primary": "significado de una palabra en contexto (IA)",
+        "secondary": [
+          "diccionario con IA",
+          "tocar dos veces para buscar una palabra",
+          "significado de expresiones y modismos",
+          "ejemplos y formas de una palabra"
+        ]
+      },
+      "K3": {
+        "primary": "lectura en voz alta con IA",
+        "secondary": [
+          "leer páginas web en voz alta",
+          "voces de iOS con velocidad ajustable"
+        ]
+      },
+      "K4": {
+        "primary": "analizar la estructura de una oración con IA",
+        "secondary": [
+          "entender oraciones largas",
+          "gramática de una oración explicada"
+        ]
+      },
+      "K6": {
+        "primary": "historial de traducciones y palabras consultadas",
+        "secondary": [
+          "repasar palabras en su contexto"
+        ]
+      },
+      "K7": {
+        "primary": "traducción en la nube o en el dispositivo",
+        "secondary": [
+          "traducción con Azure y Google",
+          "traducción de iOS en el dispositivo"
+        ]
+      },
+      "K8": {
+        "primary": "traducción a 21 idiomas",
+        "secondary": [
+          "app en 20 idiomas",
+          "detecta el idioma de la página automáticamente"
+        ]
+      },
+      "K9": {
+        "primary": "traducir publicaciones de X (Twitter) en iPhone",
+        "secondary": [
+          "leer tuits con el original",
+          "traducir X en el navegador integrado"
+        ]
+      },
+      "K10": {
+        "primary": "app de traducción gratis para iPhone",
+        "secondary": [
+          "límites diarios gratuitos",
+          "precio de WordByWord Plus"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Saltar al contenido",
+    "languageLabel": "Idioma",
+    "comingSoon": "Próximamente",
+    "contactUs": "Contacto",
+    "lastUpdated": "Última actualización",
+    "breadcrumbHome": "Inicio",
+    "appStoreBadgeAlt": "Consigue WordByWord en el App Store",
+    "langFallbackNote": "Esta página solo está disponible en inglés. Los demás idiomas abren su página de inicio.",
+    "menu": "Menú",
+    "close": "Cerrar",
+    "figLabel": "Figura",
+    "screenshotLabel": "Captura del iPhone (interfaz en inglés)",
+    "screenshotExcerptLabel": "Detalle de captura (interfaz en inglés)",
+    "noteLabel": "Nota",
+    "demoLabel": "Demo de la app"
+  },
+  "nav": {
+    "features": "Funciones",
+    "languages": "Idiomas",
+    "pricing": "Precios",
+    "faq": "Preguntas",
+    "chromeExtension": "Extensión Chrome",
+    "about": "Acerca de",
+    "download": "Descargar",
+    "downloadShort": "Descargar",
+    "iphoneApp": "App para iPhone",
+    "ariaMain": "Principal",
+    "ariaLanguages": "Elige un idioma"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Lector web bilingüe para aprender idiomas",
+    "title": "Desliza un párrafo de una [[página web]]: su traducción aparece justo debajo.",
+    "lede": "WordByWord es un asistente de lectura para estudiantes de idiomas, en iPhone y iPad.",
+    "ledeShort": "WordByWord es un asistente de lectura para estudiantes de idiomas, en iPhone y iPad.",
+    "ctaNote": "Descarga gratuita · iPhone y iPad",
+    "how": "Abre un sitio web en el navegador integrado y desliza un párrafo a la derecha: la traducción aparece debajo. Toca dos veces una palabra y la IA te explica qué significa ahí.",
+    "platformNote": "Gratis, con límites diarios · Plus es una suscripción mensual · {minOS} o posterior; también en Mac con chip de Apple y Apple Vision Pro",
+    "secondaryCta": "Cómo funciona"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "La biblioteca de nuestro barrio abre temprano los sábados.",
+      "La gente llega con su café y acaba leyendo hasta el mediodía."
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "verbo",
+      "meaning": "acabar (haciendo algo); aquí: quedarse leyendo sin darse cuenta",
+      "note": "En esta oración forma parte del verbo frasal “end up”."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Desliza a la derecha",
+      "more": "Más definiciones",
+      "pause": "Pausa",
+      "replay": "Repetir"
+    },
+    "caption": "Demo de la app en HTML, no es una captura de pantalla: un párrafo en inglés con su traducción al español insertada debajo."
+  },
+  "featuresIntro": {
+    "title": "Desliza para traducir y toca dos veces para buscar, en las páginas web que lees",
+    "lede": "Pensado para quienes aprenden idiomas leyendo sitios web reales. Dos gestos hacen casi todo el trabajo; el resto está ahí cuando una frase pide una mirada más atenta."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Deslizar para traducir",
+      "title": "Deslizar para traducir: la traducción aparece debajo del original",
+      "text": "Abre una página en el navegador integrado (escribe una dirección o busca) y desliza un párrafo a la derecha. La traducción se inserta debajo, así que lees ambos textos sin cambiar de pantalla ni perder por dónde ibas.",
+      "bullets": [
+        "Modo Automático, Párrafo o Frase por Frase",
+        "Traducciones visibles al instante o solo al tocar",
+        "Noticias, blogs, documentación, X: las páginas que abres en la app"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "WordByWord en iPhone (interfaz en inglés): una página de Wikipedia en español con la traducción al inglés debajo del original"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Toca dos veces para buscar",
+      "title": "Toca dos veces una palabra: la IA te da su significado en contexto",
+      "text": "WordByWord lee la oración completa antes de explicar una palabra y comprueba primero si forma parte de una expresión. Así obtienes el sentido que encaja aquí, no una lista de acepciones.",
+      "bullets": [
+        "Toca dos veces cualquier palabra de la página",
+        "Reconoce primero las expresiones y frases hechas",
+        "Más definiciones: entrada completa con ejemplos, formas y pronunciación"
+      ],
+      "note": "No disponible para textos de origen en chino, japonés o coreano.",
+      "image": "shot/{set}/lookup",
+      "alt": "WordByWord en iPhone (interfaz en inglés): la palabra “convirtiéndose” resaltada y una tarjeta que explica qué significa ahí"
+    },
+    {
+      "id": "x",
+      "kicker": "X (antes Twitter)",
+      "title": "Traduce publicaciones de X (antes Twitter) en el navegador integrado",
+      "text": "Inicia sesión en x.com dentro de WordByWord y desliza una publicación a la derecha para ver su traducción debajo. Muy útil para seguir cuentas que publican en otro idioma.",
+      "image": "shot/{set}/x",
+      "alt": "Ilustración de una publicación en WordByWord: texto en inglés con su traducción al español debajo (no es una captura)",
+      "sample": {
+        "name": "Cuenta de ejemplo",
+        "handle": "@runner.example",
+        "time": "3 h",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "Acabo de terminar mi primera carrera de 10 km. Lenta, pero sin parar ni una vez."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "Páginas en inglés",
+      "title": "Extracción de Fragmentos y Action Flow, para oraciones en inglés",
+      "text": "Después de traducir una oración en inglés, la Extracción de Fragmentos subraya las expresiones que funcionan como una unidad y el Flujo de acciones (Action Flow) muestra la acción principal de la oración y las acciones ligadas a ella. Se ejecutan automáticamente o al tocar, o puedes desactivarlos.",
+      "note": "Solo para textos de origen en inglés.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for: ponerse en camino hacia un lugar",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Ilustración, no es una captura de pantalla"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Lectura en voz alta",
+      "title": "Lectura en voz alta con IA o con las voces rápidas de iOS",
+      "text": "Escucha una palabra o una frase entera. “Lectura AI” usa una voz natural en la nube; “Lectura local” usa las voces integradas en iOS: es más rápida, permite ajustar la velocidad y puede usar las voces Premium o Enhanced que hayas descargado.",
+      "image": "shot/{set}/tts",
+      "alt": "WordByWord en iPhone (interfaz en inglés): un párrafo traducido y el reproductor de lectura en la parte inferior"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Sintaxis",
+      "title": "Analiza con IA la estructura de las oraciones largas",
+      "text": "Abre una oración traducida en el historial de traducción con deslizamiento y toca “Obtener explicación de sintaxis de IA”. La IA divide la oración en partes y explica cómo encajan.",
+      "image": "shot/{set}/syntax",
+      "alt": "WordByWord en iPhone (interfaz en inglés): el detalle de una traducción con explicaciones de sintaxis de IA para una oración"
+    },
+    {
+      "id": "engines",
+      "kicker": "Motores de traducción",
+      "title": "Traducción en la nube o en el dispositivo",
+      "text": "Nube (Azure y Google) o en el dispositivo (iOS); ¿sin cuota? Cambia al local."
+    },
+    {
+      "id": "display",
+      "kicker": "Visualización",
+      "title": "Diseño y estilo de la traducción",
+      "text": "Automático, Párrafo o Frase por Frase; al instante o al tocar; varios estilos."
+    },
+    {
+      "id": "history",
+      "kicker": "Historial",
+      "title": "Historial de traducciones y palabras consultadas",
+      "text": "Traducciones y palabras consultadas se guardan con su frase; puedes borrarlas."
+    },
+    {
+      "id": "devices",
+      "kicker": "Dispositivos",
+      "title": "iPhone, iPad, Mac y Vision Pro",
+      "text": "iPhone y iPad ({minOS}+), Mac con chip de Apple ({minMacOS}+) y Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Configuración, definiciones completas e idiomas en la app",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Configuración: modo y estilo de traducción, y modo de lectura (interfaz en inglés)",
+        "alt": "Configuración de WordByWord en iPhone (interfaz en inglés): modo de traducción Auto, Quote Style y Local Read"
+      },
+      {
+        "id": "dictionary",
+        "caption": "Más definiciones: la entrada completa, con ejemplos (interfaz en inglés)",
+        "alt": "Pantalla More Definitions de WordByWord (interfaz en inglés): la palabra “matrimonio” con definiciones y ejemplos"
+      },
+      {
+        "id": "languages",
+        "caption": "Idioma de origen y de destino: de español a inglés de EE. UU. (interfaz en inglés)",
+        "alt": "Configuración de idioma de WordByWord (interfaz en inglés): idioma de origen español, idioma de destino inglés (EE. UU.)"
+      },
+      {
+        "id": "languageList",
+        "caption": "Elige entre {targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}} de traducción (interfaz en inglés)",
+        "alt": "Lista de idiomas de WordByWord en iPhone (interfaz en inglés): vietnamita, portugués, ucraniano, italiano, chino y más"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Traducción a {targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}, no solo desde el inglés",
+    "lede": "Elige el idioma al que quieres traducir. WordByWord parte del inglés, detecta el idioma de la página que estás leyendo y lo actualiza; también puedes elegirlo tú.",
+    "uiCount": "App en {uiLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}",
+    "targetCount": "Traducciones a {targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}",
+    "sourceNote": "Idioma de la página: inglés por defecto, se detecta solo y puedes cambiarlo",
+    "targetListLabel": "Idiomas de traducción",
+    "limits": [
+      "Páginas en chino, japonés y coreano: funcionan la traducción por deslizamiento y la lectura en voz alta, pero no la búsqueda con doble toque.",
+      "La Extracción de Fragmentos y el Flujo de acciones solo funcionan con textos en inglés."
+    ]
+  },
+  "pricing": {
+    "title": "Gratis todos los días. Actualiza a Plus si lees más",
+    "lede": "WordByWord se descarga gratis. La mayoría de las funciones tienen una cuota gratuita que se renueva cada día; WordByWord Plus la amplía.",
+    "table": {
+      "caption": "Límites diarios: Gratis y Plus",
+      "colFeature": "Función",
+      "colFree": "Gratis",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Traducir",
+        "lookup": "Buscar",
+        "listen": "Escuchar",
+        "sentence": "Análisis de oraciones"
+      },
+      "rows": {
+        "cloudSwipe": "Deslizar para traducir · nube",
+        "localSwipe": "Deslizar para traducir · local",
+        "lookup": "Toca dos veces para buscar (IA)",
+        "more": "Más definiciones",
+        "lookupSpeech": "Pronunciación con IA · palabra",
+        "swipeSpeech": "Pronunciación con IA · oración",
+        "localVoice": "Voz de iOS (Lectura local)",
+        "chunks": "Extracción de Fragmentos",
+        "actionFlow": "Flujo de acciones",
+        "syntax": "Explicación de sintaxis con IA"
+      },
+      "perDay": "{n} al día",
+      "noLimit": "Sin límite diario",
+      "englishOnly": "Solo inglés"
+    },
+    "summary": "Todas las funciones son gratis con estos límites; Plus los amplía por {plus.priceUS} al mes (EE. UU.).",
+    "free": {
+      "name": "Gratis"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "{plus.priceUS} al mes (EE. UU.)"
+    },
+    "note": "Los precios varían según la región y se muestran en el App Store. Puedes cancelar la suscripción cuando quieras desde tu Cuenta de Apple."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes sobre WordByWord",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "¿Qué es WordByWord?",
+        "a": "WordByWord es un asistente de lectura en iPhone y iPad para estudiantes de idiomas y para cualquiera que lea sitios web en otro idioma. Abre una página en su navegador integrado, desliza un párrafo a la derecha para insertar la traducción debajo y toca dos veces una palabra para ver qué significa en esa frase. Lo crea Jinlong, un desarrollador independiente. [Más sobre WordByWord](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "¿Puede WordByWord traducir una página web entera de una vez?",
+        "a": "No. WordByWord traduce el párrafo que deslizas e inserta la traducción justo debajo; el resto de la página se queda en el idioma original. Puedes mostrar las traducciones párrafo a párrafo o frase a frase (o dejar que decida el modo Automático) y elegir si aparecen al momento o solo cuando tocas."
+      },
+      {
+        "id": "safari",
+        "q": "¿Funciona en Safari o dentro de otras apps?",
+        "a": "No. WordByWord no es una extensión de Safari ni añade un botón de traducir a otras apps. Tiene su propio navegador con pestañas y marcadores: escribe una dirección web o busca, y desliza para traducir ahí."
+      },
+      {
+        "id": "word-by-word",
+        "q": "¿WordByWord es un traductor palabra por palabra?",
+        "a": "No en sentido literal. Traducir palabra por palabra suele hacer perder el sentido, así que WordByWord traduce oraciones o párrafos completos y solo explica una palabra cuando la tocas dos veces, en el contexto de la oración en la que aparece."
+      },
+      {
+        "id": "x",
+        "q": "¿Puedo leer X (antes Twitter) con WordByWord?",
+        "a": "Sí. Abre x.com en el navegador integrado e inicia sesión; después desliza una publicación a la derecha para ver su traducción debajo y toca dos veces una palabra para buscarla (no disponible en publicaciones en chino, japonés o coreano). Funciona con el sitio web de X dentro de WordByWord, no con la app de X."
+      },
+      {
+        "id": "languages",
+        "q": "¿Qué idiomas admite WordByWord?",
+        "a": "La app está disponible en {uiLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}} y traduce a {targetLanguages}, entre ellos el chino simplificado y el tradicional, y el inglés de EE. UU. y del Reino Unido. El idioma de la página es el inglés por defecto; WordByWord detecta el idioma que estás leyendo y lo actualiza, y también puedes cambiarlo a mano. Algunas funciones dependen de ese idioma: la búsqueda con doble toque no funciona con textos en chino, japonés o coreano, y la Extracción de Fragmentos y el Flujo de acciones solo funcionan en inglés."
+      },
+      {
+        "id": "free",
+        "q": "¿WordByWord es gratis? ¿Cuáles son los límites diarios?",
+        "a": "Sí. WordByWord se descarga y se usa gratis, con límites diarios. Cada día, el plan gratuito incluye {quota.cloudSwipe.free, plural, one{# traducción} many{# de traducciones} other{# traducciones}} por deslizamiento con el motor en la nube, {quota.localSwipe.free} con el motor local, {quota.lookup.free, plural, one{# búsqueda} many{# de búsquedas} other{# búsquedas}} con doble toque, {quota.chunks.free, plural, one{# extracción} many{# de extracciones} other{# extracciones}} de fragmentos, {quota.actionFlow.free, plural, one{# flujo} many{# de flujos} other{# flujos}} de acciones y {quota.syntax.free, plural, one{# explicación} many{# de explicaciones} other{# explicaciones}} de sintaxis con IA; las voces de iOS no tienen límite diario. **WordByWord Plus** es una suscripción mensual ({plus.priceUS} en EE. UU.; los precios locales se muestran en el App Store) que amplía estos límites."
+      },
+      {
+        "id": "engines",
+        "q": "¿Qué motor de traducción usa?",
+        "a": "Tú eliges. El motor de traducción en la nube funciona actualmente con los servicios de traducción de Azure y Google. El motor local usa la traducción integrada en iOS; la primera vez, iOS puede necesitar descargar recursos de idioma. Si se te acaban las traducciones en la nube del día, cambia al motor local y vuelve a intentarlo. Las explicaciones de palabras, el análisis de sintaxis y la “Lectura AI” usan servicios de IA en la nube."
+      },
+      {
+        "id": "account",
+        "q": "¿Necesito una cuenta para usar WordByWord?",
+        "a": "No. Puedes usar WordByWord sin registrarte. Solo inicias sesión en sitios web como x.com dentro de su navegador integrado, igual que en cualquier navegador. La suscripción a WordByWord Plus está vinculada a tu Cuenta de Apple, no a una cuenta de WordByWord."
+      },
+      {
+        "id": "restore",
+        "q": "¿Cómo recupero WordByWord Plus en un iPhone o iPad nuevo?",
+        "a": "Usa la misma Cuenta de Apple en el nuevo dispositivo. En la configuración de WordByWord, toca “Actualizar Ahora” y luego “Restaurar Compra”. Para cambiar o cancelar la suscripción, ve a la sección Suscripciones de tu Cuenta de Apple."
+      },
+      {
+        "id": "android",
+        "q": "¿Hay una versión para Android?",
+        "a": "No. WordByWord solo está disponible en el App Store, para iPhone y iPad, Mac con chip de Apple y Apple Vision Pro."
+      },
+      {
+        "id": "english-learner",
+        "q": "Estoy aprendiendo inglés. ¿Vale la pena probar también SurfEnglish?",
+        "a": "Sigue usando WordByWord para las páginas y publicaciones de X que elijas, en inglés o en cualquier otro idioma. Si además quieres noticias diarias en inglés ordenadas por nivel ({se.levels}) y juegos para repasar las frases y palabras que has guardado, SurfEnglish, del mismo desarrollador, te lo ofrece con el mismo deslizamiento y el mismo doble toque. Puedes usar las dos apps juntas. [Sitio web de SurfEnglish](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "¿WordByWord funciona en iPad, Mac o en un navegador de escritorio?",
+        "a": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Todavía no hay una versión para navegadores de escritorio; el mismo desarrollador está preparando una extensión para Chrome: consulta la [página de la extensión de Chrome](@chrome).",
+        "aExtLive": "WordByWord funciona en iPhone y iPad con {minOS} o posterior y, desde el App Store, también en Mac con chip de Apple ({minMacOS} o posterior) y en Apple Vision Pro. Para Chrome de escritorio hay una extensión aparte del mismo desarrollador, [WordByWord Translate para Chrome](@chrome). Instálala solo desde el enlace de esa página."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "Del desarrollador de WordByWord",
+      "title": "SurfEnglish: noticias diarias en inglés a tu nivel",
+      "body": "¿Aprendes inglés? Sigue leyendo en WordByWord lo que quieras y prueba también SurfEnglish: noticias diarias por niveles y juegos de repaso, con el mismo deslizamiento y doble toque.",
+      "points": [
+        "Noticias reales en inglés, niveles {se.levels}",
+        "Juegos de repaso con lo que has leído",
+        "Comparte artículos en inglés desde Safari"
+      ],
+      "note": "Gratis para empezar · iPhone y iPad · App en {se.uiLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}, español incluido · Traduce a {se.targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}",
+      "linkText": "Noticias en inglés con traducción — SurfEnglish",
+      "appStoreLinkText": "Consigue SurfEnglish en el App Store",
+      "shotAlt": "SurfEnglish, pantalla de juegos (interfaz en inglés): Sentence Builder y Word Raid, con frases y palabras guardadas",
+      "shotCaption": "Captura de SurfEnglish (interfaz en inglés)"
+    },
+    "footer": {
+      "heading": "Del mismo desarrollador",
+      "linkText": "SurfEnglish: Inglés y noticias"
+    }
+  },
+  "cta": {
+    "title": "Empieza a leer sitios web en dos idiomas en tu iPhone",
+    "recap": "Desliza para traducir · Toca dos veces para buscar · Lectura en voz alta · {targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}",
+    "text": "Gratis en el App Store, para iPhone y iPad."
+  },
+  "footer": {
+    "tagline": "Un asistente de lectura para estudiantes de idiomas, en iPhone y iPad.",
+    "product": "Producto",
+    "help": "Ayuda",
+    "iosApp": "App para iPhone y iPad",
+    "chromeExtension": "Extensión de Chrome",
+    "about": "Acerca de WordByWord",
+    "support": "Soporte",
+    "privacy": "Política de privacidad",
+    "contact": "Contacto",
+    "faq": "Preguntas frecuentes",
+    "languagesTitle": "Idiomas",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Desarrollado por Jinlong",
+    "notAffiliated": "Sin relación con WordByWord.io.",
+    "appleNotice": "Apple, el logotipo de Apple, iPhone, iPad, Mac y Apple Vision Pro son marcas comerciales de Apple Inc., registradas en EE. UU. y en otros países y regiones. App Store es una marca de servicio de Apple Inc.",
+    "ariaNav": "Sitio"
+  },
+  "langSuggest": {
+    "message": "Esta página también está disponible en español.",
+    "action": "Ver en español",
+    "close": "Cerrar"
+  },
+  "notfound": {
+    "title": "Página no encontrada",
+    "text": "La página que buscas no está aquí. Puede que se haya movido al renovar este sitio.",
+    "home": "Ir a la página de inicio de WordByWord",
+    "languages": "O abre WordByWord en tu idioma:"
+  }
+}

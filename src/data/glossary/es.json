@@ -1,0 +1,49 @@
+{
+  "locale": "es",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (es column, checked against WordByWordPrototype/Localizable.xcstrings), §7.2.2 rules ①–③ (no X-fix lists es), §7.3 es row (tú; 'desliza (a la derecha)', 'toca dos veces'), the es copy deck (src/locales/es.json, M3, T2).",
+    "required: key path → value used verbatim. Kickers use the app's names without the '(Significado AI)' suffix (as en / ja / zh-Hans do); es has no short name for the swipe feature (T-A '—'), so the kicker is the feature name 'Deslizar para traducir'. Quota-table rows are the app's names (daily_sentence_translation_limit + engine, word_meaning_lookup_title, more_definitions_title, Chunk Extraction, sentence_skeleton_ui_analyze), shortened so that each row fits two lines in the 390 px table ('· nube' / '· local', '(IA)' for '(Significado AI)'); the website writes 'IA' outside quoted app labels (the app mixes 'AI' and 'IA' in es — reported to the owner in docs/redesign-2026/ops/m3/es-qa.md, not an X-fix yet).",
+    "contains: in-app button / setting names that the sentence quotes verbatim in “ ” (rule ①; T-B get_syntax_explanation_button, T-C audio_playback_title_*, T-E upgrade_now_button / restore_purchase_button).",
+    "banned: variants that must not appear in any leaf value (pattern = literal text unless regex:true; flags 'i' = case-insensitive)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Deslizar para traducir",
+    "features[lookup].kicker": "Toca dos veces para buscar",
+    "features[x].kicker": "X (antes Twitter)",
+    "features[chunks].kicker": "Páginas en inglés",
+    "features[speech].kicker": "Lectura en voz alta",
+    "features[syntax].kicker": "Sintaxis",
+    "features[engines].kicker": "Motores de traducción",
+    "features[display].kicker": "Visualización",
+    "features[history].kicker": "Historial",
+    "features[devices].kicker": "Dispositivos",
+    "demo.ui.more": "Más definiciones",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Deslizar para traducir · nube",
+    "pricing.table.rows.localSwipe": "Deslizar para traducir · local",
+    "pricing.table.rows.lookup": "Toca dos veces para buscar (IA)",
+    "pricing.table.rows.more": "Más definiciones",
+    "pricing.table.rows.lookupSpeech": "Pronunciación con IA · palabra",
+    "pricing.table.rows.swipeSpeech": "Pronunciación con IA · oración",
+    "pricing.table.rows.localVoice": "Voz de iOS (Lectura local)",
+    "pricing.table.rows.chunks": "Extracción de Fragmentos",
+    "pricing.table.rows.actionFlow": "Flujo de acciones",
+    "pricing.table.rows.syntax": "Explicación de sintaxis con IA"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Actualizar Ahora", "Restaurar Compra"],
+    "features[syntax].text": ["Obtener explicación de sintaxis de IA"],
+    "features[speech].text": ["Lectura AI", "Lectura local"],
+    "features[chunks].text": ["Extracción de Fragmentos", "Flujo de acciones"],
+    "features[lookup].bullets[2]": ["Más definiciones"]
+  },
+  "banned": [
+    { "pattern": "desliz\\w*[^.;:]{0,30}izquierda", "regex": true, "flags": "i", "use": "desliza (a la derecha)", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "doble[- ]?cli(c|ck)", "regex": true, "flags": "i", "use": "toca dos veces / doble toque", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "\\b(toc|puls)(a|ar|as) (sobre |en )?(una|la|cualquier|cada) palabra", "regex": true, "flags": "i", "use": "toca dos veces una palabra", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "Extracción de (chunks|bloques)", "regex": true, "flags": "i", "use": "Extracción de Fragmentos", "note": "app name (T-B 'Chunk Extraction')" },
+    { "pattern": "Otras definiciones", "flags": "i", "use": "Más definiciones", "note": "app name of more_definitions_title (T-A)" },
+    { "pattern": "\\bpantallazo", "regex": true, "flags": "i", "use": "captura (de pantalla)", "note": "colloquial (Spain); neutral international Spanish (doc 08 §7.3)" }
+  ],
+  "allowInKeys": []
+}

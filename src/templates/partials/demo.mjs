@@ -12,7 +12,7 @@ export function demo(ctx) {
   const code = route.locale.hreflang;
   // ar: the screen stays LTR, the translation and the lookup card run RTL; the red bar stays on the left (05 §5.2.6)
   const rtl = route.locale.dir === 'rtl' ? ' dir="rtl"' : '';
-  const cjk = route.locale.script === 'cjk';
+  const join = /^(zh|ja)\b/.test(code) ? '' : ' '; // zh / ja run sentences together; ko (also script cjk) spaces them
   const lookup = d.lookup ?? null;
   let s2 = esc(d.source[1] ?? '');
   if (lookup) {
@@ -37,7 +37,7 @@ export function demo(ctx) {
         <p class="wb-title">${esc(d.articleTitle)}</p>${d.byline ? `
         <p class="wb-byline" aria-hidden="true">${esc(d.byline)}</p>` : ''}
         <p class="wb-src"><span class="s s1">${esc(d.source[0])}</span> <span class="s s2">${s2}</span></p>
-        <div class="wb-tr-wrap"><p class="wb-tr" lang="${code}"${rtl}>${d.translation.map(esc).join(cjk ? '' : ' ')}</p></div>
+        <div class="wb-tr-wrap"><p class="wb-tr" lang="${code}"${rtl}>${d.translation.map(esc).join(join)}</p></div>
         ${(d.context ?? []).map((p) => `<p class="wb-more" aria-hidden="true">${esc(p)}</p>`).join('')}
       </article>${card}
       ${TOOLS}
