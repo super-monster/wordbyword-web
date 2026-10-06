@@ -152,3 +152,13 @@
 | C13 | 徽章高 06=40、05=48 | 按 05：48px | 06 已改 |
 
 其它：D9 规格清单在 390 宽的高度 en 379 / zh-Hans 372（05 §5.4.4 目标 360），超出约 5%，接受，不改文案。
+
+## M2 完成（2026-10-06）
+
+- 提交：3167493（审计修复）→ 6fb1aab（M3-01 翻译记忆 `src/locales/_legacy/`、L-1 识别错名语言文件、claims-lint 补 11 种语言的"选中翻译"写法）→ 8b203b1（公告条与 about／扩展页／404 页面样式，FIX-3/FIX-4；CSS 打包去掉 `{ } ; ,` 两侧与 `:` 后的空白，52.2 → 46.6 KB，经 Chrome CSSOM 核对 425 条规则逐条一致）。
+- 样式 agent 的取舍：不做可见面包屑（02 §7.4，about 的 JSON-LD BreadcrumbList 保留）；去歧义说明按 05 §6.3 放在导语下、≥1200px 移入右栏；S0 扩展页 CTA 按 05 §5.11/§6.4 用 eyebrow 行状态标签 + 邮件链接（`cta.unavailable` 未使用）；404 标题保留文案 "Page not found"，按 05 用衬线字体；D-6 允许每页一张 `fetchpriority="high"` 的 LCP 图（05 §8.2）；扩展页 header 按钮 <560px 改用 `nav.iphoneApp`（"iPhone app"）以免挤压 logo。新增文案键 `chromeExtension.excerptLabel`（en "Chrome extension · screenshot excerpt"；zh-Hans「Chrome 扩展 · 截图局部」，取自 05 §5.11，**请审校**）。
+- 公告：现有 20 种语言的公告正文都超过手机两行，按 05 §5.15 一律折叠进 `<details>`（标题为 summary）。
+- 未做（缺内容）：扩展页 05 §6.4 的桌面 HTML 样张（zh/ja/es 切换标签）与 7 种目标语言标签——文档 08 与 product.json 都没有对应文案和数据，留待补内容。小问题：320px 下 S0 的邮件链接箭头换行；S1 状态 380–389px 宽时字标与地球图标间距仅 2–12px。
+- M2 退出条件：① 页面齐全（S1 用临时构建验证）；② 视觉矩阵评审通过（ar 用临时阿语构建核对 RTL）；③ D-6/D-7 与 AVIF 两层校验通过；④ 文档 04 A1–A9 通过（A6/A7 需更多语言上线与外网）；⑤ 模板 0 个硬编码界面字符串（伪 locale 扫描）。→ 打 tag `strings-v1`（M3-02）。
+- CI 修复（94f9810）：Node 22 下根级 `after()` 钩子提前执行，删掉了校验器测试的共享构建目录（8b203b1 新增测试文件后时序改变才暴露）；改为每个测试文件独立进程（`node --test scripts/tests/*.test.mjs`），临时目录在进程退出时清理。CI Node 22/24 均通过。
+- **`strings-v1` 已打 tag（94f9810，M3-02）**：en 文案冻结，M3 开始。
