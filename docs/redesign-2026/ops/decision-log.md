@@ -459,3 +459,5 @@
   - zh-Hans、ja、zh-Hant、ko 及 T2／T3 的母语补审。
 - **T0 第 5 步（负责人 iPhone 实测）通过**：WBW App 设置 → 隐私政策、订阅页的隐私链接、App Store 页面的 Marketing／Support／Privacy 三个链接都正常（2026-10-07 负责人确认）。
 - **切换后复查（2026-10-07 00:21，约 T+25min）**：正式域名契约测试 18 pass，verify-deploy --prod 179 pass／0 fail。GSC 两个 sitemap 仍是"无法抓取"，"上次读取时间"为空，即 Google 尚未读取，属刚提交时的常态；T+1d 复查时若仍未读取再排查。
+- **T+1d 定时检查**：已创建一次性定时任务 `wbw-t1d-check`，2026-10-07 15:07 JST 运行。只读：验收脚本、GSC、品牌词排名、GA、CF、PR-SE-2 就绪情况，中文汇报。应用未开着时，会在下次启动时运行。
+- 收尾：本地 Cloudflare 模拟服务器（serve.mjs :4580）已停止，没有残留的测速、axe 或截图进程。
