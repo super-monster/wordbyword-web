@@ -73,6 +73,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-pt-BR": {
+      "file": "assets/og/home-pt-br.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "2c4c9fdc4ef947595a10c705bf6cb2b06e0c885d1a0ea3790a16d9af1ef653d3",
+      "inputs": {
+        "headline": "Leia qualquer página da web em dois idiomas. [[Sem perder o original.]]",
+        "subline": "Deslize um parágrafo para a direita · toque duas vezes numa palavra para ver o sentido no contexto",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "home-fr": {
       "file": "assets/og/home-fr.jpg",
       "width": 1200,
@@ -81,6 +93,18 @@
       "inputs": {
         "headline": "Lisez le web en deux langues. [[L’original reste en place.]]",
         "subline": "Balayez un paragraphe vers la droite · touchez deux fois un mot pour son sens en contexte",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-de": {
+      "file": "assets/og/home-de.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "4bda4a33da9b7a2a1e3afa25965797c67ae13fe2bd4e02849c1de099af65af19",
+      "inputs": {
+        "headline": "Webseiten zweisprachig lesen. [[Das Original bleibt.]]",
+        "subline": "Absatz nach rechts wischen · auf ein Wort doppeltippen: seine Bedeutung im Kontext",
         "shot": "shot/en/lookup",
         "template": "94714826de2c"
       }

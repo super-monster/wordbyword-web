@@ -1,0 +1,57 @@
+{
+  "locale": "pt-BR",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (pt-BR column = the app's own names, xcstrings pt-BR), §7.2.2 website rules ①–③ and the pt-BR row of §7.3.",
+    "Quota-table rows follow the app's Free/Plus comparison screen (FeatureQuotaManager.swift featureDisplayName) in short form, so the first column stays ≤ 3 lines on a 375 px phone: 'Deslize para Traduzir · nuvem / local' (= daily_sentence_translation_limit + engine), 'Toque duas vezes para procurar' (word_meaning_lookup_title without '(Significado AI)'), ai_pronunciation_word / _sentence and more_definitions_title verbatim, 'Explicação de Sintaxe de IA' (get_syntax_explanation_button without 'Obter', as en 'AI syntax explanation' comes from 'Get AI Syntax Explanation'). Action Flow keeps the App Store name (doc 08 D3); the text quotes the app's 'Fluxo de ações da frase' once.",
+    "§7.2.2 lists no pt-BR fixes (X1–X13). Rule ①: kickers, quota-table rows, demo.ui.more and 'tap … in the app' instructions use the app's names verbatim ('Leitura AI', 'Pronúncia AI (Palavra)' keep the app's 'AI'); rule ②: sentences use natural Brazilian Portuguese (você; 'deslize … para a direita', 'toque duas vezes'; 'IA' in running text).",
+    "Kicker of features[lookup] = the app's word_meaning_lookup_title without the '(Significado AI)' suffix, as en / ja / zh-Hant do; it is 30 characters (> the 24 wu kicker cap of doc 08 §7.6, an L-8 warning) — see docs/redesign-2026/ops/m3/pt-BR-qa.md.",
+    "banned: wording the legacy pt page used for a gesture the app does not have ('Selecione para traduzir', 'tradução por seleção': the gesture is a right swipe, doc 01 C-09), left swipe, mouse double-click, a single tap for lookup, and European-Portuguese forms (the page is Brazilian: você, tela, celular, usuário, arquivo, compartilhar, contato, equipe, registro)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Deslize para Traduzir",
+    "features[lookup].kicker": "Toque duas vezes para procurar",
+    "features[x].kicker": "X (antigo Twitter)",
+    "features[chunks].kicker": "Páginas em inglês",
+    "features[speech].kicker": "Leitura em voz alta",
+    "features[syntax].kicker": "Sintaxe",
+    "features[engines].kicker": "Mecanismos",
+    "features[display].kicker": "Exibição",
+    "features[history].kicker": "Histórico",
+    "features[devices].kicker": "Dispositivos",
+    "demo.ui.more": "Mais Definições",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Deslize para Traduzir · nuvem",
+    "pricing.table.rows.localSwipe": "Deslize para Traduzir · local",
+    "pricing.table.rows.lookup": "Toque duas vezes para procurar",
+    "pricing.table.rows.more": "Mais Definições",
+    "pricing.table.rows.lookupSpeech": "Pronúncia AI (Palavra)",
+    "pricing.table.rows.swipeSpeech": "Pronúncia AI (Frase)",
+    "pricing.table.rows.localVoice": "Voz do iOS (Leitura Local)",
+    "pricing.table.rows.chunks": "Extração de Blocos",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "Explicação de Sintaxe de IA"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Atualizar Agora", "Restaurar Compra"],
+    "features[syntax].text": ["Obter Explicação de Sintaxe de IA"],
+    "features[speech].text": ["Leitura AI", "Leitura Local"],
+    "features[chunks].text": ["Extração de Blocos", "Action Flow"],
+    "features[lookup].bullets[2]": ["Mais Definições"]
+  },
+  "banned": [
+    { "pattern": "selecion\\w*[^.;:!?]{0,30}tradu|tradu\\w*[^.;:!?]{0,20}(por|ao) sele(ção|cionar)", "regex": true, "flags": "i", "use": "deslize o parágrafo para a direita", "note": "the legacy pt page said 'Selecione para traduzir' / 'tradução por seleção': the gesture is a right swipe (doc 01 C-09, research 07 §2.3)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "desliz\\w*[^.;:!?]{0,30}esquerda", "regex": true, "flags": "i", "use": "para a direita", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "(clique duplo|duplo clique|clicar duas vezes|clique duas vezes)", "regex": true, "flags": "i", "use": "toque duas vezes", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "\\btoqu\\w* (em|na|no|numa|num|sobre) (uma |qualquer |a |cada )?palavra", "regex": true, "flags": "i", "use": "toque duas vezes em uma palavra", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "Mais definições", "use": "Mais Definições", "note": "app name of more_definitions_title (T-A)" },
+    { "pattern": "ecrã", "flags": "i", "use": "tela", "note": "European Portuguese; the page is Brazilian (doc 08 §7.3: você)" },
+    { "pattern": "telemóve(l|is)", "regex": true, "flags": "i", "use": "celular / iPhone", "note": "European Portuguese" },
+    { "pattern": "utilizador", "flags": "i", "use": "usuário", "note": "European Portuguese" },
+    { "pattern": "ficheiro", "flags": "i", "use": "arquivo", "note": "European Portuguese" },
+    { "pattern": "(?<!com)partilh", "regex": true, "flags": "i", "use": "compartilhar", "note": "European Portuguese" },
+    { "pattern": "\\bcontacto", "regex": true, "flags": "i", "use": "contato", "note": "European Portuguese" },
+    { "pattern": "\\bequipa\\b", "regex": true, "flags": "i", "use": "equipe (and never 'equipe do WordByWord': the developer is Jinlong)", "note": "European Portuguese" },
+    { "pattern": "\\bregisto", "regex": true, "flags": "i", "use": "registro / cadastro", "note": "European Portuguese" }
+  ],
+  "allowInKeys": []
+}

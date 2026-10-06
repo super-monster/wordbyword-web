@@ -1,0 +1,49 @@
+{
+  "locale": "de",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (de column = the app's own names from Localizable.xcstrings), research 05 §8 (de row: KI-Aussprache (Wort)), §7.2.2 website rules ①–③ and fix X7 (the app's tip says 'Doppelklicke' — a mouse word; the site writes doppeltippen), §7.3 de row (du; 'nach rechts wischen'; 'doppeltippen').",
+    "required: kickers and quota-table rows use the app's names (rule ①). The full lookup name 'Doppeltippen zum Nachschlagen (KI-Bedeutung)' is 29+ characters, over the 24 wu kicker cap (doc 08 §7.6), so the kicker carries 'Nachschlagen' and the H3 / table row carry the full app name. 'Action Flow' stays the App Store name (doc 08 D3, §7.2.3); the app's local name 'Aktionsfluss' is quoted once in features[chunks].text.",
+    "contains: app button and setting names quoted verbatim in sentences, including the app's own capitalisation ('Jetzt Upgraden', 'Kauf Wiederherstellen', 'AI-Syntax-Erklärung abrufen') so readers find the buttons; the capitalisation is reported to the app side, not corrected on the site.",
+    "banned: X7 mouse wording, the left swipe (removes a translation, F14), a single tap for lookup, a non-app spelling of 'Weitere Definitionen'. allowInKeys exempts nothing: de has no Chrome extension page (R1)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Wischen zum Übersetzen",
+    "features[lookup].kicker": "Nachschlagen",
+    "features[x].kicker": "X (ehemals Twitter)",
+    "features[chunks].kicker": "Englische Seiten",
+    "features[speech].kicker": "Vorlesen",
+    "features[syntax].kicker": "Satzstruktur",
+    "features[engines].kicker": "Übersetzungsengine",
+    "features[display].kicker": "Anzeige",
+    "features[history].kicker": "Verlauf",
+    "features[devices].kicker": "Geräte",
+    "demo.ui.more": "Weitere Definitionen",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Wischen zum Übersetzen · Cloud-Engine",
+    "pricing.table.rows.localSwipe": "Wischen zum Übersetzen · Lokale Engine",
+    "pricing.table.rows.lookup": "Doppeltippen zum Nachschlagen (KI-Bedeutung)",
+    "pricing.table.rows.more": "Weitere Definitionen",
+    "pricing.table.rows.lookupSpeech": "KI-Aussprache (Wort)",
+    "pricing.table.rows.swipeSpeech": "KI-Aussprache (Satz)",
+    "pricing.table.rows.localVoice": "iOS-Stimme (Lokales Lesen)",
+    "pricing.table.rows.chunks": "Chunk-Extraktion",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "AI-Syntax-Erklärung"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Jetzt Upgraden", "Kauf Wiederherstellen"],
+    "features[syntax].text": ["AI-Syntax-Erklärung abrufen"],
+    "features[speech].text": ["KI-Lesen", "Lokales Lesen"],
+    "features[chunks].text": ["Chunk-Extraktion", "Action Flow"],
+    "features[lookup].title": ["Doppeltippen zum Nachschlagen"],
+    "features[lookup].bullets[2]": ["Weitere Definitionen"]
+  },
+  "banned": [
+    { "pattern": "doppel-?klick", "regex": true, "flags": "i", "use": "doppeltippen / tippe doppelt", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7: the app's tip says 'Doppelklicke')" },
+    { "pattern": "wisch\\w*\\s+(\\S+\\s+){0,4}nach links|nach links\\s+(zu\\s+)?wisch", "regex": true, "flags": "i", "use": "nach rechts wischen", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "Links-?[Ww]isch", "regex": true, "use": "nach rechts wischen", "note": "F14" },
+    { "pattern": "(?<!doppel)(?<!doppelt )\\btipp\\w*\\s+(einmal\\s+)?auf\\s+(ein|das|jedes|einzelne)s?\\s+Wort", "regex": true, "flags": "i", "use": "tippe doppelt auf ein Wort / auf ein Wort doppeltippen", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "Mehr Definitionen", "use": "Weitere Definitionen", "note": "app name of more_definitions_title (T-A)" }
+  ],
+  "allowInKeys": []
+}
