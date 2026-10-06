@@ -630,7 +630,7 @@ test('D-12 switches need their M1-03 evidence; D-14 IndexNow key and legacy site
   const key = freshCfg().SITE.indexNowKey;
   assert.ok(key && existsSync(join(BUILT, `${key}.txt`)), 'the build publishes /<key>.txt');
   expectE(runDist((d) => rmSync(join(d, `${key}.txt`))), 'D-14', /must exist and contain the IndexNow key/);
-  expectE(runDist(null, { cfgMut: (cfg) => { cfg.SITE.legacySitemap = true; } }), 'D-14', /sitemap-legacy\.xml missing/);
+  expectE(runDist((d) => rmSync(join(d, 'sitemap-legacy.xml'), { force: true }), { cfgMut: (cfg) => { cfg.SITE.legacySitemap = true; } }), 'D-14', /sitemap-legacy\.xml missing/); // whatever the live switch says
   // all locales published: /index.html, /en-top(.html) and the 40 C sources — 43 old URLs, absolute, in rule order
   const cfg = freshCfg();
   cfg.LOCALES.forEach((l) => { l.publish = true; });
