@@ -21,7 +21,8 @@
         "pt-BR": ["tradu\\w* (a |uma )?página( da web)? inteira", "tradu\\w* (o |um )?site inteiro", "página (da web )?inteira de uma (só )?vez", "tradução de páginas? inteiras?", "tradu\\w* com (apenas )?um (só )?toque", "um toque para traduzir"],
         "de": ["(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal |mit einem (tipp|klick) )?(zu )?übersetz", "übersetz\\w* (die |eine )?(ganze|gesamte|komplette)n? (web)?seite", "(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal|mit einem (tipp|klick))", "mit einem (tipp|klick) übersetz", "ganzseiten-?übersetzung", "ganze websites? (zu )?übersetz"],
         "it": ["tradu\\w* (un['’]|l['’])intera pagina", "tradu\\w* (tutta la|una|la) pagina( web)? (intera|completa)", "tradu\\w* tutt[ae] l[ae] pagin[ae]", "pagin[ae] (web )?(intera|intere|completa|complete)(?![\\p{L}])", "tradu\\w* (con|in) un (solo )?tocco", "traduzione (dell['’]intera|di tutta la|di intere) pagin", "tradu\\w* (un['’]|l['’])?intero sito"],
-        "nl": ["(?<![\\p{L}])(hele|gehele|volledige|complete) (web)?(pagina|site)(’s|'s|s)? (in één keer |ineens |direct )?(te )?vertaa?l", "(?<![\\p{L}])vertaal\\w* (in één keer |ineens )?(een |de |je )?(hele|gehele|volledige|complete) (web)?(pagina|site)", "(?<![\\p{L}])(met|in) één (tik|klik|tap)(?![\\p{L}])", "(?<![\\p{L}])(volledige |hele )?paginavertaling"]
+        "nl": ["(?<![\\p{L}])(hele|gehele|volledige|complete) (web)?(pagina|site)(’s|'s|s)? (in één keer |ineens |direct )?(te )?vertaa?l", "(?<![\\p{L}])vertaal\\w* (in één keer |ineens )?(een |de |je )?(hele|gehele|volledige|complete) (web)?(pagina|site)", "(?<![\\p{L}])(met|in) één (tik|klik|tap)(?![\\p{L}])", "(?<![\\p{L}])(volledige |hele )?paginavertaling"],
+        "pl": ["tłumacz\\p{L}*\\s+(całą|całe|całej|całych|cały)\\s+(stron|witryn|serwis)", "(cał\\p{L}*|pełn\\p{L}*)\\s+(stron\\p{L}*|witryn\\p{L}*)(\\s+\\S+)?\\s+(naraz|na\\s+raz|od\\s+razu|jednym\\s+\\p{L}+)", "jednym\\s+(dotknięciem|kliknięciem|stuknięciem)", "(stron\\p{L}*|witryn\\p{L}*)\\s+w\\s+całości"]
       },
       "exempt": ["faq.items[whole-page]", "about.sections[limits].text", "about.facts[*].value"],
       "exemptPrefix": ["chromeExtension."]
@@ -40,7 +41,8 @@
         "pt-BR": ["desliz\\w*[^.;:!?]{0,30}esquerda", "para a esquerda"],
         "de": ["nach links (zu )?wisch", "wisch\\w* (\\S+ ){0,4}nach links", "links-?wisch"],
         "it": ["(scorr\\w*|swip\\w*)[^.;:]{0,30}(a|verso) sinistra"],
-        "nl": ["(?<![\\p{L}])(veeg|veegt|vegen|swipe|swipen|swipet)\\w*(\\s+\\S+){0,4}\\s+naar links", "(?<![\\p{L}])(naar )?links (vegen|swipen)", "(?<![\\p{L}])linksveeg"]
+        "nl": ["(?<![\\p{L}])(veeg|veegt|vegen|swipe|swipen|swipet)\\w*(\\s+\\S+){0,4}\\s+naar links", "(?<![\\p{L}])(naar )?links (vegen|swipen)", "(?<![\\p{L}])linksveeg"],
+        "pl": ["przesu\\p{L}*(\\s+\\S+){0,3}\\s+w\\s+lewo", "w\\s+lewo\\s+przesu", "(przesunięci\\p{L}*|gest\\p{L}*|ruch\\p{L}*)\\s+w\\s+lewo"]
       },
       "exempt": []
     },
@@ -58,7 +60,8 @@
         "pt-BR": ["extensão (do|para o) safari", "extensão de compartilhamento", "em qualquer (outro )?app\\b", "dentro de (qualquer|outros) apps?\\b", "sem (trocar|mudar|sair) de app"],
         "de": ["safari-?erweiterung", "share-?extension", "teilen-?erweiterung", "in (jeder|allen) (anderen )?apps?\\b", "aus jeder app", "ohne (die )?apps? zu wechseln", "ohne app-?wechsel"],
         "it": ["estensione (per |di )?safari", "estensione (di|per la) condivisione", "in (qualsiasi|ogni) (altra )?app(?![\\p{L}])", "in tutte le (altre )?app(?![\\p{L}])", "da qualsiasi (altra )?app(?![\\p{L}])", "senza cambiare app"],
-        "nl": ["safari[- ]?(extensie|uitbreiding)", "extensie voor safari", "(?<![\\p{L}])(deel|share)[- ]?extensie", "(?<![\\p{L}])in (elke|iedere|alle|willekeurige) (andere )?apps?(?![\\p{L}])", "(?<![\\p{L}])vanuit (elke|iedere|alle) (andere )?apps?(?![\\p{L}])", "(?<![\\p{L}])(niet|zonder) (van )?apps? te (wisselen|switchen)"]
+        "nl": ["safari[- ]?(extensie|uitbreiding)", "extensie voor safari", "(?<![\\p{L}])(deel|share)[- ]?extensie", "(?<![\\p{L}])in (elke|iedere|alle|willekeurige) (andere )?apps?(?![\\p{L}])", "(?<![\\p{L}])vanuit (elke|iedere|alle) (andere )?apps?(?![\\p{L}])", "(?<![\\p{L}])(niet|zonder) (van )?apps? te (wisselen|switchen)"],
+        "pl": ["rozszerzeni\\p{L}*\\s+(do\\s+|dla\\s+)?safari", "rozszerzeni\\p{L}*\\s+(do\\s+)?udostępniania", "w\\s+(każdej|dowolnej|innej|innych|wszystkich)\\s+(innej\\s+|innych\\s+)?aplikacj", "bez\\s+(przełączania|zmiany|zmieniania)\\s+aplikacj"]
       },
       "exempt": ["faq.items[safari]", "about.sections[limits].text"],
       "exemptPrefix": ["chromeExtension."]
@@ -102,7 +105,8 @@
         "pt-BR": ["\\boffline\\b", "sem (conexão|internet)", "não precisa de (conexão|internet)"],
         "de": ["\\boffline\\b", "ohne internet", "kein internet(verbindung)? (nötig|erforderlich)"],
         "it": ["(?<![\\p{L}])offline(?![\\p{L}])", "senza (connessione( a internet)?|internet|rete)(?![\\p{L}])", "non (serve|servono|richiede) (la |una )?connessione"],
-        "nl": ["(?<![\\p{L}])offline(?![\\p{L}])", "(?<![\\p{L}])zonder (internet|internetverbinding|wifi|wi-fi|netwerk|verbinding)(?![\\p{L}])", "(?<![\\p{L}])geen (internet|internetverbinding|verbinding|netwerk) nodig"]
+        "nl": ["(?<![\\p{L}])offline(?![\\p{L}])", "(?<![\\p{L}])zonder (internet|internetverbinding|wifi|wi-fi|netwerk|verbinding)(?![\\p{L}])", "(?<![\\p{L}])geen (internet|internetverbinding|verbinding|netwerk) nodig"],
+        "pl": ["(?<!\\p{L})offline(?!\\p{L})", "bez\\s+(dostępu\\s+do\\s+)?(internetu|sieci)", "bez\\s+połączenia(\\s+z\\s+(internetem|siecią))?"]
       },
       "exempt": []
     },
@@ -120,7 +124,8 @@
         "pt-BR": ["(IA|AI) ilimitad", "(pronúncias?|leituras?|voz|vozes)( \\w+)? (AI|IA)[^.]{0,20}(ilimitad|sem limite)", "ilimitad\\w* (de |com |da |do )?(IA|AI|pronúncia|voz|vozes|leitura)"],
         "de": ["unbegrenzte\\w* ki-(aussprache|stimmen?|vorlese\\w*)", "ki-(aussprache|stimmen?) ohne (tages)?limit", "unbegrenzt\\w* (aussprache|vorlesen)"],
         "it": ["(?<![\\p{L}])(ai|ia) illimitat", "(pronuncia|pronunce|lettura|voce|voci)( \\p{L}+)? (ai|ia) (illimitat|senza limit)", "illimitat\\w* (di |con )?(pronunc|lettur|voc)", "(pronuncia|pronunce|lettura|voce|voci) (ai |ia )?illimitat"],
-        "nl": ["(?<![\\p{L}])onbeperkt\\w* (ai|uitspraak|uitspraken|voorlezen|stemmen)", "(?<![\\p{L}])(ai-?)?(uitspraak|uitspraken|voorlezen|stem|stemmen)\\w*( met ai)? (zonder (dag)?limiet|onbeperkt)"]
+        "nl": ["(?<![\\p{L}])onbeperkt\\w* (ai|uitspraak|uitspraken|voorlezen|stemmen)", "(?<![\\p{L}])(ai-?)?(uitspraak|uitspraken|voorlezen|stem|stemmen)\\w*( met ai)? (zonder (dag)?limiet|onbeperkt)"],
+        "pl": ["(nieograniczon\\p{L}*|nielimitowan\\p{L}*)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*|AI)", "(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI\\s+(bez\\s+(limitu|limitów|ograniczeń)|nieograniczon|nielimitowan)", "(bez\\s+limitu|bez\\s+ograniczeń)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI"]
       },
       "exempt": []
     },
@@ -138,7 +143,8 @@
         "pt-BR": ["modo escuro", "modo noturno", "temas? personalizad", "cores? (do|de) tema"],
         "de": ["dunkelmodus", "dark mode", "nachtmodus", "dunkle[rs]? (modus|design)", "farbschema", "\\bthemes?\\b", "designfarben?"],
         "it": ["modalità (scura|notte|notturna)", "dark mode", "temi personalizzat", "colori? del tema", "tema (scuro|personalizzato)"],
-        "nl": ["(?<![\\p{L}])donkere modus", "(?<![\\p{L}])dark mode", "(?<![\\p{L}])nachtmodus", "(?<![\\p{L}])(eigen|aangepaste|persoonlijke) thema", "(?<![\\p{L}])kleurthema", "(?<![\\p{L}])themakleur"]
+        "nl": ["(?<![\\p{L}])donkere modus", "(?<![\\p{L}])dark mode", "(?<![\\p{L}])nachtmodus", "(?<![\\p{L}])(eigen|aangepaste|persoonlijke) thema", "(?<![\\p{L}])kleurthema", "(?<![\\p{L}])themakleur"],
+        "pl": ["tryb\\p{L}*\\s+(ciemn|nocn)", "ciemn\\p{L}*\\s+motyw", "motyw\\p{L}*\\s+(kolorystyczn|ciemn|własn)", "kolor\\p{L}*\\s+motyw", "(własn|niestandardow)\\p{L}*\\s+motyw"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -157,7 +163,8 @@
         "pt-BR": ["atalhos? de teclado", "\\bvolume\\b"],
         "de": ["tasten(kombination|kürzel)", "tastaturkürzel", "\\bshortcuts?\\b", "lautstärke"],
         "it": ["scorciatoi[ae]", "tasti (rapidi|di scelta rapida)", "(regola\\w*|controllo|cursore|regolazione) (del |il )?volume", "volume regolabile"],
-        "nl": ["(?<![\\p{L}])sneltoets", "(?<![\\p{L}])toetscombinatie", "(?<![\\p{L}])(geluids)?volume(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])sneltoets", "(?<![\\p{L}])toetscombinatie", "(?<![\\p{L}])(geluids)?volume(?![\\p{L}])"],
+        "pl": ["skrót\\p{L}*\\s+klawiszow", "głośnoś[cć]\\p{L}*"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -176,7 +183,8 @@
         "pt-BR": ["flash ?cards?", "cartões de memorização", "caderno de (vocabulário|palavras)", "lista de vocabulário", "sincroniz", "repetição espaçada", "backup na nuvem"],
         "de": ["vokabel(heft|liste|buch)", "karteikarten", "lernkarten", "(cloud|konto|icloud)-?(sync|synchronisierung|backup)", "geräteübergreifend synchron"],
         "it": ["flash ?cards?", "schede di (memoria|studio)", "(quaderno|rubrica|lista|elenco) (dei |di )?vocaboli", "vocabolario personale", "sincronizz\\w* (con |tra |su |in )?(icloud|il cloud|i tuoi dispositivi|i dispositivi|l['’]account|più dispositivi)", "backup (su |nel )?(icloud|cloud)", "ripetizione (dilazionata|spaziata)"],
-        "nl": ["(?<![\\p{L}])flash ?cards?", "(?<![\\p{L}])flitskaart", "(?<![\\p{L}])(woordenschat|vocabulaire)(lijst|boek|schrift)", "(?<![\\p{L}])(cloud|account|icloud)[- ]?(synchronisatie|sync|back-?up)", "(?<![\\p{L}])synchroniseer\\w* (tussen|met|over) (je |al je |alle )?(apparaten|toestellen)", "(?<![\\p{L}])gesynchroniseerd", "(?<![\\p{L}])gespreide herhaling"]
+        "nl": ["(?<![\\p{L}])flash ?cards?", "(?<![\\p{L}])flitskaart", "(?<![\\p{L}])(woordenschat|vocabulaire)(lijst|boek|schrift)", "(?<![\\p{L}])(cloud|account|icloud)[- ]?(synchronisatie|sync|back-?up)", "(?<![\\p{L}])synchroniseer\\w* (tussen|met|over) (je |al je |alle )?(apparaten|toestellen)", "(?<![\\p{L}])gesynchroniseerd", "(?<![\\p{L}])gespreide herhaling"],
+        "pl": ["fiszk\\p{L}*", "flash\\s?cards?", "(zeszyt|list|lista|notes)\\p{L}*\\s+(słówek|słownictwa)", "słowniczek", "synchroniz\\p{L}*", "kopi\\p{L}*\\s+zapasow\\p{L}*\\s+(w\\s+chmurze|w\\s+icloud|icloud)", "powtórk\\p{L}*\\s+(w\\s+odstępach|interwałow)"]
       },
       "exempt": []
     },
@@ -194,7 +202,8 @@
         "pt-BR": ["\\bandroid\\b", "google play"],
         "de": ["android-?(version|app|handy|smartphone|gerät)", "für android", "auf android", "google play"],
         "it": ["(?<![\\p{L}])android(?![\\p{L}])", "google play"],
-        "nl": ["(?<![\\p{L}])android[- ]?(versie|app|telefoon|toestel)", "(?<![\\p{L}])(op|voor) android(?![\\p{L}])", "(?<![\\p{L}])google play", "(?<![\\p{L}])play store"]
+        "nl": ["(?<![\\p{L}])android[- ]?(versie|app|telefoon|toestel)", "(?<![\\p{L}])(op|voor) android(?![\\p{L}])", "(?<![\\p{L}])google play", "(?<![\\p{L}])play store"],
+        "pl": ["(?<!\\p{L})android", "google\\s+play"]
       },
       "exempt": ["faq.items[android]"]
     },
@@ -212,7 +221,8 @@
         "pt-BR": ["versão (para|de) (computador|desktop|pc|windows)", "\\bpara windows\\b", "versão web do wordbyword"],
         "de": ["desktop-?(app|version)", "für (windows|pc)\\b", "web-?version von wordbyword", "pc-?version"],
         "it": ["versione (per |da )?(desktop|computer|pc|windows)(?![\\p{L}])", "app (per |da )?desktop", "per (windows|pc)(?![\\p{L}])", "versione web di wordbyword"],
-        "nl": ["(?<![\\p{L}])(desktop|pc|windows|computer|laptop)[- ]?versie", "(?<![\\p{L}])versie voor (de |je |een )?(desktop|pc|windows|computer|laptop)", "(?<![\\p{L}])desktop[- ]?app(?![\\p{L}])", "(?<![\\p{L}])voor (windows|pc)(?![\\p{L}])", "(?<![\\p{L}])webversie van wordbyword"]
+        "nl": ["(?<![\\p{L}])(desktop|pc|windows|computer|laptop)[- ]?versie", "(?<![\\p{L}])versie voor (de |je |een )?(desktop|pc|windows|computer|laptop)", "(?<![\\p{L}])desktop[- ]?app(?![\\p{L}])", "(?<![\\p{L}])voor (windows|pc)(?![\\p{L}])", "(?<![\\p{L}])webversie van wordbyword"],
+        "pl": ["wersj\\p{L}*\\s+(na|dla)\\s+(komputer|pc|windows|desktop)", "aplikacj\\p{L}*\\s+(na\\s+|dla\\s+)?(komputer|pc|windows|desktop)", "(na|dla)\\s+(windows|pc)(?!\\p{L})"]
       },
       "exempt": ["faq.items[devices]", "faq.items[android]"],
       "exemptPrefix": ["chromeExtension."]
@@ -231,7 +241,8 @@
         "pt-BR": ["\\bno app do X\\b", "dentro do app do X\\b", "único app (que|para) tradu\\w* (o )?X\\b"],
         "de": ["in der x-app (zu )?(übersetz|nutz|verwend)", "übersetz\\w* (\\S+ ){0,3}in der x-app", "einzige app, die x\\b"],
         "it": ["(nell['’]|dentro l['’]|nella )app (di )?x(?![\\p{L}])", "unica app (che|per) tradu\\w* x(?![\\p{L}])"],
-        "nl": ["(?<![\\p{L}])(in|binnen) de x-app(?![\\p{L}])", "(?<![\\p{L}])(in|binnen) de app van x(?![\\p{L}])", "(?<![\\p{L}])enige app die x(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])(in|binnen) de x-app(?![\\p{L}])", "(?<![\\p{L}])(in|binnen) de app van x(?![\\p{L}])", "(?<![\\p{L}])enige app die x(?![\\p{L}])"],
+        "pl": ["w\\s+aplikacji\\s+X(?!\\p{L}|\\.\\p{L})", "jedyn\\p{L}*\\s+aplikacj\\p{L}*,?\\s+(która|do|dla)\\s+(\\p{L}+\\s+)?X(?!\\p{L}|\\.\\p{L})"]
       },
       "exempt": ["faq.items[x]"]
     },
@@ -249,7 +260,8 @@
         "pt-BR": ["acesso antecipado"],
         "de": ["(früher|vorzeitiger|exklusiver) zugang", "early access", "neue funktionen (als erste|zuerst)"],
         "it": ["accesso anticipato", "in anteprima", "nuove funzion\\w* (per prim|in anticipo)"],
-        "nl": ["(?<![\\p{L}])vroege toegang", "(?<![\\p{L}])early access", "(?<![\\p{L}])als eerste (toegang tot )?nieuwe functies", "(?<![\\p{L}])voorrang (op|bij) nieuwe functies"]
+        "nl": ["(?<![\\p{L}])vroege toegang", "(?<![\\p{L}])early access", "(?<![\\p{L}])als eerste (toegang tot )?nieuwe functies", "(?<![\\p{L}])voorrang (op|bij) nieuwe functies"],
+        "pl": ["wczesn\\p{L}*\\s+dostęp", "dostęp\\p{L}*\\s+(do\\s+nowych\\s+funkcji\\s+)?(przed\\s+innymi|jako\\s+pierwsz)", "jako\\s+pierwsi\\s+(dostaj|otrzym)"]
       },
       "exempt": []
     },
@@ -267,7 +279,8 @@
         "pt-BR": ["nenhum dado pessoal", "não coleta (nenhum|dados|informações)", "sem rastreamento", "não rastreia"],
         "de": ["keine (persönlichen|personenbezogenen) daten", "(sammelt|erhebt|speichert) keine (persönlichen |personenbezogenen )?daten", "kein tracking"],
         "it": ["nessun dato (personale|raccolto)", "non raccoglie (alcun |nessun )?(dat|informazion)", "senza (tracciamento|tracking)", "nessun (tracciamento|tracking)", "non (ti )?traccia(?![\\p{L}])"],
-        "nl": ["(?<![\\p{L}])geen persoonlijke gegevens", "(?<![\\p{L}])(verzamelt|verzamelen|verzameld) geen (persoonlijke )?(gegevens|data|informatie)", "(?<![\\p{L}])geen (gegevens|data) (worden |wordt )?verzameld", "(?<![\\p{L}])(geen|zonder) tracking", "(?<![\\p{L}])volgt je niet"]
+        "nl": ["(?<![\\p{L}])geen persoonlijke gegevens", "(?<![\\p{L}])(verzamelt|verzamelen|verzameld) geen (persoonlijke )?(gegevens|data|informatie)", "(?<![\\p{L}])geen (gegevens|data) (worden |wordt )?verzameld", "(?<![\\p{L}])(geen|zonder) tracking", "(?<![\\p{L}])volgt je niet"],
+        "pl": ["nie\\s+(zbiera|gromadzi|zbieramy|gromadzimy|przechowuje)\\p{L}*\\s+(żadnych\\s+)?(danych|informacji)", "żadn\\p{L}*\\s+dan\\p{L}*\\s+osobow", "bez\\s+śledzenia", "nie\\s+śledzi"]
       },
       "exempt": []
     },
@@ -285,7 +298,8 @@
         "pt-BR": ["versão inicial"],
         "de": ["anfangsversion", "erste version unterstützt"],
         "it": ["versione iniziale", "prima versione supporta"],
-        "nl": ["(?<![\\p{L}])(eerste|initiële) versie(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])(eerste|initiële) versie(?![\\p{L}])"],
+        "pl": ["wersj\\p{L}*\\s+(początkow|wstępn)"]
       },
       "exempt": []
     },
@@ -303,7 +317,8 @@
         "pt-BR": ["pares? de (idiomas|línguas)"],
         "de": ["sprachpaar"],
         "it": ["coppie? di lingue", "combinazioni di lingue"],
-        "nl": ["(?<![\\p{L}])(taalpaar|taalparen|taalkoppels?|talenparen)(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])(taalpaar|taalparen|taalkoppels?|talenparen)(?![\\p{L}])"],
+        "pl": ["par\\p{L}*\\s+językow"]
       },
       "exempt": []
     },
@@ -321,7 +336,8 @@
         "pt-BR": ["\\b\\d+ (estilos|tipos de estilo)", "\\b(cinco|seis|sete|oito|nove|dez) estilos"],
         "de": ["\\b\\d+ (verschiedene )?(übersetzungs|anzeige)?stile", "\\b(fünf|sechs|sieben|acht|neun|zehn) (verschiedene )?(übersetzungs|anzeige)?stile"],
         "it": ["(?<![\\p{L}\\p{N}])\\d+ (diversi )?stili", "(?<![\\p{L}])(cinque|sei|sette|otto|nove|dieci) (diversi )?stili"],
-        "nl": ["(?<![\\p{L}\\p{N}])\\d+ (verschillende )?(vertaal|weergave)?stijlen", "(?<![\\p{L}])(vijf|zes|zeven|acht|negen|tien) (verschillende )?(vertaal|weergave)?stijlen"]
+        "nl": ["(?<![\\p{L}\\p{N}])\\d+ (verschillende )?(vertaal|weergave)?stijlen", "(?<![\\p{L}])(vijf|zes|zeven|acht|negen|tien) (verschillende )?(vertaal|weergave)?stijlen"],
+        "pl": ["(?<!\\p{N})\\d+\\s+(różn\\p{L}*\\s+)?styl", "(pięć|sześć|siedem|osiem|dziewięć|dziesięć)\\s+(różn\\p{L}*\\s+)?styl"]
       },
       "exempt": []
     },
@@ -339,7 +355,8 @@
         "pt-BR": ["detecta\\w* (automaticamente )?o idioma de destino", "idioma de destino[^.]{0,20}automaticamente"],
         "de": ["erkennt (automatisch )?(deine |die )?zielsprache", "zielsprache (wird )?automatisch erkannt"],
         "it": ["rilev\\w* (automaticamente |in automatico )?(la )?lingua di destinazione", "lingua di destinazione (viene )?rilevata"],
-        "nl": ["(?<![\\p{L}])(herkent|herkennen|detecteert|detecteren)\\w* (automatisch )?(de |je |jouw )?doeltaal", "(?<![\\p{L}])doeltaal (wordt )?(automatisch )?(herkend|gedetecteerd)"]
+        "nl": ["(?<![\\p{L}])(herkent|herkennen|detecteert|detecteren)\\w* (automatisch )?(de |je |jouw )?doeltaal", "(?<![\\p{L}])doeltaal (wordt )?(automatisch )?(herkend|gedetecteerd)"],
+        "pl": ["wykryw\\p{L}*\\s+(automatycznie\\s+)?(twój\\s+)?język\\p{L}*\\s+docelow", "język\\p{L}*\\s+docelow\\p{L}*\\s+(jest\\s+)?(wykrywan|rozpoznawan|wykryt)"]
       },
       "exempt": []
     },
@@ -357,7 +374,8 @@
         "pt-BR": ["(agrupad|organizad|separad)\\w* por data"],
         "de": ["nach datum (gruppiert|sortiert|geordnet)"],
         "it": ["(raggruppat|ordinat|organizzat|suddivis)\\w* per data"],
-        "nl": ["(?<![\\p{L}])(gegroepeerd|gesorteerd|geordend|ingedeeld) (op|per) datum", "(?<![\\p{L}])per datum (gegroepeerd|gesorteerd|geordend|ingedeeld)"]
+        "nl": ["(?<![\\p{L}])(gegroepeerd|gesorteerd|geordend|ingedeeld) (op|per) datum", "(?<![\\p{L}])per datum (gegroepeerd|gesorteerd|geordend|ingedeeld)"],
+        "pl": ["(grupowan|pogrupowan|sortowan|posortowan|uporządkowan)\\p{L}*\\s+(według|wg|po)\\s+(daty|dat|dniach|dniu)"]
       },
       "exempt": []
     },
@@ -375,7 +393,8 @@
         "pt-BR": ["exclusiv\\w* (do|para o|para assinantes do) plus", "(só|somente|apenas) (no|para o|com o) plus"],
         "de": ["nur (mit|für|in) (wordbyword )?plus\\b", "plus-exklusiv", "exklusiv (für|mit|in) (wordbyword )?plus", "nur für plus-(nutzer|abonnenten)"],
         "it": ["solo (con|per|in) (wordbyword )?plus(?![\\p{L}])", "esclusiv\\w* (di|per|con) (wordbyword )?plus", "riservat\\w* (a|agli abbonati) plus", "solo per (gli )?(utenti|abbonati) plus"],
-        "nl": ["(?<![\\p{L}])(alleen|uitsluitend) (voor|met|in|bij) (wordbyword )?plus(?![\\p{L}])", "(?<![\\p{L}])exclusief (voor|bij|in) (wordbyword )?plus(?![\\p{L}])", "(?<![\\p{L}])plus[- ]?exclusief", "(?<![\\p{L}])(alleen|uitsluitend) voor (plus-)?abonnees"]
+        "nl": ["(?<![\\p{L}])(alleen|uitsluitend) (voor|met|in|bij) (wordbyword )?plus(?![\\p{L}])", "(?<![\\p{L}])exclusief (voor|bij|in) (wordbyword )?plus(?![\\p{L}])", "(?<![\\p{L}])plus[- ]?exclusief", "(?<![\\p{L}])(alleen|uitsluitend) voor (plus-)?abonnees"],
+        "pl": ["(tylko|wyłącznie)\\s+(w|z|dla)\\s+(wersji\\s+|subskrypcji\\s+|subskrybentów\\s+)?(WordByWord\\s+)?Plus", "(dostępn|zarezerwowan)\\p{L}*\\s+(tylko|wyłącznie)\\s+(w|dla)\\s+(wersji\\s+)?(WordByWord\\s+)?Plus", "(tylko|wyłącznie)\\s+(dla\\s+|w\\s+)?(wersji\\s+|użytkowników\\s+)?premium(?!\\s+lub\\s+enhanced)"]
       },
       "exempt": []
     },
@@ -393,7 +412,8 @@
         "pt-BR": ["prática de (fala|conversação)", "praticar a fala", "pratic\\w* (a |sua )?pronúncia", "melhor\\w* (a sua |sua )?(fala|pronúncia)", "treino de pronúncia"],
         "de": ["sprech(übung|training|fähigkeit)", "aussprachetraining", "sprechen (üben|verbessern|trainieren)"],
         "it": ["pratica (di |della )?(conversazione|pronuncia|orale)", "migliora\\w* (la tua |la )?(pronuncia|parlato|espressione orale)", "esercit\\w* (a parlare|la pronuncia|nel parlato)", "allenamento (della pronuncia|all['’]orale)", "(?<![\\p{L}])speaking(?![\\p{L}])"],
-        "nl": ["(?<![\\p{L}])spreekvaardigheid", "(?<![\\p{L}])spreken oefenen", "(?<![\\p{L}])spreekoefening", "(?<![\\p{L}])uitspraak (oefenen|trainen|verbeteren)", "(?<![\\p{L}])(oefen|train|verbeter)\\w* (je |jouw )?uitspraak"]
+        "nl": ["(?<![\\p{L}])spreekvaardigheid", "(?<![\\p{L}])spreken oefenen", "(?<![\\p{L}])spreekoefening", "(?<![\\p{L}])uitspraak (oefenen|trainen|verbeteren)", "(?<![\\p{L}])(oefen|train|verbeter)\\w* (je |jouw )?uitspraak"],
+        "pl": ["(ćwiczeni\\p{L}*|trening\\p{L}*|praktyk\\p{L}*)\\s+(mówienia|wymowy|konwersacj)", "(popraw|ulepsz|rozwij)\\p{L}*\\s+(swoj\\p{L}*\\s+)?(wymow|mówieni)", "(?<!\\p{L})mówieni\\p{L}*"]
       },
       "exempt": []
     },
@@ -417,7 +437,8 @@
         "vi": ["\\bqu[ée]t\\b"],
         "ar": ["محاذاة"],
         "hi": ["संरेखण"],
-        "nl": ["(?<![\\p{L}])uitlijning", "(?<![\\p{L}])uitgelijnd", "(?<![\\p{L}])zin-voor-zin[- ]?vergelijking", "(?<![\\p{L}])één-op-één[- ]?vergelijking"]
+        "nl": ["(?<![\\p{L}])uitlijning", "(?<![\\p{L}])uitgelijnd", "(?<![\\p{L}])zin-voor-zin[- ]?vergelijking", "(?<![\\p{L}])één-op-één[- ]?vergelijking"],
+        "pl": ["wyrównani\\p{L}*"]
       },
       "exempt": []
     },
@@ -435,7 +456,8 @@
         "pt-BR": ["(pode )?combina\\w* melhor", "mais adequad", "em vez do WordByWord", "substitu\\w* o WordByWord", "(app|aplicativo) irmão", "(app|aplicativo) (anterior|antigo)"],
         "de": ["passt (vielleicht )?besser", "besser geeignet", "(statt|anstelle von) wordbyword", "schwester-?app", "nachfolger", "(?<![\\p{L}])ersetzt wordbyword", "upgrade (von wordbyword|auf surfenglish)", "(frühere|ältere) (app|version von wordbyword)"],
         "it": ["potrebbe fare (più )?al caso tuo", "fa (più )?al caso tuo", "(più|meglio) adatt[aoie](?![\\p{L}])", "(al posto|invece) di wordbyword", "app sorella", "(sostitui|rimpiazz)\\w* wordbyword", "vecchia (app|versione di wordbyword)", "versione precedente di wordbyword", "passa(re)? da wordbyword a surfenglish"],
-        "nl": ["(?<![\\p{L}])past (wellicht |mogelijk |misschien )?beter bij (je|jou)(?![\\p{L}])", "(?<![\\p{L}])past misschien beter", "(?<![\\p{L}])(geschikter|beter geschikt)", "(?<![\\p{L}])in plaats van wordbyword", "(?<![\\p{L}])(zuster|zus)[- ]?app", "(?<![\\p{L}])(vervang|vervangt|vervangen)\\w* (van )?wordbyword", "(?<![\\p{L}])(eerdere|oudere|oude) (app|versie)(?![\\p{L}])", "(?<![\\p{L}])overstappen (van wordbyword )?naar surfenglish"]
+        "nl": ["(?<![\\p{L}])past (wellicht |mogelijk |misschien )?beter bij (je|jou)(?![\\p{L}])", "(?<![\\p{L}])past misschien beter", "(?<![\\p{L}])(geschikter|beter geschikt)", "(?<![\\p{L}])in plaats van wordbyword", "(?<![\\p{L}])(zuster|zus)[- ]?app", "(?<![\\p{L}])(vervang|vervangt|vervangen)\\w* (van )?wordbyword", "(?<![\\p{L}])(eerdere|oudere|oude) (app|versie)(?![\\p{L}])", "(?<![\\p{L}])overstappen (van wordbyword )?naar surfenglish"],
+        "pl": ["może\\s+(ci\\s+)?(lepiej|bardziej)\\s+(pasować|odpowiadać|się\\s+sprawdzić)", "lepiej\\s+(dopasowan|pasując)", "bardziej\\s+odpowiedni", "lepszy\\s+wybór", "zamiast\\s+WordByWord", "aplikacj\\p{L}*\\s+siostrzan", "(zastąp|zastępuj|zastępstw|zastąpi)\\p{L}*\\s+WordByWord", "(wcześniejsz|poprzedni|starsz)\\p{L}*\\s+(aplikacj|wersj)", "następc\\p{L}*\\s+WordByWord"]
       },
       "exempt": []
     },
@@ -453,7 +475,8 @@
         "pt-BR": ["voz(es)? (de IA )?no (aparelho|dispositivo)", "funciona\\w* offline", "voz(es)? offline"],
         "de": ["(offline|geräte|on-device)-?(stimmen?|sprachausgabe)", "stimmen? (auf dem gerät|offline)", "ki-stimmen? auf dem gerät"],
         "it": ["voc[ei] (ai |ia )?(sul|nel) (tuo )?dispositivo", "voc[ei] (ai |ia )?(offline|locali?)(?![\\p{L}])", "voc[ei] che funzionan\\w* (anche )?offline"],
-        "nl": ["(?<![\\p{L}])(ai-?)?stem(men)? op (je|het) (apparaat|toestel)", "(?<![\\p{L}])(ai-?)?stem(men)? (die )?(ook )?offline", "(?<![\\p{L}])offline (stem|stemmen|voorlezen|spraak)", "(?<![\\p{L}])(lokale|ingebouwde) (ai-?)?stem(men)?"]
+        "nl": ["(?<![\\p{L}])(ai-?)?stem(men)? op (je|het) (apparaat|toestel)", "(?<![\\p{L}])(ai-?)?stem(men)? (die )?(ook )?offline", "(?<![\\p{L}])offline (stem|stemmen|voorlezen|spraak)", "(?<![\\p{L}])(lokale|ingebouwde) (ai-?)?stem(men)?"],
+        "pl": ["głos\\p{L}*\\s+(AI\\s+)?(na\\s+urządzeniu|w\\s+urządzeniu|offline|lokaln)", "(lokaln|offline)\\p{L}*\\s+głos", "działa\\p{L}*\\s+offline"]
       },
       "only": ["sibling.card", "faq.items[english-learner]"],
       "exempt": []
@@ -472,7 +495,8 @@
         "pt-BR": ["\\bnov[oa]s?\\b", "mais rápid", "mais eficiente", "\\bupgrade", "\\batualiz", "melhor (do )?que"],
         "de": ["\\bneu(e|en|er|es)?\\b", "schneller", "effizienter", "\\bupgrade", "besser als"],
         "it": ["(?<![\\p{L}])nuov[oaie](?![\\p{L}])", "più (veloce|rapid[oaie]|efficiente)", "(?<![\\p{L}])aggiorna\\w*", "(?<![\\p{L}])upgrade(?![\\p{L}])", "meglio di", "migliore di"],
-        "nl": ["(?<![\\p{L}])nieuwe?(?![\\p{L}])", "(?<![\\p{L}])sneller(?![\\p{L}])", "(?<![\\p{L}])efficiënter", "(?<![\\p{L}])upgrade", "(?<![\\p{L}])beter dan(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])nieuwe?(?![\\p{L}])", "(?<![\\p{L}])sneller(?![\\p{L}])", "(?<![\\p{L}])efficiënter", "(?<![\\p{L}])upgrade", "(?<![\\p{L}])beter dan(?![\\p{L}])"],
+        "pl": ["(?<!\\p{L})now(y|a|e|ego|ej|ą|ym|ych|ymi|ość|ości)(?!\\p{L})", "szybciej|szybsz\\p{L}*", "wydajniej|wydajniejsz\\p{L}*|efektywniej|efektywniejsz\\p{L}*", "(?<!\\p{L})lepsz\\p{L}*\\s+niż", "uaktualni\\p{L}*|ulepszeni\\p{L}*|(?<!\\p{L})aktualizacj\\p{L}*"]
       },
       "only": ["sibling.card", "sibling.footer", "faq.items[english-learner]", "about.family"],
       "exempt": []
@@ -492,7 +516,8 @@
         "pt-BR": ["revolucionári", "\\bo melhor\\b", "\\ba melhor\\b", "\\bos melhores\\b", "número (1|um)\\b", "\\bo único\\b", "\\ba única\\b", "primeir\\w* do mundo", "(milhares|milhões) de (usuários|pessoas|downloads)", "equipe do WordByWord", "nossa equipe", "nosso time", "diga adeus"],
         "de": ["revolution\\w*", "bahnbrechend", "schluss mit", "\\b(die|der|das) beste\\b", "nummer eins", "\\b(die|der|das) einzige\\b", "weltweit erste", "\\d[\\d.,]*\\s?(tsd\\.|mio\\.)?\\+? (nutzer|downloads)", "millionen (von )?nutzer", "wordbyword-?team", "\\bunser(em)? team\\b", "\\b(die|den) machern?\\b"],
         "it": ["rivoluzionari", "cambia le regole del gioco", "(?<![\\p{L}])(di['’]|dì|dite) addio", "(?<![\\p{L}])(il|la) miglior[ei]?(?![\\p{L}])", "numero uno", "(?<![\\p{L}])(l['’]|la |il )unic[oa](?![\\p{L}])", "prim[oa] al mondo", "\\d[\\d.,]*\\s?(mila|mln)?\\s?(utenti|download)(?![\\p{L}])", "milioni di (utenti|persone|download)", "team (di )?wordbyword", "il nostro team", "(?<![\\p{L}])i creatori(?![\\p{L}])"],
-        "nl": ["(?<![\\p{L}])revolutionair", "(?<![\\p{L}])baanbrekend", "(?<![\\p{L}])zeg vaarwel", "(?<![\\p{L}])de beste(?![\\p{L}])", "(?<![\\p{L}])nummer (één|1)(?![\\p{L}\\p{N}])", "(?<![\\p{L}])de enige(?![\\p{L}])", "(?<![\\p{L}])(eerste ter wereld|werelds eerste)", "(?<![\\p{L}])miljoenen", "(?<![\\p{L}\\p{N}])\\d[\\d.,]*\\s?(k|duizend|miljoen)?\\+? (gebruikers|downloads)", "(?<![\\p{L}])(wordbyword-?team|team (van|achter) wordbyword)", "(?<![\\p{L}])ons team", "(?<![\\p{L}])de makers(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}])revolutionair", "(?<![\\p{L}])baanbrekend", "(?<![\\p{L}])zeg vaarwel", "(?<![\\p{L}])de beste(?![\\p{L}])", "(?<![\\p{L}])nummer (één|1)(?![\\p{L}\\p{N}])", "(?<![\\p{L}])de enige(?![\\p{L}])", "(?<![\\p{L}])(eerste ter wereld|werelds eerste)", "(?<![\\p{L}])miljoenen", "(?<![\\p{L}\\p{N}])\\d[\\d.,]*\\s?(k|duizend|miljoen)?\\+? (gebruikers|downloads)", "(?<![\\p{L}])(wordbyword-?team|team (van|achter) wordbyword)", "(?<![\\p{L}])ons team", "(?<![\\p{L}])de makers(?![\\p{L}])"],
+        "pl": ["rewolucj\\p{L}*|rewolucyjn\\p{L}*", "(?<!\\p{L})najlepsz\\p{L}*", "numer\\s+(jeden|1)(?!\\p{N})", "(?<!\\p{L})jedyn(y|a|e|ą|ym|ej)\\s+(tak\\p{L}*|aplikacj\\p{L}*|narzędzi\\p{L}*|tłumacz\\p{L}*|na\\s+świecie)", "pierwsz\\p{L}*\\s+na\\s+świecie", "(milion\\p{L}*|tysiąc\\p{L}*|tysięcy)\\s+(użytkowników|pobrań|osób)", "\\d[\\d\\s\\u00A0.,]*\\s?(tys\\.|mln)?\\s*(użytkowników|pobrań)", "zesp(ół|ołu|ole|ołem)\\s+WordByWord", "nasz\\p{L}*\\s+zesp", "(?<!\\p{L})pożegnaj|powiedz\\s+(do\\s+widzenia|żegnaj)", "zmieni\\p{L}*\\s+(wszystko|zasady\\s+gry)"]
       },
       "exempt": ["about.disambiguation.text"]
     },
@@ -524,7 +549,8 @@
         "pt-BR": ["\\b(1\\d|2\\d)\\+? (idiomas|línguas|pares de idiomas)\\b"],
         "de": ["\\b(1\\d|2\\d)\\+? sprachen\\b"],
         "it": ["(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+? (lingue|coppie di lingue)(?![\\p{L}])"],
-        "nl": ["(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+? (talen|taalparen)(?![\\p{L}])"]
+        "nl": ["(?<![\\p{L}\\p{N}])(1\\d|2\\d)\\+? (talen|taalparen)(?![\\p{L}])"],
+        "pl": ["(?<!\\p{N})(1\\d|2\\d)\\+?\\s+(języków|językach|języki|par\\s+językowych)"]
       },
       "only": ["chromeExtension."],
       "exempt": []
