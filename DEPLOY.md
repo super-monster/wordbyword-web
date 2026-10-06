@@ -206,3 +206,50 @@ DNS 回滚后 `/ja/` 等新 URL 在 GitHub 上是 404，属预期：回滚只是
   ```
 
   有差异 → 暂停切换，先查 `legacy-pages` 与 Pages 设置（07 RK05）。
+
+## 11. GA 报表连续性（新旧对照，06 §8.4）
+
+切换当天在 GA4 加一条注释（Annotation），写明切换日期，并把日期补记在这里：**T0 = ＿＿＿＿（待填）**。
+
+| 旧 `page_path` | 旧 `page_locale` | 新 `page_path` | 新 `page_locale` |
+|---|---|---|---|
+| `/`、`/index.html`、`/en-top.html` | `en` | `/` | `en` |
+| `/zh-top.html`、`/cn-top.html` | `zh-CN` | `/zh-hans/` | `zh-Hans` |
+| `/tw-top.html` | `zh-TW` | `/zh-hant/` | `zh-Hant` |
+| `/pt-top.html` | `pt` | `/pt-br/` | `pt-BR` |
+| `/<xx>-top.html`（另外 16 个） | `<xx>` | `/<xx>/` | `<xx>` |
+| `/privacy.html`、`/support.html`、`/chrome-extension/privacy.html` | `en` | 不变 | `en` |
+| `/chrome-extension/` | `zh-CN` | `/chrome-extension/`（en）与 `/zh-hans/chrome-extension/`（zh-Hans） | `en` / `zh-Hans` |
+
+- Explorations 用正则合并新旧语言页：`^/(?:(?:[a-z]{2})-top(?:\.html)?|(?:[a-z]{2}(?:-[a-z]+)?)/)$`。
+- `element_location`（R12、R22）：
+  - 不变的有 `hero`、`features`、`screenshots`、`faq`、`surfenglish`；
+  - 新增 `languages`、`pricing`；
+  - `cta` 的含义变了：旧版的 `cta` 是价格加下载，新版只是最终下载区。新旧对照时，**旧 `cta` ≈ 新 `pricing` + 新 `cta`**。
+- **只看正式站**：预览站（`*.pages.dev`）也会加载 GA，用于 DebugView。报表要加过滤条件：主机名 = `www.word-by-word.app`。2026-10-06 用 PageSpeed Insights 测预览站时，留下了少量来自 `main.wordbyword-web.pages.dev` 的浏览。
+- 自定义维度（事件范围 5 个）和关键事件 `app_store_click` 已在 2026-10-06 注册，旧站剩余几周的数据也能按 label × locale 拆分。基线见 `design-docs` 分支的 `ops/m0/ga4-baseline-2026-10-06.md`。
+
+## 12. 生产监控（07 M4-13）
+
+- 工作流 `.github/workflows/monitor.yml`：每天 06:17（JST）检出 `cloudflare-deploy`，构建出期望值，然后：
+  - 确认 `https://www.word-by-word.app/` 返回 200；
+  - 跑 `contract-test.sh --prod`。
+  - 失败时 GitHub 会按 Actions 通知设置发邮件给所有者。
+- **T0 之前不运行**：那时 `www` 还是冻结的旧站，每次都会失败。切换完成后，到 Settings → Secrets and variables → Actions → Variables 新建 `PROD_MONITOR`，值为 `on`。
+- 手动运行（Actions → monitor → Run workflow）不受这个开关限制，可在切换当天作为验收的一部分。
+
+## 13. 切换后的日历提醒（03 §8.3、06 §10.2 第 14–16 步）
+
+切换当天把下表写进日历，日期按实际 T0 推算。
+
+| 时间 | 做什么 |
+|---|---|
+| T+0 | 跑验收脚本（§7）；手动运行 monitor 并设 `PROD_MONITOR=on`。GSC 提交 `sitemap.xml` 和 `sitemap-legacy.xml`，URL 检查 `/`、5 个 T1 首页、`/privacy.html`、`/ja-top.html`。BWT 提交。IndexNow 首推（生产 sitemap 全部 URL + 旧 URL）。GA4 加注释（§11）。 |
+| T+1 天～T+2 周 | 每天看 GSC 品牌词 `wordbyword` 的排名（基线 1.6）。守护阈值：T+4w 的 28 天均值 ≤ 2.0；7 日均值连续 7 天 > 3.0 时启动排查和回退评估。`word by word` 单列观察。 |
+| T+3 天 | GSC 网页索引：新 URL 是否"已发现／已抓取"；抓取统计没有 5xx；GSC 404 列表；CF 的 4xx／5xx。 |
+| T+7 天 | **PR-SE-2 合并截止**（R51）。抽查 SurfEnglish 12 个语言页的页脚链接，确认指向 WordByWord 对应语言页。 |
+| T+2 周 | 20 个首页逐一做 URL 检查：是否已编入，Google 选的规范网页是否为本页。"重复网页"计数；Bing 收录数；首批非品牌查询。 |
+| T+4 周 | KPI 复盘 #1（03 §8.2）；title 是否被 Google 改写；微调 T1 次关键词；判断能否删除 `sitemap-legacy.xml`。确认已不需要回滚后，按 §9 下线 GitHub Pages，并且必须在证书 notAfter 之前完成。 |
+| T+6 周 | `sitemap-legacy.xml` 如果还没删，现在删除（`SITE.legacySitemap = false`，并在 GSC 删除该 sitemap）。 |
+| T+12 周 | KPI 复盘 #2；用"页面 × 查询"数据重排 Phase 2／3；复核 SE 推荐与 `ct` 数据；T2／T3 母语补审是否完成（R36）。 |
+| 每季度 | 文案复核（`copyReviewedAt`）；G4 每 6 个月一次（07 RK25）。 |

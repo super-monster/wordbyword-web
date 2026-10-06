@@ -1,0 +1,47 @@
+# Production monitor (doc 07 M4-13): once a day, check that the home page answers 200 and run the contract test
+# against the production domain. A failed run makes GitHub notify the repository owner (Actions notifications).
+# Off until the cutover: before T0, www still serves the frozen legacy site and every run would fail. At T0 set the
+# repository variable PROD_MONITOR to "on" (Settings → Secrets and variables → Actions → Variables; DEPLOY.md §12).
+# A manual run always goes ahead.
+name: monitor
+
+on:
+  schedule:
+    - cron: '17 21 * * *'   # 06:17 JST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  monitor:
+    if: vars.PROD_MONITOR == 'on' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: cloudflare-deploy      # the production branch: expectations come from the deployed commit (ENG-13)
+          fetch-depth: 0              # sitemap <lastmod> comes from git history
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - name: build the deployed commit (writes .cache/*.json for the contract test)
+        run: node build.mjs
+
+      - name: home page answers 200
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 https://www.word-by-word.app/)
+          echo "https://www.word-by-word.app/ → $code"
+          test "$code" = 200
+
+      - name: contract URLs (doc 06 §9.3)
+        run: bash scripts/contract-test.sh https://www.word-by-word.app --prod
