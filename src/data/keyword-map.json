@@ -23,7 +23,7 @@
     "ru": ["(учить|изучение) английск", "(вы)?уч(ить|ите|им|у|ат|ишь|ит)\\s+английск", "изуч\\p{L}*\\s+английск", "английск\\p{L}*\\s+новост", "новост\\p{L}*\\s+на\\s+английском", "(?<![\\p{L}])чанк"],
     "uk": ["(вчити|вивчення) англійськ", "(вивча\\p{L}*|вчи\\p{L}*|навча\\p{L}*)\\s+англійськ", "новин\\p{L}*\\s+англійською", "англійськ\\p{L}*\\s+новин", "(?<![\\p{L}])чанк\\p{L}*", "виділенн\\p{L}*\\s+фрагмент"],
     "tr": ["İngilizce öğren", "[İi]ngilizce öğren", "[İi]ngilizce haber", "[İi]ngilizce okuma", "parça çıkarma", "(?<!\\p{L})chunk"],
-    "vi": ["học tiếng Anh", "tin tiếng Anh"],
+    "vi": ["học tiếng Anh", "tin tiếng Anh", "tin\\s+tức\\s+tiếng\\s+Anh", "báo\\s+tiếng\\s+Anh", "luyện\\s+(đọc\\s+|nghe\\s+)?tiếng\\s+Anh", "tiếng\\s+Anh\\s+theo\\s+(trình|cấp)\\s+độ", "nhóm\\s+nghĩa", "trích\\s+xuất\\s+cụm"],
     "th": ["เรียนภาษาอังกฤษ", "ข่าวภาษาอังกฤษ"],
     "id": ["belajar bahasa Inggris", "berita bahasa Inggris"],
     "ar": ["تعلم الإنجليزية"],
@@ -44,7 +44,8 @@
     "nl": ["^\\W*(Engels leren|leer( je)? Engels)"],
     "pl": ["^\\W*(nauk\\p{L}*|ucz\\p{L}*\\s+się)\\s+(języka\\s+)?angielskiego"],
     "uk": ["^[\\s\\p{P}\\p{S}]*(вч(и|і|у)\\p{L}*|вивча\\p{L}*|вивченн\\p{L}*|навча\\p{L}*)\\s+англійськ"],
-    "tr": ["^\\W*[İi]ngilizce (mi )?öğren"]
+    "tr": ["^\\W*[İi]ngilizce (mi )?öğren"],
+    "vi": ["^\\W*(bạn\\s+)?(đang\\s+)?(học|luyện)\\s+tiếng\\s+Anh"]
   },
   "reserved": {
     "G1": {
@@ -62,7 +63,8 @@
       "pl": ["(?<!\\p{L})jak\\s+(przetłumaczyć|tłumaczyć|czytać|zachować)", "zachow\\p{L}*\\s+oryginał"],
       "uk": ["(?<![\\p{L}])як\\s+(перекласти|перекладати|читати|прочитати)(?![\\p{L}])", "(зберіга\\p{L}*|зберегти|залиша\\p{L}*|залишити)\\s+(\\p{L}+\\s+)?оригінал", "(?<![\\p{L}])інструкці\\p{L}*"],
       "ru": ["(?<![\\p{L}])как (перевести|переводить|читать|сохранить|оставить)(?![\\p{L}])", "(сохран|оставл|остави)\\p{L}* (оригинал|исходн\\p{L}* текст)", "с сохранением оригинала"],
-      "tr": ["(?<!\\p{L})nasıl(?!\\p{L})", "orijinal(i|ini)?( metn?i)? (koru|kaybetme|bozma)", "(?<!\\p{L})yöntem", "adım adım"]
+      "tr": ["(?<!\\p{L})nasıl(?!\\p{L})", "orijinal(i|ini)?( metn?i)? (koru|kaybetme|bozma)", "(?<!\\p{L})yöntem", "adım adım"],
+      "vi": ["(?<![\\p{L}])cách\\s+(dịch|đọc|xem)(?![\\p{L}])", "làm\\s+(sao|thế\\s+nào)\\s+(để\\s+)?(dịch|đọc|xem)", "giữ\\s+(nguyên\\s+|lại\\s+)?(bản|văn\\s+bản)\\s+gốc", "hướng\\s+dẫn"]
     }
   },
   "primaryTokens": {

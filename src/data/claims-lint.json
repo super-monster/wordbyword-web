@@ -25,7 +25,8 @@
         "pl": ["tłumacz\\p{L}*\\s+(całą|całe|całej|całych|cały)\\s+(stron|witryn|serwis)", "(cał\\p{L}*|pełn\\p{L}*)\\s+(stron\\p{L}*|witryn\\p{L}*)(\\s+\\S+)?\\s+(naraz|na\\s+raz|od\\s+razu|jednym\\s+\\p{L}+)", "jednym\\s+(dotknięciem|kliknięciem|stuknięciem)", "(stron\\p{L}*|witryn\\p{L}*)\\s+w\\s+całości"],
         "uk": ["перекла\\p{L}*\\s+(\\p{L}+\\s+){0,2}(всю|усю|цілу|повну)\\s+(веб-?)?(сторінк|сайт)", "(всієї|усієї|цілої|повної)\\s+(веб-?)?сторінк", "(всю|усю|цілу)\\s+(веб-?)?сторінк\\p{L}*\\s+(одразу|за\\s+раз|повністю)", "(?<![\\p{L}])одним\\s+(дотиком|торканням|натисканням|кліком|тапом)", "(веб-?)?сторінк\\p{L}*\\s+повністю", "(цілі|цілих|усі|всі)\\s+(веб-?)?(сторінки|сайти)\\s+(одразу|повністю)"],
         "ru": ["перев\\p{L}* (всю|целую|всей|целой) (веб-)?страниц", "(всю|целую|всей|целой) (веб-)?страниц\\p{L}* (целиком|сразу|за раз|одним)", "страниц\\p{L}* (сайта )?целиком", "перев\\p{L}* (весь|целый|всего|целого) сайт", "сайт\\p{L}* целиком", "(в одно|одним) (касание|касанием|нажатие|нажатием|движение|движением)", "(в один|одним) (тап|тапом|клик|кликом)"],
-        "tr": ["(sayfanın|sitenin|sayfasının|sitesinin) tamamını [^.;:]{0,30}çevir", "(tüm|bütün) (bir )?(web )?(sayfa(yı|sını|ları)|site(yi|sini|leri)) [^.;:]{0,25}çevir", "tek (bir )?(dokunuşla|dokunuşta|tıkla|tıklamayla|hamlede) [^.;:]{0,20}çevir", "tam sayfa çeviri", "sayfanın tamamının çevirisi"]
+        "tr": ["(sayfanın|sitenin|sayfasının|sitesinin) tamamını [^.;:]{0,30}çevir", "(tüm|bütün) (bir )?(web )?(sayfa(yı|sını|ları)|site(yi|sini|leri)) [^.;:]{0,25}çevir", "tek (bir )?(dokunuşla|dokunuşta|tıkla|tıklamayla|hamlede) [^.;:]{0,20}çevir", "tam sayfa çeviri", "sayfanın tamamının çevirisi"],
+        "vi": ["dịch\\s+(cả|toàn\\s+bộ|nguyên|trọn)\\s+(một\\s+)?(trang|website)", "dịch\\s+toàn\\s+trang", "(cả|toàn\\s+bộ|nguyên)\\s+trang(\\s+web)?\\s+(cùng\\s+lúc|một\\s+lần|trong\\s+một\\s+lần)", "(một|1)\\s+chạm\\s+(để\\s+)?dịch", "dịch\\s+(chỉ\\s+)?(bằng|với)\\s+(một|1)\\s+chạm"]
       },
       "exempt": ["faq.items[whole-page]", "about.sections[limits].text", "about.facts[*].value"],
       "exemptPrefix": ["chromeExtension."]
@@ -48,7 +49,8 @@
         "pl": ["przesu\\p{L}*(\\s+\\S+){0,3}\\s+w\\s+lewo", "w\\s+lewo\\s+przesu", "(przesunięci\\p{L}*|gest\\p{L}*|ruch\\p{L}*)\\s+w\\s+lewo"],
         "uk": ["(провед|провест|прово|свайп|гортай|гортат|змахн)\\p{L}*[^.;:!?]{0,30}(ліворуч|вліво|наліво)", "(ліворуч|вліво|наліво)[^.;:!?]{0,12}(провед|свайп)"],
         "ru": ["(провед|провод|смахн|смахив|свайп|сдвин)\\p{L}*(\\s+\\S+){0,3}\\s+(влево|налево)", "влево по (абзацу|тексту|строке|посту)"],
-        "tr": ["(?<!\\p{L})sola (doğru )?kaydır", "(?<!\\p{L})sola kaydırma"]
+        "tr": ["(?<!\\p{L})sola (doğru )?kaydır", "(?<!\\p{L})sola kaydırma"],
+        "vi": ["vuốt\\s+(sang\\s+|qua\\s+|về\\s+)?(bên\\s+|phía\\s+)?trái"]
       },
       "exempt": []
     },
@@ -70,7 +72,8 @@
         "pl": ["rozszerzeni\\p{L}*\\s+(do\\s+|dla\\s+)?safari", "rozszerzeni\\p{L}*\\s+(do\\s+)?udostępniania", "w\\s+(każdej|dowolnej|innej|innych|wszystkich)\\s+(innej\\s+|innych\\s+)?aplikacj", "bez\\s+(przełączania|zmiany|zmieniania)\\s+aplikacj"],
         "uk": ["розширенн\\p{L}*\\s+(для\\s+)?safari", "safari-розширенн", "розширенн\\p{L}*\\s+(для\\s+)?(поширення|«поділитися»)", "(у|в)\\s+(будь-якому|кожному|будь-якій|кожній)\\s+(іншому\\s+|іншій\\s+)?(застосунк|додатк|програм)", "(у|в)\\s+(усіх|всіх|інших)\\s+(застосунках|додатках|програмах)", "без\\s+перемикання\\s+(між\\s+)?(застосунк|додатк|програм)", "не\\s+(потрібно|треба)\\s+перемикати\\s+(застосунки|додатки|програми)"],
         "ru": ["расширени\\p{L}* (для |в )?safari", "safari-расширени", "расширени\\p{L}* («|\")?поделиться", "(в|из|внутри) (любом|любого|любое|любых|каждом|другом|других|сторонних|сторонние) приложени", "без переключения (между )?приложени", "не (переключаясь|выходя) (между приложениями|из приложения)"],
-        "tr": ["safari (uzantı|eklenti)", "paylaş(ım|ma) (uzantı|eklenti)", "(herhangi bir|her|tüm|bütün) (başka )?uygulama(da|larda|nın içinde|ların içinde)(?!\\p{L})", "uygulama(lar)? (arasında )?(geçiş yapmadan|değiştirmeden)"]
+        "tr": ["safari (uzantı|eklenti)", "paylaş(ım|ma) (uzantı|eklenti)", "(herhangi bir|her|tüm|bütün) (başka )?uygulama(da|larda|nın içinde|ların içinde)(?!\\p{L})", "uygulama(lar)? (arasında )?(geçiş yapmadan|değiştirmeden)"],
+        "vi": ["tiện\\s+ích(\\s+mở\\s+rộng)?\\s+(của\\s+|cho\\s+|trên\\s+)?Safari", "Safari\\s+extension", "tiện\\s+ích\\s+chia\\s+sẻ", "(trong|ở|từ)\\s+(bất\\s+kỳ|bất\\s+cứ|mọi)\\s+ứng\\s+dụng", "không\\s+cần\\s+(chuyển|đổi)(\\s+đổi)?\\s+(sang\\s+)?ứng\\s+dụng"]
       },
       "exempt": ["faq.items[safari]", "about.sections[limits].text"],
       "exemptPrefix": ["chromeExtension."]
@@ -95,7 +98,8 @@
         "fr": ["sélectionn\\w* (le |du |un )?texte (pour|et) (le )?tradui"],
         "de": ["text (markieren|auswählen),? um (ihn )?zu übersetzen"],
         "uk": ["виділ\\w* текст", "при виділенні"],
-        "nl": ["(?<![\\p{L}])selecteer\\w* (de |een |het |je )?(tekst|woord|woorden|zin|zinnen) (om|en) (te |ze |het )?(te )?vertaa?l", "(?<![\\p{L}])markeer\\w* (de |een |het |je )?(tekst|woord|woorden|zin) (om|en) (te |ze |het )?(te )?vertaa?l", "(?<![\\p{L}])(selecteren|markeren) en (direct )?vertalen", "(?<![\\p{L}])(door|bij) (het )?(selecteren|markeren) (van )?(tekst|woorden)"]
+        "nl": ["(?<![\\p{L}])selecteer\\w* (de |een |het |je )?(tekst|woord|woorden|zin|zinnen) (om|en) (te |ze |het )?(te )?vertaa?l", "(?<![\\p{L}])markeer\\w* (de |een |het |je )?(tekst|woord|woorden|zin) (om|en) (te |ze |het )?(te )?vertaa?l", "(?<![\\p{L}])(selecteren|markeren) en (direct )?vertalen", "(?<![\\p{L}])(door|bij) (het )?(selecteren|markeren) (van )?(tekst|woorden)"],
+        "vi": ["(bôi\\s+đen|chọn|tô)\\s+(văn\\s+bản|đoạn\\s+văn|chữ|từ)\\s+(để|là)\\s+dịch", "dịch\\s+(ngay\\s+)?khi\\s+(bôi\\s+đen|chọn|tô)", "bôi\\s+đen\\s+(là|để)\\s+dịch"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -118,7 +122,8 @@
         "pl": ["(?<!\\p{L})offline(?!\\p{L})", "bez\\s+(dostępu\\s+do\\s+)?(internetu|sieci)", "bez\\s+połączenia(\\s+z\\s+(internetem|siecią))?"],
         "uk": ["(?<![\\p{L}])оф-?лайн", "без\\s+(доступу\\s+до\\s+|підключення\\s+до\\s+)?інтернет", "без\\s+(підключення|з[’'ʼ]єднання|мережі)(?![\\p{L}])", "(не\\s+потрібен|не\\s+потрібне)\\s+(інтернет|підключення|з[’'ʼ]єднання)"],
         "ru": ["офлайн", "оффлайн", "без (подключения к |доступа в |доступа к )?интернет", "без (сети|связи)(?![\\p{L}])", "интернет не (нужен|требуется)"],
-        "tr": ["çevrim ?dışı", "(?<!\\p{L})offline(?!\\p{L})", "[İi]nternet(siz| olmadan| bağlantısı olmadan| bağlantısı gerekmeden| gerekmeden)"]
+        "tr": ["çevrim ?dışı", "(?<!\\p{L})offline(?!\\p{L})", "[İi]nternet(siz| olmadan| bağlantısı olmadan| bağlantısı gerekmeden| gerekmeden)"],
+        "vi": ["ngoại\\s+tuyến", "(?<![\\p{L}])offline(?![\\p{L}])", "không\\s+cần\\s+(kết\\s+nối|mạng|internet|wi-?fi)", "khi\\s+(không\\s+có|mất)\\s+(mạng|kết\\s+nối|internet)"]
       },
       "exempt": []
     },
@@ -140,7 +145,8 @@
         "pl": ["(nieograniczon\\p{L}*|nielimitowan\\p{L}*)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*|AI)", "(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI\\s+(bez\\s+(limitu|limitów|ograniczeń)|nieograniczon|nielimitowan)", "(bez\\s+limitu|bez\\s+ograniczeń)\\s+(wymow\\p{L}*|czytani\\p{L}*|głos\\p{L}*)\\s+AI"],
         "uk": ["необмежен\\p{L}*\\s+(ші-|ai-|ші\\s+|ai\\s+)?(вимов|озвуч|читанн|голос)", "(вимов|озвуч|читанн|голос)\\p{L}*\\s+(ші|ai)\\s+без\\s+(обмежень|лімітів|ліміту)", "безлім\\p{L}*\\s+(ші|ai|вимов|озвуч|голос)"],
         "ru": ["(безлимитн|неограниченн)\\p{L}* (ии|ai|озвуч|произнош|чтени)", "(озвучк|произношени|чтени)\\p{L}* (ии|ai)[^.;]{0,20}(без ограничений|безлимит|неограниченн)", "(ии|ai)[- ](озвучк|произношени|голос)\\p{L}* без ограничений"],
-        "tr": ["(sınırsız|limitsiz) (yapay zek[aâ]|ai(?!\\p{L})|yz(?!\\p{L}))", "(sınırsız|limitsiz) (telaffuz|sesli okuma|seslendirme)", "(yapay zek[aâ]|ai) (telaffuz|ses|okuma)\\p{L}*[^.;]{0,15}(sınırsız|limitsiz|sınır yok)"]
+        "tr": ["(sınırsız|limitsiz) (yapay zek[aâ]|ai(?!\\p{L})|yz(?!\\p{L}))", "(sınırsız|limitsiz) (telaffuz|sesli okuma|seslendirme)", "(yapay zek[aâ]|ai) (telaffuz|ses|okuma)\\p{L}*[^.;]{0,15}(sınırsız|limitsiz|sınır yok)"],
+        "vi": ["(?<![\\p{L}])AI\\s+không\\s+giới\\s+hạn", "không\\s+giới\\s+hạn\\s+(lượt\\s+|số\\s+lần\\s+)?(phát\\s+âm|đọc|giọng)(\\s+\\p{L}+){0,2}\\s+AI(?![\\p{L}])", "(phát\\s+âm|giọng|đọc)(\\s+\\p{L}+){0,2}\\s+AI(?![\\p{L}])[^.;]{0,20}không\\s+giới\\s+hạn"]
       },
       "exempt": []
     },
@@ -162,7 +168,8 @@
         "pl": ["tryb\\p{L}*\\s+(ciemn|nocn)", "ciemn\\p{L}*\\s+motyw", "motyw\\p{L}*\\s+(kolorystyczn|ciemn|własn)", "kolor\\p{L}*\\s+motyw", "(własn|niestandardow)\\p{L}*\\s+motyw"],
         "uk": ["темн\\p{L}*\\s+(режим|тем)", "нічн\\p{L}*\\s+режим", "(колір|кольори|кольорів|кольорові)\\s+тем", "тем\\p{L}*\\s+оформленн", "(власн|кастомн|персональн)\\p{L}*\\s+тем(и|а|у|ою|ами)?(?![\\p{L}])"],
         "ru": ["т[её]мн\\p{L}* (режим|тем)", "ночн\\p{L}* режим", "(сво|собственн|пользовательск|цветов)\\p{L}* тем(а|ы|у|ой)(?![\\p{L}])", "цвет\\p{L}* (темы|оформления)", "смен\\p{L}* (темы|тему|оформления)"],
-        "tr": ["karanlık mod", "koyu (mod|tema)", "gece modu", "(özel|kişisel|kişiselleştirilmiş) temalar?(?!\\p{L})", "tema ren[kg]", "renk tema"]
+        "tr": ["karanlık mod", "koyu (mod|tema)", "gece modu", "(özel|kişisel|kişiselleştirilmiş) temalar?(?!\\p{L})", "tema ren[kg]", "renk tema"],
+        "vi": ["chế\\s+độ\\s+(tối|ban\\s+đêm)", "giao\\s+diện\\s+tối", "(đổi|tùy\\s+chỉnh|thay)\\s+(màu\\s+)?(chủ\\s+đề|giao\\s+diện)", "chủ\\s+đề\\s+(giao\\s+diện|màu)", "màu\\s+(chủ\\s+đề|giao\\s+diện)", "dark\\s+mode"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -185,7 +192,8 @@
         "pl": ["skrót\\p{L}*\\s+klawiszow", "głośnoś[cć]\\p{L}*"],
         "uk": ["гаряч\\p{L}*\\s+клавіш", "(сполученн|комбінаці)\\p{L}*\\s+клавіш", "клавіатурн\\p{L}*\\s+скорочен", "(?<![\\p{L}])гучн(ість|ості|істю)(?![\\p{L}])"],
         "ru": ["(горяч|быстр)\\p{L}* клавиш", "сочетани\\p{L}* клавиш", "громкост"],
-        "tr": ["klavye kısayol", "kısayol tuş", "ses (düzeyi|seviyesi)", "(?<!\\p{L})volüm"]
+        "tr": ["klavye kısayol", "kısayol tuş", "ses (düzeyi|seviyesi)", "(?<!\\p{L})volüm"],
+        "vi": ["phím\\s+tắt", "âm\\s+lượng"]
       },
       "exempt": [],
       "exemptPrefix": ["chromeExtension."]
@@ -208,7 +216,8 @@
         "pl": ["fiszk\\p{L}*", "flash\\s?cards?", "(zeszyt|list|lista|notes)\\p{L}*\\s+(słówek|słownictwa)", "słowniczek", "synchroniz\\p{L}*", "kopi\\p{L}*\\s+zapasow\\p{L}*\\s+(w\\s+chmurze|w\\s+icloud|icloud)", "powtórk\\p{L}*\\s+(w\\s+odstępach|interwałow)"],
         "uk": ["флеш-?картк", "картк\\p{L}*\\s+для\\s+запам", "словни(к|ч)\\p{L}*\\s+(нових|невідомих|збережених|ваших)\\s+слів", "(список|списки|списку)\\s+(нових\\s+)?слів\\s+для\\s+(вивчення|запам)", "синхроніз\\p{L}*\\s+(між\\s+(вашими\\s+)?пристроями|з\\s+icloud|через\\s+icloud|облікового|акаунт)", "(icloud|хмарн\\p{L}*)[-\\s]+синхроніз", "резервн\\p{L}*\\s+копі\\p{L}*\\s+(в|у)\\s+(хмар|icloud)", "інтервальн\\p{L}*\\s+повторенн"],
         "ru": ["фл[еэ]ш-?карт", "карточ\\p{L}* (для запоминания|со словами|слов)(?![\\p{L}])", "словарик", "(личн|свой|сво|персональн)\\p{L}* словар", "синхрониз", "резервн\\p{L}* копи", "интервальн\\p{L}* повтор"],
-        "tr": ["flash ?kart", "bilgi kartlar", "ezber kart", "kelime defter", "(bulut|hesap|icloud)\\s*(senkronizasyon|eşitleme|yedekleme)", "cihazlar arası (senkronizasyon|eşitleme)", "aralıklı tekrar"]
+        "tr": ["flash ?kart", "bilgi kartlar", "ezber kart", "kelime defter", "(bulut|hesap|icloud)\\s*(senkronizasyon|eşitleme|yedekleme)", "cihazlar arası (senkronizasyon|eşitleme)", "aralıklı tekrar"],
+        "vi": ["sổ\\s+(tay\\s+)?từ(\\s+vựng)?(?![\\p{L}])", "danh\\s+sách\\s+từ\\s+vựng", "thẻ\\s+(ghi\\s+nhớ|học\\s+từ)", "flash\\s?cards?", "đồng\\s+bộ", "sao\\s+lưu\\s+(lên\\s+)?(đám\\s+mây|iCloud)", "lặp\\s+lại\\s+ngắt\\s+quãng"]
       },
       "exempt": []
     },
@@ -230,7 +239,8 @@
         "pl": ["(?<!\\p{L})android", "google\\s+play"],
         "uk": ["(версі|застосун|додат|програм)\\p{L}*\\s+(для\\s+)?android", "(?<![\\p{L}])(на|для)\\s+android", "google\\s+play"],
         "ru": ["android", "андроид", "google play", "гугл плей"],
-        "tr": ["android", "google play"]
+        "tr": ["android", "google play"],
+        "vi": ["(?<![\\p{L}])android(?![\\p{L}])", "google\\s+play", "(?<![\\p{L}])CH\\s+Play(?![\\p{L}])"]
       },
       "exempt": ["faq.items[android]"]
     },
@@ -252,7 +262,8 @@
         "pl": ["wersj\\p{L}*\\s+(na|dla)\\s+(komputer|pc|windows|desktop)", "aplikacj\\p{L}*\\s+(na\\s+|dla\\s+)?(komputer|pc|windows|desktop)", "(na|dla)\\s+(windows|pc)(?!\\p{L})"],
         "uk": ["(версі|застосун|додат|програм)\\p{L}*\\s+для\\s+(комп[’'ʼ]ютер|пк|windows|macos|десктоп)", "десктопн\\p{L}*", "веб-?версі\\p{L}*\\s+wordbyword", "(?<![\\p{L}])для\\s+(windows|пк)(?![\\p{L}])"],
         "ru": ["(верси|приложени)\\p{L}* для (компьютер|пк|windows|рабочего стола|десктоп)", "десктопн", "веб-верси\\p{L}* wordbyword", "для (windows|пк)(?![\\p{L}])"],
-        "tr": ["masaüstü (uygulama|sürüm|versiyon)", "bilgisayar (sürüm|versiyon|uygulama)", "(windows|pc)[’']?(\\p{L}*)? (için|sürüm|versiyon)", "wordbyword[’']?(ün)? web sürüm"]
+        "tr": ["masaüstü (uygulama|sürüm|versiyon)", "bilgisayar (sürüm|versiyon|uygulama)", "(windows|pc)[’']?(\\p{L}*)? (için|sürüm|versiyon)", "wordbyword[’']?(ün)? web sürüm"],
+        "vi": ["(phiên\\s+)?bản\\s+(cho\\s+|trên\\s+|dành\\s+cho\\s+)?(máy\\s+tính|PC|Windows|desktop|máy\\s+bàn)", "ứng\\s+dụng\\s+(cho\\s+|trên\\s+)?(máy\\s+tính|PC|Windows|desktop)", "(cho|trên)\\s+Windows(?![\\p{L}])", "phiên\\s+bản\\s+web\\s+của\\s+WordByWord"]
       },
       "exempt": ["faq.items[devices]", "faq.items[android]"],
       "exemptPrefix": ["chromeExtension."]
@@ -275,7 +286,8 @@
         "pl": ["w\\s+aplikacji\\s+X(?!\\p{L}|\\.\\p{L})", "jedyn\\p{L}*\\s+aplikacj\\p{L}*,?\\s+(która|do|dla)\\s+(\\p{L}+\\s+)?X(?!\\p{L}|\\.\\p{L})"],
         "uk": ["(у|в)\\s+(застосунку|додатку|програмі)\\s+x(?![\\p{L}])", "єдин\\p{L}*\\s+(застосун|додат|програм)\\p{L}*[^.;:!?]{0,30}(перекла\\p{L}*|читати)\\s+x(?![\\p{L}])"],
         "ru": ["(в|через|внутри) приложени\\p{L}* x(?![\\p{L}])", "единственн\\p{L}* приложени\\p{L}*[^.]{0,30}перев\\p{L}* (посты |твиты )?(в )?x(?![\\p{L}])"],
-        "tr": ["(?<!\\p{L})x uygulaması(nda| içinde)", "x[’']?(i|’i)? çevirebilen tek"]
+        "tr": ["(?<!\\p{L})x uygulaması(nda| içinde)", "x[’']?(i|’i)? çevirebilen tek"],
+        "vi": ["(trong|trên|bằng)\\s+(ứng\\s+dụng|app)\\s+X(?![\\p{L}])", "ứng\\s+dụng\\s+duy\\s+nhất\\s+(có\\s+thể\\s+)?dịch\\s+(được\\s+)?X(?![\\p{L}])"]
       },
       "exempt": ["faq.items[x]"]
     },
@@ -297,7 +309,8 @@
         "pl": ["wczesn\\p{L}*\\s+dostęp", "dostęp\\p{L}*\\s+(do\\s+nowych\\s+funkcji\\s+)?(przed\\s+innymi|jako\\s+pierwsz)", "jako\\s+pierwsi\\s+(dostaj|otrzym)"],
         "uk": ["ранн\\p{L}*\\s+доступ", "раніше\\s+за\\s+(інших|всіх|усіх)", "першим\\p{L}*\\s+(отриму\\p{L}*|отрима\\p{L}*)\\s+нов"],
         "ru": ["ранн\\p{L}* доступ", "первыми (получа|получи|пробу|попробу)", "раньше других"],
-        "tr": ["erken erişim", "yeni özellik\\p{L}* (herkesten |ilk )?önce"]
+        "tr": ["erken erişim", "yeni özellik\\p{L}* (herkesten |ilk )?önce"],
+        "vi": ["trải\\s+nghiệm\\s+sớm", "truy\\s+cập\\s+sớm", "dùng\\s+thử\\s+sớm", "early\\s+access"]
       },
       "exempt": []
     },
@@ -319,7 +332,8 @@
         "pl": ["nie\\s+(zbiera|gromadzi|zbieramy|gromadzimy|przechowuje)\\p{L}*\\s+(żadnych\\s+)?(danych|informacji)", "żadn\\p{L}*\\s+dan\\p{L}*\\s+osobow", "bez\\s+śledzenia", "nie\\s+śledzi"],
         "uk": ["не\\s+збира\\p{L}*\\s+(жодн\\p{L}*\\s+)?(персональн|особист)\\p{L}*\\s+дан", "жодн\\p{L}*\\s+(персональн|особист)\\p{L}*\\s+дан", "без\\s+(стеження|відстеження|трекінгу)", "не\\s+(відстежу|стежить)\\p{L}*"],
         "ru": ["не собира\\p{L}* (никаких |ваши |ваших |личн\\p{L}* |персональн\\p{L}* )?(данн|информац)", "(данные|информация) не собира", "сбор данных не вед[её]тся", "без (отслеживания|слежки|трекинга)", "не отслежива"],
-        "tr": ["(kişisel )?veri\\p{L}* (toplanmaz|toplamaz|toplanmıyor|toplamıyor)", "hiçbir (kişisel )?(veri|bilgi)", "(takip|[İi]zleme) (yok|etmez|edilmez)"]
+        "tr": ["(kişisel )?veri\\p{L}* (toplanmaz|toplamaz|toplanmıyor|toplamıyor)", "hiçbir (kişisel )?(veri|bilgi)", "(takip|[İi]zleme) (yok|etmez|edilmez)"],
+        "vi": ["không\\s+thu\\s+thập\\s+(bất\\s+kỳ\\s+|bất\\s+cứ\\s+)?(dữ\\s+liệu|thông\\s+tin)", "không\\s+(bị\\s+)?theo\\s+dõi\\s+(người\\s+dùng|bạn)", "không\\s+(có\\s+)?(theo\\s+dõi|tracking)\\s*(\\.|,|;|$)"]
       },
       "exempt": []
     },
@@ -341,7 +355,8 @@
         "pl": ["wersj\\p{L}*\\s+(początkow|wstępn)"],
         "uk": ["початков\\p{L}*\\s+версі", "перш\\p{L}*\\s+версі\\p{L}*\\s+підтриму"],
         "ru": ["начальн\\p{L}* верси"],
-        "tr": ["[İi]lk sürüm(de|ünde)(?!\\p{L})", "başlangıç sürüm"]
+        "tr": ["[İi]lk sürüm(de|ünde)(?!\\p{L})", "başlangıç sürüm"],
+        "vi": ["phiên\\s+bản\\s+(đầu|đầu\\s+tiên|ban\\s+đầu)\\s+(hỗ\\s+trợ|có)"]
       },
       "exempt": []
     },
@@ -363,7 +378,8 @@
         "pl": ["par\\p{L}*\\s+językow"],
         "uk": ["мовн\\p{L}*\\s+пар", "(?<![\\p{L}])пар(а|и|у)?\\s+мов(?![\\p{L}])"],
         "ru": ["языков\\p{L}* пар"],
-        "tr": ["dil çift(i|leri)(?!\\p{L})"]
+        "tr": ["dil çift(i|leri)(?!\\p{L})"],
+        "vi": ["cặp\\s+ngôn\\s+ngữ"]
       },
       "exempt": []
     },
@@ -385,7 +401,8 @@
         "pl": ["(?<!\\p{N})\\d+\\s+(różn\\p{L}*\\s+)?styl", "(pięć|sześć|siedem|osiem|dziewięć|dziesięć)\\s+(różn\\p{L}*\\s+)?styl"],
         "uk": ["\\d+\\s+(різних\\s+)?(стил|стиль)", "(п[’'ʼ]ять|шість|сім|вісім|дев[’'ʼ]ять|десять)\\s+(різних\\s+)?(стил|стиль)"],
         "ru": ["(?<![\\d])\\d+ (разн\\p{L}* )?(стил|вариант\\p{L}* (оформлени|отображени))", "(пять|шесть|семь|восемь|девять|десять) (разн\\p{L}* )?стил"],
-        "tr": ["(?<!\\d)\\d+ (farklı |çeviri |görüntüleme )?stil", "(?<!\\p{L})(beş|altı|yedi|sekiz|dokuz|on) (farklı |çeviri |görüntüleme )?stil"]
+        "tr": ["(?<!\\d)\\d+ (farklı |çeviri |görüntüleme )?stil", "(?<!\\p{L})(beş|altı|yedi|sekiz|dokuz|on) (farklı |çeviri |görüntüleme )?stil"],
+        "vi": ["\\d+\\s+(kiểu|phong\\s+cách)(?![\\p{L}])", "(?<![\\p{L}])(năm|sáu|bảy|tám|chín|mười)\\s+(kiểu|phong\\s+cách)(?![\\p{L}])"]
       },
       "exempt": []
     },
@@ -407,7 +424,8 @@
         "pl": ["wykryw\\p{L}*\\s+(automatycznie\\s+)?(twój\\s+)?język\\p{L}*\\s+docelow", "język\\p{L}*\\s+docelow\\p{L}*\\s+(jest\\s+)?(wykrywan|rozpoznawan|wykryt)"],
         "uk": ["визнача\\p{L}*\\s+(\\p{L}+\\s+){0,2}(мову\\s+перекладу|цільову\\s+мову|мову\\s+призначення)", "(цільов\\p{L}*\\s+мов\\p{L}*|мов\\p{L}*\\s+(перекладу|призначення))\\s+(визначається|розпізнається)\\s+автоматично"],
         "ru": ["(определя|распозна)\\p{L}* (автоматически )?(целев|язык перевода)", "(целев|язык перевода)\\p{L}*( \\p{L}+)? (определяется|распозна[её]тся) автоматически"],
-        "tr": ["hedef dil(i|ini)? (otomatik(\\p{L}*)? )?(algıla|tanı)", "hedef dil(i)? otomatik"]
+        "tr": ["hedef dil(i|ini)? (otomatik(\\p{L}*)? )?(algıla|tanı)", "hedef dil(i)? otomatik"],
+        "vi": ["(nhận\\s+diện|phát\\s+hiện|nhận\\s+biết)\\s+(ngôn\\s+ngữ\\s+đích|ngôn\\s+ngữ\\s+dịch)", "ngôn\\s+ngữ\\s+(đích|dịch)[^.;]{0,20}(được\\s+)?tự\\s+động\\s+(nhận\\s+diện|phát\\s+hiện)"]
       },
       "exempt": []
     },
@@ -429,7 +447,8 @@
         "pl": ["(grupowan|pogrupowan|sortowan|posortowan|uporządkowan)\\p{L}*\\s+(według|wg|po)\\s+(daty|dat|dniach|dniu)"],
         "uk": ["(групу|сорту|впорядкову|розподіля)\\p{L}*\\s+за\\s+дат"],
         "ru": ["(сгруппирован|группир|отсортирован|сортир|упорядочен|разбит)\\p{L}* по дат"],
-        "tr": ["tarih(e|lere) göre (grupl|sırala|düzenlen|ayrıl)"]
+        "tr": ["tarih(e|lere) göre (grupl|sırala|düzenlen|ayrıl)"],
+        "vi": ["(nhóm|sắp\\s+xếp|phân\\s+loại|xếp|chia)\\s+theo\\s+(ngày|thời\\s+gian)"]
       },
       "exempt": []
     },
@@ -451,7 +470,8 @@
         "pl": ["(tylko|wyłącznie)\\s+(w|z|dla)\\s+(wersji\\s+|subskrypcji\\s+|subskrybentów\\s+)?(WordByWord\\s+)?Plus", "(dostępn|zarezerwowan)\\p{L}*\\s+(tylko|wyłącznie)\\s+(w|dla)\\s+(wersji\\s+)?(WordByWord\\s+)?Plus", "(tylko|wyłącznie)\\s+(dla\\s+|w\\s+)?(wersji\\s+|użytkowników\\s+)?premium(?!\\s+lub\\s+enhanced)"],
         "uk": ["(лише|тільки)\\s+(з|в|у|для)\\s+(wordbyword\\s+)?plus(?![\\p{L}])", "ексклюзивн\\p{L}*\\s+(для\\s+)?(wordbyword\\s+)?plus", "доступн\\p{L}*\\s+(лише|тільки)\\s+(підписникам|передплатникам|користувачам)\\s+(wordbyword\\s+)?plus", "(лише|тільки)\\s+для\\s+(підписників|передплатників)"],
         "ru": ["только (для|в|с) (wordbyword )?plus", "только (по подписке|для подписчиков|подписчикам)", "эксклюзивн\\p{L}* (для|в) (wordbyword )?plus", "доступн\\p{L}* (лишь|только) (в|с) (wordbyword )?plus"],
-        "tr": ["(yalnızca|sadece) (wordbyword )?plus", "plus[’']?(a|ın)? özel(?!\\p{L})", "plus (abone|kullanıcı|üye)\\p{L}* özel", "premium[’']?(a)? özel(?!\\p{L})"]
+        "tr": ["(yalnızca|sadece) (wordbyword )?plus", "plus[’']?(a|ın)? özel(?!\\p{L})", "plus (abone|kullanıcı|üye)\\p{L}* özel", "premium[’']?(a)? özel(?!\\p{L})"],
+        "vi": ["chỉ\\s+(dành\\s+)?cho\\s+(thành\\s+viên\\s+|người\\s+dùng\\s+|gói\\s+)?(WordByWord\\s+)?Plus", "chỉ\\s+có\\s+(trong|ở|với)\\s+(gói\\s+)?(WordByWord\\s+)?Plus", "độc\\s+quyền\\s+(cho\\s+|của\\s+)?(gói\\s+)?(WordByWord\\s+)?Plus", "Plus\\s+độc\\s+quyền"]
       },
       "exempt": []
     },
@@ -473,7 +493,8 @@
         "pl": ["(ćwiczeni\\p{L}*|trening\\p{L}*|praktyk\\p{L}*)\\s+(mówienia|wymowy|konwersacj)", "(popraw|ulepsz|rozwij)\\p{L}*\\s+(swoj\\p{L}*\\s+)?(wymow|mówieni)", "(?<!\\p{L})mówieni\\p{L}*"],
         "uk": ["розмовн\\p{L}*\\s+(практик|навич)", "практик\\p{L}*\\s+(говоріння|вимови|мовлення)", "(покращ|тренуй|тренува|розвива|відпрацьову)\\p{L}*\\s+(\\p{L}+\\s+)?(вимов|говоріння|розмовн)", "(?<![\\p{L}])говорінн"],
         "ru": ["разговорн\\p{L}* (практик|навык)", "устн\\p{L}* реч", "тренир\\p{L}* (произношени|реч|говорени)", "улучш\\p{L}* (ваше |своё |свое )?(произношени|говорени)", "навык\\p{L}* (говорения|устной)"],
-        "tr": ["konuşma (prati[kğ]|alıştırma|beceri)", "telaffuz (prati[kğ]|alıştırma|eğitim|puan)", "konuşmanızı geliştir"]
+        "tr": ["konuşma (prati[kğ]|alıştırma|beceri)", "telaffuz (prati[kğ]|alıştırma|eğitim|puan)", "konuşmanızı geliştir"],
+        "vi": ["luyện\\s+(nói|phát\\s+âm|giao\\s+tiếp)", "luyện\\s+nghe\\s+nói", "(cải\\s+thiện|nâng\\s+cao)\\s+(kỹ\\s+năng\\s+)?(nói|phát\\s+âm|giao\\s+tiếp|nghe\\s+nói)"]
       },
       "exempt": []
     },
@@ -520,7 +541,8 @@
         "pl": ["może\\s+(ci\\s+)?(lepiej|bardziej)\\s+(pasować|odpowiadać|się\\s+sprawdzić)", "lepiej\\s+(dopasowan|pasując)", "bardziej\\s+odpowiedni", "lepszy\\s+wybór", "zamiast\\s+WordByWord", "aplikacj\\p{L}*\\s+siostrzan", "(zastąp|zastępuj|zastępstw|zastąpi)\\p{L}*\\s+WordByWord", "(wcześniejsz|poprzedni|starsz)\\p{L}*\\s+(aplikacj|wersj)", "następc\\p{L}*\\s+WordByWord"],
         "uk": ["може\\s+(\\p{L}+\\s+)?підійти\\s+(вам\\s+)?краще", "(краще|більше)\\s+(вам\\s+)?підійде", "кращ\\p{L}*\\s+вибір", "замість\\s+wordbyword", "(застосун|додат)\\p{L}*-сестр", "сестринськ\\p{L}*\\s+(застосун|додат|програм)", "(попередн|стар|колишн)\\p{L}*\\s+(застосун\\p{L}*|додат\\p{L}*|версі\\p{L}*\\s+wordbyword)", "(?<![\\p{L}])замін\\p{L}*\\s+wordbyword", "перейд\\p{L}*\\s+з\\s+wordbyword\\s+на\\s+surfenglish"],
         "ru": ["может подойти лучше", "подойд[её]т (вам )?лучше", "(больше|лучше) подходит", "вместо wordbyword", "замен\\p{L}* wordbyword", "приложение-сестр", "сестринск\\p{L}* приложени", "(стар|прежн|предыдущ)\\p{L}* (верси|приложени)\\p{L}* wordbyword", "(перейти|переход\\p{L}*) с wordbyword на surfenglish", "обнов\\p{L}* до surfenglish"],
-        "tr": ["daha uygun", "size daha iyi uy", "wordbyword[’']?(ün|u)? yerine", "kardeş uygulama", "eski (uygulama|sürüm)", "wordbyword[’']?(ün|u) yerini al", "surfenglish[’']?e (geçin|geçiş|yükselt)"]
+        "tr": ["daha uygun", "size daha iyi uy", "wordbyword[’']?(ün|u)? yerine", "kardeş uygulama", "eski (uygulama|sürüm)", "wordbyword[’']?(ün|u) yerini al", "surfenglish[’']?e (geçin|geçiş|yükselt)"],
+        "vi": ["có\\s+thể\\s+phù\\s+hợp\\s+hơn", "phù\\s+hợp\\s+hơn\\s+với\\s+bạn", "(thay\\s+thế|thay\\s+cho|thay\\s+vì)\\s+WordByWord", "ứng\\s+dụng\\s+(chị\\s+em|anh\\s+em)", "phiên\\s+bản\\s+(cũ|trước)\\s+của\\s+WordByWord", "ứng\\s+dụng\\s+(cũ|trước\\s+đây|đời\\s+trước)", "nâng\\s+cấp\\s+(từ\\s+WordByWord|lên\\s+SurfEnglish)"]
       },
       "exempt": []
     },
@@ -542,7 +564,8 @@
         "pl": ["głos\\p{L}*\\s+(AI\\s+)?(na\\s+urządzeniu|w\\s+urządzeniu|offline|lokaln)", "(lokaln|offline)\\p{L}*\\s+głos", "działa\\p{L}*\\s+offline"],
         "uk": ["голос\\p{L}*\\s+((ші|ai)\\s+)?на\\s+пристрої", "(ші|ai)-голос\\p{L}*\\s+на\\s+пристрої", "(офлайн|автономн)\\p{L}*\\s+голос", "голос\\p{L}*[^.;:!?]{0,20}офлайн", "(?<![\\p{L}])локальн\\p{L}*\\s+голос"],
         "ru": ["голос\\p{L}*( ии| ai)? (на устройстве|офлайн|оффлайн|без интернета)", "(локальн|встроенн)\\p{L}* (ии-|ai-)?голос", "озвучк\\p{L}* (на устройстве|без интернета|офлайн)"],
-        "tr": ["cihaz(da|daki|ınızdaki| üzerinde)( çalışan)? (yapay zek[aâ] )?ses", "çevrim ?dışı (çalışan )?(yapay zek[aâ] )?ses", "yerel (yapay zek[aâ] )?ses"]
+        "tr": ["cihaz(da|daki|ınızdaki| üzerinde)( çalışan)? (yapay zek[aâ] )?ses", "çevrim ?dışı (çalışan )?(yapay zek[aâ] )?ses", "yerel (yapay zek[aâ] )?ses"],
+        "vi": ["giọng(\\s+AI|\\s+đọc)?\\s+(chạy\\s+)?(trên\\s+máy|trên\\s+thiết\\s+bị|ngoại\\s+tuyến|offline|cục\\s+bộ)", "giọng[^.;]{0,25}(ngoại\\s+tuyến|offline|không\\s+cần\\s+(mạng|kết\\s+nối))"]
       },
       "only": ["sibling.card", "faq.items[english-learner]"],
       "exempt": []
@@ -565,7 +588,8 @@
         "pl": ["(?<!\\p{L})now(y|a|e|ego|ej|ą|ym|ych|ymi|ość|ości)(?!\\p{L})", "szybciej|szybsz\\p{L}*", "wydajniej|wydajniejsz\\p{L}*|efektywniej|efektywniejsz\\p{L}*", "(?<!\\p{L})lepsz\\p{L}*\\s+niż", "uaktualni\\p{L}*|ulepszeni\\p{L}*|(?<!\\p{L})aktualizacj\\p{L}*"],
         "uk": ["(?<![\\p{L}])нов(ий|а|е|і|ого|ої|ому|им|их|инка|инки|инку|інка|інки)(?![\\p{L}])", "(?<![\\p{L}])швидш\\p{L}*", "ефективніш\\p{L}*", "(?<![\\p{L}])оновл\\p{L}*", "краще\\s+за", "кращ\\p{L}*\\s+ніж"],
         "ru": ["(?<![\\p{L}])нов(ый|ая|ое|ые|ого|ую|ых|ыми|инка|инки|инку|инкой)(?![\\p{L}])", "быстрее", "эффективн", "(?<![\\p{L}])обнов", "лучше,? чем", "улучшенн"],
-        "tr": ["(?<!\\p{L})yeni(?!\\p{L})", "daha hızlı", "daha verimli", "yükselt", "(?<!\\p{L})(daha|en) iyi(?!\\p{L})"]
+        "tr": ["(?<!\\p{L})yeni(?!\\p{L})", "daha hızlı", "daha verimli", "yükselt", "(?<!\\p{L})(daha|en) iyi(?!\\p{L})"],
+        "vi": ["(?<![\\p{L}])mới(?![\\p{L}])", "nhanh\\s+hơn", "hiệu\\s+quả\\s+hơn", "nâng\\s+cấp", "tốt\\s+hơn"]
       },
       "only": ["sibling.card", "sibling.footer", "faq.items[english-learner]", "about.family"],
       "exempt": []
@@ -589,7 +613,8 @@
         "pl": ["rewolucj\\p{L}*|rewolucyjn\\p{L}*", "(?<!\\p{L})najlepsz\\p{L}*", "numer\\s+(jeden|1)(?!\\p{N})", "(?<!\\p{L})jedyn(y|a|e|ą|ym|ej)\\s+(tak\\p{L}*|aplikacj\\p{L}*|narzędzi\\p{L}*|tłumacz\\p{L}*|na\\s+świecie)", "pierwsz\\p{L}*\\s+na\\s+świecie", "(milion\\p{L}*|tysiąc\\p{L}*|tysięcy)\\s+(użytkowników|pobrań|osób)", "\\d[\\d\\s\\u00A0.,]*\\s?(tys\\.|mln)?\\s*(użytkowników|pobrań)", "zesp(ół|ołu|ole|ołem)\\s+WordByWord", "nasz\\p{L}*\\s+zesp", "(?<!\\p{L})pożegnaj|powiedz\\s+(do\\s+widzenia|żegnaj)", "zmieni\\p{L}*\\s+(wszystko|zasady\\s+gry)"],
         "uk": ["революц\\p{L}*", "найкращ\\p{L}*", "номер\\s+один", "(?<![\\p{L}])(єдиний|єдина|єдине)(?![\\p{L}])", "перш\\p{L}*\\s+(у|в)\\s+світі", "мільйон\\p{L}*\\s+(користувач|завантаж)", "\\d[\\d\\s.,\\u00A0\\u202F]*\\s?(тис\\.|млн)?\\+?\\s+(користувач|завантаж)\\p{L}*", "команд\\p{L}*\\s+wordbyword", "(?<![\\p{L}])наш(а|ої|ою|у)\\s+команд", "(?<![\\p{L}])творц\\p{L}*", "забудьте\\s+про", "попрощайтеся\\s+з"],
         "ru": ["революц", "правила игры", "(?<![\\p{L}])прощай", "забудьте (о|про)", "(?<![\\p{L}])(лучш(ий|ая|ее|ие)|самый лучш)", "номер один", "№\\s?1(?![\\d])", "(?<![\\p{L}])единственн", "перв\\p{L}* в мире", "миллион\\p{L}* (пользовател|загрузок|скачиван|людей)", "\\d[\\d\\s.,]*\\s?(тыс\\.?|млн)?\\s?(пользовател|загрузок|скачиван)", "команд\\p{L}* wordbyword", "наш\\p{L}* команд", "создател\\p{L}* wordbyword"],
-        "tr": ["devrim(sel|ci)", "(?<!\\p{L})en iyi(?!\\p{L})", "bir numara", "(?<!\\p{L})tek (uygulama|çözüm)", "dünyada (bir )?ilk", "(milyon|bin)lerce (kullanıcı|indirme|kişi)", "\\d[\\d.,]*\\s?(bin |milyon )?(kullanıcı|indirme)", "wordbyword ekibi", "ekibimiz", "geliştirici ekib", "elveda deyin", "oyunun kurallarını"]
+        "tr": ["devrim(sel|ci)", "(?<!\\p{L})en iyi(?!\\p{L})", "bir numara", "(?<!\\p{L})tek (uygulama|çözüm)", "dünyada (bir )?ilk", "(milyon|bin)lerce (kullanıcı|indirme|kişi)", "\\d[\\d.,]*\\s?(bin |milyon )?(kullanıcı|indirme)", "wordbyword ekibi", "ekibimiz", "geliştirici ekib", "elveda deyin", "oyunun kurallarını"],
+        "vi": ["cách\\s+mạng", "đột\\s+phá", "(?<![\\p{L}])tốt\\s+nhất(?![\\p{L}])", "(?<![\\p{L}])số\\s+(một|1)(?![\\p{L}\\p{N}])", "(?<![\\p{L}])duy\\s+nhất(?![\\p{L}])", "đầu\\s+tiên\\s+trên\\s+thế\\s+giới", "(hàng\\s+)?(nghìn|ngàn|triệu)\\s+(người\\s+dùng|lượt\\s+tải)", "\\d[\\d.,]*\\s*(nghìn|ngàn|triệu|k)?\\+?\\s+(người\\s+dùng|lượt\\s+tải)", "đội\\s+ngũ\\s+(của\\s+)?(WordByWord|chúng\\s+tôi|phát\\s+triển)", "những\\s+người\\s+làm\\s+ra", "nói\\s+lời\\s+tạm\\s+biệt|tạm\\s+biệt\\s+với"]
       },
       "exempt": ["about.disambiguation.text"]
     },
@@ -625,7 +650,8 @@
         "pl": ["(?<!\\p{N})(1\\d|2\\d)\\+?\\s+(języków|językach|języki|par\\s+językowych)"],
         "uk": ["(?<![\\p{N}])(1\\d|2\\d)\\+?\\s+(мов|мовами|мовах|мовних\\s+пар)(?![\\p{L}])"],
         "ru": ["(?<![\\d])(1\\d|2\\d)\\+? (язык|языка|языков|языковых пар)"],
-        "tr": ["(?<!\\d)(1\\d|2\\d)\\+?[’']?(den|dan)? (fazla )?(dil|dile|dilde|dil çifti)(?!\\p{L})"]
+        "tr": ["(?<!\\d)(1\\d|2\\d)\\+?[’']?(den|dan)? (fazla )?(dil|dile|dilde|dil çifti)(?!\\p{L})"],
+        "vi": ["(?<![\\d])(1\\d|2\\d)\\+?\\s+(ngôn\\s+ngữ|cặp\\s+ngôn\\s+ngữ)"]
       },
       "only": ["chromeExtension."],
       "exempt": []
