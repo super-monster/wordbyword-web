@@ -1,0 +1,113 @@
+{
+  "locale": "ru",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (ru column), checked one by one against WordByWordPrototype/Localizable.xcstrings (ru values, 2026-10-06) and the app’s quota list (FeatureQuotaManager.swift featureDisplayName); §7.2.2 rules ①–③; §7.2.3 (the site writes Plus, the app shows “Плюс” in user_type_plus); §7.3 ru row (вы; «проведите вправо», «дважды коснитесь»).",
+    "required: kickers and quota-table rows use the app’s names (rule ①). The swipe kicker is the feature name daily_sentence_translation_limit «Проведите для перевода» (ru has no value for the 右滑翻译 short name); the lookup kicker drops the «(AI Значение)» suffix like en / ja, the lookup row keeps the full name. Quota rows follow the app’s own list: feature name + engine, word_meaning_lookup_title, more_definitions_title, ai_pronunciation_*, Chunk Extraction, sentence_skeleton_ui_analyze «Ход действий», grammar_structure_analysis. The app writes title case (Извлечение Фрагментов, Предложение за Предложением, Обновить Сейчас) and mixes AI / ИИ: quoted names keep the app’s spelling, sentences use ИИ and normal Russian case (reported in docs/redesign-2026/ops/m3/ru-qa.md).",
+    "contains: app button / setting names that sentences quote verbatim in « » (rule ①; T-B get_syntax_explanation_button, T-C audio_playback_title_* and translation_mode_title_*, T-E upgrade_now_button / restore_purchase_button).",
+    "banned: left swipes (F14), mouse double-click wording (X7 by analogy), a single tap for lookup (doc 08 §1.1), the app’s “Плюс” (doc 08 §7.2.3), slang “тап” (doc 08 §7.3 uses «дважды коснитесь»), “чанк” (SurfEnglish-owned jargon; the app name is «Извлечение Фрагментов»), line-by-line “построчный” wording."
+  ],
+  "required": {
+    "features[swipe].kicker": "Проведите для перевода",
+    "features[lookup].kicker": "Дважды коснитесь, чтобы найти",
+    "features[x].kicker": "X (Twitter)",
+    "features[chunks].kicker": "Страницы на английском",
+    "features[speech].kicker": "Озвучка",
+    "features[syntax].kicker": "Синтаксис",
+    "features[engines].kicker": "Движки перевода",
+    "features[display].kicker": "Отображение",
+    "features[history].kicker": "История",
+    "features[devices].kicker": "Устройства",
+    "demo.ui.more": "Больше определений",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Проведите для перевода · облачный движок",
+    "pricing.table.rows.localSwipe": "Проведите для перевода · локальный движок",
+    "pricing.table.rows.lookup": "Дважды коснитесь, чтобы найти (AI Значение)",
+    "pricing.table.rows.more": "Больше определений",
+    "pricing.table.rows.lookupSpeech": "AI произношение (слово)",
+    "pricing.table.rows.swipeSpeech": "AI произношение (предложение)",
+    "pricing.table.rows.localVoice": "Голос iOS (Локальное чтение)",
+    "pricing.table.rows.chunks": "Извлечение Фрагментов",
+    "pricing.table.rows.actionFlow": "Ход действий",
+    "pricing.table.rows.syntax": "Анализ структуры синтаксиса ИИ"
+  },
+  "contains": {
+    "faq.items[restore].a": [
+      "Обновить Сейчас",
+      "Восстановить Покупку"
+    ],
+    "features[syntax].text": [
+      "Получить объяснение синтаксиса ИИ"
+    ],
+    "features[speech].text": [
+      "Чтение ИИ",
+      "Локальное чтение"
+    ],
+    "features[chunks].text": [
+      "Извлечение Фрагментов",
+      "Action Flow",
+      "Ход действий"
+    ],
+    "features[swipe].bullets[0]": [
+      "Автоматический",
+      "Абзац",
+      "Предложение за Предложением"
+    ],
+    "features[lookup].bullets[2]": [
+      "Больше определений"
+    ]
+  },
+  "banned": [
+    {
+      "pattern": "(провед|провод|смахн|смахив|свайп|сдвин|листа)\\p{L}*(\\s+\\S+){0,3}\\s+(влево|налево)",
+      "regex": true,
+      "flags": "i",
+      "use": "проведите вправо",
+      "note": "the gesture is a right swipe; a left swipe removes the translation (F14)"
+    },
+    {
+      "pattern": "(двойн\\p{L}* (клик|щелч|щёлк)|дабл[- ]?клик|кликн\\p{L}* дважды|щёлкн\\p{L}* дважды)",
+      "regex": true,
+      "flags": "i",
+      "use": "дважды коснитесь / двойное касание",
+      "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)",
+      "allowInKeys": [
+        "chromeExtension."
+      ]
+    },
+    {
+      "pattern": "(?<!дважды )(?<!Дважды )(коснитесь|нажмите на|тапните( по)?) (слово|слова|любое слово|любого слова|на слово)",
+      "regex": true,
+      "flags": "i",
+      "use": "дважды коснитесь слова",
+      "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)"
+    },
+    {
+      "pattern": "(?<![\\p{L}])Плюс(?![\\p{L}])",
+      "regex": true,
+      "use": "Plus",
+      "note": "the site writes Plus like the App Store IAP name; the app’s user_type_plus shows “Плюс” (doc 08 §7.2.3)"
+    },
+    {
+      "pattern": "(?<![\\p{L}])(двойн\\p{L}* )?тап(а|ом|у|ы|ов|ни\\p{L}*|ну\\p{L}*)?(?![\\p{L}])",
+      "regex": true,
+      "flags": "i",
+      "use": "двойное касание / дважды коснитесь",
+      "note": "slang; doc 08 §7.3 writes «дважды коснитесь»"
+    },
+    {
+      "pattern": "(?<![\\p{L}])чанк",
+      "regex": true,
+      "flags": "i",
+      "use": "«Извлечение Фрагментов» (app name) / словосочетания",
+      "note": "chunk jargon belongs to SurfEnglish (doc 03 §1.4, R83); the app’s name is «Извлечение Фрагментов»"
+    },
+    {
+      "pattern": "построчн|посрочн",
+      "regex": true,
+      "flags": "i",
+      "use": "по предложениям",
+      "note": "legacy jargon (doc 08 §7.5 jargon, C-16)"
+    }
+  ],
+  "allowInKeys": []
+}

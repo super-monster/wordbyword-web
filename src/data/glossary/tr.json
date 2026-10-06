@@ -1,0 +1,51 @@
+{
+  "locale": "tr",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (tr column), checked key by key against WordByWordPrototype/Localizable.xcstrings (tr values, 2026-10-06); §7.2.2 rules ①–③ (no X-fix lists tr); §7.3 tr row (siz; 'sağa kaydırın', 'çift dokunun'); the tr copy deck (src/locales/tr.json, M3, T3).",
+    "required: key path → value used verbatim (rule ①). Kickers use the app's names; the lookup kicker drops the '(AI Anlamı)' suffix like en / ja / es / fr do; tr has no short name for the swipe feature (T-A '—'), so the kicker is the feature name 'Çevirmek için Kaydırın' (daily_sentence_translation_limit). Quota-table rows are the app's names: daily_sentence_translation_limit + the engine ('bulut motoru' / 'yerel motor', after swipe_translation_engine_mode_*: 'Bulut çeviri motoru' / 'Yerel motor'), word_meaning_lookup_title, more_definitions_title, ai_pronunciation_word / _sentence, audio_playback_title_local, Chunk Extraction, sentence_skeleton_settings_navigation_title; the syntax row is the noun form of get_syntax_explanation_button. Quoted app names keep the app's own spelling ('Yapay Zeka', 'AI Anlamı'); sentences write the standard form 'yapay zekâ' (doc 03 §2.3 tr keywords).",
+    "contains: in-app button / setting names that the sentences quote verbatim in “ ” (rule ①; T-B get_syntax_explanation_button, view_title_swipe_history; T-C audio_playback_title_*; T-E upgrade_now_button / restore_purchase_button). Action Flow keeps the App Store name (doc 08 D3, §7.2.3) and quotes the app's 'Cümle eylem akışı' once.",
+    "banned: variants that must not appear in any leaf value (pattern = literal text unless regex:true; flags 'i' = case-insensitive). Regexes use \\p{L} look-arounds instead of \\b because \\b is ASCII-only and Turkish words end in ç ğ ı ö ş ü."
+  ],
+  "required": {
+    "features[swipe].kicker": "Çevirmek için Kaydırın",
+    "features[lookup].kicker": "Aramak için çift dokunun",
+    "features[x].kicker": "X (eski adıyla Twitter)",
+    "features[chunks].kicker": "İngilizce sayfalar",
+    "features[speech].kicker": "Sesli okuma",
+    "features[syntax].kicker": "Söz dizimi",
+    "features[engines].kicker": "Çeviri motorları",
+    "features[display].kicker": "Gösterim",
+    "features[history].kicker": "Geçmiş",
+    "features[devices].kicker": "Cihazlar",
+    "demo.ui.more": "Daha Fazla Tanım",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Çevirmek için Kaydırın · bulut motoru",
+    "pricing.table.rows.localSwipe": "Çevirmek için Kaydırın · yerel motor",
+    "pricing.table.rows.lookup": "Aramak için çift dokunun (AI Anlamı)",
+    "pricing.table.rows.more": "Daha Fazla Tanım",
+    "pricing.table.rows.lookupSpeech": "Yapay Zeka Telaffuzu (Kelime)",
+    "pricing.table.rows.swipeSpeech": "Yapay Zeka Telaffuzu (Cümle)",
+    "pricing.table.rows.localVoice": "iOS sesi (Yerel Okuma)",
+    "pricing.table.rows.chunks": "Parça Çıkarma",
+    "pricing.table.rows.actionFlow": "Cümle eylem akışı",
+    "pricing.table.rows.syntax": "Yapay Zeka Söz Dizimi Açıklaması"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Şimdi Yükselt", "Satın Almayı Geri Yükle"],
+    "features[syntax].text": ["Kaydırma Çeviri Geçmişi", "Yapay Zeka Söz Dizimi Açıklamasını Al"],
+    "features[speech].text": ["Yapay Zeka Okuma", "Yerel Okuma"],
+    "features[chunks].text": ["Parça Çıkarma", "Action Flow", "Cümle eylem akışı"],
+    "features[lookup].bullets[2]": ["Daha Fazla Tanım"]
+  },
+  "banned": [
+    { "pattern": "(?<!\\p{L})sola (doğru )?kaydır", "regex": true, "flags": "i", "use": "sağa kaydırın", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "çift tık", "flags": "i", "use": "çift dokunun / çift dokunarak", "note": "touch gesture, not a mouse double-click (doc 08 §7.2.2 X7 by analogy)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "(?<!\\p{L})kelimeye (bir kez )?(dokun|tıkla)", "regex": true, "flags": "i", "use": "kelimeye çift dokunun", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row); 'kelimeye çift dokunun' does not match" },
+    { "pattern": "(?<!\\p{L})çift dokunuşla çeviri", "regex": true, "flags": "i", "use": "çift dokunarak kelime arama", "note": "the app's double_tap_not_supported_message calls the lookup a translation; the double tap explains a word, it does not translate it" },
+    { "pattern": "Parça Çıkarımı", "flags": "i", "use": "Parça Çıkarma", "note": "app name (T-B 'Chunk Extraction')" },
+    { "pattern": "(?<![\\p{L}“])AI Okuma", "regex": true, "flags": "i", "use": "“Yapay Zeka Okuma”", "note": "app name of audio_playback_title_streaming (T-C)" },
+    { "pattern": "arama geçmişi", "flags": "i", "use": "çeviri ve bakılan kelime geçmişi", "note": "reads as the browser's search history (doc 03 §2.3 table B note, PRO-14 / I18-12 by analogy)" },
+    { "pattern": "(?<!\\p{L})sözcü[kğ]", "regex": true, "flags": "i", "use": "kelime", "note": "one word for 'word' across the page, as in the app (kelime)" }
+  ],
+  "allowInKeys": []
+}

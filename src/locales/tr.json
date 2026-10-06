@@ -1,0 +1,468 @@
+{
+  "meta": {
+    "title": "WordByWord: iPhone için web sayfası çeviri uygulaması",
+    "description": "Dil öğrenenler için: WordByWord’de bir paragrafı sağa kaydırın, çevirisi altında belirir. Bir kelimeye çift dokunun, anlamını görün. iPhone ve iPad’de ücretsiz.",
+    "ogHeadline": "Web sayfalarını iki dilde okuyun. [[Orijinal yerinde kalır.]]",
+    "ogSubline": "Bir paragrafı sağa kaydırın · bir kelimeye çift dokunun, bağlamdaki anlamını görün",
+    "ogImageAlt": "iPhone’da WordByWord (İngilizce arayüz): İspanyolca metin, altında İngilizce çeviri ve bir kelimenin yapay zekâ açıklaması",
+    "appStoreName": "WordByWord Translate",
+    "appStoreSubtitle": "Swipe to translate AI explains"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "web sayfası",
+      "uygulaması"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "iPhone için web sayfası çeviri uygulaması",
+        "secondary": [
+          "iPhone’da web sitesi çevirme",
+          "dil öğrenenler için okuma asistanı",
+          "çevirisi orijinal metnin altında",
+          "web sitelerini iki dilde okuma",
+          "web sitelerini okuyarak dil öğrenme"
+        ]
+      },
+      "K2": {
+        "primary": "bağlama göre kelime anlamı (yapay zekâ)",
+        "secondary": [
+          "yapay zekâ sözlük",
+          "çift dokunarak kelime arama",
+          "deyim ve kalıp ifade anlamları",
+          "örnek cümleler ve kelime biçimleri"
+        ]
+      },
+      "K3": {
+        "primary": "yapay zekâ ile sesli okuma",
+        "secondary": [
+          "web sayfalarını sesli okuma",
+          "hızı ayarlanabilen iOS sesleri"
+        ]
+      },
+      "K4": {
+        "primary": "yapay zekâ ile cümle yapısı analizi",
+        "secondary": [
+          "uzun cümleleri parçalara ayırma",
+          "cümlenin dil bilgisi açıklaması"
+        ]
+      },
+      "K6": {
+        "primary": "çeviri ve bakılan kelime geçmişi",
+        "secondary": [
+          "bakılan kelimeleri bağlamıyla tekrar etme"
+        ]
+      },
+      "K7": {
+        "primary": "bulutta veya cihazda çeviri",
+        "secondary": [
+          "Azure ve Google ile çeviri",
+          "iOS sistem çevirisi"
+        ]
+      },
+      "K8": {
+        "primary": "21 dile çeviri",
+        "secondary": [
+          "20 dilde uygulama arayüzü",
+          "sayfa dilini otomatik algılama"
+        ]
+      },
+      "K9": {
+        "primary": "X (Twitter) gönderilerini iPhone’da çevirme",
+        "secondary": [
+          "tweetleri orijinaliyle okuma",
+          "yerleşik tarayıcıda X çevirisi"
+        ]
+      },
+      "K10": {
+        "primary": "iPhone için ücretsiz çeviri uygulaması",
+        "secondary": [
+          "günlük ücretsiz kullanım hakkı",
+          "WordByWord Plus fiyatı"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "İçeriğe geç",
+    "languageLabel": "Dil",
+    "comingSoon": "Çok yakında",
+    "contactUs": "İletişim",
+    "lastUpdated": "Son güncelleme",
+    "breadcrumbHome": "Ana sayfa",
+    "appStoreBadgeAlt": "WordByWord’ü App Store’dan indirin",
+    "langFallbackNote": "Bu sayfa yalnızca İngilizce. Başka bir dil seçerseniz o dilin ana sayfası açılır.",
+    "menu": "Menü",
+    "close": "Kapat",
+    "figLabel": "Şekil",
+    "screenshotLabel": "Ekran görüntüsü (İngilizce arayüz)",
+    "screenshotExcerptLabel": "Ekran kesiti (İngilizce arayüz)",
+    "noteLabel": "Not",
+    "demoLabel": "Uygulama demosu"
+  },
+  "nav": {
+    "features": "Özellikler",
+    "languages": "Diller",
+    "pricing": "Fiyatlar",
+    "faq": "SSS",
+    "chromeExtension": "Chrome uzantısı",
+    "about": "Hakkında",
+    "download": "İndir",
+    "downloadShort": "İndir",
+    "iphoneApp": "iPhone sürümü",
+    "ariaMain": "Ana gezinme",
+    "ariaLanguages": "Dil seçin"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Dil öğrenenler için iki dilli web okuma",
+    "title": "[[Web sayfasında]] bir paragrafı sağa kaydırın. Çevirisi hemen altında belirir.",
+    "lede": "WordByWord, iPhone ve iPad için dil öğrenenlere yönelik bir okuma asistanıdır.",
+    "ledeShort": "WordByWord, iPhone ve iPad için dil öğrenenlere yönelik bir okuma asistanıdır.",
+    "ctaNote": "Ücretsiz indirin · iPhone ve iPad",
+    "how": "Bir siteyi uygulamanın yerleşik tarayıcısında açıp bir paragrafı sağa kaydırın: çevirisi hemen altında belirir. Bir kelimeye çift dokunun; yapay zekâ o cümledeki anlamını açıklar.",
+    "platformNote": "Günlük sınırlarla ücretsiz · Plus: aylık abonelik · {minOS} veya üzeri; Apple çipli Mac ve Vision Pro’da da çalışır",
+    "secondaryCta": "Nasıl çalışır?"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "Mahalle kütüphanemiz cumartesileri erkenden açılıyor.",
+      "İnsanlar kahveleriyle geliyor ve kendilerini öğlene kadar okurken buluyor."
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "fiil",
+      "meaning": "(end up + -ing) kendini bir şey yaparken bulmak; burada: farkına varmadan öğlene kadar okumak",
+      "note": "Bu cümlede “end up” kalıbının bir parçasıdır."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Sağa kaydırın",
+      "more": "Daha Fazla Tanım",
+      "pause": "Duraklat",
+      "replay": "Yeniden oynat"
+    },
+    "caption": "Uygulamanın HTML ile hazırlanmış demosu, ekran görüntüsü değil: İngilizce bir paragraf ve altına eklenmiş Türkçe çevirisi."
+  },
+  "featuresIntro": {
+    "title": "Okuduğunuz sitelerde kaydırarak çeviri, çift dokunarak kelime anlamı",
+    "lede": "Gerçek web sitelerini okuyarak dil öğrenenler için tasarlandı. İşin çoğunu iki hareket halleder; bir cümleye daha yakından bakmanız gerektiğinde diğer araçlar da hazır."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Çevirmek için Kaydırın",
+      "title": "Çevirmek için Kaydırın: çeviri, orijinal metnin hemen altında belirir",
+      "text": "Yerleşik tarayıcıda bir sayfa açın (adres yazın ya da arama yapın) ve bir paragrafı sağa kaydırın. Çeviri paragrafın hemen altına eklenir; böylece ekran değiştirmeden ve kaldığınız yeri kaybetmeden ikisini birlikte okursunuz.",
+      "bullets": [
+        "Gösterim: Otomatik, Paragraf veya Cümle Cümle",
+        "Çeviriler hemen ya da dokununca görünür",
+        "Haberler, bloglar, dokümantasyon, X (Twitter): uygulamada açtığınız sayfalar"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "iPhone’da WordByWord (İngilizce arayüz): İspanyolca Wikipedia sayfası, İngilizce çevirileri orijinal metnin altında"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Aramak için çift dokunun",
+      "title": "Bir kelimeye çift dokunun: yapay zekâ bağlama göre anlamını açıklar",
+      "text": "WordByWord bir kelimeyi açıklamadan önce cümlenin tamamını okur ve ilk olarak kalıp ifadelere bakar. Böylece sözlükteki tanımların listesini değil, o cümleye uyan anlamı görürsünüz.",
+      "bullets": [
+        "Sayfadaki herhangi bir kelimeye çift dokunun",
+        "Deyimler ve kalıp ifadeler öncelikle tanınır",
+        "“Daha Fazla Tanım”: örnek, kelime biçimi ve telaffuz içeren tam sözlük maddesi"
+      ],
+      "note": "Çince, Japonca veya Korece kaynak metinlerde kullanılamaz.",
+      "image": "shot/{set}/lookup",
+      "alt": "iPhone’da WordByWord (İngilizce arayüz): İspanyolca “convirtiéndose” kelimesi vurgulu, cümledeki anlamı bir kartta"
+    },
+    {
+      "id": "x",
+      "kicker": "X (eski adıyla Twitter)",
+      "title": "X (Twitter) gönderilerini yerleşik tarayıcıda iki dilde okuyun",
+      "text": "WordByWord içinde x.com’da oturum açın ve bir gönderiyi sağa kaydırın; çevirisi hemen altında görünür. Başka dillerde paylaşım yapan hesapları takip ederken kullanışlıdır.",
+      "image": "shot/{set}/x",
+      "alt": "WordByWord’de bir gönderi örneği: İngilizce gönderinin altında Türkçe çevirisi (ekran görüntüsü değil)",
+      "sample": {
+        "name": "Örnek Hesap",
+        "handle": "@runner.example",
+        "time": "3 sa",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "İlk 10 km koşumu az önce bitirdim. Yavaştı ama bir kez bile durmadım."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "İngilizce sayfalar",
+      "title": "Parça Çıkarma ve Action Flow: İngilizce cümleler için",
+      "text": "İngilizce bir cümleyi kaydırarak çevirdikten sonra “Parça Çıkarma”, birlikte kullanılan kelime öbeklerinin altını çizer; Action Flow (uygulamada “Cümle eylem akışı”) ise cümlenin ana eylemini ve ona bağlı eylemleri gösterir. İkisini de otomatik ya da dokununca çalıştırabilir veya kapatabilirsiniz.",
+      "note": "Yalnızca İngilizce kaynak metinlerde.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for: bir yere doğru yola çıkmak",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Örnek görsel, ekran görüntüsü değil"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Sesli okuma",
+      "title": "Yapay zekâ ile sesli okuma veya cihazdaki hızlı iOS sesleri",
+      "text": "Bir kelimeyi ya da bütün bir cümleyi dinleyin. “Yapay Zeka Okuma” bulutta doğal bir ses kullanır; “Yerel Okuma” ise iOS ile gelen sesleri kullanır: daha hızlıdır, hızı ayarlanabilir ve indirdiğiniz Premium veya Enhanced sesleri de kullanabilir.",
+      "image": "shot/{set}/tts",
+      "alt": "iPhone’da WordByWord (İngilizce arayüz): ekranın altındaki sesli okuma oynatıcısı İspanyolca bir cümleyi okuyor"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Söz dizimi",
+      "title": "Uzun cümleler için yapay zekâ ile cümle yapısı analizi",
+      "text": "“Kaydırma Çeviri Geçmişi”nde çevrilmiş bir cümleyi açıp “Yapay Zeka Söz Dizimi Açıklamasını Al” düğmesine dokunun. Yapay zekâ cümleyi parçalarına ayırır ve nasıl birleştiklerini açıklar.",
+      "image": "shot/{set}/syntax",
+      "alt": "iPhone’da WordByWord (İngilizce arayüz): “Kaydırma Çeviri Detayı” ekranında bir cümlenin söz dizimi açıklamaları"
+    },
+    {
+      "id": "engines",
+      "kicker": "Çeviri motorları",
+      "title": "Bulutta veya cihazda çeviri",
+      "text": "Bulut (Azure, Google) veya cihazda iOS; bulut hakkı bittiyse yerel motora geçin."
+    },
+    {
+      "id": "display",
+      "kicker": "Gösterim",
+      "title": "Çeviri düzeni ve stili",
+      "text": "Otomatik, Paragraf veya Cümle Cümle; hemen ya da dokununca; çeşitli stiller."
+    },
+    {
+      "id": "history",
+      "kicker": "Geçmiş",
+      "title": "Çeviri ve bakılan kelime geçmişi",
+      "text": "Çeviriler ve baktığınız kelimeler cümleleriyle saklanır; her an silinebilir."
+    },
+    {
+      "id": "devices",
+      "kicker": "Cihazlar",
+      "title": "iPhone, iPad, Mac ve Vision Pro",
+      "text": "iPhone ve iPad ({minOS}+), Apple çipli Mac’ler ({minMacOS}+) ve Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Uygulamada ayarlar, tam tanımlar ve dil seçimi",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Ayarlar: çeviri modu, çeviri stili ve okuma modu (İngilizce arayüz)",
+        "alt": "iPhone’da WordByWord ayarları (İngilizce arayüz): çeviri modu Otomatik, Alıntı Stili ve Yerel Okuma"
+      },
+      {
+        "id": "dictionary",
+        "caption": "Daha Fazla Tanım: örnek cümlelerle tam sözlük maddesi (İngilizce arayüz)",
+        "alt": "WordByWord “Daha Fazla Tanım” ekranı (İngilizce arayüz): İspanyolca “matrimonio” kelimesi, tanımları ve örnek cümleler"
+      },
+      {
+        "id": "languages",
+        "caption": "Kaynak ve hedef dil: İspanyolcadan ABD İngilizcesine (İngilizce arayüz)",
+        "alt": "WordByWord dil ayarları (İngilizce arayüz): kaynak dil İspanyolca, hedef dil İngilizce (ABD)"
+      },
+      {
+        "id": "languageList",
+        "caption": "{targetLanguages, plural, one{# çeviri dilinden} other{# çeviri dilinden}} birini seçin (İngilizce arayüz)",
+        "alt": "iPhone’da WordByWord dil listesi (İngilizce arayüz): Vietnamca, Portekizce, Ukraynaca, İtalyanca, Çince, Türkçe ve diğerleri"
+      }
+    ]
+  },
+  "languages": {
+    "title": "{targetLanguages, plural, one{# dile} other{# dile}} çeviri: yalnızca İngilizceden değil",
+    "lede": "Çeviri dilini seçin. WordByWord başta sayfanın İngilizce olduğunu varsayar, okuduğunuz sayfanın dilini algılayıp günceller; dilerseniz kendiniz de değiştirebilirsiniz.",
+    "uiCount": "Uygulama arayüzü {uiLanguages, plural, one{# dilde} other{# dilde}}",
+    "targetCount": "{targetLanguages, plural, one{# dile} other{# dile}} çeviri",
+    "sourceNote": "Sayfa dili: varsayılan İngilizce, otomatik algılanır, değiştirilebilir",
+    "targetListLabel": "Çeviri dilleri",
+    "limits": [
+      "Çince, Japonca ve Korece sayfalar: kaydırarak çeviri ve sesli okuma çalışır, çift dokunarak kelime arama çalışmaz.",
+      "Parça Çıkarma ve Action Flow yalnızca İngilizce metinlerde çalışır."
+    ]
+  },
+  "pricing": {
+    "title": "Her gün ücretsiz; daha çok okuyorsanız Plus’a yükseltin",
+    "lede": "WordByWord’ü indirmek ücretsizdir. Çoğu özelliğin her gün sıfırlanan ücretsiz bir kullanım hakkı vardır; WordByWord Plus bu hakkı artırır.",
+    "table": {
+      "caption": "Günlük kullanım sınırları: Ücretsiz ve Plus",
+      "colFeature": "Özellik",
+      "colFree": "Ücretsiz",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Çeviri",
+        "lookup": "Kelime arama",
+        "listen": "Dinleme",
+        "sentence": "Cümle araçları"
+      },
+      "rows": {
+        "cloudSwipe": "Çevirmek için Kaydırın · bulut motoru",
+        "localSwipe": "Çevirmek için Kaydırın · yerel motor",
+        "lookup": "Aramak için çift dokunun (AI Anlamı)",
+        "more": "Daha Fazla Tanım",
+        "lookupSpeech": "Yapay Zeka Telaffuzu (Kelime)",
+        "swipeSpeech": "Yapay Zeka Telaffuzu (Cümle)",
+        "localVoice": "iOS sesi (Yerel Okuma)",
+        "chunks": "Parça Çıkarma",
+        "actionFlow": "Cümle eylem akışı",
+        "syntax": "Yapay Zeka Söz Dizimi Açıklaması"
+      },
+      "perDay": "Günde {n}",
+      "noLimit": "Günlük sınır yok",
+      "englishOnly": "Yalnızca İngilizce"
+    },
+    "summary": "Bu sınırlar içinde her özellik ücretsiz; Plus, ABD’de aylık {plus.priceUS} karşılığında sınırları yükseltir.",
+    "free": {
+      "name": "Ücretsiz"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "Aylık {plus.priceUS} (ABD)"
+    },
+    "note": "Fiyatlar bölgeye göre değişir ve App Store’da gösterilir. Aboneliği dilediğiniz zaman Apple Hesabı ayarlarınızdan iptal edebilirsiniz."
+  },
+  "faq": {
+    "title": "WordByWord hakkında sık sorulan sorular",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "WordByWord nedir?",
+        "a": "WordByWord, dil öğrenenler ve web sitelerini başka bir dilde okuyan herkes için iPhone ve iPad’de çalışan bir okuma asistanıdır. Yerleşik tarayıcısında bir sayfa açın, çevirisini altına eklemek için bir paragrafı sağa kaydırın ve bir kelimenin o cümlede ne anlama geldiğini görmek için kelimeye çift dokunun. Uygulamanın arkasında bağımsız geliştirici Jinlong var. [WordByWord hakkında daha fazla bilgi (İngilizce)](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "WordByWord bir web sayfasının tamamını tek seferde çevirebilir mi?",
+        "a": "Hayır. WordByWord kaydırdığınız paragrafı çevirir ve çeviriyi hemen altına ekler; sayfanın geri kalanı orijinal dilinde kalır. Çevirileri paragraf paragraf ya da cümle cümle gösterebilirsiniz (veya seçimi Otomatik moda bırakabilirsiniz); hemen mi yoksa yalnızca dokunduğunuzda mı görüneceklerini de siz belirlersiniz."
+      },
+      {
+        "id": "safari",
+        "q": "Safari’de ya da başka uygulamaların içinde çalışır mı?",
+        "a": "Hayır. WordByWord bir Safari uzantısı değildir ve başka uygulamalara çeviri düğmesi eklemez. Sekmeleri ve yer imleri olan kendi tarayıcısı vardır: bir web adresi yazın ya da arama yapın, ardından çeviri için orada kaydırın."
+      },
+      {
+        "id": "word-by-word",
+        "q": "WordByWord kelime kelime mi çevirir?",
+        "a": "Kelimenin tam anlamıyla değil. Kelimeleri tek tek çevirmek çoğu zaman anlamı kaçırır; bu yüzden WordByWord cümleleri ya da paragrafları bütün olarak çevirir. Tek bir kelimeyi ise yalnızca ona çift dokunduğunuzda, içinde bulunduğu cümlenin bağlamında açıklar."
+      },
+      {
+        "id": "x",
+        "q": "X (Twitter) gönderilerini WordByWord ile okuyabilir miyim?",
+        "a": "Evet. Yerleşik tarayıcıda x.com’a gidip oturum açın; ardından bir gönderiyi sağa kaydırarak çevirisini hemen altında görün, bir kelimeye çift dokunarak anlamına bakın (Çince, Japonca veya Korece gönderilerde kullanılamaz). Bu, X uygulamasıyla değil, WordByWord içinde açılan X web sitesiyle çalışır."
+      },
+      {
+        "id": "languages",
+        "q": "WordByWord hangi dilleri destekliyor?",
+        "a": "Uygulamanın arayüzü {uiLanguages, plural, one{# dilde} other{# dilde}} sunulur. WordByWord, Basitleştirilmiş Çince, Geleneksel Çince, ABD İngilizcesi ve Birleşik Krallık İngilizcesi dahil {targetLanguages, plural, one{# dile} other{# dile}} çeviri yapar. Sayfa dili varsayılan olarak İngilizcedir; WordByWord okuduğunuz dili algılayıp günceller, dilerseniz elle de değiştirebilirsiniz. Bazı özellikler bu dile bağlıdır: çift dokunarak kelime arama Çince, Japonca ve Korece metinlerde çalışmaz; Parça Çıkarma ve Action Flow yalnızca İngilizcede çalışır."
+      },
+      {
+        "id": "free",
+        "q": "WordByWord ücretsiz mi? Günlük sınırlar neler?",
+        "a": "Evet. WordByWord’ü indirmek ve kullanmak ücretsizdir; günlük sınırlar vardır. Ücretsiz planda her gün bulut motoruyla {quota.cloudSwipe.free}, yerel motorla {quota.localSwipe.free, plural, one{# kaydırarak çeviri} other{# kaydırarak çeviri}}, {quota.lookup.free, plural, one{# kelime arama} other{# kelime arama}} (çift dokunarak), {quota.chunks.free, plural, one{# Parça Çıkarma} other{# Parça Çıkarma}}, {quota.actionFlow.free, plural, one{# Action Flow} other{# Action Flow}} ve {quota.syntax.free, plural, one{# yapay zekâ söz dizimi açıklaması} other{# yapay zekâ söz dizimi açıklaması}} hakkınız olur; iOS seslerinde günlük sınır yoktur. **WordByWord Plus**, bu sınırları yükselten aylık bir aboneliktir (ABD’de {plus.priceUS}; fiyatlar bölgeye göre değişir ve App Store’da gösterilir)."
+      },
+      {
+        "id": "engines",
+        "q": "Hangi çeviri motorunu kullanıyor?",
+        "a": "Siz seçersiniz. Bulut çeviri motoru şu anda Azure ve Google çeviri hizmetleriyle çalışır. Yerel motor, iOS sistem çevirisini kullanır; ilk kullanımda dil paketlerinin indirilmesi gerekebilir. Günlük bulut çevirisi hakkınız biterse yerel motora geçip yeniden deneyin. Kelime açıklamaları, söz dizimi analizi ve “Yapay Zeka Okuma”, buluttaki yapay zekâ hizmetlerini kullanır."
+      },
+      {
+        "id": "account",
+        "q": "WordByWord için hesap gerekir mi?",
+        "a": "Hayır. WordByWord kayıt olmadan çalışır. Yerleşik tarayıcıda yalnızca x.com gibi web sitelerinde, her tarayıcıda yaptığınız gibi oturum açarsınız. WordByWord Plus aboneliği bir WordByWord hesabına değil, Apple Hesabınıza bağlıdır."
+      },
+      {
+        "id": "restore",
+        "q": "Yeni bir iPhone veya iPad’de Plus aboneliğimi nasıl geri yüklerim?",
+        "a": "Yeni cihazda aynı Apple Hesabını kullanın. WordByWord ayarlarında önce “Şimdi Yükselt” düğmesine, ardından “Satın Almayı Geri Yükle” düğmesine dokunun. Aboneliği değiştirmek veya iptal etmek için Apple Hesabınızın abonelik ayarlarını kullanın."
+      },
+      {
+        "id": "android",
+        "q": "Android sürümü var mı?",
+        "a": "Hayır. WordByWord yalnızca App Store’da, iPhone ve iPad, Apple çipli Mac’ler ve Apple Vision Pro için sunulur."
+      },
+      {
+        "id": "english-learner",
+        "q": "İngilizce öğreniyorum. SurfEnglish’i de denemeye değer mi?",
+        "a": "Seçtiğiniz sayfalar ve X gönderileri için, İngilizce ya da başka bir dilde olsun, WordByWord’ü kullanmaya devam edin. Bunun yanında seviyeye göre ({se.levels}) ayrılmış günlük İngilizce haberler ve kaydettiğiniz cümle ve kelimeleri tekrar ettiren oyunlar da isterseniz, aynı geliştiricinin SurfEnglish uygulaması bunları aynı kaydırma ve çift dokunma hareketleriyle sunar. İki uygulama yan yana kullanılabilir. SurfEnglish’in arayüzü Türkçe değildir (İngilizce ve 11 başka dilde sunulur), ancak Türkçeye çeviri yapabilir. [SurfEnglish web sitesi (İngilizce)](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "WordByWord iPad’de, Mac’te ya da masaüstü tarayıcıda çalışır mı?",
+        "a": "WordByWord, {minOS} veya üzeri yüklü iPhone ve iPad’de; App Store üzerinden Apple çipli Mac’lerde ({minMacOS} veya üzeri) ve Apple Vision Pro’da da çalışır. Masaüstü tarayıcılar için henüz bir sürüm yok; aynı geliştiricinin bir Chrome uzantısı hazırlanıyor: [Chrome uzantısı sayfası (İngilizce)](@chrome).",
+        "aExtLive": "WordByWord, {minOS} veya üzeri yüklü iPhone ve iPad’de; App Store üzerinden Apple çipli Mac’lerde ({minMacOS} veya üzeri) ve Apple Vision Pro’da da çalışır. Bilgisayarda Chrome için aynı geliştiricinin ayrı bir uzantısı var: [WordByWord Translate for Chrome (İngilizce)](@chrome). Uzantıyı yalnızca o sayfadaki bağlantıdan yükleyin."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "WordByWord’ün geliştiricisinden",
+      "title": "SurfEnglish: seviyenize göre İngilizce haberler",
+      "body": "İngilizce mi öğreniyorsunuz? Dilediğiniz sayfaları WordByWord’de okumaya devam edin, SurfEnglish’i de deneyin: seviyeye göre günlük İngilizce haberler ve tekrar oyunları, aynı hareketlerle.",
+      "points": [
+        "{se.levels} seviyelerinde gerçek İngilizce haberler",
+        "Okuduklarınızdan oluşturulan tekrar oyunları",
+        "İngilizce makaleleri Safari’den paylaşın"
+      ],
+      "note": "Ücretsiz başlayın · iPhone ve iPad · {se.targetLanguages, plural, one{# dile} other{# dile}} çeviri",
+      "uiNote": "Ücretsiz · Arayüz Türkçe değil (İngilizce ve 11 dil daha) · Türkçeye çeviri yapar",
+      "linkText": "Seviyenize göre İngilizce haberler – SurfEnglish (İngilizce site)",
+      "appStoreLinkText": "SurfEnglish’i App Store’dan indirin",
+      "shotAlt": "SurfEnglish “Games” ekranı (İngilizce arayüz): kayıtlı cümle ve kelimelerle oynamaya hazır Sentence Builder ve Word Raid",
+      "shotCaption": "SurfEnglish ekran görüntüsü (İngilizce arayüz)"
+    },
+    "footer": {
+      "heading": "Aynı geliştiriciden",
+      "linkText": "SurfEnglish: Bilingual News (EN)"
+    }
+  },
+  "cta": {
+    "title": "iPhone’da web sitelerini iki dilde okumaya başlayın",
+    "recap": "Kaydırarak çeviri · Çift dokunarak kelime anlamı · Sesli okuma · {targetLanguages, plural, one{# dil} other{# dil}}",
+    "text": "App Store’da ücretsiz; iPhone ve iPad için."
+  },
+  "footer": {
+    "tagline": "iPhone ve iPad için dil öğrenenlere yönelik bir okuma asistanı.",
+    "product": "Ürün",
+    "help": "Yardım",
+    "iosApp": "iPhone/iPad uygulaması",
+    "chromeExtension": "Chrome uzantısı",
+    "about": "WordByWord hakkında",
+    "support": "Destek",
+    "privacy": "Gizlilik Politikası",
+    "contact": "İletişim",
+    "faq": "SSS",
+    "languagesTitle": "Diller",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Geliştirici: Jinlong",
+    "notAffiliated": "WordByWord.io ile bir bağlantısı yoktur.",
+    "appleNotice": "Apple, Apple logosu, iPhone, iPad, Mac ve Apple Vision Pro, Apple Inc.’in ABD’de ve diğer ülkelerde ve bölgelerde tescilli ticari markalarıdır. App Store, Apple Inc.’in bir hizmet markasıdır.",
+    "ariaNav": "Site menüsü"
+  },
+  "langSuggest": {
+    "message": "Bu sayfa Türkçe olarak da mevcut.",
+    "action": "Türkçe görüntüle",
+    "close": "Kapat"
+  },
+  "notfound": {
+    "title": "Sayfa bulunamadı",
+    "text": "Aradığınız sayfa burada değil. Site yenilenirken taşınmış olabilir.",
+    "home": "WordByWord ana sayfasına gidin",
+    "languages": "Ya da WordByWord’ü kendi dilinizde açın:"
+  }
+}

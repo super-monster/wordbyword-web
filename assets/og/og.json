@@ -145,6 +145,30 @@
         "template": "94714826de2c"
       }
     },
+    "home-ru": {
+      "file": "assets/og/home-ru.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "a3b189bf9d4f6952f0f395398df9b6c3561c89ddfaeb876f150a4d1ec6c97e08",
+      "inputs": {
+        "headline": "Читайте любой сайт на двух языках. [[Оригинал на месте.]]",
+        "subline": "Проведите вправо по абзацу · дважды коснитесь слова — его значение в контексте",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
+    "home-tr": {
+      "file": "assets/og/home-tr.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "ca0abe76fecb6bf83db53c171bc09ad2163c76505be5d7618706c4ec8565be53",
+      "inputs": {
+        "headline": "Web sayfalarını iki dilde okuyun. [[Orijinal yerinde kalır.]]",
+        "subline": "Bir paragrafı sağa kaydırın · bir kelimeye çift dokunun, bağlamdaki anlamını görün",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "home-uk": {
       "file": "assets/og/home-uk.jpg",
       "width": 1200,
