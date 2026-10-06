@@ -24,7 +24,7 @@
     "uk": ["(вчити|вивчення) англійськ", "(вивча\\p{L}*|вчи\\p{L}*|навча\\p{L}*)\\s+англійськ", "новин\\p{L}*\\s+англійською", "англійськ\\p{L}*\\s+новин", "(?<![\\p{L}])чанк\\p{L}*", "виділенн\\p{L}*\\s+фрагмент"],
     "tr": ["İngilizce öğren", "[İi]ngilizce öğren", "[İi]ngilizce haber", "[İi]ngilizce okuma", "parça çıkarma", "(?<!\\p{L})chunk"],
     "vi": ["học tiếng Anh", "tin tiếng Anh", "tin\\s+tức\\s+tiếng\\s+Anh", "báo\\s+tiếng\\s+Anh", "luyện\\s+(đọc\\s+|nghe\\s+)?tiếng\\s+Anh", "tiếng\\s+Anh\\s+theo\\s+(trình|cấp)\\s+độ", "nhóm\\s+nghĩa", "trích\\s+xuất\\s+cụm"],
-    "th": ["เรียนภาษาอังกฤษ", "ข่าวภาษาอังกฤษ"],
+    "th": ["เรียนภาษาอังกฤษ", "ข่าวภาษาอังกฤษ", "ข่าวอังกฤษ", "ฝึกภาษาอังกฤษ", "ภาษาอังกฤษตามระดับ", "ชังก์", "กลุ่มคำ"],
     "id": ["belajar bahasa Inggris", "berita bahasa Inggris", "(?<![\\p{L}])(belajar|mempelajari|pelajari|kursus|latihan)\\s+bahasa\\s+Inggris", "(?<![\\p{L}])(berita|artikel|bacaan)\\s+(berbahasa\\s+|bahasa\\s+)?Inggris(?![\\p{L}])", "bahasa\\s+Inggris\\s+(sesuai|per|berdasarkan|menurut)\\s+(level|tingkat)", "(?<![\\p{L}])kelompok\\s+kata(?![\\p{L}])", "(?<![\\p{L}])chunks?(?![\\p{L}])"],
     "ar": ["تعلم الإنجليزية"],
     "hi": ["अंग्रेज़ी सीख", "इंग्लिश न्यूज़"]
@@ -46,7 +46,8 @@
     "uk": ["^[\\s\\p{P}\\p{S}]*(вч(и|і|у)\\p{L}*|вивча\\p{L}*|вивченн\\p{L}*|навча\\p{L}*)\\s+англійськ"],
     "tr": ["^\\W*[İi]ngilizce (mi )?öğren"],
     "vi": ["^\\W*(bạn\\s+)?(đang\\s+)?(học|luyện)\\s+tiếng\\s+Anh"],
-    "id": ["^\\W*(sedang\\s+)?(belajar|mempelajari)\\s+bahasa\\s+Inggris", "^\\W*(saya|anda)\\s+(sedang\\s+)?belajar\\s+bahasa\\s+Inggris"]
+    "id": ["^\\W*(sedang\\s+)?(belajar|mempelajari)\\s+bahasa\\s+Inggris", "^\\W*(saya|anda)\\s+(sedang\\s+)?belajar\\s+bahasa\\s+Inggris"],
+    "th": ["^\\W*(กำลัง)?เรียนภาษาอังกฤษ", "^\\W*ฝึกภาษาอังกฤษ"]
   },
   "reserved": {
     "G1": {
@@ -66,7 +67,8 @@
       "ru": ["(?<![\\p{L}])как (перевести|переводить|читать|сохранить|оставить)(?![\\p{L}])", "(сохран|оставл|остави)\\p{L}* (оригинал|исходн\\p{L}* текст)", "с сохранением оригинала"],
       "tr": ["(?<!\\p{L})nasıl(?!\\p{L})", "orijinal(i|ini)?( metn?i)? (koru|kaybetme|bozma)", "(?<!\\p{L})yöntem", "adım adım"],
       "vi": ["(?<![\\p{L}])cách\\s+(dịch|đọc|xem)(?![\\p{L}])", "làm\\s+(sao|thế\\s+nào)\\s+(để\\s+)?(dịch|đọc|xem)", "giữ\\s+(nguyên\\s+|lại\\s+)?(bản|văn\\s+bản)\\s+gốc", "hướng\\s+dẫn"],
-      "id": ["(?<![\\p{L}])cara\\s+(menerjemahkan|membaca|melihat)(?![\\p{L}])", "(?<![\\p{L}])bagaimana\\s+(cara\\s+)?(menerjemahkan|membaca)(?![\\p{L}])", "(mempertahankan|menyimpan|menjaga|tetap\\s+menampilkan)\\s+teks\\s+asli", "tanpa\\s+kehilangan\\s+teks\\s+asli", "langkah\\s+demi\\s+langkah", "(?<![\\p{L}])panduan(?![\\p{L}])"]
+      "id": ["(?<![\\p{L}])cara\\s+(menerjemahkan|membaca|melihat)(?![\\p{L}])", "(?<![\\p{L}])bagaimana\\s+(cara\\s+)?(menerjemahkan|membaca)(?![\\p{L}])", "(mempertahankan|menyimpan|menjaga|tetap\\s+menampilkan)\\s+teks\\s+asli", "tanpa\\s+kehilangan\\s+teks\\s+asli", "langkah\\s+demi\\s+langkah", "(?<![\\p{L}])panduan(?![\\p{L}])"],
+      "th": ["วิธี(การ)?(แปล|อ่าน|ใช้|ดู)", "อย่างไร", "ยังไง", "(เก็บ|คง)ต้นฉบับไว้", "ไม่เสียต้นฉบับ"]
     }
   },
   "primaryTokens": {
