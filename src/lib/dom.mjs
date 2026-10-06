@@ -133,7 +133,7 @@ export function textOf(node, { sep = '' , skip = null } = {}) {
   return out;
 }
 
-export const normSpace = (s) => String(s).replace(/\s+/g, ' ').trim();
+export const normSpace = (s) => String(s).replace(/[\u00ad\u200b\u2060\ufeff]/g, '').replace(/\s+/g, ' ').trim(); // invisible break controls are not text
 
 // Map id → first element carrying it, plus the list of duplicated ids.
 export function idIndex(root) {

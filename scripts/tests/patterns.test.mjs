@@ -19,3 +19,12 @@ test('escapes other than \\w \\W \\b pass through; no u flag, no change', () => 
   const [plain] = compileAll(['\\bcafé'], 'i');
   assert.equal(plain.source, '\\bcafé');
 });
+
+test('invisible break controls do not hide a word from the checks', async () => {
+  const { displayText } = await import('../../src/lib/validate-util.mjs');
+  const { normSpace } = await import('../../src/lib/dom.mjs');
+  const [re] = compileAll(['ออฟไลน์'], 'iu');
+  assert.ok(re.test(displayText('ใช้งานออฟ⁠ไลน์ได้')), 'U+2060 inside a Thai word');
+  assert.ok(re.test(normSpace('ใช้งาน ออฟ​ไลน์')), 'U+200B in dist text');
+  assert.equal(displayText('off­line'), 'offline');
+});
