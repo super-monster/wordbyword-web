@@ -1,0 +1,52 @@
+{
+  "locale": "uk",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (uk column), checked value by value against WordByWordPrototype/Localizable.xcstrings (uk), plus the app's Free/Plus comparison screen (FeatureQuotaManager.swift featureDisplayName: 'Проведіть для перекладу (Хмарний рушій перекладу / Локальний рушій)', 'Двічі торкніться, щоб знайти (AI Значення)', 'AI вимова (Слово / Речення)', 'Більше визначень', 'Виділення Фрагментів', 'Аналіз структури синтаксису ШІ', 'limit_per_day%lld' = '%lld разів на день'); §7.2.2 rules ①–③; doc 08 §7.3 uk row (ви; 'проведіть праворуч', 'двічі торкніться').",
+    "required: kickers, quota-table rows, demo.ui.more and the chunks flow label use the app's names verbatim, including the app's English-style capitals ('Виділення Фрагментів', 'Речення за Реченням') and its 'AI' (rule ①). The lookup kicker is word_meaning_lookup_title without '(AI Значення)', as en / ja / fr do; it is 28 characters, over the 24 wu kicker cap (an L-8 warning, kept on purpose: Wave 2 rule). Action Flow keeps the App Store name (doc 08 D3, §7.2.3); features[chunks].text quotes the app's 'Потік дій' once.",
+    "contains: app buttons and settings that sentences quote between « » so readers find them on screen (T-E for faq.items[restore]).",
+    "banned: a left swipe (it removes the translation, F14); a single tap for the word lookup (doc 08 §1.1); mouse wording; the app's non-Ukrainian strings the site must not copy (rule ③: 'Граница' and 'Сплошне' are Russian, the app says 'Межа' / 'Пунктирне' elsewhere; 'движок' is a Russian-flavoured word for the engine, the app's settings say 'рушій'); other spellings of 'Більше визначень'; ASCII / modifier apostrophes inside a Ukrainian word (the site sets ’ U+2019 throughout). The claims-lint jargon rule (uk: 'вирівнюванн', 'покроков') covers 'alignment' / 'step-by-step' (C-16)."
+  ],
+  "required": {
+    "features[swipe].kicker": "Проведіть для перекладу",
+    "features[lookup].kicker": "Двічі торкніться, щоб знайти",
+    "features[x].kicker": "X (колишній Twitter)",
+    "features[chunks].kicker": "Англомовні сторінки",
+    "features[speech].kicker": "Читання вголос",
+    "features[syntax].kicker": "Синтаксис",
+    "features[engines].kicker": "Рушії перекладу",
+    "features[display].kicker": "Відображення",
+    "features[history].kicker": "Історія",
+    "features[devices].kicker": "Пристрої",
+    "demo.ui.more": "Більше визначень",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Проведіть для перекладу\u00a0· хмарний рушій",
+    "pricing.table.rows.localSwipe": "Проведіть для перекладу\u00a0· локальний рушій",
+    "pricing.table.rows.lookup": "Двічі торкніться, щоб знайти (AI Значення)",
+    "pricing.table.rows.more": "Більше визначень",
+    "pricing.table.rows.lookupSpeech": "AI вимова (Слово)",
+    "pricing.table.rows.swipeSpeech": "AI вимова (Речення)",
+    "pricing.table.rows.localVoice": "Голос iOS (Локальне читання)",
+    "pricing.table.rows.chunks": "Виділення Фрагментів",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "Аналіз структури синтаксису ШІ"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Оновити Зараз", "Відновити Покупку"],
+    "features[syntax].text": ["Отримати пояснення синтаксису ШІ"],
+    "features[speech].text": ["AI Читання", "Локальне читання"],
+    "features[chunks].text": ["Виділення Фрагментів", "Action Flow", "Потік дій"],
+    "features[swipe].bullets[0]": ["Авто", "Абзац", "Речення за Реченням"],
+    "features[lookup].bullets[2]": ["Більше визначень"]
+  },
+  "banned": [
+    { "pattern": "(провед|провест|прово|свайп|гортай|гортат)\\p{L}*[^.;:!?]{0,30}(ліворуч|вліво|наліво)|(ліворуч|вліво|наліво)[^.;:!?]{0,12}(провед|свайп)", "regex": true, "flags": "i", "use": "проведіть праворуч", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "(?<![\\p{L}])(?<!двічі )(торкніться|торкнувшись|торкаєтеся|натисніть( на)?|тапніть( по)?)\\s+(на\\s+)?(будь-яке\\s+|будь-якого\\s+|потрібне\\s+|потрібного\\s+)?слов", "regex": true, "flags": "i", "use": "двічі торкніться слова", "note": "the word lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "(?<![\\p{L}])(миш(а|і|у|ею|кою|ки|ка)|клацн\\p{L}*|клікн\\p{L}*|подвійн\\p{L}* клац\\p{L}*)(?![\\p{L}])", "regex": true, "flags": "i", "use": "двічі торкніться / проведіть праворуч", "note": "touch gestures, not a mouse (the legacy uk FAQ said 'пальцем або мишкою', doc 01 C-10)", "allowInKeys": ["chromeExtension."] },
+    { "pattern": "Границ", "flags": "i", "use": "рамка / межа", "note": "the app's translation_style_title_border = 'Граница' is Russian (rule ③); report to the app side" },
+    { "pattern": "Сплошн", "flags": "i", "use": "суцільне підкреслення", "note": "the app's translation_style_title_underline_solid = 'Сплошне Підкреслення' is a Russian form (rule ③)" },
+    { "pattern": "(?<![\\p{L}])движ(ок|ка|ку|ком|ки|ків)(?![\\p{L}])", "regex": true, "flags": "i", "use": "рушій", "note": "the app's settings call the engine 'рушій' (Хмарний рушій перекладу / Локальний рушій); audio_playback_description_local says 'движок' (rule ③)" },
+    { "pattern": "Більше Визначень|Додаткові визначення|Інші визначення", "regex": true, "use": "Більше визначень", "note": "app name of more_definitions_title (T-A)" },
+    { "pattern": "\\p{Script=Cyrillic}['ʼ]\\p{Script=Cyrillic}", "regex": true, "use": "’ (U+2019)", "note": "one apostrophe form across the page: з’явиться, пов’язаний (typography; search engines fold the variants)" }
+  ],
+  "allowInKeys": []
+}

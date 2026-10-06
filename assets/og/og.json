@@ -145,6 +145,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-uk": {
+      "file": "assets/og/home-uk.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "99422c593c99636193ff04877985da086a1f4f274f88ca217a49249c4c3eb878",
+      "inputs": {
+        "headline": "Читайте сайти двома мовами. [[Оригінал — на місці.]]",
+        "subline": "Проведіть праворуч по абзацу · двічі торкніться слова — його значення в контексті",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,
