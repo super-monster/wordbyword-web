@@ -334,3 +334,54 @@
   2. **kicker 上限**：由 24 放宽到 32 wu（ed353f1），照用 App 原名，原有的 11 条 L-8 warning 已消失。文档 08 §7.6 已同步。
   3. **手机页长**：en 首页仍是 ≤ 13,000px，其他语言改为 ≤ 同一构建 en 首页高度的 108%。文档 05（§6.2 说明与 A17）和文档 07 风险表已同步。当前 20 种语言全部达标：最高 ru 13,930，en 12,944，比值 1.076。
   4. **SE 页脚店名**：vi、th、ar 改用店面实际显示的 "SurfEnglish: Bilingual News"（5f2f999）。
+
+## M4 进行中（2026-10-06）
+
+- **M3-09 渲染巡检**：在 390 宽下检查了 ar、th、hi、ja、zh-Hant、ko 的首屏。
+  - ar：页眉、链接箭头都已镜像；机身内保持 LTR，红条在左。
+  - th／hi：系统字体正常，标题在词边界断行。
+  - CJK：H1 在词组边界断行；ko 的 demo 两句之间有空格。
+  - 未发现问题。
+- **M4-02 Lighthouse（手机端，PSI 共享配额已用尽，经负责人同意改用本机 `npx lighthouse@13.5.0`）**：
+  - 第一轮有 7 页低于 90（LCP 3.8–4.2s，LCP 元素是首屏 H1，"元素渲染延迟"约 2.3s）。
+    - 对照实验（en 各 3 次，有 GA／屏蔽 GA）全部 100 分。判定为环境因素：第一轮赶上 CDN 冷缓存，机器负载也高。Lantern 会把 LCP 之前开始的请求（GA 175KB、两张懒加载截图）算进去。
+  - 复测（每页 2 次）：9 页性能 100（zh-Hant 第二次 96／LCP 2.8s），LCP 1.0–1.5s，CLS ≤ 0.004，TBT ≤ 40ms。无障碍和最佳实践全部 100。SEO 去掉预览站必然失败的 is-crawlable 后也是 100。
+  - 门禁脚本 `scripts/lighthouse.mjs`（1c23b73，`npm run lighthouse -- --preview <reports>`）。
+- **M4-03（部分）**：Lighthouse 无障碍（axe 子集，亮色）9 页全部 100。暗色、VoiceOver、禁用 JS 的检查待做。
+- **M4-04**：W3C Nu 每个模板抽 1 页，共 7 页，除 allowlist 的 content-language 一条外 0 error。首页只有 1 条 warning：demo 中模拟网页的 `<article>` 没有标题，暂不处理。Rich Results Test 与 Schema Validator 按 06 §11.2 在发布前人工跑。
+- **M4-07**：`check:external` 17 个外部 URL 全部可达，0 失败。
+- **M4-10**：DEPLOY.md 补了三节（f8a9246）：§11 GA 新旧对照（旧 `cta` ≈ 新 `pricing` + 新 `cta`、按主机名过滤）、§12 生产监控、§13 切换后的日历提醒。
+- **M4-12**：每种语言一个 404 页（c9e8755）。本地模拟器实测 `/ja/nope`、`/ar/a/b/c`、`/zh-hans/chrome-extension/nope` 都返回对应语言的 404 页，状态码 404。
+- **M4-13**：生产监控 `monitor.yml`（f8a9246）：每天 06:17 JST 检查首页 200 并跑契约测试。T0 时设仓库变量 `PROD_MONITOR=on` 才会定时运行。
+- **M4-08（部分）**：
+  - GSC（Browser 2 的账号）已有网域资源 word-by-word.app。新建网址前缀备份资源 https://www.word-by-word.app/，因为是网域资源所有者，验证自动完成。切换后补加 GA 验证作为第二种方式。
+  - Bing：需要负责人登录并授权从 GSC 导入。
+  - Naver：要等切换后在新站放 meta 才能验证。
+- **M4-09（待 DNS）**：GitHub 账户级已验证域名 word-by-word.app 已添加。待在 Squarespace DNS 加 TXT：
+  - 主机 `_github-pages-challenge-super-monster`
+  - 值 `def634f343bf777830667d22878167`
+  - 加好后在 github.com/settings/pages 点 Verify。
+- **仓库密钥**：
+  - `CLOUDFLARE_ACCOUNT_ID` 由 Claude 添加（账号 ID 不是凭据）。
+  - `CLOUDFLARE_API_TOKEN` 由负责人创建并填写。按规则，令牌由负责人本人操作；Cloudflare 的创建页由 Claude 预填权限 Account › Cloudflare Pages › Edit。
+  - deploy-manual 第一次运行因令牌无效失败（CF 9106），生产没有变化；负责人重建令牌后进行第二次运行。
+- **M3-06**：负责人裁定 zh-Hant、ko 先上线，母语审校之后补（R36 兜底），审校重点见各自 QA 记录。
+- **M0-04 更正：DNS 控制台是 GCP Cloud DNS，不是 Squarespace**（负责人告知，2026-10-06 在 Browser 2 核实）：
+  - 域名在 GCP 购买，放在 **VirtualApiProject**（`virtualapiproject`）项目里，不在 WordByWord 项目（wordbyword-450603）。
+  - 之前只查了 WordByWord 项目，再由 NS 为 `googledomains.com` 推断成了 Squarespace，这个推断是错的。
+  - Cloud DNS 区域 `word-by-word-app`（公开，DNSSEC 开）。现有记录：
+    - `api` CNAME ghs.googlehosted.com
+    - `backend-test` CNAME ghs.googlehosted.com
+    - `backend` A 34.53.32.27
+    - `home` A 36.13.145.177
+    - NS／SOA（Cloud DNS）
+    - `www` CNAME super-monster.github.io.，TTL 5
+  - Cloud Domains：word-by-word.app 活跃，自动续订开，2027-02-03 到期，隐私保护开。续费由该项目的结算账号支付。同项目的 virtualapi.io 已于 2025-05-21 过期，与本项目无关。
+  - 已同步更正 DEPLOY.md、00 风险表、06 §10 判定段、07 运营表。T0 当天改 `www` CNAME 也在这个控制台操作。
+- **M4-09 完成**：在 Cloud DNS 新增 TXT `_github-pages-challenge-super-monster.word-by-word.app.`（TTL 300），其他记录未动。权威 DNS 与 8.8.8.8／1.1.1.1 立即可解析，GitHub 显示 "word-by-word.app Verified"。
+- **M4-06 公告演练完成**（main 上有 54 个未发布提交的场景）：
+  1. 从 `cloudflare-deploy`（7c1bde1）切 `hotfix/notice-20261006`，只改 `src/notice.json`（开启，`updated` 改为 2026-10-06）。
+  2. deploy-manual #2 用时 41s；运行结束后 1s 生产就出现公告。`/`、`/ja/`、`/privacy.html` 和 404 页都有公告；SE 卡片按 R35 不渲染；未发布的 `/ko/`、`/vi/` 仍是 404。
+  3. 同一分支关闭公告，deploy-manual #3 用时 61s，公告立即消失，SE 卡片恢复。
+  4. 收尾：`cloudflare-deploy` 快进到 ddb2a3b，hotfix 以 `--no-ff` 并回 main（37543b9）。
+  - deploy-manual #1 因令牌无效失败，生产没有变化。

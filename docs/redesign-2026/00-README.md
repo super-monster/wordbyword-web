@@ -237,7 +237,7 @@ node docs/redesign-2026/prototype/tools/check.mjs        # 加 --no-chrome 可�
 | apex 无法解析 | `word-by-word.app` 没有 A/AAAA 记录，切换后依旧 | 另立小项（U1、F6） |
 | SE 官网没有统计 | 无法度量 WBW 带过去的流量 | 随 PR-SE-2 接入统计（F23） |
 | App 本地化瑕疵 | ar 译文缺 `dir`；ko 界面混有汉字，zh-TW 界面有大陆用语 | 下一个 App 版本修正（I18-05、I18-06） |
-| 域名续费 | 注册商 Squarespace，2027-02-03 到期 | 12 月前确认已开自动续费 |
+| 域名续费 | 注册在 GCP Cloud Domains（项目 VirtualApiProject），2027-02-03 到期，自动续订已开（2026-10-06 核实） | 确认该 GCP 项目的结算账号保持有效 |
 
 ---
 
