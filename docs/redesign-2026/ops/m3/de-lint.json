@@ -1,0 +1,40 @@
+{
+  "$comment": [
+    "Proposed German patterns for src/data/claims-lint.json (patterns.de of each rule) and src/data/keyword-map.json (seOwned.de, seOwnedLead.de, reserved.G1.de). Not merged: the owner decides (M3 de translator, 2026-10-06).",
+    "Coverage: every claims-lint rule with per-locale patterns and no de key yet (25 rules). Skipped: selection-translate and jargon (already have de), io-home and engine-claim ('*' only).",
+    "Matching as in the validator: case-insensitive with the u flag, on the rendered text (placeholders filled, markup stripped). Tested on the de copy (0 hits outside the rules' exempt keys) and on the counter-examples listed in docs/redesign-2026/ops/m3/de-qa.md.",
+    "seOwnedLead is applied to every H2 of every locale (validate-dist D-8), so its de patterns only match German openings."
+  ],
+  "claimsLint": {
+    "whole-page": ["(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal |mit einem (tipp|klick) )?(zu )?übersetz", "übersetz\\w* (die |eine )?(ganze|gesamte|komplette)n? (web)?seite", "(ganze|gesamte|komplette)n? (web)?seiten? (auf einmal|mit einem (tipp|klick))", "mit einem (tipp|klick) übersetz", "ganzseiten-?übersetzung", "ganze websites? (zu )?übersetz"],
+    "swipe-left": ["nach links (zu )?wisch", "wisch\\w* (\\S+ ){0,4}nach links", "links-?wisch"],
+    "safari-extension": ["safari-?erweiterung", "share-?extension", "teilen-?erweiterung", "in (jeder|allen) (anderen )?apps?\\b", "aus jeder app", "ohne (die )?apps? zu wechseln", "ohne app-?wechsel"],
+    "offline": ["\\boffline\\b", "ohne internet", "kein internet(verbindung)? (nötig|erforderlich)"],
+    "unlimited-ai-voice": ["unbegrenzte\\w* ki-(aussprache|stimmen?|vorlese\\w*)", "ki-(aussprache|stimmen?) ohne (tages)?limit", "unbegrenzt\\w* (aussprache|vorlesen)"],
+    "dark-mode-theme": ["dunkelmodus", "dark mode", "nachtmodus", "dunkle[rs]? (modus|design)", "farbschema", "\\bthemes?\\b", "designfarben?"],
+    "shortcuts-volume": ["tasten(kombination|kürzel)", "tastaturkürzel", "\\bshortcuts?\\b", "lautstärke"],
+    "vocab-sync": ["vokabel(heft|liste|buch)", "karteikarten", "lernkarten", "(cloud|konto|icloud)-?(sync|synchronisierung|backup)", "geräteübergreifend synchron"],
+    "android": ["android-?(version|app|handy|smartphone|gerät)", "für android", "auf android", "google play"],
+    "desktop-version": ["desktop-?(app|version)", "für (windows|pc)\\b", "web-?version von wordbyword", "pc-?version"],
+    "x-app": ["in der x-app (zu )?(übersetz|nutz|verwend)", "übersetz\\w* (\\S+ ){0,3}in der x-app", "einzige app, die x\\b"],
+    "plus-early-access": ["(früher|vorzeitiger|exklusiver) zugang", "early access", "neue funktionen (als erste|zuerst)"],
+    "privacy-claim": ["keine (persönlichen|personenbezogenen) daten", "(sammelt|erhebt|speichert) keine (persönlichen |personenbezogenen )?daten", "kein tracking"],
+    "initial-version": ["anfangsversion", "erste version unterstützt"],
+    "language-pairs": ["sprachpaar"],
+    "style-count": ["\\b\\d+ (verschiedene )?(übersetzungs|anzeige)?stile", "\\b(fünf|sechs|sieben|acht|neun|zehn) (verschiedene )?(übersetzungs|anzeige)?stile"],
+    "auto-detect-target": ["erkennt (automatisch )?(deine |die )?zielsprache", "zielsprache (wird )?automatisch erkannt"],
+    "history-by-date": ["nach datum (gruppiert|sortiert|geordnet)"],
+    "plus-only": ["nur (mit|für|in) (wordbyword )?plus\\b", "plus-exklusiv", "exklusiv (für|mit|in) (wordbyword )?plus", "nur für plus-(nutzer|abonnenten)"],
+    "speaking-practice": ["sprech(übung|training|fähigkeit)", "aussprachetraining", "sprechen (üben|verbessern|trainieren)"],
+    "replacement-tone": ["passt (vielleicht )?besser", "besser geeignet", "(statt|anstelle von) wordbyword", "schwester-?app", "nachfolger", "(?<![\\p{L}])ersetzt wordbyword", "upgrade (von wordbyword|auf surfenglish)", "(frühere|ältere) (app|version von wordbyword)"],
+    "se-on-device-voice": ["(offline|geräte|on-device)-?(stimmen?|sprachausgabe)", "stimmen? (auf dem gerät|offline)", "ki-stimmen? auf dem gerät"],
+    "se-hype": ["\\bneu(e|en|er|es)?\\b", "schneller", "effizienter", "\\bupgrade", "besser als"],
+    "hype": ["revolution\\w*", "bahnbrechend", "schluss mit", "\\b(die|der|das) beste\\b", "nummer eins", "\\b(die|der|das) einzige\\b", "weltweit erste", "\\d[\\d.,]*\\s?(tsd\\.|mio\\.)?\\+? (nutzer|downloads)", "millionen (von )?nutzer", "wordbyword-?team", "\\bunser(em)? team\\b", "\\b(die|den) machern?\\b"],
+    "ext-language-count": ["\\b(1\\d|2\\d)\\+? sprachen\\b"]
+  },
+  "keywordMap": {
+    "seOwned": ["Englisch (zu )?lernen", "Englisch-?lernen", "englische (Nachrichten|News)", "Englisch-(Nachrichten|News)", "\\bChunks?\\b"],
+    "seOwnedLead": ["^\\W*(Lernst du|Du lernst) Englisch", "^\\W*Englisch (zu )?lernen", "^\\W*Englisch-?lernen"],
+    "reservedG1": ["(?<![\\p{L}])wie (man|du)(?![\\p{L}])", "Anleitung", "Original (behalten|beibehalten)"]
+  }
+}

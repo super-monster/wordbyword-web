@@ -1,0 +1,166 @@
+{
+  "$comment": [
+    "Proposed Brazilian Portuguese patterns for src/data/claims-lint.json (patterns['pt-BR'] of each rule) and src/data/keyword-map.json (seOwned['pt-BR'], seOwnedLead['pt-BR'], reserved.G1['pt-BR']). Not merged: the owner decides (M3 pt-BR translator, 2026-10-06; QA record pt-BR-qa.md §5).",
+    "Coverage: every claims-lint rule with per-locale patterns and no pt-BR key yet (25 rules). Skipped: selection-translate and jargon (already have pt-BR), io-home and engine-claim ('*' only).",
+    "Matching as in the validator: case-insensitive with the u flag, on the rendered text (placeholders filled, markup stripped); each rule keeps its own exempt / only key paths. Tested on HEAD 1d5fe5b + the pt-BR copy: 0 hits (L-14, L-9, D-8 clean; build and --pseudo 0 errors; tests 58/58); every rule hits its counter-example in pt-BR-qa.md §5.",
+    "keywordMap lists are the complete proposed pt-BR arrays (they replace the current ones). seOwned keeps 'aprender inglês' / 'notícias em inglês' (as broader forms) and adds other English-learning verbs, levelled English news and the chunk word 'blocos' (SurfEnglish's pt-BR site says 'blocos de sentido'; en blocks 'chunks?' the same way). Generic learning words without 'inglês' ('aprender idiomas', 'quem aprende idiomas') stay WordByWord's (R39, R83). reservedG1 is new (pt-BR had none)."
+  ],
+  "claimsLint": {
+    "whole-page": [
+      "tradu\\w* (a |uma )?página( da web)? inteira",
+      "tradu\\w* (o |um )?site inteiro",
+      "página (da web )?inteira de uma (só )?vez",
+      "tradução de páginas? inteiras?",
+      "tradu\\w* com (apenas )?um (só )?toque",
+      "um toque para traduzir"
+    ],
+    "swipe-left": [
+      "desliz\\w*[^.;:!?]{0,30}esquerda",
+      "para a esquerda"
+    ],
+    "safari-extension": [
+      "extensão (do|para o) safari",
+      "extensão de compartilhamento",
+      "em qualquer (outro )?app\\b",
+      "dentro de (qualquer|outros) apps?\\b",
+      "sem (trocar|mudar|sair) de app"
+    ],
+    "offline": [
+      "\\boffline\\b",
+      "sem (conexão|internet)",
+      "não precisa de (conexão|internet)"
+    ],
+    "unlimited-ai-voice": [
+      "(IA|AI) ilimitad",
+      "(pronúncias?|leituras?|voz|vozes)( \\w+)? (AI|IA)[^.]{0,20}(ilimitad|sem limite)",
+      "ilimitad\\w* (de |com |da |do )?(IA|AI|pronúncia|voz|vozes|leitura)"
+    ],
+    "dark-mode-theme": [
+      "modo escuro",
+      "modo noturno",
+      "temas? personalizad",
+      "cores? (do|de) tema"
+    ],
+    "shortcuts-volume": [
+      "atalhos? de teclado",
+      "\\bvolume\\b"
+    ],
+    "vocab-sync": [
+      "flash ?cards?",
+      "cartões de memorização",
+      "caderno de (vocabulário|palavras)",
+      "lista de vocabulário",
+      "sincroniz",
+      "repetição espaçada",
+      "backup na nuvem"
+    ],
+    "android": [
+      "\\bandroid\\b",
+      "google play"
+    ],
+    "desktop-version": [
+      "versão (para|de) (computador|desktop|pc|windows)",
+      "\\bpara windows\\b",
+      "versão web do wordbyword"
+    ],
+    "x-app": [
+      "\\bno app do X\\b",
+      "dentro do app do X\\b",
+      "único app (que|para) tradu\\w* (o )?X\\b"
+    ],
+    "plus-early-access": [
+      "acesso antecipado"
+    ],
+    "privacy-claim": [
+      "nenhum dado pessoal",
+      "não coleta (nenhum|dados|informações)",
+      "sem rastreamento",
+      "não rastreia"
+    ],
+    "initial-version": [
+      "versão inicial"
+    ],
+    "language-pairs": [
+      "pares? de (idiomas|línguas)"
+    ],
+    "style-count": [
+      "\\b\\d+ (estilos|tipos de estilo)",
+      "\\b(cinco|seis|sete|oito|nove|dez) estilos"
+    ],
+    "auto-detect-target": [
+      "detecta\\w* (automaticamente )?o idioma de destino",
+      "idioma de destino[^.]{0,20}automaticamente"
+    ],
+    "history-by-date": [
+      "(agrupad|organizad|separad)\\w* por data"
+    ],
+    "plus-only": [
+      "exclusiv\\w* (do|para o|para assinantes do) plus",
+      "(só|somente|apenas) (no|para o|com o) plus"
+    ],
+    "speaking-practice": [
+      "prática de (fala|conversação)",
+      "praticar a fala",
+      "pratic\\w* (a |sua )?pronúncia",
+      "melhor\\w* (a sua |sua )?(fala|pronúncia)",
+      "treino de pronúncia"
+    ],
+    "replacement-tone": [
+      "(pode )?combina\\w* melhor",
+      "mais adequad",
+      "em vez do WordByWord",
+      "substitu\\w* o WordByWord",
+      "(app|aplicativo) irmão",
+      "(app|aplicativo) (anterior|antigo)"
+    ],
+    "se-on-device-voice": [
+      "voz(es)? (de IA )?no (aparelho|dispositivo)",
+      "funciona\\w* offline",
+      "voz(es)? offline"
+    ],
+    "se-hype": [
+      "\\bnov[oa]s?\\b",
+      "mais rápid",
+      "mais eficiente",
+      "\\bupgrade",
+      "\\batualiz",
+      "melhor (do )?que"
+    ],
+    "hype": [
+      "revolucionári",
+      "\\bo melhor\\b",
+      "\\ba melhor\\b",
+      "\\bos melhores\\b",
+      "número (1|um)\\b",
+      "\\bo único\\b",
+      "\\ba única\\b",
+      "primeir\\w* do mundo",
+      "(milhares|milhões) de (usuários|pessoas|downloads)",
+      "equipe do WordByWord",
+      "nossa equipe",
+      "nosso time",
+      "diga adeus"
+    ],
+    "ext-language-count": [
+      "\\b(1\\d|2\\d)\\+? (idiomas|línguas|pares de idiomas)\\b"
+    ]
+  },
+  "keywordMap": {
+    "seOwned": [
+      "aprend\\w* inglês",
+      "estud\\w* inglês",
+      "notícias em inglês",
+      "inglês (por|no seu) nível",
+      "\\bblocos?\\b"
+    ],
+    "seOwnedLead": [
+      "^\\W*(aprend|estud)\\w* inglês",
+      "^\\W*(estou|está) aprendendo inglês"
+    ],
+    "reservedG1": [
+      "\\bcomo (traduzir|ler)\\b",
+      "\\b(manter|mantendo|preservar|preservando|sem perder) o (texto )?original",
+      "\\bpasso a passo\\b"
+    ]
+  }
+}

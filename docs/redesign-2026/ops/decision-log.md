@@ -190,3 +190,13 @@
   4. 各语言 `meta.appStoreSubtitle` 未核实（这些页面不渲染该键）。
   5. lookup 功能区的 kicker 保留 App 原名，es、fr 因此各有一条 L-8 警告：保留原名，还是改成自然说法。
   6. fr 首页在 375 宽下约 13.7k px，超出 13k 的软目标。
+- **pt-BR、de 已接入**（6e3dddd，lint 数据 c657445）：
+  - OG 图：home-pt-br 60px × 3 行，home-de 64px × 3 行。
+  - 构建 0 error（16 页，`_redirects` 76/10），测试 58/58，pseudo 0 error，check 0/0。
+  - lint 合并脚本扩展到 seOwned／seOwnedLead：取仓库现值与补丁的并集，仓库原有顺序在前，只改本语言那一行。pt-BR、de 的 seOwned 补上了语块词（blocos、Chunks），与 en、zh、ja、ko 一致。
+  - 注意：seOwnedLead 会合并所有语言的写法后检查每一页的 H2（validate-dist.mjs:687），各语言的写法只会命中本语言文本，现阶段无冲突。
+- **新增的待决事项**：
+  1. **kicker 上限**："kicker 用 App 原名"与 24 宽度上限在拉丁语种冲突（pt-BR 30、fr 28、es 26）。可选：放宽到 32，或改用短名。
+  2. **页面高度**：390 宽下首页高度的软目标是 ≤ 13,000 px，目前已超出的有 de 13,640、fr 13,548、pt-BR 13,070、es 13,048（en 12,821）。页脚语言列表会随上线语言增加而变长，建议改成相对 en 的比例，在 M3-09 预览检查时一并定。
+  3. **de 的 SE 卡片余量**：在 320／375／900 宽下只剩 7–9 px，以后改卡片文案需要重测。
+  4. **页脚链接**：de 页脚里指向英文页的 About、Support、隐私链接没有加"(auf Englisch)"，与正文链接的标注规则一起定。
