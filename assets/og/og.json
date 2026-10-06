@@ -181,6 +181,18 @@
         "template": "94714826de2c"
       }
     },
+    "home-vi": {
+      "file": "assets/og/home-vi.jpg",
+      "width": 1200,
+      "height": 630,
+      "sha256": "78fd7c8a8eeb7aa47467b37a56ce2120aa3b0923d92a032bf4d9628f83f39a34",
+      "inputs": {
+        "headline": "Đọc trang web song ngữ. [[Bản gốc vẫn còn nguyên.]]",
+        "subline": "Vuốt sang phải trên một đoạn văn · nhấn đúp vào từ để xem nghĩa theo ngữ cảnh",
+        "shot": "shot/en/lookup",
+        "template": "94714826de2c"
+      }
+    },
     "about-en": {
       "file": "assets/og/about-en.jpg",
       "width": 1200,

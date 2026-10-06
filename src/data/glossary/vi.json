@@ -1,0 +1,45 @@
+{
+  "locale": "vi",
+  "$comment": [
+    "Glossary for L-13 (doc 06 §3.7, §4.3; doc 08 §7.2; R64). Sources: doc 08 §7.2.1 tables T-A–T-E (vi column = the app's own names, each checked against the vi values of WordByWordPrototype/Localizable.xcstrings), §7.2.2 rules ①–③ and fix X9, and the vi row of §7.3.",
+    "Rule ①: kickers, quota-table rows, demo.ui.more and 'tap … in the app' instructions quote the app's vi names verbatim, with the app's capitalisation ('Vuốt để Dịch', 'Nhấn đúp để Tìm kiếm', 'Định nghĩa khác', 'Trích Xuất Cụm', 'Phát âm AI (Từ)', 'Nhận Giải thích Cú pháp AI', 'Nâng Cấp Ngay', 'Khôi phục Mua hàng'). Rule ②: sentences use natural Vietnamese: 'bạn'; 'vuốt sang phải' (tip_swipe_to_translate); 'nhấn đúp' (tip_double_tap_context_meaning — doc 08 §7.3 replaced the doc 03 draft's 'chạm hai lần'); a single tap is 'nhấn', as in the app.",
+    "Fix X9 (rule ③): view_title_swipe_history 'Lịch Sử Dịch Chuyển' reads as 'movement history'; the site writes 'lịch sử dịch bằng thao tác vuốt'. The same word is in view_title_swipe_detail 'Chi Tiết Dịch Chuyển' (reported to the app side).",
+    "Quota-table rows follow the app's Free/Plus comparison screen (FeatureQuotaManager.swift featureDisplayName) in short form: 'Vuốt để Dịch · đám mây / cục bộ' (= daily_sentence_translation_limit + engine), word_meaning_lookup_title without the '(Ý Nghĩa AI)' suffix, like the kicker (the full name wraps to three lines in the 375 px table), ai_pronunciation_word / _sentence, more_definitions_title and the 'Chunk Extraction' key ('Trích Xuất Cụm') verbatim, 'Giải thích Cú pháp AI' (get_syntax_explanation_button without 'Nhận', as en 'AI syntax explanation'), 'Giọng iOS (Đọc tại chỗ)' (audio_playback_title_local). Action Flow keeps the App Store name (doc 08 D3); features[chunks].text quotes the app's 'Mạch hành động của câu' once.",
+    "banned: the X9 word, the doc 03 draft's 'chạm hai lần', mouse double-click wording, a left swipe, a single tap for lookup, the legacy 'sentence alignment' jargon and 'smart assistant' title, and literal renderings of 'More Definitions' that are not the app's name. The legacy 'quét' (= scan) is caught by claims-lint rule jargon."
+  ],
+  "required": {
+    "features[swipe].kicker": "Vuốt để Dịch",
+    "features[lookup].kicker": "Nhấn đúp để Tìm kiếm",
+    "demo.ui.more": "Định nghĩa khác",
+    "demo.ui.swipeCue": "Vuốt sang phải",
+    "features[chunks].sample.flowLabel": "Action Flow",
+    "pricing.table.rows.cloudSwipe": "Vuốt để Dịch · đám mây",
+    "pricing.table.rows.localSwipe": "Vuốt để Dịch · cục bộ",
+    "pricing.table.rows.lookup": "Nhấn đúp để Tìm kiếm",
+    "pricing.table.rows.more": "Định nghĩa khác",
+    "pricing.table.rows.lookupSpeech": "Phát âm AI (Từ)",
+    "pricing.table.rows.swipeSpeech": "Phát âm AI (Câu)",
+    "pricing.table.rows.localVoice": "Giọng iOS (Đọc tại chỗ)",
+    "pricing.table.rows.chunks": "Trích Xuất Cụm",
+    "pricing.table.rows.actionFlow": "Action Flow",
+    "pricing.table.rows.syntax": "Giải thích Cú pháp AI"
+  },
+  "contains": {
+    "faq.items[restore].a": ["Nâng Cấp Ngay", "Khôi phục Mua hàng"],
+    "features[syntax].text": ["Nhận Giải thích Cú pháp AI"],
+    "features[speech].text": ["Đọc AI", "Đọc tại chỗ"],
+    "features[chunks].text": ["Trích Xuất Cụm", "Action Flow", "Mạch hành động của câu"],
+    "features[lookup].bullets[2]": ["Định nghĩa khác"]
+  },
+  "banned": [
+    { "pattern": "dịch chuyển", "flags": "i", "use": "lịch sử dịch bằng thao tác vuốt / chi tiết bản dịch", "note": "X9: the app's 'Lịch Sử Dịch Chuyển' / 'Chi Tiết Dịch Chuyển' means 'movement', not 'swipe translation'" },
+    { "pattern": "chạm hai lần", "flags": "i", "use": "nhấn đúp", "note": "doc 08 §7.3: the site follows the app's 'nhấn đúp' (tip_double_tap_context_meaning, word_meaning_lookup_title); the doc 03 draft's 'chạm hai lần' was replaced" },
+    { "pattern": "(nhấp|bấm|click)\\s+đúp", "regex": true, "flags": "i", "use": "nhấn đúp", "note": "mouse double-click wording; the gesture is a touch double tap (cf. X7)" },
+    { "pattern": "vuốt\\s+(sang\\s+|qua\\s+|về\\s+)?(bên\\s+|phía\\s+)?trái", "regex": true, "flags": "i", "use": "vuốt sang phải", "note": "the gesture is a right swipe; a left swipe removes the translation (F14)" },
+    { "pattern": "(?<![\\p{L}])(nhấn|chạm|bấm)\\s+(một lần\\s+)?vào\\s+(một\\s+|bất kỳ\\s+|mỗi\\s+)?từ(?![\\p{L}])", "regex": true, "flags": "i", "use": "nhấn đúp vào từ", "note": "lookup is a double tap, never a single tap (doc 08 §1.1 lookup row)" },
+    { "pattern": "đối chiếu từng câu|căn chỉnh\\s+(câu|đoạn|văn bản)", "regex": true, "flags": "i", "use": "Từng Câu (display mode) / bản dịch ngay dưới văn bản gốc", "note": "the legacy vi page's rendering of 'sentence-by-sentence alignment', jargon (doc 01 C-16, research 07 §2.3)" },
+    { "pattern": "trợ lý\\s+(học\\s+ngoại\\s+ngữ\\s+)?thông minh", "regex": true, "flags": "i", "use": "trợ lý đọc dành cho người học ngoại ngữ (definition sentence only, R39)", "note": "the legacy 'smart assistant' title (doc 08 §7.4, §8.1)" },
+    { "pattern": "thêm định nghĩa|định nghĩa thêm|nhiều định nghĩa hơn", "regex": true, "flags": "i", "use": "Định nghĩa khác", "note": "app name of more_definitions_title (T-A)" }
+  ],
+  "allowInKeys": []
+}

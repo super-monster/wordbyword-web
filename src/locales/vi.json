@@ -1,0 +1,467 @@
+{
+  "meta": {
+    "title": "WordByWord: ứng dụng dịch trang web song ngữ trên iPhone",
+    "description": "Cho người học ngoại ngữ: trong WordByWord, vuốt một đoạn văn sang phải, bản dịch hiện ngay bên dưới. Nhấn đúp vào từ để xem nghĩa. Miễn phí trên iPhone và iPad.",
+    "ogHeadline": "Đọc trang web song ngữ. [[Bản gốc vẫn còn nguyên.]]",
+    "ogSubline": "Vuốt sang phải trên một đoạn văn · nhấn đúp vào từ để xem nghĩa theo ngữ cảnh",
+    "ogImageAlt": "WordByWord trên iPhone (giao diện tiếng Anh): bài tiếng Tây Ban Nha, bản dịch tiếng Anh bên dưới và thẻ AI giải thích một từ",
+    "appStoreName": "WordByWord Translate",
+    "appStoreSubtitle": "Swipe to translate AI explains"
+  },
+  "seo": {
+    "titleMust": [
+      "iPhone",
+      "trang web",
+      "ứng dụng"
+    ],
+    "keywords": {
+      "K1": {
+        "primary": "ứng dụng dịch trang web song ngữ trên iPhone",
+        "secondary": [
+          "trợ lý đọc cho người học ngoại ngữ",
+          "dịch trang web trên iPhone",
+          "bản dịch ngay dưới văn bản gốc",
+          "đọc trang web song ngữ",
+          "học ngoại ngữ qua trang web"
+        ]
+      },
+      "K2": {
+        "primary": "tra từ theo ngữ cảnh bằng AI",
+        "secondary": [
+          "từ điển AI",
+          "nhấn đúp để tra từ",
+          "nghĩa của cụm từ và thành ngữ",
+          "câu ví dụ và dạng từ"
+        ]
+      },
+      "K3": {
+        "primary": "đọc văn bản bằng giọng AI",
+        "secondary": [
+          "đọc to trang web",
+          "giọng iOS chỉnh được tốc độ"
+        ]
+      },
+      "K4": {
+        "primary": "phân tích cấu trúc câu bằng AI",
+        "secondary": [
+          "hiểu câu dài",
+          "giải thích ngữ pháp của câu"
+        ]
+      },
+      "K6": {
+        "primary": "lịch sử dịch và tra từ",
+        "secondary": [
+          "ôn lại từ đã tra trong ngữ cảnh"
+        ]
+      },
+      "K7": {
+        "primary": "dịch trên đám mây hoặc trên thiết bị",
+        "secondary": [
+          "dịch bằng Azure và Google",
+          "dịch trên thiết bị bằng iOS"
+        ]
+      },
+      "K8": {
+        "primary": "dịch sang 21 ngôn ngữ",
+        "secondary": [
+          "ứng dụng có giao diện 20 ngôn ngữ",
+          "tự động nhận diện ngôn ngữ của trang"
+        ]
+      },
+      "K9": {
+        "primary": "dịch bài đăng X (Twitter) trên iPhone",
+        "secondary": [
+          "đọc bài đăng X kèm bản gốc",
+          "dịch X trong trình duyệt tích hợp"
+        ]
+      },
+      "K10": {
+        "primary": "ứng dụng dịch miễn phí cho iPhone",
+        "secondary": [
+          "giới hạn miễn phí mỗi ngày",
+          "giá WordByWord Plus"
+        ]
+      }
+    }
+  },
+  "common": {
+    "skipToContent": "Chuyển đến nội dung",
+    "languageLabel": "Ngôn ngữ",
+    "comingSoon": "Sắp ra mắt",
+    "contactUs": "Liên hệ",
+    "lastUpdated": "Cập nhật lần cuối",
+    "breadcrumbHome": "Trang chủ",
+    "appStoreBadgeAlt": "Tải WordByWord trên App Store",
+    "langFallbackNote": "Trang này chỉ có bản tiếng Anh. Nếu chọn ngôn ngữ khác, bạn sẽ được chuyển đến trang chủ của ngôn ngữ đó.",
+    "menu": "Menu",
+    "close": "Đóng",
+    "figLabel": "Hình",
+    "screenshotLabel": "Màn hình iPhone (giao diện tiếng Anh)",
+    "screenshotExcerptLabel": "Một phần màn hình (giao diện tiếng Anh)",
+    "noteLabel": "Lưu ý",
+    "demoLabel": "Bản demo ứng dụng"
+  },
+  "nav": {
+    "features": "Tính năng",
+    "languages": "Ngôn ngữ",
+    "pricing": "Bảng giá",
+    "faq": "Hỏi đáp",
+    "chromeExtension": "Tiện ích Chrome",
+    "about": "Giới thiệu",
+    "download": "Tải về",
+    "downloadShort": "Tải về",
+    "iphoneApp": "Ứng dụng iPhone",
+    "ariaMain": "Điều hướng chính",
+    "ariaLanguages": "Chọn ngôn ngữ"
+  },
+  "hero": {
+    "eyebrow": "WordByWord · Trình đọc web song ngữ để học ngoại ngữ",
+    "title": "Vuốt một đoạn văn trên [[trang web]] sang\u00a0phải là bản\u00a0dịch hiện ngay bên dưới.",
+    "lede": "WordByWord là trợ lý đọc dành cho người học ngoại ngữ, trên iPhone và iPad.",
+    "ledeShort": "WordByWord là trợ lý đọc dành cho người học ngoại ngữ, trên iPhone và iPad.",
+    "ctaNote": "Tải miễn phí · iPhone và iPad",
+    "how": "Mở một trang web trong trình duyệt tích hợp rồi vuốt sang phải trên một đoạn văn: bản dịch hiện ngay bên dưới. Nhấn đúp vào một từ để AI giải thích nghĩa của từ đó trong câu.",
+    "platformNote": "Dùng miễn phí, có giới hạn mỗi ngày · Plus là gói đăng ký theo tháng · {minOS} trở lên; cũng chạy trên Mac chip Apple và Apple Vision Pro",
+    "secondaryCta": "Cách hoạt động"
+  },
+  "demo": {
+    "sourceLang": "en",
+    "articleTitle": "Saturday Mornings at the Neighborhood Library",
+    "byline": "Neighborhood Notes · 3 min read",
+    "source": [
+      "Our neighborhood library opens early on Saturdays.",
+      "People arrive with coffee and end up reading until noon."
+    ],
+    "translation": [
+      "Thư viện khu phố của chúng tôi mở cửa sớm vào thứ Bảy.",
+      "Mọi người mang cà phê đến, rồi cứ thế ngồi đọc đến tận trưa."
+    ],
+    "context": [
+      "There are tables by the windows, today’s papers, and a children’s corner with picture books in several languages.",
+      "On the first Saturday of each month, volunteers run a small book swap at the front desk."
+    ],
+    "lookup": {
+      "word": "end",
+      "pos": "động từ",
+      "meaning": "(end up + V-ing) rốt cuộc lại làm gì đó; ở đây: cứ thế ngồi đọc đến tận trưa",
+      "note": "Trong câu này, “end” là một phần của cụm động từ “end up”."
+    },
+    "ui": {
+      "domain": "library.example",
+      "swipeCue": "Vuốt sang phải",
+      "more": "Định nghĩa khác",
+      "pause": "Tạm dừng",
+      "replay": "Phát lại"
+    },
+    "caption": "Bản demo ứng dụng bằng HTML, không phải ảnh chụp màn hình: một đoạn văn tiếng Anh với bản dịch tiếng Việt được chèn ngay bên dưới."
+  },
+  "featuresIntro": {
+    "title": "Vuốt để dịch, nhấn đúp để tra từ — trên những trang web bạn đọc",
+    "lede": "Dành cho người học ngoại ngữ đọc trang web thật. Hai thao tác lo gần hết mọi việc; các tính năng còn lại luôn sẵn sàng khi bạn cần xem kỹ một câu."
+  },
+  "features": [
+    {
+      "id": "swipe",
+      "kicker": "Vuốt để Dịch",
+      "title": "Vuốt để Dịch: bản dịch hiện ngay dưới văn bản gốc",
+      "text": "Mở một trang trong trình duyệt tích hợp (nhập địa chỉ hoặc tìm kiếm) rồi vuốt sang phải trên một đoạn văn. Bản dịch được chèn ngay bên dưới, nên bạn đọc được cả hai mà không phải chuyển màn hình hay lạc mất chỗ đang đọc.",
+      "bullets": [
+        "Hiển thị theo chế độ Tự Động, Đoạn Văn hoặc Từng Câu",
+        "Hiện bản dịch tự động, hoặc nhấn để xem",
+        "Tin tức, blog, tài liệu, X — những trang bạn mở trong ứng dụng"
+      ],
+      "image": "shot/{set}/swipe",
+      "alt": "WordByWord trên iPhone (giao diện tiếng Anh): trang Wikipedia tiếng Tây Ban Nha, bản dịch tiếng Anh chèn dưới văn bản gốc"
+    },
+    {
+      "id": "lookup",
+      "kicker": "Nhấn đúp để Tìm kiếm",
+      "title": "Nhấn đúp để tra từ theo ngữ cảnh bằng AI",
+      "text": "WordByWord đọc cả câu trước khi giải thích một từ và xét cụm từ trước tiên, nên bạn nhận được nghĩa đúng với câu đó, chứ không phải cả một danh sách mục từ điển.",
+      "bullets": [
+        "Nhấn đúp vào bất kỳ từ nào trên trang",
+        "Cụm từ và thành ngữ được nhận diện trước",
+        "Định nghĩa khác: mục từ đầy đủ với ví dụ, dạng từ và phát âm"
+      ],
+      "note": "Không hỗ trợ văn bản gốc tiếng Trung, tiếng Nhật hoặc tiếng Hàn.",
+      "image": "shot/{set}/lookup",
+      "alt": "WordByWord trên iPhone (giao diện tiếng Anh): từ tiếng Tây Ban Nha “convirtiéndose” được tô sáng và thẻ giải nghĩa trong câu"
+    },
+    {
+      "id": "x",
+      "kicker": "X (trước đây là Twitter)",
+      "title": "Dịch bài đăng X (Twitter) và đọc song ngữ trong trình duyệt tích hợp",
+      "text": "Đăng nhập vào x.com ngay trong WordByWord rồi vuốt sang phải trên một bài đăng để xem bản dịch bên dưới — tiện khi theo dõi những tài khoản đăng bài bằng ngôn ngữ khác.",
+      "image": "shot/{set}/x",
+      "alt": "Minh họa một bài đăng trong WordByWord: bài đăng tiếng Anh với bản dịch tiếng Việt bên dưới (không phải ảnh chụp màn hình)",
+      "sample": {
+        "name": "Tài khoản mẫu",
+        "handle": "@runner.example",
+        "time": "3 giờ",
+        "source": "Just finished my first 10K run. Slow, but I didn’t stop once.",
+        "translation": "Vừa chạy xong 10 km đầu tiên trong đời. Chậm thôi, nhưng không dừng lại lần nào."
+      }
+    },
+    {
+      "id": "chunks",
+      "kicker": "Trang tiếng Anh",
+      "title": "Trích Xuất Cụm và Action\u00a0Flow cho câu tiếng Anh",
+      "text": "Sau khi bạn vuốt để dịch một câu tiếng Anh, Trích Xuất Cụm gạch chân những cụm từ thường đi cùng nhau như một khối, còn Action Flow (trong ứng dụng là “Mạch hành động của câu”) cho thấy hành động chính của câu và các hành động gắn với nó. Bạn có thể để chúng chạy tự động, chỉ chạy khi nhấn, hoặc tắt hẳn.",
+      "note": "Chỉ áp dụng cho văn bản gốc tiếng Anh.",
+      "sample": {
+        "sentence": "When the rain finally stopped, we set off for the hills and made it to the top before sunset.",
+        "chunks": [
+          "set off for",
+          "made it to"
+        ],
+        "gloss": "set off for — lên đường đến một nơi",
+        "flowLabel": "Action Flow",
+        "flow": "stopped → set off → made it",
+        "label": "Hình minh họa, không phải ảnh chụp màn hình"
+      }
+    },
+    {
+      "id": "speech",
+      "kicker": "Đọc to",
+      "title": "Đọc văn bản bằng giọng AI, hoặc nhanh hơn với giọng iOS trên máy",
+      "text": "Nghe một từ hoặc cả câu. “Đọc AI” dùng giọng đọc tự nhiên trên đám mây; “Đọc tại chỗ” dùng các giọng có sẵn trong iOS: nhanh hơn, chỉnh được tốc độ và hỗ trợ giọng Premium hoặc Enhanced bạn đã tải về.",
+      "image": "shot/{set}/tts",
+      "alt": "WordByWord trên iPhone (giao diện tiếng Anh): trình phát đọc to ở cuối màn hình, đang đọc một câu tiếng Tây Ban Nha"
+    },
+    {
+      "id": "syntax",
+      "kicker": "Cú pháp",
+      "title": "Phân tích cấu trúc câu bằng AI cho những câu dài",
+      "text": "Trong lịch sử dịch bằng thao tác vuốt, mở một câu đã dịch rồi nhấn “Nhận Giải thích Cú pháp AI”. AI sẽ chia câu thành từng phần và giải thích cách chúng ghép lại với nhau.",
+      "image": "shot/{set}/syntax",
+      "alt": "WordByWord trên iPhone (giao diện tiếng Anh): phần giải thích cú pháp bằng AI cho một câu, trong màn hình chi tiết bản dịch"
+    },
+    {
+      "id": "engines",
+      "kicker": "Công cụ dịch",
+      "title": "Dịch trên đám mây hoặc trên thiết bị",
+      "text": "Đám mây (Azure, Google) hoặc iOS trên máy; hết lượt đám mây? Chuyển sang cục bộ."
+    },
+    {
+      "id": "display",
+      "kicker": "Hiển thị",
+      "title": "Bố cục và kiểu bản dịch",
+      "text": "Tự Động, Đoạn Văn hoặc Từng Câu; hiện ngay hoặc khi nhấn; nhiều kiểu hiển thị."
+    },
+    {
+      "id": "history",
+      "kicker": "Lịch sử",
+      "title": "Lịch sử dịch và tra từ",
+      "text": "Bản dịch và từ đã tra được lưu cùng câu gốc; xóa được bất cứ lúc nào."
+    },
+    {
+      "id": "devices",
+      "kicker": "Thiết bị",
+      "title": "iPhone, iPad, Mac và Vision Pro",
+      "text": "iPhone và iPad ({minOS}+), Mac chip Apple ({minMacOS}+) và Apple Vision Pro."
+    }
+  ],
+  "gallery": {
+    "title": "Cài đặt, định nghĩa đầy đủ và chọn ngôn ngữ trong ứng dụng",
+    "items": [
+      {
+        "id": "settings",
+        "caption": "Cài đặt (giao diện tiếng Anh): chế độ dịch, kiểu bản dịch và chế độ đọc",
+        "alt": "Cài đặt WordByWord trên iPhone (giao diện tiếng Anh): chế độ dịch Auto, Quote Style và Local Read"
+      },
+      {
+        "id": "dictionary",
+        "caption": "Định nghĩa khác (giao diện tiếng Anh): mục từ đầy đủ, kèm câu ví dụ",
+        "alt": "Màn hình More Definitions của WordByWord (giao diện tiếng Anh): từ tiếng Tây Ban Nha “matrimonio” với định nghĩa và câu ví dụ"
+      },
+      {
+        "id": "languages",
+        "caption": "Ngôn ngữ nguồn và đích (giao diện tiếng Anh): tiếng Tây Ban Nha sang tiếng Anh (Mỹ)",
+        "alt": "Cài đặt ngôn ngữ của WordByWord (giao diện tiếng Anh): ngôn ngữ nguồn tiếng Tây Ban Nha, ngôn ngữ đích tiếng Anh (Mỹ)"
+      },
+      {
+        "id": "languageList",
+        "caption": "Chọn một trong {targetLanguages} ngôn ngữ dịch (giao diện tiếng Anh)",
+        "alt": "Danh sách ngôn ngữ của WordByWord (giao diện tiếng Anh): tiếng Việt, Bồ Đào Nha, Ukraina, Ý, Trung và các ngôn ngữ khác"
+      }
+    ]
+  },
+  "languages": {
+    "title": "Dịch sang {targetLanguages} ngôn ngữ — không chỉ từ tiếng Anh",
+    "lede": "Bạn chọn ngôn ngữ của bản dịch. Ban đầu WordByWord coi ngôn ngữ của trang là tiếng Anh, rồi tự nhận diện ngôn ngữ bạn đang đọc và cập nhật theo — bạn cũng có thể tự chọn.",
+    "uiCount": "Giao diện ứng dụng: {uiLanguages} ngôn ngữ",
+    "targetCount": "Bản dịch: {targetLanguages} ngôn ngữ",
+    "sourceNote": "Ngôn ngữ của trang: mặc định là tiếng Anh, tự động nhận diện, có thể đổi",
+    "targetListLabel": "Ngôn ngữ dịch",
+    "limits": [
+      "Trang tiếng Trung, tiếng Nhật và tiếng Hàn: vuốt để dịch và đọc to vẫn dùng được, nhưng nhấn đúp để tra từ thì không.",
+      "Trích Xuất Cụm và Action Flow chỉ dùng được với văn bản tiếng Anh."
+    ]
+  },
+  "pricing": {
+    "title": "Miễn phí mỗi ngày — nâng cấp lên Plus khi bạn đọc nhiều hơn",
+    "lede": "Bạn có thể tải WordByWord miễn phí. Phần lớn tính năng có hạn mức miễn phí được làm mới mỗi ngày; gói Plus nâng hạn mức đó lên.",
+    "table": {
+      "caption": "Giới hạn mỗi ngày: Miễn phí và Plus",
+      "colFeature": "Tính năng",
+      "colFree": "Miễn phí",
+      "colPlus": "Plus",
+      "groups": {
+        "translate": "Dịch",
+        "lookup": "Tra từ",
+        "listen": "Nghe",
+        "sentence": "Phân tích câu"
+      },
+      "rows": {
+        "cloudSwipe": "Vuốt để Dịch · đám mây",
+        "localSwipe": "Vuốt để Dịch · cục bộ",
+        "lookup": "Nhấn đúp để Tìm kiếm",
+        "more": "Định nghĩa khác",
+        "lookupSpeech": "Phát âm AI (Từ)",
+        "swipeSpeech": "Phát âm AI (Câu)",
+        "localVoice": "Giọng iOS (Đọc tại chỗ)",
+        "chunks": "Trích Xuất Cụm",
+        "actionFlow": "Action Flow",
+        "syntax": "Giải thích Cú pháp AI"
+      },
+      "perDay": "{n}/ngày",
+      "noLimit": "Không giới hạn",
+      "englishOnly": "Chỉ tiếng Anh"
+    },
+    "summary": "Mọi tính năng đều miễn phí trong các giới hạn này; Plus nâng giới hạn với giá {plus.priceUS}/tháng (Mỹ).",
+    "free": {
+      "name": "Miễn phí"
+    },
+    "plus": {
+      "name": "WordByWord Plus",
+      "price": "{plus.priceUS}/tháng (tại Mỹ)"
+    },
+    "note": "Giá thay đổi theo khu vực và hiển thị trên App Store. Bạn có thể hủy gói đăng ký bất cứ lúc nào trong phần cài đặt Tài khoản Apple."
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp về WordByWord",
+    "items": [
+      {
+        "id": "what-is",
+        "q": "WordByWord là gì?",
+        "a": "WordByWord là trợ lý đọc trên iPhone và iPad dành cho người học ngoại ngữ và bất kỳ ai đọc trang web bằng ngôn ngữ khác. Mở một trang trong trình duyệt tích hợp, vuốt sang phải trên một đoạn văn để chèn bản dịch ngay bên dưới, và nhấn đúp vào một từ để xem nghĩa của từ đó trong câu. Ứng dụng do Jinlong, một nhà phát triển độc lập, làm ra. [Tìm hiểu thêm về WordByWord (tiếng Anh)](@about)"
+      },
+      {
+        "id": "whole-page",
+        "q": "WordByWord có dịch cả trang web cùng lúc được không?",
+        "a": "Không. WordByWord dịch đoạn văn bạn vuốt và chèn bản dịch ngay bên dưới; phần còn lại của trang vẫn giữ ngôn ngữ gốc. Bạn có thể cho bản dịch hiện theo từng đoạn hoặc từng câu (hoặc để chế độ Tự Động quyết định), và chọn hiện ngay hay chỉ hiện khi bạn nhấn."
+      },
+      {
+        "id": "safari",
+        "q": "WordByWord có dùng được trong Safari hay ứng dụng khác không?",
+        "a": "Không. WordByWord không phải tiện ích mở rộng cho Safari và không thêm nút dịch vào ứng dụng khác. Ứng dụng có trình duyệt riêng với tab và dấu trang: nhập địa chỉ web hoặc tìm kiếm, rồi vuốt để dịch ngay tại đó."
+      },
+      {
+        "id": "word-by-word",
+        "q": "WordByWord có phải công cụ dịch từng từ không?",
+        "a": "Không theo nghĩa đen. Dịch lần lượt từng từ thường làm mất ý, nên WordByWord dịch cả câu hoặc cả đoạn, và chỉ giải thích một từ riêng lẻ khi bạn nhấn đúp vào nó — theo ngữ cảnh của câu chứa từ đó."
+      },
+      {
+        "id": "x",
+        "q": "Tôi có thể đọc X (Twitter) bằng WordByWord không?",
+        "a": "Có. Mở x.com trong trình duyệt tích hợp và đăng nhập, rồi vuốt sang phải trên một bài đăng để xem bản dịch bên dưới, và nhấn đúp vào một từ để tra nghĩa (tra từ không dùng được với bài đăng tiếng Trung, tiếng Nhật hoặc tiếng Hàn). Cách này dùng trang web X bên trong WordByWord, không phải ứng dụng X."
+      },
+      {
+        "id": "languages",
+        "q": "WordByWord hỗ trợ những ngôn ngữ nào?",
+        "a": "Ứng dụng có giao diện {uiLanguages} ngôn ngữ và dịch sang {targetLanguages} ngôn ngữ, gồm cả tiếng Trung giản thể và phồn thể, tiếng Anh (Mỹ) và tiếng Anh (Anh). Ngôn ngữ của trang mặc định là tiếng Anh; WordByWord nhận diện ngôn ngữ bạn đang đọc và cập nhật theo, bạn cũng có thể tự đổi. Một số tính năng phụ thuộc vào ngôn ngữ đó: nhấn đúp để tra từ không dùng được với văn bản tiếng Trung, tiếng Nhật hoặc tiếng Hàn, còn Trích Xuất Cụm và Action Flow chỉ dùng được với tiếng Anh."
+      },
+      {
+        "id": "free",
+        "q": "WordByWord có miễn phí không? Giới hạn mỗi ngày là bao nhiêu?",
+        "a": "Có. Bạn có thể tải về và dùng WordByWord miễn phí, với giới hạn mỗi ngày. Mỗi ngày, gói miễn phí gồm {quota.cloudSwipe.free} lượt vuốt để dịch bằng công cụ đám mây, {quota.localSwipe.free} lượt bằng công cụ cục bộ, {quota.lookup.free} lượt nhấn đúp để tra từ, {quota.chunks.free} lượt Trích Xuất Cụm, {quota.actionFlow.free} lượt Action Flow và {quota.syntax.free} lượt giải thích cú pháp bằng AI; giọng iOS không giới hạn số lần. **WordByWord Plus** là gói đăng ký theo tháng ({plus.priceUS} tại Mỹ; giá tại khu vực của bạn hiển thị trên App Store), giúp nâng các giới hạn này."
+      },
+      {
+        "id": "engines",
+        "q": "Ứng dụng dùng công cụ dịch nào?",
+        "a": "Bạn tự chọn. Công cụ dịch đám mây hiện dựa trên dịch vụ dịch thuật của Azure và Google. Công cụ cục bộ dùng tính năng dịch có sẵn trong iOS; lần đầu, iOS có thể cần tải tài nguyên ngôn ngữ. Nếu hết lượt dịch đám mây trong ngày, hãy chuyển sang công cụ cục bộ và thử lại. Phần giải thích từ, phân tích cú pháp và “Đọc AI” dùng dịch vụ AI trên đám mây."
+      },
+      {
+        "id": "account",
+        "q": "Tôi có cần tài khoản để dùng WordByWord không?",
+        "a": "Không. Bạn có thể dùng WordByWord mà không cần tạo tài khoản. Bạn chỉ đăng nhập vào các trang web như x.com bên trong trình duyệt tích hợp, giống như trên mọi trình duyệt khác. Gói WordByWord Plus gắn với Tài khoản Apple của bạn, không phải với một tài khoản WordByWord."
+      },
+      {
+        "id": "restore",
+        "q": "Làm sao để lấy lại WordByWord Plus trên iPhone hoặc iPad mới?",
+        "a": "Dùng cùng một Tài khoản Apple trên thiết bị mới. Trong phần cài đặt của WordByWord, nhấn “Nâng Cấp Ngay”, rồi nhấn “Khôi phục Mua hàng”. Để thay đổi hoặc hủy gói đăng ký, hãy vào phần đăng ký trong cài đặt Tài khoản Apple của bạn."
+      },
+      {
+        "id": "android",
+        "q": "Có phiên bản Android không?",
+        "a": "Không. WordByWord chỉ có trên App Store, dành cho iPhone và iPad, máy Mac dùng chip Apple và Apple Vision Pro."
+      },
+      {
+        "id": "english-learner",
+        "q": "Tôi đang học tiếng Anh. SurfEnglish có đáng để thử thêm không?",
+        "a": "Hãy cứ dùng WordByWord cho những trang web và bài đăng X bạn chọn, bằng tiếng Anh hay bất kỳ ngôn ngữ nào khác. Nếu bạn muốn có thêm tin tiếng Anh mỗi ngày được chia theo trình độ ({se.levels}) và trò chơi ôn lại những câu và từ bạn đã lưu, thì SurfEnglish, ứng dụng của cùng nhà phát triển, có sẵn những thứ đó với cùng thao tác vuốt và nhấn đúp. Hai ứng dụng có thể dùng song song. [Trang web SurfEnglish](@se-site)"
+      },
+      {
+        "id": "devices",
+        "q": "WordByWord có chạy trên iPad, Mac hay trình duyệt máy tính không?",
+        "a": "WordByWord chạy trên iPhone và iPad với {minOS} trở lên, và qua App Store cũng chạy trên máy Mac dùng chip Apple ({minMacOS} trở lên) và Apple Vision Pro. Hiện chưa có phiên bản cho trình duyệt trên máy tính; nhà phát triển của WordByWord đang chuẩn bị một tiện ích mở rộng cho Chrome — xem [trang tiện ích mở rộng Chrome (tiếng Anh)](@chrome).",
+        "aExtLive": "WordByWord chạy trên iPhone và iPad với {minOS} trở lên, và qua App Store cũng chạy trên máy Mac dùng chip Apple ({minMacOS} trở lên) và Apple Vision Pro. Với Chrome trên máy tính, nhà phát triển của WordByWord có một tiện ích mở rộng riêng, [WordByWord Translate for Chrome (tiếng Anh)](@chrome). Chỉ cài đặt tiện ích này từ liên kết trên trang đó."
+      }
+    ]
+  },
+  "sibling": {
+    "card": {
+      "eyebrow": "Từ nhà phát triển WordByWord",
+      "title": "SurfEnglish: tin tiếng Anh mỗi ngày theo trình độ của bạn",
+      "body": "Bạn đang học tiếng Anh? Cứ đọc trang nào bạn thích trong WordByWord, và thử thêm SurfEnglish: tin tiếng Anh mỗi ngày theo trình độ và trò chơi ôn tập, với cùng thao tác vuốt và nhấn đúp.",
+      "points": [
+        "Tin tiếng Anh thật ở các cấp độ {se.levels}",
+        "Trò chơi ôn lại những gì bạn đã đọc",
+        "Chia sẻ bài tiếng Anh từ Safari"
+      ],
+      "note": "Bắt đầu miễn phí · iPhone và iPad · Giao diện {se.uiLanguages} ngôn ngữ, có tiếng Việt · Dịch sang {se.targetLanguages} ngôn ngữ",
+      "linkText": "Đọc tin tiếng Anh song ngữ — SurfEnglish",
+      "appStoreLinkText": "Tải SurfEnglish trên App Store",
+      "shotAlt": "SurfEnglish, màn hình Games (giao diện tiếng Anh): Sentence Builder và Word Raid, chơi với câu và từ đã lưu",
+      "shotCaption": "Ảnh chụp màn hình SurfEnglish (giao diện tiếng Anh)"
+    },
+    "footer": {
+      "heading": "Cùng nhà phát triển",
+      "linkText": "SurfEnglish: Đọc tin tiếng Anh"
+    }
+  },
+  "cta": {
+    "title": "Bắt đầu đọc trang web song ngữ trên iPhone",
+    "recap": "Vuốt để dịch · Nhấn đúp để tra từ · Đọc to · {targetLanguages} ngôn ngữ",
+    "text": "Miễn phí trên App Store, cho iPhone và iPad."
+  },
+  "footer": {
+    "tagline": "Trợ lý đọc dành cho người học ngoại ngữ, trên iPhone và iPad.",
+    "product": "Sản phẩm",
+    "help": "Trợ giúp",
+    "iosApp": "Ứng dụng iPhone và iPad",
+    "chromeExtension": "Tiện ích mở rộng Chrome",
+    "about": "Giới thiệu WordByWord",
+    "support": "Hỗ trợ",
+    "privacy": "Chính sách quyền riêng tư",
+    "contact": "Liên hệ",
+    "faq": "Câu hỏi thường gặp",
+    "languagesTitle": "Ngôn ngữ",
+    "copyright": "© {yearRange} Jinlong",
+    "madeBy": "Do Jinlong phát triển",
+    "notAffiliated": "Không liên kết với WordByWord.io.",
+    "appleNotice": "Apple, logo Apple, iPhone, iPad, Mac và Apple Vision Pro là nhãn hiệu của Apple Inc., đã được đăng ký tại Hoa Kỳ và các quốc gia, khu vực khác. App Store là nhãn hiệu dịch vụ của Apple Inc.",
+    "ariaNav": "Liên kết trang"
+  },
+  "langSuggest": {
+    "message": "Trang này cũng có phiên bản tiếng Việt.",
+    "action": "Xem bằng tiếng Việt",
+    "close": "Đóng"
+  },
+  "notfound": {
+    "title": "Không tìm thấy trang",
+    "text": "Trang bạn đang tìm không có ở đây. Có thể trang đã được chuyển đi khi trang web này được làm lại.",
+    "home": "Về trang chủ WordByWord",
+    "languages": "Hoặc mở WordByWord bằng ngôn ngữ của bạn:"
+  }
+}
