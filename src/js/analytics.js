@@ -63,8 +63,8 @@
     if (linkInfo.isAppStore) return 'app_store_click';
     if (linkInfo.isChromeStore) return 'chrome_store_click';
     if (linkInfo.isEmail) return 'contact_email_click';
+    if (location === 'footer') return 'footer_link_click'; // before nav: the footer's link lists sit in <nav>
     if (location === 'header' || element.closest('nav')) return 'nav_click';
-    if (location === 'footer') return 'footer_link_click';
     if (linkInfo.isHashLink && linkInfo.targetSection === 'cta') return 'cta_click';
     if (linkInfo.isHashLink) return 'section_anchor_click';
     if (linkInfo.isInternalLink) return 'internal_link_click';
