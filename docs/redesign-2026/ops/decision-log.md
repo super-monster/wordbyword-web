@@ -492,3 +492,8 @@
   - 改动：打开 `?internal=on` 会在浏览器的 localStorage 写入标记，`?internal=off` 清除；带标记的访问会发送 `traffic_type=internal`。WordByWord-Web 已有 GA 自动生成的 Internal Traffic 过滤器，目前是「测试」状态，T+1d 核对后改为「有效」。
   - 验证：干净 HEAD 校验 64 个测试全过，伪本地化和检查都是 0 错误。正式站请求带 `tt=internal`，契约测试 PASS，verify-deploy 179 项通过。
   - 同日，SE 官网接入 GA4（SurfEnglish-Web，G-LMPNXZGKM6，148bbe3）；过程记录在 SE 仓库的计划文档里。
+- **H3 已解决：App Store provider token（2026-10-07，负责人提供并批准发布）**：
+  - 改动：`SITE.pt = '127618337'`，D-11 警告消失；所有 App Store 链接改为 `…/app/apple-store/id…?pt=127618337&ct=wbw-<位置>&mt=8`，Smart App Banner 带 `ct=wbw-sab`。
+  - 发布：生产从 062c642 快进到 8ecd790。
+  - 验证：干净 HEAD 校验 64 个测试全过。正式站 7 个位置都带上 ct，契约测试 PASS，verify-deploy 179 项通过。
+  - 同一个 pt 也用在 SE 官网（`se-*`）。WBW 页面上指向 SE App Store 的链接（`wbw-card`、`wbw-about`）会出现在 SE App 的营销活动里。
