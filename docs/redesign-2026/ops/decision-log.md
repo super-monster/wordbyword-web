@@ -497,3 +497,8 @@
   - 发布：生产从 062c642 快进到 8ecd790。
   - 验证：干净 HEAD 校验 64 个测试全过。正式站 7 个位置都带上 ct，契约测试 PASS，verify-deploy 179 项通过。
   - 同一个 pt 也用在 SE 官网（`se-*`）。WBW 页面上指向 SE App Store 的链接（`wbw-card`、`wbw-about`）会出现在 SE App 的营销活动里。
+- **PR-SE-2 已上线（2026-10-07 约 12:55 JST，负责人批准提前发布，R51 要求 T+7d 内完成）**：
+  - 改动：SE 设置 `wordByWord.localized = true`，12 个 locale 的页脚链接改为指向 WBW 对应的 `/<path>/`（en → `/`），hreflang 与 locale 一致，没有 nofollow 和 UTM。about、guide、support、privacy 仍链 WBW 根。
+  - 发布前检查：WBW 的 12 个 `/<path>/` 都返回 200，没有跳转；`<html lang>` 与 SE 的 hreflang 一一对应（文档 04 §8.4、§8.5）。
+  - 发布：SE 合并 f86353b，正式站抽查 14 个页面都正确。
+  - 统计：SE 的 GA（SurfEnglish-Web）已加注释「PR-SE-2」。
