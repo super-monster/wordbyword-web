@@ -30,7 +30,7 @@ export const SITE = {
   chromeStoreUrl: null,
 
   // — App Store attribution (F28, H3, R3, R55) —
-  pt: null,                                     // provider token; null → plain /app/id<ID> links + build warning
+  pt: '127618337',                              // App Store provider token (H3, 2026-10-07); null → plain /app/id<ID> links + build warning
   ct: { maxLen: 30, maxDistinct: 10 },
 
   // — Analytics (F9, H6) —
