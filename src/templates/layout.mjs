@@ -10,6 +10,12 @@ import { SIBLING } from '../data/sibling.mjs';
 
 // ———————————————————————————— <head> (doc 06 §5.1.1) ————————————————————————————
 
+// Internal traffic (DEPLOY.md §11): ?internal=on marks this browser as internal (localStorage), ?internal=off clears
+// it; marked visits carry traffic_type=internal, which the WordByWord-Web "Internal Traffic" data filter excludes.
+const INTERNAL_FLAG = "try{var q=location.search;if(/[?&]internal=on(?:&|$)/.test(q))localStorage.setItem('ga_internal','1');"
+  + "if(/[?&]internal=off(?:&|$)/.test(q))localStorage.removeItem('ga_internal');"
+  + "if(localStorage.getItem('ga_internal')==='1')c.traffic_type='internal';}catch(e){}";
+
 function head(ctx, { title, description, ogTitle, ogDescription, ogAlt }) {
   const { SITE, route, absUrl, assets } = ctx;
   const l = route.locale;
@@ -58,7 +64,7 @@ ${banner}<meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="${assets.css}">
 <script defer src="${assets.js}"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=${SITE.gaId}"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}${consent}gtag('js',new Date());gtag('config','${SITE.gaId}',{content_group:'${route.page.contentGroup}',page_locale:'${l.code}'});</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}${consent}gtag('js',new Date());var c={content_group:'${route.page.contentGroup}',page_locale:'${l.code}'};${INTERNAL_FLAG}gtag('config','${SITE.gaId}',c);</script>
 ${jsonld(ctx)}
 ${verify}</head>`;
 }

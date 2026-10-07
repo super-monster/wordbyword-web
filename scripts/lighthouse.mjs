@@ -2,7 +2,8 @@
 // Lighthouse gate (doc 06 §11.2, R19; doc 07 M4-02): assert the mobile lab thresholds on saved Lighthouse JSON reports.
 //   Performance ≥ 90, Accessibility ≥ 95, Best Practices ≥ 95, SEO = 100; LCP ≤ 2.5 s, CLS ≤ 0.05, TBT ≤ 200 ms.
 // Usage:
-//   npx --yes lighthouse <url> --output=json --output-path=<file> --chrome-flags="--headless=new"   (mobile is the default)
+//   npx --yes lighthouse <url>?internal=on --output=json --output-path=<file> --chrome-flags="--headless=new"   (mobile is the default;
+//   ?internal=on marks the run as internal traffic so GA's Internal Traffic filter drops it, DEPLOY.md §11)
 //   node scripts/lighthouse.mjs [--preview] <report.json> [...]
 //   --preview  the audited URL is a preview host: its X-Robots-Tag: noindex fails the is-crawlable audit by design
 //              (doc 02 §6.8), so SEO is judged on the other audits only.

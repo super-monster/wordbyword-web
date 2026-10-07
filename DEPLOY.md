@@ -226,6 +226,7 @@ DNS 回滚后 `/ja/` 等新 URL 在 GitHub 上是 404，属预期：回滚只是
   - 不变的有 `hero`、`features`、`screenshots`、`faq`、`surfenglish`；
   - 新增 `languages`、`pricing`；
   - `cta` 的含义变了：旧版的 `cta` 是价格加下载，新版只是最终下载区。新旧对照时，**旧 `cta` ≈ 新 `pricing` + 新 `cta`**。
+- **内部流量**：在自己的设备上打开一次 `https://www.word-by-word.app/?internal=on`。之后这个浏览器的访问会带 `traffic_type=internal`，被 WordByWord-Web 的 Internal Traffic 过滤器排除；打开 `?internal=off` 取消。标记存在 localStorage 里，每个浏览器各开一次；Safari 7 天没访问可能清掉，需要重开。Lighthouse、axe、截图等测试工具打开页面时也带 `?internal=on`。
 - **只看正式站**：预览站（`*.pages.dev`）也会加载 GA，用于 DebugView。报表要加过滤条件：主机名 = `www.word-by-word.app`。2026-10-06 用 PageSpeed Insights 测预览站时，留下了少量来自 `main.wordbyword-web.pages.dev` 的浏览。
 - 自定义维度（事件范围 5 个）和关键事件 `app_store_click` 已在 2026-10-06 注册，旧站剩余几周的数据也能按 label × locale 拆分。基线见 `design-docs` 分支的 `ops/m0/ga4-baseline-2026-10-06.md`。
 
