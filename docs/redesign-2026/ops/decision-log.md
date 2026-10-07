@@ -479,3 +479,10 @@
     - 历史数据仍在网址前缀资源里，两个资源并存，旧资源不删；新资源约 1 天后开始有数据。
     - sitemap 不必在新资源重复提交，robots.txt 已经声明了 sitemap。
   - 顺带发现：有一个原型子域名可以公开访问且没有 noindex。网址检查显示 Google 目前还不知道这个网址，没有收录。已告知负责人，没有改动。
+- **GA4 事件数据保留期（2026-10-07，负责人确认）**：WordByWord-Web 的事件数据保留期从默认的 2 个月改为 14 个月；用户数据原本就是 14 个月。24 小时内生效，不回溯。原因：探索报告只能回看保留期内的事件，保留 2 个月的话，改版前的对比数据每天都会被删掉一部分。
+- **SE 官网接入 GA 的计划（2026-10-07）**：设计文档放在 SE 官网仓库的 `docs/website-analytics-design-v0.1.md`。
+  - SE 官网另建网站媒体资源，与 WordByWord-Web 并列。
+  - 涉及 WBW 的改动有两项（该文档 M5，发布前需负责人批准）：
+    1. 用浏览器标记 `?internal=on` 排除内部流量。WordByWord-Web 加 Internal Traffic 过滤器，测试工具打开页面时带上这个参数。
+    2. 拿到 App Store provider token 后填 `SITE.pt`（D-11、H3）。两个 App 在同一开发者账号下，共用一个 pt。
+  - 这次不做：WBW 不关联 Search Console；`consentMode` 维持 'off'，H6 仍未决。
