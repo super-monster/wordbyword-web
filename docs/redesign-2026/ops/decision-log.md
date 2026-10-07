@@ -487,3 +487,8 @@
     2. 拿到 App Store provider token 后填 `SITE.pt`（D-11、H3）。两个 App 在同一开发者账号下，共用一个 pt。
   - 这次不做：WBW 不关联 Search Console；`consentMode` 维持 'off'，H6 仍未决。
 - **WordByWord-Web 关联 Search Console（2026-10-07，负责人追加）**：数据流 `word-by-word-top` 已关联网域资源 `word-by-word.app`。Search Console 报告集（查询、Google 自然搜索流量）自动出现在报告导航里。这一项在 SE 计划的第二轮问答里原本没选，后来负责人要求顺手完成；SE 计划随之更新为 D5 ③。
+- **内部流量标记上线（2026-10-07，负责人批准发布）**：
+  - 生产 `cloudflare-deploy` 从 099dbb0 快进到 062c642。
+  - 改动：打开 `?internal=on` 会在浏览器的 localStorage 写入标记，`?internal=off` 清除；带标记的访问会发送 `traffic_type=internal`。WordByWord-Web 已有 GA 自动生成的 Internal Traffic 过滤器，目前是「测试」状态，T+1d 核对后改为「有效」。
+  - 验证：干净 HEAD 校验 64 个测试全过，伪本地化和检查都是 0 错误。正式站请求带 `tt=internal`，契约测试 PASS，verify-deploy 179 项通过。
+  - 同日，SE 官网接入 GA4（SurfEnglish-Web，G-LMPNXZGKM6，148bbe3）；过程记录在 SE 仓库的计划文档里。
