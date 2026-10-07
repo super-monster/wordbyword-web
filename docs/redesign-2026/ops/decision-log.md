@@ -486,3 +486,4 @@
     1. 用浏览器标记 `?internal=on` 排除内部流量。WordByWord-Web 加 Internal Traffic 过滤器，测试工具打开页面时带上这个参数。
     2. 拿到 App Store provider token 后填 `SITE.pt`（D-11、H3）。两个 App 在同一开发者账号下，共用一个 pt。
   - 这次不做：WBW 不关联 Search Console；`consentMode` 维持 'off'，H6 仍未决。
+- **WordByWord-Web 关联 Search Console（2026-10-07，负责人追加）**：数据流 `word-by-word-top` 已关联网域资源 `word-by-word.app`。Search Console 报告集（查询、Google 自然搜索流量）自动出现在报告导航里。这一项在 SE 计划的第二轮问答里原本没选，后来负责人要求顺手完成；SE 计划随之更新为 D5 ③。
