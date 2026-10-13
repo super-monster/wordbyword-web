@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "Werkt WordByWord op iPad, Mac of in een desktopbrowser?",
         "a": "WordByWord werkt op iPhone en iPad met {minOS} of nieuwer, en via de App Store ook op Macs met Apple-chip ({minMacOS} of nieuwer) en op Apple Vision Pro. Een versie voor desktopbrowsers is er nog niet; een Chrome-extensie van dezelfde ontwikkelaar is in voorbereiding – zie de [pagina over de Chrome-extensie (in het Engels)](@chrome).",
-        "aExtLive": "WordByWord werkt op iPhone en iPad met {minOS} of nieuwer, en via de App Store ook op Macs met Apple-chip ({minMacOS} of nieuwer) en op Apple Vision Pro. Voor Chrome op een computer is er een aparte extensie van dezelfde ontwikkelaar: [WordByWord Translate voor Chrome (in het Engels)](@chrome). Installeer die alleen via de link op die pagina."
+        "aExtLive": "WordByWord werkt op iPhone en iPad met {minOS} of nieuwer, en via de App Store ook op Macs met Apple-chip ({minMacOS} of nieuwer) en op Apple Vision Pro. Voor Chrome op een computer is er een aparte extensie van dezelfde ontwikkelaar: [WordByWord Translate voor Chrome (in het Engels)](@chrome). Installeer die via de [Chrome Web Store](@chrome-store)."
       }
     ]
   },

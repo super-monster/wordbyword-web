@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "هل يعمل WordByWord على الآيفون والآيباد وMac، أو في متصفح على الكمبيوتر؟",
         "a": "يعمل WordByWord على iPhone وiPad بنظام {minOS} أو أحدث، ويمكن تثبيته من App Store أيضًا على أجهزة Mac المزوّدة بشريحة Apple ({minMacOS} أو أحدث) وعلى Apple Vision Pro. لا يوجد بعد إصدار لمتصفحات الكمبيوتر، وهناك إضافة لمتصفح Chrome من المطوّر نفسه قيد الإعداد: راجع [صفحة إضافة Chrome (بالإنجليزية)](@chrome).",
-        "aExtLive": "يعمل WordByWord على iPhone وiPad بنظام {minOS} أو أحدث، ويمكن تثبيته من App Store أيضًا على أجهزة Mac المزوّدة بشريحة Apple ({minMacOS} أو أحدث) وعلى Apple Vision Pro. أما لمتصفح Chrome على الكمبيوتر فهناك إضافة منفصلة من المطوّر نفسه: [WordByWord Translate for Chrome (بالإنجليزية)](@chrome). ثبّتها من الرابط الموجود في تلك الصفحة فقط."
+        "aExtLive": "يعمل WordByWord على iPhone وiPad بنظام {minOS} أو أحدث، ويمكن تثبيته من App Store أيضًا على أجهزة Mac المزوّدة بشريحة Apple ({minMacOS} أو أحدث) وعلى Apple Vision Pro. أما لمتصفح Chrome على الكمبيوتر فهناك إضافة منفصلة من المطوّر نفسه: [WordByWord Translate for Chrome (بالإنجليزية)](@chrome). ثبّتها من [متجر Chrome الإلكتروني](@chrome-store)."
       }
     ]
   },

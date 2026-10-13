@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "Apakah WordByWord bisa dipakai di iPad, Mac, atau browser komputer?",
         "a": "WordByWord berjalan di iPhone dan iPad dengan {minOS} atau versi lebih baru, dan dari App Store juga di Mac dengan chip Apple ({minMacOS} atau versi lebih baru) serta di Apple Vision Pro. Belum ada versi untuk browser komputer; pengembang yang sama sedang menyiapkan ekstensi Chrome, lihat [halaman ekstensi Chrome (dalam bahasa Inggris)](@chrome).",
-        "aExtLive": "WordByWord berjalan di iPhone dan iPad dengan {minOS} atau versi lebih baru, dan dari App Store juga di Mac dengan chip Apple ({minMacOS} atau versi lebih baru) serta di Apple Vision Pro. Untuk Chrome di komputer, ada ekstensi terpisah dari pengembang yang sama, [WordByWord Translate untuk Chrome (dalam bahasa Inggris)](@chrome). Pasang ekstensi itu hanya dari tautan di halaman tersebut."
+        "aExtLive": "WordByWord berjalan di iPhone dan iPad dengan {minOS} atau versi lebih baru, dan dari App Store juga di Mac dengan chip Apple ({minMacOS} atau versi lebih baru) serta di Apple Vision Pro. Untuk Chrome di komputer, ada ekstensi terpisah dari pengembang yang sama, [WordByWord Translate untuk Chrome (dalam bahasa Inggris)](@chrome). Pasang ekstensi itu dari [Chrome Web Store](@chrome-store)."
       }
     ]
   },

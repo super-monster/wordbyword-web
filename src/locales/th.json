@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "WordByWord ใช้บนไอโฟน iPad, Mac หรือเบราว์เซอร์บนคอมพิวเตอร์ได้\u2060ไหม",
         "a": "WordByWord ใช้ได้บน iPhone และ iPad ที่ใช้ {minOS} ขึ้นไป และผ่าน App Store ยังใช้ได้บน Mac ที่ใช้ชิป Apple ({minMacOS} ขึ้นไป) และ Apple Vision Pro ตอนนี้ยังไม่มีเวอร์ชันสำหรับเบราว์เซอร์บนคอมพิวเตอร์ แต่นักพัฒนาคนเดียวกันกำลังเตรียมส่วนขยาย Chrome อยู่ ดูเพิ่มเติมได้ที่[หน้าส่วนขยาย Chrome (ภาษาอังกฤษ)](@chrome)",
-        "aExtLive": "WordByWord ใช้ได้บน iPhone และ iPad ที่ใช้ {minOS} ขึ้นไป และผ่าน App Store ยังใช้ได้บน Mac ที่ใช้ชิป Apple ({minMacOS} ขึ้นไป) และ Apple Vision Pro สำหรับ Chrome บนคอมพิวเตอร์ มีส่วนขยายแยกต่างหากจากนักพัฒนาคนเดียวกันชื่อ [WordByWord Translate for Chrome (ภาษาอังกฤษ)](@chrome) โปรดติดตั้งจากลิงก์ในหน้านั้นเท่านั้น"
+        "aExtLive": "WordByWord ใช้ได้บน iPhone และ iPad ที่ใช้ {minOS} ขึ้นไป และผ่าน App Store ยังใช้ได้บน Mac ที่ใช้ชิป Apple ({minMacOS} ขึ้นไป) และ Apple Vision Pro สำหรับ Chrome บนคอมพิวเตอร์ มีส่วนขยายแยกต่างหากจากนักพัฒนาคนเดียวกันชื่อ [WordByWord Translate for Chrome (ภาษาอังกฤษ)](@chrome) ติดตั้งได้จาก [Chrome Web Store](@chrome-store)"
       }
     ]
   },

@@ -410,7 +410,7 @@
         "id": "devices",
         "q": "iPadやMac、パソコンのブラウザでも使えますか？",
         "a": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのブラウザで使える版はまだありません。同じ開発者によるChrome拡張機能を準備中です。詳しくは[Chrome拡張機能のページ（英語）](@chrome)をご覧ください。",
-        "aExtLive": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのChrome向けには、同じ開発者による別の拡張機能[WordByWord Translate（Chrome拡張機能・英語）](@chrome)があります。インストールは、そのページのリンクから行ってください。"
+        "aExtLive": "WordByWordはiPhoneとiPad（{minOS}以降）で使え、App StoreからAppleシリコンのMac（{minMacOS}以降）やApple Vision Proにも入れられます。パソコンのChrome向けには、同じ開発者による別の拡張機能[WordByWord Translate（Chrome拡張機能・英語）](@chrome)があります。インストールは[Chromeウェブストア](@chrome-store)から行えます。"
       }
     ]
   },

@@ -73,7 +73,7 @@ const RICH_FIELDS = ['faq.items[*].a', 'faq.items[*].aExtLive', 'about.lede', 'a
   'about.facts[*].value', 'about.timeline.items[*].text', 'about.maker.text', 'about.family.text', 'about.family.closing',
   'about.disambiguation.text', 'about.contact.text', 'chromeExtension.faq[*].a'];
 export const REF_WHITELIST = ['@appstore', '@se-site', '@se-appstore', '@se-maker', '@support', '@support-mail', '@privacy', '@about',
-  '@chrome', '@home', '@features', '@faq', '@appstore-dev'];
+  '@chrome', '@chrome-store', '@home', '@features', '@faq', '@appstore-dev'];
 
 // L-8: length rules (doc 06 §4.2 first, doc 08 §7.6 where §4.2 is silent). First match wins.
 //   n: limit in the script's own unit (Latin/Cyrillic/Arabic graphemes; Thai/Devanagari visible characters) — CJK

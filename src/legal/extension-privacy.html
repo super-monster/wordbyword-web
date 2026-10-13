@@ -1,84 +1,78 @@
-<!-- updated: 2026-02-02 -->
-<!-- Migrated verbatim from /chrome-extension/privacy.html (git 7a389ba). Known mismatch with manifest permissions; revise before listing (doc 06 §5.5, research 01 R3). -->
-<p class="effective-date">Effective Date: February 2, 2026</p>
-    
-    <p class="intro">
-        Thank you for using <b>WordByWord Chrome Extension</b>. We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you use our browser extension.
-    </p>
-    
-    <h2>1. Information We Collect</h2>
-    <p>
-        WordByWord is designed with privacy in mind. We collect minimal data necessary to provide our translation and language learning services:
-    </p>
-    <ul>
-        <li><b>Text for Translation:</b> When you trigger a translation, the selected text or paragraph is sent to our translation service providers (Microsoft Azure Translator or Google Translate) to process your request.</li>
-        <li><b>Text for AI Features:</b> When using AI-powered features (word definitions, structure analysis), the relevant text context is sent to AI service providers (OpenAI ChatGPT or Google Gemini).</li>
-        <li><b>User Preferences:</b> Your settings (language preferences, theme, hotkeys) are stored locally in your browser using Chrome's storage API.</li>
-    </ul>
+<!-- updated: 2026-10-13 -->
+<!-- Rewritten against the extension's manifest v0.1.2 (permissions storage/tabs/tts/sidePanel/activeTab, GA4 Measurement Protocol, requests via api.word-by-word.app). Replaces the 2026-02-02 text migrated verbatim from git 7a389ba (doc 01 C-22, doc 06 §5.5). -->
+<p class="effective-date">Effective date: October 13, 2026</p>
 
-    <h2>2. Information We Do NOT Collect</h2>
-    <p>
-        We want to be clear about what we <span class="highlight">do not</span> collect:
-    </p>
-    <ul>
-        <li>We do <b>not</b> collect your browsing history</li>
-        <li>We do <b>not</b> track which websites you visit</li>
-        <li>We do <b>not</b> store any translated text on our servers</li>
-        <li>We do <b>not</b> collect personal identifiable information (name, email, etc.)</li>
-        <li>We do <b>not</b> use cookies or tracking technologies</li>
-    </ul>
+<p class="intro">
+    This policy explains what the <strong>WordByWord Translate</strong> extension for Chrome and Microsoft Edge does with your data. The extension is made by the developer of the WordByWord iPhone app. It has no account or sign-in, and it never asks for your name or email address.
+</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>
-        To provide translation and AI features, we integrate with the following third-party services, each governed by their own privacy policies:
-    </p>
-    <ul>
-        <li><b>Microsoft Azure Translator</b> – for translation services</li>
-        <li><b>Google Cloud Translation API</b> – for translation services</li>
-        <li><b>OpenAI API (ChatGPT)</b> – for AI-powered word definitions and analysis</li>
-        <li><b>Google Gemini API</b> – for AI-powered word definitions and analysis</li>
-    </ul>
-    <p>
-        Text data sent to these services is processed according to their respective privacy policies and is not retained beyond the immediate processing of your request.
-    </p>
+<h2>1. What the extension sends, and when</h2>
+<p>
+    Nothing is read from a web page or sent anywhere until you trigger a feature: pressing the activation key over a paragraph, pressing Control on a word, using the popup, or opening an entry in the side panel. When you do, the extension processes only the text involved.
+</p>
+<ul>
+    <li><strong>Text you translate or look up.</strong> The paragraph, sentence or word you selected, together with the sentence around it as context, is sent to our server at api.word-by-word.app. Our server forwards it to the translation or AI provider needed for the request: Microsoft Azure Translator or Google Cloud Translation for translations, and OpenAI or Google Gemini for word meanings and structure analysis. The text is used only to produce the result and is not kept by our server after the request is answered. The providers process it under their own privacy policies.</li>
+    <li><strong>On-device translation.</strong> If you choose Chrome's built-in translation model in the settings, paragraph translation happens inside your browser and the text is not sent to us or to a translation provider. Word meanings and structure analysis still use our server.</li>
+    <li><strong>Request details.</strong> Each request to our server carries the extension version, a timestamp and a signed token that contains a random install ID (see section 3). It does not carry the address of the page you are reading, your browsing history, or anything that identifies you personally.</li>
+</ul>
 
-    <h2>4. Data Storage & Security</h2>
-    <p>
-        All user preferences and settings are stored locally on your device using Chrome's built-in storage API (<code>chrome.storage.local</code>). This data never leaves your device unless you explicitly sync it via your Chrome account.
-    </p>
-    <p>
-        We do not operate any servers that store user data. All processing happens either locally in your browser or through secure API calls to third-party translation services.
-    </p>
+<h2>2. Usage statistics</h2>
+<p>
+    By default the extension reports anonymous usage statistics to Google Analytics 4 through Google's Measurement Protocol. These events say that the extension was installed or updated, which feature was used (paragraph translation, word meaning, structure analysis, quick translation, read-aloud), the language pair and translation service chosen, which setting was changed and its new value, that a daily limit was reached, and error types with their messages. Each event carries the extension version and the random install ID. No page addresses, no translated text and no looked-up words are included.
+</p>
+<p>
+    You can turn this off at any time with <em>Allow anonymous usage statistics</em> on the extension's options page. Google handles these events under Google's privacy policy. The extension does not set cookies.
+</p>
 
-    <h2>5. Permissions Explained</h2>
-    <p>
-        Our extension requests the following browser permissions:
-    </p>
-    <ul>
-        <li><b>activeTab:</b> To access the content of the current page for translation when you trigger the feature</li>
-        <li><b>storage:</b> To save your preferences locally</li>
-        <li><b>contextMenus:</b> To provide right-click translation options</li>
-    </ul>
-    <p>
-        We only request permissions that are essential for the extension's functionality.
-    </p>
+<h2>3. Data stored in your browser</h2>
+<ul>
+    <li><strong>Settings</strong> (languages, hotkeys, appearance, feature switches) are stored with Chrome's sync storage. If Chrome sync is on, Google syncs them to your other browsers signed in with the same Google account.</li>
+    <li><strong>Translation history, looked-up sentences and daily usage counters</strong> are stored with Chrome's local storage and stay on this computer. You can delete history entries in the side panel.</li>
+    <li><strong>The install ID</strong> is a random identifier created when the extension is installed. It is stored locally, is not linked to your identity, and a reinstall creates a new one.</li>
+</ul>
+<p>
+    Removing the extension deletes all of this data from your browser.
+</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>
-        This extension is not intended for children under the age of 13. We do not knowingly collect any personal information from children. If you believe that a child has provided us with personal information, please contact us immediately.
-    </p>
+<h2>4. Read-aloud</h2>
+<p>
+    Read-aloud uses the text-to-speech voices available to Chrome. Voices provided by your operating system run on your device; if your browser offers a network voice, that voice's provider receives the text to speak it.
+</p>
 
-    <h2>7. Changes to This Policy</h2>
-    <p>
-        We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.
-    </p>
+<h2>5. Permissions explained</h2>
+<ul>
+    <li><strong>storage:</strong> to keep your settings, history and usage counters as described in section 3.</li>
+    <li><strong>tabs</strong> and <strong>activeTab:</strong> to find the tab you are working in and exchange messages with the extension's own script on that page. The extension does not read your tab list or history.</li>
+    <li><strong>tts:</strong> to speak text with the browser's text-to-speech voices.</li>
+    <li><strong>sidePanel:</strong> to show translation history and sentence details in Chrome's side panel.</li>
+    <li><strong>Access to www.google-analytics.com:</strong> only for the usage statistics in section 2.</li>
+</ul>
+<p>
+    The extension's script is loaded on every web page so that it can respond when you trigger it. It does not read or send anything until you do.
+</p>
 
-    <div class="contact">
-        <p>Questions or concerns about this Privacy Policy?</p>
-        <a href="mailto:app.wordbyword@gmail.com">app.wordbyword@gmail.com</a>
-    </div>
-    
-    <div class="back-link">
-        <a href="/chrome-extension/">← Back to WordByWord Chrome Extension</a>
-    </div>
+<h2>6. What we do not do</h2>
+<ul>
+    <li>We do not collect your name, email address or any account information.</li>
+    <li>We do not collect your browsing history or the addresses of the pages you read.</li>
+    <li>We do not sell or share your data with third parties, other than the service providers named in sections 1 and 2, who act on our behalf.</li>
+    <li>We do not show advertisements.</li>
+</ul>
 
+<h2>7. Children's privacy</h2>
+<p>
+    This extension is not intended for children under the age of 14. We do not knowingly collect any personal information from children. If you believe that a child has provided us with personal information, please contact us and we will promptly address the issue.
+</p>
+
+<h2>8. Changes to this policy</h2>
+<p>
+    We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.
+</p>
+
+<p class="contact">
+    Questions or concerns about this privacy policy? <a href="mailto:app.wordbyword@gmail.com">app.wordbyword@gmail.com</a>
+</p>
+
+<p class="back-link">
+    <a href="/chrome-extension/">← Back to WordByWord Translate for Chrome</a>
+</p>

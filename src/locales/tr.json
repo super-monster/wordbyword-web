@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "WordByWord iPad’de, Mac’te ya da masaüstü tarayıcıda çalışır mı?",
         "a": "WordByWord, {minOS} veya üzeri yüklü iPhone ve iPad’de; App Store üzerinden Apple çipli Mac’lerde ({minMacOS} veya üzeri) ve Apple Vision Pro’da da çalışır. Masaüstü tarayıcılar için henüz bir sürüm yok; aynı geliştiricinin bir Chrome uzantısı hazırlanıyor: [Chrome uzantısı sayfası (İngilizce)](@chrome).",
-        "aExtLive": "WordByWord, {minOS} veya üzeri yüklü iPhone ve iPad’de; App Store üzerinden Apple çipli Mac’lerde ({minMacOS} veya üzeri) ve Apple Vision Pro’da da çalışır. Bilgisayarda Chrome için aynı geliştiricinin ayrı bir uzantısı var: [WordByWord Translate for Chrome (İngilizce)](@chrome). Uzantıyı yalnızca o sayfadaki bağlantıdan yükleyin."
+        "aExtLive": "WordByWord, {minOS} veya üzeri yüklü iPhone ve iPad’de; App Store üzerinden Apple çipli Mac’lerde ({minMacOS} veya üzeri) ve Apple Vision Pro’da da çalışır. Bilgisayarda Chrome için aynı geliştiricinin ayrı bir uzantısı var: [WordByWord Translate for Chrome (İngilizce)](@chrome). Uzantı [Chrome Web Mağazası](@chrome-store) üzerinden yüklenir."
       }
     ]
   },

@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "O WordByWord funciona no iPad, no Mac ou no navegador do PC?",
         "a": "O WordByWord funciona no iPhone e no iPad com {minOS} ou posterior e, pela App Store, também em Macs com Apple silicon ({minMacOS} ou posterior) e no Apple Vision Pro. Ainda não há versão para navegadores de computador; uma extensão para o Chrome, do mesmo desenvolvedor, está em preparação — veja a [página da extensão para Chrome (em inglês)](@chrome).",
-        "aExtLive": "O WordByWord funciona no iPhone e no iPad com {minOS} ou posterior e, pela App Store, também em Macs com Apple silicon ({minMacOS} ou posterior) e no Apple Vision Pro. Para o Chrome no computador, há uma extensão separada do mesmo desenvolvedor, o [WordByWord Translate para Chrome (em inglês)](@chrome). Instale-a somente pelo link dessa página."
+        "aExtLive": "O WordByWord funciona no iPhone e no iPad com {minOS} ou posterior e, pela App Store, também em Macs com Apple silicon ({minMacOS} ou posterior) e no Apple Vision Pro. Para o Chrome no computador, há uma extensão separada do mesmo desenvolvedor, o [WordByWord Translate para Chrome (em inglês)](@chrome). Instale-a pela [Chrome Web Store](@chrome-store)."
       }
     ]
   },

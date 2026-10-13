@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "WordByWord có chạy trên iPad, Mac hay trình duyệt máy tính không?",
         "a": "WordByWord chạy trên iPhone và iPad với {minOS} trở lên, và qua App Store cũng chạy trên máy Mac dùng chip Apple ({minMacOS} trở lên) và Apple Vision Pro. Hiện chưa có phiên bản cho trình duyệt trên máy tính; nhà phát triển của WordByWord đang chuẩn bị một tiện ích mở rộng cho Chrome — xem [trang tiện ích mở rộng Chrome (tiếng Anh)](@chrome).",
-        "aExtLive": "WordByWord chạy trên iPhone và iPad với {minOS} trở lên, và qua App Store cũng chạy trên máy Mac dùng chip Apple ({minMacOS} trở lên) và Apple Vision Pro. Với Chrome trên máy tính, nhà phát triển của WordByWord có một tiện ích mở rộng riêng, [WordByWord Translate for Chrome (tiếng Anh)](@chrome). Chỉ cài đặt tiện ích này từ liên kết trên trang đó."
+        "aExtLive": "WordByWord chạy trên iPhone và iPad với {minOS} trở lên, và qua App Store cũng chạy trên máy Mac dùng chip Apple ({minMacOS} trở lên) và Apple Vision Pro. Với Chrome trên máy tính, nhà phát triển của WordByWord có một tiện ích mở rộng riêng, [WordByWord Translate for Chrome (tiếng Anh)](@chrome). Cài đặt tiện ích này từ [Chrome Web Store](@chrome-store)."
       }
     ]
   },

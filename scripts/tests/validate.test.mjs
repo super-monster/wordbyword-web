@@ -767,31 +767,58 @@ test('D-23 OG images match the copy (ENG-12, R59)', () => {
   noErrors(i, 'D-23', /home-ja: copy changed/);
 });
 
+// The built dist is in whichever state SITE.chromeStoreUrl selects (S0 since the redesign, S1 since 2026-10-13, H4).
+// Both tests below exercise the rules of both states whatever the live switch says: the other state's rules are
+// checked by validating the built pages under the other state's config.
+const EXT_LIVE = Boolean(BASE.SITE.chromeStoreUrl);
+const EXT_SAMPLE = 'https://chromewebstore.google.com/detail/wordbyword-translate/abcdefghijklmnopabcdefghijklmnop';
+const extS0 = (cfg) => { cfg.SITE.chromeStoreUrl = null; };
+const extS1 = (cfg) => { cfg.SITE.chromeStoreUrl = EXT_SAMPLE; };
+
 test('D-24 extension page header: own navigation and an honest main button (doc 02 §3.5, §7.1)', () => {
   const i = runDist((d) => edit(d, 'chrome-extension/index.html', (h) => h
-    .replace(/<a class="btn btn-small" href="[^"]*" data-ga-label="chrome_ext">.*?<\/a>/, '<a class="btn btn-small" href="https://apps.apple.com/app/id6741724502" data-ga-label="header">Download</a>')
+    .replace(/<a class="btn btn-small" href="[^"]*"[^>]*>.*?<\/a>/, '<a class="btn btn-small" href="https://apps.apple.com/app/id6741724502" data-ga-label="header">Download</a>')
     .replaceAll('<li><a href="#features">', '<li><a href="/#features">')));
-  expectE(i, 'D-24', /S0 — the header button must be the WBW App Store link labelled as the iPhone app, not "Download"/);
+  expectE(i, 'D-24', EXT_LIVE
+    ? /S1 — the header button must be "Add to Chrome" to SITE\.chromeStoreUrl/
+    : /S0 — the header button must be the WBW App Store link labelled as the iPhone app, not "Download"/);
   expectE(i, 'D-24', /the extension page header must link #features/);
+  const other = runDist(null, { cfgMut: EXT_LIVE ? extS0 : extS1 }); // the untouched page under the other state
+  expectE(other, 'D-24', EXT_LIVE
+    ? /S0 — the header button must be the WBW App Store link labelled as the iPhone app/
+    : /S1 — the header button must be "Add to Chrome" to SITE\.chromeStoreUrl/);
   noErrors(runDist(), 'D-24');
 });
 
 test('D-24 Chrome extension sub-site S0 / S1 (R2, R16, R45)', () => {
-  let i = runDist((d) => {
-    edit(d, 'index.html', (h) => h
-      .replace('<nav class="main-nav" aria-label="Main"><ul>', '<nav class="main-nav" aria-label="Main"><ul><li><a href="/chrome-extension/">Chrome extension</a></li>')
-      .replace('<main id="main">', '<main id="main"><a href="https://chromewebstore.google.com/detail/wordbyword/abcdefghijklmnopabcdefghijklmnop">x</a>'));
-    edit(d, 'chrome-extension/index.html', (h) => h.replaceAll('WordByWord.io', 'another site'));
-  });
+  // S0 rules: an S1 home page (built, or mutated in) and an extension page without the disambiguation
+  let i = EXT_LIVE
+    ? runDist((d) => edit(d, 'chrome-extension/index.html', (h) => h.replaceAll('WordByWord.io', 'another site')), { cfgMut: extS0 })
+    : runDist((d) => {
+      edit(d, 'index.html', (h) => h
+        .replace('<nav class="main-nav" aria-label="Main"><ul>', '<nav class="main-nav" aria-label="Main"><ul><li><a href="/chrome-extension/">Chrome extension</a></li>')
+        .replace('<main id="main">', `<main id="main"><a href="${EXT_SAMPLE}">x</a>`));
+      edit(d, 'chrome-extension/index.html', (h) => h.replaceAll('WordByWord.io', 'another site'));
+    });
   expectE(i, 'D-24', /\/ \(en\): S0 — the header navigation must not show the extension item/);
   expectE(i, 'D-24', /\/ \(en\): S0 — link to the Chrome Web Store/);
   expectE(i, 'D-24', /\/chrome-extension\/ \(en\): the extension page must state it is not affiliated with WordByWord\.io/);
-  i = runDist(null, { cfgMut: (cfg) => { cfg.SITE.chromeStoreUrl = 'https://chromewebstore.google.com/detail/wordbyword-translate/abcdefghijklmnopabcdefghijklmnop'; } });
+  if (EXT_LIVE) {
+    expectE(i, 'D-24', /\/chrome-extension\/ \(en\): S0 — the extension page must be noindex/);
+    expectE(i, 'D-24', /\/ \(en\): S0 — FAQ devices names the extension/);
+  }
+  // S1 rules: a home page without the nav item and with a foreign FAQ answer, an extension CTA that is not the listing
+  i = EXT_LIVE
+    ? runDist((d) => edit(d, 'index.html', (h) => h
+      .replaceAll('<li><a href="/chrome-extension/">Chrome extension</a></li>', '')
+      .replace(/<details class="faq-item" id="faq-devices"[\s\S]*?<\/details>/, '<details class="faq-item" id="faq-devices" data-faq-id="devices"><summary><span class="faq-q">q</span></summary><div class="faq-a"><p>x</p></div></details>')), { cfgMut: extS1 })
+    : runDist(null, { cfgMut: extS1 });
   expectE(i, 'D-24', /\/ \(en\): S1 — the header navigation must show the extension item/);
   expectE(i, 'D-24', /\/chrome-extension\/ \(en\): S1 — the extension CTA must link to SITE\.chromeStoreUrl/);
   expectE(i, 'D-24', /\/ \(en\): FAQ devices must use the S1 aExtLive answer/);
   const c = runConfig((cfg) => { cfg.SITE.chromeStoreUrl = 'https://chrome.google.com/webstore/search/wordbyword'; });
   expectE(c, 'D-24', /SITE\.chromeStoreUrl "https:\/\/chrome\.google\.com\/webstore\/search\/wordbyword" must be null/);
+  noErrors(runDist(), 'D-24');
 });
 
 // ———————————————————————————— building blocks ————————————————————————————

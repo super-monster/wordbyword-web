@@ -409,7 +409,7 @@
         "id": "devices",
         "q": "WordByWord 可以在 iPad、Mac 或電腦瀏覽器上使用嗎？",
         "a": "WordByWord 支援 iPhone 和 iPad（{minOS} 以上），也可以從 App Store 安裝到搭載 Apple 晶片的 Mac（{minMacOS} 以上）和 Apple Vision Pro。目前還沒有電腦瀏覽器版本；同一位開發者的 Chrome 擴充功能正在準備中，詳見 [Chrome 擴充功能頁面（英文）](@chrome)。",
-        "aExtLive": "WordByWord 支援 iPhone 和 iPad（{minOS} 以上），也可以從 App Store 安裝到搭載 Apple 晶片的 Mac（{minMacOS} 以上）和 Apple Vision Pro。電腦上的 Chrome 另有同一位開發者製作的擴充功能：[WordByWord Translate Chrome 擴充功能（英文頁面）](@chrome)。請只透過該頁面上的連結安裝。"
+        "aExtLive": "WordByWord 支援 iPhone 和 iPad（{minOS} 以上），也可以從 App Store 安裝到搭載 Apple 晶片的 Mac（{minMacOS} 以上）和 Apple Vision Pro。電腦上的 Chrome 另有同一位開發者製作的擴充功能：[WordByWord Translate Chrome 擴充功能（英文頁面）](@chrome)。可直接從 [Chrome 線上應用程式商店](@chrome-store)安裝。"
       }
     ]
   },

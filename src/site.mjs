@@ -26,8 +26,8 @@ export const SITE = {
   operatingSystem: 'iOS 18.0 or later',
   smartBanner: true,
 
-  // — Chrome extension (U3, H4, R2): null/'' → S0 (noindex, hidden from header nav) —
-  chromeStoreUrl: null,
+  // — Chrome extension (U3, H4, R2): null/'' → S0 (noindex, hidden from header nav); listing URL → S1 —
+  chromeStoreUrl: 'https://chromewebstore.google.com/detail/wordbyword-translate/cnbhdmmboeodooopblgjaniaadchkihm', // H4, 2026-10-13
 
   // — App Store attribution (F28, H3, R3, R55) —
   pt: '127618337',                              // App Store provider token (H3, 2026-10-07); null → plain /app/id<ID> links + build warning

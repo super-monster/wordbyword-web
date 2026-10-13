@@ -32,6 +32,8 @@ export function richRefs({ SITE, locale, seMode }) {
     '@about': { href: '/about/', attrs: enOnly },
     // The extension page exists in en and zh-Hans (R1); other locales link to the English page.
     '@chrome': locale.code === 'zh-Hans' ? { href: '/zh-hans/chrome-extension/' } : { href: '/chrome-extension/', attrs: enOnly },
+    // The Chrome Web Store listing (R45, decision-log C7): S1 only; in S0 it renders as plain text (D-11, D-24).
+    '@chrome-store': SITE.chromeStoreUrl ? { href: SITE.chromeStoreUrl, attrs: { 'data-ga-event': 'chrome_store_click', 'data-ga-label': 'faq' } } : null,
     '@support': { href: '/support.html', attrs: enOnly },
     '@privacy': { href: '/privacy.html', attrs: enOnly },
     '@support-mail': { href: `mailto:${SITE.supportEmail}` },

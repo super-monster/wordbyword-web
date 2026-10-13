@@ -405,7 +405,7 @@
         "id": "devices",
         "q": "क्या WordByWord iPad, Mac या कंप्यूटर के ब्राउज़र पर चलता है?",
         "a": "WordByWord {minOS} या उसके बाद के वर्ज़न वाले iPhone और iPad पर चलता है, और App Store से Apple सिलिकॉन वाले Mac ({minMacOS} या बाद का वर्ज़न) और Apple Vision Pro पर भी। कंप्यूटर के ब्राउज़र के लिए अभी कोई वर्ज़न नहीं है; इसी डेवलपर का एक Chrome एक्सटेंशन तैयार हो रहा है — देखें [Chrome एक्सटेंशन पेज (अंग्रेज़ी में)](@chrome)।",
-        "aExtLive": "WordByWord {minOS} या उसके बाद के वर्ज़न वाले iPhone और iPad पर चलता है, और App Store से Apple सिलिकॉन वाले Mac ({minMacOS} या बाद का वर्ज़न) और Apple Vision Pro पर भी। कंप्यूटर पर Chrome के लिए इसी डेवलपर का एक अलग एक्सटेंशन है: [WordByWord Translate for Chrome (अंग्रेज़ी पेज)](@chrome)। इसे सिर्फ़ उसी पेज के लिंक से इंस्टॉल करें।"
+        "aExtLive": "WordByWord {minOS} या उसके बाद के वर्ज़न वाले iPhone और iPad पर चलता है, और App Store से Apple सिलिकॉन वाले Mac ({minMacOS} या बाद का वर्ज़न) और Apple Vision Pro पर भी। कंप्यूटर पर Chrome के लिए इसी डेवलपर का एक अलग एक्सटेंशन है: [WordByWord Translate for Chrome (अंग्रेज़ी पेज)](@chrome)। इसे [Chrome वेब स्टोर](@chrome-store) से इंस्टॉल करें।"
       }
     ]
   },
