@@ -540,4 +540,5 @@
   - 输出变化：扩展页（en、zh-Hans）与扩展隐私页变为 index + 自引用 canonical，sitemap 23 → 26；header 出现 "Chrome extension" 项与 "Add to Chrome" 按钮；扩展页 CTA 指向 listing 并显示版本行；首页 FAQ `devices` 用 S1 答案；JSON-LD 带 `installUrl`。GSC 10-12 的 noindex 通知随之消失。
   - 验证：`npm run check` 0 错误（新增一条 D-18 警告：th 首页 80.0 KB 刚到预算线）；`npm test` 64/64，在 S0 模拟副本里同样 64/64。
   - 顺带发现（未改）：扩展把 `config.json`（含 GA `api_secret`）列为 web_accessible_resources，任何网页都能读到它；`externally_connectable` 为 `*://*/*` 但没有 `onMessageExternal` 处理器。建议在扩展下一版收紧。
-  - 待办：负责人审阅隐私页文本 → 提交 main → 发布到 `cloudflare-deploy` → GSC 对 `/chrome-extension/` 与 `/zh-hans/chrome-extension/` 请求编入索引；本条同步到 design-docs 分支。
+  - 发布（2026-10-13，负责人审阅隐私页文本后批准并本人推送）：main a3978bc；CI `check` 绿；main 预览 verify-deploy 178 pass / 0 fail；生产从 8ecd790 快进到 a3978bc，正式站契约测试 18 pass，verify-deploy 179 pass / 0 fail / 1 skip，`/chrome-extension/` 为 index + 自引用 canonical，sitemap 26 条。
+  - 待办：GSC 对 `/chrome-extension/` 与 `/zh-hans/chrome-extension/` 做网址检查并请求编入索引；T2/T3 的 FAQ 末句待母语复核。
