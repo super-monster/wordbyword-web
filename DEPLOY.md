@@ -253,4 +253,45 @@ DNS 回滚后 `/ja/` 等新 URL 在 GitHub 上是 404，属预期：回滚只是
 | T+4 周 | KPI 复盘 #1（03 §8.2）；title 是否被 Google 改写；微调 T1 次关键词；判断能否删除 `sitemap-legacy.xml`。确认已不需要回滚后，按 §9 下线 GitHub Pages，并且必须在证书 notAfter 之前完成。 |
 | T+6 周 | `sitemap-legacy.xml` 如果还没删，现在删除（`SITE.legacySitemap = false`，并在 GSC 删除该 sitemap）。 |
 | T+12 周 | KPI 复盘 #2；用"页面 × 查询"数据重排 Phase 2／3；复核 SE 推荐与 `ct` 数据；T2／T3 母语补审是否完成（R36）。 |
+| 2026-11 上旬 | 裸域跳转（§14）上线约 4 周：GSC 设置 → 抓取统计 → 按主机，`word-by-word.app` 主机的 DNS 错误应归零（基线：90 天 230 次，100% DNS 错误）；顺手跑一次 §14 的验证命令。 |
 | 每季度 | 文案复核（`copyReviewedAt`）；G4 每 6 个月一次（07 RK25）。 |
+
+## 14. 裸域跳转（`word-by-word.app` → `www`，2026-10-13 起）
+
+- 背景：裸域一直没有 A/AAAA 记录（F6、U1、06 §10.3 "另立小项"）。2026-10-13 GSC 复查：网域属性抓取统计里 39% 的请求是 DNS 错误，
+  全部来自裸域主机，www 主机健康。GCP Cloud DNS 不支持裸域 CNAME/ALIAS；Cloudflare Pages 的裸域自定义域要求整个 zone 在 Cloudflare，
+  而 NS 不能迁（研究 09 §3.7.3）。因此另起一个只做跳转的托管。
+- 方案：**Firebase Hosting 跳转站**（负责人 2026-10-13 确认）。
+  - 项目 `wordbyword-450603`（WordByWord 的 Firebase 项目），**独立站点 `wordbyword-apex`**（`https://wordbyword-apex.web.app`），不碰默认站点。
+  - 站点没有任何文件，只有两条跳转规则：`glob "/"` → 301 `https://www.word-by-word.app/`；`regex "^/(?P<path>.*)$"` → 301
+    `https://www.word-by-word.app/:path`。路径、尾斜杠、query 原样保留（glob `/:path*` 会丢掉首页和尾斜杠，所以用正则）。
+  - 自定义域 `word-by-word.app`，证书由 Firebase 自动签发与续期（zone 没有 CAA，不用加）。首张证书 2026-10-13 签发：
+    Google Trust Services WR3，SAN 只有 `word-by-word.app`，有效期 90 天，到期前由 Firebase 自动换发（前提：下面的 TXT 仍在）。
+  - Cloud DNS 区 `word-by-word-app` 只新增了裸域的两条记录，其它记录一概未动：
+
+    ```
+    word-by-word.app.  A    300  199.36.158.100
+    word-by-word.app.  TXT  300  "hosting-site=wordbyword-apex"
+    ```
+
+    **TXT 必须长期保留**（Firebase 用它授权签发和续期证书）。没有 AAAA（Firebase Hosting 不提供 IPv6）。DNSSEC 由 Cloud DNS 自动重签，无需操作。
+- 行为：
+  - `https://word-by-word.app/<path>?<q>` → **单跳 301** → `https://www.word-by-word.app/<path>?<q>`。
+  - `http://word-by-word.app/<path>` → 301 `https://word-by-word.app/<path>` → 301 www（**两跳**：Firebase 边缘先升级到 https；负责人接受）。
+    `.app` 整个顶级域在 HSTS 预加载列表里，浏览器从不发明文 http，两跳只影响 curl 与爬虫。
+- 验证（任何时候都可以跑）：
+
+  ```bash
+  curl -sI 'https://word-by-word.app/' | grep -i -E '^(HTTP|location)'            # 301 → https://www.word-by-word.app/
+  curl -sI 'https://word-by-word.app/ja/?x=1' | grep -i -E '^(HTTP|location)'     # 301 → https://www.word-by-word.app/ja/?x=1
+  curl -sI 'http://word-by-word.app/ja/' | grep -i -E '^(HTTP|location)'          # 301 → https://word-by-word.app/ja/（再 301 到 www）
+  echo | openssl s_client -connect word-by-word.app:443 -servername word-by-word.app 2>/dev/null | openssl x509 -noout -dates -ext subjectAltName
+  dig +dnssec word-by-word.app A @8.8.8.8 | grep -E 'flags|RRSIG'                 # flags 含 ad；有 RRSIG A
+  ```
+
+- 管理：Firebase 控制台 → 项目 WordByWord → Hosting → 站点 `wordbyword-apex`；或 Hosting REST API
+  `firebasehosting.googleapis.com/v1beta1/projects/wordbyword-450603/sites/wordbyword-apex`（`gcloud auth print-access-token` +
+  请求头 `x-goog-user-project: wordbyword-450603`，用 chijinlong@gmail.com）。改跳转目标：新建只含 `config.redirects` 的版本 → `status=FINALIZED` → release。
+- 回滚：Cloud DNS 删除裸域的 A 与 TXT 两条记录（回到"裸域不解析"的原状，TTL 300）；再在 Firebase 删除自定义域 `word-by-word.app`（站点可留）。
+  费用：0（Hosting 免费额度内，跳转响应几乎不占流量）。
+- 决策与执行记录：`design-docs` 分支 `ops/decision-log.md` 的「裸域跳转（2026-10-13）」。
