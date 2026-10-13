@@ -526,8 +526,13 @@
   3. 08:17 版本 `67b563ce88c13920`：`glob "/"` → `https://www.word-by-word.app/`；`regex "^/(?P<path>.*)$"` → `https://www.word-by-word.app/:path`。在 `wordbyword-apex.web.app` 实测：`/`、`/ja/`、`/ja`、`/privacy.html?x=1&y=2`、`/zh-hans/chrome-extension/`、`/a%20b/?q=%E6%97%A5%E6%9C%AC` 全部 301 到 www 同路径，尾斜杠与 query 原样保留。
   4. 08:16 创建自定义域 `word-by-word.app`，Firebase 要求的记录正好是 A `199.36.158.100` + TXT `hosting-site=wordbyword-apex`。
   5. 08:17 Cloud DNS 区 `word-by-word-app` 新增这两条（TTL 300），前后各列了一次全部记录，其它记录未变。权威、8.8.8.8、1.1.1.1 立即可查；`dig +dnssec` 对 A 有 RRSIG，`ad` 位置位。
-  6. 08:19 `ownershipState=OWNERSHIP_ACTIVE`；证书：待填。
-- **验证**：待填。
+  6. 08:19 `ownershipState=OWNERSHIP_ACTIVE`；08:22 `hostState=HOST_ACTIVE`；08:29 证书进入 `CERT_PROPAGATING`（Firebase 自己完成了 HTTP-01 验证，没有再加 `_acme-challenge` TXT）；08:45 实测证书已在边缘生效。
+- **验证**（2026-10-13 08:45 UTC，全部通过）：
+  - `curl -sI https://word-by-word.app/` → `HTTP/2 301`，`location: https://www.word-by-word.app/`（单跳）；`-L` 跟到底是 www 的 200。
+  - `curl -sI 'https://word-by-word.app/ja/?x=1'` → 301 `https://www.word-by-word.app/ja/?x=1`；`/privacy.html` → 301 `https://www.word-by-word.app/privacy.html`（路径、尾斜杠、query 原样保留，单跳）。
+  - `curl -sI http://word-by-word.app/ja/` → 301 `https://word-by-word.app/ja/` → 301 `https://www.word-by-word.app/ja/` → 200（两跳，均为 301，与负责人接受的方案一致）。
+  - `openssl s_client -servername word-by-word.app`：`Verify return code: 0 (ok)`；`subject=CN=word-by-word.app`，SAN `DNS:word-by-word.app`，颁发者 Google Trust Services WR3，有效期 2026-10-13 07:28:55 ～ 2027-01-11 08:16:26 UTC（90 天，Firebase 自动续期）。
+  - `dig +dnssec word-by-word.app A @8.8.8.8`：`flags … ad`，有 `RRSIG A`；TXT 同样有 RRSIG。`www`、`api.`、`backend.`、`backend-test.`、`home.` 公网解析结果与改动前一致。
 - **注意**：裸域 TXT `hosting-site=wordbyword-apex` 必须长期保留；没有 AAAA；回滚 = 删裸域 A/TXT，再删 Firebase 自定义域。操作手册见 main 分支 `DEPLOY.md` §14。
 - **后续**：约 4 周后（2026-11 上旬）看 GSC 抓取统计按主机的 DNS 错误是否归零（已写进 DEPLOY.md §13）。
 - **H4、H5 已取得：扩展子站切到 S1（2026-10-13，负责人提供 listing；待负责人审阅隐私页后提交、发布）**：
