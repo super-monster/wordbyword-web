@@ -118,7 +118,7 @@ www.word-by-word.app
 | P3-01 | `/ja/chrome-extension/`、`/ko/chrome-extension/` | 已进入 S1，且扩展在 0.1.2 之后发过新版本（证明仍在维护）（§3.2） |
 | P3-02 | T2 语言（es、pt-br、fr、de）的 `/<locale>/guides/<slug>/` | T1 指南在 GSC 中出现非品牌词展示 |
 | P3-03 | 目标语言落地页（研究 07 §8.1 的可选项，en，最多 2–4 个） | 需单独评审，默认不做。必须如实写出：中日韩源文不支持双击查词，Chunks/Action Flow 只支持英语（F15）。不得做成程序化矩阵（基线 §C） |
-| P3-04 | apex `word-by-word.app` → www | 另立小项，见基线 U1、F34 |
+| P3-04 | apex `word-by-word.app` → www | **已完成（2026-10-13）**：Firebase Hosting 跳转站，https 单跳 301、http 两跳，路径与 query 原样保留；见 文档 06 §10.3、决策日志「裸域跳转」、main 分支 `DEPLOY.md` §14（基线 U1、F34） |
 
 ### 2.5 保留路径（任何内容不得占用）
 
@@ -309,7 +309,7 @@ export const LOCALES = [
 | 旧图片 | `/img/**`、`/wbw_logo.png`、`/chrome-extension/img/*` | — | 404 | E | 见下 |
 | 旧 CSS/JS | `/css/{style,surfenglish-promo}.css`、`/js/{analytics,site-notice,surfenglish-promo}.js`、`/chrome-extension/style.css` | — | 404 | E | 见下 |
 | favicon | `/favicon.ico` | 原路径（用 App 图标派生的新文件，U2②） | 200 | — | 浏览器默认请求 |
-| http / apex | `http://www…`、`word-by-word.app` | — | CF 默认跳 https（需实测）；apex 不在范围内 | — | 研究 09 §3.2、U1 |
+| http / apex | `http://www…`、`word-by-word.app` | — | `http://www…` 由 CF 301 到 https 同路径（已实测）；apex 自 2026-10-13 起由 Firebase Hosting 跳转站 301 到 `https://www…` 同路径（文档 06 §10.3） | — | 研究 09 §3.2、U1；决策日志「裸域跳转」 |
 
 **旧图片、CSS、JS 不做跳转的理由**【决策】
 1. 图片 URL 的价值只体现在 Google 图片搜索中，可以忽略（研究 06 §6.2、研究 09 §3.4）。把图片 301 到 HTML 是错误信号；新图片带指纹，也没有一一对应的目标。
@@ -1085,3 +1085,4 @@ https://:version.:project.pages.dev/*
 | 引用规范化 | 已改：研究报告统一写成「研究 0X §…」，设计文档写成「文档 0X §…」；研究 09 风险表条目写明节号，避免与裁定 R# 混淆；依赖文档改为 `appendix/research/` 下的相对路径 | 全文 |
 | 一致性审计修正（2026-10-05） | 已改：§4.2 LOCALES 示例删除 v1.0 的 `se` 字段，说明改为由 `SIBLING`/`seMode()` 推导（`local`/`en-site`/`no-card`，与文档 04 §3.7、文档 06 §3.2 一致，R42、R43）；§10.1 落点 ② 注明只链 SE 官网、无 App Store 链接与 `ct`，⑤ 补 `ct=wbw-about`（文档 04 §7.2）；§6.7 sitemap 图片示例由不存在的 `hero-720` 改为 `shot/en/swipe-540`（hero 无位图，R66、文档 06 §3.6.1）；两处裸写的"06 §…"补"文档"前缀 | §4.1 注 ⁵；§4.2；§6.7；§7.5；§10.1 |
 | v1.3 验收修正（2026-10-05） | 已改：文首"依赖文档"的裁定范围 R1–R73 → R1–R84（含 v1.3 第五节）；§7.5"对 GA 报表的影响"表中 `page_path` 行的正则含未转义的竖线，在 GFM 表格里会拆出多余的一列，改为转义写法（`\|`）。`_redirects` 67/7（L 70/7、C 73/10、L+C 76/10）、A17 品牌阈值、§10.1 落点与 ct 经验收核对与 R74–R84 无冲突，未改 | 文首表；§7.5 |
+| 裸域跳转上线（2026-10-13） | 已改：apex `word-by-word.app` 自 2026-10-13 起由 Firebase Hosting 跳转站（项目 `wordbyword-450603`，站点 `wordbyword-apex`）301 到 `https://www.word-by-word.app/` 同路径（https 单跳，http 两跳；Cloud DNS 只新增裸域 A + TXT，NS 与其它记录未动）。原"本期维持现状 / 另立小项"的表述改为已解决，并指向 文档 06 §10.3、决策日志「裸域跳转」、main 分支 `DEPLOY.md` §14 | §2.4 P3-04；§5.1 表 |

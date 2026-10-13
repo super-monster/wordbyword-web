@@ -33,7 +33,7 @@
 
 | 方面 | 要点 | 详见 |
 |---|---|---|
-| 架构 / 托管 | 在同一仓库内重建零依赖生成器（沿用 SE 的 `build.mjs` 思路，Node 24）：`src/locales/*.json` + 模板 → `dist/` → Cloudflare Pages。只把 `www` 的 CNAME 改指 CF，不迁 NS，不动 `api.`、`backend*`，apex 不处理（U1）。构建本身就是闸门：38 项校验，任何 error 都会阻断部署。旧 URL 单跳 301（`_redirects` 默认 67 条静态、7 条动态）；`/privacy.html` 等契约 URL 在原地址直接返回 200 | 文档 06、02 |
+| 架构 / 托管 | 在同一仓库内重建零依赖生成器（沿用 SE 的 `build.mjs` 思路，Node 24）：`src/locales/*.json` + 模板 → `dist/` → Cloudflare Pages。只把 `www` 的 CNAME 改指 CF，不迁 NS，不动 `api.`、`backend*`；apex 由独立的 Firebase Hosting 跳转站 301 到 www（2026-10-13 上线，文档 06 §10.3）。构建本身就是闸门：38 项校验，任何 error 都会阻断部署。旧 URL 单跳 301（`_redirects` 默认 67 条静态、7 条动态）；`/privacy.html` 等契约 URL 在原地址直接返回 200 | 文档 06、02 |
 | 信息架构 | 英文首页 `/` 的 URL 不变（守住品牌词），另有 19 个 `/<locale>/`、`/about/`、扩展页（en + zh-Hans，S0/S1 两态）、契约页和 en 404；每页自引用 canonical，首页簇 22 条 hreflang；sitemap 23 条（S0）或 26 条（S1） | 文档 02 |
 | SEO 与关键词 | 定位为"用真实网页学外语的阅读助手"（R39）。首页主词取产品/品类意图（en 为 "Bilingual Web Page Translator App for iPhone"），how-to 类查询只归 Phase 2 指南 G1（R46）。一个功能一个主词（K1–K10），"关键词 → URL"唯一映射由 seoLint 断言；"学英语、英语新闻、分级、语块"归 SE。JSON-LD 与 SE 共用 Person `@id`。Phase 2 写 4 篇指南，不做程序化批量页 | 文档 03、08 |
 | SurfEnglish 推荐 | 叙事为"互补、也值得一试"，禁止"可能更适合你"一类替换性措辞（R40）。全部是构建期静态 HTML。落点：① 卡片（价格区后、FAQ 前）、② FAQ 一问、④ 页脚、⑤ about、⑥ SE 官网反链；zh-Hans 页只保留 ②④⑤（R42）。卡片高度桌面 ≤ 420px、手机 ≤ 480px，只用文字链接、不用黑色徽章，H2 以 SurfEnglish 开头；WBW 的徽章和最终 CTA 优先（R43） | 文档 04 |
@@ -69,7 +69,7 @@
 
 | # | 决策 |
 |---|---|
-| U1 | 托管用 Cloudflare Pages（b-lite）：只改 `www` 的 CNAME，不迁 NS，apex 本期维持现状 |
+| U1 | 托管用 Cloudflare Pages（b-lite）：只改 `www` 的 CNAME，不迁 NS，apex 本期维持现状（**2026-10-13 已另行解决**：Firebase Hosting 跳转站，文档 06 §10.3、决策日志「裸域跳转」） |
 | U2 | 只用现有素材：三套本地化截图、由此派生的图标和 OG 图、HTML/CSS 样张、SE 官网现有截图 |
 | U3 | Chrome 扩展子站纳入新站一起重做，并进入导航（落地方式见 R2） |
 | U4 | 对外署名 "Jinlong"；JSON-LD 中 `alternateName: "Chi Jinlong"` |
@@ -234,7 +234,7 @@ node docs/redesign-2026/prototype/tools/check.mjs        # 加 --no-chrome 可�
 | 隐私标签与同意管理 | 隐私标签写 "Data Not Collected"，App 却集成了 Firebase Analytics；官网 GA 对 EEA 访客没有同意机制 | 复核标签；H6 决定后改写 privacy 页（RK22） |
 | 扩展隐私页 | 权限说明和"不追踪"声明与 manifest 不符 | 上架前按 manifest 重写（H5、C-22） |
 | ASC Marketing URL | 各本地化仍指向根域；apps.apple.com 的外链是 nofollow，只算引荐入口 | 下一个版本改为对应语言页（H16、R51） |
-| apex 无法解析 | `word-by-word.app` 没有 A/AAAA 记录，切换后依旧 | 另立小项（U1、F6） |
+| apex 无法解析 | `word-by-word.app` 原先没有 A/AAAA 记录，切换时未处理（U1、F6） | **已解决（2026-10-13）**：Firebase Hosting 跳转站单跳 301 到 www，Cloud DNS 只加了裸域 A + TXT；见 文档 06 §10.3、决策日志「裸域跳转」、main 分支 `DEPLOY.md` §14 |
 | SE 官网没有统计 | 无法度量 WBW 带过去的流量 | 随 PR-SE-2 接入统计（F23） |
 | App 本地化瑕疵 | ar 译文缺 `dir`；ko 界面混有汉字，zh-TW 界面有大陆用语 | 下一个 App 版本修正（I18-05、I18-06） |
 | 域名续费 | 注册在 GCP Cloud Domains（项目 VirtualApiProject），2027-02-03 到期，自动续订已开（2026-10-06 核实） | 确认该 GCP 项目的结算账号保持有效 |
@@ -247,3 +247,4 @@ node docs/redesign-2026/prototype/tools/check.mjs        # 加 --no-chrome 可�
 |---|---|---|
 | v1.3 定稿修正（R74–R84） | 已改：关键决策表加入 R75、R76、R81，R8/R58 行并入 R79，R36 行并入 R80（en 不设外部审校、不阻塞 T0，删除"en 审校人未定，见 L6"）；工期数字与文档 07 v1.3 核对一致（人工 42.3 → 43.05，AI 辅助约 24 → 24.5，排期口径约 31 → 32 人日；T0 窗口 11-17～11-26、预期 11-25 与各里程碑日期不变；外部审校上线前只剩 ko）；开工前清单 H7 默认补 R80，"待拍板"段改为 L2/L4–L7 已由 R76、R77、R79–R81 处理；裁定范围 R1–R73 → R1–R84；文档地图中 04/08 的职责按 R75 改写；原型边界补 `png.mjs`（R79）与 R74/R77 的键名、样张来源。规则数 38 项、`_redirects` 67/7、RK01–RK29 经核对与文档 06、07 一致，未改 | §1.5；§2.2（R75、R76、R81 新增，R36/R80、R8/R58/R79 改写）；§3 文档地图（04、08、12-rulings、consistency-audit 行）与推荐阅读顺序；§4 引用约定 R 行；§5.1 H7 行与"待拍板"段；§6 与生产实现的边界；本表（新增） |
 | v1.3 验收修正（2026-10-05） | 已改：§6"与生产实现的边界"删除已过时的"原型保留旧键名 `sibling.section.*`/`aS1`/`demo.headline`、`render.mjs` 内 en 临时 X 文案"两条（原型 v1.3 已改读新键、无临时文案），改为说明 `render.mjs` 的旧字段兼容回落不得带入生产；覆盖范围中的"390 宽 en 页长 12,995px，余量 5px（K1）"更新为原型 README §3 的 v1.3 实测 12,947px（余量 53px），并补 SE 卡 390 宽 474px（余量 6px，K11）。§1.5 工期、§1.4 KPI、§1.3 的 67/7、38 项校验、sitemap 23/26、hreflang 22 与文档 07、06、02 逐项核对一致，未改 | §6 |
+| 裸域跳转上线（2026-10-13） | 已改：apex `word-by-word.app` 自 2026-10-13 起由 Firebase Hosting 跳转站（项目 `wordbyword-450603`，站点 `wordbyword-apex`）301 到 `https://www.word-by-word.app/` 同路径（https 单跳，http 两跳；Cloud DNS 只新增裸域 A + TXT，NS 与其它记录未动）。原"本期维持现状 / 另立小项"的表述改为已解决，并指向 文档 06 §10.3、决策日志「裸域跳转」、main 分支 `DEPLOY.md` §14 | §1.3 表；§2.1 U1；§8 |
