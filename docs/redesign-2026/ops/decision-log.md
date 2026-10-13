@@ -541,4 +541,5 @@
   - 验证：`npm run check` 0 错误（新增一条 D-18 警告：th 首页 80.0 KB 刚到预算线）；`npm test` 64/64，在 S0 模拟副本里同样 64/64。
   - 顺带发现（未改）：扩展把 `config.json`（含 GA `api_secret`）列为 web_accessible_resources，任何网页都能读到它；`externally_connectable` 为 `*://*/*` 但没有 `onMessageExternal` 处理器。建议在扩展下一版收紧。
   - 发布（2026-10-13，负责人审阅隐私页文本后批准并本人推送）：main a3978bc；CI `check` 绿；main 预览 verify-deploy 178 pass / 0 fail；生产从 8ecd790 快进到 a3978bc，正式站契约测试 18 pass，verify-deploy 179 pass / 0 fail / 1 skip，`/chrome-extension/` 为 index + 自引用 canonical，sitemap 26 条。
-  - 待办：GSC 对 `/chrome-extension/` 与 `/zh-hans/chrome-extension/` 做网址检查并请求编入索引；T2/T3 的 FAQ 末句待母语复核。
+  - GSC（2026-10-13，负责人授权）：两个扩展页网址检查均显示"被 noindex 排除"（上次抓取 10-07 / 10-10，即发布前版本），已各提交一次"请求编入索引"。
+  - 待办：T2/T3 的 FAQ 末句待母语复核；扩展页 ja/ko 版按 R1 留到 Phase 3。
