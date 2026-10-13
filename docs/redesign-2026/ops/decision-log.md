@@ -502,3 +502,42 @@
   - 发布前检查：WBW 的 12 个 `/<path>/` 都返回 200，没有跳转；`<html lang>` 与 SE 的 hreflang 一一对应（文档 04 §8.4、§8.5）。
   - 发布：SE 合并 f86353b，正式站抽查 14 个页面都正确。
   - 统计：SE 的 GA（SurfEnglish-Web）已加注释「PR-SE-2」。
+
+## 裸域跳转（2026-10-13，负责人确认后实施；07 §9 的「apex 另立小项」关闭）
+
+- **背景**：2026-10-13 GSC 复查，网域属性抓取统计里 39% 的请求是 DNS 错误，全部来自裸域主机 `word-by-word.app`（90 天 230 次，100% DNS 错误），www 主机健康。裸域从未有 A/AAAA 记录（F6、U1、06 §10.3）。
+- **约束**：不迁 NS（研究 09 §3.7.3）；不动 `api.`、`backend.`、`backend-test.`、`home.` 与 `www`；GCP Cloud DNS 不支持裸域 CNAME/ALIAS；Cloudflare Pages 的裸域自定义域要求 zone 在 Cloudflare；Cloud Domains 是自定义 DNS，没有"网站转发"。
+- **候选对比**（2026-10-13，只读核实）：
+
+  | | Firebase Hosting 跳转站【选定】 | GCP 外部 HTTPS 负载均衡器 + URL 重定向 | 第三方静态托管（Netlify 等） | 迁 NS 到 Cloudflare |
+  |---|---|---|---|---|
+  | DNS 改动 | 裸域 1 条 A + 1 条 TXT | 裸域 1 条 A + 1 条 AAAA | 裸域 1 条 A | 改 NS，先关 DNSSEC |
+  | 费用 | 0 | 约 18 美元/月起 | 0 | 0 |
+  | 证书 | 自动签发续期 | Google 托管证书 | 自动 | CF 自动 |
+  | https 跳转 | 单跳 301 | 单跳 | 单跳 | 单跳 |
+  | http 跳转 | 两跳（边缘先 301 到 https） | 单跳 | 开 Force HTTPS 后两跳 | 单跳 |
+  | IPv6 | 无 | 有 | 无 | 有 |
+  | 风险 | 无新账号，新增独立站点 | 4 个新资源、持续计费 | 新供应商 | 设计文档禁止 |
+
+- **负责人决定**（在父会话的选项卡中选择，原话）：问题 1 两跳——"接受两跳"；问题 2 项目——"wordbyword-450603"；问题 3 改 DNS 授权——"同意，开始实施"。
+- **执行记录**（UTC，用 chijinlong@gmail.com 的 gcloud 凭据 + Hosting REST API，未安装 firebase CLI）：
+  1. 08:15 新建站点 `projects/wordbyword-450603/sites/wordbyword-apex`（USER_SITE）。
+  2. 08:15 版本 `811b4cceef2db0de`：`glob "/:path*"` → `https://www.word-by-word.app/:path`。实测首页 `/` 404、`/ja/` 跳到 `/ja`（丢尾斜杠，会再被 CF 308 一次），**弃用**。
+  3. 08:17 版本 `67b563ce88c13920`：`glob "/"` → `https://www.word-by-word.app/`；`regex "^/(?P<path>.*)$"` → `https://www.word-by-word.app/:path`。在 `wordbyword-apex.web.app` 实测：`/`、`/ja/`、`/ja`、`/privacy.html?x=1&y=2`、`/zh-hans/chrome-extension/`、`/a%20b/?q=%E6%97%A5%E6%9C%AC` 全部 301 到 www 同路径，尾斜杠与 query 原样保留。
+  4. 08:16 创建自定义域 `word-by-word.app`，Firebase 要求的记录正好是 A `199.36.158.100` + TXT `hosting-site=wordbyword-apex`。
+  5. 08:17 Cloud DNS 区 `word-by-word-app` 新增这两条（TTL 300），前后各列了一次全部记录，其它记录未变。权威、8.8.8.8、1.1.1.1 立即可查；`dig +dnssec` 对 A 有 RRSIG，`ad` 位置位。
+  6. 08:19 `ownershipState=OWNERSHIP_ACTIVE`；证书：待填。
+- **验证**：待填。
+- **注意**：裸域 TXT `hosting-site=wordbyword-apex` 必须长期保留；没有 AAAA；回滚 = 删裸域 A/TXT，再删 Firebase 自定义域。操作手册见 main 分支 `DEPLOY.md` §14。
+- **后续**：约 4 周后（2026-11 上旬）看 GSC 抓取统计按主机的 DNS 错误是否归零（已写进 DEPLOY.md §13）。
+- **H4、H5 已取得：扩展子站切到 S1（2026-10-13，负责人提供 listing；待负责人审阅隐私页后提交、发布）**：
+  - 事实：扩展 WordByWord Translate 早已公开发布（ID `cnbhdmmboeodooopblgjaniaadchkihm`，2026-02-16 更新，版本 0.1.2，界面语言 en / zh_CN / ja / ko）。规范 listing URL 为 `https://chromewebstore.google.com/detail/wordbyword-translate/cnbhdmmboeodooopblgjaniaadchkihm`（不带 slug 的地址 301 到它）。商店后台登记的隐私政策 URL 就是契约 URL `/chrome-extension/privacy.html`（H5）。设计期 H4 标为"不阻塞"且无人提供，所以一直是 S0。
+  - 改动：
+    1. `SITE.chromeStoreUrl` 填入上述 URL（R2：拿到 H4 即为 S1）。
+    2. C7 的 S1 待办：rich ref 白名单新增 `@chrome-store`（S0 时为 null、渲染成纯文本），20 个 locale 的 `faq.items[devices].aExtLive` 末句改为链到商店（R45；T2/T3 语言为 LLM 译文，待母语复核）。
+    3. C-22：`src/legal/extension-privacy.html` 按 manifest v0.1.2 与源码重写。权限改为 storage / tabs / tts / sidePanel / activeTab 加 google-analytics.com；如实写明文本经 `api.word-by-word.app` 转发给 Azure / Google 翻译与 OpenAI / Gemini、本地翻译不出浏览器、GA4 Measurement Protocol 匿名统计（随机 install ID，可在选项页关闭）、设置走 Chrome 同步存储、历史与配额留在本机、朗读用浏览器 TTS。删去"不使用 cookie 或追踪"的旧说法；儿童年龄线与 App 隐私政策统一为 14（C-23）。`updated` 改为 2026-10-13。
+    4. 测试 D-24 改为两态通用：不论 `chromeStoreUrl` 取值，都用另一态的配置校验已构建页面来覆盖该态规则。
+  - 输出变化：扩展页（en、zh-Hans）与扩展隐私页变为 index + 自引用 canonical，sitemap 23 → 26；header 出现 "Chrome extension" 项与 "Add to Chrome" 按钮；扩展页 CTA 指向 listing 并显示版本行；首页 FAQ `devices` 用 S1 答案；JSON-LD 带 `installUrl`。GSC 10-12 的 noindex 通知随之消失。
+  - 验证：`npm run check` 0 错误（新增一条 D-18 警告：th 首页 80.0 KB 刚到预算线）；`npm test` 64/64，在 S0 模拟副本里同样 64/64。
+  - 顺带发现（未改）：扩展把 `config.json`（含 GA `api_secret`）列为 web_accessible_resources，任何网页都能读到它；`externally_connectable` 为 `*://*/*` 但没有 `onMessageExternal` 处理器。建议在扩展下一版收紧。
+  - 待办：负责人审阅隐私页文本 → 提交 main → 发布到 `cloudflare-deploy` → GSC 对 `/chrome-extension/` 与 `/zh-hans/chrome-extension/` 请求编入索引；本条同步到 design-docs 分支。
