@@ -548,3 +548,14 @@
   - 发布（2026-10-13，负责人审阅隐私页文本后批准并本人推送）：main a3978bc；CI `check` 绿；main 预览 verify-deploy 178 pass / 0 fail；生产从 8ecd790 快进到 a3978bc，正式站契约测试 18 pass，verify-deploy 179 pass / 0 fail / 1 skip，`/chrome-extension/` 为 index + 自引用 canonical，sitemap 26 条。
   - GSC（2026-10-13，负责人授权）：两个扩展页网址检查均显示"被 noindex 排除"（上次抓取 10-07 / 10-10，即发布前版本），已各提交一次"请求编入索引"。
   - 待办：T2/T3 的 FAQ 末句待母语复核；扩展页 ja/ko 版按 R1 留到 Phase 3。
+- **R42 修订：简体中文页也显示 SurfEnglish 卡片（2026-10-17，负责人决定）**：
+  - 起因：负责人注意到 zh-Hans 首页没有 SE 卡片，而 en、ja 有。排查确认这是 R42 的设计，不是故障。负责人决定 zh-Hans 也显示卡片，卡片上不加「未在中国大陆上架」的标注。
+  - 配置：`SIBLING.perLocale['zh-Hans']` 由 `{ card: false, availabilityNote: true }` 改为 `{ availabilityNote: true }`。
+  - FAQ「english-learner」末尾的 `sibling.availability` 照旧保留。追加条件改为看 `availabilityNote`，不再看 seMode。
+  - 规则改为按配置判断，不再写死 zh-Hans：
+    - D-11 的「不得出现卡片」「不得出现 SE 的 App Store 链接」，只对 seMode 为 'no-card' 的语言生效；
+    - L-11 的 availability 非空检查改为看 `availabilityNote`；
+    - 测试新增一条 no-card 场景（模拟 zh-Hans 为无卡片），全部测试 65 个通过。
+  - 文案：zh-Hans 卡片文案原本就有，未改内容；只在标题里加了 `{wbr}`（文档 08 同步），避免手机上从「同一开｜发者」中间断行。
+  - 卡片链接：App Store 链接为 `ct=wbw-card`（带 pt）；网站链接为 `surfenglish.app/zh-hans/`。
+  - 构建 0 错误。另有 23 条既有警告，其中 th 首页 80.0 KB 的 D-18 警告在改动前的 HEAD（a3978bc 之后）就已存在，与本次无关。
