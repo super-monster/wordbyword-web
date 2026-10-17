@@ -559,3 +559,39 @@
   - 文案：zh-Hans 卡片文案原本就有，未改内容；只在标题里加了 `{wbr}`（文档 08 同步），避免手机上从「同一开｜发者」中间断行。
   - 卡片链接：App Store 链接为 `ct=wbw-card`（带 pt）；网站链接为 `surfenglish.app/zh-hans/`。
   - 构建 0 错误。另有 23 条既有警告，其中 th 首页 80.0 KB 的 D-18 警告在改动前的 HEAD（a3978bc 之后）就已存在，与本次无关。
+- **SE 首屏横条与文案改写（2026-10-17，负责人决定）**：
+  - 起因：WBW 官网的自然流量比 SE 官网多。负责人希望访客一进 WBW 首页就能看到 SE 的推荐，所以在 hero 像素分隔线下方加一条推广横条。讨论了三种方案，负责人选了方案 A：一行横条，点击后滚动到 SE 卡片。负责人同时要求改写 SE 文案（原话要点）：
+    - 不强调"同一开发者"，用"我们的另一款"这类普通说法；
+    - 去掉"分级"相关描述（SE 目前没有真正有用的分级功能）；
+    - 重点写对照阅读、按上下文精准提示单词释义、全程不需要切换应用或任何跳转、在任意页面都能用。负责人确认写成「任意英文网页」。
+  - 落点 ⑦（⑥ 已是 SE 官网反链，所以编为 ⑦）：
+    - 位置与外观：`<aside id="se-strip">` 位于 `#hero` 与 `#features` 之间；纸面底色、hairline 边框，SE 图标 28 px，一句话加"了解一下 ↓"；无徽章、不吸顶，不带 App Store 链接。
+    - 链接：整条是一个指向 `#surfenglish` 的页内链接。平滑滚动（减少动效时直接跳），到达后卡片边框亮一次。
+    - 开关：`SIBLING.placements.strip`。与 ① 同条件渲染（no-card、公告开启时都不渲染）。
+    - 规格见文档 04 §3.8。
+  - 文案（20 个 locale，`src/locales/*.json`；en / ja / zh-Hans 同步到文档 08 §2–§4）：
+    - 称呼：eyebrow 改为"我们的另一款 App / Our other app"，页脚栏标题改为"我们的其他 App / More from us"。
+    - 删除：`{se.levels}` 分级、"从 Safari 分享"。
+    - 卖点：
+      - 标题与正文：英文新闻和任意英文网页双语对照着读、不用另开词典；
+      - 三条要点：译文在原文下方、双击看结合上下文的释义、复习游戏。
+    - FAQ ② 答案同样改写。en `/about/` 的 family 段去掉"at your level"和分级；maker 事实句"同一位开发者"保留。
+    - 8 个 en-site 语言 FAQ 末尾的界面语言说明原样保留。
+  - 写的过程中被现有规则挡下、相应调整的地方：
+    - **"不用切换 App"类说法**：各语言的"without switching apps / sans changer d’app / ohne App-Wechsel …"都被 claims-lint `safari-extension`（F13）判为错误，规则原意是不能暗示能在别的 App 里用。改成"不用另开词典（或翻译 App）"，意思是全程留在 SE 里，不跳转。
+    - **术语表**（glossary）：zh-Hant 的「雙擊」改为「點兩下」；pl 改为 "dotknij dwukrotnie słowa"。
+    - **卡片高度**（R10 / R84）：初稿正文约 45 词，ru/uk 卡片在 375 px 宽时达 574 px。改为正文约 20–25 词、要点各一行，en-site 语言的站点链接文字也缩短。实测：
+      - 1280 宽 ≤ 412 px（上限 420）；
+      - 375 宽 ≤ 469 px（上限 480）；
+      - 320 宽 ≤ 558 px（上限 560）。
+    - **横条长度**：先写的两句版在手机上 4–6 行，改为一句话。实测 1280 宽 1–2 行，375 宽 3–4 行；手机上提示语接在句尾，省一行。新增 L-8 规则 `sibling.strip.text` n 140 / CJK 60。
+  - 校验与测试：
+    - L-3：要求 ① 可见的语言有 `sibling.strip.*`；L-7：`sibling.strip.text` 列为 rich 字段。
+    - D-11：
+      - 横条只能有一个链接，且指向 `#surfenglish`；
+      - 横条必须位于 hero 与 features 之间，不能脱离 ① 单独出现，① 可见时不能缺；
+      - `data-ga-view` 允许出现在 `#surfenglish` 与 `#se-strip` 上。
+    - `SIBLING.copyReviewedAt` 改为 2026-10-17。
+    - 测试新增 D-11 横条一条和 L-3 一条，共 66 个，全部通过。构建 0 错误，23 条警告与改动前相同。
+  - 统计：横条曝光为 `surfenglish_promo_view`（label `strip`），点击为 `surfenglish_promo`（label `strip`）。在本地无头 Chrome 中依次触发了横条曝光、横条点击、卡片曝光三个事件。守护指标：WBW 的 `app_store_click / page_view`，与 4.0 % 的基线比较。
+  - 发布：与 dfbd1fe（zh-Hans 显示卡片）一起，等负责人批准后发布到生产。

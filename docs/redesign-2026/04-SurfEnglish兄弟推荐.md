@@ -73,6 +73,12 @@
 | "Free to start / 免费开始" | 价格数字、评分、下载量、"New / 新上线"；"Many people use both"一类无法核实的说法 | 价格因地区而异且会变动；SE 评分接近 0（研究 05 §3.5）；研究 04 U9；G5 |
 | 句号收尾，不用感叹号和 emoji | —— | —— |
 
+> **2026-10-17 负责人修订**（决策日志「SE 首屏横条与文案改写」；与上表冲突处以此为准）：
+> - 称呼：用"我们的另一款 App / our other app / 私たちのもうひとつのアプリ"，页脚栏标题用"我们的其他 App / More from us"，**不再强调"同一开发者"**（R28 的第三人称要求就此放宽为只允许这一种第一人称说法；"我们的团队 / our team""姊妹 App / sister app"仍然禁止，claims-lint 照旧）。`/about/` 的 maker / family 段是事实陈述，保留"同一位开发者"。
+> - 卖点（R41 修订）：**不写分级**（SE 目前还没有真正有用的分级功能），也不写从 Safari 分享。改为：英文新闻和**任意英文网页**双语对照着读（译文在原文下方）、双击单词看结合上下文的释义、不用另开词典或翻译 App、复习游戏。"任意英文网页"限定为英文，由负责人确认可用；WBW 的"任意网页、任何语言"不受影响。
+> - 不写"without switching apps / 不用切换 App"及各语言同义说法：F13 的 claims-lint 规则 safari-extension 会报错，读者也可能理解成"能在别的 App 里用"。改写成"不用另开词典"。
+> - "新 / New / 升级 / 更快"照旧禁止（se-hype）。
+
 ### 1.4 与现有临时方案的逐项对比
 
 | # | 维度 | 现状（证据） | 新方案 | 为什么改 |
@@ -158,6 +164,7 @@
 | ④ 页脚 | 全站所有页面 | 页脚中一栏 | 1 | 0 | `placements.footer` |
 | ⑤ about 家族说明 | `/about/`（en） | 正文中一节 | 2（SE 官网 + SE about） | 1 | `placements.about` |
 | ⑥ SE 反向链接 | surfenglish.app 全站 + `/about/` | 页脚一栏 + about 一节 | — | 1（WBW） | SE 仓库（§8） |
+| ⑦ 首屏下方横条（2026-10-17 新增） | 20 个语言首页（与 ① 同条件：no-card 与公告开启时不渲染） | hero 像素分隔线下方一行 `<aside id="se-strip">`，整条是指向 `#surfenglish` 的页内链接 | 0 | 0 | `placements.strip`（且 ① 可见） |
 
 每页链接计数：首页 = ① 1 + ② 1 + ④ 1 = 3 个 surfenglish.app 链接、1 个 SE App Store 链接（zh-Hans 为 2 个、0 个）；`/about/` = ⑤ 2 + ④ 1 = 3 个、1 个（about 的 maker 段只用纯文本提到 SurfEnglish，不放链接，PRO-12）。
 
@@ -167,7 +174,8 @@
 
 ```
 ┌ Header (WBW)                                         ┐
-│ Hero (WBW)                         ← 首屏只有 WBW    │
+│ Hero (WBW)                                           │
+│ ⑦ 横条 aside#se-strip (SE)  ← 一行，只滚动到 ①（2026-10-17）│
 │ 功能 Features / 截图 (WBW)                           │
 │ 语言支持 Languages (WBW)            ← 不再有 ③        │
 │ 价格 Pricing (WBW) + WBW App Store 徽章  ← R43 必须有 │
@@ -465,6 +473,37 @@ locale JSON 的键（en 为例；键路径与文档 06 v1.1 §4.2 一致）：
 10. `suppressWhenNotice` 为 true 且 site-notice 开启时，不输出 ①（其余落点不变）。
 
 ---
+
+### 3.8 ⑦ 首屏下方推广横条（2026-10-17 新增，负责人决定）
+
+**起因**：WBW 官网的自然流量比 SE 官网多，负责人希望访客一进来就能看到 SE 的推荐。原来的"首屏只有 WBW"（§3.0 示意图）就此放宽为：首屏下方允许有这一条横条，其余约束不变。
+
+**形式**（方案 A）：
+- 位置：hero 底部像素分隔线（`.edge-mosaic`）正下方，`#features` 之前。
+- 外观：与 ① 同一纸面底色（`--paper-2`）、1 px hairline 边框、`--r-3` 圆角；不用 WBW 的红色按钮色，没有徽章，不吸顶，也不做关闭按钮。
+- 内容：SE 图标 28 px + 一句话（`sibling.strip.text`，品牌用 `**SurfEnglish**` 加粗）+ 提示语（`sibling.strip.cta`，后接 ↓）。
+- 链接：整条是一个指向 `#surfenglish` 的页内链接，平滑滚动到 ①（`prefers-reduced-motion` 下直接跳）。到达后 ① 的边框亮一次（`:target` 动画，减少动效时不播）。
+- 版式：≥ 900 px 时图标、文字、提示语排成一行；手机上图标左浮，提示语接在文字后面。
+
+**文案**：一句话，结构为"也在学英语？试试我们的另一款 App SurfEnglish：英文新闻和任意英文网页，都能双语对照着读"。L-8 长度上限：n 140 / CJK 60，`cta` wu 20。20 个语言实测：1280 px 下 1–2 行，375 px 下 3–4 行（89–110 px），320 px 下最多 5 行。
+
+**渲染条件**：`placements.strip` 为真，且 ① 可见（seMode ≠ no-card、公告未开启）。横条只是指向 ① 的指针，所以 ① 不渲染时横条也不渲染。
+
+**校验**：
+- L-3：① 可见的语言必须有 `sibling.strip.text` / `cta`。
+- L-7：`sibling.strip.text` 是 rich 字段。
+- D-11：
+  - `#se-strip` 只能有一个链接，且指向 `#surfenglish`；
+  - 必须位于 `#hero` 与 `#features` 之间；
+  - 不能没有 ① 单独出现；
+  - ① 可见时不能缺少横条；
+  - `data-ga-view` 允许出现在 `#surfenglish` 和 `#se-strip` 上。
+
+**统计**（文档 06 §8.2）：
+- 曝光：`surfenglish_promo_view`，label `strip`（≥ 50 % 可见时，每页一次）。
+- 点击：`surfenglish_promo`，label `strip`。
+- 横条不带 App Store 链接，所以不新增 ct 值。
+- 守护指标：上线后 WBW 的 `app_store_click / page_view`，与上线前 4.0 % 的基线比较。
 
 ## 4. 20 个 locale 的推荐矩阵【决策】
 
