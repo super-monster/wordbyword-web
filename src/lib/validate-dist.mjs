@@ -756,7 +756,7 @@ export function validateDist(dist, ctx, issues) {
         ctValues.get(m[1]).add(ct);
       }
       if (m[1] === cfg.SIBLING.appStoreId) {
-        if (r?.locale.code === 'zh-Hans') E('D-11', `${at}: SurfEnglish App Store link on a zh-Hans page (R42, F18)`);
+        if (r && cfg.seMode(r.locale) === 'no-card') E('D-11', `${at}: SurfEnglish App Store link on a ${r.locale.code} page (seMode 'no-card', R42, F18)`);
         if (find(a, (e) => e.tag === 'img' || e.tag === 'svg') || hasClass(a, 'asb')) E('D-11', `${at}: the SurfEnglish App Store link must be a text link, not a badge (R43)`);
       }
     }
@@ -765,7 +765,7 @@ export function validateDist(dist, ctx, issues) {
     }
     if (se) {
       if (r?.page.id !== 'home') E('D-11', `${at}: #surfenglish is only allowed on home pages (contract pages, 404 and the extension pages have none, baseline §F)`);
-      if (r?.locale.code === 'zh-Hans' || (r && cfg.seMode(r.locale) === 'no-card')) E('D-11', `${at}: #surfenglish must not render for ${r.locale.code} (R42)`);
+      if (r && cfg.seMode(r.locale) === 'no-card') E('D-11', `${at}: #surfenglish must not render for ${r.locale.code} (seMode 'no-card', R42)`);
       if (cfg.notice?.enabled && cfg.SIBLING.suppressWhenNotice) E('D-11', `${at}: #surfenglish must not render while the site notice is on (R35)`);
       if (find(se, (e) => hasClass(e, 'asb') || hasClass(e, 'asb--official') || (e.tag === 'img' && /badge/.test(e.attrs.src ?? '')))) E('D-11', `${at}: App Store badge inside #surfenglish (R43: text links only)`);
       const h2 = find(se, (e) => e.tag === 'h2');
@@ -781,10 +781,10 @@ export function validateDist(dist, ctx, issues) {
       const pricing = p.ids.get('pricing');
       const badge = pricing && find(pricing, (e) => e.tag === 'a' && hasClass(e, 'asb') && new RegExp(`id${SITE.appStoreId}\\b`).test(e.attrs.href ?? ''));
       if (!badge) E('D-11', `${at}: #pricing must contain the WordByWord App Store badge link (R43)`);
-      const noCard = cfg.seMode(r.locale) === 'no-card';
+      const noteOn = cfg.SIBLING.perLocale?.[r.locale.code]?.availabilityNote;
       const availability = getPath(strings[r.locale.code], 'sibling.availability');
       const faqSe = p.ids.get('faq-english-learner');
-      if (noCard && cfg.SIBLING.enabled && cfg.SIBLING.placements?.faq && availability && faqSe && !normSpace(textOf(faqSe)).includes(normSpace(availability))) {
+      if (noteOn && cfg.SIBLING.enabled && cfg.SIBLING.placements?.faq && availability && faqSe && !normSpace(textOf(faqSe)).includes(normSpace(availability))) {
         E('D-11', `${at}: the english-learner FAQ answer must end with sibling.availability (R42, F18)`);
       }
     }

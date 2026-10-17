@@ -891,7 +891,7 @@ function ruleL11(X, c) {
       E('L-11', `${c.code} sibling.card.uiNote must not claim an app interface in this language ("App in {se.uiLanguages} …", F10): write "English and N other languages"`);
     }
   }
-  if (c.seMode === 'no-card' && !String(getPath(c.t, 'sibling.availability') ?? '').trim()) E('L-11', `${c.code} sibling.availability must be non-empty (seMode 'no-card', R42)`);
+  if (X.cfg.SIBLING.perLocale?.[c.code]?.availabilityNote && !String(getPath(c.t, 'sibling.availability') ?? '').trim()) E('L-11', `${c.code} sibling.availability must be non-empty (SIBLING.perLocale.${c.code}.availabilityNote, R42)`);
 }
 
 // ——— L-12: plural objects and hard-coded product numbers (R62, I18-02) ———

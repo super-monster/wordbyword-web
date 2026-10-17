@@ -561,7 +561,6 @@ test('D-11 SurfEnglish placements and App Store attribution (R3, R35, R40, R42, 
         .replace(/<div class="pricing-cta"><a class="asb[^"]*"/, '<div class="pricing-cta"><a class="btn"') // drawn or official badge
         .replace('<main id="main">', '<main id="main"><p data-ga-label="langhint_anchor" data-ga-view="x"><a href="https://apps.apple.com/app/apple-store/id6741724502?pt=1&ct=wbw-hero-en&mt=8">x</a></p>');
     });
-    edit(d, 'zh-hans/index.html', inMain('<a href="https://apps.apple.com/app/id6787367021">SurfEnglish</a>'));
   });
   expectE(i, 'D-11', /\/ \(en\): #surfenglish must sit after #pricing and before #faq/);
   expectE(i, 'D-11', /the #surfenglish H2 must start with "SurfEnglish"/);
@@ -572,7 +571,16 @@ test('D-11 SurfEnglish placements and App Store attribution (R3, R35, R40, R42, 
   expectE(i, 'D-11', /data-ga-label="langhint_anchor"/);
   expectE(i, 'D-11', /data-ga-view is only allowed on #surfenglish/);
   expectE(i, 'D-11', /ct "wbw-hero-en" is not a registered placement/);
+});
+
+// R42 as revised 2026-10-17: every locale shows the card; a locale configured as 'no-card' must show neither the card
+// nor a SurfEnglish App Store link.
+test('D-11 no-card locales show no card and no SurfEnglish App Store link (R42)', () => {
+  const i = runDist((d) => edit(d, 'zh-hans/index.html', inMain('<a href="https://apps.apple.com/app/id6787367021">SurfEnglish</a>')), {
+    cfgMut: (cfg) => { const seMode = cfg.seMode; cfg.seMode = (l) => (l.code === 'zh-Hans' ? 'no-card' : seMode(l)); },
+  });
   expectE(i, 'D-11', /\/zh-hans\/ \(zh-Hans\): SurfEnglish App Store link on a zh-Hans page/);
+  expectE(i, 'D-11', /\/zh-hans\/ \(zh-Hans\): #surfenglish must not render for zh-Hans/);
 });
 
 test('D-12 _redirects structure, fixture and the all-switches self-test (R54)', () => {

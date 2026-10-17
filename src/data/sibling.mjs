@@ -11,7 +11,9 @@ export const SIBLING = {
   },                                   // locales not listed → SurfEnglish English home ('en-site')
   platforms: ['iPhone', 'iPad'],
   perLocale: {
-    'zh-Hans': { card: false, availabilityNote: true }, // R42: only ②④⑤; SE is not on the China mainland App Store
+    // R42 as revised 2026-10-17 (owner): zh-Hans shows the card like every other locale, with no availability note on
+    // it; the english-learner FAQ answer still ends with sibling.availability (SE is not on the China mainland store).
+    'zh-Hans': { availabilityNote: true },
     de: { uiNote: true }, fr: { uiNote: true }, it: { uiNote: true }, nl: { uiNote: true },
     pl: { uiNote: true }, ru: { uiNote: true }, tr: { uiNote: true }, uk: { uiNote: true },
   },
