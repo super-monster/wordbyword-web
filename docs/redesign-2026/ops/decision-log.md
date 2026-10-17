@@ -595,3 +595,13 @@
     - 测试新增 D-11 横条一条和 L-3 一条，共 66 个，全部通过。构建 0 错误，23 条警告与改动前相同。
   - 统计：横条曝光为 `surfenglish_promo_view`（label `strip`），点击为 `surfenglish_promo`（label `strip`）。在本地无头 Chrome 中依次触发了横条曝光、横条点击、卡片曝光三个事件。守护指标：WBW 的 `app_store_click / page_view`，与 4.0 % 的基线比较。
   - 发布：与 dfbd1fe（zh-Hans 显示卡片）一起，等负责人批准后发布到生产。
+  - **同日第二次决定（负责人看过预览后）**：
+    1. 文案**要写"不用切换 App"**，负责人认为普通人更好懂（原话："如果需要就修改站点的文案检查规则"）。
+       - claims-lint：把 safari-extension 里各语言"无需切换 App / without switching apps / sans changer d’app …"的写法拆成新规则 `app-switching`。豁免范围：`sibling.*`、`faq.items[english-learner]`，以及原有的 `faq.items[safari]`、`about.sections[limits].text`、`chromeExtension.*`。
+       - 新规则顺带补上常见说法：en "no app switching"、zh "不用 / 不需要切换 App"、ja「アプリの切り替えは不要」、ko「앱을 바꿀 필요」「앱 전환 없이」。WBW 文案照旧禁止，现有文案没有命中。
+       - 卡片正文和 FAQ ② 的"不用另开词典"在 20 个语言里都换回"不用切换 App"。
+    2. 横条开头"也在学英语？"负责人觉得别扭，改用负责人给的问句"想读英语新闻提高阅读能力？"。全句为"想读英语新闻提高阅读能力？试试我们的另一款 App **SurfEnglish**：新闻和任意英文网页都能双语对照着读，双击单词看语境释义，不用切换 App。"，其余 19 种语言按同一结构写。
+       - L-8 上限改为 n 210 / CJK 90。
+       - 桌面上文字 `text-wrap: balance`，CJK 加 `word-break: keep-all`：第一行是问句 + 品牌，第二行是卖点。
+    - 卡片高度复测，tr / id 正文再缩短一点后全部达标：1280 宽 ≤ 412 px；375 宽 ≤ 469 px；320 宽 ≤ 558 px。
+    - 测试：L-14 用例新增 app-switching 两条断言（WBW 文案报错、SE 文案不报错），共 66 个，全部通过。
