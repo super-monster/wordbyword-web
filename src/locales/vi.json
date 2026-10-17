@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Tôi đang học tiếng Anh. SurfEnglish có đáng để thử thêm không?",
-        "a": "Hãy cứ dùng WordByWord cho những trang web và bài đăng X bạn chọn, bằng tiếng Anh hay bất kỳ ngôn ngữ nào khác. Nếu bạn muốn có thêm tin tiếng Anh mỗi ngày được chia theo trình độ ({se.levels}) và trò chơi ôn lại những câu và từ bạn đã lưu, thì SurfEnglish, ứng dụng của cùng nhà phát triển, có sẵn những thứ đó với cùng thao tác vuốt và nhấn đúp. Hai ứng dụng có thể dùng song song. [Trang web SurfEnglish](@se-site)"
+        "a": "Hãy cứ dùng WordByWord cho những trang web và bài đăng X bạn chọn, bằng tiếng Anh hay bất kỳ ngôn ngữ nào khác. Nếu bạn đang học tiếng Anh, hãy thử thêm SurfEnglish, một ứng dụng khác của chúng tôi: tin tức hằng ngày và mọi trang web tiếng Anh đều có bản dịch ngay dưới bản gốc, nhấn đúp vào một từ là thấy nghĩa theo ngữ cảnh, không cần mở từ điển hay ứng dụng dịch. Những câu và từ đã lưu có thể ôn lại bằng trò chơi. Hai ứng dụng có thể dùng song song. [Trang web SurfEnglish](@se-site)"
       },
       {
         "id": "devices",
@@ -411,23 +411,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "Từ nhà phát triển WordByWord",
-      "title": "SurfEnglish: tin tiếng Anh mỗi ngày theo trình độ của bạn",
-      "body": "Bạn đang học tiếng Anh? Cứ đọc trang nào bạn thích trong WordByWord, và thử thêm SurfEnglish: tin tiếng Anh mỗi ngày theo trình độ và trò chơi ôn tập, với cùng thao tác vuốt và nhấn đúp.",
+      "eyebrow": "Ứng dụng khác của chúng tôi",
+      "title": "SurfEnglish: tin tức và trang web tiếng Anh, song ngữ",
+      "body": "Đang học tiếng Anh? SurfEnglish có tin tức tiếng Anh mỗi ngày và mở được mọi trang web tiếng Anh để đọc song ngữ, không cần từ điển. Ngôn ngữ khác: dùng WordByWord.",
       "points": [
-        "Tin tiếng Anh thật ở các cấp độ {se.levels}",
-        "Trò chơi ôn lại những gì bạn đã đọc",
-        "Chia sẻ bài tiếng Anh từ Safari"
+        "Bản dịch hiện ngay dưới bản gốc",
+        "Nhấn đúp: nghĩa của từ theo ngữ cảnh",
+        "Trò chơi ôn lại những gì bạn đã đọc"
       ],
       "note": "Bắt đầu miễn phí · iPhone và iPad · Giao diện {se.uiLanguages} ngôn ngữ, có tiếng Việt · Dịch sang {se.targetLanguages} ngôn ngữ",
-      "linkText": "Đọc tin tiếng Anh song ngữ — SurfEnglish",
+      "linkText": "Đọc tin tức và trang web tiếng Anh song ngữ — SurfEnglish",
       "appStoreLinkText": "Tải SurfEnglish trên App Store",
       "shotAlt": "SurfEnglish, màn hình Games (giao diện tiếng Anh): Sentence Builder và Word Raid, chơi với câu và từ đã lưu",
       "shotCaption": "Ảnh chụp màn hình SurfEnglish (giao diện tiếng Anh)"
     },
     "footer": {
-      "heading": "Cùng nhà phát triển",
+      "heading": "Ứng dụng khác của chúng tôi",
       "linkText": "SurfEnglish: Bilingual News"
+    },
+    "strip": {
+      "text": "Bạn cũng đang học tiếng Anh? Thử **SurfEnglish**, ứng dụng khác của chúng tôi: đọc song ngữ tin tức và mọi trang web tiếng Anh.",
+      "cta": "Tìm hiểu thêm"
     }
   },
   "cta": {

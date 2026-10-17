@@ -732,7 +732,7 @@ export function validateDist(dist, ctx, issues) {
     // ——— D-11: recommendation and attribution rules ———
     const ga = allEls.filter((e) => 'data-ga-label' in e.attrs && e.attrs['data-ga-label'] === 'langhint_anchor');
     if (ga.length) E('D-11', `${at}: data-ga-label="langhint_anchor" — placement ③ was removed (R42)`);
-    for (const e of allEls.filter((x) => 'data-ga-view' in x.attrs)) if (e.attrs.id !== 'surfenglish') E('D-11', `${at}: data-ga-view is only allowed on #surfenglish (doc 06 §8.2)`);
+    for (const e of allEls.filter((x) => 'data-ga-view' in x.attrs)) if (!['surfenglish', 'se-strip'].includes(e.attrs.id)) E('D-11', `${at}: data-ga-view is only allowed on #surfenglish and #se-strip (doc 06 §8.2)`);
     const se = p.ids.get('surfenglish');
     const anchors = allEls.filter((e) => e.tag === 'a' && e.attrs.href);
     for (const a of anchors) {
@@ -775,9 +775,20 @@ export function validateDist(dist, ctx, issues) {
       if (!pricing || !faq || !(pricing.start < se.start && se.start < faq.start)) E('D-11', `${at}: #surfenglish must sit after #pricing and before #faq (doc 02 §7.5)`);
       seRoutes.push(r);
     }
+    // placement ⑦: a pointer to ① right under the hero — one in-page link, nothing to install from here
+    const strip = p.ids.get('se-strip');
+    if (strip) {
+      if (!se) E('D-11', `${at}: #se-strip renders without #surfenglish — the strip only points at the card (placement ⑦)`);
+      const links = findAll(strip, (e) => e.tag === 'a');
+      if (links.length !== 1 || links[0].attrs.href !== '#surfenglish') E('D-11', `${at}: #se-strip must hold exactly one link, to #surfenglish (placement ⑦)`);
+      const hero = p.ids.get('hero');
+      const features = p.ids.get('features');
+      if (!hero || !features || !(hero.start < strip.start && strip.start < features.start)) E('D-11', `${at}: #se-strip must sit between #hero and #features (placement ⑦)`);
+    }
     if (r?.page.id === 'home') {
       const visibleCard = cfg.SIBLING.enabled && cfg.SIBLING.placements?.card && cfg.seMode(r.locale) !== 'no-card' && !(cfg.notice?.enabled && cfg.SIBLING.suppressWhenNotice);
       if (visibleCard && !se) E('D-11', `${at}: #surfenglish (placement ①) is missing`);
+      if (visibleCard && cfg.SIBLING.placements?.strip && !strip) E('D-11', `${at}: #se-strip (placement ⑦) is missing`);
       const pricing = p.ids.get('pricing');
       const badge = pricing && find(pricing, (e) => e.tag === 'a' && hasClass(e, 'asb') && new RegExp(`id${SITE.appStoreId}\\b`).test(e.attrs.href ?? ''));
       if (!badge) E('D-11', `${at}: #pricing must contain the WordByWord App Store badge link (R43)`);

@@ -402,7 +402,7 @@
       {
         "id": "english-learner",
         "q": "영어를 공부하고 있어요. SurfEnglish도 써 볼 만한가요?",
-        "a": "직접 고른 웹페이지와 X 게시물은 영어든 다른 언어든 지금처럼 WordByWord로 읽으면 됩니다. 레벨({se.levels})별로 나뉜 영어 뉴스를 매일 읽고, 저장한 문장과 단어를 게임으로 복습하고 싶다면, 같은 개발자가 만든 SurfEnglish가 같은 스와이프와 두 번 탭으로 그 기능을 더해 줍니다. 두 앱은 함께 쓸 수 있습니다. [SurfEnglish 공식 웹사이트](@se-site)"
+        "a": "직접 고른 웹페이지와 X 게시물은 영어든 다른 언어든 지금처럼 WordByWord로 읽으면 됩니다. 영어를 공부하고 있다면 저희의 또 다른 앱 SurfEnglish도 써 보세요. 매일의 영어 뉴스와 어떤 영어 웹페이지든 원문 바로 아래에 번역을 띄워 읽을 수 있고, 단어를 두 번 탭하면 문맥에 맞는 뜻이 나오며, 사전이나 번역 앱을 따로 열 필요도 없습니다. 읽은 문장과 단어는 게임으로 복습할 수 있어요. 두 앱은 함께 쓸 수 있습니다. [SurfEnglish 공식 웹사이트](@se-site)"
       },
       {
         "id": "devices",
@@ -414,23 +414,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "WordByWord 개발자가 만든 앱",
-      "title": "SurfEnglish: 내 수준에 맞는 영어 뉴스, 매일",
-      "body": "영어를 공부하고 있나요? 읽고 싶은 페이지는 계속 WordByWord로 읽으면서 SurfEnglish도 써 보세요. 매일 올라오는 레벨별 영어 뉴스와 복습 게임을 익숙한 스와이프와 두 번 탭 그대로 이용할 수 있어요.",
+      "eyebrow": "저희의 또 다른 앱",
+      "title": "SurfEnglish: 영어 뉴스와 웹페이지를 번역과 함께",
+      "body": "영어를 공부하고 있나요? SurfEnglish는 매일 영어 뉴스를 준비하고 어떤 영어 웹페이지든 번역과 함께 보여 줘서 사전 앱이 필요 없어요. 다른 언어 페이지는 WordByWord로 읽으세요.",
       "points": [
-        "{se.levels} 레벨로 나뉜 실제 영어 뉴스",
-        "읽은 내용으로 만드는 복습 게임",
-        "Safari에서 영어 기사를 SurfEnglish로 공유"
+        "원문 바로 아래에 번역 표시",
+        "두 번 탭하면 문맥에 맞는 단어 뜻",
+        "읽은 내용으로 만드는 복습 게임"
       ],
       "note": "무료로 시작 · iPhone / iPad · 앱 화면은 한국어 포함 {se.uiLanguages}개 언어 · {se.targetLanguages}개 언어로 번역",
-      "linkText": "SurfEnglish로 내 수준에 맞는 영어 뉴스 읽기",
+      "linkText": "SurfEnglish로 영어 뉴스와 웹페이지를 원문·번역 함께 읽기",
       "appStoreLinkText": "App Store에서 SurfEnglish 다운로드",
       "shotAlt": "SurfEnglish 게임 화면(영어 인터페이스): 저장한 문장과 단어로 플레이할 수 있는 Sentence Builder와 Word Raid",
       "shotCaption": "SurfEnglish 스크린샷(영어 인터페이스)"
     },
     "footer": {
-      "heading": "같은 개발자의 다른 앱",
+      "heading": "저희의 다른 앱",
       "linkText": "SurfEnglish: 영어 뉴스 원문·번역"
+    },
+    "strip": {
+      "text": "영어도 공부하고 있나요? 저희의 또 다른 앱 **SurfEnglish**로 영어 뉴스와 어떤 영어 웹페이지든 번역과 함께 읽어 보세요.",
+      "cta": "자세히 보기"
     }
   },
   "cta": {

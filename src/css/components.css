@@ -194,6 +194,25 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
   .sibling__window { display: block; inline-size: 200px; }
 }
 
+/* ⑦ strip under the hero (2026-10-17): one quiet paper row, container-wide like the mosaic edge above it, that only
+   scrolls to ① — no button colour, no badge, not sticky. Phones: the icon floats and the cue runs on after the text,
+   so the strip stays 3–4 lines; >= 900: icon | text | cue on one row. */
+.se-strip { margin-block-start: var(--s-5); }
+.se-strip__link { display: flow-root; padding: var(--s-3) var(--s-4); border: 1px solid var(--hairline); border-radius: var(--r-3); background: var(--paper-2); color: var(--ink-2); font-size: var(--fs-small); line-height: 1.5; text-decoration: none; transition: border-color .15s ease; }
+.se-strip__link:hover { border-color: var(--hairline-strong); }
+.se-strip__icon { float: inline-start; inline-size: 28px; block-size: 28px; margin-inline-end: var(--s-3); border-radius: 7px; }
+.se-strip__text strong { color: var(--ink); font-weight: 600; }
+.se-strip__cta { margin-inline-start: .35em; color: var(--accent-text); font-weight: 600; white-space: nowrap; }
+.se-strip__link:hover .se-strip__cta { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .18em; }
+@media (min-width: 900px) {
+  .se-strip__link { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; column-gap: var(--s-4); padding-inline: var(--s-5); font-size: .9375rem; }
+  .se-strip__icon { float: none; margin: 0; }
+  .se-strip__cta { margin: 0; }
+}
+/* arriving from the strip: the card's frame glows once (reduced motion: the global rule drops the animation) */
+.sibling:target .sibling__inner { animation: se-arrive 1.6s ease-out .3s backwards; }
+@keyframes se-arrive { from { box-shadow: 0 0 0 3px var(--accent-text); } to { box-shadow: 0 0 0 3px transparent; } }
+
 /* ===== 13. FAQ (05 §5.8): serif question = "original", red-bar answer = "translation" ===== */
 .faq-head { margin-block-end: var(--s-4); }
 .faq-list { max-inline-size: var(--w-text); border-block-start: 1px solid var(--hairline-strong); }

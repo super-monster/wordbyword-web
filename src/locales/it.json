@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Sto imparando l’inglese. Vale la pena provare anche SurfEnglish?",
-        "a": "Continua a usare WordByWord per le pagine e i post di X che scegli tu, in inglese o in qualsiasi altra lingua. Se vuoi anche notizie quotidiane in inglese divise per livello ({se.levels}) e giochi per ripassare le frasi e le parole che hai salvato, SurfEnglish, dello stesso sviluppatore, te li offre con gli stessi gesti: scorri e tocca due volte. Le due app funzionano fianco a fianco. L’interfaccia di SurfEnglish non è disponibile in italiano (è in inglese e in altre 11 lingue), ma l’app traduce in italiano. [Sito di SurfEnglish (in inglese)](@se-site)"
+        "a": "Continua a usare WordByWord per le pagine e i post di X che scegli tu, in qualsiasi lingua. Se stai imparando l’inglese, prova anche SurfEnglish, la nostra altra app: notizie quotidiane e qualsiasi pagina in inglese con la traduzione subito sotto l’originale; con un doppio tocco vedi il significato di una parola nel contesto, senza dizionario. Con i giochi ripassi le frasi e le parole salvate. L’interfaccia di SurfEnglish non è disponibile in italiano (è in inglese e in altre 11 lingue), ma l’app traduce in italiano. [Sito di SurfEnglish (in inglese)](@se-site)"
       },
       {
         "id": "devices",
@@ -411,24 +411,28 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "Dallo sviluppatore di WordByWord",
-      "title": "SurfEnglish: notizie in inglese al tuo livello",
-      "body": "Stai imparando l’inglese? Continua a leggere in WordByWord le pagine che vuoi e prova anche SurfEnglish: notizie quotidiane in inglese per livello e giochi di ripasso, con gli stessi gesti.",
+      "eyebrow": "La nostra altra app",
+      "title": "SurfEnglish: notizie e pagine in inglese, in bilingue",
+      "body": "Stai imparando l’inglese? SurfEnglish ti porta notizie in inglese ogni giorno e qualsiasi pagina in inglese da leggere in bilingue, senza dizionario. Per il resto, c’è WordByWord.",
       "points": [
-        "Notizie vere in inglese, livelli {se.levels}",
-        "Giochi di ripasso con ciò che hai letto",
-        "Condividi articoli in inglese da Safari"
+        "Traduzione sotto l’originale",
+        "Doppio tocco: senso nel contesto",
+        "Giochi di ripasso con ciò che hai letto"
       ],
       "note": "Gratis per iniziare · iPhone e iPad · Traduzioni in {se.targetLanguages, plural, one{# lingua} many{# di lingue} other{# lingue}}",
       "uiNote": "Gratis per iniziare · Interfaccia in inglese e in altre 11 lingue, non in italiano · Traduce in italiano",
-      "linkText": "Leggi notizie in inglese al tuo livello con SurfEnglish (sito in inglese)",
+      "linkText": "Notizie e pagine in bilingue — SurfEnglish (sito in inglese)",
       "appStoreLinkText": "Scarica SurfEnglish su App Store",
       "shotAlt": "Schermata Games di SurfEnglish (interfaccia in inglese): Sentence Builder e Word Raid, da giocare con frasi e parole salvate",
       "shotCaption": "Screenshot di SurfEnglish (interfaccia in inglese)"
     },
     "footer": {
-      "heading": "Dallo stesso sviluppatore",
+      "heading": "Le nostre altre app",
       "linkText": "SurfEnglish: Bilingual News (EN)"
+    },
+    "strip": {
+      "text": "Studi anche l’inglese? Prova **SurfEnglish**, la nostra altra app: notizie e qualsiasi pagina in inglese, da leggere in bilingue.",
+      "cta": "Scopri di più"
     }
   },
   "cta": {

@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Estou aprendendo inglês. Vale a pena experimentar também o SurfEnglish?",
-        "a": "Continue usando o WordByWord para as páginas e os posts do X que você escolher, em inglês ou em qualquer outro idioma. Se você também quiser notícias diárias em inglês separadas por nível ({se.levels}) e jogos que revisam as frases e palavras que você salvou, o SurfEnglish, do mesmo desenvolvedor, oferece isso com o mesmo gesto de deslizar e o mesmo toque duplo. Os dois apps funcionam lado a lado. [Site do SurfEnglish](@se-site)"
+        "a": "Continue usando o WordByWord para as páginas e os posts do X que você escolher, em inglês ou em qualquer outro idioma. Se você está aprendendo inglês, experimente também o SurfEnglish, nosso outro app: notícias diárias e qualquer página em inglês com a tradução logo abaixo do original, e um toque duplo mostra o significado da palavra no contexto, sem abrir dicionário nem tradutor. Ele também tem jogos para revisar as frases e palavras que você salvou. Os dois apps funcionam lado a lado. [Site do SurfEnglish](@se-site)"
       },
       {
         "id": "devices",
@@ -411,23 +411,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "Do criador do WordByWord",
-      "title": "SurfEnglish: notícias em inglês no seu nível",
-      "body": "Aprendendo inglês? Continue lendo qualquer página no WordByWord e experimente também o SurfEnglish: notícias diárias em inglês e jogos de revisão, com os mesmos gestos.",
+      "eyebrow": "Nosso outro app",
+      "title": "SurfEnglish: notícias e páginas em inglês com tradução",
+      "body": "Aprendendo inglês? O SurfEnglish traz notícias em inglês todo dia e qualquer página em inglês para ler em versão bilíngue, sem dicionário. Para o resto, use o WordByWord.",
       "points": [
-        "Notícias reais em inglês nos níveis {se.levels}",
-        "Jogos de revisão com o que você leu",
-        "Envie artigos em inglês do Safari para o app"
+        "A tradução logo abaixo do original",
+        "Toque duplo: o significado no contexto",
+        "Jogos de revisão com o que você leu"
       ],
       "note": "Grátis para começar · iPhone e iPad · App em {se.uiLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}, com português · Traduções para {se.targetLanguages}",
-      "linkText": "Leia notícias em inglês no seu nível com o SurfEnglish",
+      "linkText": "Notícias e páginas em inglês com tradução — SurfEnglish",
       "appStoreLinkText": "Baixar o SurfEnglish na App Store",
       "shotAlt": "SurfEnglish, tela Games (interface em inglês): Sentence Builder e Word Raid, para jogar com frases e palavras salvas",
       "shotCaption": "Captura de tela do SurfEnglish (interface em inglês)"
     },
     "footer": {
-      "heading": "Do mesmo desenvolvedor",
+      "heading": "Outros apps nossos",
       "linkText": "SurfEnglish: Inglês e notícias"
+    },
+    "strip": {
+      "text": "Também está aprendendo inglês? Conheça o **SurfEnglish**, nosso outro app: notícias e qualquer página em inglês, com leitura bilíngue.",
+      "cta": "Saiba mais"
     }
   },
   "cta": {

@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "İngilizce öğreniyorum. SurfEnglish’i de denemeye değer mi?",
-        "a": "Seçtiğiniz sayfalar ve X gönderileri için, İngilizce ya da başka bir dilde olsun, WordByWord’ü kullanmaya devam edin. Bunun yanında seviyeye göre ({se.levels}) ayrılmış günlük İngilizce haberler ve kaydettiğiniz cümle ve kelimeleri tekrar ettiren oyunlar da isterseniz, aynı geliştiricinin SurfEnglish uygulaması bunları aynı kaydırma ve çift dokunma hareketleriyle sunar. İki uygulama yan yana kullanılabilir. SurfEnglish’in arayüzü Türkçe değildir (İngilizce ve 11 başka dilde sunulur), ancak Türkçeye çeviri yapabilir. [SurfEnglish web sitesi (İngilizce)](@se-site)"
+        "a": "Seçtiğiniz sayfalar ve X gönderileri için, hangi dilde olursa olsun, WordByWord’ü kullanmaya devam edin. İngilizce öğreniyorsanız diğer uygulamamız SurfEnglish’i de deneyin: günlük İngilizce haberleri ve her İngilizce sayfayı, çevirisi orijinalin hemen altında olacak şekilde okursunuz; bir kelimeye çift dokunarak bağlama uygun anlamını görürsünüz, sözlük açmadan. Kaydettiğiniz cümle ve kelimeleri oyunlarla tekrar edebilirsiniz. SurfEnglish’in arayüzü Türkçe değildir (İngilizce ve 11 başka dilde sunulur), ancak Türkçeye çeviri yapabilir. [SurfEnglish web sitesi (İngilizce)](@se-site)"
       },
       {
         "id": "devices",
@@ -411,24 +411,28 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "WordByWord’ün geliştiricisinden",
-      "title": "SurfEnglish: seviyenize göre İngilizce haberler",
-      "body": "İngilizce mi öğreniyorsunuz? Dilediğiniz sayfaları WordByWord’de okumaya devam edin, SurfEnglish’i de deneyin: seviyeye göre günlük İngilizce haberler ve tekrar oyunları, aynı hareketlerle.",
+      "eyebrow": "Diğer uygulamamız",
+      "title": "SurfEnglish: İngilizce haberler ve sayfalar, çevirisiyle",
+      "body": "İngilizce mi öğreniyorsunuz? SurfEnglish her gün İngilizce haberler getirir ve her İngilizce sayfayı çevirisiyle açar, sözlüğe gerek kalmaz. Gerisi için WordByWord var.",
       "points": [
-        "{se.levels} seviyelerinde gerçek İngilizce haberler",
-        "Okuduklarınızdan oluşturulan tekrar oyunları",
-        "İngilizce makaleleri Safari’den paylaşın"
+        "Çeviri, orijinalin hemen altında",
+        "Çift dokunun: kelimenin bağlamdaki anlamı",
+        "Okuduklarınızdan oluşturulan tekrar oyunları"
       ],
       "note": "Ücretsiz başlayın · iPhone ve iPad · {se.targetLanguages, plural, one{# dile} other{# dile}} çeviri",
       "uiNote": "Ücretsiz · Arayüz Türkçe değil (İngilizce ve 11 dil daha) · Türkçeye çeviri yapar",
-      "linkText": "Seviyenize göre İngilizce haberler – SurfEnglish (İngilizce site)",
+      "linkText": "İngilizce haberler ve sayfalar çevirisiyle – SurfEnglish (İngilizce site)",
       "appStoreLinkText": "SurfEnglish’i App Store’dan indirin",
       "shotAlt": "SurfEnglish “Games” ekranı (İngilizce arayüz): kayıtlı cümle ve kelimelerle oynamaya hazır Sentence Builder ve Word Raid",
       "shotCaption": "SurfEnglish ekran görüntüsü (İngilizce arayüz)"
     },
     "footer": {
-      "heading": "Aynı geliştiriciden",
+      "heading": "Diğer uygulamalarımız",
       "linkText": "SurfEnglish: Bilingual News (EN)"
+    },
+    "strip": {
+      "text": "Siz de İngilizce mi öğreniyorsunuz? Diğer uygulamamız **SurfEnglish**’i deneyin: İngilizce haberler ve her İngilizce sayfa, çevirisiyle.",
+      "cta": "Daha fazlası"
     }
   },
   "cta": {

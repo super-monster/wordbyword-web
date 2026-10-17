@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Ik leer Engels. Is SurfEnglish ook het proberen waard?",
-        "a": "Blijf WordByWord gebruiken voor de pagina’s en X-berichten die je zelf kiest, in het Engels of in een andere taal. Wil je daarnaast elke dag Engels nieuws per niveau ({se.levels}) en spelletjes waarmee je de zinnen en woorden herhaalt die je hebt bewaard? Dat vind je in SurfEnglish, van dezelfde ontwikkelaar, met hetzelfde vegen en dubbeltikken. De twee apps werken naast elkaar. De interface van SurfEnglish is niet in het Nederlands beschikbaar (wel in het Engels en 11 andere talen), maar de app kan wel naar het Nederlands vertalen. [Website van SurfEnglish (in het Engels)](@se-site)"
+        "a": "Blijf WordByWord gebruiken voor de pagina’s en X-berichten die je zelf kiest, in elke taal. Leer je Engels? Probeer dan ook SurfEnglish, onze andere app: dagelijks Engels nieuws en elke Engelse webpagina met de vertaling direct onder het origineel; dubbeltik op een woord voor de betekenis in de context, zonder woordenboek. Met spelletjes herhaal je bewaarde zinnen en woorden. De interface van SurfEnglish is niet in het Nederlands beschikbaar (wel in het Engels en 11 andere talen), maar de app kan wel naar het Nederlands vertalen. [Website van SurfEnglish (in het Engels)](@se-site)"
       },
       {
         "id": "devices",
@@ -411,24 +411,28 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "Van de ontwikkelaar van WordByWord",
-      "title": "SurfEnglish: dagelijks Engels nieuws op jouw niveau",
-      "body": "Leer je Engels? Blijf in WordByWord lezen wat je wilt en probeer ook SurfEnglish: dagelijks Engels nieuws per niveau en herhaalspelletjes, met hetzelfde vegen en dubbeltikken.",
+      "eyebrow": "Onze andere app",
+      "title": "SurfEnglish: Engels nieuws en webpagina’s, tweetalig",
+      "body": "Leer je Engels? SurfEnglish brengt je elke dag Engels nieuws en opent elke Engelse webpagina om tweetalig te lezen, zonder woordenboek. Voor andere talen gebruik je WordByWord.",
       "points": [
-        "Echt Engels nieuws op niveau {se.levels}",
-        "Herhaalspelletjes met wat je hebt gelezen",
-        "Deel Engelse artikelen vanuit Safari"
+        "Vertaling direct onder het origineel",
+        "Dubbeltik: betekenis in de context",
+        "Herhaalspelletjes met wat je hebt gelezen"
       ],
       "note": "Gratis om te beginnen · iPhone en iPad · Vertalingen naar {se.targetLanguages, plural, one{# taal} other{# talen}}",
       "uiNote": "Gratis · Geen Nederlandse interface (wel Engels en 11 andere talen) · Vertaalt naar het Nederlands",
-      "linkText": "Engels nieuws tweetalig lezen – SurfEnglish (Engelstalige website)",
+      "linkText": "Engels nieuws en webpagina’s tweetalig – SurfEnglish (Engelstalige website)",
       "appStoreLinkText": "Download SurfEnglish in de App Store",
       "shotAlt": "SurfEnglish, scherm Games (Engelse interface): Sentence Builder en Word Raid, te spelen met bewaarde zinnen en woorden",
       "shotCaption": "Screenshot van SurfEnglish (Engelse interface)"
     },
     "footer": {
-      "heading": "Van dezelfde ontwikkelaar",
+      "heading": "Onze andere apps",
       "linkText": "SurfEnglish: Bilingual News (EN)"
+    },
+    "strip": {
+      "text": "Leer je ook Engels? Probeer **SurfEnglish**, onze andere app: Engels nieuws en elke Engelse webpagina, tweetalig gelezen.",
+      "cta": "Meer weten"
     }
   },
   "cta": {

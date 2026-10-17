@@ -403,7 +403,7 @@
       {
         "id": "english-learner",
         "q": "我在學英文，SurfEnglish 也值得一試嗎？",
-        "a": "你自己選的網頁和 X 貼文，不論是英文還是其他語言，都可以繼續用 WordByWord 讀。如果你還想每天讀依程度分級（{se.levels}）的英文新聞，並用小遊戲複習存下來的句子和單字，可以試試同一位開發者的 SurfEnglish，右滑翻譯和雙擊查詞的用法都一樣。兩款 App 可以一起用。[SurfEnglish 官網](@se-site)"
+        "a": "你自己選的網頁和 X 貼文，不論是英文還是其他語言，都可以繼續用 WordByWord 讀。如果你在學英文，也可以試試我們的另一款 App SurfEnglish：每天的英文新聞和任何英文網頁都能雙語對照著讀，譯文就在原文下方，點兩下單字就能看到依上下文給出的釋義，全程不用另開字典或翻譯 App；讀過的句子和單字還能用小遊戲複習。兩款 App 可以一起用。[SurfEnglish 官網](@se-site)"
       },
       {
         "id": "devices",
@@ -415,23 +415,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "來自 WordByWord 的開發者",
-      "title": "SurfEnglish：{wbr}符合你程度的{wbr}每日英文新聞",
-      "body": "在學英文嗎？想讀的任何網頁，照樣可以用 WordByWord 讀；也不妨試試 SurfEnglish：每天依程度分級的英文新聞，加上複習小遊戲，右滑翻譯和雙擊查詞的用法都一樣。",
+      "eyebrow": "我們的另一款 App",
+      "title": "SurfEnglish：{wbr}英文新聞和網頁，{wbr}雙語對照著讀",
+      "body": "在學英文嗎？SurfEnglish 每天為你準備英文新聞，也能打開任何英文網頁雙語對照著讀，全程不用另開字典。其他網頁繼續用 WordByWord 讀。",
       "points": [
-        "{se.levels} 分級的真實英文新聞",
-        "用你讀過的內容生成的複習遊戲",
-        "從 Safari 把英文文章分享到 App 裡讀"
+        "英文新聞和任何英文網頁，譯文就在原文下方",
+        "點兩下單字，看依上下文給出的釋義和發音",
+        "讀過的句子和單字，還能用小遊戲複習"
       ],
       "note": "免費開始使用 · iPhone／iPad · App 介面支援繁體中文等 {se.uiLanguages} 種語言 · 可譯成 {se.targetLanguages} 種語言",
-      "linkText": "用 SurfEnglish 雙語對照讀分級英文新聞",
+      "linkText": "用 SurfEnglish 雙語對照讀英文新聞和網頁",
       "appStoreLinkText": "在 App Store 取得 SurfEnglish",
       "shotAlt": "SurfEnglish 的遊戲頁：可以用存下來的句子和單字玩 Sentence Builder 與 Word Raid",
       "shotCaption": "SurfEnglish 截圖（英文介面）"
     },
     "footer": {
-      "heading": "同一開發者的其他 App",
+      "heading": "我們的其他 App",
       "linkText": "SurfEnglish：英文新聞·雙語對照"
+    },
+    "strip": {
+      "text": "也在學英文嗎？試試我們的另一款 App **SurfEnglish**：英文新聞和任何英文網頁，都能雙語對照著讀。",
+      "cta": "了解一下"
     }
   },
   "cta": {

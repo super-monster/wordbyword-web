@@ -409,7 +409,7 @@
       {
         "id": "english-learner",
         "q": "我在学英语，SurfEnglish 也值得一试吗？",
-        "a": "你自己选的网页和推文，不论英文还是其他语言，都可以继续用 WordByWord 读。如果你还想每天读按难度分级（{se.levels}）的英语新闻，并用小游戏复习保存过的句子和单词，可以试试同一位开发者的 SurfEnglish，右滑翻译和双击查词的用法一样，两款可以一起用。[SurfEnglish 官网](@se-site)"
+        "a": "你自己选的网页和推文，不论英文还是其他语言，都可以继续用 WordByWord 读。如果你在学英语，也可以试试我们的另一款 App SurfEnglish：每天的英文新闻和任意英文网页都能双语对照着读，译文就在原文下方，双击单词即可看到结合上下文的释义，全程不用另开词典或翻译 App；读过的句子和单词还能用小游戏复习。两款可以一起用。[SurfEnglish 官网](@se-site)"
       },
       {
         "id": "devices",
@@ -421,24 +421,28 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "来自 WordByWord 的开发者",
-      "title": "SurfEnglish：{wbr}同一开发者的{wbr}分级英语新闻 App",
-      "body": "主要在学英语？WordByWord 帮你读自己选的任何网页；同一位开发者的 SurfEnglish 则提供另一种练法：每天按难度分级的英语新闻，以及复习读过内容的小游戏，右滑翻译和双击查词的用法不变。",
+      "eyebrow": "我们的另一款 App",
+      "title": "SurfEnglish：{wbr}英文新闻和网页，{wbr}双语对照着读",
+      "body": "在学英语？SurfEnglish 每天为你准备英文新闻，也能打开任意英文网页双语对照着读，全程不用另开词典。其他网页继续用 WordByWord 读。",
       "points": [
-        "{se.levels} 分级的真实英语新闻",
-        "用读过的内容生成的复习游戏",
-        "从 Safari 分享英文文章到 App 里读"
+        "英文新闻和任意英文网页，译文就在原文下方",
+        "双击单词，看结合上下文的释义和发音",
+        "读过的句子和单词，还能用小游戏复习"
       ],
       "note": "免费开始 · iPhone / iPad · App 界面支持简体中文等 {se.uiLanguages} 种语言 · 可译成 {se.targetLanguages} 种语言",
-      "linkText": "用 SurfEnglish 双语对照读分级英语新闻",
+      "linkText": "用 SurfEnglish 双语对照读英文新闻和网页",
       "appStoreLinkText": "在 App Store 获取 SurfEnglish",
       "shotAlt": "SurfEnglish 游戏页：可用保存的句子和单词来玩 Sentence Builder 与 Word Raid",
       "shotCaption": "SurfEnglish 截图（英文界面）"
     },
     "availability": "SurfEnglish 目前未在中国大陆 App Store 上架。",
     "footer": {
-      "heading": "同一开发者的其他 App",
+      "heading": "我们的其他 App",
       "linkText": "SurfEnglish：英语新闻·双语对照"
+    },
+    "strip": {
+      "text": "也在学英语？试试我们的另一款 App **SurfEnglish**：英文新闻和任意英文网页，都能双语对照着读。",
+      "cta": "了解一下"
     }
   },
   "cta": {

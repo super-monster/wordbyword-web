@@ -29,7 +29,7 @@ export { validateDist } from './validate-dist.mjs';
 const SCRIPTS = new Set(['latn', 'cyrl', 'cjk', 'thai', 'deva', 'arab']);
 const RESERVED_PATHS = ['about', 'guides', 'chrome-extension', 'legal', '.well-known', 'assets', 'icons']; // doc 02 §2.5
 const CHROME_STORE_RE = /^https:\/\/chromewebstore\.google\.com\/detail\/[a-z0-9-]+\/[a-p]{32}$/; // doc 06 §3.1
-const PLACEMENTS = ['card', 'faq', 'footer', 'about'];                 // R42: no placement ③ (langHint)
+const PLACEMENTS = ['card', 'faq', 'footer', 'about', 'strip'];        // R42: no placement ③ (langHint); ⑦ strip
 const PER_LOCALE_KEYS = ['card', 'availabilityNote', 'uiNote'];
 // doc 06 §8.5 defines `outage`; `maintenance` and `info` are accepted as neutral variants of the same banner.
 const NOTICE_LEVELS = ['outage', 'maintenance', 'info'];
@@ -71,7 +71,7 @@ const WBR_FIELDS = ['hero.title', 'featuresIntro.title', 'features[*].title', 'g
 // L-7: rich fields (`**strong**`, `[text](@ref)`, blank-line paragraphs) and the ref whitelist (doc 06 §4.1, doc 08 S16/S26).
 const RICH_FIELDS = ['faq.items[*].a', 'faq.items[*].aExtLive', 'about.lede', 'about.sections[*].text', 'about.sections[*].steps',
   'about.facts[*].value', 'about.timeline.items[*].text', 'about.maker.text', 'about.family.text', 'about.family.closing',
-  'about.disambiguation.text', 'about.contact.text', 'chromeExtension.faq[*].a'];
+  'about.disambiguation.text', 'about.contact.text', 'chromeExtension.faq[*].a', 'sibling.strip.text'];
 export const REF_WHITELIST = ['@appstore', '@se-site', '@se-appstore', '@se-maker', '@support', '@support-mail', '@privacy', '@about',
   '@chrome', '@chrome-store', '@home', '@features', '@faq', '@appstore-dev'];
 
@@ -114,6 +114,8 @@ const LENGTH_RULES = [
   { keys: ['sibling.card.points[*]'], wu: 45 },
   { keys: ['sibling.card.linkText', 'sibling.card.appStoreLinkText'], n: 60, cjk: 30, enSite: 80 },
   { keys: ['sibling.card.body'], words: 45, cjk: 110 },
+  { keys: ['sibling.strip.text'], n: 140, cjk: 60, why: 'placement ⑦ stays one line on desktop, 3–5 on phones (2026-10-17)' },
+  { keys: ['sibling.strip.cta'], wu: 20 },
 ];
 const ALT_KEY = /^(alt|\w*Alt)$/; // last key segment: alt, ogImageAlt, shotAlt, appStoreBadgeAlt …
 
@@ -521,6 +523,10 @@ function ruleL3(X, c) {
   const card = getPath(c.t, 'sibling.card');
   if (cardVisible && card === undefined) E('L-3', `${c.code} sibling.card.* is required (placement ① renders for this locale)`);
   else if (cardVisible && c.code !== 'en') compareSubtree(X, c, 'sibling.card', 'E', ['sibling.card.uiNote']);
+  // sibling.strip.* — placement ⑦ points at ①, so it renders exactly where the card does
+  if (cardVisible && SIB.placements?.strip) {
+    for (const k of ['text', 'cta']) if (!String(getPath(c.t, `sibling.strip.${k}`) ?? '').trim()) E('L-3', `${c.code} sibling.strip.${k} is required (placement ⑦ renders for this locale)`);
+  }
   if (c.seMode === 'en-site' && cardVisible && !String(getPath(c.t, 'sibling.card.uiNote') ?? '').trim()) {
     E('L-3', `${c.code} sibling.card.uiNote is required when seMode = 'en-site' (doc 06 §4.2)`);
   }

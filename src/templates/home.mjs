@@ -1,4 +1,4 @@
-// Locale home page (doc 06 §5.2; section order doc 02 §7.5: hero → features → screenshots → languages →
+// Locale home page (doc 06 §5.2; section order doc 02 §7.5: hero → [SE strip] → features → screenshots → languages →
 // pricing → surfenglish → faq → cta). Markup mirrors the validated design prototype so src/css applies as-is.
 
 import { esc, head, mk, plain } from '../lib/html.mjs';
@@ -7,7 +7,7 @@ import { layout } from './layout.mjs';
 import { demo } from './partials/demo.mjs';
 import { picture, deviceShot, icon } from './partials/picture.mjs';
 import { badge, mosaicEdge, mosaicStrip, mosaicSquare } from './partials/brand.mjs';
-import { siblingCard } from './partials/sibling.mjs';
+import { siblingCard, siblingStrip } from './partials/sibling.mjs';
 import { faqItems } from './partials/faq.mjs';
 
 const POST_ACTIONS = '<p class="post-actions" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.5 9.5a6.5 6 0 1 1 3 5.1L3 16l1.2-3.2a6 6 0 0 1-.7-3.3z"/></svg><svg viewBox="0 0 20 20"><path d="M5 7.5 7.5 5 10 7.5M7.5 5.5V13a2 2 0 0 0 2 2H12M15 12.5 12.5 15 10 12.5M12.5 14.5V7a2 2 0 0 0-2-2H8"/></svg><svg viewBox="0 0 20 20"><path d="M10 16s-6-3.6-6-8a3.2 3.2 0 0 1 6-1.6A3.2 3.2 0 0 1 16 8c0 4.4-6 8-6 8z"/></svg><svg viewBox="0 0 20 20"><path d="M10 3v10M6.5 6.5 10 3l3.5 3.5M4 12v4h12v-4"/></svg></p>';
@@ -268,6 +268,6 @@ export function home(ctx) {
     description: f(t.meta.description),
     ogTitle: t.meta.ogHeadline ? plain(t.meta.ogHeadline) : t.meta.title,
     ogAlt: t.meta.ogImageAlt,
-    main: hero + features + gallery + languages + pricing + siblingCard(ctx) + faq + cta,
+    main: hero + siblingStrip(ctx) + features + gallery + languages + pricing + siblingCard(ctx) + faq + cta,
   });
 }

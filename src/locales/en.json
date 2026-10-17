@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "I’m learning English. Is SurfEnglish worth trying too?",
-        "a": "Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you would also like daily English news sorted by level ({se.levels}) and games that review the sentences and words you have saved, SurfEnglish, from the same developer, adds that with the same swipe and double-tap. The two apps work side by side. [SurfEnglish website](@se-site)"
+        "a": "Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you’re learning English, also try SurfEnglish, our other app: it brings you English news every day and opens any English web page, with the translation right below the original and a double-tap for a word’s meaning in context, with no need to open a dictionary or translator. Review games help you go over the sentences and words you’ve saved. The two apps work side by side. [SurfEnglish website](@se-site)"
       },
       {
         "id": "devices",
@@ -411,23 +411,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "From the developer of WordByWord",
-      "title": "SurfEnglish: daily English news at your level",
-      "body": "Learning English? Keep reading any page you like in WordByWord, and try SurfEnglish too: daily English news by level and review games, with the same swipe and double-tap.",
+      "eyebrow": "Our other app",
+      "title": "SurfEnglish: English news and web pages, read bilingually",
+      "body": "Learning English? SurfEnglish brings you daily English news and any English web page to read bilingually, no dictionary needed. Keep WordByWord for everything else.",
       "points": [
-        "Real English news at levels {se.levels}",
-        "Review games built from what you’ve read",
-        "Share English articles from Safari to the app"
+        "Translation right below the original",
+        "Double-tap a word for its meaning in context",
+        "Review games built from what you’ve read"
       ],
       "note": "Free to start · iPhone and iPad · App in {se.uiLanguages} languages · Translations into {se.targetLanguages}",
-      "linkText": "Read English news at your level with SurfEnglish",
+      "linkText": "Read English news and web pages bilingually with SurfEnglish",
       "appStoreLinkText": "Get SurfEnglish on the App Store",
       "shotAlt": "SurfEnglish Games screen: Sentence Builder and Word Raid, ready to play with saved sentences and words",
       "shotCaption": "SurfEnglish screenshot (English interface)"
     },
     "footer": {
-      "heading": "More from the maker",
+      "heading": "More from us",
       "linkText": "SurfEnglish: Bilingual News"
+    },
+    "strip": {
+      "text": "Learning English too? Try **SurfEnglish**, our other app: English news and any English web page, read bilingually.",
+      "cta": "See how"
     }
   },
   "cta": {
@@ -596,7 +600,7 @@
     },
     "family": {
       "title": "WordByWord and SurfEnglish",
-      "text": "Both apps are made by the same independent developer, Jinlong, and share the same reading engine. WordByWord is for reading the websites you choose, in many languages. SurfEnglish is built around daily English news and review games for people learning English.",
+      "text": "Both apps are made by the same independent developer, Jinlong, and share the same reading engine. WordByWord is for reading the websites you choose, in many languages. SurfEnglish is for people learning English: daily English news and any English web page, read bilingually, plus review games.",
       "table": {
         "head": [
           "",
@@ -612,7 +616,7 @@
           {
             "label": "What you read",
             "wbw": "Any website in the built-in browser, with X as a first-class case",
-            "se": "English news at levels {se.levels}, plus a built-in browser"
+            "se": "Daily English news, plus any English web page in the built-in browser"
           },
           {
             "label": "Translation",
@@ -656,7 +660,7 @@
           }
         ]
       },
-      "closing": "Use WordByWord for the pages and X posts you choose, in any of its languages. If you are learning English and also want news at your level and review games, add SurfEnglish. The two apps work side by side.",
+      "closing": "Use WordByWord for the pages and X posts you choose, in any of its languages. If you are learning English and also want daily English news to read bilingually and review games, add SurfEnglish. The two apps work side by side.",
       "links": [
         {
           "text": "SurfEnglish on the App Store",

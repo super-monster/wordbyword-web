@@ -217,6 +217,8 @@ test('L-3 page- and placement-specific keys', () => {
   expectE(i, 'L-3', /zh-Hans sibling\.availability is required/);
   i = runLocales(null, { cfgMut: enSite });
   expectE(i, 'L-3', /ja sibling\.card\.uiNote is required when seMode = 'en-site'/);
+  i = runLocales((s) => { delete s.ko.sibling.strip.cta; });
+  expectE(i, 'L-3', /ko sibling\.strip\.cta is required \(placement ⑦ renders for this locale\)/);
 });
 
 test('L-4 values identical to en are reported once per locale', () => {
@@ -581,6 +583,29 @@ test('D-11 no-card locales show no card and no SurfEnglish App Store link (R42)'
   });
   expectE(i, 'D-11', /\/zh-hans\/ \(zh-Hans\): SurfEnglish App Store link on a zh-Hans page/);
   expectE(i, 'D-11', /\/zh-hans\/ \(zh-Hans\): #surfenglish must not render for zh-Hans/);
+});
+
+// placement ⑦ (2026-10-17): the strip under the hero only points at ① — one in-page link, between #hero and
+// #features, rendered exactly where the card is.
+test('D-11 the SurfEnglish strip under the hero (placement ⑦)', () => {
+  const STRIP = /\n<aside class="se-strip" id="se-strip"[\s\S]*?<\/aside>/;
+  const i = runDist((d) => {
+    edit(d, 'index.html', (h) => {
+      const strip = h.match(STRIP)[0];
+      const moved = strip.replace('href="#surfenglish"', 'href="https://apps.apple.com/app/apple-store/id6787367021?pt=1&ct=wbw-card&mt=8"');
+      return h.replace(strip, '').replace('<section id="pricing"', `${moved}\n<section id="pricing"`);
+    });
+    edit(d, 'ja/index.html', (h) => h.replace(STRIP, ''));
+    edit(d, 'ko/index.html', (h) => h.replace(/\n<aside class="sibling" id="surfenglish"[\s\S]*?<\/aside>/, ''));
+    edit(d, 'es/index.html', inMain('<p id="x" data-ga-view="surfenglish_promo_view">x</p>'));
+  });
+  expectE(i, 'D-11', /\/ \(en\): #se-strip must hold exactly one link, to #surfenglish/);
+  expectE(i, 'D-11', /\/ \(en\): #se-strip must sit between #hero and #features/);
+  expectE(i, 'D-11', /\/ja\/ \(ja\): #se-strip \(placement ⑦\) is missing/);
+  expectE(i, 'D-11', /\/ko\/ \(ko\): #se-strip renders without #surfenglish/);
+  expectE(i, 'D-11', /\/es\/ \(es\): data-ga-view is only allowed on #surfenglish and #se-strip/);
+  const ok = runDist(null);
+  assert.ok(!ok.error.some((m) => /se-strip/.test(m)), ok.error.join('\n'));
 });
 
 test('D-12 _redirects structure, fixture and the all-switches self-test (R54)', () => {

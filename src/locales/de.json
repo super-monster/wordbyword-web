@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Ich lerne Englisch. Ist SurfEnglish auch einen Versuch wert?",
-        "a": "Nutze WordByWord weiter für die Seiten und X-Posts, die du auswählst – auf Englisch oder in jeder anderen Sprache. Wenn du außerdem täglich englische Nachrichten nach Niveau ({se.levels}) lesen und gespeicherte Sätze und Wörter mit Spielen wiederholen möchtest, ergänzt SurfEnglish vom selben Entwickler genau das – mit demselben Wischen und Doppeltippen. Beide Apps lassen sich nebeneinander nutzen. Die Oberfläche von SurfEnglish gibt es nicht auf Deutsch – sie ist auf Englisch und in 11 weiteren Sprachen verfügbar –, aber SurfEnglish kann ins Deutsche übersetzen. [SurfEnglish-Website (auf Englisch)](@se-site)"
+        "a": "Nutze WordByWord weiter für die Seiten und X-Posts, die du wählst, in jeder Sprache. Wenn du Englisch lernst, probier auch SurfEnglish, unsere andere App: tägliche englische News und jede englische Webseite mit der Übersetzung direkt unter dem Original; Doppeltippen zeigt die Bedeutung eines Wortes im Kontext, ganz ohne Wörterbuch-App. Gespeicherte Sätze und Wörter wiederholst du mit Spielen. Die Oberfläche von SurfEnglish gibt es nicht auf Deutsch – sie ist auf Englisch und in 11 weiteren Sprachen verfügbar –, aber SurfEnglish kann ins Deutsche übersetzen. [SurfEnglish-Website (auf Englisch)](@se-site)"
       },
       {
         "id": "devices",
@@ -411,24 +411,28 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "Vom Entwickler von WordByWord",
-      "title": "SurfEnglish: englische News auf deinem Niveau",
-      "body": "Lernst du Englisch? Lies in WordByWord weiter jede Seite, die du magst, und probier auch SurfEnglish: tägliche News nach Niveau und Wiederholungsspiele – mit demselben Wischen und Doppeltippen.",
+      "eyebrow": "Unsere andere App",
+      "title": "SurfEnglish: englische News und Webseiten, zweisprachig",
+      "body": "Lernst du Englisch? SurfEnglish bringt dir täglich englische News und jede englische Webseite zweisprachig, ohne Wörterbuch. Für alles andere bleibt WordByWord.",
       "points": [
-        "Englische News auf Niveau {se.levels}",
-        "Spiele zum Wiederholen des Gelesenen",
-        "Englische Artikel aus Safari teilen"
+        "Übersetzung unter dem Original",
+        "Doppeltippen: Bedeutung im Kontext",
+        "Spiele zum Wiederholen"
       ],
       "note": "Kostenlos starten · iPhone und iPad · Übersetzungen in {se.targetLanguages, plural, one{# Sprache} other{# Sprachen}}",
       "uiNote": "Kostenlos starten · Oberfläche nicht auf Deutsch (Englisch und 11 weitere Sprachen) · Übersetzung ins Deutsche möglich",
-      "linkText": "Englische News zweisprachig lesen – SurfEnglish (Website auf Englisch)",
+      "linkText": "Zweisprachig lesen – SurfEnglish (Website auf Englisch)",
       "appStoreLinkText": "SurfEnglish im App Store laden",
       "shotAlt": "SurfEnglish-Spielebildschirm (englische Oberfläche): Sentence Builder und Word Raid mit gespeicherten Sätzen und Wörtern",
       "shotCaption": "SurfEnglish-Screenshot (englische Oberfläche)"
     },
     "footer": {
-      "heading": "Vom selben Entwickler",
+      "heading": "Unsere anderen Apps",
       "linkText": "SurfEnglish: Bilingual News (EN)"
+    },
+    "strip": {
+      "text": "Lernst du auch Englisch? Probier **SurfEnglish**, unsere andere App: englische News und jede englische Webseite, zweisprachig gelesen.",
+      "cta": "Mehr erfahren"
     }
   },
   "cta": {

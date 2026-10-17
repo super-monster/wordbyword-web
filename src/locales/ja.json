@@ -404,7 +404,7 @@
       {
         "id": "english-learner",
         "q": "英語を勉強しています。SurfEnglishも試す価値はありますか？",
-        "a": "自分で選んだWebページやXのポストは、英語でもほかの言語でも、これまでどおりWordByWordで読めます。そのうえで、レベル別（{se.levels}）の英語ニュースを毎日読みたい、保存した文や単語をゲームで復習したいなら、同じ開発者のSurfEnglishも試してみてください。右スワイプとダブルタップはそのまま使えます。2つのアプリは併用できます。[SurfEnglish公式サイト](@se-site)"
+        "a": "自分で選んだWebページやXのポストは、英語でもほかの言語でも、これまでどおりWordByWordで読めます。英語を学んでいるなら、私たちのもうひとつのアプリ、SurfEnglishも試してみてください。毎日の英語ニュースやどんな英語のWebページも対訳で読め、訳文は原文のすぐ下に表示されます。単語をダブルタップすれば文脈に合った意味がわかり、辞書や翻訳アプリを開く必要もありません。読んだ文や単語はゲームで復習できます。2つのアプリは併用できます。[SurfEnglish公式サイト](@se-site)"
       },
       {
         "id": "devices",
@@ -416,23 +416,27 @@
   },
   "sibling": {
     "card": {
-      "eyebrow": "WordByWordの開発者より",
-      "title": "SurfEnglish：{wbr}レベル別の{wbr}英語ニュースアプリ",
-      "body": "主に英語を学んでいますか？WordByWordで好きなWebページを読みながら、同じ開発者のSurfEnglishで、レベル別の英語ニュースと復習ゲームという別の練習も加えられます。右スワイプとダブルタップはそのまま使えます。",
+      "eyebrow": "私たちのもうひとつのアプリ",
+      "title": "SurfEnglish：{wbr}英語ニュースも{wbr}Webページも{wbr}対訳で読む",
+      "body": "英語を学んでいますか？SurfEnglishなら、毎日の英語ニュースもどんな英語のWebページも対訳で読め、辞書アプリは不要。ほかの言語のページはWordByWordで。",
       "points": [
-        "{se.levels}のレベル付き、本物の英語ニュース",
-        "読んだ内容から作られる復習ゲーム",
-        "Safariから英語記事を共有してアプリで読める"
+        "原文のすぐ下に訳文を表示",
+        "ダブルタップで文脈に合った単語の意味",
+        "読んだ内容から作られる復習ゲーム"
       ],
       "note": "無料で始められます · iPhone／iPad · アプリ表示は日本語を含む{se.uiLanguages}言語 · {se.targetLanguages}言語に翻訳",
-      "linkText": "SurfEnglishでレベル別の英語ニュースを対訳で読む",
+      "linkText": "SurfEnglishで英語ニュースやWebページを対訳で読む",
       "appStoreLinkText": "App StoreでSurfEnglishを入手",
       "shotAlt": "SurfEnglishのゲーム画面：保存した文と単語で遊べるSentence BuilderとWord Raid",
       "shotCaption": "SurfEnglishの画面（英語UI）"
     },
     "footer": {
-      "heading": "同じ開発者のアプリ",
+      "heading": "私たちのほかのアプリ",
       "linkText": "SurfEnglish：英語ニュース・対訳で学習"
+    },
+    "strip": {
+      "text": "英語も勉強中なら、私たちのもうひとつのアプリ**SurfEnglish**も。英語ニュースもどんな英語のWebページも対訳で読めます。",
+      "cta": "詳しく見る"
     }
   },
   "cta": {
