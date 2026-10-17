@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Ik leer Engels. Is SurfEnglish ook het proberen waard?",
-        "a": "Blijf WordByWord gebruiken voor de pagina’s en X-berichten die je zelf kiest, in elke taal. Leer je Engels? Probeer dan ook SurfEnglish, onze andere app: dagelijks Engels nieuws en elke Engelse webpagina met de vertaling direct onder het origineel; dubbeltik op een woord voor de betekenis in de context, zonder woordenboek. Met spelletjes herhaal je bewaarde zinnen en woorden. De interface van SurfEnglish is niet in het Nederlands beschikbaar (wel in het Engels en 11 andere talen), maar de app kan wel naar het Nederlands vertalen. [Website van SurfEnglish (in het Engels)](@se-site)"
+        "a": "Blijf WordByWord gebruiken voor de pagina’s en X-berichten die je zelf kiest, in elke taal. Leer je Engels? Probeer dan ook SurfEnglish, onze andere app: dagelijks Engels nieuws en elke Engelse webpagina met de vertaling direct onder het origineel; dubbeltik op een woord voor de betekenis in de context, zonder van app te wisselen. Met spelletjes herhaal je bewaarde zinnen en woorden. De interface van SurfEnglish is niet in het Nederlands beschikbaar (wel in het Engels en 11 andere talen), maar de app kan wel naar het Nederlands vertalen. [Website van SurfEnglish (in het Engels)](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Onze andere app",
       "title": "SurfEnglish: Engels nieuws en webpagina’s, tweetalig",
-      "body": "Leer je Engels? SurfEnglish brengt je elke dag Engels nieuws en opent elke Engelse webpagina om tweetalig te lezen, zonder woordenboek. Voor andere talen gebruik je WordByWord.",
+      "body": "Leer je Engels? SurfEnglish brengt je elke dag Engels nieuws en opent elke Engelse webpagina om tweetalig te lezen, zonder van app te wisselen. Voor andere talen gebruik je WordByWord.",
       "points": [
         "Vertaling direct onder het origineel",
         "Dubbeltik: betekenis in de context",
@@ -431,7 +431,7 @@
       "linkText": "SurfEnglish: Bilingual News (EN)"
     },
     "strip": {
-      "text": "Leer je ook Engels? Probeer **SurfEnglish**, onze andere app: Engels nieuws en elke Engelse webpagina, tweetalig gelezen.",
+      "text": "Wil je met Engels nieuws je leesvaardigheid verbeteren? Probeer **SurfEnglish**, onze andere app: elke Engelse webpagina tweetalig, betekenissen via dubbeltikken, zonder van app te wisselen.",
       "cta": "Meer weten"
     }
   },

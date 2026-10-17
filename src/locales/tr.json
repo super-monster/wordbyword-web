@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "İngilizce öğreniyorum. SurfEnglish’i de denemeye değer mi?",
-        "a": "Seçtiğiniz sayfalar ve X gönderileri için, hangi dilde olursa olsun, WordByWord’ü kullanmaya devam edin. İngilizce öğreniyorsanız diğer uygulamamız SurfEnglish’i de deneyin: günlük İngilizce haberleri ve her İngilizce sayfayı, çevirisi orijinalin hemen altında olacak şekilde okursunuz; bir kelimeye çift dokunarak bağlama uygun anlamını görürsünüz, sözlük açmadan. Kaydettiğiniz cümle ve kelimeleri oyunlarla tekrar edebilirsiniz. SurfEnglish’in arayüzü Türkçe değildir (İngilizce ve 11 başka dilde sunulur), ancak Türkçeye çeviri yapabilir. [SurfEnglish web sitesi (İngilizce)](@se-site)"
+        "a": "Seçtiğiniz sayfalar ve X gönderileri için, hangi dilde olursa olsun, WordByWord’ü kullanmaya devam edin. İngilizce öğreniyorsanız diğer uygulamamız SurfEnglish’i de deneyin: günlük İngilizce haberleri ve her İngilizce sayfayı, çevirisi orijinalin hemen altında olacak şekilde okursunuz; bir kelimeye çift dokunarak bağlama uygun anlamını görürsünüz, uygulama değiştirmeden. Kaydettiğiniz cümle ve kelimeleri oyunlarla tekrar edebilirsiniz. SurfEnglish’in arayüzü Türkçe değildir (İngilizce ve 11 başka dilde sunulur), ancak Türkçeye çeviri yapabilir. [SurfEnglish web sitesi (İngilizce)](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Diğer uygulamamız",
       "title": "SurfEnglish: İngilizce haberler ve sayfalar, çevirisiyle",
-      "body": "İngilizce mi öğreniyorsunuz? SurfEnglish her gün İngilizce haberler getirir ve her İngilizce sayfayı çevirisiyle açar, sözlüğe gerek kalmaz. Gerisi için WordByWord var.",
+      "body": "İngilizce mi öğreniyorsunuz? SurfEnglish günlük haberleri ve her İngilizce sayfayı çevirisiyle açar, uygulama değiştirmeden. Gerisi için WordByWord var.",
       "points": [
         "Çeviri, orijinalin hemen altında",
         "Çift dokunun: kelimenin bağlamdaki anlamı",
@@ -431,7 +431,7 @@
       "linkText": "SurfEnglish: Bilingual News (EN)"
     },
     "strip": {
-      "text": "Siz de İngilizce mi öğreniyorsunuz? Diğer uygulamamız **SurfEnglish**’i deneyin: İngilizce haberler ve her İngilizce sayfa, çevirisiyle.",
+      "text": "İngilizce haber okuyarak okuma becerinizi geliştirmek mi istiyorsunuz? Diğer uygulamamız **SurfEnglish**’i deneyin: her İngilizce sayfa çevirisiyle, kelime anlamları çift dokunuşla, uygulama değiştirmeden.",
       "cta": "Daha fazlası"
     }
   },

@@ -421,12 +421,15 @@ test('L-14 product-claim lint on leaf values, scoped rules, coverage warning', (
     s['zh-Hans'].sibling.card.body += '它可能更适合你。';
     s.en.sibling.card.body += ' New in 2026.';
     feat(s.en, 'engines').kicker = 'New engines';   // se-hype is scoped to the SurfEnglish copy
+    feat(s['zh-Hans'], 'swipe').text += '全程不用切换 App。';   // app-switching: WordByWord copy may not say it …
   });
   expectE(i, 'L-14', /en features\[swipe\]\.text: "translate the whole page" — whole-page/);
   expectE(i, 'L-14', /ja hero\.how: "オフライン" — offline/);
   expectE(i, 'L-14', /zh-Hans sibling\.card\.body: "可能更适合你" — replacement-tone/);
   expectE(i, 'L-14', /en sibling\.card\.body: "New" — se-hype/);
   noErrors(i, 'L-14', /features\[engines\]\.kicker/);
+  expectE(i, 'L-14', /zh-Hans features\[swipe\]\.text: "不用切换 App" — app-switching/);
+  noErrors(i, 'L-14', /(sibling\.|english-learner).* — app-switching/);   // … the SurfEnglish copy may (owner, 2026-10-17)
   i = runLocales(null, { data: { claims: { rules: [{ id: 'test-only-en', patterns: { en: ['zzzz'] } }] } } });
   expectW(i, 'L-14', /ja: claims-lint rules without ja or '\*' patterns \(not covered, review by hand\): test-only-en/);
 });

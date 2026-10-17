@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Uczę się angielskiego. Czy warto wypróbować też SurfEnglish?",
-        "a": "Korzystaj dalej z WordByWord na wybranych stronach i w postach z X, w każdym języku. Jeśli uczysz się angielskiego, wypróbuj też SurfEnglish, naszą drugą aplikację: codzienne wiadomości i każda strona po angielsku z tłumaczeniem tuż pod oryginałem, a gdy dotkniesz dwukrotnie słowa, zobaczysz jego znaczenie w kontekście, bez otwierania słownika. Zapisane zdania i słowa powtórzysz w grach. Interfejs SurfEnglish nie jest dostępny po polsku – jest po angielsku i w 11 innych językach – ale aplikacja tłumaczy na polski. [Strona SurfEnglish (po angielsku)](@se-site)"
+        "a": "Korzystaj dalej z WordByWord na wybranych stronach i w postach z X, w każdym języku. Jeśli uczysz się angielskiego, wypróbuj też SurfEnglish, naszą drugą aplikację: codzienne wiadomości i każda strona po angielsku z tłumaczeniem tuż pod oryginałem, a gdy dotkniesz dwukrotnie słowa, zobaczysz jego znaczenie w kontekście, bez przełączania aplikacji. Zapisane zdania i słowa powtórzysz w grach. Interfejs SurfEnglish nie jest dostępny po polsku – jest po angielsku i w 11 innych językach – ale aplikacja tłumaczy na polski. [Strona SurfEnglish (po angielsku)](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Nasza druga aplikacja",
       "title": "SurfEnglish: wiadomości i strony po angielsku, dwujęzycznie",
-      "body": "Uczysz się angielskiego? SurfEnglish codziennie podsuwa wiadomości po angielsku i każdą angielską stronę do czytania dwujęzycznego, bez słownika. Do reszty masz WordByWord.",
+      "body": "Uczysz się angielskiego? SurfEnglish codziennie podsuwa wiadomości po angielsku i każdą angielską stronę do czytania dwujęzycznego, bez przełączania aplikacji. Do reszty masz WordByWord.",
       "points": [
         "Tłumaczenie tuż pod oryginałem",
         "Dotknij dwukrotnie: znaczenie w kontekście",
@@ -431,7 +431,7 @@
       "linkText": "SurfEnglish: Bilingual News (EN)"
     },
     "strip": {
-      "text": "Uczysz się też angielskiego? Wypróbuj **SurfEnglish**, naszą drugą aplikację: wiadomości i każda strona po angielsku, czytane dwujęzycznie.",
+      "text": "Chcesz ćwiczyć czytanie na wiadomościach po angielsku? Wypróbuj **SurfEnglish**, naszą drugą aplikację: każda strona po angielsku dwujęzycznie, znaczenia słów po dwukrotnym dotknięciu, bez przełączania aplikacji.",
       "cta": "Dowiedz się więcej"
     }
   },

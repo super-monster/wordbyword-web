@@ -207,6 +207,8 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
 @media (min-width: 900px) {
   .se-strip__link { display: grid; grid-template-columns: 28px minmax(0, 1fr) auto; align-items: center; column-gap: var(--s-4); padding-inline: var(--s-5); font-size: .9375rem; }
   .se-strip__icon { float: none; margin: 0; }
+  .se-strip__text { text-wrap: balance; }   /* two even lines instead of a short tail */
+  html[data-script="cjk"] .se-strip__text { word-break: keep-all; }   /* CJK: break at punctuation, not inside a phrase */
   .se-strip__cta { margin: 0; }
 }
 /* arriving from the strip: the card's frame glows once (reduced motion: the global rule drops the animation) */

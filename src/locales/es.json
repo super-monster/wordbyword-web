@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Estoy aprendiendo inglés. ¿Vale la pena probar también SurfEnglish?",
-        "a": "Sigue usando WordByWord para las páginas y publicaciones de X que elijas, en inglés o en cualquier otro idioma. Si estás aprendiendo inglés, prueba también SurfEnglish, nuestra otra app: lees noticias diarias y cualquier página web en inglés con la traducción justo debajo del original y, con un doble toque, ves el significado de una palabra según el contexto, sin abrir un diccionario ni un traductor. Además, tiene juegos para repasar las frases y palabras que has guardado. Puedes usar las dos apps juntas. [Sitio web de SurfEnglish](@se-site)"
+        "a": "Sigue usando WordByWord para las páginas y publicaciones de X que elijas, en inglés o en cualquier otro idioma. Si estás aprendiendo inglés, prueba también SurfEnglish, nuestra otra app: lees noticias diarias y cualquier página web en inglés con la traducción justo debajo del original y, con un doble toque, ves el significado de una palabra según el contexto, sin cambiar de app. Además, tiene juegos para repasar las frases y palabras que has guardado. Puedes usar las dos apps juntas. [Sitio web de SurfEnglish](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Nuestra otra app",
       "title": "SurfEnglish: noticias y páginas en inglés con traducción",
-      "body": "¿Aprendes inglés? SurfEnglish te trae noticias en inglés cada día y cualquier página en inglés para leer en bilingüe, sin diccionario. Para lo demás, WordByWord.",
+      "body": "¿Aprendes inglés? SurfEnglish te trae noticias en inglés cada día y cualquier página en inglés para leer en bilingüe, sin cambiar de app. Para lo demás, WordByWord.",
       "points": [
         "Traducción bajo el original",
         "Doble toque: significado en contexto",
@@ -430,7 +430,7 @@
       "linkText": "SurfEnglish: Inglés y noticias"
     },
     "strip": {
-      "text": "¿También aprendes inglés? Prueba **SurfEnglish**, nuestra otra app: noticias y cualquier página en inglés, para leer en bilingüe.",
+      "text": "¿Quieres leer noticias en inglés para mejorar tu lectura? Prueba **SurfEnglish**, nuestra otra app: cualquier página en inglés en bilingüe, significados con doble toque y sin cambiar de app.",
       "cta": "Ver más"
     }
   },

@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Ich lerne Englisch. Ist SurfEnglish auch einen Versuch wert?",
-        "a": "Nutze WordByWord weiter für die Seiten und X-Posts, die du wählst, in jeder Sprache. Wenn du Englisch lernst, probier auch SurfEnglish, unsere andere App: tägliche englische News und jede englische Webseite mit der Übersetzung direkt unter dem Original; Doppeltippen zeigt die Bedeutung eines Wortes im Kontext, ganz ohne Wörterbuch-App. Gespeicherte Sätze und Wörter wiederholst du mit Spielen. Die Oberfläche von SurfEnglish gibt es nicht auf Deutsch – sie ist auf Englisch und in 11 weiteren Sprachen verfügbar –, aber SurfEnglish kann ins Deutsche übersetzen. [SurfEnglish-Website (auf Englisch)](@se-site)"
+        "a": "Nutze WordByWord weiter für die Seiten und X-Posts, die du wählst, in jeder Sprache. Wenn du Englisch lernst, probier auch SurfEnglish, unsere andere App: tägliche englische News und jede englische Webseite mit der Übersetzung direkt unter dem Original; Doppeltippen zeigt die Bedeutung eines Wortes im Kontext, ganz ohne App-Wechsel. Gespeicherte Sätze und Wörter wiederholst du mit Spielen. Die Oberfläche von SurfEnglish gibt es nicht auf Deutsch – sie ist auf Englisch und in 11 weiteren Sprachen verfügbar –, aber SurfEnglish kann ins Deutsche übersetzen. [SurfEnglish-Website (auf Englisch)](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Unsere andere App",
       "title": "SurfEnglish: englische News und Webseiten, zweisprachig",
-      "body": "Lernst du Englisch? SurfEnglish bringt dir täglich englische News und jede englische Webseite zweisprachig, ohne Wörterbuch. Für alles andere bleibt WordByWord.",
+      "body": "Lernst du Englisch? SurfEnglish bringt dir täglich englische News und jede englische Webseite zweisprachig, ganz ohne App-Wechsel. Für alles andere bleibt WordByWord.",
       "points": [
         "Übersetzung unter dem Original",
         "Doppeltippen: Bedeutung im Kontext",
@@ -431,7 +431,7 @@
       "linkText": "SurfEnglish: Bilingual News (EN)"
     },
     "strip": {
-      "text": "Lernst du auch Englisch? Probier **SurfEnglish**, unsere andere App: englische News und jede englische Webseite, zweisprachig gelesen.",
+      "text": "Mit englischen News besser lesen lernen? Probier **SurfEnglish**, unsere andere App: jede englische Webseite zweisprachig, Wortbedeutungen per Doppeltippen, ganz ohne App-Wechsel.",
       "cta": "Mehr erfahren"
     }
   },

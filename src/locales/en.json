@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "I’m learning English. Is SurfEnglish worth trying too?",
-        "a": "Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you’re learning English, also try SurfEnglish, our other app: it brings you English news every day and opens any English web page, with the translation right below the original and a double-tap for a word’s meaning in context, with no need to open a dictionary or translator. Review games help you go over the sentences and words you’ve saved. The two apps work side by side. [SurfEnglish website](@se-site)"
+        "a": "Keep using WordByWord for the pages and X posts you choose, in English or any other language. If you’re learning English, also try SurfEnglish, our other app: it brings you English news every day and opens any English web page, with the translation right below the original and a double-tap for a word’s meaning in context, all without switching apps. Review games help you go over the sentences and words you’ve saved. The two apps work side by side. [SurfEnglish website](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Our other app",
       "title": "SurfEnglish: English news and web pages, read bilingually",
-      "body": "Learning English? SurfEnglish brings you daily English news and any English web page to read bilingually, no dictionary needed. Keep WordByWord for everything else.",
+      "body": "Learning English? SurfEnglish brings you daily English news and any English web page to read bilingually, with no app switching. Keep WordByWord for everything else.",
       "points": [
         "Translation right below the original",
         "Double-tap a word for its meaning in context",
@@ -430,7 +430,7 @@
       "linkText": "SurfEnglish: Bilingual News"
     },
     "strip": {
-      "text": "Learning English too? Try **SurfEnglish**, our other app: English news and any English web page, read bilingually.",
+      "text": "Want to read English news to build your reading skills? Try **SurfEnglish**, our other app: any English web page read bilingually, double-tap for meanings, no app switching.",
       "cta": "See how"
     }
   },

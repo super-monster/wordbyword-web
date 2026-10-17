@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Tôi đang học tiếng Anh. SurfEnglish có đáng để thử thêm không?",
-        "a": "Hãy cứ dùng WordByWord cho những trang web và bài đăng X bạn chọn, bằng tiếng Anh hay bất kỳ ngôn ngữ nào khác. Nếu bạn đang học tiếng Anh, hãy thử thêm SurfEnglish, một ứng dụng khác của chúng tôi: tin tức hằng ngày và mọi trang web tiếng Anh đều có bản dịch ngay dưới bản gốc, nhấn đúp vào một từ là thấy nghĩa theo ngữ cảnh, không cần mở từ điển hay ứng dụng dịch. Những câu và từ đã lưu có thể ôn lại bằng trò chơi. Hai ứng dụng có thể dùng song song. [Trang web SurfEnglish](@se-site)"
+        "a": "Hãy cứ dùng WordByWord cho những trang web và bài đăng X bạn chọn, bằng tiếng Anh hay bất kỳ ngôn ngữ nào khác. Nếu bạn đang học tiếng Anh, hãy thử thêm SurfEnglish, một ứng dụng khác của chúng tôi: tin tức hằng ngày và mọi trang web tiếng Anh đều có bản dịch ngay dưới bản gốc, nhấn đúp vào một từ là thấy nghĩa theo ngữ cảnh, không cần chuyển ứng dụng. Những câu và từ đã lưu có thể ôn lại bằng trò chơi. Hai ứng dụng có thể dùng song song. [Trang web SurfEnglish](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Ứng dụng khác của chúng tôi",
       "title": "SurfEnglish: tin tức và trang web tiếng Anh, song ngữ",
-      "body": "Đang học tiếng Anh? SurfEnglish có tin tức tiếng Anh mỗi ngày và mở được mọi trang web tiếng Anh để đọc song ngữ, không cần từ điển. Ngôn ngữ khác: dùng WordByWord.",
+      "body": "Đang học tiếng Anh? SurfEnglish có tin tức tiếng Anh mỗi ngày và mở được mọi trang web tiếng Anh để đọc song ngữ, không cần chuyển ứng dụng. Ngôn ngữ khác: dùng WordByWord.",
       "points": [
         "Bản dịch hiện ngay dưới bản gốc",
         "Nhấn đúp: nghĩa của từ theo ngữ cảnh",
@@ -430,7 +430,7 @@
       "linkText": "SurfEnglish: Bilingual News"
     },
     "strip": {
-      "text": "Bạn cũng đang học tiếng Anh? Thử **SurfEnglish**, ứng dụng khác của chúng tôi: đọc song ngữ tin tức và mọi trang web tiếng Anh.",
+      "text": "Muốn đọc tin tiếng Anh để nâng cao kỹ năng đọc? Thử **SurfEnglish**, ứng dụng khác của chúng tôi: mọi trang web tiếng Anh song ngữ, nhấn đúp để xem nghĩa, không cần chuyển ứng dụng.",
       "cta": "Tìm hiểu thêm"
     }
   },

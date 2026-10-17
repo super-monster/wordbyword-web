@@ -399,7 +399,7 @@
       {
         "id": "english-learner",
         "q": "Saya sedang belajar bahasa Inggris. Apakah SurfEnglish juga layak dicoba?",
-        "a": "Tetap gunakan WordByWord untuk halaman dan postingan X yang Anda pilih, dalam bahasa Inggris atau bahasa lain apa pun. Jika Anda sedang belajar bahasa Inggris, coba juga SurfEnglish, aplikasi kami yang lain: berita harian dan halaman web bahasa Inggris mana pun bisa dibaca dengan terjemahan tepat di bawah teks asli, dan ketuk dua kali sebuah kata untuk melihat artinya sesuai konteks, tanpa membuka kamus atau penerjemah. Kalimat dan kata yang sudah Anda simpan bisa diulang lewat permainan. Kedua aplikasi bisa dipakai berdampingan. [Situs web SurfEnglish](@se-site)"
+        "a": "Tetap gunakan WordByWord untuk halaman dan postingan X yang Anda pilih, dalam bahasa Inggris atau bahasa lain apa pun. Jika Anda sedang belajar bahasa Inggris, coba juga SurfEnglish, aplikasi kami yang lain: berita harian dan halaman web bahasa Inggris mana pun bisa dibaca dengan terjemahan tepat di bawah teks asli, dan ketuk dua kali sebuah kata untuk melihat artinya sesuai konteks, tanpa berpindah aplikasi. Kalimat dan kata yang sudah Anda simpan bisa diulang lewat permainan. Kedua aplikasi bisa dipakai berdampingan. [Situs web SurfEnglish](@se-site)"
       },
       {
         "id": "devices",
@@ -413,7 +413,7 @@
     "card": {
       "eyebrow": "Aplikasi kami yang lain",
       "title": "SurfEnglish: berita dan web berbahasa Inggris, dwibahasa",
-      "body": "Sedang belajar bahasa Inggris? SurfEnglish menghadirkan berita bahasa Inggris setiap hari dan halaman web bahasa Inggris mana pun secara dwibahasa, tanpa kamus. Selebihnya, pakai WordByWord.",
+      "body": "Belajar bahasa Inggris? SurfEnglish menghadirkan berita harian dan halaman web bahasa Inggris mana pun secara dwibahasa, tanpa berpindah aplikasi. Selebihnya, pakai WordByWord.",
       "points": [
         "Terjemahan tepat di bawah teks asli",
         "Ketuk dua kali: arti kata sesuai konteks",
@@ -430,7 +430,7 @@
       "linkText": "SurfEnglish: Berita Inggris"
     },
     "strip": {
-      "text": "Sedang belajar bahasa Inggris juga? Coba **SurfEnglish**, aplikasi kami yang lain: berita dan web bahasa Inggris mana pun, dwibahasa.",
+      "text": "Ingin melatih kemampuan membaca lewat berita bahasa Inggris? Coba **SurfEnglish**, aplikasi kami yang lain: web bahasa Inggris mana pun secara dwibahasa, ketuk dua kali untuk arti kata, tanpa berpindah aplikasi.",
       "cta": "Lihat selengkapnya"
     }
   },
