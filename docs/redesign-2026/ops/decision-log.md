@@ -605,3 +605,5 @@
        - 桌面上文字 `text-wrap: balance`，CJK 加 `word-break: keep-all`：第一行是问句 + 品牌，第二行是卖点。
     - 卡片高度复测，tr / id 正文再缩短一点后全部达标：1280 宽 ≤ 412 px；375 宽 ≤ 469 px；320 宽 ≤ 558 px。
     - 测试：L-14 用例新增 app-switching 两条断言（WBW 文案报错、SE 文案不报错），共 66 个，全部通过。
+  - **发布（2026-10-17，负责人原话"现在发布到正式站"）**：生产 `cloudflare-deploy` 从 7024be2 快进到 64ccd40，含 dfbd1fe（zh-Hans 显示卡片）、b353562（横条 + 文案改写）、64ccd40（"不用切换 App" + 新问句）。推送前对 HEAD 做了干净导出校验（构建 0 错误、测试 66/66、pseudo 与 check 0 错误）。正式站契约测试 CONTRACT PASS（18 pass），verify-deploy 179 pass / 0 fail / 1 skip；20 个语言首页都有横条和卡片，卡片不再出现 A1–C1；在 zh-hans 正式页面用无头 Chrome 点击横条，依次触发 `surfenglish_promo_view:strip`、`surfenglish_promo:strip`、`surfenglish_promo_view:card`（GA 请求已拦截，只读 dataLayer）。
+  - 后续：上线约 2 周后对比 WBW `app_store_click / page_view`（基线 4.0 %），并看 `surfenglish_promo`（label `strip`）的点击量与曝光比。
