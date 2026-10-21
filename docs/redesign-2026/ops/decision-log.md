@@ -634,3 +634,8 @@
     - **文案**：translate / lookup 的说明在非日语页末尾加"示例为日语"，alt 写明 F1 新闻和 position → 杆位；L-8 的 label 上限改为 wu 72。
     - **验证**：构建 0 错误，测试 66/66，图片检查通过；20 个语言卡高桌面 ≤ 412 px、375 宽 ≤ 469 px。
     - **代价**：截图里有真实人名（Norris、Hamilton、诺兰），与 R11 相悖。App Store 现行素材就是这样，已告知负责人。
+  - **发布（2026-10-22～23，负责人原话"可以，预览更新后直接发布到正式站"）**：
+    - 当时 GitHub 故障，Cloudflare 收到的推送事件被降级处理，预览约 40 分钟后才构建出来。
+    - 预览验收：verify-deploy 178 pass / 0 fail，扇形切换正常。
+    - 生产 `cloudflare-deploy` 从 64ccd40 快进到 5d81866（含 96f2cc1 扇形配图与 5d81866 换 App Store 截图）。推送前对 HEAD 做了干净导出校验（构建 0 错误、测试 66/66）。约 00:54 JST 生产生效。
+    - 正式站验收：契约测试 CONTRACT PASS（18 pass），verify-deploy 179 pass / 0 fail / 1 skip。20 个语言首页都有三张扇形卡（`se/common/*`）和横条；ja 正式页点击切换和说明正常，GA 记为 `button_click:se_shot_*`。
