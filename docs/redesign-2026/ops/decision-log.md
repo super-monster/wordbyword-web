@@ -627,3 +627,10 @@
     - 构建 0 错误，23 条警告与改动前相同；测试 66/66。
     - 20 个语言桌面卡高 ≤ 412 px：右列先试 280 px 时 ru 达 440，改为 260 px 后回到预算内。
     - 无头 Chrome 点击 lookup / explore 后前卡和说明都正确切换，ar（RTL）也正常；GA 记为 `button_click`，label `se_shot_*`。
+  - **2026-10-22 修订（负责人看过预览后）**：负责人觉得山火那组别扭，查词弹出的是数字 "47" 的翻译，不是讲主题的词。
+    - **找素材**：SE 官网仓库、`shots-raw/`（空）和整台机器上都没有更好的截图。App Store 现行素材分两套：英文商店是 01-real-english-every-day … 05；中文、日文、韩文、西班牙文、葡萄牙文商店是 01-feed … 05-word-raid。两套的设备画面完全一样，都是 F1 新闻配日语译文，只有营销标题不同。中文版写着"这个真实示例使用日语，还可选择其他 20 种语言"。
+    - **下载**：负责人同意后（AskUserQuestion，选"下载这两张"），从 is1-ssl.mzstatic.com 下载 02-translate-as-you-read.png 和 04-meet-new-words-in-context.png（各约 2.5 MB，1320×2868）到 SE 仓库的 `appstore-assets-v3/en/`。该目录已加入 SE 仓库的 `.git/info/exclude`，与 appstore-assets/ 一样只在本机。
+    - **图片**：manifest 改为 `se/common/translate`、`se/common/lookup`，删除 `se/en/*`、`se/zh-hans/*`；`cardShotKey(id)` 不再区分语言。
+    - **文案**：translate / lookup 的说明在非日语页末尾加"示例为日语"，alt 写明 F1 新闻和 position → 杆位；L-8 的 label 上限改为 wu 72。
+    - **验证**：构建 0 错误，测试 66/66，图片检查通过；20 个语言卡高桌面 ≤ 412 px、375 宽 ≤ 469 px。
+    - **代价**：截图里有真实人名（Norris、Hamilton、诺兰），与 R11 相悖。App Store 现行素材就是这样，已告知负责人。

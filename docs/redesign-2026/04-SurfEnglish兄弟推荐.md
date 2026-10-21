@@ -734,7 +734,13 @@ v1.1 本节的定稿文案已删除（R75）。文档 08 §5.2 的 `about.family
 >   - 下方说明随最前一张切换（aria-live）；
 >   - 减少动效时没有过渡动画；没有 JS 时就是一张静态图，第一张在前。
 >   - < 900 px 仍不显示，图片不请求。
-> - **体量**：20 个语言实测桌面卡高 ≤ 412 px（R10 ≤ 420），手机不变。每张图 360 px 宽，AVIF 约 8–12 KB。
+> - **2026-10-22 再修订**：负责人认为山火那两张别扭（双击查的是数字 "47"，翻译的不是主题）。改用 SE 在 App Store 上的现行截图，经负责人同意从 Apple CDN 下载原图，存到 SE 仓库的 `appstore-assets-v3/en/`，只在本机。
+>   - translate：02-translate-as-you-read，一条 F1 新闻，标题和段落下面有日语译文；
+>   - lookup：04-meet-new-words-in-context，双击 "position"，面板给出读音和语境释义「ポールポジション（レースで最前列のスタート位置）」。
+>   - App Store 各语言版本用的都是这一个画面，中文版写着"这个真实示例使用日语"，所以 20 个语言共用一套；不是日语页面时，说明末尾注明"示例为日语"。
+>   - 新闻里有真实人名（Norris、Hamilton、诺兰）。这与 R11 相悖，但 App Store 现行素材就是这样，负责人知情后同意。
+>   - explore 不变。
+> - **体量**：20 个语言实测桌面卡高 ≤ 412 px（R10 ≤ 420），手机不变。每张图 360 px 宽，AVIF 约 8–15 KB。
 > - **统计**：点击卡片由 analytics.js 记为 `button_click`，label `se_shot_translate` / `se_shot_lookup` / `se_shot_explore`。
 
 | 角色 | 文件 | 用于 | 理由 |
