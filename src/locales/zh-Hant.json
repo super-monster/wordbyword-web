@@ -428,12 +428,12 @@
       "appStoreLinkText": "在 App Store 取得 SurfEnglish",
       "shots": {
         "translate": {
-          "label": "英文新聞，譯文就在原文下方",
-          "alt": "SurfEnglish 新聞頁（英文介面）：英文新聞的標題和段落下方各有一行譯文"
+          "label": "英文新聞，譯文就在原文下方（示例為日語）",
+          "alt": "SurfEnglish 新聞頁：一則英文 F1 新聞，標題和段落下方各有一行日語譯文"
         },
         "lookup": {
-          "label": "任何網頁，點兩下單字看釋義",
-          "alt": "在 SurfEnglish 開啟的英文新聞網頁（英文介面）：點兩下的字旁跳出它的釋義"
+          "label": "點兩下單字，看語境裡的意思（示例為日語）",
+          "alt": "在 SurfEnglish 點兩下英文新聞裡的 position：跳出讀音和語境釋義（日語：桿位，即賽車起跑的最前位置）"
         },
         "explore": {
           "label": "內建瀏覽器，開啟任何英文網站",

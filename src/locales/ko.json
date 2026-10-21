@@ -427,12 +427,12 @@
       "appStoreLinkText": "App Store에서 SurfEnglish 다운로드",
       "shots": {
         "translate": {
-          "label": "영어 뉴스, 원문 바로 아래 번역",
-          "alt": "SurfEnglish 뉴스 화면(영어 인터페이스): 영어 뉴스 제목과 문단 아래에 각각 번역이 표시됨"
+          "label": "영어 뉴스, 원문 바로 아래 번역(예시: 일본어)",
+          "alt": "SurfEnglish 뉴스 화면: 영어 F1 뉴스의 제목과 문단 아래에 각각 일본어 번역"
         },
         "lookup": {
-          "label": "어떤 웹페이지든 두 번 탭해 뜻 확인",
-          "alt": "SurfEnglish에서 연 영어 뉴스 웹페이지(영어 인터페이스): 두 번 탭한 단어의 뜻이 작은 팝업으로 표시됨"
+          "label": "단어를 두 번 탭해 문맥 속 뜻 확인(예시: 일본어)",
+          "alt": "SurfEnglish에서 영어 뉴스의 position을 두 번 탭: 발음과 문맥 속 뜻(일본어로 ‘폴 포지션’)이 표시됨"
         },
         "explore": {
           "label": "내장 브라우저로 어떤 영어 사이트든",

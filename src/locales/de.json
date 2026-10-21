@@ -425,12 +425,12 @@
       "appStoreLinkText": "SurfEnglish im App Store laden",
       "shots": {
         "translate": {
-          "label": "Englische News, Übersetzung unter dem Original",
-          "alt": "News-Ansicht von SurfEnglish (englische Oberfläche): englische Überschrift und Absatz, jeweils mit Übersetzung darunter"
+          "label": "Englische News, Übersetzung unter dem Original (Beispiel: Japanisch)",
+          "alt": "News-Ansicht von SurfEnglish: ein englischer F1-Artikel mit japanischer Übersetzung unter Überschrift und Absatz"
         },
         "lookup": {
-          "label": "Doppeltippen auf jeder Webseite",
-          "alt": "Englische Nachrichtenseite in SurfEnglish (englische Oberfläche): das angetippte Wort zeigt seine Bedeutung"
+          "label": "Doppeltippen: Wortbedeutung im Kontext (Beispiel: Japanisch)",
+          "alt": "SurfEnglish: Doppeltippen auf „position“ in einem F1-Artikel; ein Feld zeigt Aussprache und Bedeutung hier: Pole-Position"
         },
         "explore": {
           "label": "Jede englische Website in der App öffnen",

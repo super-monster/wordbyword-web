@@ -424,12 +424,12 @@
       "appStoreLinkText": "Download SurfEnglish di App Store",
       "shots": {
         "translate": {
-          "label": "Berita bahasa Inggris, terjemahan di bawah teks asli",
-          "alt": "Berita di SurfEnglish (antarmuka bahasa Inggris): judul dan paragraf bahasa Inggris dengan terjemahan di bawahnya"
+          "label": "Berita bahasa Inggris, terjemahan di bawah teks asli (contoh: Jepang)",
+          "alt": "Berita di SurfEnglish: berita F1 berbahasa Inggris dengan terjemahan Jepang di bawah judul dan paragraf"
         },
         "lookup": {
-          "label": "Ketuk dua kali kata di halaman web mana pun",
-          "alt": "Halaman berita bahasa Inggris di SurfEnglish (antarmuka bahasa Inggris): kata yang diketuk menampilkan artinya"
+          "label": "Ketuk dua kali: arti kata sesuai konteks (contoh: Jepang)",
+          "alt": "SurfEnglish: ketuk dua kali “position” di berita F1; panel menampilkan pelafalan dan arti sesuai konteks: pole position"
         },
         "explore": {
           "label": "Buka situs bahasa Inggris apa pun di aplikasi",

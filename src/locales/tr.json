@@ -425,12 +425,12 @@
       "appStoreLinkText": "SurfEnglish’i App Store’dan indirin",
       "shots": {
         "translate": {
-          "label": "İngilizce haberler, çevirisi hemen altında",
-          "alt": "SurfEnglish haber akışı (İngilizce arayüz): İngilizce başlık ve paragraf, her birinin altında çevirisi"
+          "label": "İngilizce haberler, çevirisi hemen altında (örnek: Japonca)",
+          "alt": "SurfEnglish haber akışı: İngilizce bir F1 haberi, başlığın ve paragrafın altında Japonca çevirisi"
         },
         "lookup": {
-          "label": "Her web sayfasında çift dokunun",
-          "alt": "SurfEnglish’te açılan İngilizce haber sayfası (İngilizce arayüz): dokunulan kelimenin anlamı küçük bir pencerede"
+          "label": "Çift dokunun: kelimenin bağlamdaki anlamı (örnek: Japonca)",
+          "alt": "SurfEnglish: F1 haberindeki “position” kelimesine çift dokunuldu; panel telaffuzu ve buradaki anlamını gösteriyor"
         },
         "explore": {
           "label": "Her İngilizce siteyi uygulamada açın",

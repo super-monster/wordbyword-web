@@ -424,12 +424,12 @@
       "appStoreLinkText": "Tải SurfEnglish trên App Store",
       "shots": {
         "translate": {
-          "label": "Tin tiếng Anh, bản dịch ngay dưới bản gốc",
-          "alt": "Trang tin của SurfEnglish (giao diện tiếng Anh): tiêu đề và đoạn văn tiếng Anh, mỗi phần có bản dịch bên dưới"
+          "label": "Tin tiếng Anh, bản dịch ngay dưới bản gốc (ví dụ: tiếng Nhật)",
+          "alt": "Trang tin SurfEnglish: một tin F1 tiếng Anh, dưới tiêu đề và đoạn văn có bản dịch tiếng Nhật"
         },
         "lookup": {
-          "label": "Nhấn đúp vào từ trên mọi trang web",
-          "alt": "Trang tin tiếng Anh mở trong SurfEnglish (giao diện tiếng Anh): từ được nhấn hiện nghĩa trong một ô nhỏ"
+          "label": "Nhấn đúp: nghĩa của từ theo ngữ cảnh (ví dụ: tiếng Nhật)",
+          "alt": "SurfEnglish: nhấn đúp vào “position” trong tin F1; bảng nhỏ hiện cách đọc và nghĩa trong ngữ cảnh: vị trí xuất phát đầu"
         },
         "explore": {
           "label": "Mở mọi trang web tiếng Anh ngay trong ứng dụng",

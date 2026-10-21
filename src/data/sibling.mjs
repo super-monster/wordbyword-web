@@ -18,8 +18,8 @@ export const SIBLING = {
     de: { uiNote: true }, fr: { uiNote: true }, it: { uiNote: true }, nl: { uiNote: true },
     pl: { uiNote: true }, ru: { uiNote: true }, tr: { uiNote: true }, uk: { uiNote: true },
   },
-  // ① card fan (2026-10-21, owner; replaces R44's games crop): core-feature shots, first = front card. zh-Hans pages use
-  // the zh-Hans App Store set, every other page the en set (the other SE sets show a game-news capture); explore is common.
+  // ① card fan (2026-10-21, owner; replaces R44's games crop): core-feature shots, first = front card. translate / lookup
+  // come from the current App Store listing (one scene, Japanese example, on every App Store locale); explore from the SE site.
   cardShots: ['translate', 'lookup', 'explore'],
   ctMode: 'placement',                 // R3: ct per placement only (wbw-card, wbw-about)
   suppressWhenNotice: true,            // R35: hide ① while a site notice is on
@@ -32,8 +32,5 @@ export function seMode(locale) {
   return locale.code in SIBLING.seLocalePath ? 'local' : 'en-site';
 }
 
-// Image key of a card-fan shot for a locale (images.manifest.json: se/en/*, se/zh-hans/*, se/common/explore).
-export function cardShotKey(id, locale) {
-  if (id === 'explore') return 'se/common/explore';
-  return `se/${locale.code === 'zh-Hans' ? 'zh-hans' : 'en'}/${id}`;
-}
+// Image key of a card-fan shot (images.manifest.json se/common/*): one set for every locale, like the App Store listing.
+export const cardShotKey = (id) => `se/common/${id}`;

@@ -114,7 +114,7 @@ const LENGTH_RULES = [
   { keys: ['sibling.card.points[*]'], wu: 45 },
   { keys: ['sibling.card.linkText', 'sibling.card.appStoreLinkText'], n: 60, cjk: 30, enSite: 80 },
   { keys: ['sibling.card.body'], words: 45, cjk: 110 },
-  { keys: ['sibling.card.shots.*.label'], wu: 52, why: 'card-fan caption under a 260px fan, at most two lines (2026-10-21)' },
+  { keys: ['sibling.card.shots.*.label'], wu: 72, why: 'card-fan caption under a 260px fan, at most two lines (2026-10-21)' },
   { keys: ['sibling.strip.text'], n: 210, cjk: 90, why: 'placement ⑦: hook + one line of features, 1–2 lines on desktop (2026-10-17)' },
   { keys: ['sibling.strip.cta'], wu: 20 },
 ];

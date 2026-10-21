@@ -47,7 +47,7 @@ export function siblingCard(ctx) {
 function shotFan(ctx, shots) {
   const ids = SIBLING.cardShots;
   return `<figure class="sibling__window se-fan" data-se-fan>
-        <div class="se-fan__deck">${ids.map((id, i) => `<button type="button" class="se-fan__card" data-slot="${i}" data-label="${esc(shots[id].label)}" aria-pressed="${i === 0}" data-ga-label="se_shot_${id}">${picture(ctx, cardShotKey(id, ctx.route.locale), { alt: shots[id].alt })}</button>`).join('')}</div>
+        <div class="se-fan__deck">${ids.map((id, i) => `<button type="button" class="se-fan__card" data-slot="${i}" data-label="${esc(shots[id].label)}" aria-pressed="${i === 0}" data-ga-label="se_shot_${id}">${picture(ctx, cardShotKey(id), { alt: shots[id].alt })}</button>`).join('')}</div>
         <figcaption class="se-fan__caption" aria-live="polite">${esc(shots[ids[0]].label)}</figcaption>
       </figure>`;
 }

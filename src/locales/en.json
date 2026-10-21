@@ -424,12 +424,12 @@
       "appStoreLinkText": "Get SurfEnglish on the App Store",
       "shots": {
         "translate": {
-          "label": "English news, translated under the original",
-          "alt": "SurfEnglish news feed: an English headline and paragraph, each with its translation right below"
+          "label": "English news, translated under the original (example in Japanese)",
+          "alt": "SurfEnglish news feed: an F1 story in English, with a Japanese translation under the headline and the paragraph"
         },
         "lookup": {
-          "label": "Double-tap a word on any web page",
-          "alt": "An English news web page in SurfEnglish: a double-tapped word shows its meaning in a small popup"
+          "label": "Double-tap a word for its meaning in context (example in Japanese)",
+          "alt": "SurfEnglish: “position” double-tapped in an F1 story; a panel explains it in Japanese as pole position"
         },
         "explore": {
           "label": "Open any English website in the app",

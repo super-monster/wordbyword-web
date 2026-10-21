@@ -425,12 +425,12 @@
       "appStoreLinkText": "Télécharger SurfEnglish dans l’App Store",
       "shots": {
         "translate": {
-          "label": "L’actualité en anglais, traduite sous l’original",
-          "alt": "Fil d’actualité de SurfEnglish (interface en anglais) : un titre et un paragraphe en anglais, chacun suivi de sa traduction"
+          "label": "L’actualité en anglais, traduite sous l’original (exemple en japonais)",
+          "alt": "Fil d’actualité de SurfEnglish : un article de F1 en anglais, avec la traduction japonaise sous le titre et le paragraphe"
         },
         "lookup": {
-          "label": "Touchez deux fois un mot, sur toute page web",
-          "alt": "Page d’actualité en anglais ouverte dans SurfEnglish (interface en anglais) : le mot touché affiche son sens"
+          "label": "Touchez deux fois un mot : son sens en contexte (exemple en japonais)",
+          "alt": "SurfEnglish : “position” touché deux fois dans un article de F1 ; un panneau explique son sens ici : pole position"
         },
         "explore": {
           "label": "N’importe quel site en anglais, dans l’app",
