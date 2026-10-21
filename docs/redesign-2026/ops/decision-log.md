@@ -607,3 +607,23 @@
     - 测试：L-14 用例新增 app-switching 两条断言（WBW 文案报错、SE 文案不报错），共 66 个，全部通过。
   - **发布（2026-10-17，负责人原话"现在发布到正式站"）**：生产 `cloudflare-deploy` 从 7024be2 快进到 64ccd40，含 dfbd1fe（zh-Hans 显示卡片）、b353562（横条 + 文案改写）、64ccd40（"不用切换 App" + 新问句）。推送前对 HEAD 做了干净导出校验（构建 0 错误、测试 66/66、pseudo 与 check 0 错误）。正式站契约测试 CONTRACT PASS（18 pass），verify-deploy 179 pass / 0 fail / 1 skip；20 个语言首页都有横条和卡片，卡片不再出现 A1–C1；在 zh-hans 正式页面用无头 Chrome 点击横条，依次触发 `surfenglish_promo_view:strip`、`surfenglish_promo:strip`、`surfenglish_promo_view:card`（GA 请求已拦截，只读 dataLayer）。
   - 后续：上线约 2 周后对比 WBW `app_store_click / page_view`（基线 4.0 %），并看 `surfenglish_promo`（label `strip`）的点击量与曝光比。
+- **SE 卡片扇形配图（2026-10-21，负责人决定）**：
+  - 起因：负责人发现 SE 卡片右侧配图是游戏页（R44），偏离核心功能。要求从 SE 官网项目里找核心功能配图，像扑克牌一样展开 3–4 张，可点击，点到的那张换到最前（中间略大、两边略小，参考 StylioStudio 官网）。只改右侧配图，不整体大改。
+  - 选图：
+    - **SE 官网截图不用**：`public/images/screenshots/` 里的 feed-*.jpg 有名人新闻标题（R11 / R44 的原因仍然成立），word-lookup.jpg 是 BBC Sport 页和真实球员照片，browser.jpg 的 BBC 字标占大块画面（R32）。
+    - **SE App Store 截图**（`appstore-assets/<locale>/`，SE 仓库里只在本机，不进 git）：12 套里只有 en 和 zh-Hans 是中性的 BBC 山火新闻；其余 10 套是 God of War 游戏文章，ja 套还有 NYT 真实间谍案标题，ar 套英文语序错乱，都不用。
+    - **最终三张**：
+      - translate：02-translate 屏幕区域，新闻每段下有译文；
+      - lookup：04-lookup，BBC 网页上双击 "47"，弹出释义，裁切从字标下方开始；
+      - explore：SE 官网 explore.jpg，内置浏览器首页。
+    - zh-Hans 页用中文套图，其余 19 个语言用 en 套图（西班牙语译文作示例）；explore 全站共用。
+  - 实现：
+    - **图片**：`images.manifest.json` 新增 `se/en/{translate,lookup}`、`se/zh-hans/{translate,lookup}`、`se/common/explore`（360 px，3:4），删除 `se/common/games`；`check-images --render` 99/99 通过。
+    - **配置**：`SIBLING.cardImage` → `cardShots` + `cardShotKey()`。
+    - **文案键**：`sibling.card.shotAlt` / `shotCaption` → `sibling.card.shots.{id}.{label,alt}`，20 个 locale；"shortcuts" 被 claims-lint shortcuts-volume 拦下，改为"links"；L-8 新增 label 规则 wu 52。
+    - **模板与样式**：figure 内是三个 `<button class="se-fan__card" data-slot aria-pressed>`，下方是 aria-live 说明。CSS 照 StylioStudio `.hero-fan` 的做法，按 `data-slot` 定位；右列 200 → 260 px，列间距 48 → 32 px。
+    - **交互**：`main.js` 负责交换前卡与 ←/→ 轮换。减少动效时没有过渡；没有 JS 时就是静态图。
+  - 验证：
+    - 构建 0 错误，23 条警告与改动前相同；测试 66/66。
+    - 20 个语言桌面卡高 ≤ 412 px：右列先试 280 px 时 ru 达 440，改为 260 px 后回到预算内。
+    - 无头 Chrome 点击 lookup / explore 后前卡和说明都正确切换，ar（RTL）也正常；GA 记为 `button_click`，label `se_shot_*`。
