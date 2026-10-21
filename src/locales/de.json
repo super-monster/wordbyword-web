@@ -423,8 +423,20 @@
       "uiNote": "Kostenlos starten · Oberfläche nicht auf Deutsch (Englisch und 11 weitere Sprachen) · Übersetzung ins Deutsche möglich",
       "linkText": "Zweisprachig lesen – SurfEnglish (Website auf Englisch)",
       "appStoreLinkText": "SurfEnglish im App Store laden",
-      "shotAlt": "SurfEnglish-Spielebildschirm (englische Oberfläche): Sentence Builder und Word Raid mit gespeicherten Sätzen und Wörtern",
-      "shotCaption": "SurfEnglish-Screenshot (englische Oberfläche)"
+      "shots": {
+        "translate": {
+          "label": "Englische News, Übersetzung unter dem Original",
+          "alt": "News-Ansicht von SurfEnglish (englische Oberfläche): englische Überschrift und Absatz, jeweils mit Übersetzung darunter"
+        },
+        "lookup": {
+          "label": "Doppeltippen auf jeder Webseite",
+          "alt": "Englische Nachrichtenseite in SurfEnglish (englische Oberfläche): das angetippte Wort zeigt seine Bedeutung"
+        },
+        "explore": {
+          "label": "Jede englische Website in der App öffnen",
+          "alt": "Integrierter Browser von SurfEnglish (englische Oberfläche): Website suchen oder eingeben, mit Links zu Englisch-Lernseiten"
+        }
+      }
     },
     "footer": {
       "heading": "Unsere anderen Apps",

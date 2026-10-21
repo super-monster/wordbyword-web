@@ -427,8 +427,20 @@
       "note": "無料で始められます · iPhone／iPad · アプリ表示は日本語を含む{se.uiLanguages}言語 · {se.targetLanguages}言語に翻訳",
       "linkText": "SurfEnglishで英語ニュースやWebページを対訳で読む",
       "appStoreLinkText": "App StoreでSurfEnglishを入手",
-      "shotAlt": "SurfEnglishのゲーム画面：保存した文と単語で遊べるSentence BuilderとWord Raid",
-      "shotCaption": "SurfEnglishの画面（英語UI）"
+      "shots": {
+        "translate": {
+          "label": "英語ニュースの原文の下に訳文",
+          "alt": "SurfEnglishのニュース画面（英語表示）：英語の見出しと段落の下にそれぞれ訳文"
+        },
+        "lookup": {
+          "label": "どのWebページでもダブルタップで意味",
+          "alt": "SurfEnglishで開いた英語ニュースのWebページ（英語表示）：ダブルタップした語の意味が小さく表示される"
+        },
+        "explore": {
+          "label": "内蔵ブラウザでどんな英語サイトも",
+          "alt": "SurfEnglishの内蔵ブラウザの最初の画面（英語表示）：サイトの検索・URL入力と英語学習サイトへのリンク"
+        }
+      }
     },
     "footer": {
       "heading": "私たちのほかのアプリ",

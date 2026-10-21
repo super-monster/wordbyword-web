@@ -422,8 +422,20 @@
       "note": "Bắt đầu miễn phí · iPhone và iPad · Giao diện {se.uiLanguages} ngôn ngữ, có tiếng Việt · Dịch sang {se.targetLanguages} ngôn ngữ",
       "linkText": "Đọc tin tức và trang web tiếng Anh song ngữ — SurfEnglish",
       "appStoreLinkText": "Tải SurfEnglish trên App Store",
-      "shotAlt": "SurfEnglish, màn hình Games (giao diện tiếng Anh): Sentence Builder và Word Raid, chơi với câu và từ đã lưu",
-      "shotCaption": "Ảnh chụp màn hình SurfEnglish (giao diện tiếng Anh)"
+      "shots": {
+        "translate": {
+          "label": "Tin tiếng Anh, bản dịch ngay dưới bản gốc",
+          "alt": "Trang tin của SurfEnglish (giao diện tiếng Anh): tiêu đề và đoạn văn tiếng Anh, mỗi phần có bản dịch bên dưới"
+        },
+        "lookup": {
+          "label": "Nhấn đúp vào từ trên mọi trang web",
+          "alt": "Trang tin tiếng Anh mở trong SurfEnglish (giao diện tiếng Anh): từ được nhấn hiện nghĩa trong một ô nhỏ"
+        },
+        "explore": {
+          "label": "Mở mọi trang web tiếng Anh ngay trong ứng dụng",
+          "alt": "Trình duyệt tích hợp của SurfEnglish (giao diện tiếng Anh): tìm hoặc nhập trang web, kèm liên kết đến các trang học tiếng Anh"
+        }
+      }
     },
     "footer": {
       "heading": "Ứng dụng khác của chúng tôi",

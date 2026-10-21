@@ -422,8 +422,20 @@
       "note": "Gratis para empezar · iPhone y iPad · App en {se.uiLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}, español incluido · Traduce a {se.targetLanguages, plural, one{# idioma} many{# de idiomas} other{# idiomas}}",
       "linkText": "Noticias y páginas en inglés con traducción — SurfEnglish",
       "appStoreLinkText": "Consigue SurfEnglish en el App Store",
-      "shotAlt": "SurfEnglish, pantalla de juegos (interfaz en inglés): Sentence Builder y Word Raid, con frases y palabras guardadas",
-      "shotCaption": "Captura de SurfEnglish (interfaz en inglés)"
+      "shots": {
+        "translate": {
+          "label": "Noticias en inglés con la traducción debajo",
+          "alt": "Noticias en SurfEnglish (interfaz en inglés): un titular y un párrafo en inglés, cada uno con su traducción debajo"
+        },
+        "lookup": {
+          "label": "Doble toque en cualquier página web",
+          "alt": "Una página de noticias en inglés abierta en SurfEnglish (interfaz en inglés): la palabra tocada muestra su significado"
+        },
+        "explore": {
+          "label": "Abre cualquier web en inglés en la app",
+          "alt": "Navegador integrado de SurfEnglish (interfaz en inglés): buscar o escribir una web, con accesos a sitios para aprender inglés"
+        }
+      }
     },
     "footer": {
       "heading": "Otras apps nuestras",

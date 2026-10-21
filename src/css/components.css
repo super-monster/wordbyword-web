@@ -183,15 +183,26 @@ html[data-script="latn"] .sibling__eyebrow { text-transform: uppercase; letter-s
 /* v1.3 (R76): the site link is now a keyword phrase that wraps to 2 lines on phones; 32px targets (as the footer
    links, VIS-22) and 21px lines keep the card <= 480 at >= 375 and <= 560 at 320 (R10, R84; 05 §5.9 budget 19/22px) */
 .sibling__actions a { display: inline-flex; align-items: center; min-block-size: 32px; font-size: .9375rem; line-height: 1.4; }
-.sibling__window { display: none; }   /* < 900: hidden; the lazy image is never requested */
-.sibling__window img { inline-size: 100%; border-radius: var(--r-window); outline: 1px solid var(--hairline); }
-.sibling__window figcaption { margin-block-start: 6px; color: var(--ink-3); font-size: var(--fs-xs); }
+.sibling__window { display: none; }   /* < 900: hidden; the lazy images are never requested */
+/* card fan (2026-10-21, after StylioStudio's .hero-fan): three 3:4 shots; slot 0 upright in front, 1 / 2 tilted and
+   smaller behind it, left / right. Clicking a back card swaps it to slot 0 (main.js); the caption names the front one. */
+.se-fan__deck { position: relative; aspect-ratio: 280 / 246; isolation: isolate; }
+.se-fan__card { position: absolute; inset-block-start: 0; inset-inline-start: 22%; inline-size: 56%; aspect-ratio: 3 / 4; padding: 0; overflow: hidden;
+  border: 0; border-radius: var(--r-window); background: var(--paper-3); box-shadow: 0 0 0 1px var(--hairline), 0 14px 28px -16px rgb(26 21 20 / .55);
+  cursor: pointer; transform-origin: 50% 85%; transition: transform .55s cubic-bezier(.22, .8, .24, 1), filter .3s ease; -webkit-tap-highlight-color: transparent; }
+.se-fan__card picture, .se-fan__card img { display: block; inline-size: 100%; block-size: 100%; object-fit: cover; }
+.se-fan__card[data-slot="0"] { z-index: 3; transform: none; cursor: default; }
+.se-fan__card[data-slot="1"] { z-index: 1; transform: translate(-46%, 9%) rotate(-8deg) scale(.8); filter: saturate(.85) brightness(.96); }
+.se-fan__card[data-slot="2"] { z-index: 2; transform: translate(46%, 9%) rotate(8deg) scale(.8); filter: saturate(.85) brightness(.96); }
+.se-fan__card:not([data-slot="0"]):hover { filter: none; }
+.se-fan__card:focus-visible { z-index: 4; outline: 2px solid var(--accent); outline-offset: 3px; }
+.se-fan__caption { margin-block-start: var(--s-3); color: var(--ink-3); font-size: var(--fs-xs); line-height: 1.4; text-align: center; }
 @media (min-width: 560px) {
   .sibling__body, .sibling__points li { font-size: .9375rem; line-height: 1.55; }
 }
 @media (min-width: 900px) {
-  .sibling__inner { grid-template-columns: minmax(0, 1fr) 200px; column-gap: var(--s-7); align-items: center; padding: var(--s-6); }
-  .sibling__window { display: block; inline-size: 200px; }
+  .sibling__inner { grid-template-columns: minmax(0, 1fr) 260px; column-gap: var(--s-6); align-items: center; padding: var(--s-6); }
+  .sibling__window { display: block; inline-size: 260px; }
 }
 
 /* ⑦ strip under the hero (2026-10-17): one quiet paper row, container-wide like the mosaic edge above it, that only

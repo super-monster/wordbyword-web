@@ -422,8 +422,20 @@
       "note": "Free to start · iPhone and iPad · App in {se.uiLanguages} languages · Translations into {se.targetLanguages}",
       "linkText": "Read English news and web pages bilingually with SurfEnglish",
       "appStoreLinkText": "Get SurfEnglish on the App Store",
-      "shotAlt": "SurfEnglish Games screen: Sentence Builder and Word Raid, ready to play with saved sentences and words",
-      "shotCaption": "SurfEnglish screenshot (English interface)"
+      "shots": {
+        "translate": {
+          "label": "English news, translated under the original",
+          "alt": "SurfEnglish news feed: an English headline and paragraph, each with its translation right below"
+        },
+        "lookup": {
+          "label": "Double-tap a word on any web page",
+          "alt": "An English news web page in SurfEnglish: a double-tapped word shows its meaning in a small popup"
+        },
+        "explore": {
+          "label": "Open any English website in the app",
+          "alt": "SurfEnglish’s built-in browser: search or enter a website, with links to English learning sites"
+        }
+      }
     },
     "footer": {
       "heading": "More from us",

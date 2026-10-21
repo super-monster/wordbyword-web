@@ -40,6 +40,31 @@
     }
   }
 
+  /* ---- SE card fan (2026-10-21): a back card swaps to the front; ←/→ rotate; the caption follows the front card ---- */
+  const fan = document.querySelector('[data-se-fan]');
+  if (fan) {
+    const cards = [...fan.querySelectorAll('.se-fan__card')];
+    const caption = fan.querySelector('.se-fan__caption');
+    const front = (card) => {
+      const current = cards.find((c) => c.dataset.slot === '0');
+      if (card === current) return;
+      current.dataset.slot = card.dataset.slot;
+      card.dataset.slot = '0';
+      for (const c of cards) c.setAttribute('aria-pressed', String(c === card));
+      caption.textContent = card.dataset.label;
+    };
+    for (const card of cards) {
+      card.addEventListener('click', () => front(card));
+      card.addEventListener('keydown', (ev) => {
+        if (ev.key !== 'ArrowLeft' && ev.key !== 'ArrowRight') return;
+        ev.preventDefault();
+        const next = cards[(cards.indexOf(card) + (ev.key === 'ArrowRight' ? 1 : cards.length - 1)) % cards.length];
+        front(next);
+        next.focus({ preventScroll: true });
+      });
+    }
+  }
+
   /* ---- hero sample (05 §5.2.4) ---- */
   const fig = document.querySelector('.sample');
   if (!fig) return;

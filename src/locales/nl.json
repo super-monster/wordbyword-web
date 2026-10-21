@@ -423,8 +423,20 @@
       "uiNote": "Gratis · Geen Nederlandse interface (wel Engels en 11 andere talen) · Vertaalt naar het Nederlands",
       "linkText": "Engels nieuws en webpagina’s tweetalig – SurfEnglish (Engelstalige website)",
       "appStoreLinkText": "Download SurfEnglish in de App Store",
-      "shotAlt": "SurfEnglish, scherm Games (Engelse interface): Sentence Builder en Word Raid, te spelen met bewaarde zinnen en woorden",
-      "shotCaption": "Screenshot van SurfEnglish (Engelse interface)"
+      "shots": {
+        "translate": {
+          "label": "Engels nieuws, vertaling onder het origineel",
+          "alt": "Nieuwsoverzicht in SurfEnglish (Engelse interface): Engelse kop en alinea, elk met de vertaling eronder"
+        },
+        "lookup": {
+          "label": "Dubbeltikken op elke webpagina",
+          "alt": "Engelse nieuwspagina geopend in SurfEnglish (Engelse interface): het aangetikte woord toont zijn betekenis"
+        },
+        "explore": {
+          "label": "Elke Engelse website in de app openen",
+          "alt": "Ingebouwde browser van SurfEnglish (Engelse interface): website zoeken of invoeren, met links naar Engelse leersites"
+        }
+      }
     },
     "footer": {
       "heading": "Onze andere apps",

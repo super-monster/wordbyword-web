@@ -432,8 +432,20 @@
       "note": "免费开始 · iPhone / iPad · App 界面支持简体中文等 {se.uiLanguages} 种语言 · 可译成 {se.targetLanguages} 种语言",
       "linkText": "用 SurfEnglish 双语对照读英文新闻和网页",
       "appStoreLinkText": "在 App Store 获取 SurfEnglish",
-      "shotAlt": "SurfEnglish 游戏页：可用保存的句子和单词来玩 Sentence Builder 与 Word Raid",
-      "shotCaption": "SurfEnglish 截图（英文界面）"
+      "shots": {
+        "translate": {
+          "label": "英文新闻，译文就在原文下方",
+          "alt": "SurfEnglish 新闻页：英文新闻的标题和段落下方各有一行中文译文"
+        },
+        "lookup": {
+          "label": "任意网页，双击单词看释义",
+          "alt": "在 SurfEnglish 里打开的英文新闻网页：双击的词旁弹出它的中文释义"
+        },
+        "explore": {
+          "label": "内置浏览器，打开任意英文网站",
+          "alt": "SurfEnglish 内置浏览器首页（英文界面）：可搜索或输入网址，下方是英语学习网站的快捷入口"
+        }
+      }
     },
     "availability": "SurfEnglish 目前未在中国大陆 App Store 上架。",
     "footer": {

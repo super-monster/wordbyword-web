@@ -423,8 +423,20 @@
       "uiNote": "Ücretsiz · Arayüz Türkçe değil (İngilizce ve 11 dil daha) · Türkçeye çeviri yapar",
       "linkText": "İngilizce haberler ve sayfalar çevirisiyle – SurfEnglish (İngilizce site)",
       "appStoreLinkText": "SurfEnglish’i App Store’dan indirin",
-      "shotAlt": "SurfEnglish “Games” ekranı (İngilizce arayüz): kayıtlı cümle ve kelimelerle oynamaya hazır Sentence Builder ve Word Raid",
-      "shotCaption": "SurfEnglish ekran görüntüsü (İngilizce arayüz)"
+      "shots": {
+        "translate": {
+          "label": "İngilizce haberler, çevirisi hemen altında",
+          "alt": "SurfEnglish haber akışı (İngilizce arayüz): İngilizce başlık ve paragraf, her birinin altında çevirisi"
+        },
+        "lookup": {
+          "label": "Her web sayfasında çift dokunun",
+          "alt": "SurfEnglish’te açılan İngilizce haber sayfası (İngilizce arayüz): dokunulan kelimenin anlamı küçük bir pencerede"
+        },
+        "explore": {
+          "label": "Her İngilizce siteyi uygulamada açın",
+          "alt": "SurfEnglish’in yerleşik tarayıcısı (İngilizce arayüz): site arama veya adres girme, İngilizce öğrenme sitelerine bağlantılar"
+        }
+      }
     },
     "footer": {
       "heading": "Diğer uygulamalarımız",

@@ -371,14 +371,54 @@
       {"format":"jpg","w":734,"h":234,"bytes":42859,"path":"assets/img/ext/common/strip-structure-734.jpg"}
     ]
   },
-  "se/common/games": {
-    "src": "se:public/images/screenshots/games-home.jpg",
-    "srcHash": "ba9154bc75d3dd6b",
-    "crop": {"x":0,"y":112,"w":720,"h":792},
+  "se/en/translate": {
+    "src": "se:appstore-assets/en/02-translate.png",
+    "srcHash": "e921c5ce53dfc443",
+    "crop": {"x":176,"y":640,"w":948,"h":1264},
     "alpha": false,
     "variants": [
-      {"format":"avif","w":400,"h":440,"bytes":7264,"path":"assets/img/se/common/games-400.avif"},
-      {"format":"jpg","w":400,"h":440,"bytes":20653,"path":"assets/img/se/common/games-400.jpg"}
+      {"format":"avif","w":360,"h":480,"bytes":11767,"path":"assets/img/se/en/translate-360.avif"},
+      {"format":"jpg","w":360,"h":480,"bytes":27782,"path":"assets/img/se/en/translate-360.jpg"}
+    ]
+  },
+  "se/en/lookup": {
+    "src": "se:appstore-assets/en/04-lookup.png",
+    "srcHash": "dfacdf9535a34d7d",
+    "crop": {"x":168,"y":920,"w":948,"h":1264},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":360,"h":480,"bytes":13386,"path":"assets/img/se/en/lookup-360.avif"},
+      {"format":"jpg","w":360,"h":480,"bytes":31486,"path":"assets/img/se/en/lookup-360.jpg"}
+    ]
+  },
+  "se/zh-hans/translate": {
+    "src": "se:appstore-assets/zh-Hans/02-translate.png",
+    "srcHash": "c669948b9d6bc332",
+    "crop": {"x":176,"y":640,"w":948,"h":1264},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":360,"h":480,"bytes":11396,"path":"assets/img/se/zh-hans/translate-360.avif"},
+      {"format":"jpg","w":360,"h":480,"bytes":26460,"path":"assets/img/se/zh-hans/translate-360.jpg"}
+    ]
+  },
+  "se/zh-hans/lookup": {
+    "src": "se:appstore-assets/zh-Hans/04-lookup.png",
+    "srcHash": "892f858370440d8c",
+    "crop": {"x":168,"y":920,"w":948,"h":1264},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":360,"h":480,"bytes":13187,"path":"assets/img/se/zh-hans/lookup-360.avif"},
+      {"format":"jpg","w":360,"h":480,"bytes":31061,"path":"assets/img/se/zh-hans/lookup-360.jpg"}
+    ]
+  },
+  "se/common/explore": {
+    "src": "se:public/images/screenshots/explore.jpg",
+    "srcHash": "51fbc9be02204d0b",
+    "crop": {"x":0,"y":120,"w":720,"h":960},
+    "alpha": false,
+    "variants": [
+      {"format":"avif","w":360,"h":480,"bytes":8408,"path":"assets/img/se/common/explore-360.avif"},
+      {"format":"jpg","w":360,"h":480,"bytes":23379,"path":"assets/img/se/common/explore-360.jpg"}
     ]
   },
   "se/common/icon": {

@@ -423,8 +423,20 @@
       "uiNote": "Gratuit · Interface en anglais et 11 autres langues, pas en français · Traduit vers le français",
       "linkText": "Actualité et pages en bilingue — SurfEnglish (site en anglais)",
       "appStoreLinkText": "Télécharger SurfEnglish dans l’App Store",
-      "shotAlt": "SurfEnglish, écran Games (interface en anglais) : Sentence Builder et Word Raid, à jouer avec les phrases et mots enregistrés",
-      "shotCaption": "Capture d’écran de SurfEnglish (interface en anglais)"
+      "shots": {
+        "translate": {
+          "label": "L’actualité en anglais, traduite sous l’original",
+          "alt": "Fil d’actualité de SurfEnglish (interface en anglais) : un titre et un paragraphe en anglais, chacun suivi de sa traduction"
+        },
+        "lookup": {
+          "label": "Touchez deux fois un mot, sur toute page web",
+          "alt": "Page d’actualité en anglais ouverte dans SurfEnglish (interface en anglais) : le mot touché affiche son sens"
+        },
+        "explore": {
+          "label": "N’importe quel site en anglais, dans l’app",
+          "alt": "Navigateur intégré de SurfEnglish (en anglais) : chercher ou saisir un site, avec des liens vers des sites d’anglais"
+        }
+      }
     },
     "footer": {
       "heading": "Nos autres apps",

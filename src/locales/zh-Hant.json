@@ -426,8 +426,20 @@
       "note": "免費開始使用 · iPhone／iPad · App 介面支援繁體中文等 {se.uiLanguages} 種語言 · 可譯成 {se.targetLanguages} 種語言",
       "linkText": "用 SurfEnglish 雙語對照讀英文新聞和網頁",
       "appStoreLinkText": "在 App Store 取得 SurfEnglish",
-      "shotAlt": "SurfEnglish 的遊戲頁：可以用存下來的句子和單字玩 Sentence Builder 與 Word Raid",
-      "shotCaption": "SurfEnglish 截圖（英文介面）"
+      "shots": {
+        "translate": {
+          "label": "英文新聞，譯文就在原文下方",
+          "alt": "SurfEnglish 新聞頁（英文介面）：英文新聞的標題和段落下方各有一行譯文"
+        },
+        "lookup": {
+          "label": "任何網頁，點兩下單字看釋義",
+          "alt": "在 SurfEnglish 開啟的英文新聞網頁（英文介面）：點兩下的字旁跳出它的釋義"
+        },
+        "explore": {
+          "label": "內建瀏覽器，開啟任何英文網站",
+          "alt": "SurfEnglish 內建瀏覽器首頁（英文介面）：可搜尋或輸入網址，下方是英語學習網站的捷徑"
+        }
+      }
     },
     "footer": {
       "heading": "我們的其他 App",

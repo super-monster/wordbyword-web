@@ -425,8 +425,20 @@
       "note": "무료로 시작 · iPhone / iPad · 앱 화면은 한국어 포함 {se.uiLanguages}개 언어 · {se.targetLanguages}개 언어로 번역",
       "linkText": "SurfEnglish로 영어 뉴스와 웹페이지를 원문·번역 함께 읽기",
       "appStoreLinkText": "App Store에서 SurfEnglish 다운로드",
-      "shotAlt": "SurfEnglish 게임 화면(영어 인터페이스): 저장한 문장과 단어로 플레이할 수 있는 Sentence Builder와 Word Raid",
-      "shotCaption": "SurfEnglish 스크린샷(영어 인터페이스)"
+      "shots": {
+        "translate": {
+          "label": "영어 뉴스, 원문 바로 아래 번역",
+          "alt": "SurfEnglish 뉴스 화면(영어 인터페이스): 영어 뉴스 제목과 문단 아래에 각각 번역이 표시됨"
+        },
+        "lookup": {
+          "label": "어떤 웹페이지든 두 번 탭해 뜻 확인",
+          "alt": "SurfEnglish에서 연 영어 뉴스 웹페이지(영어 인터페이스): 두 번 탭한 단어의 뜻이 작은 팝업으로 표시됨"
+        },
+        "explore": {
+          "label": "내장 브라우저로 어떤 영어 사이트든",
+          "alt": "SurfEnglish 내장 브라우저 첫 화면(영어 인터페이스): 웹사이트 검색·주소 입력과 영어 학습 사이트 바로가기"
+        }
+      }
     },
     "footer": {
       "heading": "저희의 다른 앱",

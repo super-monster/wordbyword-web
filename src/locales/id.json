@@ -422,8 +422,20 @@
       "note": "Gratis untuk mulai · iPhone dan iPad · Antarmuka {se.uiLanguages} bahasa, termasuk Indonesia · Terjemahan ke {se.targetLanguages} bahasa",
       "linkText": "Berita dan web bahasa Inggris dwibahasa — SurfEnglish",
       "appStoreLinkText": "Download SurfEnglish di App Store",
-      "shotAlt": "Layar Games SurfEnglish (antarmuka bahasa Inggris): Sentence Builder dan Word Raid dengan kalimat dan kata tersimpan",
-      "shotCaption": "Tangkapan layar SurfEnglish (antarmuka bahasa Inggris)"
+      "shots": {
+        "translate": {
+          "label": "Berita bahasa Inggris, terjemahan di bawah teks asli",
+          "alt": "Berita di SurfEnglish (antarmuka bahasa Inggris): judul dan paragraf bahasa Inggris dengan terjemahan di bawahnya"
+        },
+        "lookup": {
+          "label": "Ketuk dua kali kata di halaman web mana pun",
+          "alt": "Halaman berita bahasa Inggris di SurfEnglish (antarmuka bahasa Inggris): kata yang diketuk menampilkan artinya"
+        },
+        "explore": {
+          "label": "Buka situs bahasa Inggris apa pun di aplikasi",
+          "alt": "Browser bawaan SurfEnglish (antarmuka bahasa Inggris): cari atau ketik situs, dengan tautan ke situs belajar bahasa Inggris"
+        }
+      }
     },
     "footer": {
       "heading": "Aplikasi kami yang lain",

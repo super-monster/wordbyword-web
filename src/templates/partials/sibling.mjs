@@ -4,7 +4,7 @@
 // No placement ③ (R42), no SE badge (R43).
 
 import { esc, head, rich } from '../../lib/html.mjs';
-import { SIBLING, seMode } from '../../data/sibling.mjs';
+import { SIBLING, seMode, cardShotKey } from '../../data/sibling.mjs';
 import { appStoreLink, seSite } from '../../lib/links.mjs';
 import { picture, icon } from './picture.mjs';
 
@@ -35,13 +35,21 @@ export function siblingCard(ctx) {
           <a class="sibling__link" href="${esc(se.href)}" hreflang="${se.hreflang}" data-ga-event="surfenglish_promo" data-ga-label="card_site">${esc(sb.linkText)}</a>
         </p>
       </div>
-      <figure class="sibling__window">
-        ${picture(ctx, SIBLING.cardImage, { alt: sb.shotAlt })}
-        <figcaption>${esc(sb.shotCaption)}</figcaption>
-      </figure>
+      ${shotFan(ctx, sb.shots)}
     </div>
   </div>
 </aside>`;
+}
+
+// ① card fan (2026-10-21): the core-feature shots fanned like cards — front one upright and larger, the others tilted
+// behind it; clicking a back card swaps it to the front (main.js). Without JS the fan is a static picture with the
+// first shot in front. ≥ 900 px only, like the old single window (R10: the card stays within its height budget).
+function shotFan(ctx, shots) {
+  const ids = SIBLING.cardShots;
+  return `<figure class="sibling__window se-fan" data-se-fan>
+        <div class="se-fan__deck">${ids.map((id, i) => `<button type="button" class="se-fan__card" data-slot="${i}" data-label="${esc(shots[id].label)}" aria-pressed="${i === 0}" data-ga-label="se_shot_${id}">${picture(ctx, cardShotKey(id, ctx.route.locale), { alt: shots[id].alt })}</button>`).join('')}</div>
+        <figcaption class="se-fan__caption" aria-live="polite">${esc(shots[ids[0]].label)}</figcaption>
+      </figure>`;
 }
 
 // ⑦ (2026-10-17): one neutral line right under the hero's mosaic edge. It only scrolls to ① — no App Store link, no

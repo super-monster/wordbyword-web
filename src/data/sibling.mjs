@@ -18,7 +18,9 @@ export const SIBLING = {
     de: { uiNote: true }, fr: { uiNote: true }, it: { uiNote: true }, nl: { uiNote: true },
     pl: { uiNote: true }, ru: { uiNote: true }, tr: { uiNote: true }, uk: { uiNote: true },
   },
-  cardImage: 'se/common/games',        // games-home.jpg top crop (R44)
+  // ① card fan (2026-10-21, owner; replaces R44's games crop): core-feature shots, first = front card. zh-Hans pages use
+  // the zh-Hans App Store set, every other page the en set (the other SE sets show a game-news capture); explore is common.
+  cardShots: ['translate', 'lookup', 'explore'],
   ctMode: 'placement',                 // R3: ct per placement only (wbw-card, wbw-about)
   suppressWhenNotice: true,            // R35: hide ① while a site notice is on
   copyReviewedAt: '2026-10-17',        // build warns after 180 days (L-11)
@@ -28,4 +30,10 @@ export const SIBLING = {
 export function seMode(locale) {
   if (SIBLING.perLocale[locale.code]?.card === false) return 'no-card';
   return locale.code in SIBLING.seLocalePath ? 'local' : 'en-site';
+}
+
+// Image key of a card-fan shot for a locale (images.manifest.json: se/en/*, se/zh-hans/*, se/common/explore).
+export function cardShotKey(id, locale) {
+  if (id === 'explore') return 'se/common/explore';
+  return `se/${locale.code === 'zh-Hans' ? 'zh-hans' : 'en'}/${id}`;
 }
