@@ -1,35 +1,74 @@
-<!-- updated: 2025-05-25 -->
-<!-- Migrated verbatim from /privacy.html (git 7a389ba). Content revision is tracked separately (doc 06 §5.5, H6). -->
+<!-- updated: 2026-10-29 -->
+<!-- Rewritten against the iOS app 1.3.0 (PrivacyInfo.xcprivacy and the App Store privacy label published 2026-10-29: Firebase Analytics with a random device ID, requests via api.word-by-word.app, feedback form). Replaces the 2025-05-25 text migrated verbatim from git 7a389ba (doc 06 §5.5, H6). -->
+<p class="effective-date">Effective date: October 29, 2026</p>
+
+<p class="intro">
+    This policy explains what the <strong>WordByWord</strong> app for iPhone and iPad does with your data. The app has no account or sign-in. It never asks for your name, and it asks for an email address only if you choose to leave one in the feedback form.
+</p>
+
+<h2>1. Text you translate, look up or listen to</h2>
 <p>
-        Thank you for using <b>Word by Word</b>. We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information.
-    </p>
-    
-    <h2>1. Data Collection & Usage</h2>
-    <p>
-        We only use <b>Firebase Analytics</b> (a Google analytics service) to collect anonymous usage data to help us improve the app experience. This information includes only non-personal statistics, such as feature usage and frequency. We do not collect any information that can identify you as an individual.
-    </p>
+    The app's browser loads web pages directly from the sites you visit. Nothing on a page is sent to us until you use a feature on it: swiping to translate a sentence, double-tapping a word, or opening AI translation, sentence structure, phonics or read-aloud. When you do, only the text involved is sent.
+</p>
+<ul>
+    <li><strong>What is sent.</strong> The sentence, word or passage you chose, sometimes together with the sentence around it as context, and your language settings are sent to our server at api.word-by-word.app.</li>
+    <li><strong>Who processes it.</strong> Our server forwards the text to the provider needed for the request: Microsoft Azure Translator or Google Cloud Translation for translations; OpenAI or Google Gemini for AI translation, word meanings, sentence structure and phonics; OpenAI or Google Cloud Text-to-Speech for read-aloud audio. The providers process it under their own privacy policies.</li>
+    <li><strong>Request details.</strong> Each request carries the app version, a timestamp and a signed token that contains a random device ID (see section 3). It does not include the address of the page you are reading.</li>
+    <li><strong>How long it is kept.</strong> Our server keeps request logs for troubleshooting and abuse prevention. Depending on the feature, a log entry can include the text and the result, along with the device ID and your IP address. The logs are deleted automatically after 30 days. Generated audio and phonics results may be cached so that repeated requests are faster; these caches are keyed by the text itself and are not linked to a device.</li>
+    <li><strong>On-device voices.</strong> When you choose an on-device voice for read-aloud, speech is generated on your device and the text is not sent to us.</li>
+</ul>
 
-    <h2>2. Data Security</h2>
-    <p>
-        We do not actively collect, store, or transmit your personal data. All analytics information is used solely to analyze app performance and does not contain personal identifiers.
-    </p>
-    
-    <h2>3. Third-Party Services</h2>
-    <p>
-        The app uses <b>Firebase Analytics</b>, which operates under its own terms of service and privacy policy. We do not share your information with any third parties, nor do we engage in any additional data collection or special processing.
-    </p>
+<h2>2. Usage statistics</h2>
+<p>
+    The app reports usage events to Google Analytics for Firebase so that we can see which features are used and where they fail. Events say which feature was used (for example translation, read-aloud, phonics, bookmarks or the introduction guide), the language pair, the translation mode and service, which setting was changed and its new value, subscription purchases and restores, and error types. Some events carry more detail:
+</p>
+<ul>
+    <li>when you translate a sentence or save a bookmark, the domain name of the site (for example www.bbc.com), never the full page address;</li>
+    <li>when you double-tap a word, the word itself;</li>
+    <li>for translated sentences, their length and a one-way hash of the sentence, never the sentence itself.</li>
+</ul>
+<p>
+    Every event also carries the app version, iOS version, device model, region and language settings, light or dark appearance, whether you subscribe to WordByWord Plus, and the random device ID, so events from the same device can be connected. Google derives an approximate location, such as the country or city, from your IP address. Google processes these events under Google's privacy policy. We use them only to understand and improve the app.
+</p>
 
-    <h2>4. Children’s Privacy</h2>
-    <p>
-        This app is not intended for children under the age of 14. If you believe we have unintentionally collected information from a child, please contact us and we will promptly address the issue.
-    </p>
+<h2>3. The device ID</h2>
+<p>
+    When you first open the app, it creates a random identifier and stores it on your device. It is used to keep requests to our server within fair-use limits, to protect the server from abuse, and to connect usage statistics from the same device. It is not your device's advertising identifier and is not linked to your name or Apple Account. Deleting the app deletes it; reinstalling creates a new one.
+</p>
 
-    <h2>5. Policy Updates</h2>
-    <p>
-        We may update this Privacy Policy from time to time. Any changes will be posted on this page. We recommend reviewing it periodically for the latest information.
-    </p>
+<h2>4. Feedback</h2>
+<p>
+    If you send feedback from Settings, we receive the type you chose, your message, the email address you entered (optional), and technical details: app version and build, iOS version, device model, interface language and whether you subscribe to Plus. We use them only to understand and answer your feedback. Feedback is kept in our server logs for 30 days. If you leave an email address and we reply, that conversation stays in our mailbox.
+</p>
 
-    <div class="contact">
-        If you have any questions or suggestions, please contact us at:<br>
-        <a href="mailto:app.wordbyword@gmail.com">app.wordbyword@gmail.com</a>
-    </div>
+<h2>5. Purchases</h2>
+<p>
+    Subscriptions are sold and billed by Apple. We never see your payment details. The app checks your subscription status with Apple on your device, and the product you bought and your subscription level appear in usage statistics (section 2).
+</p>
+
+<h2>6. Data stored on your device</h2>
+<p>
+    Your settings, bookmarks, tabs, translation and sentence history, saved dictionary entries, daily usage counters and on-device voices stay on your device and are not sent to us. Web pages you open may store their own cookies and website data, as in any browser. To show site icons, the app asks Google's favicon service for the icon of a site's domain.
+</p>
+
+<h2>7. What we do not do</h2>
+<ul>
+    <li>We do not track you across apps or websites owned by other companies, and we do not use your device's advertising identifier.</li>
+    <li>We do not show advertisements.</li>
+    <li>We do not sell your data or share it with anyone other than the service providers named above, who process it on our behalf.</li>
+    <li>We do not record the full addresses of the pages you read or your browsing history, beyond the site domains described in section 2.</li>
+</ul>
+
+<h2>8. Children's privacy</h2>
+<p>
+    This app is not intended for children under the age of 14. We do not knowingly collect any personal information from children. If you believe that a child has provided us with personal information, please contact us and we will promptly address the issue.
+</p>
+
+<h2>9. Changes to this policy</h2>
+<p>
+    We may update this privacy policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.
+</p>
+
+<p class="contact">
+    Questions about this privacy policy, or want feedback you sent deleted? <a href="mailto:app.wordbyword@gmail.com">app.wordbyword@gmail.com</a>
+</p>
