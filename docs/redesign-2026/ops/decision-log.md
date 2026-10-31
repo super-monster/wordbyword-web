@@ -639,3 +639,22 @@
     - 预览验收：verify-deploy 178 pass / 0 fail，扇形切换正常。
     - 生产 `cloudflare-deploy` 从 64ccd40 快进到 5d81866（含 96f2cc1 扇形配图与 5d81866 换 App Store 截图）。推送前对 HEAD 做了干净导出校验（构建 0 错误、测试 66/66）。约 00:54 JST 生产生效。
     - 正式站验收：契约测试 CONTRACT PASS（18 pass），verify-deploy 179 pass / 0 fail / 1 skip。20 个语言首页都有三张扇形卡（`se/common/*`）和横条；ja 正式页点击切换和说明正常，GA 记为 `button_click:se_shot_*`。
+- **SE 横条两周复查（2026-10-31，定时任务自动执行）**：
+  - 窗口：之前 10-07～10-16（10 天），之后 10-18～10-30（13 天），JST，不含 10-17。两个属性的 Internal Traffic 过滤器都已"已启用"，无需额外条件。数据来自 GA 自由形式探索（WordByWord-Web 新建了一个"自由形式 1"）和 SE 的流量获取报告。
+
+    | 指标 | 之前 | 之后 |
+    |---|---|---|
+    | page_view 全站 / home | 126 / 106 | 103 / 93 |
+    | app_store_click（全在 home） | 12 | 14 |
+    | 比率 全站 / home | 9.5 % / 11.3 % | 13.6 % / 15.1 % |
+    | en：page_view / app_store_click | 109 / 11（10.1 %） | 88 / 12（13.6 %） |
+    | 横条曝光 / 点击 / CTR | — | 36 / 0 / 0 % |
+    | 卡片曝光（÷ home page_view） | 10（9.4 %） | 11（11.8 %） |
+    | 卡片点击 card_site + card_appstore | 0 | 0 |
+    | faq_site / footer_site | 0 / 0 | 0 / 0 |
+    | SE 端来源 word-by-word.app 的会话 | 0 | 0 |
+
+  - 守护指标：没有下降（home 比率 11.3 % → 15.1 %），但之后窗口 home page_view 只有 93（< 300），数据太少，不下结论。注意：本次算出的"之前"比率 9.5 % 与记录的 4.0 % 基线差距大，口径可能不同，待负责人核对。
+  - 横条：36 次曝光（en 31、zh-Hans 3、ko 1、ja 1）、0 次点击；曝光 < 500，未触发 CTR 规则。SE 曝光（横条 + 卡片）每 home page_view 从 9.4 % 升到约 50 %，但卡片曝光本身没有明显增加（9.4 % → 11.8 %），也没有带来任何 SE 点击或 SE 端会话。
+  - zh-Hans 10-17 后：page_view 9，卡片曝光 0、点击 0（量太小）。其他语言除 en 外每个都 ≤ 9 page_view，不能分语言解读。
+  - App Store Connect（SurfEnglish → Acquisition → Campaigns，Sep 30–Oct 29）显示 "There isn't enough data to display campaigns"，没有 `ct=wbw-card` 数据。
